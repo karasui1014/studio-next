@@ -1,14 +1,14 @@
 {
-  "generatedAt": "2026-08-03T12:54:31.276Z",
-  "count": 128,
+  "generatedAt": "2026-08-03T15:36:42.360Z",
+  "count": 129,
   "newCount": 12,
   "translatedCount": 0,
   "ranking": [
     "de6b524130cce2ea",
     "80d53b6a9a0c0d30",
     "ae5b6f0111ad6491",
-    "c5d144de034b154a",
-    "23e6b602862453f7"
+    "99cdc1acf4236841",
+    "c5d144de034b154a"
   ],
   "sources": [
     {
@@ -17,7 +17,7 @@
       "category": "jp",
       "ok": true,
       "fetched": 40,
-      "matched": 38,
+      "matched": 37,
       "error": null
     },
     {
@@ -402,7 +402,7 @@
       "summary": "",
       "published": "2026-08-03T04:30:42.000Z",
       "source": "音楽業界総合情報サイト",
-      "sourceId": "gnews-ja-aimusic",
+      "sourceId": "gnews-ja-suno",
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
@@ -415,7 +415,7 @@
       "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE5kbTlGY3NHZ1JNUFJKWWtYZFNqai1hVWlteElVV3FaT2dWSlJJX1NuUjhBTHROakFxOWEwN3kwUUZxZWVpQnRieWZ5dk9RYlBrLUc1OHdObm5WYUl0cTM0VFVB0gFnQVVfeXFMTUo5NEQ4Qi1pZ3N3aFdVZXdQUmdNT1Q2RFhXMmYzcV9LalJic0NqbW5WQ2thb2dVY2lvaUFiRXNCVDVuNHk3M3VLS1lSVlBaSTdKdXZ1Q1UtVFQ1bFRXeFZ6RGdEZ2doMA?oc=5",
       "summary": "",
       "published": "2026-08-02T12:00:00.000Z",
-      "source": "iflyer.tv",
+      "source": "iFLYER",
       "sourceId": "gnews-ja-aimusic",
       "via": "Googleニュース",
       "category": "jp",
@@ -580,7 +580,7 @@
       "coverage": 1,
       "titleJa": "ユニバーサルミュージックの38.3億$四半期からスノのドイツ裁判所の敗北まで… MBWのウィークリーラウンドアップ",
       "summaryJa": "ここ数日の最大の見出し...",
-      "score": 16
+      "score": 12
     },
     {
       "id": "c1bdbaeeb69e1a76",
@@ -595,7 +595,7 @@
       "lang": "en",
       "coverage": 1,
       "titleJa": "Suno、ドイツの実演権協会GEMAに画期的なAI訴訟で敗訴",
-      "score": 23
+      "score": 19
     },
     {
       "id": "bb9d7ac5083fcd6c",
@@ -666,7 +666,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 5,
+      "coverage": 6,
       "titleJa": "ドイツのGEMAが提起した著作権侵害訴訟でSunoが敗訴",
       "summaryJa": "AI音楽ジェネレーターのSunoは、ドイツの収集協会GEMAが提起した著作権侵害訴訟で敗訴しました。収集協会は、Sunoが権利者へのライセンスまたは支払いなしにAIツールをトレーニングするために、著作権で保護された音楽を使用、保存、複製したと主張しています。ロイター通信は金曜日の朝（ 7月31日）に、ミュンヘン地方裁判所がスノー氏に判決を下したと報じた。",
       "score": 43
@@ -682,7 +682,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 5,
+      "coverage": 6,
       "titleJa": "ドイツの収集協会GEMAがSunoに対する著作権侵害訴訟に勝訴",
       "summaryJa": "GEMAはSunoに対する訴訟に勝利しました。判決は何と言っていましたか、今何が起こっていますか、そしてそれはメジャーレーベルの米国Suno訴訟にとって何を意味しますか？",
       "score": 43
@@ -714,6 +714,20 @@
       "lang": "ja",
       "coverage": 1,
       "score": 18
+    },
+    {
+      "id": "99cdc1acf4236841",
+      "title": "Suno AIとは？使い方や料金・曲の作り方を解説！プロンプト＆作品例も",
+      "url": "https://news.google.com/rss/articles/CBMiSkFVX3lxTFBCWEJuRy1YQlNfTzdGaGpWUmlhR3VXOE1wQklycEJuM3ktdVlTQlc0bUZnYjJsMkZmMHdlRXdOdVAtVTVNamRXajJn?oc=5",
+      "summary": "",
+      "published": "2026-07-31T07:00:00.000Z",
+      "source": "SHIFT AI",
+      "sourceId": "gnews-ja-suno",
+      "via": "Googleニュース",
+      "category": "jp",
+      "lang": "ja",
+      "coverage": 1,
+      "score": 29
     },
     {
       "id": "0c35288564563881",
@@ -857,7 +871,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 8,
+      "coverage": 9,
       "score": 50
     },
     {
@@ -866,7 +880,7 @@
       "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE5HdzllYmxZY0JHdXRrV0VMSUx1S1FqM2hENUlldzJEc20tb0dvYkY1T21MeElTYnE2RkloVFhvdnpxVXNBNF91NEU1ZTJDSHM2LUhNVldBd2NYWjR6U3lXZTVGVHI4TzMwNkJUVGxqNDJCSW8?oc=5",
       "summary": "",
       "published": "2026-07-30T03:16:00.000Z",
-      "source": "gigazine.net",
+      "source": "GIGAZINE",
       "sourceId": "gnews-ja-suno",
       "via": "Googleニュース",
       "category": "jp",
@@ -899,7 +913,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 13,
+      "coverage": 16,
       "score": 50
     },
     {
@@ -913,7 +927,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 9,
+      "coverage": 11,
       "score": 50
     },
     {
@@ -1000,7 +1014,7 @@
       "category": "jp",
       "lang": "ja",
       "coverage": 1,
-      "score": 15
+      "score": 6
     },
     {
       "id": "6300a9ebf5ba4d27",
@@ -1079,7 +1093,7 @@
       "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNWkxOWFJqQXNXTkJlRnpDc1lKSldCa0tMaklIYlZDVUU0aE8yS1U2d1dfU0J3NFAzNTVXSzZuZGZROERuR3RPT29SSmVtZVM0WllERmVPc1NDNVFyUGhuLVh0aFBqSlUtMWtzemRwVUpqWmZFLWtPem1udG42dUhYcTdhTnpzd1l5a2JfVF9ZNk5PUFlhQ0Fz?oc=5",
       "summary": "",
       "published": "2026-07-24T13:35:48.000Z",
-      "source": "WPLN News",
+      "source": "wpln.org",
       "sourceId": "gnews-en-aimusic",
       "via": "Googleニュース",
       "category": "global",
@@ -1171,7 +1185,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 4,
+      "coverage": 5,
       "score": 21
     },
     {
@@ -1498,7 +1512,7 @@
       "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQVnlWTTNHWDB5Z0gzUXo5VTBuVmNWYjlxNUNDaEIxeGJzZUtKWlZDNGRXbU1UajNvcE9YeVRhNmNsb3ZHajhSejJFdWNNcHJfWDVYMVVOWVJMa0N6NjBsU2ZnSjQyR2Fhd19LdE1yS0l1Mk1uaEF6SmVkX2FlSXA2LQ?oc=5",
       "summary": "",
       "published": "2026-07-20T07:00:00.000Z",
-      "source": "billboard.com",
+      "source": "Billboard",
       "sourceId": "gnews-en-aimusic",
       "via": "Googleニュース",
       "category": "global",
@@ -1571,7 +1585,7 @@
       "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTFBJYWJGYUh1cE9SRWxMYzZuaW8wWXNfdmRQaTNjcmNiVHNDOXotX3lBZ2pWaVdLTTNpMXpteEc4MTdHc2c0cVUtLWRrcXk2MlR6Zk1IdHdZRHU0dzl4LTlBeG5HMTl4TFMwUGhuMGNnVHlzSjA5Q1pqTA?oc=5",
       "summary": "",
       "published": "2026-07-17T07:00:00.000Z",
-      "source": "gigazine.net",
+      "source": "GIGAZINE",
       "sourceId": "gnews-ja-suno",
       "via": "Googleニュース",
       "category": "jp",
@@ -1661,7 +1675,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 9,
+      "coverage": 11,
       "score": 30
     },
     {
