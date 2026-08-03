@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-08-03T15:36:42.360Z",
-  "count": 129,
-  "newCount": 12,
+  "generatedAt": "2026-08-03T22:03:26.861Z",
+  "count": 130,
+  "newCount": 11,
   "translatedCount": 0,
   "ranking": [
     "de6b524130cce2ea",
@@ -17,7 +17,7 @@
       "category": "jp",
       "ok": true,
       "fetched": 40,
-      "matched": 37,
+      "matched": 38,
       "error": null
     },
     {
@@ -78,10 +78,10 @@
       "id": "cdm",
       "name": "CDM",
       "category": "global",
-      "ok": true,
-      "fetched": 10,
+      "ok": false,
+      "fetched": 0,
       "matched": 0,
-      "error": null
+      "error": "HTTP 403"
     },
     {
       "id": "musictech",
@@ -98,7 +98,7 @@
       "category": "global",
       "ok": true,
       "fetched": 10,
-      "matched": 2,
+      "matched": 1,
       "error": null
     },
     {
@@ -134,7 +134,7 @@
       "category": "global",
       "ok": true,
       "fetched": 10,
-      "matched": 1,
+      "matched": 0,
       "error": null
     },
     {
@@ -368,6 +368,20 @@
       "score": 15
     },
     {
+      "id": "1b539d47173eb8e1",
+      "title": "ニュース Google Flow Musicに最新の音楽生成AIモデル「Lyria 3.5」を搭載",
+      "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTFBBaEtON3hENnJVRUlOM3N2QUFpUjdfeWY0LU9xNUh1dTY2dlVsLXlMaE1nM0hJa1Bwd3djaVFFSlZkXzJFVkZHNTYzb2x1MExLTTBuVk1rdnNaMnNWRm4tZDZ3cw?oc=5",
+      "summary": "",
+      "published": "2026-08-03T06:04:15.000Z",
+      "source": "株式会社インプレス",
+      "sourceId": "gnews-ja-suno",
+      "via": "Googleニュース",
+      "category": "jp",
+      "lang": "ja",
+      "coverage": 1,
+      "score": 24
+    },
+    {
       "id": "23e6b602862453f7",
       "title": "AIエージェント、音楽業界を静かに自動化 A&Rからリリース業務まで",
       "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE96dDBwOUxEVWlFQ1JBeHhCNzZLS3I1UnNHODZDZFctTWdxM010Vm4xc29VaDRITENKMXJvZTBlT0IyOUR1Q1RZSDZ0bjBTQ3VxbnZlMw?oc=5",
@@ -387,7 +401,7 @@
       "url": "https://news.google.com/rss/articles/CBMiR0FVX3lxTE1CSHFkQzRCeUQyQy1relFKby1QMU9KTUktOVZ5aHhGTUtXQmJlRDgyNFpRSEV4Mzl3UFZNVU1VM04tZmdNM053?oc=5",
       "summary": "",
       "published": "2026-08-03T04:32:03.000Z",
-      "source": "MEDIAMIXI",
+      "source": "mediamixi.jp",
       "sourceId": "gnews-ja-suno",
       "via": "Googleニュース",
       "category": "jp",
@@ -457,7 +471,7 @@
       "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTFBHSEhrRVhuQ19kYTdMN1RPUlQ2WHoxUGFLTEZpa1liMWdVYnJfQkY1U0FlaFJvMV9qUWZuU25ueXFTLW5mZzdHaFpBSEF0NmFOc1pyeHBPMUVPZEhOY2dPX1Noa2lsLWh0SlBV?oc=5",
       "summary": "",
       "published": "2026-08-01T11:59:00.000Z",
-      "source": "XenoSpectrum",
+      "source": "xenospectrum.com",
       "sourceId": "gnews-ja-suno",
       "via": "Googleニュース",
       "category": "jp",
@@ -534,7 +548,7 @@
       "lang": "en",
       "coverage": 1,
       "titleJa": "AI Music Company Sunoがドイツでの著作権訴訟で敗訴",
-      "score": 23
+      "score": 19
     },
     {
       "id": "869aa57f6a2a9a24",
@@ -549,7 +563,7 @@
       "lang": "en",
       "coverage": 1,
       "titleJa": "ドイツの裁判所は、AI音楽会社Sunoが著作権規則を破ったと裁定",
-      "score": 23
+      "score": 19
     },
     {
       "id": "8790709bef9872a4",
@@ -564,7 +578,7 @@
       "lang": "en",
       "coverage": 1,
       "titleJa": "AIにおける著作権で保護された音楽の使用に異議を申し立てる訴訟におけるSunoに対するドイツの裁判所の規則",
-      "score": 23
+      "score": 19
     },
     {
       "id": "6895318b26cb4c02",
@@ -666,7 +680,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 6,
+      "coverage": 7,
       "titleJa": "ドイツのGEMAが提起した著作権侵害訴訟でSunoが敗訴",
       "summaryJa": "AI音楽ジェネレーターのSunoは、ドイツの収集協会GEMAが提起した著作権侵害訴訟で敗訴しました。収集協会は、Sunoが権利者へのライセンスまたは支払いなしにAIツールをトレーニングするために、著作権で保護された音楽を使用、保存、複製したと主張しています。ロイター通信は金曜日の朝（ 7月31日）に、ミュンヘン地方裁判所がスノー氏に判決を下したと報じた。",
       "score": 43
@@ -682,7 +696,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 6,
+      "coverage": 7,
       "titleJa": "ドイツの収集協会GEMAがSunoに対する著作権侵害訴訟に勝訴",
       "summaryJa": "GEMAはSunoに対する訴訟に勝利しました。判決は何と言っていましたか、今何が起こっていますか、そしてそれはメジャーレーベルの米国Suno訴訟にとって何を意味しますか？",
       "score": 43
@@ -852,7 +866,7 @@
       "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE5VeEpYdXVSVm9pSEtfcjFaYmtKN2Q2RURGZGNQeFYxdXFmeG1ncXNPV1VvV2lkLWlBRFR0R0dZMWFsVThIZjRwVTRGRWNLYkJJWnBPYThMLVI0X2pDMTVzZ1duT0xHMzFsWnl6MFZGaDJ6Y0Fs?oc=5",
       "summary": "",
       "published": "2026-07-30T04:40:00.000Z",
-      "source": "BigGo ファイナンス",
+      "source": "finance.biggo.jp",
       "sourceId": "gnews-ja-aimusic",
       "via": "Googleニュース",
       "category": "jp",
@@ -871,7 +885,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 9,
+      "coverage": 10,
       "score": 50
     },
     {
@@ -894,7 +908,7 @@
       "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5BNTZ0RldDNTZsZEhmWnFBSHotcHV0Vy1Wd3BNVGNjWGIyNWRvVnRSRFo3ODRrVjdaVEw1eWJoUWgyY2NFczBFSE9lOXNJNEdKREhZdF8zdklSUzVhNDdTVTJJbzNaQ3M?oc=5",
       "summary": "",
       "published": "2026-07-30T03:12:11.000Z",
-      "source": "ケータイ Watch",
+      "source": "k-tai.watch.impress.co.jp",
       "sourceId": "gnews-ja-aimusic",
       "via": "Googleニュース",
       "category": "jp",
@@ -913,7 +927,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 16,
+      "coverage": 19,
       "score": 50
     },
     {
@@ -927,7 +941,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 11,
+      "coverage": 13,
       "score": 50
     },
     {
@@ -1000,7 +1014,7 @@
       "category": "jp",
       "lang": "ja",
       "coverage": 1,
-      "score": 15
+      "score": 6
     },
     {
       "id": "fd382941beeace0e",
@@ -1063,7 +1077,7 @@
       "title": "AIで脳内のイメージを取り出す 頭の中に流れる音楽を復元",
       "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE5DSWhSc1VtRjBrbDJmdW1hSXZsRlowWHl2ZUpIcS1Xa29tNjJjSEZsYkpMU01nQmZWS2FlV3JrZW9BbEN5UUlORGw4NldSMm9IaUozMTFCdUpnVnM4dU5xdF9xLTVsV0xzVUxNRg?oc=5",
       "summary": "",
-      "published": "2026-07-25T20:00:00.000Z",
+      "published": "2026-07-26T07:00:00.000Z",
       "source": "日本経済新聞",
       "sourceId": "gnews-ja-aimusic",
       "via": "Googleニュース",
@@ -1093,7 +1107,7 @@
       "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNWkxOWFJqQXNXTkJlRnpDc1lKSldCa0tMaklIYlZDVUU0aE8yS1U2d1dfU0J3NFAzNTVXSzZuZGZROERuR3RPT29SSmVtZVM0WllERmVPc1NDNVFyUGhuLVh0aFBqSlUtMWtzemRwVUpqWmZFLWtPem1udG42dUhYcTdhTnpzd1l5a2JfVF9ZNk5PUFlhQ0Fz?oc=5",
       "summary": "",
       "published": "2026-07-24T13:35:48.000Z",
-      "source": "wpln.org",
+      "source": "WPLN News",
       "sourceId": "gnews-en-aimusic",
       "via": "Googleニュース",
       "category": "global",
@@ -1468,7 +1482,7 @@
       "url": "https://news.google.com/rss/articles/CBMiRkFVX3lxTFBodmdYTnV5MEw0Wk5HdlZneFlTcVoweEtEazhfbHh1anlHbFl3WmF1LVdRSHVCdG9CaDRFVGV2LUNHMHAwdkE?oc=5",
       "summary": "",
       "published": "2026-07-21T07:00:00.000Z",
-      "source": "MEDIAMIXI",
+      "source": "mediamixi.jp",
       "sourceId": "gnews-ja-suno",
       "via": "Googleニュース",
       "category": "jp",
@@ -1571,7 +1585,7 @@
       "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE1RbjR0SFRzSTZBV2E5S3VzbFhXazRlazVkdVBkbkMzVDNrX2FWYlFkVy14TlBSMkVXNWlvSzNmenJlLUhQX3dQVW5LcFE1c1hlQUhSa1VUNWJmQ2FjM0RBcG9VekZlV09jNFN2RENGZW5tTVRw?oc=5",
       "summary": "",
       "published": "2026-07-17T14:35:00.000Z",
-      "source": "BigGo ファイナンス",
+      "source": "finance.biggo.jp",
       "sourceId": "gnews-ja-suno",
       "via": "Googleニュース",
       "category": "jp",
@@ -1656,7 +1670,7 @@
       "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE1CRWpvSGdIeEZmdHRmTVM5cU0tN2g5V2ZkeU03bWxTemZtOTNuaXY2ZXpqRjlHWTVHZTZKUFhJazh5LXN5MHZ2UFVwb1lKV2ozSDIyTHNCb3d5NFNoM3RsZEE5QXVSeXdDcEFxc0NrR2VEM1hC?oc=5",
       "summary": "",
       "published": "2026-07-16T07:00:00.000Z",
-      "source": "BigGo ファイナンス",
+      "source": "finance.biggo.jp",
       "sourceId": "gnews-ja-suno",
       "via": "Googleニュース",
       "category": "jp",
@@ -1670,12 +1684,12 @@
       "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFA5VWJXZHVzQm1wZ1lWXy1HSi1NdkFEeDdXcjVxTFc5VG9scE1pOFFnamFiVjhaamI3RjI0YjVIenhKOTVlWWxPMnNaQndSQkJjWmc?oc=5",
       "summary": "",
       "published": "2026-07-16T07:00:00.000Z",
-      "source": "CNET Japan",
+      "source": "japan.cnet.com",
       "sourceId": "gnews-ja-suno",
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 11,
+      "coverage": 13,
       "score": 30
     },
     {
@@ -1684,7 +1698,7 @@
       "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE44bVlZV3VCWGxJVUwzSld4RjkwTVFTMTFqTVp5WDd2NGlKRC0yVl9iQ3gzeEJsUWNzYVZnRTFRT2lVT01feUowZkpWaXcwTDRHb0hFakowU01yNEwzQUNtWUsxTDJldjhBbUNUMWhQaFd1a3Ex?oc=5",
       "summary": "",
       "published": "2026-07-16T07:00:00.000Z",
-      "source": "BigGo ファイナンス",
+      "source": "finance.biggo.jp",
       "sourceId": "gnews-ja-suno",
       "via": "Googleニュース",
       "category": "jp",
@@ -1727,7 +1741,7 @@
       "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE5jcUNpUGRpN01YNTFkbWM0ZUtkX2d5enNqWnA1aHdlUWRNUEpoMVZnb3pUcS1NU3BMNEdPb2hKSVNwbjFxdFM1WVNKd0d3WHRYYVhrY3ltTElkZTVLN3ZacVZTUzdmTUd3VHY2amZ1TVMwdkhG?oc=5",
       "summary": "",
       "published": "2026-07-15T07:00:00.000Z",
-      "source": "BigGo ファイナンス",
+      "source": "finance.biggo.jp",
       "sourceId": "gnews-ja-suno",
       "via": "Googleニュース",
       "category": "jp",
