@@ -1,0 +1,145 @@
+{
+  "_comment": "トップページに出す手書きコンテンツ。ここを編集すればアプリのビルドなしで画面が変わります。ニュースは news.json（自動更新）から読むので、このファイルには含めません。",
+
+  "_daily_note": "Studioからの今日の一言。日付ごとに1つ選ばれます。date を書けばその日に必ず出ます。date のないものは「たね」として日替わりで巡回するので、毎日書かなくても毎日変わります。",
+  "daily": [
+    {
+      "id": "d-suno-persona",
+      "label": "今日試すAI音楽機能",
+      "message": "Suno の Persona を試してください。気に入った1曲から声と質感を固定できるので、シリーズものを作るときに毎回ガチャを引かなくて済みます。",
+      "actionLabel": "Sunoを開く",
+      "url": "https://suno.com/"
+    },
+    {
+      "id": "d-suno-extend",
+      "label": "今日試すAI音楽機能",
+      "message": "Suno の Extend で、途中で終わってしまった曲を伸ばしてみてください。作り直すより、いまある良いテイクを活かすほうが速いです。",
+      "actionLabel": "Sunoを開く",
+      "url": "https://suno.com/"
+    },
+    {
+      "id": "d-suno-cover",
+      "label": "今日試すAI音楽機能",
+      "message": "Suno の Cover で、自分の曲を別ジャンルに変えてみてください。ロー ファイ曲をシティポップにするだけで、まったく別の作品になります。",
+      "actionLabel": "Sunoを開く",
+      "url": "https://suno.com/"
+    },
+    {
+      "id": "d-suno-lyrics",
+      "label": "今日試すAI音楽機能",
+      "message": "Suno の Lyrics 改善機能に、詰まっている歌詞を通してみてください。そのまま使わなくても、言い換えの候補として見るだけで進みます。",
+      "actionLabel": "歌詞レビューも試す",
+      "to": "/tools/lyrics-review"
+    },
+    {
+      "id": "d-suno-stems",
+      "label": "今日試すAI音楽機能",
+      "message": "Suno のステム分離で、ボーカルと伴奏を分けてみてください。サビだけ差し替える、伴奏だけ使う、といった編集ができるようになります。",
+      "actionLabel": "Sunoを開く",
+      "url": "https://suno.com/"
+    },
+    {
+      "id": "d-seedance",
+      "label": "今日試すAI音楽機能",
+      "message": "Seedance で MV用のショットを1本だけ作ってみてください。4〜8秒の短いカットなら、破綻せずに使える確率がぐっと上がります。",
+      "actionLabel": "MVアイデアを出す",
+      "to": "/tools/mv-idea"
+    },
+    {
+      "id": "d-domoai",
+      "label": "今日試すAI音楽機能",
+      "message": "DomoAI の新機能を1つ触ってみてください。実写を別スタイルに変換する系は、MVの世界観づくりが一気に速くなります。",
+      "actionLabel": "ツール図鑑を見る",
+      "to": "/tools-guide"
+    },
+    {
+      "id": "d-persona-compare",
+      "label": "今日の5分",
+      "message": "同じ歌詞を Persona あり／なしで1回ずつ生成して聴き比べてください。自分の曲に何が効いているかが、言葉より早くわかります。",
+      "actionLabel": "プロンプトを見る",
+      "to": "/prompts"
+    }
+  ],
+
+  "_pickNotes_note": "カラスイ Picks の記事ごとに足す、Studio限定の制作メモ。キーは記事URLの /p/ 以降。ここがPremiumの価値になる部分です（Substackの本文はStudioに載せません）。",
+  "pickNotes": {
+    "aiip": {
+      "note": "この記事で書いたIPの考え方は、Studioの曲管理と相性が良いです。曲ごとに「誰が歌っているか」を決めて固定すると、Persona を使ったときの再現性が上がります。",
+      "prompts": ["p-lofi-drive"]
+    }
+  },
+
+  "_legacy_picks_note": "Substack連携より前の手書きPick。picks.json が取得できないときの控えです。",
+  "picks": [
+    {
+      "id": "pick-2026-08-01",
+      "date": "2026-08-01",
+      "tag": "今日のPick",
+      "topic": "Lyria 3.5 発表",
+      "title": "日本語ボーカルが「使える」水準に来ました。Sunoから乗り換えるべきか？",
+      "free": "今回の目玉は3分という尺よりも、日本語の発音処理です。これまで日本語詞は「っ」「ん」の処理が甘く、そこだけ英語詞に逃がす人が多かった。今回それが……",
+      "premium": "今回の目玉は3分という尺よりも、日本語の発音処理です。これまで日本語詞は「っ」「ん」の処理が甘く、そこだけ英語詞に逃がす人が多かった。今回それがかなり改善されています。\n\nただし、いま Suno で作り込んだスタイルプロンプト資産がある人は、まだ乗り換えるべきではないと考えます。理由は3つあります。\n\n① Lyria はプロンプトの効き方が Suno と別系統で、蓄積が引き継げない\n② 商用利用条件がまだ整理されていない\n③ 出力の当たり外れの幅が Suno より大きく、量産に向かない\n\nおすすめは「日本語のサビだけ Lyria で試す」使い分けです。プロンプトライブラリに比較用テンプレートを入れてあります。",
+      "author": "カラスイ / AI音楽部"
+    }
+  ],
+
+  "todayTools": [
+    {
+      "id": "moises",
+      "name": "Moises — ステム分離",
+      "emoji": "🎚",
+      "description": "AI楽曲からボーカルだけ抜いてリミックス素材にできます。無料枠で月5曲。Suno出力の再編集と相性が良いです。",
+      "url": "https://moises.ai/"
+    }
+  ],
+
+  "prompts": [
+    {
+      "id": "p-lofi-drive",
+      "title": "夜の首都高 / Lo-fi",
+      "text": "lo-fi hip hop, late night city drive, warm rhodes, vinyl crackle, 78 bpm, japanese female vocal, mellow, rainy",
+      "premium": false
+    },
+    {
+      "id": "p-citypop",
+      "title": "夏の終わり / City Pop",
+      "text": "city pop, 80s japanese, bright brass stabs, slap bass, chorus-heavy guitar, 108 bpm, nostalgic summer",
+      "premium": false
+    },
+    {
+      "id": "p-experimental",
+      "title": "実験的J-POP",
+      "text": "experimental jpop, glitch percussion, detuned synth pad, whisper vocal layered, 92 bpm, cinematic build",
+      "premium": true
+    }
+  ],
+
+  "_toolsGuide_note": "AIツール図鑑。実際に使ったものだけを載せます。category で絞り込めます。",
+  "toolsGuide": [
+    { "id": "suno", "name": "Suno", "emoji": "🎵", "category": "楽曲生成", "url": "https://suno.com/",
+      "description": "いちばん使われている音楽生成AI。無料枠は1日10曲。日本語詞も通ります。" },
+    { "id": "udio", "name": "Udio", "emoji": "🎶", "category": "楽曲生成", "url": "https://www.udio.com/",
+      "description": "Sunoと双璧。音の質感が細かく、洋楽系の再現に強い印象です。" },
+    { "id": "moises", "name": "Moises", "emoji": "🎚", "category": "編集・分離", "url": "https://moises.ai/",
+      "description": "ボーカルと伴奏を分離できます。無料枠で月5曲。AI楽曲の再編集と相性が良いです。" },
+    { "id": "elevenlabs", "name": "ElevenLabs", "emoji": "🗣", "category": "音声", "url": "https://elevenlabs.io/",
+      "description": "音声合成。ナレーションやセリフ入りの構成で使えます。" },
+    { "id": "canva", "name": "Canva", "emoji": "🖼", "category": "映像・画像", "url": "https://www.canva.com/",
+      "description": "サムネイルと歌詞動画。テンプレートが多く、MV制作の下ごしらえが速いです。" },
+    { "id": "capcut", "name": "CapCut", "emoji": "🎬", "category": "映像・画像", "url": "https://www.capcut.com/",
+      "description": "無料の動画編集。Shorts向けの縦型編集がしやすいです。" }
+  ],
+
+  "_youtube_note": "チャンネルの新着動画。将来は YouTube の RSS から自動取得する予定。いまは手で書きます。",
+  "youtube": [],
+  "youtubeChannelUrl": "https://www.youtube.com/",
+
+  "substack": {
+    "enabled": true,
+    "url": "https://substack.com/@karasui",
+    "title": "AI音楽部の記事を読む",
+    "description": "AI音楽の最新情報、Studio開発の裏側、AIツールの検証記事などを公開しています。",
+    "note": "無料で登録できます。必要なくなったらいつでも解除できます。",
+    "buttonLabel": "記事を読む"
+  }
+}

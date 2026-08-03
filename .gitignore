@@ -1,0 +1,7 @@
+node_modules/
+dist/
+dist-snapshot/
+*.tsbuildinfo
+.DS_Store
+*.local
+.claude/

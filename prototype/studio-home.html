@@ -1,0 +1,841 @@
+<!doctype html>
+<!--
+  AI音楽部 Studio — トップページ設計プロトタイプ（検討用・本体には未接続）
+  右上の「プラン切替」で 無料 / Premium / Master の見え方を比較できます。
+-->
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AI音楽部 Studio — トップページ設計案</title>
+<style>
+:root{
+  --background:0 0% 100%; --foreground:240 10% 4%;
+  --card:0 0% 100%; --muted:240 5% 96%; --muted-foreground:240 4% 46%;
+  --primary:243 75% 59%; --primary-foreground:0 0% 100%;
+  --border:240 6% 90%; --accent:240 5% 95%;
+  --suno:271 81% 56%; --mv:199 89% 48%; --youtube:0 72% 51%;
+  --premium:38 92% 45%; --master:330 75% 52%; --substack:24 95% 53%;
+  --radius:0.75rem;
+}
+.dark{
+  --background:240 10% 6%; --foreground:0 0% 95%;
+  --card:240 8% 9%; --muted:240 6% 14%; --muted-foreground:240 5% 65%;
+  --primary:243 80% 68%; --primary-foreground:240 10% 6%;
+  --border:240 6% 18%; --accent:240 6% 16%;
+  --suno:271 81% 68%; --mv:199 89% 60%; --youtube:0 72% 60%;
+  --premium:38 92% 58%; --master:330 80% 66%; --substack:24 95% 62%;
+}
+*,*::before,*::after{box-sizing:border-box}
+body{
+  margin:0; background:hsl(var(--background)); color:hsl(var(--foreground));
+  font-family:"Inter",-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic UI","Noto Sans JP",sans-serif;
+  font-size:15px; line-height:1.6; -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,p{margin:0}
+button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
+a{color:inherit;text-decoration:none}
+
+/* ---------- レイアウト ---------- */
+.shell{display:flex;min-height:100vh}
+.sidebar{
+  width:248px;flex:none;border-right:1px solid hsl(var(--border));
+  background:hsl(var(--card));display:flex;flex-direction:column;
+  position:sticky;top:0;height:100vh;
+}
+.main{flex:1;min-width:0;display:flex;flex-direction:column}
+.content{flex:1;padding:22px 28px 80px;max-width:1080px;width:100%;margin:0 auto}
+
+/* ---------- サイドバー ---------- */
+.brand{display:flex;align-items:center;gap:10px;padding:18px 18px 14px}
+.brand__mark{width:34px;height:34px;border-radius:10px;flex:none;
+  background:linear-gradient(140deg,hsl(var(--primary)),hsl(var(--suno)));
+  display:grid;place-items:center;color:#fff;font-size:16px}
+.brand__name{font-size:14px;font-weight:700;letter-spacing:.01em;line-height:1.25}
+.brand__sub{font-size:11px;color:hsl(var(--muted-foreground))}
+.navgroup{padding:6px 10px}
+.navgroup__label{font-size:10.5px;font-weight:700;letter-spacing:.08em;
+  color:hsl(var(--muted-foreground));opacity:.75;padding:10px 10px 4px}
+.navitem{display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:9px;
+  font-size:13.5px;font-weight:500;color:hsl(var(--muted-foreground));width:100%;text-align:left}
+.navitem:hover{background:hsl(var(--accent)/.7);color:hsl(var(--foreground))}
+.navitem.active{background:hsl(var(--accent));color:hsl(var(--foreground));font-weight:650}
+.navitem__ico{width:17px;text-align:center;font-size:14px;flex:none}
+.navitem__badge{margin-left:auto;font-size:10px;font-weight:700;padding:1px 6px;border-radius:999px;
+  background:hsl(var(--primary)/.14);color:hsl(var(--primary))}
+.sidebar__foot{margin-top:auto;padding:12px;border-top:1px solid hsl(var(--border))}
+
+/* ---------- トップバー ---------- */
+.topbar{position:sticky;top:0;z-index:30;display:flex;align-items:center;gap:12px;
+  padding:10px 28px;border-bottom:1px solid hsl(var(--border));
+  background:hsl(var(--background)/.85);backdrop-filter:saturate(180%) blur(12px)}
+.search{flex:1;max-width:420px;height:36px;display:flex;align-items:center;gap:8px;
+  padding:0 12px;border:1px solid hsl(var(--border));border-radius:9px;
+  background:hsl(var(--muted));color:hsl(var(--muted-foreground));font-size:13px}
+.topbar__spacer{flex:1}
+.iconbtn{width:36px;height:36px;border-radius:9px;display:grid;place-items:center;
+  color:hsl(var(--muted-foreground));font-size:15px}
+.iconbtn:hover{background:hsl(var(--accent))}
+
+/* プラン表示 */
+.planchip{display:inline-flex;align-items:center;gap:6px;height:30px;padding:0 11px;
+  border-radius:999px;font-size:12px;font-weight:700;border:1px solid transparent}
+.planchip--free{background:hsl(var(--muted));color:hsl(var(--muted-foreground));border-color:hsl(var(--border))}
+.planchip--premium{background:hsl(var(--premium)/.14);color:hsl(var(--premium));border-color:hsl(var(--premium)/.35)}
+.planchip--master{background:hsl(var(--master)/.14);color:hsl(var(--master));border-color:hsl(var(--master)/.35)}
+
+/* 検証用のプラン切替バー */
+.devbar{display:flex;align-items:center;gap:8px;padding:7px 28px;font-size:12px;
+  background:hsl(var(--primary)/.07);border-bottom:1px dashed hsl(var(--primary)/.3);
+  color:hsl(var(--muted-foreground))}
+.devbar strong{color:hsl(var(--primary));font-weight:700}
+.devbar__btns{display:flex;gap:5px;margin-left:auto}
+.devbtn{padding:3px 11px;border-radius:999px;font-size:11.5px;font-weight:650;
+  border:1px solid hsl(var(--border));background:hsl(var(--card));color:hsl(var(--muted-foreground))}
+.devbtn.on{background:hsl(var(--primary));border-color:hsl(var(--primary));color:hsl(var(--primary-foreground))}
+
+/* ---------- ホームの2カラム（PC用） ----------
+   スマホでは wrapper を display:contents で透明にし、order で並び順を保つ。
+   幅の広い画面だけ「本文＋右レール」の2カラムに切り替える。 */
+.homegrid{display:flex;flex-direction:column}
+.homegrid__main,.homegrid__rail{display:contents}
+#sec-news{order:1}
+#sec-picks{order:2}
+#sec-today{order:3}
+#subSection{order:4}
+#sec-prompts{order:5}
+#sec-tools{order:6}
+#sec-yt{order:7}
+
+/* ---------- 共通パーツ ---------- */
+.section{margin-top:26px}
+.section__head{display:flex;align-items:baseline;gap:10px;margin-bottom:11px}
+.section__title{font-size:15px;font-weight:750;letter-spacing:.01em}
+.section__note{font-size:11.5px;color:hsl(var(--muted-foreground))}
+.section__more{margin-left:auto;font-size:12px;font-weight:600;color:hsl(var(--primary))}
+.card{background:hsl(var(--card));border:1px solid hsl(var(--border));
+  border-radius:var(--radius);padding:15px 16px}
+.grid{display:grid;gap:11px}
+.grid--3{grid-template-columns:repeat(3,1fr)}
+.grid--2{grid-template-columns:repeat(2,1fr)}
+.tag{display:inline-flex;align-items:center;padding:1.5px 7px;border-radius:5px;
+  font-size:10px;font-weight:700;letter-spacing:.02em}
+.tag--news{background:hsl(var(--mv)/.15);color:hsl(var(--mv))}
+.tag--jp{background:hsl(var(--suno)/.15);color:hsl(var(--suno))}
+.tag--pick{background:hsl(var(--primary)/.14);color:hsl(var(--primary))}
+.tag--premium{background:hsl(var(--premium)/.16);color:hsl(var(--premium))}
+.muted{color:hsl(var(--muted-foreground))}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;height:38px;
+  padding:0 16px;border-radius:9px;font-size:13.5px;font-weight:650}
+.btn--primary{background:hsl(var(--primary));color:hsl(var(--primary-foreground))}
+.btn--ghost{border:1px solid hsl(var(--border));background:hsl(var(--card))}
+.btn--premium{background:hsl(var(--premium));color:#fff}
+.btn--sm{height:31px;padding:0 12px;font-size:12.5px;border-radius:8px}
+
+/* ---------- 今日のスタジオ（ヒーロー） ---------- */
+.hero{display:flex;gap:14px;align-items:stretch;margin-top:4px}
+.hero__main{flex:1;min-width:0;border-radius:16px;padding:19px 20px;position:relative;overflow:hidden;
+  background:linear-gradient(135deg,hsl(var(--primary)/.12),hsl(var(--suno)/.09));
+  border:1px solid hsl(var(--primary)/.22)}
+.hero__date{font-size:11.5px;font-weight:650;color:hsl(var(--primary));letter-spacing:.03em}
+.hero__hello{font-size:13px;color:hsl(var(--muted-foreground));margin-top:2px}
+.hero__title{font-size:20px;font-weight:780;letter-spacing:.005em;line-height:1.4;margin-top:9px}
+.hero__desc{font-size:12.5px;color:hsl(var(--muted-foreground));margin-top:5px;line-height:1.65}
+.hero__actions{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}
+.hero__side{width:186px;flex:none;display:flex;flex-direction:column;gap:11px}
+.stat{background:hsl(var(--card));border:1px solid hsl(var(--border));border-radius:13px;
+  padding:12px 14px;flex:1;display:flex;flex-direction:column;justify-content:center}
+.stat__n{font-size:22px;font-weight:780;line-height:1.15;font-variant-numeric:tabular-nums}
+.stat__l{font-size:11px;color:hsl(var(--muted-foreground));margin-top:1px}
+.stat__sub{font-size:10.5px;color:hsl(var(--primary));font-weight:650;margin-top:3px}
+
+/* ---------- ニュース ---------- */
+.news{display:flex;flex-direction:column;gap:9px}
+.newsitem{display:flex;gap:12px;align-items:flex-start;padding:12px 14px;border-radius:11px;
+  border:1px solid hsl(var(--border));background:hsl(var(--card))}
+.newsitem:hover{border-color:hsl(var(--primary)/.4)}
+.newsitem__n{font-size:11px;font-weight:750;color:hsl(var(--muted-foreground));
+  width:16px;flex:none;padding-top:2px;font-variant-numeric:tabular-nums}
+.newsitem__body{min-width:0;flex:1}
+.newsitem__meta{display:flex;align-items:center;gap:7px;font-size:11px;
+  color:hsl(var(--muted-foreground));margin-bottom:3px}
+.newsitem__title{font-size:13.5px;font-weight:650;line-height:1.5}
+.newsitem__orig{font-size:11px;color:hsl(var(--muted-foreground));opacity:.85;margin-top:2px}
+
+/* ---------- Picks ---------- */
+.pick{border:1px solid hsl(var(--primary)/.25);border-radius:var(--radius);overflow:hidden}
+.pick__head{padding:13px 16px 0;display:flex;align-items:center;gap:8px}
+.pick__body{padding:9px 16px 15px}
+.pick__title{font-size:15px;font-weight:750;line-height:1.45}
+.pick__quote{margin-top:10px;padding:11px 13px;border-radius:10px;background:hsl(var(--muted));
+  font-size:12.5px;line-height:1.75;border-left:3px solid hsl(var(--primary))}
+.pick__who{display:flex;align-items:center;gap:7px;margin-top:9px;font-size:11.5px;
+  color:hsl(var(--muted-foreground))}
+.avatar{width:22px;height:22px;border-radius:50%;flex:none;
+  background:linear-gradient(140deg,hsl(var(--primary)),hsl(var(--suno)))}
+
+/* ---------- ロック表示（Premium） ---------- */
+.lock{position:relative;border-radius:10px;overflow:hidden}
+.lock__blur{filter:blur(4.5px);opacity:.42;pointer-events:none;user-select:none}
+.lock__over{position:absolute;inset:0;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;gap:8px;text-align:center;padding:12px;
+  background:linear-gradient(hsl(var(--card)/.55),hsl(var(--card)/.9))}
+.lock__txt{font-size:12px;font-weight:650}
+
+/* ---------- ツール／プロンプト ---------- */
+.tool{display:flex;gap:11px;align-items:flex-start;padding:13px 14px;border-radius:11px;
+  border:1px solid hsl(var(--border));background:hsl(var(--card))}
+.tool:hover{border-color:hsl(var(--primary)/.4)}
+.tool__ico{width:34px;height:34px;border-radius:9px;flex:none;display:grid;place-items:center;
+  font-size:16px;background:hsl(var(--muted))}
+.tool__name{font-size:13px;font-weight:700}
+.tool__desc{font-size:11.5px;color:hsl(var(--muted-foreground));line-height:1.55;margin-top:2px}
+.prompt{padding:12px 13px;border-radius:11px;border:1px solid hsl(var(--border));
+  background:hsl(var(--card));display:flex;flex-direction:column;gap:7px}
+.prompt__code{font-size:11.5px;line-height:1.65;color:hsl(var(--muted-foreground));
+  font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
+  background:hsl(var(--muted));padding:9px 10px;border-radius:8px;
+  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.prompt__foot{display:flex;align-items:center;gap:8px}
+
+/* ---------- Substack ---------- */
+.sub{display:flex;gap:14px;align-items:center;padding:16px 18px;border-radius:var(--radius);
+  border:1px solid hsl(var(--substack)/.32);background:hsl(var(--substack)/.06)}
+.sub__ico{width:40px;height:40px;border-radius:11px;flex:none;display:grid;place-items:center;
+  background:hsl(var(--substack));color:#fff;font-size:19px;font-weight:800}
+.sub__t{font-size:14px;font-weight:720}
+.sub__d{font-size:12px;color:hsl(var(--muted-foreground));margin-top:2px;line-height:1.6}
+.sub__btn{margin-left:auto;flex:none;background:hsl(var(--substack));color:#fff}
+.sub__close{position:absolute;top:8px;right:9px;font-size:15px;color:hsl(var(--muted-foreground))}
+
+/* ---------- YouTube ---------- */
+.yt{border-radius:11px;overflow:hidden;border:1px solid hsl(var(--border));background:hsl(var(--card))}
+.yt__thumb{aspect-ratio:16/9;background:linear-gradient(135deg,hsl(var(--youtube)/.22),hsl(var(--primary)/.16));
+  display:grid;place-items:center;font-size:26px;color:hsl(var(--youtube))}
+.yt__b{padding:10px 12px}
+.yt__t{font-size:12.5px;font-weight:650;line-height:1.5;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.yt__m{font-size:10.5px;color:hsl(var(--muted-foreground));margin-top:4px}
+
+/* ---------- プラン表 ---------- */
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:13px;margin-top:16px}
+.plan{border:1px solid hsl(var(--border));border-radius:15px;padding:19px 18px;
+  background:hsl(var(--card));display:flex;flex-direction:column}
+.plan--premium{border-color:hsl(var(--premium)/.45);box-shadow:0 8px 30px hsl(var(--premium)/.09)}
+.plan--master{border-color:hsl(var(--master)/.4)}
+.plan--master{background:linear-gradient(hsl(var(--master)/.045),transparent 45%),hsl(var(--card))}
+.plan__kind{display:inline-flex;align-items:center;gap:5px;font-size:10.5px;font-weight:750;
+  letter-spacing:.05em;padding:3px 9px;border-radius:999px;align-self:flex-start;
+  background:hsl(var(--muted));color:hsl(var(--muted-foreground))}
+.plan--premium .plan__kind{background:hsl(var(--premium)/.15);color:hsl(var(--premium))}
+.plan--master .plan__kind{background:hsl(var(--master)/.15);color:hsl(var(--master))}
+.plan__name{font-size:16px;font-weight:780;margin-top:10px}
+.plan__purpose{font-size:12.5px;font-weight:680;margin-top:4px;line-height:1.5}
+.plan--premium .plan__purpose{color:hsl(var(--premium))}
+.plan--master .plan__purpose{color:hsl(var(--master))}
+.plan__price{font-size:26px;font-weight:800;margin-top:11px;font-variant-numeric:tabular-nums}
+.plan__price span{font-size:12px;font-weight:600;color:hsl(var(--muted-foreground))}
+.plan__for{font-size:11.5px;color:hsl(var(--muted-foreground));margin-top:6px;line-height:1.6;
+  min-height:40px}
+.plan__seats{display:flex;align-items:center;gap:8px;margin-top:11px;padding:9px 11px;
+  border-radius:9px;background:hsl(var(--master)/.1);border:1px solid hsl(var(--master)/.28);
+  font-size:11.5px;font-weight:680;color:hsl(var(--master))}
+.plan__faces{display:flex;flex:none;padding-right:5px}
+.plan__faces i{width:18px;height:18px;border-radius:50%;display:block;margin-right:-6px;
+  border:1.5px solid hsl(var(--card));
+  background:linear-gradient(140deg,hsl(var(--master)),hsl(var(--suno)))}
+.plan__inherit{margin-top:13px;padding:8px 11px;border-radius:9px;background:hsl(var(--muted));
+  font-size:11.5px;font-weight:650;display:flex;align-items:center;gap:7px}
+.plan__divider{margin-top:13px;font-size:10.5px;font-weight:750;letter-spacing:.05em;
+  color:hsl(var(--muted-foreground));display:flex;align-items:center;gap:9px}
+.plan__divider::after{content:"";flex:1;height:1px;background:hsl(var(--border))}
+.plan__list--human li::before{content:"◆"}
+.plan__list{list-style:none;padding:0;margin:14px 0 0;display:flex;flex-direction:column;gap:7px;flex:1}
+.plan__list li{font-size:12.5px;display:flex;gap:8px;align-items:flex-start;line-height:1.55}
+.plan__list li::before{content:"✓";color:hsl(var(--primary));font-weight:800;flex:none}
+.plan--premium .plan__list li::before{color:hsl(var(--premium))}
+.plan--master .plan__list li::before{color:hsl(var(--master))}
+.plan__cta{margin-top:15px}
+.flowbox{margin-top:24px;padding:18px;border-radius:var(--radius);
+  border:1px dashed hsl(var(--border));background:hsl(var(--muted)/.5)}
+.flow{display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin-top:11px}
+.flow__s{padding:7px 13px;border-radius:999px;font-size:12px;font-weight:650;
+  background:hsl(var(--card));border:1px solid hsl(var(--border))}
+.flow__a{color:hsl(var(--muted-foreground));font-size:12px}
+
+/* ---------- モバイル ---------- */
+/* 画面が広いときは本文＋右レールの2カラムにする */
+@media(min-width:1180px){
+  .content{max-width:1420px}
+  .homegrid{display:grid;grid-template-columns:minmax(0,1fr) 348px;
+    gap:0 26px;align-items:start}
+  .homegrid__main,.homegrid__rail{display:block}
+  .homegrid__rail{position:sticky;top:64px}
+  .homegrid__main>.section:first-child,
+  .homegrid__rail>.section:first-child{margin-top:22px}
+  /* 右レールの中は縦積みにする */
+  .homegrid__rail .grid--3{grid-template-columns:1fr}
+  .homegrid__rail .sub{flex-wrap:wrap}
+  .homegrid__rail .sub__btn{margin-left:0;width:100%}
+  .hero__side{width:230px}
+  .plans{gap:16px}
+}
+@media(min-width:1560px){
+  .homegrid__main .grid--2{grid-template-columns:repeat(2,1fr)}
+  .homegrid__main .news{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+}
+
+.tabbar{display:none}
+@media(max-width:900px){
+  .sidebar{display:none}
+  .topbar{padding:9px 14px}
+  .devbar{padding:7px 14px;flex-wrap:wrap}
+  .content{padding:14px 14px 92px}
+  .hero{flex-direction:column}
+  .hero__side{width:auto;flex-direction:row}
+  .grid--3,.grid--2,.plans{grid-template-columns:1fr}
+  .search{display:none}
+  .tabbar{
+    display:flex;position:fixed;left:0;right:0;bottom:0;z-index:40;
+    background:hsl(var(--card)/.94);backdrop-filter:blur(14px);
+    border-top:1px solid hsl(var(--border));
+    padding:6px 4px calc(6px + env(safe-area-inset-bottom));
+  }
+  .tab{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;padding:5px 2px;
+    font-size:10px;font-weight:650;color:hsl(var(--muted-foreground));border-radius:9px}
+  .tab.active{color:hsl(var(--primary))}
+  .tab__i{font-size:17px;line-height:1}
+  .sub{flex-wrap:wrap}
+  .sub__btn{margin-left:0;width:100%}
+}
+.view{display:none}
+.view.on{display:block}
+</style>
+</head>
+<body class="dark">
+
+<div class="shell">
+
+  <!-- ============ サイドバー（PC） ============ -->
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="brand__mark">♪</div>
+      <div>
+        <div class="brand__name">AI音楽部 Studio</div>
+        <div class="brand__sub">つくる人のホーム</div>
+      </div>
+    </div>
+
+    <div class="navgroup">
+      <button class="navitem active" data-view="home"><span class="navitem__ico">🏠</span>ホーム</button>
+    </div>
+
+    <div class="navgroup">
+      <div class="navgroup__label">知る</div>
+      <button class="navitem" data-view="news"><span class="navitem__ico">📰</span>AI音楽ニュース<span class="navitem__badge">12</span></button>
+      <button class="navitem" data-view="stub"><span class="navitem__ico">🎯</span>AI音楽部 Picks</button>
+      <button class="navitem" data-view="stub"><span class="navitem__ico">🧰</span>AIツール図鑑</button>
+    </div>
+
+    <div class="navgroup">
+      <div class="navgroup__label">つくる</div>
+      <button class="navitem" data-view="stub"><span class="navitem__ico">🎵</span>曲一覧</button>
+      <button class="navitem" data-view="stub"><span class="navitem__ico">✨</span>プロンプト工房</button>
+      <button class="navitem" data-view="stub"><span class="navitem__ico">🎬</span>ストーリーボード</button>
+      <button class="navitem" data-view="stub"><span class="navitem__ico">🛠</span>制作ツール</button>
+    </div>
+
+    <div class="navgroup">
+      <div class="navgroup__label">マイスタジオ</div>
+      <button class="navitem" data-view="stub"><span class="navitem__ico">🤖</span>AI秘書</button>
+      <button class="navitem" data-view="stub"><span class="navitem__ico">💾</span>データ管理</button>
+      <button class="navitem" data-view="plans"><span class="navitem__ico">💎</span>プラン</button>
+    </div>
+
+    <div class="sidebar__foot">
+      <p style="font-size:10.5px;line-height:1.55;color:hsl(var(--muted-foreground));opacity:.8">
+        制作データは端末内のみに保存されます。
+      </p>
+    </div>
+  </aside>
+
+  <!-- ============ メイン ============ -->
+  <div class="main">
+
+    <div class="topbar">
+      <div class="search">🔍 ニュース・プロンプト・曲を検索</div>
+      <div class="topbar__spacer"></div>
+      <button class="planchip planchip--free" id="planChip" data-view="plans">無料プラン</button>
+      <button class="iconbtn" id="themeBtn">◐</button>
+    </div>
+
+    <div class="devbar">
+      <strong>検証モード</strong>
+      <span>プランを切り替えると画面の出し分けが確認できます</span>
+      <div class="devbar__btns">
+        <button class="devbtn on" data-plan="free">無料</button>
+        <button class="devbtn" data-plan="premium">Premium</button>
+        <button class="devbtn" data-plan="master">Master</button>
+      </div>
+    </div>
+
+    <div class="content">
+
+      <!-- ==================== ホーム ==================== -->
+      <div class="view on" id="view-home">
+
+        <!-- 今日のスタジオ -->
+        <div class="hero">
+          <div class="hero__main">
+            <div class="hero__date">7月31日（金）</div>
+            <div class="hero__hello">おかえりなさい、カラスイさん</div>
+            <h1 class="hero__title" id="heroTitle">「深夜のドライブ」の続きから始めましょう</h1>
+            <p class="hero__desc" id="heroDesc">
+              歌詞は2番のBメロまで。前回は7月29日に作業しています。<br>
+              Sunoプロンプトはまだ未作成です。
+            </p>
+            <div class="hero__actions">
+              <button class="btn btn--primary">制作を再開する</button>
+              <button class="btn btn--ghost">別の曲をつくる</button>
+            </div>
+          </div>
+          <div class="hero__side">
+            <div class="stat">
+              <div class="stat__n">16</div>
+              <div class="stat__l">連続制作日数</div>
+              <div class="stat__sub">自己ベスト更新中</div>
+            </div>
+            <div class="stat">
+              <div class="stat__n">8</div>
+              <div class="stat__l">今月つくった曲</div>
+              <div class="stat__sub">先月比 +3</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="homegrid">
+        <div class="homegrid__main">
+
+        <!-- 今日のニュース -->
+        <div class="section" id="sec-news">
+          <div class="section__head">
+            <h2 class="section__title">今日のAI音楽ニュース</h2>
+            <span class="section__note">3分で読めます</span>
+            <a class="section__more" data-view="news">すべて見る →</a>
+          </div>
+          <div class="news">
+            <div class="newsitem">
+              <div class="newsitem__n">01</div>
+              <div class="newsitem__body">
+                <div class="newsitem__meta"><span class="tag tag--news">海外</span>Billboard<span>・5分前</span></div>
+                <div class="newsitem__title">Suno、ドイツGEMAとの著作権訴訟で敗訴。AI音楽の学習データに初の司法判断</div>
+                <div class="newsitem__orig">原文 Suno Held Liable for Infringing German Song Copyrights…</div>
+              </div>
+            </div>
+            <div class="newsitem">
+              <div class="newsitem__n">02</div>
+              <div class="newsitem__body">
+                <div class="newsitem__meta"><span class="tag tag--jp">日本語</span>ITmedia<span>・3時間前</span></div>
+                <div class="newsitem__title">Google、音楽生成AI「Lyria 3.5」発表。日本語ボーカルで最大3分の楽曲生成に対応</div>
+              </div>
+            </div>
+            <div class="newsitem">
+              <div class="newsitem__n">03</div>
+              <div class="newsitem__body">
+                <div class="newsitem__meta"><span class="tag tag--news">海外</span>Music Business Worldwide<span>・8時間前</span></div>
+                <div class="newsitem__title">IFPI、AI楽曲のチャート集計ルールを世界展開へ</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- AI音楽部 Picks -->
+        <div class="section" id="sec-picks">
+          <div class="section__head">
+            <h2 class="section__title">AI音楽部 Picks</h2>
+            <span class="section__note">今日いちばん大事なニュースを、制作者目線で</span>
+          </div>
+          <div class="pick">
+            <div class="pick__head">
+              <span class="tag tag--pick">今日のPick</span>
+              <span class="muted" style="font-size:11px">Lyria 3.5 発表</span>
+            </div>
+            <div class="pick__body">
+              <div class="pick__title">日本語ボーカルが「使える」水準に来ました。Sunoから乗り換えるべきか？</div>
+
+              <div class="pick__quote" id="pickFree">
+                今回の目玉は3分という尺よりも、日本語の発音処理です。これまで日本語詞は「っ」「ん」の処理が甘く、
+                そこだけ英語詞に逃がす人が多かった。今回それが……
+                <div style="margin-top:9px;font-size:11.5px;color:hsl(var(--muted-foreground))">
+                  ここまでが無料で読める範囲です
+                </div>
+              </div>
+
+              <div class="pick__quote" id="pickPremium" style="display:none">
+                今回の目玉は3分という尺よりも、日本語の発音処理です。これまで日本語詞は「っ」「ん」の処理が甘く、
+                そこだけ英語詞に逃がす人が多かった。今回それがかなり改善されています。<br><br>
+                ただし、いま Suno で作り込んだスタイルプロンプト資産がある人は、まだ乗り換えるべきではないと考えます。
+                理由は3つあります。<br>
+                ① Lyria はプロンプトの効き方が Suno と別系統で、蓄積が引き継げない<br>
+                ② 商用利用条件がまだ整理されていない<br>
+                ③ 出力の当たり外れの幅が Suno より大きく、量産に向かない<br><br>
+                <strong>おすすめは「日本語のサビだけ Lyria で試す」使い分けです。</strong>
+                Premiumのプロンプトライブラリに、その比較用テンプレートを入れてあります。
+              </div>
+
+              <div class="pick__who"><span class="avatar"></span>カラスイ / AI音楽部</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Substack 導線（ニュースを読み終わった位置） -->
+        <div class="section" id="subSection">
+          <div class="sub" style="position:relative">
+            <button class="sub__close" title="閉じる">×</button>
+            <div class="sub__ico">S</div>
+            <div style="min-width:0">
+              <div class="sub__t">今週のAI音楽ニュース、まとめて受け取りませんか？</div>
+              <div class="sub__d">毎週日曜に、その週の重要ニュースとカラスイの見解をメールでお届けします。無料・いつでも解除できます。</div>
+            </div>
+            <button class="btn sub__btn">無料で登録する</button>
+          </div>
+        </div>
+
+        <!-- おすすめプロンプト -->
+        <div class="section" id="sec-prompts">
+          <div class="section__head">
+            <h2 class="section__title">おすすめプロンプト</h2>
+            <span class="section__note" id="promptNote">無料プランは週3つまで</span>
+            <a class="section__more">工房へ →</a>
+          </div>
+          <div class="grid grid--3">
+            <div class="prompt">
+              <div style="font-size:12.5px;font-weight:700">夜の首都高 / Lo-fi</div>
+              <div class="prompt__code">lo-fi hip hop, late night city drive, warm rhodes, vinyl crackle, 78 bpm, japanese female vocal…</div>
+              <div class="prompt__foot"><button class="btn btn--ghost btn--sm">コピー</button><span class="muted" style="font-size:11px">使用 128回</span></div>
+            </div>
+            <div class="prompt">
+              <div style="font-size:12.5px;font-weight:700">夏の終わり / City Pop</div>
+              <div class="prompt__code">city pop, 80s japanese, bright brass stabs, slap bass, chorus-heavy guitar, 108 bpm…</div>
+              <div class="prompt__foot"><button class="btn btn--ghost btn--sm">コピー</button><span class="muted" style="font-size:11px">使用 96回</span></div>
+            </div>
+
+            <!-- Premium枠：ロック表示の見え方 -->
+            <div class="prompt" id="promptLocked">
+              <div style="font-size:12.5px;font-weight:700;display:flex;align-items:center;gap:6px">
+                <span class="tag tag--premium">今週の新作</span>
+              </div>
+              <div class="lock">
+                <div class="lock__blur">
+                  <div class="prompt__code">experimental jpop, glitch percussion, detuned synth pad, whisper vocal layered…</div>
+                </div>
+                <div class="lock__over">
+                  <div class="lock__txt">Premiumのプロンプトライブラリ</div>
+                  <button class="btn btn--premium btn--sm" data-view="plans">Premiumで見る</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="prompt" id="promptUnlocked" style="display:none">
+              <div style="font-size:12.5px;font-weight:700;display:flex;align-items:center;gap:6px">
+                <span class="tag tag--premium">今週の新作</span>
+              </div>
+              <div class="prompt__code">experimental jpop, glitch percussion, detuned synth pad, whisper vocal layered, 92 bpm…</div>
+              <div class="prompt__foot"><button class="btn btn--ghost btn--sm">コピー</button><span class="muted" style="font-size:11px">7/29 追加</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 制作ツール -->
+        <div class="section" id="sec-tools">
+          <div class="section__head">
+            <h2 class="section__title">制作ツール</h2>
+            <a class="section__more">すべて →</a>
+          </div>
+          <div class="grid grid--2">
+            <div class="tool"><div class="tool__ico">✍️</div><div><div class="tool__name">歌詞レビュー</div><div class="tool__desc">字余り・韻・構成をチェック</div></div></div>
+            <div class="tool"><div class="tool__ico">🎬</div><div><div class="tool__name">MVアイデア</div><div class="tool__desc">絵コンテとショットリストを生成</div></div></div>
+            <div class="tool"><div class="tool__ico">🎛</div><div><div class="tool__name">AIプロデューサー</div><div class="tool__desc">曲の方向性を整理して比較</div></div></div>
+            <div class="tool"><div class="tool__ico">📚</div><div><div class="tool__name">プロンプト図鑑</div><div class="tool__desc">使えたプロンプトを貯める</div></div></div>
+          </div>
+        </div>
+
+        </div><!-- /homegrid__main -->
+
+        <!-- ===== 右レール（画面が広いときだけ横に並ぶ） ===== -->
+        <div class="homegrid__rail">
+
+          <!-- 今日試すべきAIツール -->
+          <div class="section" id="sec-today">
+            <div class="section__head">
+              <h2 class="section__title">今日試すべきAIツール</h2>
+            </div>
+            <div class="tool" style="flex-wrap:wrap">
+              <div class="tool__ico">🎚</div>
+              <div style="min-width:0;flex:1">
+                <div class="tool__name">Moises — ステム分離</div>
+                <div class="tool__desc">AI楽曲からボーカルだけ抜いてリミックス素材にできます。無料枠で月5曲。Suno出力の再編集と相性が良いです。</div>
+              </div>
+              <button class="btn btn--ghost btn--sm" style="flex:none;margin-left:auto">開く</button>
+            </div>
+            <p class="muted" style="font-size:11px;margin-top:7px">毎日1つ、実際に使ったものだけ紹介します</p>
+          </div>
+
+          <!-- YouTube -->
+          <div class="section" id="sec-yt">
+            <div class="section__head">
+              <h2 class="section__title">AI音楽部の最新動画</h2>
+              <a class="section__more">チャンネルへ →</a>
+            </div>
+            <div class="grid grid--3">
+              <div class="yt"><div class="yt__thumb">▶</div><div class="yt__b"><div class="yt__t">Lyria 3.5でSunoと同じ曲を作って比べてみた</div><div class="yt__m">2日前・1.2万回視聴</div></div></div>
+              <div class="yt"><div class="yt__thumb">▶</div><div class="yt__b"><div class="yt__t">AI楽曲がチャートから除外される話、整理します</div><div class="yt__m">5日前・8,400回視聴</div></div></div>
+              <div class="yt"><div class="yt__thumb">▶</div><div class="yt__b"><div class="yt__t">歌詞の「っ」問題を解決する3つの書き方</div><div class="yt__m">1週間前・2.1万回視聴</div></div></div>
+            </div>
+          </div>
+
+        </div><!-- /homegrid__rail -->
+        </div><!-- /homegrid -->
+
+      </div>
+
+      <!-- ==================== ニュース ==================== -->
+      <div class="view" id="view-news">
+        <h1 style="font-size:20px;font-weight:780">AI音楽ニュース</h1>
+        <p class="muted" style="font-size:12.5px;margin-top:4px">28の情報源から自動収集・海外記事は日本語に翻訳しています</p>
+        <div class="section">
+          <div class="news">
+            <div class="newsitem"><div class="newsitem__n">01</div><div class="newsitem__body">
+              <div class="newsitem__meta"><span class="tag tag--news">海外</span>Billboard<span>・5分前</span></div>
+              <div class="newsitem__title">Suno、ドイツGEMAとの著作権訴訟で敗訴</div></div></div>
+            <div class="newsitem"><div class="newsitem__n">02</div><div class="newsitem__body">
+              <div class="newsitem__meta"><span class="tag tag--jp">日本語</span>ITmedia<span>・3時間前</span></div>
+              <div class="newsitem__title">Google、音楽生成AI「Lyria 3.5」発表</div></div></div>
+            <div class="newsitem"><div class="newsitem__n">03</div><div class="newsitem__body">
+              <div class="newsitem__meta"><span class="tag tag--news">海外</span>Music Ally<span>・8時間前</span></div>
+              <div class="newsitem__title">IFPI、AI楽曲のチャート集計ルールを世界展開へ</div></div></div>
+          </div>
+
+          <div class="card" style="margin-top:14px" id="analysisCard">
+            <div style="display:flex;align-items:center;gap:8px;margin-bottom:9px">
+              <span class="tag tag--premium">Premium</span>
+              <strong style="font-size:13.5px">ニュース深掘り</strong>
+            </div>
+            <div class="lock" id="analysisLocked">
+              <div class="lock__blur">
+                <p style="font-size:12.5px;line-height:1.8">
+                  GEMA判決が日本のクリエイターに与える影響は3段階で考える必要があります。
+                  第一に学習データの扱い、第二に配信プラットフォームの規約変更、第三に……
+                </p>
+              </div>
+              <div class="lock__over">
+                <div class="lock__txt">重要ニュースを「自分の制作にどう効くか」の視点で解説</div>
+                <button class="btn btn--premium btn--sm" data-view="plans">Premiumで読む</button>
+              </div>
+            </div>
+            <div id="analysisUnlocked" style="display:none">
+              <p style="font-size:12.5px;line-height:1.8">
+                GEMA判決が日本のクリエイターに与える影響は3段階で考える必要があります。
+                第一に学習データの扱い、第二に配信プラットフォームの規約変更、第三に収益分配です。
+                結論から言うと、いま日本で個人が Suno で作った曲を配信することへの直接的な影響はありません。
+                ただし来年以降、配信代行サービス側が「AI生成かどうか」の申告を求めてくる可能性が高いです。
+                いまのうちに、自分の曲がどのツールで作られたかを記録に残しておくことを強くおすすめします。
+                Studio の制作履歴を使えば自動で残ります。
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==================== プラン ==================== -->
+      <div class="view" id="view-plans">
+        <h1 style="font-size:20px;font-weight:780">プラン</h1>
+        <p class="muted" style="font-size:12.5px;margin-top:4px">
+          <strong style="color:hsl(var(--premium))">Premium は制作環境</strong>、<strong style="color:hsl(var(--master))">Master は人が伴走する学習環境</strong>です。
+          機能の多い・少ないではなく、目的が違います。
+        </p>
+
+        <div class="plans">
+          <div class="plan">
+            <span class="plan__kind">ツール</span>
+            <div class="plan__name">無料</div>
+            <div class="plan__purpose">まず触ってみる</div>
+            <div class="plan__price">¥0</div>
+            <div class="plan__for">AI音楽をこれから始める人／情報だけ追いたい人</div>
+            <ul class="plan__list">
+              <li>AI音楽ニュース（全文・日本語訳つき）</li>
+              <li>AI音楽部 Picks（要約）</li>
+              <li>AIツール図鑑</li>
+              <li>制作ツール（歌詞・MV・プロデューサー）</li>
+              <li>曲の管理</li>
+              <li>プロンプト工房（基本セット）</li>
+              <li>データのエクスポート</li>
+            </ul>
+            <button class="btn btn--ghost plan__cta">いま使っているプラン</button>
+          </div>
+
+          <div class="plan plan--premium">
+            <span class="plan__kind">⚡ 制作環境</span>
+            <div class="plan__name" style="display:flex;align-items:center;gap:7px">
+              Studio Premium <span class="tag tag--premium">おすすめ</span>
+            </div>
+            <div class="plan__purpose">制作環境をアップグレードする</div>
+            <div class="plan__price">¥980<span> / 月</span></div>
+            <div class="plan__for">AI音楽制作を日常的に行うクリエイター。<br>ひとりで、速く、たくさん作りたい人</div>
+            <ul class="plan__list">
+              <li><strong>Premium限定ツール</strong></li>
+              <li><strong>プロンプトライブラリ</strong></li>
+              <li><strong>制作テンプレート</strong></li>
+              <li><strong>AI音楽ニュース詳細版</strong>（深掘り解説）</li>
+              <li><strong>AI音楽部 Picks 全文</strong></li>
+              <li>制作履歴</li>
+              <li>お気に入り</li>
+              <li>新機能の先行公開</li>
+            </ul>
+            <div class="plan__inherit" style="background:hsl(var(--premium)/.1);color:hsl(var(--premium))">
+              ⚡ Studioは毎月アップデートされます
+            </div>
+            <button class="btn btn--premium plan__cta">Premiumを始める</button>
+          </div>
+
+          <div class="plan plan--master">
+            <span class="plan__kind">🤝 学習環境（伴走）</span>
+            <div class="plan__name">Studio Master</div>
+            <div class="plan__purpose">本気でAI音楽を学び、成長する</div>
+            <div class="plan__price">¥5,600<span> / 月</span></div>
+            <div class="plan__for">AI音楽を仕事や収益化につなげたい人。<br>見てもらいながら伸ばしたい人</div>
+
+            <div class="plan__seats">
+              <span class="plan__faces"><i></i><i></i><i></i><i></i></span>
+              少人数制 — 添削の質を守るため人数に上限があります
+            </div>
+
+            <div class="plan__inherit">✓ Studio Premium のすべてを含みます</div>
+
+            <div class="plan__divider">ここからは人が関わります</div>
+            <ul class="plan__list plan__list--human">
+              <li><strong>作品添削</strong>（カラスイ本人が聴いて返します）</li>
+              <li><strong>AI音楽・MVレビュー</strong></li>
+              <li><strong>月例勉強会</strong></li>
+              <li><strong>Discordコミュニティ</strong>（少人数）</li>
+              <li>Master限定ライブ</li>
+              <li>優先サポート</li>
+            </ul>
+            <button class="btn plan__cta" style="background:hsl(var(--master));color:#fff">Masterに申し込む</button>
+          </div>
+        </div>
+
+        <div class="flowbox">
+          <strong style="font-size:13.5px">それぞれの役割</strong>
+          <p class="muted" style="font-size:12px;margin-top:6px;line-height:1.85">
+            <strong style="color:hsl(var(--premium))">Premium は「制作環境」</strong>を売ります。
+            毎週コンテンツを配るのではなく、<strong>Studio自体が毎月良くなっていく</strong>ことが価値です
+            （Cursor や Notion と同じ考え方）。ひとりで完結し、人数が何人増えても同じ品質で提供できます。<br>
+            <strong style="color:hsl(var(--master))">Master は「人の伴走」</strong>を売ります。
+            添削・レビュー・勉強会はカラスイさんの時間そのものなので、人数に上限が必要です。<br>
+            この2つは上下関係ではなく<strong>別の目的</strong>です。
+            「Premiumで足りない人がMaster」ではなく、「ひとりで作る人がPremium、見てもらって伸ばす人がMaster」。
+          </p>
+          <div class="flow">
+            <span class="flow__s">YouTube</span><span class="flow__a">→</span>
+            <span class="flow__s">Studio（無料）</span><span class="flow__a">→</span>
+            <span class="flow__s">Substack登録</span><span class="flow__a">→</span>
+            <span class="flow__s">毎日Studio</span><span class="flow__a">→</span>
+            <span class="flow__s" style="border-color:hsl(var(--premium)/.5)">Studio Premium</span><span class="flow__a">→</span>
+            <span class="flow__s" style="border-color:hsl(var(--master)/.5)">Studio Master</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==================== スタブ ==================== -->
+      <div class="view" id="view-stub">
+        <div class="card" style="text-align:center;padding:48px 20px">
+          <div style="font-size:30px">🚧</div>
+          <p style="font-size:14px;font-weight:700;margin-top:10px">この画面は今回の検討対象外です</p>
+          <p class="muted" style="font-size:12.5px;margin-top:5px">
+            今回はトップページ・ニュース・プランの3画面を確認してください。
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ============ モバイル下部タブ ============ -->
+<nav class="tabbar">
+  <button class="tab active" data-view="home"><span class="tab__i">🏠</span>ホーム</button>
+  <button class="tab" data-view="news"><span class="tab__i">📰</span>ニュース</button>
+  <button class="tab" data-view="stub"><span class="tab__i">✨</span>つくる</button>
+  <button class="tab" data-view="stub"><span class="tab__i">📚</span>学ぶ</button>
+  <button class="tab" data-view="plans"><span class="tab__i">💎</span>マイ</button>
+</nav>
+
+<script>
+(function(){
+  var plan = 'free';
+
+  function show(view){
+    document.querySelectorAll('.view').forEach(function(v){
+      v.classList.toggle('on', v.id === 'view-' + view);
+    });
+    document.querySelectorAll('.navitem').forEach(function(n){
+      n.classList.toggle('active', n.dataset.view === view);
+    });
+    document.querySelectorAll('.tab').forEach(function(t){
+      t.classList.toggle('active', t.dataset.view === view);
+    });
+    window.scrollTo({top:0});
+  }
+
+  document.addEventListener('click', function(e){
+    var el = e.target.closest('[data-view]');
+    if(el){ show(el.dataset.view); return; }
+
+    var pb = e.target.closest('[data-plan]');
+    if(pb){ setPlan(pb.dataset.plan); return; }
+
+    if(e.target.closest('.sub__close')){
+      document.getElementById('subSection').style.display = 'none';
+    }
+  });
+
+  function setPlan(p){
+    plan = p;
+    var paid = (p === 'premium' || p === 'master');
+
+    document.querySelectorAll('.devbtn').forEach(function(b){
+      b.classList.toggle('on', b.dataset.plan === p);
+    });
+
+    var chip = document.getElementById('planChip');
+    chip.className = 'planchip planchip--' + p;
+    chip.textContent = p === 'free' ? '無料プラン' : (p === 'premium' ? 'Studio Premium' : 'Studio Master');
+
+    // Picks の全文出し分け
+    document.getElementById('pickFree').style.display = paid ? 'none' : '';
+    document.getElementById('pickPremium').style.display = paid ? '' : 'none';
+
+    // プロンプトのロック
+    document.getElementById('promptLocked').style.display = paid ? 'none' : '';
+    document.getElementById('promptUnlocked').style.display = paid ? '' : 'none';
+    document.getElementById('promptNote').textContent =
+      paid ? 'Premiumライブラリを利用中' : '無料プランは基本セットのみ';
+
+    // ニュース深掘り
+    document.getElementById('analysisLocked').style.display = paid ? 'none' : '';
+    document.getElementById('analysisUnlocked').style.display = paid ? '' : 'none';
+
+    // Substack導線は有料会員には出さない（すでに届いているため）
+    document.getElementById('subSection').style.display = paid ? 'none' : '';
+  }
+
+  document.getElementById('themeBtn').addEventListener('click', function(){
+    document.body.classList.toggle('dark');
+  });
+
+  setPlan('free');
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+# コンテンツ（ニュース）を自動更新するワークフロー。
+# アプリのビルドとは切り離されているので、ここだけが1日4回動く。
+name: コンテンツ自動更新
+
+on:
+  schedule:
+    - cron: '0 21 * * *'   # 日本時間 朝6:00
+    - cron: '0 3 * * *'    # 日本時間 昼12:00
+    - cron: '0 9 * * *'    # 日本時間 夕18:00
+    - cron: '0 13 * * *'   # 日本時間 夜22:00
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-content
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: ニュースを集めて日本語にする
+        run: node scripts/collect-news.mjs
+        env:
+          MYMEMORY_EMAIL: ${{ secrets.MYMEMORY_EMAIL }}
+
+      - name: Substackの記事を取り込む
+        run: node scripts/collect-picks.mjs
+        continue-on-error: true
+
+      - name: 変更があればコミットする
+        run: |
+          if [ -z "$(git status --porcelain public/content)" ]; then
+            echo "新しい記事はありませんでした。"
+            exit 0
+          fi
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/content
+          git commit -m "ニュース自動更新 $(TZ=Asia/Tokyo date '+%Y-%m-%d %H:%M JST')"
+          git push
