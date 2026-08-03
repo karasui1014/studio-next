@@ -56,6 +56,13 @@ export const YOUTUBE_TIERS: {
 /** Master限定のDiscordコミュニティ */
 export const DISCORD_INVITE_URL = 'https://discord.gg/zdGrkph8'
 
+/**
+ * 「YouTubeで加入する」ボタンの遷移先。
+ * 通常のチャンネルページではなく、メンバーシップ加入画面へ直接遷移させる。
+ * URLはここ1箇所だけで管理し、画面側に直接書かない。
+ */
+export const YOUTUBE_JOIN_URL = 'https://www.youtube.com/@AI音楽部-AImusic/join'
+
 /** Premium以上か（Master は Premium をすべて含む） */
 export function isPaid(role: Role): boolean {
   return role === 'premium' || role === 'master'

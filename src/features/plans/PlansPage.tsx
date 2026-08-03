@@ -2,11 +2,10 @@ import { useState } from 'react'
 import { Check, MessageCircle, SquarePlay, Users, Zap } from 'lucide-react'
 
 import {
-  DISCORD_INVITE_URL, STUDIO_PRICE, useRole, useRoleStore, YOUTUBE_TIERS, type Role,
+  DISCORD_INVITE_URL, STUDIO_PRICE, useRole, useRoleStore,
+  YOUTUBE_JOIN_URL, YOUTUBE_TIERS, type Role,
 } from '@/core/entitlement/role'
 import { cn } from '@/core/ui/cn'
-
-const YOUTUBE_CHANNEL_URL = 'https://www.youtube.com/'
 
 interface RoleCard {
   id: Role
@@ -281,7 +280,7 @@ export function PlansPage() {
                 </p>
               ) : tier ? (
                 <a
-                  href={YOUTUBE_CHANNEL_URL}
+                  href={YOUTUBE_JOIN_URL}
                   target="_blank"
                   rel="noopener noreferrer external"
                   referrerPolicy="no-referrer"
