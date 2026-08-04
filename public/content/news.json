@@ -1,14 +1,14 @@
 {
-  "generatedAt": "2026-08-04T05:35:59.544Z",
-  "count": 132,
-  "newCount": 14,
-  "translatedCount": 0,
+  "generatedAt": "2026-08-04T11:13:09.629Z",
+  "count": 136,
+  "newCount": 16,
+  "translatedCount": 2,
   "ranking": [
     "de6b524130cce2ea",
     "80d53b6a9a0c0d30",
     "ae5b6f0111ad6491",
     "1b3216d3b1e52ab6",
-    "99cdc1acf4236841"
+    "017dc455483919cd"
   ],
   "sources": [
     {
@@ -78,10 +78,10 @@
       "id": "cdm",
       "name": "CDM",
       "category": "global",
-      "ok": false,
-      "fetched": 0,
+      "ok": true,
+      "fetched": 10,
       "matched": 0,
-      "error": "HTTP 403"
+      "error": null
     },
     {
       "id": "musictech",
@@ -98,7 +98,7 @@
       "category": "global",
       "ok": true,
       "fetched": 10,
-      "matched": 1,
+      "matched": 2,
       "error": null
     },
     {
@@ -116,7 +116,7 @@
       "category": "global",
       "ok": true,
       "fetched": 40,
-      "matched": 0,
+      "matched": 1,
       "error": null
     },
     {
@@ -292,6 +292,52 @@
   ],
   "items": [
     {
+      "id": "dcc19539c2d1ff08",
+      "title": "Merlin signs Spotify licensing deal for AI-powered ‘fan-made’ covers and remixes",
+      "url": "https://www.musicbusinessworldwide.com/merlin-signs-spotify-licensing-deal-for-ai-powered-fan-made-covers-and-remixes/",
+      "summary": "Spotify has signed a licensing agreement with Merlin, the digital licensing partner for independent labels and distributors, for its upcoming fan-made covers and remixing tool. The tool will let fans create covers and remixes of songs from participating Merlin members’ artists and songwriters. It will launch as a paid add-on for Spotify Premium users, and … Continued",
+      "published": "2026-08-04T10:50:07.000Z",
+      "source": "Music Business Worldwide",
+      "sourceId": "mbw",
+      "via": null,
+      "category": "global",
+      "lang": "en",
+      "coverage": 1,
+      "titleJa": "Merlin、AI搭載の「ファンメイド」カバーとリミックスのSpotifyライセンス契約に署名",
+      "summaryJa": "Spotifyは、独立したラベルとディストリビューターのデジタルライセンスパートナーであるMerlinと、今後のファンメイドのカバーとリミックスツールのライセンス契約を締結しました。このツールを使用すると、ファンは参加しているMerlinメンバーのアーティストやソングライターの曲のカバーやリミックスを作成できます。Spotifyプレミアムユーザー向けの有料アドオンとしてリリースされ、…続きを読む",
+      "score": 23
+    },
+    {
+      "id": "884a36bc38a318ca",
+      "title": "“The artists that are against it, you’ve got to be careful because it’s going to come and swallow you like the boogie monster at night”: Empire Of The Sun’s Luke Steele says “of course” he uses AI",
+      "url": "https://www.musicradar.com/artists/singers-songwriters/the-artists-that-are-against-it-youve-got-to-be-careful-because-its-going-to-come-and-swallow-you-like-the-boogie-monster-at-night-empire-of-the-suns-luke-steele-says-of-course-he-uses-ai",
+      "summary": "Meanwhile, pro-AI Boy George calls Bandcamp a “bunch of c***s” for banning his controversial track",
+      "published": "2026-08-04T10:48:59.000Z",
+      "source": "MusicRadar",
+      "sourceId": "musicradar",
+      "via": null,
+      "category": "global",
+      "lang": "en",
+      "coverage": 1,
+      "titleJa": "「反対するアーティストは、夜になるとブギーモンスターのように飲み込まれるので注意が必要です」： Empire Of The SunのLuke Steeleは「もちろん」彼はAIを使用しています",
+      "summaryJa": "一方、AI寄りのボーイ・ジョージは、彼の物議を醸しているトラックを禁止したことで、バンドキャンプを「クソ野郎の集団」と呼んでいる",
+      "score": 12
+    },
+    {
+      "id": "edd92a89b3db56eb",
+      "title": "AIを取り入れた音楽制作論 「使えるものは使った方がいい」というスタンス",
+      "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5RN1VMUGt2OWdnZVN2WkxkQXVidzVYYkZNeXBxV2ZaYWpWZzE1YW5HdHJNVWNCZU1DWUh6eURoVUNHR0VLTmhwbHl0VDJjN3Z6MWY4bS1DN1U0TjRn0gFiQVVfeXFMTUlYT1NXRkJKV241NEpaZ0JabnVBYzBVczVBLUpsV1htY0V3eDZtbElBV1N4WGJ2N1p6ZEtCVGx3N09QVzN2dDJISnFEdG9CeVdBV044QTBiQ2hsa2xPNFhqMVE?oc=5",
+      "summary": "",
+      "published": "2026-08-04T09:00:55.000Z",
+      "source": "リアルサウンド",
+      "sourceId": "gnews-ja-aimusic",
+      "via": "Googleニュース",
+      "category": "jp",
+      "lang": "ja",
+      "coverage": 1,
+      "score": 15
+    },
+    {
       "id": "1b3216d3b1e52ab6",
       "title": "ことばから音楽を生み出す。日本語特化のAI音楽生成サービス「otojam」ベータ版を公開",
       "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5HVE1aai11bkF1RnprV0tGbFZWaFlTYzZTWmY3VnpxQmNPeGhrQnVqSWN1bEdXRFdtaUdINEpUN0pzM0hnSGo3ZllUbTZDajVESEtiTlNJMl9lbEp1SEpMbTYxWHVtdVVXMXc?oc=5",
@@ -316,8 +362,8 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 1,
-      "score": 26
+      "coverage": 2,
+      "score": 34
     },
     {
       "id": "a16be733e6171f35",
@@ -349,7 +395,7 @@
       "coverage": 1,
       "titleJa": "ドイツの裁判所は、SunoのAIトレーニングが画期的な判決で著作権を侵害していると主張",
       "summaryJa": "「米国を含む国々で権利を行使できるようになったという事実は、深刻な技術変革の時代にクリエイターに希望と自信を与えます」とGEMA監査役会会長のラルフ・ウェイガンド博士は述べています。",
-      "score": 28
+      "score": 23
     },
     {
       "id": "779dadc0308868fb",
@@ -365,7 +411,7 @@
       "coverage": 1,
       "titleJa": "AIと商標によるセレブの声の保護",
       "summaryJa": "以下のMBW op/edは、Fox Rothschildの音楽弁護士Heidy VaqueranoとCynthia Katzからのものです。",
-      "score": 12
+      "score": 7
     },
     {
       "id": "b304412980204111",
@@ -379,7 +425,7 @@
       "category": "jp",
       "lang": "ja",
       "coverage": 1,
-      "score": 15
+      "score": 10
     },
     {
       "id": "eb6e9de0aa795761",
@@ -392,8 +438,8 @@
       "via": null,
       "category": "jp",
       "lang": "ja",
-      "coverage": 2,
-      "score": 23
+      "coverage": 3,
+      "score": 26
     },
     {
       "id": "1b539d47173eb8e1",
@@ -407,7 +453,7 @@
       "category": "jp",
       "lang": "ja",
       "coverage": 1,
-      "score": 24
+      "score": 19
     },
     {
       "id": "23e6b602862453f7",
@@ -429,7 +475,7 @@
       "url": "https://news.google.com/rss/articles/CBMiR0FVX3lxTE1CSHFkQzRCeUQyQy1relFKby1QMU9KTUktOVZ5aHhGTUtXQmJlRDgyNFpRSEV4Mzl3UFZNVU1VM04tZmdNM053?oc=5",
       "summary": "",
       "published": "2026-08-03T04:32:03.000Z",
-      "source": "mediamixi.jp",
+      "source": "MEDIAMIXI",
       "sourceId": "gnews-ja-suno",
       "via": "Googleニュース",
       "category": "jp",
@@ -519,7 +565,7 @@
       "category": "jp",
       "lang": "ja",
       "coverage": 1,
-      "score": 19
+      "score": 15
     },
     {
       "id": "cecad6842f1cb4f0",
@@ -533,7 +579,7 @@
       "category": "jp",
       "lang": "ja",
       "coverage": 1,
-      "score": 26
+      "score": 22
     },
     {
       "id": "c5d144de034b154a",
@@ -708,7 +754,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 8,
+      "coverage": 9,
       "titleJa": "ドイツのGEMAが提起した著作権侵害訴訟でSunoが敗訴",
       "summaryJa": "AI音楽ジェネレーターのSunoは、ドイツの収集協会GEMAが提起した著作権侵害訴訟で敗訴しました。収集協会は、Sunoが権利者へのライセンスまたは支払いなしにAIツールをトレーニングするために、著作権で保護された音楽を使用、保存、複製したと主張しています。ロイター通信は金曜日の朝（ 7月31日）に、ミュンヘン地方裁判所がスノー氏に判決を下したと報じた。",
       "score": 43
@@ -724,7 +770,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 8,
+      "coverage": 9,
       "titleJa": "ドイツの収集協会GEMAがSunoに対する著作権侵害訴訟に勝訴",
       "summaryJa": "GEMAはSunoに対する訴訟に勝利しました。判決は何と言っていましたか、今何が起こっていますか、そしてそれはメジャーレーベルの米国Suno訴訟にとって何を意味しますか？",
       "score": 43
@@ -777,7 +823,7 @@
       "url": "https://news.google.com/rss/articles/CBMiQEFVX3lxTE8zdlhXenVHWVNnUWJVUHZPTmtkUGxyS3Y1YWpkMzZhcktYQUg4RTMtbzZnRksyclBmMWd2MWI1a1Y?oc=5",
       "summary": "",
       "published": "2026-07-31T03:16:00.000Z",
-      "source": "shiritomo",
+      "source": "hashout.jp",
       "sourceId": "gnews-ja-suno",
       "via": "Googleニュース",
       "category": "jp",
@@ -913,7 +959,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 11,
+      "coverage": 12,
       "score": 50
     },
     {
@@ -955,7 +1001,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 22,
+      "coverage": 25,
       "score": 50
     },
     {
@@ -964,12 +1010,12 @@
       "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1OSDNIc1UyWHV5T2JFN252RTctZW5TU0JPcjFkVHlGTXRBbUdQQkpvM0JvWTBzU3Jyc0lLVTIyOTBQZEVYa181aGNKekl6WGpWLVcxWS1YSnR3ZFd5dWNrTDg5MEFzSFZH?oc=5",
       "summary": "",
       "published": "2026-07-30T02:10:00.000Z",
-      "source": "窓の杜",
+      "source": "forest.watch.impress.co.jp",
       "sourceId": "gnews-ja-aimusic",
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 15,
+      "coverage": 17,
       "score": 50
     },
     {
@@ -1007,7 +1053,7 @@
       "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTFBXMlg2VXo0RzBISXdLcU1odEI2Ym9wMGZkZnowYmN5R25RWWw5S3ZZbnZtaThLNmtDMUE2UXV2UWU3TWRsWTZYTGdDTXJTdDVHRmp2SjljU290LVJMT0NvalhNVmh6dTFrT0Nz?oc=5",
       "summary": "",
       "published": "2026-07-29T07:00:00.000Z",
-      "source": "Ledge.ai",
+      "source": "ledge.ai",
       "sourceId": "gnews-ja-suno",
       "via": "Googleニュース",
       "category": "jp",
@@ -1717,7 +1763,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 15,
+      "coverage": 17,
       "score": 30
     },
     {
@@ -1873,7 +1919,7 @@
       "url": "https://news.google.com/rss/articles/CBMihwJBVV95cUxOUTN0VXJUbnlSVzJiNWZHMEF0bFZ4Ni1lSjJsWGpCZVUwUGF6OFRjTl81V1RycEdSMkJvclNrMVhIVkJoak1ZVVl6QjVEYkFmT0RoSHJWSWpJTEY0XzBkbWNyakdiYWc3eVBZVGFxLTM3RFNDYUcwU09pMVJENy1MNFZoTll2dGIwb1BsWDZUR2dsSl9wWEhFcXBiNERRTU9sNW5ubGdDRlBwRTBHNk90R09aU3ZLRUlaaTBkWUlTcWg1R1lMeFpyTTFSdC1rNUEydFRtQzRfMTZsVmZvV0I2MzF3OGhYN2dKN3FhYzJBcGJGWUlrd0VGVTZIZS00ZkVpRnl3Yk1zdw?oc=5",
       "summary": "",
       "published": "2026-07-15T07:00:00.000Z",
-      "source": "smithsonianmag.com",
+      "source": "Smithsonian Magazine",
       "sourceId": "gnews-en-aimusic",
       "via": "Googleニュース",
       "category": "global",
@@ -2070,6 +2116,20 @@
       "coverage": 1,
       "titleJa": "RIAA、GRAMMYS、SAG - AFTRAなどのグループがAI音楽の新しいレーベル作成プログラムを開始",
       "score": 5
+    },
+    {
+      "id": "01fbc83e44b8aadb",
+      "title": "AI作曲の“英語の壁”を壊す。日本語プロンプト辞典が500アーティスト突破",
+      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5NTnBqM2prYUd6WGRNYzc2cEVzbGlVd0d1MWkyYjU4YTdzdUFHa2dqQXhDNkZDMk16U2NKUk5Zc21WOGo2cERtTjVSaFRxRm56OWNGMkNrUWdQZG8wWUdocA?oc=5",
+      "summary": "",
+      "published": "2026-07-09T07:00:00.000Z",
+      "source": "TABI LABO",
+      "sourceId": "gnews-ja-suno",
+      "via": "Googleニュース",
+      "category": "jp",
+      "lang": "ja",
+      "coverage": 1,
+      "score": 7
     },
     {
       "id": "859cb62545f75127",
