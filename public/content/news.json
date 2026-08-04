@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-08-04T15:15:21.169Z",
-  "count": 140,
-  "newCount": 16,
-  "translatedCount": 3,
+  "generatedAt": "2026-08-04T22:07:15.130Z",
+  "count": 144,
+  "newCount": 17,
+  "translatedCount": 4,
   "ranking": [
+    "017dc455483919cd",
     "de6b524130cce2ea",
     "80d53b6a9a0c0d30",
     "ae5b6f0111ad6491",
-    "017dc455483919cd",
     "1b3216d3b1e52ab6"
   ],
   "sources": [
@@ -79,7 +79,7 @@
       "name": "CDM",
       "category": "global",
       "ok": true,
-      "fetched": 10,
+      "fetched": 0,
       "matched": 0,
       "error": null
     },
@@ -98,7 +98,7 @@
       "category": "global",
       "ok": true,
       "fetched": 10,
-      "matched": 2,
+      "matched": 3,
       "error": null
     },
     {
@@ -125,7 +125,7 @@
       "category": "global",
       "ok": true,
       "fetched": 30,
-      "matched": 0,
+      "matched": 1,
       "error": null
     },
     {
@@ -134,7 +134,7 @@
       "category": "global",
       "ok": true,
       "fetched": 10,
-      "matched": 1,
+      "matched": 0,
       "error": null
     },
     {
@@ -143,7 +143,7 @@
       "category": "global",
       "ok": true,
       "fetched": 20,
-      "matched": 0,
+      "matched": 1,
       "error": null
     },
     {
@@ -292,6 +292,70 @@
   ],
   "items": [
     {
+      "id": "71da5f0287a87577",
+      "title": "Spotify says it doesn’t need deals with all the majors to launch its AI covers and remixes tool",
+      "url": "https://www.musicbusinessworldwide.com/spotify-says-it-doesnt-need-deals-with-all-the-major-labels-to-launch-its-ai-covers-and-remixes-tool/",
+      "summary": "Comments landed hours after Spotify announced a licensing agreement with Merlin",
+      "published": "2026-08-04T20:23:49.000Z",
+      "source": "Music Business Worldwide",
+      "sourceId": "mbw",
+      "via": null,
+      "category": "global",
+      "lang": "en",
+      "coverage": 1,
+      "titleJa": "Spotifyは、AIカバーとリミックスツールを立ち上げるためにすべてのメジャーと契約する必要はないと述べている",
+      "summaryJa": "SpotifyがMerlinとのライセンス契約を発表してから数時間後にコメントが届きました",
+      "score": 23
+    },
+    {
+      "id": "4b27f59ae17f1ab9",
+      "title": "The EU AI Act’s rules on AI content labeling and training are now law and enforceable. Here’s what they mean for the music business.",
+      "url": "https://www.musicbusinessworldwide.com/the-eu-ai-acts-rules-on-ai-content-labeling-and-training-are-now-law-heres-what-they-mean-for-the-music-business/",
+      "summary": "The European Union's rules requiring AI-generated content to be labeled took effect on Sunday (August 2).",
+      "published": "2026-08-04T17:14:21.000Z",
+      "source": "Music Business Worldwide",
+      "sourceId": "mbw",
+      "via": null,
+      "category": "global",
+      "lang": "en",
+      "coverage": 1,
+      "titleJa": "AIコンテンツのラベル付けとトレーニングに関するEU AI法の規則は、現在法律で施行されています。音楽ビジネスにとっての意味は次のとおりです。",
+      "summaryJa": "AIが生成したコンテンツにラベルを付けることを義務付ける欧州連合の規則は、日曜日（ 8月2日）に発効しました。",
+      "score": 12
+    },
+    {
+      "id": "098f8487fd3fed6a",
+      "title": "So Is Fenix Flexin’s “Rubberz” AI or What?",
+      "url": "https://pitchfork.com/story/so-is-fenix-flexins-rubberz-ai-or-what/",
+      "summary": "Treblo, the generative tool it was allegedly made on, suggests it might be",
+      "published": "2026-08-04T16:22:18.000Z",
+      "source": "Pitchfork",
+      "sourceId": "pitchfork",
+      "via": null,
+      "category": "global",
+      "lang": "en",
+      "coverage": 1,
+      "titleJa": "Fenix Flexinの「Rubberz」AIか何かですか？",
+      "summaryJa": "それが作られたとされる生成ツールであるTrebloは、",
+      "score": 12
+    },
+    {
+      "id": "038a3ebf48d178f2",
+      "title": "Spotify expands AI remix and covers project with Merlin partnership",
+      "url": "https://techcrunch.com/2026/08/04/spotify-adds-merlin-to-its-ai-music-remix-and-covers-effort/",
+      "summary": "Spotify says Merlin, which represents more than 30,000 independent labels and distributors, has joined Universal Music Group in backing its upcoming AI-powered remix and covers product. The paid tool will let fans create AI-generated covers and remixes of participating artists’ music while ensuring artists opt in, receive credit, and are compensated.",
+      "published": "2026-08-04T15:50:06.000Z",
+      "source": "TechCrunch",
+      "sourceId": "techcrunch",
+      "via": null,
+      "category": "global",
+      "lang": "en",
+      "coverage": 1,
+      "titleJa": "SpotifyがAIリミックスを拡大し、Merlinとのパートナーシップでプロジェクトをカバー",
+      "summaryJa": "Spotifyによると、3万社以上の独立系レーベルとディストリビューターを代表するMerlinは、ユニバーサルミュージックグループに加わり、今後発売されるAI搭載のリミックスとカバー製品を支援しているという。有料ツールを使用すると、ファンは参加アーティストの音楽のAI生成カバーとリミックスを作成しながら、アーティストがオプトインし、クレジットを受け取り、報酬を受け取ることができます。",
+      "score": 12
+    },
+    {
       "id": "a77180f0f2450a2b",
       "title": "Merlin Signs Licensing Agreement With Spotify for AI Remixing Tool",
       "url": "https://www.billboard.com/pro/merlin-spotify-licensing-agreement-ai-remixing/",
@@ -394,8 +458,8 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 3,
-      "score": 42
+      "coverage": 4,
+      "score": 50
     },
     {
       "id": "a16be733e6171f35",
@@ -470,7 +534,7 @@
       "via": null,
       "category": "jp",
       "lang": "ja",
-      "coverage": 4,
+      "coverage": 5,
       "score": 34
     },
     {
@@ -786,7 +850,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 10,
+      "coverage": 11,
       "titleJa": "ドイツのGEMAが提起した著作権侵害訴訟でSunoが敗訴",
       "summaryJa": "AI音楽ジェネレーターのSunoは、ドイツの収集協会GEMAが提起した著作権侵害訴訟で敗訴しました。収集協会は、Sunoが権利者へのライセンスまたは支払いなしにAIツールをトレーニングするために、著作権で保護された音楽を使用、保存、複製したと主張しています。ロイター通信は金曜日の朝（ 7月31日）に、ミュンヘン地方裁判所がスノー氏に判決を下したと報じた。",
       "score": 43
@@ -802,7 +866,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 10,
+      "coverage": 11,
       "titleJa": "ドイツの収集協会GEMAがSunoに対する著作権侵害訴訟に勝訴",
       "summaryJa": "GEMAはSunoに対する訴訟に勝利しました。判決は何と言っていましたか、今何が起こっていますか、そしてそれはメジャーレーベルの米国Suno訴訟にとって何を意味しますか？",
       "score": 43
@@ -991,7 +1055,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 13,
+      "coverage": 14,
       "score": 50
     },
     {
@@ -1033,7 +1097,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 28,
+      "coverage": 31,
       "score": 50
     },
     {
@@ -1047,7 +1111,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 19,
+      "coverage": 21,
       "score": 50
     },
     {
@@ -1238,11 +1302,25 @@
       "score": -6
     },
     {
+      "id": "337b3c9ef7229c67",
+      "title": "iZotope、AIボイス・エンハンス・プラグイン「VEA」の無償配布を開始…… 各種クロスグレード／アップグレードが過去最安値のサマー・セールもスタート",
+      "url": "https://icon.jp/archives/27885",
+      "summary": "iZotopeが、AIボイス・エンハンス・プラグイン「VEA」の無償配布を開始。同時に多くの製品が史上最安値のサマー・セールもスタートしました。 iZotope「VEA」 過日、Boris FX傘下のブランドになることが",
+      "published": "2026-07-24T08:00:00.000Z",
+      "source": "ICON",
+      "sourceId": "icon-jp",
+      "via": null,
+      "category": "jp",
+      "lang": "ja",
+      "coverage": 1,
+      "score": 9
+    },
+    {
       "id": "2df9aab9f289ae5b",
       "title": "An A.I. Music F.A.Q.: Can I Remix Madonna? Is This All Legal?",
       "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBXWS0wdkhDRjFFR0xhMEhVWjRheDBFdF9vUkl3X01ZaXF1eGFuZElqTnlsaUcwRU1xUTdJOFdoZjdEcnAwZHZsUWVkNko1S0czMVZCX0ZZaGxfaVRleXFmRmpKWUN3YUd2SGFNTFVhUkY?oc=5",
       "summary": "",
-      "published": "2026-07-24T09:00:35.000Z",
+      "published": "2026-07-24T07:00:00.000Z",
       "source": "The New York Times",
       "sourceId": "gnews-en-aimusic",
       "via": "Googleニュース",
@@ -1257,7 +1335,7 @@
       "title": "Deezer、1日9万曲のAI生成音楽がアップロード 全体の50%初めて上回る",
       "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE9PdE9OUGJiY2ZFR0sxbWlDWDRCVG56YUtwY2NoTm1rMUVNWlp1RVQ0Z0V3YmloVkdDRGJsVFVvbWp5QmExenJJS0VHdE5XMzQ1R0dTTQ?oc=5",
       "summary": "",
-      "published": "2026-07-24T08:22:54.000Z",
+      "published": "2026-07-24T07:00:00.000Z",
       "source": "音楽業界総合情報サイト",
       "sourceId": "gnews-ja-aimusic",
       "via": "Googleニュース",
@@ -1265,20 +1343,6 @@
       "lang": "ja",
       "coverage": 1,
       "score": -3
-    },
-    {
-      "id": "337b3c9ef7229c67",
-      "title": "iZotope、AIボイス・エンハンス・プラグイン「VEA」の無償配布を開始…… 各種クロスグレード／アップグレードが過去最安値のサマー・セールもスタート",
-      "url": "https://icon.jp/archives/27885",
-      "summary": "iZotopeが、AIボイス・エンハンス・プラグイン「VEA」の無償配布を開始。同時に多くの製品が史上最安値のサマー・セールもスタートしました。 iZotope「VEA」 過日、Boris FX傘下のブランドになることが",
-      "published": "2026-07-24T08:00:00.000Z",
-      "source": "ICON",
-      "sourceId": "icon-jp",
-      "via": null,
-      "category": "jp",
-      "lang": "ja",
-      "coverage": 1,
-      "score": 9
     },
     {
       "id": "b782ea57e3655b7b",
@@ -1320,7 +1384,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 6,
+      "coverage": 7,
       "score": 21
     },
     {
@@ -1819,12 +1883,12 @@
       "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFA5VWJXZHVzQm1wZ1lWXy1HSi1NdkFEeDdXcjVxTFc5VG9scE1pOFFnamFiVjhaamI3RjI0YjVIenhKOTVlWWxPMnNaQndSQkJjWmc?oc=5",
       "summary": "",
       "published": "2026-07-16T07:00:00.000Z",
-      "source": "japan.cnet.com",
+      "source": "CNET Japan",
       "sourceId": "gnews-ja-suno",
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 19,
+      "coverage": 21,
       "score": 30
     },
     {
@@ -1920,7 +1984,7 @@
       "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQaHFhbEhzeHdZLXhDbUlrSHNjb29CTDA4ZEtsMnEzalp5ZHR0WjFPdUlSVDBQSGVnSVhxcXI3bWJZeS15cXBWTU8tWjJYeWNWbGxnQ0l0WVFSd29LOTlhNU91MUZGMVIyd0s3M3RMUFRCa2VQaVduY0dSNG5jZ2llMmRZakpfaVFTbmRWdE9YSG1tR0hGdjdiQQ?oc=5",
       "summary": "",
       "published": "2026-07-15T07:00:00.000Z",
-      "source": "cnet.com",
+      "source": "CNET",
       "sourceId": "gnews-en-aimusic",
       "via": "Googleニュース",
       "category": "global",
