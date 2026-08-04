@@ -1,14 +1,14 @@
 {
-  "generatedAt": "2026-08-04T11:13:09.629Z",
-  "count": 136,
+  "generatedAt": "2026-08-04T15:15:21.169Z",
+  "count": 140,
   "newCount": 16,
-  "translatedCount": 2,
+  "translatedCount": 3,
   "ranking": [
     "de6b524130cce2ea",
     "80d53b6a9a0c0d30",
     "ae5b6f0111ad6491",
-    "1b3216d3b1e52ab6",
-    "017dc455483919cd"
+    "017dc455483919cd",
+    "1b3216d3b1e52ab6"
   ],
   "sources": [
     {
@@ -107,7 +107,7 @@
       "category": "global",
       "ok": true,
       "fetched": 15,
-      "matched": 0,
+      "matched": 1,
       "error": null
     },
     {
@@ -134,7 +134,7 @@
       "category": "global",
       "ok": true,
       "fetched": 10,
-      "matched": 0,
+      "matched": 1,
       "error": null
     },
     {
@@ -292,10 +292,42 @@
   ],
   "items": [
     {
+      "id": "a77180f0f2450a2b",
+      "title": "Merlin Signs Licensing Agreement With Spotify for AI Remixing Tool",
+      "url": "https://www.billboard.com/pro/merlin-spotify-licensing-agreement-ai-remixing/",
+      "summary": "The streaming service announced the release of an AI remixing tool for paid subscribers in May.",
+      "published": "2026-08-04T13:13:52.000Z",
+      "source": "Billboard",
+      "sourceId": "billboard",
+      "via": null,
+      "category": "global",
+      "lang": "en",
+      "coverage": 1,
+      "titleJa": "Merlin、SpotifyとAIリミックスツールのライセンス契約を締結",
+      "summaryJa": "ストリーミングサービスは、5月に有料加入者向けのAIリミックスツールのリリースを発表しました。",
+      "score": 23
+    },
+    {
+      "id": "ea02b55ec1b76b44",
+      "title": "Key EU AI Act rules now being enforced – so how does that affect the music industry?",
+      "url": "https://musically.com/2026/08/04/key-eu-ai-act-rules-now-being-enforced-so-how-does-that-affect-the-music-industry/",
+      "summary": "On Sunday 2 August, the EU Artificial Intelligence Act was beefed-up – with a set of key consumer-facing transparency rules, AI compliance requirements, and regulatory enforcement powers all coming into force. There are a lot of facets to this act, and in terms of it impacting you or your work, it’s most likely that it will affect the tools you are already using – but there are some key ways in w…",
+      "published": "2026-08-04T11:30:00.000Z",
+      "source": "Music Ally",
+      "sourceId": "musically",
+      "via": null,
+      "category": "global",
+      "lang": "en",
+      "coverage": 1,
+      "titleJa": "現在施行されている主要なEU AI法規則は、音楽業界にどのような影響を与えていますか？",
+      "summaryJa": "8月2日日曜日、EU人工知能法が強化され、一連の主要な消費者向け透明性規則、AIコンプライアンス要件、規制執行権限がすべて発効しました。この行為には多くの側面があり、あなたやあなたの仕事に影響を与えるという点では、すでに使用しているツールに影響を与える可能性が最も高いですが、いくつかの重要な方法があります...",
+      "score": 12
+    },
+    {
       "id": "dcc19539c2d1ff08",
       "title": "Merlin signs Spotify licensing deal for AI-powered ‘fan-made’ covers and remixes",
       "url": "https://www.musicbusinessworldwide.com/merlin-signs-spotify-licensing-deal-for-ai-powered-fan-made-covers-and-remixes/",
-      "summary": "Spotify has signed a licensing agreement with Merlin, the digital licensing partner for independent labels and distributors, for its upcoming fan-made covers and remixing tool. The tool will let fans create covers and remixes of songs from participating Merlin members’ artists and songwriters. It will launch as a paid add-on for Spotify Premium users, and … Continued",
+      "summary": "The tool will let fans create covers and remixes of songs from participating Merlin members' artists and songwriters.",
       "published": "2026-08-04T10:50:07.000Z",
       "source": "Music Business Worldwide",
       "sourceId": "mbw",
@@ -305,7 +337,7 @@
       "coverage": 1,
       "titleJa": "Merlin、AI搭載の「ファンメイド」カバーとリミックスのSpotifyライセンス契約に署名",
       "summaryJa": "Spotifyは、独立したラベルとディストリビューターのデジタルライセンスパートナーであるMerlinと、今後のファンメイドのカバーとリミックスツールのライセンス契約を締結しました。このツールを使用すると、ファンは参加しているMerlinメンバーのアーティストやソングライターの曲のカバーやリミックスを作成できます。Spotifyプレミアムユーザー向けの有料アドオンとしてリリースされ、…続きを読む",
-      "score": 23
+      "score": 12
     },
     {
       "id": "884a36bc38a318ca",
@@ -362,8 +394,8 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 2,
-      "score": 34
+      "coverage": 3,
+      "score": 42
     },
     {
       "id": "a16be733e6171f35",
@@ -379,7 +411,7 @@
       "coverage": 1,
       "titleJa": "ボーイ・ジョージ、レーベルマネージャーを解雇AIが生み出した親イスラエルのレゲエ・ソングをめぐる亀裂が報じられた後：「さよならを言うのに本当に傷つかない」",
       "summaryJa": "歌手は、その起源とメッセージで論争を引き起こしたトラック「We Will Dance Again」でダブルダウンしました。",
-      "score": 12
+      "score": 7
     },
     {
       "id": "05074d0266277a3d",
@@ -438,8 +470,8 @@
       "via": null,
       "category": "jp",
       "lang": "ja",
-      "coverage": 3,
-      "score": 26
+      "coverage": 4,
+      "score": 34
     },
     {
       "id": "1b539d47173eb8e1",
@@ -551,7 +583,7 @@
       "category": "jp",
       "lang": "ja",
       "coverage": 1,
-      "score": 19
+      "score": 15
     },
     {
       "id": "3ed7f79eb9ab9442",
@@ -754,7 +786,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 9,
+      "coverage": 10,
       "titleJa": "ドイツのGEMAが提起した著作権侵害訴訟でSunoが敗訴",
       "summaryJa": "AI音楽ジェネレーターのSunoは、ドイツの収集協会GEMAが提起した著作権侵害訴訟で敗訴しました。収集協会は、Sunoが権利者へのライセンスまたは支払いなしにAIツールをトレーニングするために、著作権で保護された音楽を使用、保存、複製したと主張しています。ロイター通信は金曜日の朝（ 7月31日）に、ミュンヘン地方裁判所がスノー氏に判決を下したと報じた。",
       "score": 43
@@ -770,7 +802,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 9,
+      "coverage": 10,
       "titleJa": "ドイツの収集協会GEMAがSunoに対する著作権侵害訴訟に勝訴",
       "summaryJa": "GEMAはSunoに対する訴訟に勝利しました。判決は何と言っていましたか、今何が起こっていますか、そしてそれはメジャーレーベルの米国Suno訴訟にとって何を意味しますか？",
       "score": 43
@@ -823,7 +855,7 @@
       "url": "https://news.google.com/rss/articles/CBMiQEFVX3lxTE8zdlhXenVHWVNnUWJVUHZPTmtkUGxyS3Y1YWpkMzZhcktYQUg4RTMtbzZnRksyclBmMWd2MWI1a1Y?oc=5",
       "summary": "",
       "published": "2026-07-31T03:16:00.000Z",
-      "source": "hashout.jp",
+      "source": "shiritomo",
       "sourceId": "gnews-ja-suno",
       "via": "Googleニュース",
       "category": "jp",
@@ -959,7 +991,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 12,
+      "coverage": 13,
       "score": 50
     },
     {
@@ -1001,7 +1033,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 25,
+      "coverage": 28,
       "score": 50
     },
     {
@@ -1010,13 +1042,28 @@
       "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1OSDNIc1UyWHV5T2JFN252RTctZW5TU0JPcjFkVHlGTXRBbUdQQkpvM0JvWTBzU3Jyc0lLVTIyOTBQZEVYa181aGNKekl6WGpWLVcxWS1YSnR3ZFd5dWNrTDg5MEFzSFZH?oc=5",
       "summary": "",
       "published": "2026-07-30T02:10:00.000Z",
-      "source": "forest.watch.impress.co.jp",
-      "sourceId": "gnews-ja-aimusic",
+      "source": "窓の杜",
+      "sourceId": "gnews-ja-suno",
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 17,
+      "coverage": 19,
       "score": 50
+    },
+    {
+      "id": "7ba20d56343f8196",
+      "title": "Music Companies Demand More Scrutiny of AI-Generated Tracks Before Chart Debuts",
+      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOYy1TTS1uNm1ZOHEybnZETVlUZG9MYi1wTXh1RE53UjlqMjRFRHNkcEY0ZDJLVGxaS3drMWYxU25HbDV0b0pWb0V1OW1oeTVCZGdyeVhob0w4QjAyZXRGd0xYZjBrMy15ajhUYWZoMDNEZlp2cGJGLTdhbUtWQjFJeDkyUUZ5UlJKT3VqM0hIeldDdWxvSU1vbF8wVjdkVFVkNk5MZ0NZZmJOUQ?oc=5",
+      "summary": "",
+      "published": "2026-07-29T21:41:00.000Z",
+      "source": "Variety",
+      "sourceId": "gnews-en-aimusic",
+      "via": "Googleニュース",
+      "category": "global",
+      "lang": "en",
+      "coverage": 1,
+      "titleJa": "音楽会社は、チャートがデビューする前に、AI生成トラックのさらなる精査を要求しています",
+      "score": 3
     },
     {
       "id": "108e7ad9a42a7488",
@@ -1053,7 +1100,7 @@
       "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTFBXMlg2VXo0RzBISXdLcU1odEI2Ym9wMGZkZnowYmN5R25RWWw5S3ZZbnZtaThLNmtDMUE2UXV2UWU3TWRsWTZYTGdDTXJTdDVHRmp2SjljU290LVJMT0NvalhNVmh6dTFrT0Nz?oc=5",
       "summary": "",
       "published": "2026-07-29T07:00:00.000Z",
-      "source": "ledge.ai",
+      "source": "Ledge.ai",
       "sourceId": "gnews-ja-suno",
       "via": "Googleニュース",
       "category": "jp",
@@ -1074,7 +1121,7 @@
       "lang": "en",
       "coverage": 1,
       "titleJa": "米国ミュージシャン組合は、SunoとUdioのAI取引をめぐるUniversalとWarnerに対する修正訴訟を提起",
-      "score": 12
+      "score": 3
     },
     {
       "id": "e50ecb76c0af2ce4",
@@ -1511,7 +1558,7 @@
       "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxONG9yYUE1alF3aF9hMC1KYWppQWtoZ1FUd1FOV0d5c3MzV2dCc1RvWUVDcGUzMWM0WmZSNXVIaE9GYTFTLWtmUi13UjlqdjJ3WlB4anllaU9fcUJ3cENvSnpweUNrWGg4ZE92cG9jQ253SDJqWTBZaUVmSFJkU0JORlhxU2p3LTJlN2pyenRUbHBwWFN1a1d2UTBNTXhhU0haeUZsQ1NmMlc?oc=5",
       "summary": "",
       "published": "2026-07-21T07:00:00.000Z",
-      "source": "techcrunch.com",
+      "source": "TechCrunch",
       "sourceId": "gnews-en-aimusic",
       "via": "Googleニュース",
       "category": "global",
@@ -1563,6 +1610,20 @@
       "lang": "ja",
       "coverage": 1,
       "score": 6
+    },
+    {
+      "id": "7e031d61d507be16",
+      "title": "AIの「ストーリーテリング」問題を克服する、音楽業界からの教訓",
+      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE0tcS1UM2pyZFRZWmpIemZWTkMyYlpJOVZHQnNGcWtKNk5mMG5na0UzU05MYzVYdjBOdXhhSEFxdUlYNG5LZWV3MXJZOHJ6WVFXSmVPT21WNGNCQQ?oc=5",
+      "summary": "",
+      "published": "2026-07-21T07:00:00.000Z",
+      "source": "forbesjapan.com",
+      "sourceId": "gnews-ja-aimusic",
+      "via": "Googleニュース",
+      "category": "jp",
+      "lang": "ja",
+      "coverage": 1,
+      "score": -3
     },
     {
       "id": "7e5b00f54dc60511",
@@ -1758,12 +1819,12 @@
       "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFA5VWJXZHVzQm1wZ1lWXy1HSi1NdkFEeDdXcjVxTFc5VG9scE1pOFFnamFiVjhaamI3RjI0YjVIenhKOTVlWWxPMnNaQndSQkJjWmc?oc=5",
       "summary": "",
       "published": "2026-07-16T07:00:00.000Z",
-      "source": "CNET Japan",
+      "source": "japan.cnet.com",
       "sourceId": "gnews-ja-suno",
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 17,
+      "coverage": 19,
       "score": 30
     },
     {
@@ -1859,7 +1920,7 @@
       "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQaHFhbEhzeHdZLXhDbUlrSHNjb29CTDA4ZEtsMnEzalp5ZHR0WjFPdUlSVDBQSGVnSVhxcXI3bWJZeS15cXBWTU8tWjJYeWNWbGxnQ0l0WVFSd29LOTlhNU91MUZGMVIyd0s3M3RMUFRCa2VQaVduY0dSNG5jZ2llMmRZakpfaVFTbmRWdE9YSG1tR0hGdjdiQQ?oc=5",
       "summary": "",
       "published": "2026-07-15T07:00:00.000Z",
-      "source": "CNET",
+      "source": "cnet.com",
       "sourceId": "gnews-en-aimusic",
       "via": "Googleニュース",
       "category": "global",
@@ -1874,7 +1935,7 @@
       "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQWlNGSkZwTkw2MFBtRkduTkNFZkVCcVhSZ2ZleDN6QmRaenU1cHZCWUZrZmtLM2h5NU1HZW5WVVZ1UGxMckxyQTh2TTJncXhXZnhUd0lVNWh6UVpfYXpuenNKVjhGUGtFMWpMVzdRNHZuVFZLOXV3emU2Q19WbmR6RkVjWW9kV3dTT1ozQU41NXNZZlU0X1dUVU5adDlLd0VJcGRwSkpCZ3pvdw?oc=5",
       "summary": "",
       "published": "2026-07-15T07:00:00.000Z",
-      "source": "techcrunch.com",
+      "source": "TechCrunch",
       "sourceId": "gnews-en-aimusic",
       "via": "Googleニュース",
       "category": "global",
