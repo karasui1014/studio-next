@@ -146,6 +146,7 @@ function toTool(r: Record<string, unknown>) {
     id: str(r.id, 64) || name,
     name,
     emoji: str(r.emoji, 8) || '🛠',
+    logo: safeUrl(r.logo) || undefined,
     description: str(r.description, 400),
     url,
     category: str(r.category, 30),

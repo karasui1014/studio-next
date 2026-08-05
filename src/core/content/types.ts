@@ -96,6 +96,8 @@ export interface ToolPick {
   id: string
   name: string
   emoji: string
+  /** サービスのロゴ画像URL（任意）。読み込めない場合はemojiにフォールバックする */
+  logo?: string
   description: string
   url: string
   /** 図鑑での分類（今日のツールでは空） */

@@ -65,8 +65,16 @@ export function ToolsGuidePage() {
             }
             className="flex items-start gap-3 rounded-xl border border-border bg-card p-4 transition-colors hover:border-primary/40"
           >
-            <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-muted text-xl">
-              {t.emoji}
+            <span className="relative grid h-11 w-11 shrink-0 place-items-center overflow-hidden rounded-xl bg-muted text-xl">
+              <span>{t.emoji}</span>
+              {t.logo && (
+                <img
+                  src={t.logo}
+                  alt=""
+                  className="absolute inset-0 h-full w-full bg-white object-contain p-2"
+                  onError={(e) => e.currentTarget.remove()}
+                />
+              )}
             </span>
             <span className="min-w-0 flex-1">
               <span className="flex items-center gap-1.5">
