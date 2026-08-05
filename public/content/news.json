@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-08-05T11:10:51.811Z",
-  "count": 151,
-  "newCount": 19,
-  "translatedCount": 4,
+  "generatedAt": "2026-08-05T15:07:16.337Z",
+  "count": 154,
+  "newCount": 18,
+  "translatedCount": 3,
   "ranking": [
     "de6b524130cce2ea",
     "80d53b6a9a0c0d30",
@@ -78,10 +78,10 @@
       "id": "cdm",
       "name": "CDM",
       "category": "global",
-      "ok": true,
-      "fetched": 10,
+      "ok": false,
+      "fetched": 0,
       "matched": 0,
-      "error": null
+      "error": "HTTP 403"
     },
     {
       "id": "musictech",
@@ -98,7 +98,7 @@
       "category": "global",
       "ok": true,
       "fetched": 10,
-      "matched": 3,
+      "matched": 2,
       "error": null
     },
     {
@@ -107,7 +107,7 @@
       "category": "global",
       "ok": true,
       "fetched": 15,
-      "matched": 2,
+      "matched": 4,
       "error": null
     },
     {
@@ -143,7 +143,7 @@
       "category": "global",
       "ok": true,
       "fetched": 20,
-      "matched": 1,
+      "matched": 0,
       "error": null
     },
     {
@@ -292,6 +292,54 @@
   ],
   "items": [
     {
+      "id": "812cde44301c1acd",
+      "title": "Is that viral Fenix Flexin song AI-generated after all? (And if so, what does that mean?)",
+      "url": "https://musically.com/2026/08/05/is-that-viral-fenix-flexin-song-ai-generated-after-all-and-if-so-what-does-that-mean/",
+      "summary": "A couple of months ago we reported on the case of Fenix Flexin, an artist who appeared bewildered by how his viral song “Rubberz” was garnering accusations of being AI-generated, partly because its 80s, synthy, Smiths-y sound was so different to his usual rap songs. In the video interview we shared, Flexin and his producer, Purpz on the Beat, weaved around the “is it AI music” question, pointing …",
+      "published": "2026-08-05T12:30:00.000Z",
+      "source": "Music Ally",
+      "sourceId": "musically",
+      "via": null,
+      "category": "global",
+      "lang": "en",
+      "coverage": 1,
+      "titleJa": "結局、あのウイルスのフェニックス・フレキシンの曲はAIが生み出したのか？ （もしそうなら、それはどういう意味ですか？ ）",
+      "summaryJa": "数ヶ月前、私たちはフェニックス・フレキシンのケースについて報告しました。彼のバイラルソング「Rubberz」がAI生成であるという非難を集めていることに困惑しているように見えたアーティストは、80年代のシンセシーであるSmiths - yのサウンドが彼の通常のラップ曲とは非常に異なっていたためです。私たちが共有したビデオインタビューでは、Flexinと彼のプロデューサーであるPurpz on the Beatが「それはAI音楽ですか」という質問をまとめて指摘しています。",
+      "score": 12
+    },
+    {
+      "id": "2dc6bffed76bf8f6",
+      "title": "The Price of Music: streaming fraud – how does it work and who’s doing it?",
+      "url": "https://musically.com/2026/08/05/the-price-of-music-streaming-fraud-how-does-it-work-and-whos-doing-it/",
+      "summary": "This week, the podcast pivots to the popular TRUE CRIME format in order to woo a giant mainstream audience. OK, not quite – but sort-of. Stu and Joe have spoken a lot recently on the show about how AI-generated music accounts for 50% of music uploaded to streaming platforms – and how the reason for it, it seems, is for it to be used for fraud. So in this episode they’re having a good old root aro…",
+      "published": "2026-08-05T12:30:00.000Z",
+      "source": "Music Ally",
+      "sourceId": "musically",
+      "via": null,
+      "category": "global",
+      "lang": "en",
+      "coverage": 1,
+      "titleJa": "音楽の価格：ストリーミング詐欺–それはどのように機能し、誰がそれを行っていますか？",
+      "summaryJa": "今週、ポッドキャストは巨大なメインストリームオーディエンスを惹きつけるために、人気のある真の犯罪フォーマットに回帰します。そうですね、そうではありませんが、まあまあです。Stu氏とJoe氏は最近、この番組で、AI生成音楽がストリーミングプラットフォームにアップロードされた音楽の50 ％を占める理由と、その理由が詐欺に使用されている理由について多くの話をしています。このエピソードでは、彼らは良い古い根っこを持っています...",
+      "score": 12
+    },
+    {
+      "id": "f1632d3c62acb25a",
+      "title": "South Korea’s KOMCA ends ban on AI-assisted songs – false filings now risk royalty holds and contract termination",
+      "url": "https://www.musicbusinessworldwide.com/south-koreas-komca-ends-its-ban-on-ai-assisted-songs-false-filings-now-risk-royalty-holds-and-contract-termination/",
+      "summary": "The amended rules took effect on Monday (August 3), replacing a ban that KOMCA had applied since March 24, 2025.",
+      "published": "2026-08-05T11:36:01.000Z",
+      "source": "Music Business Worldwide",
+      "sourceId": "mbw",
+      "via": null,
+      "category": "global",
+      "lang": "en",
+      "coverage": 1,
+      "titleJa": "韓国のKOMCAは、AI支援曲の禁止を終了します–虚偽の申請は現在、ロイヤリティホールドと契約終了のリスクがあります",
+      "summaryJa": "改正された規則は月曜日（ 8月3日）に発効し、KOMCAが2025年3月24日から適用していた禁止を置き換えました。",
+      "score": 19
+    },
+    {
       "id": "9fb7302f34c5a838",
       "title": "Five things to know about Suno’s data breach – and the hack that exposed how the AI music company trains its models",
       "url": "https://www.musicbusinessworldwide.com/five-things-to-know-about-sunos-data-breach-and-the-hack-that-exposed-how-the-ai-music-company-trains-its-models/",
@@ -345,7 +393,7 @@
       "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQLUd0ekc4MGRYOFVOTmxJdGJ3RS1wVmdVSWRYWjRlTjBOUFJuZGpvWXI5eVNEeVNONjVpbW16QUVaV0RQZXJKSEJnUTg5akE4aWU0VHVaelFHUHVtUVdFTkYxdzBFNlRpMEdXSGI3aWlJRi1WNkRPMlh5NVBKV2VTWlROTWZIWEtTRTRsUmd3?oc=5",
       "summary": "",
       "published": "2026-08-05T05:10:00.000Z",
-      "source": "Yahoo!ニュース",
+      "source": "news.yahoo.co.jp",
       "sourceId": "gnews-ja-suno",
       "via": "Googleニュース",
       "category": "jp",
@@ -359,7 +407,7 @@
       "url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE1xMlB3bUw0RkNST184aF9XdDVONWgwa1VSaUtqSzFEMzFQamRGdWJGMkZJWVo3Y2o5R0g0aF96WFpMUVFUQklLcA?oc=5",
       "summary": "",
       "published": "2026-08-05T04:14:00.000Z",
-      "source": "kai-you.net",
+      "source": "KAI-YOU",
       "sourceId": "gnews-ja-suno",
       "via": "Googleニュース",
       "category": "jp",
@@ -461,7 +509,7 @@
       "coverage": 1,
       "titleJa": "Merlin、SpotifyとAIリミックスツールのライセンス契約を締結",
       "summaryJa": "ストリーミングサービスは、5月に有料加入者向けのAIリミックスツールのリリースを発表しました。",
-      "score": 23
+      "score": 18
     },
     {
       "id": "ea02b55ec1b76b44",
@@ -477,7 +525,7 @@
       "coverage": 1,
       "titleJa": "現在施行されている主要なEU AI法規則は、音楽業界にどのような影響を与えていますか？",
       "summaryJa": "8月2日日曜日、EU人工知能法が強化され、一連の主要な消費者向け透明性規則、AIコンプライアンス要件、規制執行権限がすべて発効しました。この行為には多くの側面があり、あなたやあなたの仕事に影響を与えるという点では、すでに使用しているツールに影響を与える可能性が最も高いですが、いくつかの重要な方法があります...",
-      "score": 12
+      "score": 7
     },
     {
       "id": "dcc19539c2d1ff08",
@@ -550,7 +598,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 6,
+      "coverage": 7,
       "score": 45
     },
     {
@@ -626,7 +674,7 @@
       "via": null,
       "category": "jp",
       "lang": "ja",
-      "coverage": 7,
+      "coverage": 8,
       "score": 34
     },
     {
@@ -635,7 +683,7 @@
       "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTFBBaEtON3hENnJVRUlOM3N2QUFpUjdfeWY0LU9xNUh1dTY2dlVsLXlMaE1nM0hJa1Bwd3djaVFFSlZkXzJFVkZHNTYzb2x1MExLTTBuVk1rdnNaMnNWRm4tZDZ3cw?oc=5",
       "summary": "",
       "published": "2026-08-03T06:04:15.000Z",
-      "source": "ai.watch.impress.co.jp",
+      "source": "株式会社インプレス",
       "sourceId": "gnews-ja-suno",
       "via": "Googleニュース",
       "category": "jp",
@@ -697,7 +745,7 @@
       "category": "jp",
       "lang": "ja",
       "coverage": 1,
-      "score": 10
+      "score": 6
     },
     {
       "id": "84259a964657f132",
@@ -719,7 +767,7 @@
       "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOaUp3MjRhTWRtM19OTmhKLW9oSjU0M1pFdUZreG8wRzIzY1JEUlFFejl3cXVEamJUek9SMV9acUJTb19DVlg2QjlsbXp3eXJ4ajFhZXBTLVVLc1NnTnNSYUJGR1NwbGVoNTluY3BEekNUc1FnVkVJOFM1ZGliZmdkeGg1TXAzYXE4?oc=5",
       "summary": "",
       "published": "2026-08-02T03:16:06.000Z",
-      "source": "Yahoo!ニュース",
+      "source": "news.yahoo.co.jp",
       "sourceId": "gnews-ja-suno",
       "via": "Googleニュース",
       "category": "jp",
@@ -832,7 +880,7 @@
       "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNRXhJWnlhNXFJeUlGSE9BaWxkb29jYlBYVFhCMDM3ZmN6aFdEMFhDN1FjbmxnMGhfZzQ5OXdFZXlQNHpHdDRHbmdxOHVSSEdKMlozbDlMWmZuWlczRE1zTWJzT2FrNDBwajZBTVF2NEx3Y1MyVmYzb0dMdGszUWRYTlhYSUt6OEI5QS1XUXp1VEdUOWpscTBCbWpwMDU0cGloM2RNemo4aEJBbkphSEI2VktwZUZXUkJxWUtXZy0ydGxMcHBONDdV?oc=5",
       "summary": "",
       "published": "2026-07-31T19:52:42.000Z",
-      "source": "reedsmith.com",
+      "source": "Reed Smith LLP",
       "sourceId": "gnews-en-aimusic",
       "via": "Googleニュース",
       "category": "global",
@@ -971,7 +1019,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 13,
+      "coverage": 14,
       "titleJa": "ドイツのGEMAが提起した著作権侵害訴訟でSunoが敗訴",
       "summaryJa": "AI音楽ジェネレーターのSunoは、ドイツの収集協会GEMAが提起した著作権侵害訴訟で敗訴しました。収集協会は、Sunoが権利者へのライセンスまたは支払いなしにAIツールをトレーニングするために、著作権で保護された音楽を使用、保存、複製したと主張しています。ロイター通信は金曜日の朝（ 7月31日）に、ミュンヘン地方裁判所がスノー氏に判決を下したと報じた。",
       "score": 43
@@ -987,7 +1035,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 13,
+      "coverage": 14,
       "titleJa": "ドイツの収集協会GEMAがSunoに対する著作権侵害訴訟に勝訴",
       "summaryJa": "GEMAはSunoに対する訴訟に勝利しました。判決は何と言っていましたか、今何が起こっていますか、そしてそれはメジャーレーベルの米国Suno訴訟にとって何を意味しますか？",
       "score": 43
@@ -1068,7 +1116,7 @@
       "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE5xUDlVejN4RTJaRmxZRVZKYlUwX202NldOR2JpcDVIYml1S3ZHbWI5a2tzNTlSRmZybllqNzdqYkU3TU8ta0g4LXE4WFRqS2hHUEk1OXdjbTBrNEZyZjUzUU5XSdIBaEFVX3lxTE9tdFpwOWowMnhMY3htOWx3QVptUHpub1QtbEFCZHM2OExhRGxtNkYwZTRWS3lteVROdGRqOENVSW1PZFluTm0wRzdaOVRoWjVPeHVmaWhfZkV4WXpmN0hTbHFIbEdMeHdM?oc=5",
       "summary": "",
       "published": "2026-07-30T13:59:12.000Z",
-      "source": "zaikei.co.jp",
+      "source": "財経新聞",
       "sourceId": "gnews-ja-suno",
       "via": "Googleニュース",
       "category": "jp",
@@ -1128,7 +1176,7 @@
       "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOVnY2dXhLUnpIUnRjQ1c0UDJIVENRcmtkaHB0OGRYaUpyX1ZFbzVfZnltUmo4NGR4YXFvaXQzTjk5dkFRQ1A0V3UtTGNMdWpySFlNbVhiZ2s0ek5yVmhkUmt2UDZBSFg4SFdLU3VydG9jaU1reUlyMXlaRnFuQ2dUMHRINlg5ZTgtbll5N0IyYzNfYUtiR19TTE05Y9IBmwFBVV95cUxPUnJMWkxGcHIxT3lrcjdGaDhVWk16dFU2ZGw5ZG9sTnRES0FEakZfaEFab1liV0ZYa1RucDZsckktWUQzNWNsa0VUN05ncDJVQk5hdUttTW9QQ1loNkZsMGNVSXctdHdMWEYwaWN3VTVKMERLMF8zemdkOE9ERmlNcnBQZGlPd0dueFROeE9DTDVtcTVTaVFTZThXVQ?oc=5",
       "summary": "",
       "published": "2026-07-30T08:40:11.000Z",
-      "source": "dw.com",
+      "source": "DW.com",
       "sourceId": "gnews-en-aimusic",
       "via": "Googleニュース",
       "category": "global",
@@ -1176,7 +1224,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 16,
+      "coverage": 18,
       "score": 50
     },
     {
@@ -1218,7 +1266,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 39,
+      "coverage": 43,
       "score": 50
     },
     {
@@ -1227,12 +1275,12 @@
       "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1OSDNIc1UyWHV5T2JFN252RTctZW5TU0JPcjFkVHlGTXRBbUdQQkpvM0JvWTBzU3Jyc0lLVTIyOTBQZEVYa181aGNKekl6WGpWLVcxWS1YSnR3ZFd5dWNrTDg5MEFzSFZH?oc=5",
       "summary": "",
       "published": "2026-07-30T02:10:00.000Z",
-      "source": "窓の杜",
+      "source": "forest.watch.impress.co.jp",
       "sourceId": "gnews-ja-suno",
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 25,
+      "coverage": 27,
       "score": 50
     },
     {
@@ -1277,7 +1325,7 @@
       "category": "jp",
       "lang": "ja",
       "coverage": 1,
-      "score": 6
+      "score": -3
     },
     {
       "id": "2c3f6c394e93e2de",
@@ -1428,7 +1476,7 @@
       "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBXWS0wdkhDRjFFR0xhMEhVWjRheDBFdF9vUkl3X01ZaXF1eGFuZElqTnlsaUcwRU1xUTdJOFdoZjdEcnAwZHZsUWVkNko1S0czMVZCX0ZZaGxfaVRleXFmRmpKWUN3YUd2SGFNTFVhUkY?oc=5",
       "summary": "",
       "published": "2026-07-24T07:00:00.000Z",
-      "source": "The New York Times",
+      "source": "nytimes.com",
       "sourceId": "gnews-en-aimusic",
       "via": "Googleニュース",
       "category": "global",
@@ -1491,7 +1539,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 9,
+      "coverage": 10,
       "score": 21
     },
     {
@@ -1919,7 +1967,7 @@
       "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5xUVN4U1JIWDNyUGpmZnNCaW9OWFZRcGp4Y25GcFRrRWdESjdMWXlJSHB3cEVhaXB2U1VlaFFpdlloWks0ZUJzMk55U1lSUjM0OFhVNDU2d1dpY1Jha3U2VWdZSWVXWTllZnhsMUJ6RmhqazRCWXFibzJGR1l0S2s?oc=5",
       "summary": "",
       "published": "2026-07-17T07:00:00.000Z",
-      "source": "Yahoo!ニュース",
+      "source": "news.yahoo.co.jp",
       "sourceId": "gnews-ja-aimusic",
       "via": "Googleニュース",
       "category": "jp",
@@ -1933,7 +1981,7 @@
       "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOM3hMVGdJb21rRWdSdVVmbDdvWm0tdGxFbFlyQ0ZsaTQtaUlMUGxyR0tCUGV1RFRkZW42enlQSzNvRHl1Q3dZVWhJeHFJdXlZTEtNczFmWEpncDEzV1BvV05sYUdFQUJVdWk4NFRqVWlsZXdrdl9BSDVBbWVsbmNUUg?oc=5",
       "summary": "",
       "published": "2026-07-17T07:00:00.000Z",
-      "source": "Futurism",
+      "source": "futurism.com",
       "sourceId": "gnews-en-aimusic",
       "via": "Googleニュース",
       "category": "global",
@@ -1990,12 +2038,12 @@
       "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFA5VWJXZHVzQm1wZ1lWXy1HSi1NdkFEeDdXcjVxTFc5VG9scE1pOFFnamFiVjhaamI3RjI0YjVIenhKOTVlWWxPMnNaQndSQkJjWmc?oc=5",
       "summary": "",
       "published": "2026-07-16T07:00:00.000Z",
-      "source": "CNET Japan",
+      "source": "japan.cnet.com",
       "sourceId": "gnews-ja-suno",
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 25,
+      "coverage": 27,
       "score": 30
     },
     {
@@ -2005,7 +2053,7 @@
       "summary": "",
       "published": "2026-07-16T07:00:00.000Z",
       "source": "BigGo ファイナンス",
-      "sourceId": "gnews-ja-suno",
+      "sourceId": "gnews-ja-aimusic",
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
@@ -2076,7 +2124,7 @@
       "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE1tVUhKdW83XzhkVkVtUjJodnVPWDNkN19nUGRWWFllU2tRenNZb3h5blBCeHFHOVpFMnhQS0I0YjdtRTVRWTUySldzWGhUQ1Y1ZWVnOWU3dW5hckpJRU9JODVCbHNhTnk0UDNQazQyRmF4SFIxLUlhVGR4UQ?oc=5",
       "summary": "",
       "published": "2026-07-15T07:00:00.000Z",
-      "source": "Pitchfork",
+      "source": "pitchfork.com",
       "sourceId": "gnews-en-aimusic",
       "via": "Googleニュース",
       "category": "global",
@@ -2311,7 +2359,7 @@
       "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE5kX3FLdWJEYnFtN3c3WGlQVEd4MEhxMjdDaExQM2F2QURDeEU1NkVLbWstUjd1aDlyd0FjdGZCUHNOSEI4cnp0SEY3RkF0aWZOTXQzdTFOYi1PVEFXcTA2N3NfMWlKNXRKdnQzWmtTVnE?oc=5",
       "summary": "",
       "published": "2026-07-10T07:00:00.000Z",
-      "source": "aismiley.co.jp",
+      "source": "AIsmiley",
       "sourceId": "gnews-ja-suno",
       "via": "Googleニュース",
       "category": "jp",
