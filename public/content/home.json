@@ -120,14 +120,10 @@
       "description": "いちばん使われている音楽生成AI。無料枠は1日10曲。日本語詞も通ります。" },
     { "id": "udio", "name": "Udio", "emoji": "🎶", "category": "楽曲生成", "url": "https://www.udio.com/",
       "description": "Sunoと双璧。音の質感が細かく、洋楽系の再現に強い印象です。" },
-    { "id": "moises", "name": "Moises", "emoji": "🎚", "category": "編集・分離", "url": "https://moises.ai/",
-      "description": "ボーカルと伴奏を分離できます。無料枠で月5曲。AI楽曲の再編集と相性が良いです。" },
     { "id": "elevenlabs", "name": "ElevenLabs", "emoji": "🗣", "category": "音声", "url": "https://elevenlabs.io/",
       "description": "音声合成。ナレーションやセリフ入りの構成で使えます。" },
     { "id": "capcut", "name": "CapCut", "emoji": "🎬", "category": "映像・画像", "url": "https://www.capcut.com/",
       "description": "無料の動画編集。Shorts向けの縦型編集がしやすいです。" },
-    { "id": "opusclip", "name": "Opus Clip", "emoji": "✂️", "category": "動画編集", "url": "https://www.opus.pro/",
-      "description": "長尺動画からバズりそうな部分をAIが自動でショート切り出し。無料は月60分まで・書き出しに透かしが入ります。" },
     { "id": "runway", "name": "Runway", "emoji": "🌀", "category": "動画生成", "url": "https://runwayml.com/",
       "description": "映像生成AIの最先端（Gen-4.5）。MVの一部だけAI映像で作りたいときに。無料は125クレジットのみで、本格利用は有料です。" },
     { "id": "domoai", "name": "DomoAI", "emoji": "🎨", "category": "動画生成", "url": "https://www.domoai.app/home?via=b576a3",
@@ -139,7 +135,11 @@
     { "id": "kling", "name": "Kling AI", "emoji": "🎞", "category": "動画生成", "url": "https://kling.ai/",
       "description": "4K・60fps対応の最新映像生成AI（Kling 3.0）。最大15秒、複数ショットのつなぎもできます。" },
     { "id": "hailuo", "name": "Hailuo (MiniMax)", "emoji": "🐚", "category": "動画生成", "url": "https://hailuoai.video/",
-      "description": "セリフやBGMを同時生成できる映像生成AI（MiniMax H3）。音込みのショットが一発で作れます。" }
+      "description": "セリフやBGMを同時生成できる映像生成AI（MiniMax H3）。音込みのショットが一発で作れます。" },
+    { "id": "chatgpt", "name": "ChatGPT", "emoji": "💬", "category": "文章・相談", "url": "https://chatgpt.com/",
+      "description": "文章生成AIの代表格。歌詞のアイデア出しや構成の壁打ちに使えます。無料版でも十分実用的です。" },
+    { "id": "claude", "name": "Claude", "emoji": "✨", "category": "文章・相談", "url": "https://claude.ai/",
+      "description": "文章・コード生成に強いAI。長文の読み込みや複雑な相談ごとに向いています。無料枠あり。" }
   ],
 
   "_youtube_note": "チャンネルの新着動画。将来は YouTube の RSS から自動取得する予定。いまは手で書きます。",
