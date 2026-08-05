@@ -1,14 +1,14 @@
 {
-  "generatedAt": "2026-08-04T22:07:15.130Z",
-  "count": 144,
-  "newCount": 17,
-  "translatedCount": 4,
+  "generatedAt": "2026-08-05T05:34:36.106Z",
+  "count": 146,
+  "newCount": 16,
+  "translatedCount": 1,
   "ranking": [
-    "017dc455483919cd",
     "de6b524130cce2ea",
     "80d53b6a9a0c0d30",
+    "017dc455483919cd",
     "ae5b6f0111ad6491",
-    "1b3216d3b1e52ab6"
+    "eb6e9de0aa795761"
   ],
   "sources": [
     {
@@ -79,7 +79,7 @@
       "name": "CDM",
       "category": "global",
       "ok": true,
-      "fetched": 0,
+      "fetched": 10,
       "matched": 0,
       "error": null
     },
@@ -125,7 +125,7 @@
       "category": "global",
       "ok": true,
       "fetched": 30,
-      "matched": 1,
+      "matched": 2,
       "error": null
     },
     {
@@ -292,6 +292,36 @@
   ],
   "items": [
     {
+      "id": "47f5306cd2b52b99",
+      "title": "AI音楽生成サービス「Suno」に著作権侵害の判決 ドイツの権利管理団体が提訴",
+      "url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE1xMlB3bUw0RkNST184aF9XdDVONWgwa1VSaUtqSzFEMzFQamRGdWJGMkZJWVo3Y2o5R0g0aF96WFpMUVFUQklLcA?oc=5",
+      "summary": "",
+      "published": "2026-08-05T04:14:00.000Z",
+      "source": "kai-you.net",
+      "sourceId": "gnews-ja-suno",
+      "via": "Googleニュース",
+      "category": "jp",
+      "lang": "ja",
+      "coverage": 1,
+      "score": 31
+    },
+    {
+      "id": "20f0dcc050273d25",
+      "title": "Kanye West’s Vultures II and Bully Used AI, New Lawsuit Alleges",
+      "url": "https://pitchfork.com/story/kanye-wests-vultures-ii-and-bully-used-ai-new-lawsuit-alleges/",
+      "summary": "An anonymous producer is seeking compensation for what he claims was unpaid and uncredited work on both albums",
+      "published": "2026-08-04T22:12:04.000Z",
+      "source": "Pitchfork",
+      "sourceId": "pitchfork",
+      "via": null,
+      "category": "global",
+      "lang": "en",
+      "coverage": 1,
+      "titleJa": "カニエ・ウェストのハゲタカIIといじめっ子が使用したAI、新しい訴訟の申し立て",
+      "summaryJa": "匿名のプロデューサーが、両方のアルバムの未払いとクレジットされていない作品について補償を求めています",
+      "score": 12
+    },
+    {
       "id": "71da5f0287a87577",
       "title": "Spotify says it doesn’t need deals with all the majors to launch its AI covers and remixes tool",
       "url": "https://www.musicbusinessworldwide.com/spotify-says-it-doesnt-need-deals-with-all-the-major-labels-to-launch-its-ai-covers-and-remixes-tool/",
@@ -445,7 +475,7 @@
       "category": "jp",
       "lang": "ja",
       "coverage": 1,
-      "score": 36
+      "score": 31
     },
     {
       "id": "017dc455483919cd",
@@ -458,8 +488,8 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 4,
-      "score": 50
+      "coverage": 5,
+      "score": 45
     },
     {
       "id": "a16be733e6171f35",
@@ -534,7 +564,7 @@
       "via": null,
       "category": "jp",
       "lang": "ja",
-      "coverage": 5,
+      "coverage": 6,
       "score": 34
     },
     {
@@ -633,7 +663,7 @@
       "category": "jp",
       "lang": "ja",
       "coverage": 1,
-      "score": 26
+      "score": 22
     },
     {
       "id": "cabd05054b10046e",
@@ -697,7 +727,7 @@
       "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNdnlJaktEajlhRW40U0JTWlNJLUViNG5mS3lUOG9SYU5JbTRUX0M5Tm40MnRiTjdUR09XMGJLYi1KMmIyVy13Y3M0dmJ4bmFYLXpFTzgzalhUYXBiV0hsSUIzLTY1OWYtLW9PQnNUMzItaUhzRXh2WG50X054ZzVNS3UxWHdFZlpkZklSd2xBaw?oc=5",
       "summary": "",
       "published": "2026-08-01T00:31:43.000Z",
-      "source": "Vietnam.vn",
+      "source": "vietnam.vn",
       "sourceId": "gnews-ja-suno",
       "via": "Googleニュース",
       "category": "jp",
@@ -850,7 +880,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 11,
+      "coverage": 12,
       "titleJa": "ドイツのGEMAが提起した著作権侵害訴訟でSunoが敗訴",
       "summaryJa": "AI音楽ジェネレーターのSunoは、ドイツの収集協会GEMAが提起した著作権侵害訴訟で敗訴しました。収集協会は、Sunoが権利者へのライセンスまたは支払いなしにAIツールをトレーニングするために、著作権で保護された音楽を使用、保存、複製したと主張しています。ロイター通信は金曜日の朝（ 7月31日）に、ミュンヘン地方裁判所がスノー氏に判決を下したと報じた。",
       "score": 43
@@ -866,7 +896,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 11,
+      "coverage": 12,
       "titleJa": "ドイツの収集協会GEMAがSunoに対する著作権侵害訴訟に勝訴",
       "summaryJa": "GEMAはSunoに対する訴訟に勝利しました。判決は何と言っていましたか、今何が起こっていますか、そしてそれはメジャーレーベルの米国Suno訴訟にとって何を意味しますか？",
       "score": 43
@@ -1007,7 +1037,7 @@
       "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOVnY2dXhLUnpIUnRjQ1c0UDJIVENRcmtkaHB0OGRYaUpyX1ZFbzVfZnltUmo4NGR4YXFvaXQzTjk5dkFRQ1A0V3UtTGNMdWpySFlNbVhiZ2s0ek5yVmhkUmt2UDZBSFg4SFdLU3VydG9jaU1reUlyMXlaRnFuQ2dUMHRINlg5ZTgtbll5N0IyYzNfYUtiR19TTE05Y9IBmwFBVV95cUxPUnJMWkxGcHIxT3lrcjdGaDhVWk16dFU2ZGw5ZG9sTnRES0FEakZfaEFab1liV0ZYa1RucDZsckktWUQzNWNsa0VUN05ncDJVQk5hdUttTW9QQ1loNkZsMGNVSXctdHdMWEYwaWN3VTVKMERLMF8zemdkOE9ERmlNcnBQZGlPd0dueFROeE9DTDVtcTVTaVFTZThXVQ?oc=5",
       "summary": "",
       "published": "2026-07-30T08:40:11.000Z",
-      "source": "dw.com",
+      "source": "DW",
       "sourceId": "gnews-en-aimusic",
       "via": "Googleニュース",
       "category": "global",
@@ -1055,7 +1085,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 14,
+      "coverage": 15,
       "score": 50
     },
     {
@@ -1064,7 +1094,7 @@
       "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE5HdzllYmxZY0JHdXRrV0VMSUx1S1FqM2hENUlldzJEc20tb0dvYkY1T21MeElTYnE2RkloVFhvdnpxVXNBNF91NEU1ZTJDSHM2LUhNVldBd2NYWjR6U3lXZTVGVHI4TzMwNkJUVGxqNDJCSW8?oc=5",
       "summary": "",
       "published": "2026-07-30T03:16:00.000Z",
-      "source": "GIGAZINE",
+      "source": "gigazine.net",
       "sourceId": "gnews-ja-suno",
       "via": "Googleニュース",
       "category": "jp",
@@ -1097,7 +1127,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 31,
+      "coverage": 35,
       "score": 50
     },
     {
@@ -1111,7 +1141,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 21,
+      "coverage": 23,
       "score": 50
     },
     {
@@ -1193,7 +1223,7 @@
       "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPMzdtRS1VeTJoa1hadXRDNU8yNFV6ZklvaGthaHNteXhwa2FCWmo4NlRZcEUyck5uTy1XYXRiOGhJSXFxMVlkUW1ndkxLNW5yTklHWkhSVHh0S0MzRGkxcjNPcHVSUlZtaEZZaE1mbGhjZUZwYVI0NWZYTDhHX3FMU2dxejBCMkc1VUtvWlFDU28zRkZORGxNQQ?oc=5",
       "summary": "",
       "published": "2026-07-27T16:15:43.000Z",
-      "source": "Vietnam.vn",
+      "source": "vietnam.vn",
       "sourceId": "gnews-ja-suno",
       "via": "Googleニュース",
       "category": "jp",
@@ -1384,7 +1414,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 7,
+      "coverage": 8,
       "score": 21
     },
     {
@@ -1506,7 +1536,7 @@
       "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOOTRpVmNmdEY2SUJOSzBqa2stVzdIQXhLSGhLWkUyRnRkcEQ2M2hfaWRyOWhJMGFuR29ZN1F2ZnFyZ0xtRWhteWw4bXM3M1dQRXdpSzdBZHVGTW92MkdOMTN5TFpyXy1VMzVGMjA3cDIzY2VxWmFBUVpQeFpqbkUyMXZpN2EwRVhWVTNhNkk5b05qc04taFdodNIBngFBVV95cUxOaUFWYko2bFpJWmVaVTlOTlBUaGR0blRIaV9RUHZpSE8taENwUF9jYmloQWlNbWdVMmhoZHpnWHJ0Q1JXeVhYSl9GT2Z4LVZLWk9GaHpsWG9ZbHAwNHV1eGl3SXY2dnFoQklGaTFmcE5VdExvUktVcVJlNnhJYTR2Z2tyWVQ5bnR1eGI1eV9GaTc3SG5OTnVhZTdVRGp5dw?oc=5",
       "summary": "",
       "published": "2026-07-22T07:00:00.000Z",
-      "source": "SecurityWeek",
+      "source": "securityweek.com",
       "sourceId": "gnews-en-aimusic",
       "via": "Googleニュース",
       "category": "global",
@@ -1681,7 +1711,7 @@
       "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE0tcS1UM2pyZFRZWmpIemZWTkMyYlpJOVZHQnNGcWtKNk5mMG5na0UzU05MYzVYdjBOdXhhSEFxdUlYNG5LZWV3MXJZOHJ6WVFXSmVPT21WNGNCQQ?oc=5",
       "summary": "",
       "published": "2026-07-21T07:00:00.000Z",
-      "source": "forbesjapan.com",
+      "source": "Forbes JAPAN",
       "sourceId": "gnews-ja-aimusic",
       "via": "Googleニュース",
       "category": "jp",
@@ -1798,7 +1828,7 @@
       "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTFBJYWJGYUh1cE9SRWxMYzZuaW8wWXNfdmRQaTNjcmNiVHNDOXotX3lBZ2pWaVdLTTNpMXpteEc4MTdHc2c0cVUtLWRrcXk2MlR6Zk1IdHdZRHU0dzl4LTlBeG5HMTl4TFMwUGhuMGNnVHlzSjA5Q1pqTA?oc=5",
       "summary": "",
       "published": "2026-07-17T07:00:00.000Z",
-      "source": "GIGAZINE",
+      "source": "gigazine.net",
       "sourceId": "gnews-ja-suno",
       "via": "Googleニュース",
       "category": "jp",
@@ -1888,7 +1918,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 21,
+      "coverage": 23,
       "score": 30
     },
     {
