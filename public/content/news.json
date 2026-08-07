@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-08-07T01:00:31.611Z",
-  "count": 183,
-  "newCount": 24,
-  "translatedCount": 4,
+  "generatedAt": "2026-08-07T04:45:08.445Z",
+  "count": 185,
+  "newCount": 20,
+  "translatedCount": 0,
   "ranking": [
     "47f5306cd2b52b99",
     "017dc455483919cd",
-    "0c35288564563881",
-    "8f6598e41d3c1b93",
+    "5369ae21efbd9459",
+    "7ac2f81f50d54867",
     "9944c7bbf915df1f"
   ],
   "sources": [
@@ -89,7 +89,7 @@
       "category": "global",
       "ok": true,
       "fetched": 10,
-      "matched": 2,
+      "matched": 1,
       "error": null
     },
     {
@@ -292,8 +292,36 @@
   ],
   "items": [
     {
+      "id": "bd9ffb15b6db063a",
+      "title": "音楽生成AI「ACE-Step 1.5」の活用法を解説する実践ガイドブック インプレス NextPublishingより発行",
+      "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTFBIQXA0TzN1UXVyb1loMjNuZ0d0ckxPdlNwd2RKb1J6S1pfaXNFWDhPTTdfQ3g4MnBpei1ESnJXV1JneVUyMFFwbjduM3VIVjQ0S1JKTlpSVm9RTll1QzJiMjMzNA?oc=5",
+      "summary": "",
+      "published": "2026-08-07T04:33:52.000Z",
+      "source": "株式会社インプレス",
+      "sourceId": "gnews-ja-suno",
+      "via": "Googleニュース",
+      "category": "jp",
+      "lang": "ja",
+      "coverage": 1,
+      "score": 29
+    },
+    {
       "id": "f234733b5c4c1bd1",
       "title": "型Suno、AI楽曲に電子透かし導入へ｜大量配信を制限する新ダウンロード方針も",
+      "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTFBZZVlLb1drUndPWk1DcnQxRHh4UU1hYlZ3THpHZTBhR3JxLThlX0VxTDIwdGhaYmRIUlJuYU00VzNNZS1qQlVzVkRFT0ZGN0wzLVow?oc=5",
+      "summary": "",
+      "published": "2026-08-06T22:30:44.000Z",
+      "source": "innovaTopia",
+      "sourceId": "gnews-ja-suno",
+      "via": "Googleニュース",
+      "category": "jp",
+      "lang": "ja",
+      "coverage": 1,
+      "score": 31
+    },
+    {
+      "id": "d39089d1959fe7a4",
+      "title": "Suno、AI楽曲に電子透かし導入へ｜大量配信を制限する新ダウンロード方針も",
       "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTFBZZVlLb1drUndPWk1DcnQxRHh4UU1hYlZ3THpHZTBhR3JxLThlX0VxTDIwdGhaYmRIUlJuYU00VzNNZS1qQlVzVkRFT0ZGN0wzLVow?oc=5",
       "summary": "",
       "published": "2026-08-06T22:30:44.000Z",
@@ -316,10 +344,10 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 2,
+      "coverage": 3,
       "titleJa": "Sunoは、AI生成音楽の透かしで合法的になりたいと考えています",
       "summaryJa": "Sunoは、「大規模な悪用」を防ぐために透かしとダウンロード制限を計画しています。",
-      "score": 29
+      "score": 37
     },
     {
       "id": "6825ff7f4f6c30f8",
@@ -412,10 +440,10 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 2,
+      "coverage": 3,
       "titleJa": "法的な争いの中で、Sunoは曲に透かしを入れ始めると言います",
       "summaryJa": "Sunoの透かし機能は、同社がいくつかの面で法的闘争を戦っているときに登場します。",
-      "score": 29
+      "score": 37
     },
     {
       "id": "7ac2f81f50d54867",
@@ -428,10 +456,10 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 2,
+      "coverage": 3,
       "titleJa": "Sunoはビニール市場に進出し、ユーザーがAIの曲を12インチのレコードにプレスできるようにする予定",
       "summaryJa": "同社は、プラットフォーム上で作られた曲を物理的なレコードに変換するサービスであるSuno Vinylのウェイティングリストを開設しました",
-      "score": 29
+      "score": 37
     },
     {
       "id": "e2e812c33ea5806c",
@@ -573,7 +601,7 @@
       "category": "jp",
       "lang": "ja",
       "coverage": 1,
-      "score": 24
+      "score": 19
     },
     {
       "id": "4c61aad479f42ac9",
@@ -1024,7 +1052,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 12,
+      "coverage": 13,
       "score": 41
     },
     {
@@ -1100,7 +1128,7 @@
       "via": null,
       "category": "jp",
       "lang": "ja",
-      "coverage": 13,
+      "coverage": 14,
       "score": 30
     },
     {
@@ -1411,7 +1439,7 @@
       "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQbmFORUk2Tkt3UjM5MC1lQzNkSXVSVXRvelExTDhBNnc5RlhUVzItTDRiMkNONTgtd0JIdTE5dDNBVzhvWlFQRm8xVXJEc2ROOHY2RHBmeUhlblVnMnc2NFYtU0FieU9TMGpEZ3JHT1FTeGQ1WXFzYWxYdHlXaElKLXZhcEh6VUQ4YktNeDVuQzNPWENVb28yeWhpMU5xRE1WWEU1ZDBqZ0VNblpfNktTZ3hzQjZSb28?oc=5",
       "summary": "",
       "published": "2026-07-31T12:05:00.000Z",
-      "source": "musicweek.com",
+      "source": "MusicWeek.com",
       "sourceId": "gnews-en-aimusic",
       "via": "Googleニュース",
       "category": "global",
@@ -1419,6 +1447,21 @@
       "coverage": 1,
       "titleJa": "GEMA、AI音楽会社Sunoによる著作権侵害に関する裁判所判決を勝ち取る",
       "score": 19
+    },
+    {
+      "id": "7fb66258008a296d",
+      "title": "German court rules that AI music firm violated copyrights",
+      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOVnY2dXhLUnpIUnRjQ1c0UDJIVENRcmtkaHB0OGRYaUpyX1ZFbzVfZnltUmo4NGR4YXFvaXQzTjk5dkFRQ1A0V3UtTGNMdWpySFlNbVhiZ2s0ek5yVmhkUmt2UDZBSFg4SFdLU3VydG9jaU1reUlyMXlaRnFuQ2dUMHRINlg5ZTgtbll5N0IyYzNfYUtiR19TTE05Y9IBmwFBVV95cUxPUnJMWkxGcHIxT3lrcjdGaDhVWk16dFU2ZGw5ZG9sTnRES0FEakZfaEFab1liV0ZYa1RucDZsckktWUQzNWNsa0VUN05ncDJVQk5hdUttTW9QQ1loNkZsMGNVSXctdHdMWEYwaWN3VTVKMERLMF8zemdkOE9ERmlNcnBQZGlPd0dueFROeE9DTDVtcTVTaVFTZThXVQ?oc=5",
+      "summary": "",
+      "published": "2026-07-31T11:24:33.000Z",
+      "source": "dw.com",
+      "sourceId": "gnews-en-aimusic",
+      "via": "Googleニュース",
+      "category": "global",
+      "lang": "en",
+      "coverage": 1,
+      "titleJa": "ドイツの裁判所は、AI音楽会社が著作権を侵害したと判決",
+      "score": 10
     },
     {
       "id": "5c2c3670be0930bb",
@@ -1459,7 +1502,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 19,
+      "coverage": 20,
       "titleJa": "ドイツのGEMAが提起した著作権侵害訴訟でSunoが敗訴",
       "summaryJa": "AI音楽ジェネレーターのSunoは、ドイツの収集協会GEMAが提起した著作権侵害訴訟で敗訴しました。収集協会は、Sunoが権利者へのライセンスまたは支払いなしにAIツールをトレーニングするために、著作権で保護された音楽を使用、保存、複製したと主張しています。ロイター通信は金曜日の朝（ 7月31日）に、ミュンヘン地方裁判所がスノー氏に判決を下したと報じた。",
       "score": 43
@@ -1475,7 +1518,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 19,
+      "coverage": 20,
       "titleJa": "ドイツの収集協会GEMAがSunoに対する著作権侵害訴訟に勝訴",
       "summaryJa": "GEMAはSunoに対する訴訟に勝利しました。判決は何と言っていましたか、今何が起こっていますか、そしてそれはメジャーレーベルの米国Suno訴訟にとって何を意味しますか？",
       "score": 43
@@ -1520,7 +1563,7 @@
       "category": "jp",
       "lang": "ja",
       "coverage": 1,
-      "score": 36
+      "score": 27
     },
     {
       "id": "d2d03b2fffe214f3",
@@ -1534,7 +1577,7 @@
       "category": "jp",
       "lang": "ja",
       "coverage": 1,
-      "score": 6
+      "score": -3
     },
     {
       "id": "cf6d1c9d53fcd4cd",
@@ -1572,7 +1615,7 @@
       "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPWUFCN19mQjlzMXZVZmIwRG9ERmhGcGtWV2pLdGM5d1c4MnYwU2F0SUhDMXhGaFV5WVo1UjF1Yzd4U0VsRS1ZOXNCd0dERjdZME1RMmhNYjZMcmV2SFNZSm1ZcjFZNnliYWJoQnpOdE4xbWlZMldoR2NZZFZ5cDdQVndaSEljS2s?oc=5",
       "summary": "",
       "published": "2026-07-30T11:10:44.000Z",
-      "source": "musicbusinessworldwide.com",
+      "source": "Music Business Worldwide",
       "sourceId": "gnews-en-aimusic",
       "via": "Googleニュース",
       "category": "global",
@@ -1597,27 +1640,12 @@
       "score": -6
     },
     {
-      "id": "7fb66258008a296d",
-      "title": "German court rules that AI music firm violated copyrights",
-      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOVnY2dXhLUnpIUnRjQ1c0UDJIVENRcmtkaHB0OGRYaUpyX1ZFbzVfZnltUmo4NGR4YXFvaXQzTjk5dkFRQ1A0V3UtTGNMdWpySFlNbVhiZ2s0ek5yVmhkUmt2UDZBSFg4SFdLU3VydG9jaU1reUlyMXlaRnFuQ2dUMHRINlg5ZTgtbll5N0IyYzNfYUtiR19TTE05Y9IBmwFBVV95cUxPUnJMWkxGcHIxT3lrcjdGaDhVWk16dFU2ZGw5ZG9sTnRES0FEakZfaEFab1liV0ZYa1RucDZsckktWUQzNWNsa0VUN05ncDJVQk5hdUttTW9QQ1loNkZsMGNVSXctdHdMWEYwaWN3VTVKMERLMF8zemdkOE9ERmlNcnBQZGlPd0dueFROeE9DTDVtcTVTaVFTZThXVQ?oc=5",
-      "summary": "",
-      "published": "2026-07-30T08:40:11.000Z",
-      "source": "dw.com",
-      "sourceId": "gnews-en-aimusic",
-      "via": "Googleニュース",
-      "category": "global",
-      "lang": "en",
-      "coverage": 1,
-      "titleJa": "ドイツの裁判所は、AI音楽会社が著作権を侵害したと判決",
-      "score": 1
-    },
-    {
       "id": "bb6fb8a3ace0b182",
       "title": "AI楽曲を音楽チャートから排除へ。ソニーなど大手レーベルが新ルール要求",
       "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9ncmRvTHRiOG1kUWxMbmJ6RUg2SG1UcURoRjhValVweU55T2Qyd3lqMEVLMDhUTWlyNnd6R0lOejYyUFNTTHI3SnlMZ0NEZWpxdHc?oc=5",
       "summary": "",
       "published": "2026-07-30T05:30:00.000Z",
-      "source": "gadget.phileweb.com",
+      "source": "Gadget Gate",
       "sourceId": "gnews-ja-suno",
       "via": "Googleニュース",
       "category": "jp",
@@ -1631,7 +1659,7 @@
       "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE5VeEpYdXVSVm9pSEtfcjFaYmtKN2Q2RURGZGNQeFYxdXFmeG1ncXNPV1VvV2lkLWlBRFR0R0dZMWFsVThIZjRwVTRGRWNLYkJJWnBPYThMLVI0X2pDMTVzZ1duT0xHMzFsWnl6MFZGaDJ6Y0Fs?oc=5",
       "summary": "",
       "published": "2026-07-30T04:35:00.000Z",
-      "source": "BigGo ファイナンス",
+      "source": "finance.biggo.jp",
       "sourceId": "gnews-ja-aimusic",
       "via": "Googleニュース",
       "category": "jp",
@@ -1650,7 +1678,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 27,
+      "coverage": 28,
       "score": 41
     },
     {
@@ -1692,7 +1720,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 63,
+      "coverage": 67,
       "score": 41
     },
     {
@@ -1706,7 +1734,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 37,
+      "coverage": 39,
       "score": 41
     },
     {
@@ -1759,7 +1787,7 @@
       "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxOU3BId3RYYlRSNG45SC11OVZ4TkR2VlVQTERMWk02dEFhLVdITnZ0U1FWbTU4YjhicnZRMzIwMzczTkpnbnVjeTlfRjVwbUtndGczSl9JR2xQdE1FUV9GZ1VqZVpDRENlMUhnVTBVZ3FpLWp1NTIwRm1tTEU5ZFlTeWNkTGg3RmxMMGIwclFIRmVPX0Q1ekVVSlRYdl84M282S0tuVlk5eUVicFZwVk5GMWlNUW5VLWR2T0EtMjh4VTZ2VkxzVzdEYlotOWFIQlloVnRj?oc=5",
       "summary": "",
       "published": "2026-07-28T07:00:00.000Z",
-      "source": "musicbusinessworldwide.com",
+      "source": "Music Business Worldwide",
       "sourceId": "gnews-en-aimusic",
       "via": "Googleニュース",
       "category": "global",
@@ -1945,7 +1973,7 @@
       "url": "https://news.google.com/rss/articles/CBMiigJBVV95cUxNdVpsXzY0T3RLekxzYllCNVcxNVlUN0l1OHpHSXg2a2xCaGxfTzdBNWxsaV9CeVY1eG4xSUsxWU84ejllZE1NSkgxMEhlNWNQeGk5ckZzYTlRSFBOa2VVQ05aS1dCZ0J6QXBPdFo2RDlrN2FMVVNLcVNRMC1FenFfVjVtM0lSemhiZHYzYUpJVnMzWFh2dm9uRXFuVlliT0ZnaHQ1Zm9iZ2hQbmIyWU96Q1VVWXRXM3JMQUV1WUhQd2VHUnREZEJESWxwamppNDBXSGl1UEJtZ29UM283Z0hYeG9pUXB2Ul82dDItUm9BSXBCaEFkdUhSY2hlVTFuY29VNlRVbU1Da01TZw?oc=5",
       "summary": "",
       "published": "2026-07-24T07:00:00.000Z",
-      "source": "musicbusinessworldwide.com",
+      "source": "Music Business Worldwide",
       "sourceId": "gnews-en-aimusic",
       "via": "Googleニュース",
       "category": "global",
@@ -1979,7 +2007,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 14,
+      "coverage": 15,
       "score": 21
     },
     {
@@ -2086,7 +2114,7 @@
       "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOZnVJOF90MWVVTGNFTWM0OHdENlpNQ3cwRHNnX1R4cG9kem05dDNrUWtYb0pIVmdrQUk1ZzNwaEduVmJWTm9SVlNvUXZYVlFJYXZURDNtMWU2MFZ0bDYxSGd5enM2QTBKbTdja191VGpGV0pITTM3VmRnY1ZkZzlQNDhBUm5WYThJS290MklCSEU0ZURLVldRYVJVVElMUWZJTmxiLVY2eVppanpNcFBz?oc=5",
       "summary": "",
       "published": "2026-07-22T07:00:00.000Z",
-      "source": "musicbusinessworldwide.com",
+      "source": "Music Business Worldwide",
       "sourceId": "gnews-en-aimusic",
       "via": "Googleニュース",
       "category": "global",
@@ -2130,7 +2158,7 @@
       "url": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxORXhhUW15T1RaMURUNEdyaFVEWlFmQjZ2T05sclhtRTBsN2E0WnBjMXlYMUp0WklsSGpSckJMRGtDcHd6cXNnUXdHQkdqa1FvbTNZTHpfNENIa1Q1elZwRXFhSzFXR2plWU1FNGhDNjhxTFdCdFZneUR6NVJjVEx4YzlWQ2xHS3ZlVVN4ZGlzQ0xJVDFYLXlydEU0T1RpT3drLTRnOHFtWmhrNkZZUUFBblo3SGd2clluUzU1NXFZM1Y5dlNKN3NTT3dRZ01PRUpJbDR4WWZMSEZLT2Jua2xjVk1Zbw?oc=5",
       "summary": "",
       "published": "2026-07-22T07:00:00.000Z",
-      "source": "musicbusinessworldwide.com",
+      "source": "Music Business Worldwide",
       "sourceId": "gnews-en-aimusic",
       "via": "Googleニュース",
       "category": "global",
@@ -2319,7 +2347,7 @@
       "url": "https://news.google.com/rss/articles/CBMijwJBVV95cUxNd3BnUlZLa1JXM2g2U1psV3BITV94dmRRZnlnbXBZTG5lNjRqMENvNGtXbTFXanFYMWdjZGVhUFIyM3pCTlZ2REJsMDVuNFgwZy1pTFFoSURaWlRLUWxHbkozSk90Z3k2aTNZbWl6ZmVpUjZTZnJpT1BtTnNQTjVVZnExWTlocGhyV2lYODVIMGhvb3h4MHJqM1RMVXJyRm5oajhxVGZNVTR3c0ozdEE3U2ZHd0hUSFR2aF9naWdqSk43RDFvWmdRZWlJMU5vNVZHcklLcWpZdjY5bGR1ZERyVlY2M1lxN0syaWY1Y3lVeW5ZaEZKQTZrQjJ3ZTFQZjd2aG9QM0haRm9fQW9pdXNr?oc=5",
       "summary": "",
       "published": "2026-07-20T07:00:00.000Z",
-      "source": "musicbusinessworldwide.com",
+      "source": "Music Business Worldwide",
       "sourceId": "gnews-en-aimusic",
       "via": "Googleニュース",
       "category": "global",
@@ -2349,7 +2377,7 @@
       "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE1RWFN4TmNqQ2Z6dTZJckhzbXNzRXBpZ0xKN1dwSHBJbUtDdXVZc3JIYzI5YjRmN05FVW5zOTRRaFdkeHhadFczYWtKNVVFYnFFdF9GanR1T0tVWDN2YlJteW02ZmhwczB1OEZaejNVNzZ5NFhNSTBXUkpZd2RGUQ?oc=5",
       "summary": "",
       "published": "2026-07-20T07:00:00.000Z",
-      "source": "theverge.com",
+      "source": "The Verge",
       "sourceId": "gnews-en-aimusic",
       "via": "Googleニュース",
       "category": "global",
@@ -2364,7 +2392,7 @@
       "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOaWtGeWl1c1Q3elcyOFFoLXUtVF9Vb1ZkMGdIb2RObktQMzZYbThtMlV6aXBNOWxNWWNNUXZhTGZPaHQtcFNVbWhQSDJoN3Z1TzViWXFBQjlHcnUxMnNjZ2dBRmt5QmEyZUtmSV9tQmFZRG9HMWp5M0hpVEZHUlRoNWloVTlBblhubE8yNk5R?oc=5",
       "summary": "",
       "published": "2026-07-19T07:00:00.000Z",
-      "source": "theverge.com",
+      "source": "The Verge",
       "sourceId": "gnews-en-aimusic",
       "via": "Googleニュース",
       "category": "global",
@@ -2393,7 +2421,7 @@
       "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE1RbjR0SFRzSTZBV2E5S3VzbFhXazRlazVkdVBkbkMzVDNrX2FWYlFkVy14TlBSMkVXNWlvSzNmenJlLUhQX3dQVW5LcFE1c1hlQUhSa1VUNWJmQ2FjM0RBcG9VekZlV09jNFN2RENGZW5tTVRw?oc=5",
       "summary": "",
       "published": "2026-07-17T07:00:00.000Z",
-      "source": "BigGo ファイナンス",
+      "source": "finance.biggo.jp",
       "sourceId": "gnews-ja-suno",
       "via": "Googleニュース",
       "category": "jp",
@@ -2478,7 +2506,7 @@
       "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE1CRWpvSGdIeEZmdHRmTVM5cU0tN2g5V2ZkeU03bWxTemZtOTNuaXY2ZXpqRjlHWTVHZTZKUFhJazh5LXN5MHZ2UFVwb1lKV2ozSDIyTHNCb3d5NFNoM3RsZEE5QXVSeXdDcEFxc0NrR2VEM1hC?oc=5",
       "summary": "",
       "published": "2026-07-16T07:00:00.000Z",
-      "source": "BigGo ファイナンス",
+      "source": "finance.biggo.jp",
       "sourceId": "gnews-ja-suno",
       "via": "Googleニュース",
       "category": "jp",
@@ -2497,7 +2525,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 37,
+      "coverage": 39,
       "score": 30
     },
     {
@@ -2520,7 +2548,7 @@
       "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOWXB6Y1NOU1dZanZDV1E4X19Xem8tQmxEV0ZYWlI0NkpNLVlwc0ZlX3o1UkZoMUk2T19tLTNoaE1URGVUeWp4SlVEWFJHanFtWnlFWVZKeEpPTm83TS15clNobkduSnN1Q3U2NkwyX1ZkTW1nai0yTHV2bXNNSUl5aEo1QWxSV3pJUnlzQVp0SnRXaGI0aWRVVzlaQVNlYks3SVl1dkZxbk9QY3VSUWpOMko3Ujg?oc=5",
       "summary": "",
       "published": "2026-07-16T07:00:00.000Z",
-      "source": "musicbusinessworldwide.com",
+      "source": "Music Business Worldwide",
       "sourceId": "gnews-en-aimusic",
       "via": "Googleニュース",
       "category": "global",
@@ -2564,7 +2592,7 @@
       "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE5jcUNpUGRpN01YNTFkbWM0ZUtkX2d5enNqWnA1aHdlUWRNUEpoMVZnb3pUcS1NU3BMNEdPb2hKSVNwbjFxdFM1WVNKd0d3WHRYYVhrY3ltTElkZTVLN3ZacVZTUzdmTUd3VHY2amZ1TVMwdkhG?oc=5",
       "summary": "",
       "published": "2026-07-15T07:00:00.000Z",
-      "source": "BigGo ファイナンス",
+      "source": "finance.biggo.jp",
       "sourceId": "gnews-ja-suno",
       "via": "Googleニュース",
       "category": "jp",
@@ -2713,7 +2741,7 @@
       "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNb2tPNDdGVFY5NmpnNjVSN0RwZUFTX3R1SG5zZ3l0aW5ic3BFaFlmc0IxLWl3UXJyWDZjSFZlUEloLTMtRi1DcUZYOHVGb2hhbDcxZzM3NEhwaEotVkNpWHRfRWNjX09OYzQ0YzZCRDFBajhZdXc5UWNMUUs4Z3A2Zm91eG95OURQdlE4S3otVHhvd1VhMEExNWhwYjNrZVlqU01IamN3?oc=5",
       "summary": "",
       "published": "2026-07-15T07:00:00.000Z",
-      "source": "theverge.com",
+      "source": "The Verge",
       "sourceId": "gnews-en-aimusic",
       "via": "Googleニュース",
       "category": "global",
@@ -2799,7 +2827,7 @@
       "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxQczM3aGk3LWhSbzZXV3lfNFAwNlk5d1JLaXRDT3RfUlRWU1VmeWpjb1BxLXY0UzFVZjZfaXlaZFpralZEMjVWcTF3dHF4YlZNSlQtUnZSTWYtRzZULVVGLU5kSTUxa0NtRG1ySXRHZUpCVjI3WHNlWVpBd2RPWnIwYXFiVmp4M3RNSVh2OTlDNHVRbWhiR1lDQ3lRd193SjVfMWtlSTgwOXZJSENGV0dVRXRoQXlQMEdtcFoyMUpJbmlseXhNeVN4bEdBdW5oS0liY3hUSXczUlBkT1U?oc=5",
       "summary": "",
       "published": "2026-07-13T07:00:00.000Z",
-      "source": "musicbusinessworldwide.com",
+      "source": "Music Business Worldwide",
       "sourceId": "gnews-en-aimusic",
       "via": "Googleニュース",
       "category": "global",
