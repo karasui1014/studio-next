@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-08-09T09:26:56.886Z",
+  "generatedAt": "2026-08-09T13:40:16.761Z",
   "count": 203,
-  "newCount": 1,
+  "newCount": 21,
   "translatedCount": 0,
   "ranking": [
     "9ad61b9fdb7af95e",
@@ -15,28 +15,28 @@
       "id": "gnews-ja-aimusic",
       "name": "Googleニュース（AI音楽）",
       "category": "jp",
-      "ok": false,
-      "fetched": 0,
-      "matched": 0,
-      "error": "HTTP 503"
+      "ok": true,
+      "fetched": 40,
+      "matched": 37,
+      "error": null
     },
     {
       "id": "gnews-ja-suno",
       "name": "Googleニュース（Suno/生成AI作曲）",
       "category": "jp",
-      "ok": false,
-      "fetched": 0,
-      "matched": 0,
-      "error": "HTTP 503"
+      "ok": true,
+      "fetched": 40,
+      "matched": 40,
+      "error": null
     },
     {
       "id": "gnews-en-aimusic",
       "name": "Google News (AI music)",
       "category": "global",
-      "ok": false,
-      "fetched": 0,
-      "matched": 0,
-      "error": "HTTP 503"
+      "ok": true,
+      "fetched": 40,
+      "matched": 40,
+      "error": null
     },
     {
       "id": "google-deepmind",
@@ -78,10 +78,10 @@
       "id": "cdm",
       "name": "CDM",
       "category": "global",
-      "ok": true,
-      "fetched": 10,
-      "matched": 1,
-      "error": null
+      "ok": false,
+      "fetched": 0,
+      "matched": 0,
+      "error": "HTTP 403"
     },
     {
       "id": "musictech",
@@ -302,7 +302,7 @@
       "via": null,
       "category": "jp",
       "lang": "ja",
-      "coverage": 6,
+      "coverage": 7,
       "score": 54
     },
     {
@@ -343,7 +343,7 @@
       "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNdGF0ak1GUk03em5qMEJrdjY5SzcwMkpWN0F6WlpwaEJWMmxBVGJ3WDRwYWJNZmRYZnpUUUIzZjNITEgtLTE5QWRneHVISUpFMWcwNGxKWW5JcmRpOG1aNXlRWEd2YkljUTlKWk9leHk3WmVSRlN5Tmo2M3ZER2ZjUTBJWThHSmlMUUt1NDh0YWJqa1VXM2VRSWpJRGJuZTA?oc=5",
       "summary": "",
       "published": "2026-08-07T13:58:14.000Z",
-      "source": "uscatholic.org",
+      "source": "U.S. Catholic",
       "sourceId": "gnews-en-aimusic",
       "via": "Googleニュース",
       "category": "global",
@@ -409,8 +409,8 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 3,
-      "score": 35
+      "coverage": 4,
+      "score": 43
     },
     {
       "id": "dfa75d2205f695ea",
@@ -467,7 +467,7 @@
       "via": null,
       "category": "jp",
       "lang": "ja",
-      "coverage": 23,
+      "coverage": 26,
       "score": 50
     },
     {
@@ -504,7 +504,7 @@
       "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTFBZZVlLb1drUndPWk1DcnQxRHh4UU1hYlZ3THpHZTBhR3JxLThlX0VxTDIwdGhaYmRIUlJuYU00VzNNZS1qQlVzVkRFT0ZGN0wzLVow?oc=5",
       "summary": "",
       "published": "2026-08-06T22:42:30.000Z",
-      "source": "innovatopia.jp",
+      "source": "innovaTopia",
       "sourceId": "gnews-ja-suno",
       "via": "Googleニュース",
       "category": "jp",
@@ -552,7 +552,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 11,
+      "coverage": 12,
       "titleJa": "Sunoは、AI生成音楽の透かしで合法的になりたいと考えています",
       "summaryJa": "Sunoは、「大規模な悪用」を防ぐために透かしとダウンロード制限を計画しています。",
       "score": 40
@@ -678,10 +678,10 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 11,
+      "coverage": 12,
       "titleJa": "法的な争いの中で、Sunoは曲に透かしを入れ始めると言います",
       "summaryJa": "Sunoの透かし機能は、同社がいくつかの面で法的闘争を戦っているときに登場します。",
-      "score": 40
+      "score": 36
     },
     {
       "id": "7ac2f81f50d54867",
@@ -694,10 +694,10 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 11,
+      "coverage": 12,
       "titleJa": "Sunoはビニール市場に進出し、ユーザーがAIの曲を12インチのレコードにプレスできるようにする予定",
       "summaryJa": "同社は、プラットフォーム上で作られた曲を物理的なレコードに変換するサービスであるSuno Vinylのウェイティングリストを開設しました",
-      "score": 40
+      "score": 36
     },
     {
       "id": "e2e812c33ea5806c",
@@ -713,7 +713,7 @@
       "coverage": 1,
       "titleJa": "元スポティファイの従業員が1000万$を調達し、eコマースへの推奨の背後にあるAIをもたらす",
       "summaryJa": "スタートアップのプラットフォームは、買い物客が次に欲しい製品を予測し、一般的な好みを学び、リアルタイムで何をしているかに基づいて継続的に微調整します。",
-      "score": 7
+      "score": 3
     },
     {
       "id": "e4fc26513767cffe",
@@ -729,7 +729,7 @@
       "coverage": 1,
       "titleJa": "Sunoは、著作権で保護された素材のAIプロンプトと出力をスクリーニングするMusixmatchのSentinelの最初の顧客になります",
       "summaryJa": "Musixmatchは木曜日（ 8月6日）に、著作権で保護された作曲、歌詞、音楽がいつ存在するかを識別するための技術を統合したと述べた。",
-      "score": 23
+      "score": 19
     },
     {
       "id": "7d437cfe93776c1d",
@@ -745,7 +745,7 @@
       "coverage": 1,
       "titleJa": "SymphonicはArtyshieldと提携し、AI保護プラットフォームMusicShieldを提供",
       "summaryJa": "ディストリビューターSymphonicは、著作権者が不正なAI使用から作品を保護するのに役立つAIプラットフォームであるArtyShieldと提携しています。Symphonicのクライアントは、「リリース前に音楽を保護する」ために設計されたツールであるMusicShieldへのアクセスを含む、ArtyShieldのツールの一部に無料でアクセスできるようになりました。",
-      "score": 19
+      "score": 15
     },
     {
       "id": "8f6598e41d3c1b93",
@@ -761,7 +761,7 @@
       "coverage": 1,
       "titleJa": "Sunoは、ユーザーが自分の曲ライブラリから1回限りのレコードを作成できるようにします",
       "summaryJa": "SunoでAIが生成した曲が少し「暖かく」聞こえることを願ったことはありますか？それとも「より充実したサウンドステージ」を備えていますか？「さて、オーディオ好きのハイファイのセットアップでAIソングを再生できるようになりました。Sunoは、「Sunoで作った音楽を実際のレコードに変換し、プレスして玄関先まで届ける」ことができるサービスを開始しようとしています。推定価格は約$ 45 （プラスs…",
-      "score": 27
+      "score": 23
     },
     {
       "id": "1bef506c3232a93d",
@@ -777,7 +777,7 @@
       "coverage": 1,
       "titleJa": "プロデューサーは、カニエがいじめっ子にAIを使用し、未払いの賃金を訴えたと主張しています。「2年近くにわたる要求にもかかわらず、被告は原告のサービスに対する補償を拒否しています」",
       "summaryJa": "Yeはもともと彼がしなかったと言っていました",
-      "score": 7
+      "score": 3
     },
     {
       "id": "9944c7bbf915df1f",
@@ -790,10 +790,10 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 7,
+      "coverage": 8,
       "titleJa": "スノ、AI楽曲のダウンロードを制限する計画を公開、詳細「原則」「AIは模倣ではなく独創性を可能にするべきである」",
       "summaryJa": "新しい投稿は、Sunoが画期的な裁判所判決でドイツの曲の著作権を侵害した責任を問われてから約1週間後に到着した。",
-      "score": 51
+      "score": 47
     },
     {
       "id": "8bcc4aa74eb77eec",
@@ -833,7 +833,7 @@
       "url": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE5QWkpRenVuUWRXc1lnT3FNVWpNNFJuZE5FdHVzcGZVUkVxbmJZd2RwazNNUTJmXzk1cFZidUxMcVN3QlRZUjgtTldB?oc=5",
       "summary": "",
       "published": "2026-08-06T07:00:00.000Z",
-      "source": "shift-ai.co.jp",
+      "source": "SHIFT AI",
       "sourceId": "gnews-ja-suno",
       "via": "Googleニュース",
       "category": "jp",
@@ -1304,7 +1304,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 21,
+      "coverage": 22,
       "score": 41
     },
     {
@@ -1380,7 +1380,7 @@
       "via": null,
       "category": "jp",
       "lang": "ja",
-      "coverage": 17,
+      "coverage": 18,
       "score": 30
     },
     {
@@ -1389,7 +1389,7 @@
       "url": "https://news.google.com/rss/articles/CBMiSkFVX3lxTFBCWEJuRy1YQlNfTzdGaGpWUmlhR3VXOE1wQklycEJuM3ktdVlTQlc0bUZnYjJsMkZmMHdlRXdOdVAtVTVNamRXajJn?oc=5",
       "summary": "",
       "published": "2026-08-03T07:00:00.000Z",
-      "source": "shift-ai.co.jp",
+      "source": "SHIFT AI",
       "sourceId": "gnews-ja-suno",
       "via": "Googleニュース",
       "category": "jp",
@@ -1465,7 +1465,7 @@
       "category": "jp",
       "lang": "ja",
       "coverage": 1,
-      "score": 6
+      "score": -3
     },
     {
       "id": "84259a964657f132",
@@ -1501,7 +1501,7 @@
       "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTFBHSEhrRVhuQ19kYTdMN1RPUlQ2WHoxUGFLTEZpa1liMWdVYnJfQkY1U0FlaFJvMV9qUWZuU25ueXFTLW5mZzdHaFpBSEF0NmFOc1pyeHBPMUVPZEhOY2dPX1Noa2lsLWh0SlBV?oc=5",
       "summary": "",
       "published": "2026-08-01T11:59:00.000Z",
-      "source": "XenoSpectrum",
+      "source": "xenospectrum.com",
       "sourceId": "gnews-ja-suno",
       "via": "Googleニュース",
       "category": "jp",
@@ -1665,7 +1665,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 28,
+      "coverage": 29,
       "titleJa": "ドイツのGEMAが提起した著作権侵害訴訟でSunoが敗訴",
       "summaryJa": "AI音楽ジェネレーターのSunoは、ドイツの収集協会GEMAが提起した著作権侵害訴訟で敗訴しました。収集協会は、Sunoが権利者へのライセンスまたは支払いなしにAIツールをトレーニングするために、著作権で保護された音楽を使用、保存、複製したと主張しています。ロイター通信は金曜日の朝（ 7月31日）に、ミュンヘン地方裁判所がスノー氏に判決を下したと報じた。",
       "score": 34
@@ -1736,7 +1736,7 @@
       "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOZEhfdFRTbGhvUGxYNDVGakNLZFdJR0VFSXZLekFEa1NIZWhXOGhXZEhSOEFXTlRCVFpFNE9HWTc1UGxuUENsbDY1N3hhUGo2YVdMZE5vVFB1Y1laRHRGSTZtaUlfVVp4S09ZSktyYTFXa0U4QnVfakswZUw3UTg1dFYtVDVwXzNXNnA3Uk0zaUJ0YjlhS0w2OGFR?oc=5",
       "summary": "",
       "published": "2026-07-31T07:00:00.000Z",
-      "source": "juve-patent.com",
+      "source": "JUVE Patent",
       "sourceId": "gnews-en-aimusic",
       "via": "Googleニュース",
       "category": "global",
@@ -1853,7 +1853,7 @@
       "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOVnY2dXhLUnpIUnRjQ1c0UDJIVENRcmtkaHB0OGRYaUpyX1ZFbzVfZnltUmo4NGR4YXFvaXQzTjk5dkFRQ1A0V3UtTGNMdWpySFlNbVhiZ2s0ek5yVmhkUmt2UDZBSFg4SFdLU3VydG9jaU1reUlyMXlaRnFuQ2dUMHRINlg5ZTgtbll5N0IyYzNfYUtiR19TTE05Y9IBmwFBVV95cUxPUnJMWkxGcHIxT3lrcjdGaDhVWk16dFU2ZGw5ZG9sTnRES0FEakZfaEFab1liV0ZYa1RucDZsckktWUQzNWNsa0VUN05ncDJVQk5hdUttTW9QQ1loNkZsMGNVSXctdHdMWEYwaWN3VTVKMERLMF8zemdkOE9ERmlNcnBQZGlPd0dueFROeE9DTDVtcTVTaVFTZThXVQ?oc=5",
       "summary": "",
       "published": "2026-07-30T07:00:00.000Z",
-      "source": "DW.com",
+      "source": "DW",
       "sourceId": "gnews-en-aimusic",
       "via": "Googleニュース",
       "category": "global",
@@ -1916,7 +1916,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 79,
+      "coverage": 81,
       "score": 41
     },
     {
@@ -1934,6 +1934,20 @@
       "score": 17
     },
     {
+      "id": "8a6549d82b736ed9",
+      "title": "Google、音楽生成AIモデル「Lyria 3.5」を発表 ～楽曲性や歌詞、ボーカル品質が向上",
+      "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1OSDNIc1UyWHV5T2JFN252RTctZW5TU0JPcjFkVHlGTXRBbUdQQkpvM0JvWTBzU3Jyc0lLVTIyOTBQZEVYa181aGNKekl6WGpWLVcxWS1YSnR3ZFd5dWNrTDg5MEFzSFZH?oc=5",
+      "summary": "",
+      "published": "2026-07-30T07:00:00.000Z",
+      "source": "窓の杜",
+      "sourceId": "gnews-ja-aimusic",
+      "via": "Googleニュース",
+      "category": "jp",
+      "lang": "ja",
+      "coverage": 57,
+      "score": 41
+    },
+    {
       "id": "bb6fb8a3ace0b182",
       "title": "AI楽曲を音楽チャートから排除へ。ソニーなど大手レーベルが新ルール要求",
       "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9ncmRvTHRiOG1kUWxMbmJ6RUg2SG1UcURoRjhValVweU55T2Qyd3lqMEVLMDhUTWlyNnd6R0lOejYyUFNTTHI3SnlMZ0NEZWpxdHc?oc=5",
@@ -1948,20 +1962,6 @@
       "score": -3
     },
     {
-      "id": "d713173aa0f7b633",
-      "title": "グーグル、最長3分の日本語ボーカル曲生成AI「Lyria 3.5」を発表、画像からの作曲も可能に",
-      "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE5VeEpYdXVSVm9pSEtfcjFaYmtKN2Q2RURGZGNQeFYxdXFmeG1ncXNPV1VvV2lkLWlBRFR0R0dZMWFsVThIZjRwVTRGRWNLYkJJWnBPYThMLVI0X2pDMTVzZ1duT0xHMzFsWnl6MFZGaDJ6Y0Fs?oc=5",
-      "summary": "",
-      "published": "2026-07-30T04:35:00.000Z",
-      "source": "BigGo ファイナンス",
-      "sourceId": "gnews-ja-aimusic",
-      "via": "Googleニュース",
-      "category": "jp",
-      "lang": "ja",
-      "coverage": 1,
-      "score": 27
-    },
-    {
       "id": "de6b524130cce2ea",
       "title": "SUNO プロンプト辞典「prompt-jukebox」、パート別に組む新機能「妄想バンド」を正式リリース",
       "url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE9JSE1fOWFZSUJlQUJEYzVwaWlRU2RsSzExUHVOOS1oYzZuTUFrYWVGeEZQNVdWb3JkU1RINkVfb2RRTTRYVWc3UdIBSEFVX3lxTE9JSE1fOWFZSUJlQUJEYzVwaWlRU2RsSzExUHVOOS1oYzZuTUFrYWVGeEZQNVdWb3JkU1RINkVfb2RRTTRYVWc3UQ?oc=5",
@@ -1972,21 +1972,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 36,
-      "score": 41
-    },
-    {
-      "id": "8a6549d82b736ed9",
-      "title": "Google、音楽生成AIモデル「Lyria 3.5」を発表 ～楽曲性や歌詞、ボーカル品質が向上",
-      "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1OSDNIc1UyWHV5T2JFN252RTctZW5TU0JPcjFkVHlGTXRBbUdQQkpvM0JvWTBzU3Jyc0lLVTIyOTBQZEVYa181aGNKekl6WGpWLVcxWS1YSnR3ZFd5dWNrTDg5MEFzSFZH?oc=5",
-      "summary": "",
-      "published": "2026-07-30T02:10:00.000Z",
-      "source": "窓の杜",
-      "sourceId": "gnews-ja-suno",
-      "via": "Googleニュース",
-      "category": "jp",
-      "lang": "ja",
-      "coverage": 55,
+      "coverage": 37,
       "score": 41
     },
     {
@@ -2017,6 +2003,20 @@
       "lang": "ja",
       "coverage": 1,
       "score": -3
+    },
+    {
+      "id": "d713173aa0f7b633",
+      "title": "グーグル、最長3分の日本語ボーカル曲生成AI「Lyria 3.5」を発表、画像からの作曲も可能に",
+      "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE5VeEpYdXVSVm9pSEtfcjFaYmtKN2Q2RURGZGNQeFYxdXFmeG1ncXNPV1VvV2lkLWlBRFR0R0dZMWFsVThIZjRwVTRGRWNLYkJJWnBPYThMLVI0X2pDMTVzZ1duT0xHMzFsWnl6MFZGaDJ6Y0Fs?oc=5",
+      "summary": "",
+      "published": "2026-07-29T07:00:00.000Z",
+      "source": "BigGo ファイナンス",
+      "sourceId": "gnews-ja-aimusic",
+      "via": "Googleニュース",
+      "category": "jp",
+      "lang": "ja",
+      "coverage": 1,
+      "score": 27
     },
     {
       "id": "7ba20d56343f8196",
@@ -2182,7 +2182,7 @@
       "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNWkxOWFJqQXNXTkJlRnpDc1lKSldCa0tMaklIYlZDVUU0aE8yS1U2d1dfU0J3NFAzNTVXSzZuZGZROERuR3RPT29SSmVtZVM0WllERmVPc1NDNVFyUGhuLVh0aFBqSlUtMWtzemRwVUpqWmZFLWtPem1udG42dUhYcTdhTnpzd1l5a2JfVF9ZNk5PUFlhQ0Fz?oc=5",
       "summary": "",
       "published": "2026-07-24T13:35:48.000Z",
-      "source": "wpln.org",
+      "source": "WPLN News",
       "sourceId": "gnews-en-aimusic",
       "via": "Googleニュース",
       "category": "global",
@@ -2274,7 +2274,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 20,
+      "coverage": 21,
       "score": 21
     },
     {
@@ -2792,7 +2792,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 55,
+      "coverage": 57,
       "score": 30
     },
     {
@@ -2873,7 +2873,7 @@
       "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQbFdyOUxJRnF5MUtvd1VrX29iWkh5ck5vNkhzc0RpdGlzTXAyWkU0N3I2bVJkb193Nnp4MFJzUUZPbnNWdTNKd0ZRRmFraW1lWXI1TG8xN3ZobThmNnAxa2xUUmxvQW9aaEhQWTRXMWszSjN4TGVqekc0enlOVEdmN1RCMkhNU2tneGhJbThGMTJVaUg3SUUtWmhiNA?oc=5",
       "summary": "",
       "published": "2026-07-15T07:00:00.000Z",
-      "source": "404media.co",
+      "source": "404 Media",
       "sourceId": "gnews-en-aimusic",
       "via": "Googleニュース",
       "category": "global",
