@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-08-09T04:07:11.402Z",
+  "generatedAt": "2026-08-09T09:26:56.886Z",
   "count": 203,
-  "newCount": 20,
-  "translatedCount": 1,
+  "newCount": 1,
+  "translatedCount": 0,
   "ranking": [
     "9ad61b9fdb7af95e",
     "9944c7bbf915df1f",
@@ -15,28 +15,28 @@
       "id": "gnews-ja-aimusic",
       "name": "Googleニュース（AI音楽）",
       "category": "jp",
-      "ok": true,
-      "fetched": 40,
-      "matched": 36,
-      "error": null
+      "ok": false,
+      "fetched": 0,
+      "matched": 0,
+      "error": "HTTP 503"
     },
     {
       "id": "gnews-ja-suno",
       "name": "Googleニュース（Suno/生成AI作曲）",
       "category": "jp",
-      "ok": true,
-      "fetched": 40,
-      "matched": 40,
-      "error": null
+      "ok": false,
+      "fetched": 0,
+      "matched": 0,
+      "error": "HTTP 503"
     },
     {
       "id": "gnews-en-aimusic",
       "name": "Google News (AI music)",
       "category": "global",
-      "ok": true,
-      "fetched": 40,
-      "matched": 40,
-      "error": null
+      "ok": false,
+      "fetched": 0,
+      "matched": 0,
+      "error": "HTTP 503"
     },
     {
       "id": "google-deepmind",
@@ -79,8 +79,8 @@
       "name": "CDM",
       "category": "global",
       "ok": true,
-      "fetched": 0,
-      "matched": 0,
+      "fetched": 10,
+      "matched": 1,
       "error": null
     },
     {
@@ -177,10 +177,10 @@
       "id": "dtmstation",
       "name": "DTMステーション",
       "category": "jp",
-      "ok": false,
-      "fetched": 0,
-      "matched": 0,
-      "error": "fetch failed"
+      "ok": true,
+      "fetched": 10,
+      "matched": 2,
+      "error": null
     },
     {
       "id": "icon-jp",
@@ -809,7 +809,7 @@
       "coverage": 1,
       "titleJa": "SymphonicはArtyShieldと提携して、アーティストの音楽と声を不正なAI使用から保護するツールを提供しています",
       "summaryJa": "このコラボレーションにより、流通会社の管理プラットフォームであるSymphonicMSのクライアント製品セクションでArtyShieldの技術を利用できるようになります。",
-      "score": 7
+      "score": 3
     },
     {
       "id": "804c36f07a12bef8",
@@ -825,7 +825,7 @@
       "coverage": 1,
       "titleJa": "「私たちがこれまでにした中で最も「私たち」なことのように感じます。Sunoはすぐにはそれを思いつきません」： Sylvan Essoは、自分たちで構築したBettyのスタジオであるOw ∞の制作について、そして彼らがSpotifyから音楽を引っ張った理由について説明します",
       "summaryJa": "グラミー賞にノミネートされたエレクトロニックデュオ、シルバン・エッソのアメリア・ミースとニック・サンボーンが、4年ぶりのニューアルバムの背後にあるストーリーに飛び込む",
-      "score": 16
+      "score": 12
     },
     {
       "id": "cecd1109fda75db6",
@@ -839,7 +839,7 @@
       "category": "jp",
       "lang": "ja",
       "coverage": 1,
-      "score": 39
+      "score": 35
     },
     {
       "id": "8f9ab2aec359f009",
@@ -1479,7 +1479,7 @@
       "category": "jp",
       "lang": "ja",
       "coverage": 1,
-      "score": 15
+      "score": 6
     },
     {
       "id": "02ede611c7c404f6",
