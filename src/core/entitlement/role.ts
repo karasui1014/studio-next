@@ -71,6 +71,20 @@ export const YOUTUBE_TIERS: {
  */
 export const YOUTUBE_JOIN_URL = 'https://www.youtube.com/@AI音楽部-AImusic/join'
 
+/**
+ * 公式LINEの「友だち追加」URL。
+ *
+ * ■ Discordの招待URLとは性質が違う（2026-08-11 判断）
+ * こちらは定員のある私的コミュニティへの入場鍵ではなく、
+ * 既にYouTubeメンバー限定投稿で公開案内している問い合わせ窓口。
+ * 誰が開いても「上限が崩れる」ような不都合は起きないため、
+ * YOUTUBE_JOIN_URL と同じ扱いで定数として持ってよいと判断した。
+ *
+ * 利用申請・プラン変更（Premium→Master等）の連絡窓口として使う。
+ * URLはここ1箇所だけで管理し、画面側に直接書かない。
+ */
+export const OFFICIAL_LINE_URL = 'https://lin.ee/OxFaiLT'
+
 /** Premium以上か（Master は Premium をすべて含む） */
 export function isPaid(role: Role): boolean {
   return role === 'premium' || role === 'master'

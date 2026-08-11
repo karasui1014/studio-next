@@ -9,6 +9,10 @@
  *
  *   --prod を付けないとローカル(wrangler dev)のKVに入る。本番は --prod。
  *
+ *   --note "PremiumのP-003から変更"  … 台帳の備考に書き足す（任意）。
+ *   プラン変更（Premium→Master等）で新規キーを発行するときに、
+ *   どのキーからの移行かを残すために使う。省略時は従来どおり。
+ *
  * ■ 1人1キー
  * 共通キーは作らない。流出したとき、その人の分だけ失効させられるようにするため。
  * YouTubeのメンバー限定投稿にキーそのものを載せてはいけない（全員同じキーになる）。
@@ -71,6 +75,9 @@ if (!applicant) {
   console.error('   台帳に「誰に渡したか」が残らないと、退会時に失効させられません。')
   process.exit(1)
 }
+
+const noteIdx = args.indexOf('--note')
+const customNote = noteIdx >= 0 ? args[noteIdx + 1] : ''
 
 // ---- Master 30名上限（機械的に停止）-----------------------------
 const { rows } = readLedger()
@@ -138,12 +145,12 @@ try {
 // ---- 台帳へ追記（KV登録が成功してから）---------------------------
 // 環境を必ず残す。ローカル検証の行が本番と混ざると、
 // 毎月の棚卸しで実在しない会員を追いかけることになる。
-appendRow({
-  serial,
-  plan: role,
-  applicant,
-  note: isProd ? '' : '⚠️ ローカル検証用（本番KVには存在しません）',
-})
+const localWarning = '⚠️ ローカル検証用（本番KVには存在しません）'
+const note = isProd
+  ? customNote
+  : customNote ? `${localWarning} / ${customNote}` : localWarning
+
+appendRow({ serial, plan: role, applicant, note })
 
 const s = summarize(readLedger().rows)
 

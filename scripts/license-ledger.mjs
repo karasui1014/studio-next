@@ -104,14 +104,20 @@ export function appendRow({ serial, plan, applicant, note = '' }) {
   return row
 }
 
-/** 指定の連番を失効にする。行は消さず、状態と失効日を書き換える */
-export function revokeRow(serial) {
+/**
+ * 指定の連番を失効にする。行は消さず、状態と失効日を書き換える。
+ *
+ * `extraNote` を渡すと備考に書き足す（例:「MasterのM-004へ変更のため失効」）。
+ * 省略時は従来どおり備考を変更しない。フォーマット（7列）は変えない。
+ */
+export function revokeRow(serial, extraNote = '') {
   const { text, rows } = readLedger()
   const target = rows.find((r) => r.serial === serial)
   if (!target) return { ok: false, reason: 'not_found' }
   if (target.state === '失効') return { ok: false, reason: 'already_revoked', row: target }
 
-  const updated = `| ${target.serial} | ${target.plan} | ${target.issuedAt} | ${target.applicant} | 失効 | ${today()} | ${target.note} |`
+  const note = extraNote ? (target.note ? `${target.note} / ${extraNote}` : extraNote) : target.note
+  const updated = `| ${target.serial} | ${target.plan} | ${target.issuedAt} | ${target.applicant} | 失効 | ${today()} | ${note} |`
   writeFileSync(LEDGER_PATH, text.replace(target.raw, updated))
   return { ok: true, row: target, updated }
 }

@@ -474,12 +474,26 @@ export function useRole() {
 | `STUDIO_PRICE` | Studio直販価格 |
 | `YOUTUBE_TIERS` | YouTubeメンバーシップとRoleの対応 |
 | `YOUTUBE_JOIN_URL` | 「YouTubeで加入する」ボタンの遷移先（✅ 決定・2026-08-03） |
+| `OFFICIAL_LINE_URL` | 公式LINEの「友だち追加」URL（✅ 決定・2026-08-11） |
 | ~~`DISCORD_INVITE_URL`~~ | **2026-08-08 廃止。** 招待URLを公開コードに置かない方針へ変更したため、定数ごと削除した（→ §6「Discordの招待URL」） |
 
 **`YOUTUBE_JOIN_URL`** = `https://www.youtube.com/@AI音楽部-AImusic/join`
 （通常のチャンネルページではなく、**メンバーシップ加入画面へ直接遷移**させる）
 プラン画面の Premium・Master 両カードの「YouTubeで加入する」ボタンがこの1つの定数を参照する。
 URLを画面側に直接書かないこと。
+
+**`OFFICIAL_LINE_URL`** = `https://lin.ee/OxFaiLT`
+
+⚠️ **Discordの招待URLとは性質が違うので、混同しないこと。**
+Discordの招待URLは「定員30名の私的コミュニティへの入場鍵」で、公開すると定員そのものが
+崩れるため公開コードに置かない（→ §6）。一方この公式LINE URLは、**既にYouTubeメンバー
+限定投稿で公開案内している問い合わせ窓口**であり、誰が開いても不都合が生じる性質のもの
+ではない。そのため `YOUTUBE_JOIN_URL` と同じ扱いで `role.ts` に定数として1箇所だけ持つ
+（2026-08-11 カラスイさんの判断）。画面側にURLを直接書かないのは他の定数と同じ理由
+（変更時の直しどころを1箇所にするため）。
+
+用途：利用申請の窓口に加えて、**Premium→Master等のプラン変更申告の連絡窓口**としても使う
+（→ 下記「プラン変更（アップグレード／ダウングレード）の運用」）。
 
 ### ⚠️ role は「表示の出し分け」専用。権限の根拠ではない（✅ 2026-08-08 実装済み）
 
@@ -730,6 +744,78 @@ KVが漏れても個人は特定できない、という形にしています。
 退会対応時に実際の失効予定日を知りたい場合は
 `node scripts/check-license-expiry.mjs <連番>` で個別に確認できます
 （最終ログイン日時 or 発行日 + 30日を表示）。
+
+### ✅ プラン変更（アップグレード／ダウングレード）の運用（2026-08-11 決定）
+
+初回発行と同じ「LINEで申告 → 目視確認 → 発行」の型を、プラン変更にもそのまま使う。
+新しい判定ロジックは作らない。
+
+```
+① Premium利用者がYouTubeでMaster対象プランへ変更する
+② 公式LINEから「Masterに変更しました」と連絡する（自動判定はしない）
+③ 運営者がYouTube Studioの会員一覧を目視で確認する
+④ 新しいMasterキーを発行する（旧Premiumキーのroleは書き換えない）
+⑤ 新しいMasterキーを公式LINEで本人に送る
+⑥ 本人がプラン画面に新しいキーを入力する
+⑦ 旧Premiumキーを失効する
+```
+
+**対象プラン**（→ §4 の価格表と同一。ここでも重複して明記する）
+
+| Premium対象 | Master対象 |
+|---|---|
+| 「AiでMVを作りたい部」1,290円 | 「AiでMVを作りたい部1ヶ月でマスターしたい方向け」5,600円 |
+
+⚠️ **35,000円「企業様向け」プランはStudioの権限体系と無関係。**
+このプラン変更フローの対象にも含めない。価格が高いことを理由にMaster扱いにしない
+（→ §4「35,000円『企業様向け』プランの扱い」）。
+
+**なぜ「既存キーのrole書き換え」にしないのか**
+
+KVのレコードは `license:<ハッシュ> → { role, serial, issuedAt, revoked? }` で、
+発行された時点のroleに固定されている。これを書き換える経路を作ると、
+「誰が・いつ・どのキーのroleを変えたか」が台帳に残らず、
+発行スクリプトが前提にしている「1キー＝1回の発行判断」が崩れる。
+**新規発行＋旧キー失効**なら、台帳上に
+
+```
+P-005 | premium | ... | 失効 | ... | ⚠️ / MasterのM-004へ変更のため失効
+M-004 | master  | ... | 有効 | —  | ⚠️ / PremiumのP-005から変更
+```
+
+のように**両方向から追える履歴**が残る。実装コストもほぼ変わらない
+（`issue-license-key.mjs` と `revoke-license-key.mjs` に任意の `--note` を追加しただけ）。
+
+**コマンド**
+
+```bash
+node scripts/issue-license-key.mjs master --name "YouTube表示名" --note "PremiumのP-005から変更" --prod
+node scripts/revoke-license-key.mjs P-005 --note "MasterのM-004へ変更のため失効" --prod
+```
+
+`--note` は省略可能。省略時は従来どおりの動作（後方互換）。
+
+**Master → Premium のダウングレードも同じ考え方**（専用UIは今回作らない）
+
+```
+① MasterからPremiumへYouTubeメンバーシップを変更したと公式LINEで申告
+② 運営者が目視確認
+③ 新しいPremiumキーを発行（旧Masterキーのroleは書き換えない）
+④ 本人へ送付・入力
+⑤ 旧Masterキーを失効
+```
+
+Masterの枠（30名上限）は「いま有効なMasterが何人か」で判定するため
+（`checkMasterLimit()`）、ダウングレードで旧Masterキーを失効させると
+**自動的に1枠空く**。新しいMasterを発行する前に慌てて失効させる必要はない。
+
+**キー失効とセッションTTL（30日）の関係**
+
+新キー発行→本人が入力、という順序を守れば、本人は新しいセッションを得ているため
+実害はない。失効した旧キーで残るのは「失効前にログインしていた別端末のセッションが
+最大30日残る」ことだけで、これは通常の失効と同じ既知の仕様（上記「失効の効き方」）。
+**「失効した旧キーで新しいセッションを発行できないこと」が成功条件であり、
+「開いている画面から即座に消えること」は成功条件にしない。**
 
 ### 開発用の権限切替（DevRoleSwitcher）
 
@@ -2194,6 +2280,7 @@ Worker が扱うのは**権限判定と限定コンテンツの配信だけ**で
 
 | 日付 | 内容 |
 |---|---|
+| **2026-08-11（続報3）** | **Premium→Masterのアップグレード導線を追加し、Masterの説明文を実態に合わせた。** ①`role.ts` に **`OFFICIAL_LINE_URL`** を新設。Discordの招待URL（定員のある私的コミュニティの鍵）とは性質が違い、既にYouTubeメンバー限定投稿で公開案内している問い合わせ窓口のため、`YOUTUBE_JOIN_URL` と同じ扱いで定数化してよいと判断（カラスイさんの確認済み） ②`PlansPage.tsx` のMasterカードに、**Premiumの人が見ているときだけ**「Masterにアップグレードする」＋公式LINEボタンを追加。free・Master本人には出さない ③新規Masterキー発行→本人送付→旧Premiumキー失効、という運用に統一。**既存キーのrole書き換えはしない**（台帳から履歴が追えなくなるため）。ダウングレード（Master→Premium）も同じ考え方。§5-Aに運用手順を新設 ④`issue-license-key.mjs`・`revoke-license-key.mjs`・`license-ledger.mjs` に**任意の `--note`** を追加し、「PremiumのP-005から変更」のような移行履歴を台帳の備考に残せるようにした。省略時は従来どおり（後方互換）。ローカルKVで発行→失効の往復を実測し、台帳の7列フォーマットが壊れないことを確認 ⑤**Masterの説明文を修正**：「AI音楽を仕事や収益化につなげたい人」→「AI音楽をもっと深く学びたい人。作品を見てもらいながら、制作力を伸ばしたい人。」実際に提供していない成果（仕事・収益化）を訴求しないため。コード内を検索し、他に同趣旨の表現がPlansPage.tsx以外に無いことを確認済み |
 | **2026-08-11（公開）** | **🚀 認証システムとAI秘書を本番公開した。** 実施順序は「コミット → Worker再デプロイ → Worker実測 → push → Actions確認 → 本番実測」。①**8コミット・53ファイル**を機能単位で分割してpush（限定コンテンツ遮断／認可API／権限判定の一本化／コンテンツ分離／AI秘書／画面の出し分け／運用スクリプト／仕様書）。auth-testは一度もコミットされていなかったため削除の差分は生じず、結果 `vite.config.ts` の差分は `fs.deny` だけ、`main.tsx` はHEADと完全一致に戻った ②**Worker再デプロイ**（版 `4fca2def`）でTTLが24時間→**30日**に。限定コンテンツはKVに置いてあるためデプロイ前後で件数・`updatedAt` とも完全一致（Workerに同梱していたら消えていた） ③**GitHub Actions「公開」成功**（npm ci／npm test 180件／npm run build／deploy-pages）。ニュース自動更新Botが23コミット先行していたが `news.json` のみで重複ゼロだったためrebaseで直線化 ④**本番実測**：配信バンドルが `index-DdyeB-vp.js` → `index-DLgoBiON.js` に更新され、**Worker APIの参照が入った**（公開前は0件＝認証システムが本番に無かった状態が解消）。**Discord招待URLが配信JSから消滅**（公開前は埋め込まれていた）。auth-test／OAuthクライアントID／DevRoleSwitcherいずれも0件。`content/premium.json` は404、公開JSONにも限定本文なし。free状態で無料6ページは通常表示・制作系4ページはロック画面・`/auth-test` は404 ⑤**Premium／Master／revoked の実キー検証は意図的に省略**し、初回の実ユーザー発行時に行う（→ 未決定事項#22）。本番の `LICENSE_PEPPER` を取得・表示・保存しない方針のため。代わりに同一コードで `iat`/`exp` の差が2,592,000秒＝ちょうど30日であることを実測した ⑥有効な検証用ライセンスキーは**0本**（`M-002`・`P-003` の2件のみで、いずれもレコード本体で `revoked:true` を確認） |
 | **2026-08-11** | **本番公開前の最終整理（pushはまだしていない）。** ①**セッションTTLの食い違いを実測で確定。** 仕様値は**30日**だが、本番Workerの最終デプロイが2026-08-08で、**本番で実際に動いているのは24時間**であることが判明（`wrangler deployments list` で実測）。`lastLoginAt` と `/api/me` の `exp` 返却も同様に未デプロイ。→ §5-A に「Workerの再デプロイが必要」を明記し、公開手順に組み込んだ ②**35,000円「企業様向け」の除外を PROJECT_SPEC.md §4 に明文化**（従来は `membership-levels.mjs` と軍配の判断ログにしか無かった）。価格順の自動昇格を禁じる理由も併記 ③**Discord旧招待URLを公開コードから完全削除**（`README.md`・`PROJECT_SPEC.md` に残っていた分）。あわせて「Initial commit からGit履歴と本番配信JSに含まれていた」事実を §6 に記録。**コードから消しても取り消せないため、Discord側での失効が必要**（カラスイさんの作業） ④**auth-test PoC をコードから削除**（`src/features/auth-test/`・`worker/auth-test/`・`/auth-test` ルート・`main.tsx` のOAuthコールバック・`vite.config.ts` のプロキシと `allowedHosts`・PoC用スクリプト3本・`.gitignore` と `.env.local.example` の該当行）。**`vite.config.ts` の `fs.deny` は限定コンテンツ保護のため残した** ⑤`scripts/membership-levels.mjs` は削除せず、用途を「手動ライセンス発行・将来CSV照合の参照表」に書き換え。段名を `current`（実画面で確認した現行表記）と `aliases`（表記ゆれ・旧称）に整理し、`node scripts/membership-levels.mjs "段名"` で引ける確認CLIを追加。未知の段は従来どおり free に倒す ⑥`.env.production`（本番APIのURLのみ・秘密情報なし）をコミット対象に含める方針を確定 |
 | **2026-08-10（続報2）** | **AI秘書をV1から移植して完成（未決定事項#8を解決）。** ①`src/core/secretary/`（types / message / leveling / themes / store / avatar）と `src/features/secretary/`（設定画面・ホームのカード・アバター）を新設し、`/secretary` のプレースホルダを置き換え ②**AIには一切問い合わせない**。文章は端末内のルールだけで組み立てる（V1と同じ思想） ③V2の曲データに合わせて移植内容を調整：`sunoPrompts[]`→`sunoPrompt`、`mvPrompts[]`→`mvPrompt`、`youtube.url` は存在しないので `status==='mv'` を公開待ちとみなす、レベルの母数は `completedAt` ではなく **`status==='published'` の曲数** ④V1は公開済み曲に「批評ツール」を名指しで勧めていたが、V2では同ツールがMaster限定になったため**ツール名を出さず「振り返り」だけを勧める**形に変更（表示と実態の食い違いを作らないため） ⑤**権限はPremium以上**。ホームのカードも有料プランのときだけ描画する ⑥`core/storage/streak.ts` に **`currentStreak()`**（記録を足さずに読むだけ）を追加。起点を今日または昨日に許し、ホーム未経由の日に連続日数が0に見える問題を防ぐ ⑦`/data` の書き出し・読み込みに**秘書の設定・節目・画像（data URL）を追加**。端末を変えて秘書が初期化されるのでは「持ち出せる」と言えないため ⑧テストを39件追加（141→180件） |

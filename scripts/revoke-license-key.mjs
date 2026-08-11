@@ -6,6 +6,8 @@
  *   node scripts/revoke-license-key.mjs M-003 --prod
  *   node scripts/revoke-license-key.mjs P-012            # ローカル
  *
+ *   --note "MasterのM-004へ変更のため失効"  … 台帳の備考に書き足す（任意）。
+ *
  * ■ 生のキーは誰も持っていない
  * KVにはハッシュしか無く、台帳にもキーは書いていない。
  * そこで発行時に作った索引（serial:<連番> → ハッシュ）から対象を引く。
@@ -32,6 +34,8 @@ const workerDir = resolve(root, 'worker/api')
 const args = process.argv.slice(2)
 const isProd = args.includes('--prod')
 const serial = args.find((a) => /^[PM]-\d{3}$/.test(a))
+const noteIdx = args.indexOf('--note')
+const customNote = noteIdx >= 0 ? args[noteIdx + 1] : ''
 
 if (!serial) {
   console.error('使い方: node scripts/revoke-license-key.mjs <連番> [--prod]')
@@ -102,7 +106,7 @@ try {
 }
 
 // ---- 台帳を更新（KV更新が成功してから）----------------------------
-const res = revokeRow(serial)
+const res = revokeRow(serial, customNote)
 if (!res.ok) {
   console.error(`⚠️ KVは失効させましたが、台帳の更新に失敗しました（${res.reason}）。`)
   console.error('   台帳の該当行を手で「失効」にしてください。')

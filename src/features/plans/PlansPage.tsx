@@ -3,7 +3,7 @@ import { Check, MessageCircle, SquarePlay, Users, Zap } from 'lucide-react'
 
 import { apiConfigured, usePremiumStore } from '@/core/entitlement/api'
 import {
-  STUDIO_PRICE, useRole, useRoleStore,
+  OFFICIAL_LINE_URL, STUDIO_PRICE, useRole, useRoleStore,
   YOUTUBE_JOIN_URL, YOUTUBE_TIERS, type Role,
 } from '@/core/entitlement/role'
 import { cn } from '@/core/ui/cn'
@@ -79,7 +79,7 @@ const CARDS: RoleCard[] = [
     kindIcon: Users,
     name: 'Studio Master',
     purpose: '本気でAI音楽を学び、成長する',
-    target: 'AI音楽を仕事や収益化につなげたい人。見てもらいながら伸ばしたい人',
+    target: 'AI音楽をもっと深く学びたい人。作品を見てもらいながら、制作力を伸ばしたい人。',
     seats: '少人数制（30名まで）— 添削の質を守るため人数に上限があります',
     features: ['Studio Premium のすべて'],
     // Master の特典はすべて Discord の中で提供する。
@@ -353,6 +353,33 @@ export function PlansPage() {
                 <p className="mt-4 grid h-11 place-items-center rounded-lg border border-border text-[13.5px] font-bold text-muted-foreground">
                   いま使っている権限
                 </p>
+              ) : c.id === 'master' && role === 'premium' ? (
+                /*
+                  Premiumの人がMasterカードを見ているときだけの導線。
+                  free の人には出さない（初回加入と混同させないため）。
+                  Master特典は上のリストに既出なので、ここでは重複列挙しない。
+                */
+                <div className="mt-4 rounded-lg border border-master/30 bg-master/[0.06] p-3.5">
+                  <p className="flex items-center gap-1.5 text-[13px] font-bold text-master">
+                    <Users className="h-3.5 w-3.5" />
+                    Masterにアップグレードする
+                  </p>
+                  <p className="mt-1.5 text-[11.5px] leading-relaxed text-muted-foreground">
+                    YouTubeでMaster対象プランへ変更したあと、公式LINEから
+                    「Masterに変更しました」とお送りください。
+                    メンバーシップを確認後、Master用ライセンスキーをご案内します。
+                  </p>
+                  <a
+                    href={OFFICIAL_LINE_URL}
+                    target="_blank"
+                    rel="noopener noreferrer external"
+                    referrerPolicy="no-referrer"
+                    className="mt-3 flex h-10 items-center justify-center gap-1.5 rounded-lg bg-master text-[13px] font-bold text-white"
+                  >
+                    <MessageCircle className="h-4 w-4" />
+                    公式LINEで連絡する
+                  </a>
+                </div>
               ) : tier ? (
                 <a
                   href={YOUTUBE_JOIN_URL}
