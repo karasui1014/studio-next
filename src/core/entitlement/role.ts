@@ -53,8 +53,16 @@ export const YOUTUBE_TIERS: {
   { role: 'master', name: 'Studio Master利用権付き', price: 5600, note: '現「AIでMVを1か月でマスターしたい方向け」' },
 ]
 
-/** Master限定のDiscordコミュニティ */
-export const DISCORD_INVITE_URL = 'https://discord.gg/zdGrkph8'
+/**
+ * Master限定のDiscordコミュニティについて。
+ *
+ * ⚠️ **招待URLはこのリポジトリ（公開コード）に置かない。**
+ * ここは公開ビルドに含まれ、配信されるJSに文字列として埋め込まれる。
+ * 一度でもコミットすると、Git履歴からも読めてしまい取り消せない。
+ *
+ * 招待は公式LINEから、キー送付と同じタイミングで手動でお送りする。
+ * URLの実体は `~/軍配/house-rules.md`（Git管理外・ローカルのみ）に控えている。
+ */
 
 /**
  * 「YouTubeで加入する」ボタンの遷移先。
@@ -75,7 +83,23 @@ export function isMaster(role: Role): boolean {
 const ROLE_KEY = 'studio-next:role'
 const SOURCE_KEY = 'studio-next:role-source'
 
+/**
+ * ■ ここでの role は「表示の出し分け」にしか使わない
+ *
+ * 限定コンテンツの本文は、この値がどうであろうと手に入らない。
+ * 本文はAPIが持っていて、APIはサーバー側でセッションを検証してからしか返さない。
+ * つまり localStorage を書き換えても、増えるのは「解除された見た目」だけで、
+ * 中身は1文字も降ってこない。
+ *
+ * ■ それでも本番では localStorage を読まない
+ * 見た目だけとはいえ、未購入者に「解除された画面」を見せる意味はなく、
+ * 不具合の誤報のもとにもなる。本番の初期値は常に free とし、
+ * 検証済みセッション（setRoleFromSession）でしか変えられないようにする。
+ */
+const DEV = import.meta.env.DEV
+
 function loadRole(): Role {
+  if (!DEV) return 'free' // 本番: localStorage は権限の根拠にしない
   try {
     const v = localStorage.getItem(ROLE_KEY)
     if (v === 'free' || v === 'premium' || v === 'master') return v
@@ -86,6 +110,7 @@ function loadRole(): Role {
 }
 
 function loadSource(): RoleSource {
+  if (!DEV) return 'none'
   try {
     const v = localStorage.getItem(SOURCE_KEY)
     if (v === 'youtube' || v === 'studio') return v
@@ -98,13 +123,19 @@ function loadSource(): RoleSource {
 interface RoleState {
   role: Role
   source: RoleSource
+  /** 開発時の表示確認用（DevRoleSwitcher）。本番ビルドでは何もしない */
   setRole: (role: Role, source?: RoleSource) => void
+  /** APIが検証したセッションの結果を反映する。本番で role が変わる唯一の経路 */
+  setRoleFromSession: (role: Role, source: RoleSource) => void
 }
 
 export const useRoleStore = create<RoleState>((set) => ({
   role: loadRole(),
   source: loadSource(),
+
   setRole: (role, source = 'studio') => {
+    // 本番では表示の昇格すら許さない。DevRoleSwitcher 自体も描画されない
+    if (!DEV) return
     const nextSource: RoleSource = role === 'free' ? 'none' : source
     try {
       localStorage.setItem(ROLE_KEY, role)
@@ -113,6 +144,11 @@ export const useRoleStore = create<RoleState>((set) => ({
       /* 保存できなくても画面は動かす */
     }
     set({ role, source: nextSource })
+  },
+
+  setRoleFromSession: (role, source) => {
+    // 保存しない。次回もAPIに聞き直す（localStorage を権限の記録場所にしない）
+    set({ role, source: role === 'free' ? 'none' : source })
   },
 }))
 

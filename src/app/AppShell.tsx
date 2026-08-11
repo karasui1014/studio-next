@@ -1,6 +1,8 @@
 import { Outlet, useLocation } from 'react-router-dom'
 import { useEffect } from 'react'
 
+import { usePremiumBootstrap } from '@/core/entitlement/api'
+
 import { Sidebar } from './Sidebar'
 import { TabBar } from './TabBar'
 import { Topbar } from './Topbar'
@@ -8,6 +10,10 @@ import { DevRoleSwitcher } from './DevRoleSwitcher'
 
 export function AppShell() {
   const { pathname } = useLocation()
+
+  // 起動時に一度だけ、APIへ権限と限定コンテンツを聞きに行く。
+  // 権限が無ければ本文は返ってこない——それが正しい姿なので、失敗扱いにしない。
+  usePremiumBootstrap()
 
   // 画面を移動したら先頭に戻す
   useEffect(() => {
