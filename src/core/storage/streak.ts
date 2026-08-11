@@ -51,3 +51,30 @@ export function recordVisit(): { streak: number; total: number } {
 
   return { streak, total: days.length }
 }
+
+/**
+ * 記録を足さずに、いまの連続日数だけを読む。
+ *
+ * ■ なぜ「昨日」からも数え始めるのか
+ * `recordVisit` はホーム画面でしか呼ばれない。ホームを経由せず
+ * 直接この画面を開いた日は、今日の記録がまだ無い。
+ * そこを厳密に「今日から」と数えると、実際には途切れていない連続日数が
+ * 0に見えてしまう。起点を今日または昨日に許すことでそれを防ぐ（V1と同じ扱い）。
+ */
+export function currentStreak(now = new Date()): number {
+  const days = new Set(read())
+  if (days.size === 0) return 0
+
+  const cursor = new Date(now)
+  if (!days.has(dateKey(cursor))) {
+    cursor.setDate(cursor.getDate() - 1)
+    if (!days.has(dateKey(cursor))) return 0
+  }
+
+  let streak = 0
+  while (days.has(dateKey(cursor))) {
+    streak++
+    cursor.setDate(cursor.getDate() - 1)
+  }
+  return streak
+}
