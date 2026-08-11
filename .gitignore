@@ -4,4 +4,17 @@ dist-snapshot/
 *.tsbuildinfo
 .DS_Store
 *.local
+.env.local
 .claude/
+
+# Premium/Master 限定コンテンツの本文。
+# このリポジトリは Public なので、コミットした時点で誰でも読める＝限定でなくなる。
+# 執筆はローカルのこのファイルで行い、配信は Worker だけが担う。
+# ⚠️ Git管理外のため、失うと復元できない。定期的にバックアップすること。
+content/premium.json
+
+# Workerの秘密（SESSION_SECRET / LICENSE_PEPPER）とローカル状態。
+# .dev.vars.example の方は雛形なので、コミットしてよい。
+worker/api/.dev.vars
+worker/api/.wrangler/
+.wrangler/
