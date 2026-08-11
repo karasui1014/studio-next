@@ -1,14 +1,14 @@
 {
-  "generatedAt": "2026-08-10T21:36:08.096Z",
-  "count": 214,
-  "newCount": 27,
-  "translatedCount": 5,
+  "generatedAt": "2026-08-11T04:09:18.009Z",
+  "count": 215,
+  "newCount": 21,
+  "translatedCount": 0,
   "ranking": [
-    "9ad61b9fdb7af95e",
+    "98754ec74708d5b8",
     "9944c7bbf915df1f",
+    "5241609e63a63859",
     "1dc47474855221c2",
-    "04dab5bd0af4e468",
-    "017dc455483919cd"
+    "04dab5bd0af4e468"
   ],
   "sources": [
     {
@@ -17,7 +17,7 @@
       "category": "jp",
       "ok": true,
       "fetched": 40,
-      "matched": 36,
+      "matched": 37,
       "error": null
     },
     {
@@ -206,7 +206,7 @@
       "category": "jp",
       "ok": true,
       "fetched": 20,
-      "matched": 1,
+      "matched": 0,
       "error": null
     },
     {
@@ -292,6 +292,20 @@
   ],
   "items": [
     {
+      "id": "f355eecb968ed0d7",
+      "title": "Suno AI、9月3日からダウンロード回数制限を導入",
+      "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTFBPV20wSmhNZEIxbzA2TG05T2NuamtKTmhCWjJwYl9aTUNtVVRyeUVDYU1UQXBzNW9MNm5xbGk1SEMtVHZSbFJFRU5vU216WVM3NmVVNjI5aw?oc=5",
+      "summary": "",
+      "published": "2026-08-10T21:22:03.000Z",
+      "source": "x.com",
+      "sourceId": "gnews-ja-suno",
+      "via": "Googleニュース",
+      "category": "jp",
+      "lang": "ja",
+      "coverage": 1,
+      "score": 24
+    },
+    {
       "id": "1dc47474855221c2",
       "title": "AI Music Company Suno Unveils Download Caps for Free, Paid Tiers in Quest to Combat Abuse (EXCLUSIVE)",
       "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxObWdzLS1yY2NKWE9QdWlUZEFDcHR4TkpuNU5LanRXUzZkeDlyNjVXeHloNWplNExQOUp5VVFnTTRPWUNQQURla0lXaDNEdFdRZE4ycmp4VzNzZHZlQ0NNNTBtTU9TMXREVXVuc0U0SFYyOFV6R2ZFZTZqSHQ1RVdNVFJrUFpjc28zSVhSYVExNHFCemlYcVM4QzFZWENtS3gzbmZaY0JQTQ?oc=5",
@@ -365,10 +379,10 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 2,
+      "coverage": 3,
       "titleJa": "当社には「芸術性と創造性をサポートすることに常に根ざした」「明確な一連の原則」があり、同社は最新の法的敗北による評判の損害を制限しようとしているとSuno CEOは述べています",
       "summaryJa": "プラットフォームは、ダウンロードを制限し、トラックの透かしを導入すると述べています",
-      "score": 29
+      "score": 37
     },
     {
       "id": "1c1686daf0f972e9",
@@ -427,7 +441,7 @@
       "via": null,
       "category": "jp",
       "lang": "ja",
-      "coverage": 4,
+      "coverage": 5,
       "score": 50
     },
     {
@@ -441,8 +455,8 @@
       "via": null,
       "category": "jp",
       "lang": "ja",
-      "coverage": 12,
-      "score": 54
+      "coverage": 13,
+      "score": 50
     },
     {
       "id": "d30e4c714153ccb6",
@@ -606,7 +620,7 @@
       "via": null,
       "category": "jp",
       "lang": "ja",
-      "coverage": 41,
+      "coverage": 45,
       "score": 46
     },
     {
@@ -706,7 +720,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 17,
+      "coverage": 18,
       "titleJa": "Sunoは、AI生成音楽の透かしで合法的になりたいと考えています",
       "summaryJa": "Sunoは、「大規模な悪用」を防ぐために透かしとダウンロード制限を計画しています。",
       "score": 36
@@ -832,7 +846,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 17,
+      "coverage": 18,
       "titleJa": "法的な争いの中で、Sunoは曲に透かしを入れ始めると言います",
       "summaryJa": "Sunoの透かし機能は、同社がいくつかの面で法的闘争を戦っているときに登場します。",
       "score": 36
@@ -848,7 +862,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 17,
+      "coverage": 18,
       "titleJa": "Sunoはビニール市場に進出し、ユーザーがAIの曲を12インチのレコードにプレスできるようにする予定",
       "summaryJa": "同社は、プラットフォーム上で作られた曲を物理的なレコードに変換するサービスであるSuno Vinylのウェイティングリストを開設しました",
       "score": 36
@@ -944,7 +958,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 13,
+      "coverage": 14,
       "titleJa": "スノ、AI楽曲のダウンロードを制限する計画を公開、詳細「原則」「AIは模倣ではなく独創性を可能にするべきである」",
       "summaryJa": "新しい投稿は、Sunoが画期的な裁判所判決でドイツの曲の著作権を侵害した責任を問われてから約1週間後に到着した。",
       "score": 47
@@ -1473,7 +1487,7 @@
       "category": "jp",
       "lang": "ja",
       "coverage": 1,
-      "score": 27
+      "score": 18
     },
     {
       "id": "017dc455483919cd",
@@ -1486,8 +1500,8 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 27,
-      "score": 41
+      "coverage": 28,
+      "score": 32
     },
     {
       "id": "a16be733e6171f35",
@@ -1833,7 +1847,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 34,
+      "coverage": 35,
       "titleJa": "ドイツのGEMAが提起した著作権侵害訴訟でSunoが敗訴",
       "summaryJa": "AI音楽ジェネレーターのSunoは、ドイツの収集協会GEMAが提起した著作権侵害訴訟で敗訴しました。収集協会は、Sunoが権利者へのライセンスまたは支払いなしにAIツールをトレーニングするために、著作権で保護された音楽を使用、保存、複製したと主張しています。ロイター通信は金曜日の朝（ 7月31日）に、ミュンヘン地方裁判所がスノー氏に判決を下したと報じた。",
       "score": 34
@@ -1849,7 +1863,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 26,
+      "coverage": 27,
       "titleJa": "ドイツの収集協会GEMAがSunoに対する著作権侵害訴訟に勝訴",
       "summaryJa": "GEMAはSunoに対する訴訟に勝利しました。判決は何と言っていましたか、今何が起こっていますか、そしてそれはメジャーレーベルの米国Suno訴訟にとって何を意味しますか？",
       "score": 34
@@ -2098,7 +2112,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 67,
+      "coverage": 69,
       "score": 41
     },
     {
@@ -2126,7 +2140,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 42,
+      "coverage": 43,
       "score": 41
     },
     {
@@ -2292,7 +2306,7 @@
       "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE5DSWhSc1VtRjBrbDJmdW1hSXZsRlowWHl2ZUpIcS1Xa29tNjJjSEZsYkpMU01nQmZWS2FlV3JrZW9BbEN5UUlORGw4NldSMm9IaUozMTFCdUpnVnM4dU5xdF9xLTVsV0xzVUxNRg?oc=5",
       "summary": "",
       "published": "2026-07-26T07:00:00.000Z",
-      "source": "日本経済新聞",
+      "source": "nikkei.com",
       "sourceId": "gnews-ja-aimusic",
       "via": "Googleニュース",
       "category": "jp",
@@ -2428,7 +2442,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 26,
+      "coverage": 27,
       "score": 21
     },
     {
@@ -2946,7 +2960,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 67,
+      "coverage": 68,
       "score": 30
     },
     {
@@ -3027,7 +3041,7 @@
       "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQbFdyOUxJRnF5MUtvd1VrX29iWkh5ck5vNkhzc0RpdGlzTXAyWkU0N3I2bVJkb193Nnp4MFJzUUZPbnNWdTNKd0ZRRmFraW1lWXI1TG8xN3ZobThmNnAxa2xUUmxvQW9aaEhQWTRXMWszSjN4TGVqekc0enlOVEdmN1RCMkhNU2tneGhJbThGMTJVaUg3SUUtWmhiNA?oc=5",
       "summary": "",
       "published": "2026-07-15T07:00:00.000Z",
-      "source": "404media.co",
+      "source": "404 Media",
       "sourceId": "gnews-en-aimusic",
       "via": "Googleニュース",
       "category": "global",
