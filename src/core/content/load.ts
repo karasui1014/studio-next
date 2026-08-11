@@ -35,6 +35,12 @@ function strOrNull(value: unknown, max: number): string | null {
   return s ? s : null
 }
 
+/** 動画ファイルの直接URL（.mp4 / .webm のみ）。<video src>にそのまま使うので拡張子を確認する。 */
+function videoUrl(value: unknown): string | undefined {
+  const u = safeUrl(value)
+  return u && /\.(mp4|webm)(\?|$)/i.test(u) ? u : undefined
+}
+
 function toItem(raw: unknown): NewsItem | null {
   if (!raw || typeof raw !== 'object') return null
   const r = raw as Record<string, unknown>
@@ -147,6 +153,7 @@ function toTool(r: Record<string, unknown>) {
     name,
     emoji: str(r.emoji, 8) || '🛠',
     logo: safeUrl(r.logo) || undefined,
+    video: videoUrl(r.video),
     description: str(r.description, 400),
     url,
     category: str(r.category, 30),
@@ -185,7 +192,7 @@ export async function loadHome(): Promise<HomeContent> {
         topic: str(r.topic, 60),
         title,
         free: str(r.free, 2000),
-        premium: str(r.premium, 8000),
+        // 全文（premium）は公開JSONに存在しない。必要になったらAPIから取る
         author: str(r.author, 60),
       }
     }),
@@ -194,8 +201,11 @@ export async function loadHome(): Promise<HomeContent> {
     prompts: toArray(d.prompts, (r) => {
       const title = str(r.title, 80)
       const text = str(r.text, 1000)
-      if (!title || !text) return null
-      return { id: str(r.id, 64) || title, title, text, premium: r.premium === true }
+      const premium = r.premium === true
+      // Premium プロンプトは公開JSONでは本文が空。それが正常なので捨てない
+      // （本文はAPIから届く）。無料プロンプトで本文が無いのは不備なので捨てる。
+      if (!title || (!text && !premium)) return null
+      return { id: str(r.id, 64) || title, title, text, premium }
     }),
     youtube: toArray(d.youtube, (r) => {
       const url = safeUrl(r.url)
@@ -222,11 +232,14 @@ export async function loadHome(): Promise<HomeContent> {
 // カラスイ Picks（Substackから自動取得したもの）
 // ---------------------------------------------------------------
 
-interface PickNote { note?: string; prompts?: unknown }
-
 /**
- * Substackの記事と、home.json の制作メモを突き合わせる。
+ * Substackの記事と、制作メモの「有無」を突き合わせる。
  * 記事は自動で増え、メモは手で足す、という分担にしている。
+ *
+ * ■ 本文はここで扱わない
+ * 制作メモの本文は Premium 限定なので、公開JSON（public/content/）には置かない。
+ * ここで読むのは home.json の pickNoteIds ＝「どの記事にメモがあるか」の一覧だけで、
+ * 本文は権限を検証したAPIからしか降ってこない（src/core/entitlement/api.ts）。
  */
 export async function loadPicks(): Promise<PicksContent> {
   const [picksRes, home] = await Promise.all([
@@ -236,14 +249,17 @@ export async function loadPicks(): Promise<PicksContent> {
   if (!picksRes.ok) throw new Error(`記事を読み込めませんでした (HTTP ${picksRes.status})`)
 
   const d = (await picksRes.json()) as Record<string, unknown>
-  const notes = (home.pickNotes ?? {}) as Record<string, PickNote>
+  const noteIds = new Set(
+    (Array.isArray(home.pickNoteIds) ? home.pickNoteIds : []).filter(
+      (v): v is string => typeof v === 'string',
+    ),
+  )
 
   const items = toArray<SubstackPick>(d.items, (r) => {
     const url = safeUrl(r.url)
     const title = str(r.title, 200)
     if (!url || !title) return null
     const id = str(r.id, 80) || url
-    const n = notes[id] ?? {}
     return {
       id,
       title,
@@ -251,10 +267,7 @@ export async function loadPicks(): Promise<PicksContent> {
       excerpt: str(r.excerpt, 400),
       image: safeUrl(r.image) ?? '',
       published: strOrNull(r.published, 40),
-      note: str(n.note, 1200),
-      prompts: Array.isArray(n.prompts)
-        ? n.prompts.filter((v): v is string => typeof v === 'string')
-        : [],
+      hasNote: noteIds.has(id),
     }
   })
 

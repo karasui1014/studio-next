@@ -1,6 +1,5 @@
 {
   "_comment": "トップページに出す手書きコンテンツ。ここを編集すればアプリのビルドなしで画面が変わります。ニュースは news.json（自動更新）から読むので、このファイルには含めません。",
-
   "_daily_note": "Studioからの今日の一言。日付ごとに1つ選ばれます。date を書けばその日に必ず出ます。date のないものは「たね」として日替わりで巡回するので、毎日書かなくても毎日変わります。",
   "daily": [
     {
@@ -60,15 +59,7 @@
       "to": "/prompts"
     }
   ],
-
   "_pickNotes_note": "カラスイ Picks の記事ごとに足す、Studio限定の制作メモ。キーは記事URLの /p/ 以降。ここがPremiumの価値になる部分です（Substackの本文はStudioに載せません）。",
-  "pickNotes": {
-    "aiip": {
-      "note": "この記事で書いたIPの考え方は、Studioの曲管理と相性が良いです。曲ごとに「誰が歌っているか」を決めて固定すると、Persona を使ったときの再現性が上がります。",
-      "prompts": ["p-lofi-drive"]
-    }
-  },
-
   "_legacy_picks_note": "Substack連携より前の手書きPick。picks.json が取得できないときの控えです。",
   "picks": [
     {
@@ -78,11 +69,9 @@
       "topic": "Lyria 3.5 発表",
       "title": "日本語ボーカルが「使える」水準に来ました。Sunoから乗り換えるべきか？",
       "free": "今回の目玉は3分という尺よりも、日本語の発音処理です。これまで日本語詞は「っ」「ん」の処理が甘く、そこだけ英語詞に逃がす人が多かった。今回それが……",
-      "premium": "今回の目玉は3分という尺よりも、日本語の発音処理です。これまで日本語詞は「っ」「ん」の処理が甘く、そこだけ英語詞に逃がす人が多かった。今回それがかなり改善されています。\n\nただし、いま Suno で作り込んだスタイルプロンプト資産がある人は、まだ乗り換えるべきではないと考えます。理由は3つあります。\n\n① Lyria はプロンプトの効き方が Suno と別系統で、蓄積が引き継げない\n② 商用利用条件がまだ整理されていない\n③ 出力の当たり外れの幅が Suno より大きく、量産に向かない\n\nおすすめは「日本語のサビだけ Lyria で試す」使い分けです。プロンプトライブラリに比較用テンプレートを入れてあります。",
       "author": "カラスイ / AI音楽部"
     }
   ],
-
   "todayTools": [
     {
       "id": "moises",
@@ -92,7 +81,6 @@
       "url": "https://moises.ai/"
     }
   ],
-
   "prompts": [
     {
       "id": "p-lofi-drive",
@@ -109,45 +97,154 @@
     {
       "id": "p-experimental",
       "title": "実験的J-POP",
-      "text": "experimental jpop, glitch percussion, detuned synth pad, whisper vocal layered, 92 bpm, cinematic build",
+      "text": "",
       "premium": true
     }
   ],
-
   "_toolsGuide_note": "AIツール図鑑。実際に使ったものだけを載せます。category で絞り込めます。",
   "toolsGuide": [
-    { "id": "suno", "name": "Suno", "emoji": "🎵", "logo": "https://www.google.com/s2/favicons?domain=suno.com&sz=128", "category": "楽曲生成", "url": "https://suno.com/invite/@karasuiai",
-      "description": "いちばん使われている音楽生成AI。無料枠は1日10曲。日本語詞も通ります。" },
-    { "id": "udio", "name": "Udio", "emoji": "🎶", "logo": "https://www.google.com/s2/favicons?domain=udio.com&sz=128", "category": "楽曲生成", "url": "https://www.udio.com/",
-      "description": "Sunoと双璧。音の質感が細かく、洋楽系の再現に強い印象です。" },
-    { "id": "elevenlabs", "name": "ElevenLabs", "emoji": "🗣", "logo": "https://www.google.com/s2/favicons?domain=elevenlabs.io&sz=128", "category": "音声", "url": "https://elevenlabs.io/",
-      "description": "音声合成。ナレーションやセリフ入りの構成で使えます。" },
-    { "id": "capcut", "name": "CapCut", "emoji": "🎬", "logo": "https://www.google.com/s2/favicons?domain=capcut.com&sz=128", "category": "映像・画像", "url": "https://www.capcut.com/",
-      "description": "無料の動画編集。Shorts向けの縦型編集がしやすいです。" },
-    { "id": "runway", "name": "Runway", "emoji": "🌀", "logo": "https://www.google.com/s2/favicons?domain=runwayml.com&sz=128", "category": "動画生成", "url": "https://runwayml.com/",
-      "description": "映像生成AIの最先端（Gen-4.5）。MVの一部だけAI映像で作りたいときに。無料は125クレジットのみで、本格利用は有料です。" },
-    { "id": "domoai", "name": "DomoAI", "emoji": "🎨", "logo": "https://www.google.com/s2/favicons?domain=domoai.app&sz=128", "category": "動画生成", "url": "https://www.domoai.app/home?via=b576a3",
-      "description": "実写や既存映像を別スタイルへ変換できます。MVの世界観づくりが一気に速くなります。" },
-    { "id": "seedance", "name": "Seedance", "emoji": "🎥", "logo": "https://www.google.com/s2/favicons?domain=deevid.ai&sz=128", "category": "動画生成", "url": "https://deevid.ai/image-to-video?fpr=masahiro43",
-      "description": "画像から数秒のショットを生成できるAI動画。4〜8秒の短いカットなら破綻せずに使える確率が高いです（Deevid経由で利用）。" },
-    { "id": "higgsfield", "name": "Higgsfield", "emoji": "🎦", "logo": "https://www.google.com/s2/favicons?domain=higgsfield.ai&sz=128", "category": "動画生成", "url": "https://higgsfield.ai/",
-      "description": "カメラワークまで細かく指定できる映像生成AI。CM風・シネマティックな絵作りに強いです。" },
-    { "id": "kling", "name": "Kling AI", "emoji": "🎞", "logo": "https://www.google.com/s2/favicons?domain=kling.ai&sz=128", "category": "動画生成", "url": "https://kling.ai/",
-      "description": "4K・60fps対応の最新映像生成AI（Kling 3.0）。最大15秒、複数ショットのつなぎもできます。" },
-    { "id": "hailuo", "name": "Hailuo", "emoji": "🐚", "logo": "https://www.google.com/s2/favicons?domain=hailuoai.video&sz=128", "category": "動画生成", "url": "https://hailuoai.video/",
-      "description": "セリフやBGMを同時生成できる映像生成AI。音込みのショットが一発で作れます。アプリ版で手軽に使えます。" },
-    { "id": "minimax-h3", "name": "MiniMax H3", "emoji": "🎙", "logo": "https://www.google.com/s2/favicons?domain=minimax.io&sz=128", "category": "動画生成", "url": "https://www.minimax.io/",
-      "description": "MiniMaxの最新映像生成モデル本体。2K・24fps・32kHzステレオ音声に対応。開発者向けAPIやより高精度な生成が必要なときに。" },
-    { "id": "chatgpt", "name": "ChatGPT", "emoji": "💬", "logo": "https://www.google.com/s2/favicons?domain=chatgpt.com&sz=128", "category": "文章・相談", "url": "https://chatgpt.com/",
-      "description": "文章生成AIの代表格。歌詞のアイデア出しや構成の壁打ちに使えます。無料版でも十分実用的です。" },
-    { "id": "claude", "name": "Claude", "emoji": "✨", "logo": "https://www.google.com/s2/favicons?domain=claude.ai&sz=128", "category": "文章・相談", "url": "https://claude.ai/",
-      "description": "文章・コード生成に強いAI。長文の読み込みや複雑な相談ごとに向いています。無料枠あり。" }
+    {
+      "id": "suno",
+      "name": "Suno",
+      "emoji": "🎵",
+      "logo": "https://www.google.com/s2/favicons?domain=suno.com&sz=128",
+      "video": "https://cdn1.suno.ai/Suno+Timbaland+Cover+Edit+4+(1)+-+Smaller.mp4",
+      "category": "楽曲生成",
+      "url": "https://suno.com/invite/@karasuiai",
+      "description": "いちばん使われている音楽生成AI。無料枠は1日10曲。日本語詞も通ります。"
+    },
+    {
+      "id": "udio",
+      "name": "Udio",
+      "emoji": "🎶",
+      "logo": "https://www.google.com/s2/favicons?domain=udio.com&sz=128",
+      "video": "https://storage.googleapis.com/udio-artifacts-c33fe3ba-3ffe-471f-92c8-5dfef90b3ea3/video/instagram/mega_compressed_videos/fed_28_resized_compressed.mp4",
+      "category": "楽曲生成",
+      "url": "https://www.udio.com/",
+      "description": "Sunoと双璧。音の質感が細かく、洋楽系の再現に強い印象です。"
+    },
+    {
+      "id": "elevenlabs",
+      "name": "ElevenLabs",
+      "emoji": "🗣",
+      "logo": "https://www.google.com/s2/favicons?domain=elevenlabs.io&sz=128",
+      "video": "https://eleven-public-cdn.elevenlabs.io/payloadcms/video-derived/6a184b41ff464f65c08e32c1/h264_720.mp4",
+      "category": "音声",
+      "url": "https://elevenlabs.io/",
+      "description": "音声合成。ナレーションやセリフ入りの構成で使えます。"
+    },
+    {
+      "id": "capcut",
+      "name": "CapCut",
+      "emoji": "🎬",
+      "logo": "https://www.google.com/s2/favicons?domain=capcut.com&sz=128",
+      "category": "映像・画像",
+      "url": "https://www.capcut.com/",
+      "description": "無料の動画編集。Shorts向けの縦型編集がしやすいです。"
+    },
+    {
+      "id": "davinci-resolve",
+      "name": "DaVinci Resolve",
+      "emoji": "🎛",
+      "logo": "https://www.google.com/s2/favicons?domain=blackmagicdesign.com&sz=128",
+      "video": "https://downloads.blackmagicdesign.com/videos/products/davinciresolve/landing/hero/20260602-195341/hero.hd.720p.mp4",
+      "category": "映像・画像",
+      "url": "https://www.blackmagicdesign.com/products/davinciresolve",
+      "description": "プロも使う無料の動画編集・カラーグレーディングソフト。本格的に仕上げたいMVの最終調整に。"
+    },
+    {
+      "id": "runway",
+      "name": "Runway",
+      "emoji": "🌀",
+      "logo": "https://www.google.com/s2/favicons?domain=runwayml.com&sz=128",
+      "video": "https://runway-static-assets.s3.amazonaws.com/site/videos/404_003.mp4",
+      "category": "動画生成",
+      "url": "https://runwayml.com/",
+      "description": "映像生成AIの最先端（Gen-4.5）。MVの一部だけAI映像で作りたいときに。無料は125クレジットのみで、本格利用は有料です。"
+    },
+    {
+      "id": "domoai",
+      "name": "DomoAI",
+      "emoji": "🎨",
+      "logo": "https://www.google.com/s2/favicons?domain=domoai.app&sz=128",
+      "video": "https://customer-v3pak2qtdtieudrb.cloudflarestream.com/3220b10471decad4e9f59f224082e7a8/downloads/default.mp4",
+      "category": "動画生成",
+      "url": "https://www.domoai.app/home?via=b576a3",
+      "description": "実写や既存映像を別スタイルへ変換できます。MVの世界観づくりが一気に速くなります。"
+    },
+    {
+      "id": "seedance",
+      "name": "Seedance",
+      "emoji": "🎥",
+      "logo": "https://www.google.com/s2/favicons?domain=deevid.ai&sz=128",
+      "video": "https://cdn2.deevid.ai/user-video/v2_1776838934009-205212848.mp4",
+      "category": "動画生成",
+      "url": "https://deevid.ai/image-to-video?fpr=masahiro43",
+      "description": "画像から数秒のショットを生成できるAI動画。4〜8秒の短いカットなら破綻せずに使える確率が高いです（Deevid経由で利用）。"
+    },
+    {
+      "id": "higgsfield",
+      "name": "Higgsfield",
+      "emoji": "🎦",
+      "logo": "https://www.google.com/s2/favicons?domain=higgsfield.ai&sz=128",
+      "video": "https://cdn.higgsfield.ai/card/daa3168b-d41a-4508-95fc-ae36e40f2589.mp4",
+      "category": "動画生成",
+      "url": "https://higgsfield.ai/",
+      "description": "カメラワークまで細かく指定できる映像生成AI。CM風・シネマティックな絵作りに強いです。"
+    },
+    {
+      "id": "kling",
+      "name": "Kling AI",
+      "emoji": "🎞",
+      "logo": "https://www.google.com/s2/favicons?domain=kling.ai&sz=128",
+      "video": "https://v16-kling.klingai.com/kos/s101/nlav112918/kling-website/page1-v3-0-en.mp4",
+      "category": "動画生成",
+      "url": "https://kling.ai/",
+      "description": "4K・60fps対応の最新映像生成AI（Kling 3.0）。最大15秒、複数ショットのつなぎもできます。"
+    },
+    {
+      "id": "hailuo",
+      "name": "Hailuo",
+      "emoji": "🐚",
+      "logo": "https://www.google.com/s2/favicons?domain=hailuoai.video&sz=128",
+      "video": "https://cdn.hailuoai.video/moss/prod/2026-07-31-10/feed/1785463954697944808-feed_539420209520201737.mp4",
+      "category": "動画生成",
+      "url": "https://hailuoai.video/",
+      "description": "セリフやBGMを同時生成できる映像生成AI。音込みのショットが一発で作れます。アプリ版で手軽に使えます。"
+    },
+    {
+      "id": "minimax-h3",
+      "name": "MiniMax H3",
+      "emoji": "🎙",
+      "logo": "https://www.google.com/s2/favicons?domain=minimax.io&sz=128",
+      "video": "https://file.cdn.minimax.io/public/1f39e7ee-8884-41a9-bbb5-e20dac70a117.mp4",
+      "category": "動画生成",
+      "url": "https://www.minimax.io/",
+      "description": "MiniMaxの最新映像生成モデル本体。2K・24fps・32kHzステレオ音声に対応。開発者向けAPIやより高精度な生成が必要なときに。"
+    },
+    {
+      "id": "chatgpt",
+      "name": "ChatGPT",
+      "emoji": "💬",
+      "logo": "https://www.google.com/s2/favicons?domain=chatgpt.com&sz=128",
+      "category": "文章・相談",
+      "url": "https://chatgpt.com/",
+      "description": "文章生成AIの代表格。歌詞のアイデア出しや構成の壁打ちに使えます。無料版でも十分実用的です。"
+    },
+    {
+      "id": "claude",
+      "name": "Claude",
+      "emoji": "✨",
+      "logo": "https://www.google.com/s2/favicons?domain=claude.ai&sz=128",
+      "video": "https://assets.claude.ai/videos/login-hero-kt3-932d39be.mp4",
+      "category": "文章・相談",
+      "url": "https://claude.ai/",
+      "description": "文章・コード生成に強いAI。長文の読み込みや複雑な相談ごとに向いています。無料枠あり。"
+    }
   ],
-
   "_youtube_note": "チャンネルの新着動画。将来は YouTube の RSS から自動取得する予定。いまは手で書きます。",
   "youtube": [],
   "youtubeChannelUrl": "https://www.youtube.com/",
-
   "substack": {
     "enabled": true,
     "url": "https://substack.com/@karasui",
@@ -155,5 +252,8 @@
     "description": "AI音楽の最新情報、Studio開発の裏側、AIツールの検証記事などを公開しています。",
     "note": "無料で登録できます。必要なくなったらいつでも解除できます。",
     "buttonLabel": "記事を読む"
-  }
+  },
+  "pickNoteIds": [
+    "aiip"
+  ]
 }

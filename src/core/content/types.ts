@@ -68,10 +68,14 @@ export interface SubstackPick {
   excerpt: string
   image: string
   published: string | null
-  /** Studio限定の制作メモ（Premiumで読める）。home.json の pickNotes から */
-  note: string
-  /** 関連プロンプトのID */
-  prompts: string[]
+  /**
+   * この記事に制作メモが「ある」かどうかだけ。本文はここに入らない。
+   *
+   * 本文は Premium 限定なので、公開JSONに載せると誰でも読めてしまう。
+   * 画面はこのフラグでロックの有無を決め、本文が要るときだけAPIに取りに行く
+   * （src/core/entitlement/api.ts の usePremiumNote）。
+   */
+  hasNote: boolean
 }
 
 export interface PicksContent {
@@ -85,10 +89,8 @@ export interface Pick {
   tag: string
   topic: string
   title: string
-  /** 無料プランで読める範囲 */
+  /** 無料プランで読める範囲。全文は公開JSONに置かず、APIからのみ取得する */
   free: string
-  /** Premium で読める全文 */
-  premium: string
   author: string
 }
 
@@ -98,6 +100,8 @@ export interface ToolPick {
   emoji: string
   /** サービスのロゴ画像URL（任意）。読み込めない場合はemojiにフォールバックする */
   logo?: string
+  /** 公式サイトに載っている紹介動画ファイルの直接URL（任意）。カードにホバーすると再生される */
+  video?: string
   description: string
   url: string
   /** 図鑑での分類（今日のツールでは空） */

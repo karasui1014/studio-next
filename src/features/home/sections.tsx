@@ -1,9 +1,8 @@
 import { Link } from 'react-router-dom'
-import { Copy, Lock, Star, X } from 'lucide-react'
+import { Copy, Star, X } from 'lucide-react'
 import { useCallback, useState } from 'react'
 
 import type { PromptPick, SubstackConfig, ToolPick, VideoPick } from '@/core/content/types'
-import { useRole } from '@/core/entitlement/role'
 import { recordActivity, useFavorite } from '@/core/storage/activity'
 import { cn } from '@/core/ui/cn'
 
@@ -55,9 +54,17 @@ export function ToolCard({ tool }: { tool: ToolPick }) {
 /* ---------------- おすすめプロンプト ---------------- */
 
 export function PromptCard({ prompt }: { prompt: PromptPick }) {
-  const { paid } = useRole()
   const [copied, setCopied] = useState(false)
-  const locked = prompt.premium && !paid
+
+  /**
+   * 「Premium限定プロンプト」の仕組みは廃止した（2026-08-08）。
+   * プロンプト工房そのものが Premium 以上の機能になったため、
+   * プロンプト1件ずつをロックする必要がなくなった。
+   *
+   * 本文を持たないプロンプト（旧・限定扱いで公開JSONが空のもの）は、
+   * 中身のないカードを出しても意味がないので描画しない。
+   */
+  const text = prompt.text
 
   const build = useCallback(
     () => ({ id: prompt.id, kind: 'prompt' as const, label: prompt.title, to: '/prompts', url: null }),
@@ -66,7 +73,7 @@ export function PromptCard({ prompt }: { prompt: PromptPick }) {
   const fav = useFavorite('prompt', prompt.id, build)
 
   const copy = () => {
-    navigator.clipboard?.writeText(prompt.text).then(
+    navigator.clipboard?.writeText(text).then(
       () => {
         setCopied(true)
         setTimeout(() => setCopied(false), 1600)
@@ -77,58 +84,35 @@ export function PromptCard({ prompt }: { prompt: PromptPick }) {
     )
   }
 
+  // 本文の無いプロンプトは表示しない（旧・限定扱いの残骸）
+  if (!text) return null
+
   return (
     <div className="flex flex-col gap-2 rounded-[11px] border border-border bg-card px-3.5 py-3">
       <div className="flex items-center gap-1.5">
         <p className="min-w-0 flex-1 truncate text-[12.5px] font-bold">{prompt.title}</p>
-        {prompt.premium && (
-          <span className="shrink-0 rounded bg-premium/15 px-1.5 py-px text-[10px] font-bold text-premium">
-            Premium
-          </span>
-        )}
-        {!locked && (
-          <button
-            type="button"
-            onClick={fav.toggle}
-            aria-pressed={fav.on}
-            aria-label={fav.on ? 'お気に入りから外す' : 'お気に入りに入れる'}
-            className="-mr-1 grid h-7 w-7 shrink-0 place-items-center rounded-md text-muted-foreground hover:bg-accent"
-          >
-            <Star className={cn('h-4 w-4', fav.on && 'fill-premium text-premium')} />
-          </button>
-        )}
+        <button
+          type="button"
+          onClick={fav.toggle}
+          aria-pressed={fav.on}
+          aria-label={fav.on ? 'お気に入りから外す' : 'お気に入りに入れる'}
+          className="-mr-1 grid h-7 w-7 shrink-0 place-items-center rounded-md text-muted-foreground hover:bg-accent"
+        >
+          <Star className={cn('h-4 w-4', fav.on && 'fill-premium text-premium')} />
+        </button>
       </div>
 
-      {locked ? (
-        <div className="relative overflow-hidden rounded-lg">
-          <p className="select-none break-all rounded-lg bg-muted px-2.5 py-2.5 font-mono text-[11.5px] leading-relaxed text-muted-foreground blur-[4px]">
-            {prompt.text}
-          </p>
-          <div className="absolute inset-0 grid place-items-center gap-2 bg-card/70">
-            <Link
-              to="/plans"
-              className="inline-flex items-center gap-1.5 rounded-lg bg-premium px-3 py-1.5 text-[12.5px] font-semibold text-white"
-            >
-              <Lock className="h-3.5 w-3.5" />
-              Premiumで見る
-            </Link>
-          </div>
-        </div>
-      ) : (
-        <>
-          <p className="line-clamp-3 break-all rounded-lg bg-muted px-2.5 py-2.5 font-mono text-[11.5px] leading-relaxed text-muted-foreground">
-            {prompt.text}
-          </p>
-          <button
-            type="button"
-            onClick={copy}
-            className="inline-flex w-fit items-center gap-1.5 rounded-lg border border-border px-3 py-1.5 text-[12.5px] font-semibold"
-          >
-            <Copy className="h-3.5 w-3.5" />
-            {copied ? 'コピーしました' : 'コピー'}
-          </button>
-        </>
-      )}
+      <p className="line-clamp-3 break-all rounded-lg bg-muted px-2.5 py-2.5 font-mono text-[11.5px] leading-relaxed text-muted-foreground">
+        {text}
+      </p>
+      <button
+        type="button"
+        onClick={copy}
+        className="inline-flex w-fit items-center gap-1.5 rounded-lg border border-border px-3 py-1.5 text-[12.5px] font-semibold"
+      >
+        <Copy className="h-3.5 w-3.5" />
+        {copied ? 'コピーしました' : 'コピー'}
+      </button>
     </div>
   )
 }
@@ -151,14 +135,15 @@ function dismissedRecently(): boolean {
  * Substackへの導線。
  * ・ニュースとPicksを読み終わった位置に1枚だけ置く（モーダルは使わない）
  * ・閉じたら30日出さない
- * ・有料会員には出さない（すでに情報が届いているため）
+ * ・**プランに関わらず全員に出す**（2026-08-08 変更）
+ *   以前は有料会員に出していなかったが、Substackは3つの場所を一緒に育てる導線であり、
+ *   有料の人にも読んでほしいため、権限による出し分けをやめた。
  * 開発憲章の「制作の邪魔をしない」を守るための設計。
  */
 export function SubstackCard({ config }: { config: SubstackConfig }) {
-  const { paid } = useRole()
   const [hidden, setHidden] = useState(dismissedRecently)
 
-  if (paid || hidden) return null
+  if (hidden) return null
 
   const dismiss = () => {
     try { localStorage.setItem(SUBSTACK_DISMISSED, String(Date.now())) } catch { /* noop */ }
