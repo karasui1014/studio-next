@@ -1,0 +1,15 @@
+# ローカル開発用の設定。このファイルをコピーして .dev.vars を作る。
+#   cp .dev.vars.example .dev.vars
+# .dev.vars は .gitignore 済み（コミットされない）。
+
+# セッショントークンの署名鍵。32文字以上。
+# 生成例:  node -e "console.log(crypto.randomBytes(32).toString('hex'))"
+SESSION_SECRET="ローカル用のランダムな文字列を32文字以上で入れる"
+
+# ライセンスキーをハッシュ化するときに混ぜる値。
+# 名簿を投入したときと同じ値でないと、キーが一致しなくなる。
+LICENSE_PEPPER="ローカル用のランダムな文字列"
+
+# QA用。'true' のとき DevRoleSwitcher から本物のトークンを発行できる。
+# ⚠️ 本番（wrangler secret / ダッシュボード）には絶対に設定しないこと。
+DEV_ROLE_OVERRIDE="true"

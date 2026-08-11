@@ -1,0 +1,26 @@
+# Studio Next 限定コンテンツ配信 API
+#
+# ローカル実行（Cloudflareアカウント不要・ネットにも出ない）:
+#   cd worker/api && npm install && npm run dev
+#
+# 本番へ出すとき:
+#   npx wrangler secret put SESSION_SECRET
+#   npx wrangler secret put LICENSE_PEPPER
+#   npx wrangler deploy
+#   node ../../scripts/push-premium-content.mjs      ← 限定コンテンツをKVへ
+#
+# ⚠️ DEV_ROLE_OVERRIDE は絶対に本番へ設定しないこと。
+#    設定すると、誰でも好きな権限のトークンを発行できるようになる。
+
+name = "studio-next-api"
+main = "src/index.ts"
+compatibility_date = "2026-08-01"
+
+# auth-test PoC の ROSTER_KV とは別に採番している。
+# PoC はいずれ名前空間ごと削除する予定なので、同居させると巻き添えで消える。
+[[kv_namespaces]]
+binding = "ROSTER_KV"
+id = "6e574599dff34a6d9c865aadc0225b91"
+
+[vars]
+ALLOWED_ORIGINS = "http://localhost:5180,http://localhost:4180,https://karasui1014.github.io"
