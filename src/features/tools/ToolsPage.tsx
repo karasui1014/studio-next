@@ -1,8 +1,12 @@
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { Construction } from 'lucide-react'
+import { Construction, Lock, SquareArrowOutUpRight } from 'lucide-react'
 
 import { recordActivity } from '@/core/storage/activity'
+import { useRole, type Role } from '@/core/entitlement/role'
 import { cn } from '@/core/ui/cn'
+
+const TIER_RANK: Record<Role, number> = { free: 0, premium: 1, master: 2 }
 
 interface ToolEntry {
   id: string
@@ -14,7 +18,7 @@ interface ToolEntry {
   phase?: string
 }
 
-/** 制作ツールの一覧。V1からの移植が進むたびに to を埋めていく。 */
+/** 制作ツールの一覧。すべて Premium 以上。V1からの移植が進むたびに to を埋めていく。 */
 const TOOLS: ToolEntry[] = [
   {
     id: 'lyrics-review', emoji: '✍️', name: '歌詞レビュー',
@@ -34,7 +38,207 @@ const TOOLS: ToolEntry[] = [
   },
 ]
 
+/**
+ * Studioの外にある独立ツールへの入口。
+ *
+ * ■ これらのURLをコードに書いてよい理由
+ * Discordの招待URLとは違い、ここに載せる7つはいずれも
+ * 「元からログイン不要で誰でも開けるサイト」であり、限定性を持たない。
+ * 実際 V1（AI Music Studio）の公開ソースに以前から平文で書かれていた。
+ * ここでの「鍵」は本物のアクセス制御ではなく、導線の出し分けにすぎない
+ * ——それはDiscordのときと同じ整理で、隠す価値のあるものを隠していない。
+ *
+ * ■ 権限（2026-08-10決定）
+ *   スタイルプロンプト工房                                     : 無料
+ *     （他所（このサイト自身）で既に無料公開済みのツールのため、Studio側でも無料開放にした）
+ *   絵コンテツール・ギターコードTAB・マスタリング自動生成ツール : Premium以上
+ *   字幕自動生成／楽曲批評／Seedance                            : Masterのみ
+ *
+ * 名称・説明文・URLは V1 の `src/lib/constants.ts`（EXTERNAL_TOOLS）と完全一致させている。
+ */
+interface ExternalTool {
+  id: string
+  emoji: string
+  name: string
+  desc: string
+  url: string
+  requires: Role
+}
+
+const EXTERNAL_TOOLS: ExternalTool[] = [
+  {
+    id: 'storyboard-external', emoji: '🎬', name: '絵コンテツール',
+    desc: 'MVのカット割り・構成を考える',
+    url: 'https://karasui1014.github.io/lofi-detective-website/storyboard.html',
+    requires: 'premium',
+  },
+  {
+    id: 'subtitle', emoji: '💬', name: '字幕自動生成ツール',
+    desc: '歌詞から字幕を自動生成する',
+    url: 'https://karasui1014.github.io/lofi-detective-website/lyric/',
+    requires: 'master',
+  },
+  {
+    id: 'guitar-chord-tab', emoji: '🎸', name: 'ギターコードTAB',
+    desc: 'ギター音源からコード進行とTAB譜を作る',
+    url: 'https://karasui1014.github.io/guitar-chord-tab/',
+    requires: 'premium',
+  },
+  {
+    id: 'mastering', emoji: '🎚', name: 'マスタリング自動生成ツール',
+    desc: '楽曲のマスタリング設定を作る',
+    url: 'https://karasui1014.github.io/lofi-detective-website/mastering/',
+    requires: 'premium',
+  },
+  {
+    id: 'style-prompt', emoji: '🎵', name: 'スタイルプロンプト工房',
+    desc: 'Sunoのスタイルプロンプトを研究する',
+    url: 'https://karasui1014.github.io/lofi-detective-website/style-prompt-koubou/',
+    requires: 'free',
+  },
+  {
+    id: 'review', emoji: '📝', name: '楽曲批評ツール',
+    desc: '完成した楽曲をAIにレビューしてもらう',
+    url: 'https://karasui1014.github.io/gakkyoku-hihyou/',
+    requires: 'master',
+  },
+  {
+    id: 'seedance', emoji: '🎞', name: 'Seedance Batch Studio',
+    desc: '動画素材をまとめてバッチ生成する',
+    url: 'https://seedance-batch-studio.karasui.chatgpt.site/',
+    requires: 'master',
+  },
+]
+
+const UPGRADE_STEPS: Record<'premium' | 'master', { membership: string; line: string }> = {
+  premium: {
+    membership: 'YouTubeメンバーシップを「AIでMVを作りたい部」以上に加入・変更する',
+    line: '公式LINEで「チャンネル名」と「Premiumに加入した」旨を送る',
+  },
+  master: {
+    membership: 'YouTubeメンバーシップを「AIでMVを1か月でマスターしたい方向け」に変更する',
+    line: '公式LINEで「チャンネル名」と「Masterに変更した」旨を送る',
+  },
+}
+
+/** ロックされたツール共通のカード。ネイティブ・外部どちらの表示にも使う。 */
+function LockedCard({
+  emoji,
+  name,
+  requires,
+}: {
+  emoji: string
+  name: string
+  requires: 'premium' | 'master'
+}) {
+  const [expanded, setExpanded] = useState(false)
+  const tierLabel = requires === 'master' ? 'Master' : 'Premium'
+  const steps = UPGRADE_STEPS[requires]
+
+  return (
+    <div
+      className={cn(
+        'rounded-xl border p-4',
+        requires === 'master' ? 'border-master/30 bg-master/[0.04]' : 'border-premium/30 bg-premium/[0.04]',
+      )}
+    >
+      <button
+        type="button"
+        onClick={() => setExpanded((v) => !v)}
+        className="flex w-full items-start gap-3.5 text-left"
+      >
+        <span
+          className={cn(
+            'grid h-11 w-11 shrink-0 place-items-center rounded-xl text-xl',
+            requires === 'master' ? 'bg-master/12' : 'bg-premium/12',
+          )}
+        >
+          {emoji}
+        </span>
+        <span className="min-w-0 flex-1">
+          <span className="flex items-center gap-1.5 text-[14px] font-bold">
+            {name}
+            <Lock className={cn('h-3.5 w-3.5', requires === 'master' ? 'text-master' : 'text-premium')} />
+          </span>
+          <span className="mt-1 block text-[12px] leading-relaxed text-muted-foreground">
+            {tierLabel}限定です。タップで詳しく
+          </span>
+        </span>
+      </button>
+
+      {expanded && (
+        <div className="mt-3 rounded-lg border border-border bg-card p-3 text-[12.5px] leading-relaxed">
+          <p className={cn('font-bold', requires === 'master' ? 'text-master' : 'text-premium')}>
+            {tierLabel}プランへのアップグレード
+          </p>
+          <p className="mt-1.5 text-muted-foreground">
+            {name}は Studio {tierLabel} でご利用いただけます。
+            アップグレードの流れは以下のとおりです。
+          </p>
+          <ol className="mt-2 space-y-1 text-muted-foreground">
+            <li>1. {steps.membership}</li>
+            <li>2. {steps.line}</li>
+            <li>3. こちらでメンバーシップを確認し、新しいライセンスキーをお送りします</li>
+            <li>4. 「プラン」画面でキーを入力する</li>
+          </ol>
+          <Link
+            to="/plans"
+            className={cn(
+              'mt-3 inline-flex h-9 items-center justify-center rounded-lg px-4 text-[12.5px] font-bold text-white',
+              requires === 'master' ? 'bg-master' : 'bg-premium',
+            )}
+          >
+            {tierLabel}プランを見る
+          </Link>
+        </div>
+      )}
+    </div>
+  )
+}
+
+function ExternalToolCard({ tool, role }: { tool: ExternalTool; role: Role }) {
+  const locked = TIER_RANK[tool.requires] > TIER_RANK[role]
+
+  if (!locked) {
+    return (
+      <a
+        href={tool.url}
+        target="_blank"
+        rel="noopener noreferrer external"
+        referrerPolicy="no-referrer"
+        onClick={() => recordActivity({ id: tool.id, kind: 'tool', label: tool.name, to: null, url: tool.url })}
+        className="flex items-start gap-3.5 rounded-xl border border-border bg-card p-4 transition-colors hover:border-primary/40"
+      >
+        <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-muted text-xl">
+          {tool.emoji}
+        </span>
+        <span className="min-w-0 flex-1">
+          <span className="flex items-center gap-1.5 text-[14px] font-bold">
+            {tool.name}
+            <SquareArrowOutUpRight className="h-3.5 w-3.5 text-muted-foreground" />
+          </span>
+          <span className="mt-1 block text-[12px] leading-relaxed text-muted-foreground">
+            {tool.desc}
+          </span>
+        </span>
+      </a>
+    )
+  }
+
+  // requires が 'free' なら誰にとってもロックされない（above の !locked 分岐で必ず拾われる）
+  return <LockedCard emoji={tool.emoji} name={tool.name} requires={tool.requires as 'premium' | 'master'} />
+}
+
 export function ToolsPage() {
+  const { role } = useRole()
+
+  // 鍵つきツールをなるべく下に揃える（2026-08-10決定）。ロック状態が同じもの同士の順序は変えない。
+  const sortedExternalTools = [...EXTERNAL_TOOLS].sort((a, b) => {
+    const aLocked = TIER_RANK[a.requires] > TIER_RANK[role] ? 1 : 0
+    const bLocked = TIER_RANK[b.requires] > TIER_RANK[role] ? 1 : 0
+    return aLocked - bLocked
+  })
+
   return (
     <div className="animate-fade-in">
       <h1 className="text-xl font-bold">制作ツール</h1>
@@ -44,6 +248,10 @@ export function ToolsPage() {
 
       <div className="mt-5 grid gap-2.5 sm:grid-cols-2">
         {TOOLS.map((t) => {
+          if (role === 'free') {
+            return <LockedCard key={t.id} emoji={t.emoji} name={t.name} requires="premium" />
+          }
+
           const body = (
             <>
               <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-muted text-xl">
@@ -86,6 +294,16 @@ export function ToolsPage() {
             <div key={t.id} className={className}>{body}</div>
           )
         })}
+      </div>
+
+      <p className="mt-8 flex items-center gap-2 text-[10.5px] font-bold tracking-wide text-muted-foreground">
+        外部ツール（別サイトが開きます）
+        <span className="h-px flex-1 bg-border" />
+      </p>
+      <div className="mt-2.5 grid gap-2.5 sm:grid-cols-2">
+        {sortedExternalTools.map((t) => (
+          <ExternalToolCard key={t.id} tool={t} role={role} />
+        ))}
       </div>
     </div>
   )

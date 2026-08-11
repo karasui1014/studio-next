@@ -6,6 +6,7 @@ import { headline } from '@/core/content/types'
 import { recordActivity } from '@/core/storage/activity'
 import { CATEGORY_CLASS, CATEGORY_LABEL, relativeTime } from '@/features/news/format'
 import { cn } from '@/core/ui/cn'
+import { SecretaryCard } from '../secretary/SecretaryCard'
 import { TodayPick } from '../picks/TodayPick'
 import { CreateHero } from './CreateHero'
 import { DailyTipCard, pickDailyTip } from './DailyTip'
@@ -26,6 +27,7 @@ const STUDIO_TOOLS = [
  * 並び順に意味がある：
  *   ① 今日は何を作りますか？＋制作タイル … 制作の入口。いちばん大きく
  *      ＋ 今日試すAI音楽機能           … 開く理由になる一言
+ *   ② AI秘書のひとこと                 … 有料プランのみ。次の一歩を名指しする
  *   ③ 続きから                         … 前回のつづき
  *   ④ 今日の重要ニュース（3件）        … 情報収集。ただし主役ではない
  *   ⑤ 今日のカラスイ Picks（1件）      … 迷わせないよう1本だけ。一覧は Picks ページ
@@ -51,6 +53,9 @@ export function HomePage() {
     <div className="animate-fade-in pb-4">
       {/* ①〜④ 制作の入口（曲を作る／歌詞を書く／MVを作る／プロンプトを作る） */}
       <CreateHero />
+
+      {/* AI秘書のひとこと。有料プランの人にだけ出る（無料の人には何も描画しない） */}
+      <SecretaryCard />
 
       {/* ⑤ 続きから */}
       <ResumeSection />

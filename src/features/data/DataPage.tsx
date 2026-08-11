@@ -3,18 +3,73 @@ import { Download, Upload } from 'lucide-react'
 
 import { readSongs, writeSongs, type Song } from '@/core/storage/songs'
 import { readFavorites, readRecent } from '@/core/storage/activity'
+import { idbFiles } from '@/core/secretary/avatar'
+import {
+  AVATAR_IDB_KEY,
+  DEFAULT_SECRETARY_SETTINGS,
+  SECRETARY_KEYS,
+  type SecretarySettings,
+} from '@/core/secretary/types'
+
+interface SecretaryBackup {
+  settings: SecretarySettings
+  celebratedMilestones: number[]
+  /** 画像。data URL のまま持ち出せるようにしている（未設定なら null） */
+  avatar: string | null
+}
+
+function readJson<T>(key: string, fallback: T): T {
+  try {
+    const raw = localStorage.getItem(key)
+    return raw ? (JSON.parse(raw) as T) : fallback
+  } catch {
+    return fallback
+  }
+}
+
+function blobToDataUrl(blob: Blob): Promise<string> {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader()
+    reader.onload = () => resolve(String(reader.result))
+    reader.onerror = () => reject(reader.error)
+    reader.readAsDataURL(blob)
+  })
+}
+
+async function dataUrlToBlob(dataUrl: string): Promise<Blob> {
+  return await (await fetch(dataUrl)).blob()
+}
 
 /**
  * データ管理。
  *
  * ■ 第三原則: いつでも持ち出せる
  * 書き出しは**無料のまま**維持する。データを人質にする設計にはしない。
+ * 「持ち出せる」と言う以上、曲だけでなく**AI秘書の設定と画像も含める**。
+ * 端末を変えたときに秘書が初期化されるのでは、持ち出せたことにならない。
  */
 export function DataPage() {
   const [message, setMessage] = useState<string | null>(null)
   const fileRef = useRef<HTMLInputElement>(null)
 
-  const exportAll = () => {
+  const exportAll = async () => {
+    let avatar: string | null = null
+    try {
+      const blob = await idbFiles.get(AVATAR_IDB_KEY)
+      if (blob) avatar = await blobToDataUrl(blob)
+    } catch {
+      // 画像が読めなくても、他のデータの書き出しは続ける
+    }
+
+    const secretary: SecretaryBackup = {
+      settings: {
+        ...DEFAULT_SECRETARY_SETTINGS,
+        ...readJson<Partial<SecretarySettings>>(SECRETARY_KEYS.settings, {}),
+      },
+      celebratedMilestones: readJson<number[]>(SECRETARY_KEYS.milestones, []),
+      avatar,
+    }
+
     const payload = {
       app: 'ai-music-club-studio',
       version: 2,
@@ -22,6 +77,7 @@ export function DataPage() {
       songs: readSongs(),
       favorites: readFavorites(),
       recent: readRecent(),
+      secretary,
     }
     const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' })
     const url = URL.createObjectURL(blob)
@@ -36,21 +92,53 @@ export function DataPage() {
   const importFile = (file: File) => {
     const reader = new FileReader()
     reader.onload = () => {
-      try {
-        const data = JSON.parse(String(reader.result)) as { songs?: Song[] }
-        if (!Array.isArray(data.songs)) throw new Error('曲データが見つかりません')
+      void (async () => {
+        try {
+          const data = JSON.parse(String(reader.result)) as {
+            songs?: Song[]
+            secretary?: Partial<SecretaryBackup>
+          }
+          if (!Array.isArray(data.songs)) throw new Error('曲データが見つかりません')
 
-        // 同じIDは上書きし、無いものは足す（読み込みで既存を消さない）
-        const current = readSongs()
-        const map = new Map(current.map((s) => [s.id, s]))
-        for (const s of data.songs) {
-          if (s && typeof s.id === 'string') map.set(s.id, s)
+          // 同じIDは上書きし、無いものは足す（読み込みで既存を消さない）
+          const current = readSongs()
+          const map = new Map(current.map((s) => [s.id, s]))
+          for (const s of data.songs) {
+            if (s && typeof s.id === 'string') map.set(s.id, s)
+          }
+          writeSongs([...map.values()])
+
+          // AI秘書。古い版のバックアップには入っていないので、あるときだけ戻す
+          let restoredSecretary = false
+          if (data.secretary?.settings) {
+            localStorage.setItem(
+              SECRETARY_KEYS.settings,
+              JSON.stringify({ ...DEFAULT_SECRETARY_SETTINGS, ...data.secretary.settings }),
+            )
+            if (Array.isArray(data.secretary.celebratedMilestones)) {
+              localStorage.setItem(
+                SECRETARY_KEYS.milestones,
+                JSON.stringify(data.secretary.celebratedMilestones),
+              )
+            }
+            if (typeof data.secretary.avatar === 'string' && data.secretary.avatar.startsWith('data:')) {
+              try {
+                await idbFiles.set(AVATAR_IDB_KEY, await dataUrlToBlob(data.secretary.avatar))
+              } catch {
+                // 画像だけ戻せなくても、設定は戻っているので続行する
+              }
+            }
+            restoredSecretary = true
+          }
+
+          setMessage(
+            `${data.songs.length}曲を読み込みました。` +
+              (restoredSecretary ? 'AI秘書の設定も戻しました（画面を再読み込みすると反映されます）。' : ''),
+          )
+        } catch (e) {
+          setMessage(`読み込めませんでした（${(e as Error).message}）`)
         }
-        writeSongs([...map.values()])
-        setMessage(`${data.songs.length}曲を読み込みました。`)
-      } catch (e) {
-        setMessage(`読み込めませんでした（${(e as Error).message}）`)
-      }
+      })()
     }
     reader.readAsText(file)
   }
@@ -66,7 +154,7 @@ export function DataPage() {
       <div className="mt-5 grid gap-2.5 sm:grid-cols-2">
         <button
           type="button"
-          onClick={exportAll}
+          onClick={() => void exportAll()}
           className="flex items-start gap-3 rounded-xl border border-border bg-card p-4 text-left transition-colors hover:border-primary/40"
         >
           <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-muted">
@@ -75,7 +163,7 @@ export function DataPage() {
           <span>
             <span className="block text-[14px] font-bold">すべて書き出す</span>
             <span className="mt-0.5 block text-[12px] leading-relaxed text-muted-foreground">
-              曲・お気に入り・履歴をJSONで保存します
+              曲・お気に入り・履歴・AI秘書の設定をJSONで保存します
             </span>
           </span>
         </button>
