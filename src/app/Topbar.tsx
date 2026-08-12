@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { Check, Moon, Palette, Search, Sparkles, Sun } from 'lucide-react'
+import { Check, Flame, Moon, Search, Sparkles, Sun } from 'lucide-react'
 
 import { cn } from '@/core/ui/cn'
 import { THEME_LABEL, useTheme, type Theme } from '@/core/ui/useTheme'
@@ -9,10 +9,10 @@ import { useRole } from '@/core/entitlement/role'
 const THEME_ICON: Record<Theme, typeof Sun> = {
   light: Sun,
   dark: Moon,
-  suno: Palette,
+  amber: Flame,
 }
 
-const THEME_ORDER: Theme[] = ['light', 'dark', 'suno']
+const THEME_ORDER: Theme[] = ['light', 'dark', 'amber']
 
 function ThemePicker() {
   const { theme, setTheme } = useTheme()
