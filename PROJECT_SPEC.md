@@ -300,7 +300,7 @@ Premiumの価値を「毎週コンテンツを配ること」に置かない方�
 |---|---|---|---|
 | 種別 | ツール | **制作環境** | **学習環境（伴走）** |
 | 目的 | まず触ってみる | 制作環境をアップグレードする | 本気で学び、成長する |
-| 対象 | これから始める人 | 日常的に制作するクリエイター | 仕事・収益化につなげたい人 |
+| 対象 | これから始める人 | 日常的に制作するクリエイター | 見てもらいながら制作力を伸ばしたい人 |
 | スケール | 無限 | 無限 | **30名まで** |
 
 ✅ **決定**：Premium と Master は**上下関係ではなく別の目的**です。
@@ -310,16 +310,20 @@ Premiumの価値を「毎週コンテンツを配ること」に置かない方�
 この並列関係を崩さないでください。上位互換として見せると、価格差が
 「機能量の差」に見えてしまい、必ず割高に感じられます。
 
-### 価格（✅ 決定・2026-08-02）
+### 価格（✅ 決定・2026-08-02、2026-08-12にStudio直販を廃止）
 
-**Studio直販**（実装：`src/core/entitlement/role.ts` の `STUDIO_PRICE`）
+**加入経路はYouTubeメンバーシップのみです。Studio直販は行いません。**
 
-| プラン | 価格 |
-|---|---|
-| Studio Premium | **980円 / 月** |
-| Studio Master | **5,600円 / 月** |
+以前は「Studio直販」という別価格（Premium 980円・Master 5,600円）を
+併記していましたが、実際にはStudioで直接購入できる手段（決済導線）は
+一度も実装されておらず、表示だけが存在する状態でした。加えて実装面でも、
+実際に発行されるセッションの `source` は常に `license`（＝YouTube会員確認を
+経て発行）で、`'studio'` という区分値がUIに現れることは構造的にありませんでした。
+存在しない経路を表示し続けると混乱のもとになるため、`STUDIO_PRICE` 定数・
+`RoleSource` の `'studio'` を削除し、**価格はYouTubeメンバーシップの1本のみ**にした
+（実装：`src/core/entitlement/role.ts` の `YOUTUBE_TIERS`）。
 
-**YouTubeメンバーシップ**（実装：同ファイルの `YOUTUBE_TIERS`）
+**YouTubeメンバーシップ**（実装：`src/core/entitlement/role.ts` の `YOUTUBE_TIERS`）
 
 | 段 | 価格 | 付与されるRole |
 |---|---|---|
@@ -353,9 +357,8 @@ Roleは発行時に運営者が決めてKVへ記録した値だけで決まり�
 このため自動昇格は構造的に起こりませんが、将来CSV照合や自動発行を導入する際に
 再びこの誤りが起きうるため、判断基準としてここに残します。
 
-**Premiumだけ直販980円とYouTube1,290円で価格が違います。**
-YouTube側にはメンバーシップ独自の特典が別途付くため、意図的な差です。
-プラン画面では**Studio直販価格を大きく表示し、YouTube価格を小さく併記**します。
+プラン画面の価格表示は**YOUTUBE_TIERSの価格のみ**を大きく表示します
+（Premium 1,290円 / Master 5,600円）。二重価格ではありません。
 
 Masterの5,600円は現行のYouTube最上位メンバーシップと同額です。
 既存メンバーとの公平性のため、この価格は下げません。
@@ -447,10 +450,10 @@ free / premium / master
 | 入手経路 | Role |
 |---|---|
 | YouTube「Studio Premium利用権付き」 1,290円 | `premium` |
-| Studio Premium 直販 980円 | `premium` |
 | YouTube「Studio Master利用権付き」 5,600円 | `master` |
-| Studio Master 直販 5,600円 | `master` |
 | YouTube「AI大好き部」 690円 | （権限なし・`free` のまま） |
+
+加入経路はYouTubeメンバーシップのみです（Studio直販は行いません・2026-08-12決定）。
 
 ### 実装
 
@@ -458,7 +461,7 @@ free / premium / master
 
 ```ts
 export type Role = 'free' | 'premium' | 'master'
-export type RoleSource = 'none' | 'youtube' | 'studio'
+export type RoleSource = 'none' | 'youtube'
 
 // 画面側はこれだけを使う
 export function useRole() {
@@ -471,8 +474,7 @@ export function useRole() {
 | `useRole()` | **画面側は必ずこれを使う。** 直接ストアを触らない |
 | `isPaid(role)` | Premium以上か |
 | `isMaster(role)` | Masterか |
-| `STUDIO_PRICE` | Studio直販価格 |
-| `YOUTUBE_TIERS` | YouTubeメンバーシップとRoleの対応 |
+| `YOUTUBE_TIERS` | YouTubeメンバーシップとRoleの対応（価格の唯一の出典） |
 | `YOUTUBE_JOIN_URL` | 「YouTubeで加入する」ボタンの遷移先（✅ 決定・2026-08-03） |
 | `OFFICIAL_LINE_URL` | 公式LINEの「友だち追加」URL（✅ 決定・2026-08-11） |
 | ~~`DISCORD_INVITE_URL`~~ | **2026-08-08 廃止。** 招待URLを公開コードに置かない方針へ変更したため、定数ごと削除した（→ §6「Discordの招待URL」） |
@@ -2280,6 +2282,7 @@ Worker が扱うのは**権限判定と限定コンテンツの配信だけ**で
 
 | 日付 | 内容 |
 |---|---|
+| **2026-08-12（続報）** | **Studio直販の廃止・外部ツールの並び替え。** ①**Studio直販を廃止し、加入経路をYouTubeメンバーシップの1本に統一。** きっかけはプラン画面の価格表示（大きい¥980＝Studio直販／小さい¥1,290＝YouTube経由の二重表示）への疑問。調べたところ、Studio直販は決済導線が一度も実装されておらず表示だけの存在で、しかも実装面でも実際に発行されるセッションの`source`は常に`license`（＝YouTube会員確認を経て発行）で`'studio'`という区分がUIに現れる経路は構造的に無かった。存在しない経路の表示は誤解のもとなので、`STUDIO_PRICE`定数と`RoleSource`の`'studio'`を削除し、価格はYOUTUBE_TIERSの1本（Premium 1,290円・Master 5,600円）に統一。`role.ts`・`api.ts`（signIn/refreshが返すsourceを常に`'youtube'`に）・`PlansPage.tsx`（二重価格表示・「Studio直販」ラベル・「StudioとYouTubeのどちらからでも」の文言を削除）・PROJECT_SPEC.md／README.md／docs/設計方針.mdを更新 ②Masterの「対象」表記が§4の一覧表にだけ「仕事・収益化につなげたい人」のまま残っていたのを見つけて是正（8/11の説明文修正時に見落としていたもの） ③`ToolsPage.tsx`の外部ツール順で、字幕自動生成ツールとマスタリング自動生成ツールの位置を入れ替え（要望のみ、理由の記載なし） ④型チェック・テスト180件・本番ビルド・free/Premium/Masterの3状態実機確認すべて成功 |
 | **2026-08-12** | **Seedance2.5プロンプト工房をMaster限定の外部ツールとして追加。** ①ツール本体（`~/シーダンス2.5プロンプト工房/`。フォルダ名は日本語のまま、Studio側の表示名のみ英語表記に統一）はSeedance 2.5のプロンプトを香盤表形式で組み立てる静的PWA。生成APIは叩かず、正しい記法のプロンプト文字列を組み立ててコピーさせるだけの設計。公開前は未追跡（どのGitにも入っておらず、公開URLが存在しない）状態だったため、まず `lofi-detective-website` リポジトリ（既存の絵コンテ・スタイルプロンプト工房等と同じ公開先）のサブフォルダ `seedance-prompt-koubou/` として追加してからStudio側の実装に進んだ ②git remoteに壊れたプレースホルダ認証情報が埋め込まれていたため`gh auth setup-git`の認証情報に一本化して修正。ローカルの`ローファイ探偵HP`クローンは253コミット遅れていたため、作業ツリーがcleanであることを確認してから安全にfast-forwardしてから作業 ③push後の初回Jekyllビルドは`SSL_connect...self-signed certificate`というActionsランナー側の一時的なネットワークエラーで失敗（コンテンツとは無関係）。Pages Build API（`POST /pages/builds`）で再ビルドして解消し、実際にHTTP 200で配信されることを実測 ④`ToolsPage.tsx`の`EXTERNAL_TOOLS`にSeedance Batch Studioの直後として追加。**requires: 'master'**（Seedance Batch Studioと同じ動画生成の文脈のため同枠に揃えた）。他の7つ（V1由来）とは異なりV1に対応が無い新規追加である旨をコード内コメントに明記 ⑤free/Premium/Masterの3状態を実機確認。Premiumではロックカード→展開で他のMaster限定ツールと同じ4ステップのアップグレード案内が出ることを確認。型チェック・テスト180件・本番ビルドすべて成功 |
 | **2026-08-11（続報3）** | **Premium→Masterのアップグレード導線を追加し、Masterの説明文を実態に合わせた。** ①`role.ts` に **`OFFICIAL_LINE_URL`** を新設。Discordの招待URL（定員のある私的コミュニティの鍵）とは性質が違い、既にYouTubeメンバー限定投稿で公開案内している問い合わせ窓口のため、`YOUTUBE_JOIN_URL` と同じ扱いで定数化してよいと判断（カラスイさんの確認済み） ②`PlansPage.tsx` のMasterカードに、**Premiumの人が見ているときだけ**「Masterにアップグレードする」＋公式LINEボタンを追加。free・Master本人には出さない ③新規Masterキー発行→本人送付→旧Premiumキー失効、という運用に統一。**既存キーのrole書き換えはしない**（台帳から履歴が追えなくなるため）。ダウングレード（Master→Premium）も同じ考え方。§5-Aに運用手順を新設 ④`issue-license-key.mjs`・`revoke-license-key.mjs`・`license-ledger.mjs` に**任意の `--note`** を追加し、「PremiumのP-005から変更」のような移行履歴を台帳の備考に残せるようにした。省略時は従来どおり（後方互換）。ローカルKVで発行→失効の往復を実測し、台帳の7列フォーマットが壊れないことを確認 ⑤**Masterの説明文を修正**：「AI音楽を仕事や収益化につなげたい人」→「AI音楽をもっと深く学びたい人。作品を見てもらいながら、制作力を伸ばしたい人。」実際に提供していない成果（仕事・収益化）を訴求しないため。コード内を検索し、他に同趣旨の表現がPlansPage.tsx以外に無いことを確認済み |
 | **2026-08-11（公開）** | **🚀 認証システムとAI秘書を本番公開した。** 実施順序は「コミット → Worker再デプロイ → Worker実測 → push → Actions確認 → 本番実測」。①**8コミット・53ファイル**を機能単位で分割してpush（限定コンテンツ遮断／認可API／権限判定の一本化／コンテンツ分離／AI秘書／画面の出し分け／運用スクリプト／仕様書）。auth-testは一度もコミットされていなかったため削除の差分は生じず、結果 `vite.config.ts` の差分は `fs.deny` だけ、`main.tsx` はHEADと完全一致に戻った ②**Worker再デプロイ**（版 `4fca2def`）でTTLが24時間→**30日**に。限定コンテンツはKVに置いてあるためデプロイ前後で件数・`updatedAt` とも完全一致（Workerに同梱していたら消えていた） ③**GitHub Actions「公開」成功**（npm ci／npm test 180件／npm run build／deploy-pages）。ニュース自動更新Botが23コミット先行していたが `news.json` のみで重複ゼロだったためrebaseで直線化 ④**本番実測**：配信バンドルが `index-DdyeB-vp.js` → `index-DLgoBiON.js` に更新され、**Worker APIの参照が入った**（公開前は0件＝認証システムが本番に無かった状態が解消）。**Discord招待URLが配信JSから消滅**（公開前は埋め込まれていた）。auth-test／OAuthクライアントID／DevRoleSwitcherいずれも0件。`content/premium.json` は404、公開JSONにも限定本文なし。free状態で無料6ページは通常表示・制作系4ページはロック画面・`/auth-test` は404 ⑤**Premium／Master／revoked の実キー検証は意図的に省略**し、初回の実ユーザー発行時に行う（→ 未決定事項#22）。本番の `LICENSE_PEPPER` を取得・表示・保存しない方針のため。代わりに同一コードで `iat`/`exp` の差が2,592,000秒＝ちょうど30日であることを実測した ⑥有効な検証用ライセンスキーは**0本**（`M-002`・`P-003` の2件のみで、いずれもレコード本体で `revoked:true` を確認） |

@@ -78,10 +78,10 @@ const EXTERNAL_TOOLS: ExternalTool[] = [
     requires: 'premium',
   },
   {
-    id: 'subtitle', emoji: '💬', name: '字幕自動生成ツール',
-    desc: '歌詞から字幕を自動生成する',
-    url: 'https://karasui1014.github.io/lofi-detective-website/lyric/',
-    requires: 'master',
+    id: 'mastering', emoji: '🎚', name: 'マスタリング自動生成ツール',
+    desc: '楽曲のマスタリング設定を作る',
+    url: 'https://karasui1014.github.io/lofi-detective-website/mastering/',
+    requires: 'premium',
   },
   {
     id: 'guitar-chord-tab', emoji: '🎸', name: 'ギターコードTAB',
@@ -90,10 +90,10 @@ const EXTERNAL_TOOLS: ExternalTool[] = [
     requires: 'premium',
   },
   {
-    id: 'mastering', emoji: '🎚', name: 'マスタリング自動生成ツール',
-    desc: '楽曲のマスタリング設定を作る',
-    url: 'https://karasui1014.github.io/lofi-detective-website/mastering/',
-    requires: 'premium',
+    id: 'subtitle', emoji: '💬', name: '字幕自動生成ツール',
+    desc: '歌詞から字幕を自動生成する',
+    url: 'https://karasui1014.github.io/lofi-detective-website/lyric/',
+    requires: 'master',
   },
   {
     id: 'style-prompt', emoji: '🎵', name: 'スタイルプロンプト工房',
