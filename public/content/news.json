@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-08-11T21:40:09.867Z",
-  "count": 226,
-  "newCount": 25,
-  "translatedCount": 1,
+  "generatedAt": "2026-08-12T04:30:43.520Z",
+  "count": 231,
+  "newCount": 28,
+  "translatedCount": 2,
   "ranking": [
     "9ad61b9fdb7af95e",
     "9944c7bbf915df1f",
@@ -143,7 +143,7 @@
       "category": "global",
       "ok": true,
       "fetched": 20,
-      "matched": 1,
+      "matched": 0,
       "error": null
     },
     {
@@ -224,7 +224,7 @@
       "category": "jp",
       "ok": true,
       "fetched": 30,
-      "matched": 0,
+      "matched": 1,
       "error": null
     },
     {
@@ -291,6 +291,50 @@
     }
   ],
   "items": [
+    {
+      "id": "ab5333d7cef9507b",
+      "title": "Spotifyが「実在の人物を表していない」プロフィールに対して「AIペルソナ」バッジを導入しおすすめから除外すると発表",
+      "url": "https://gigazine.net/news/20260812-spotifyai-persona/",
+      "summary": "音楽・ポッドキャストストリーミングサービスのSpotifyが、AIによって生成された実在しないアーティストのプロフィールに「AI Persona(AIペルソナ)」というバッジを表示することを発表しました。アーティストの身元確認と信頼性の保護を目的としており、2026年9月中旬から導入されます。 続きを読む...",
+      "published": "2026-08-12T04:05:00.000Z",
+      "source": "GIGAZINE",
+      "sourceId": "gigazine",
+      "via": null,
+      "category": "jp",
+      "lang": "ja",
+      "coverage": 1,
+      "score": 26
+    },
+    {
+      "id": "4484f8b844d3df69",
+      "title": "＜インタビュー＞モービーが語る、AI時代における音楽の未来とアクティビズムの役割",
+      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5xMzI5UFJMYkRRUExJY0lvS2gzV1RJcVBGSU5sdV9nbUl1ZGhyallaeEw3d2trUVJrQi1fNUx4emxEX0ZPTFBLUTIzYlZvajhINkFIX0dBYnp2alU2UGxoeWRGTFNNeUdMT3FkT0hKYlpZcGJUMU9vOEdpM1MzZjA?oc=5",
+      "summary": "",
+      "published": "2026-08-12T02:20:02.000Z",
+      "source": "Yahoo!ニュース",
+      "sourceId": "gnews-ja-aimusic",
+      "via": "Googleニュース",
+      "category": "jp",
+      "lang": "ja",
+      "coverage": 1,
+      "score": 15
+    },
+    {
+      "id": "06de06526b97eeea",
+      "title": "Suno limits Pro subscribers to 20 song downloads per month, while promising new models ‘developed in partnership with the music industry’",
+      "url": "https://www.musicbusinessworldwide.com/suno-limits-subscribers-downloads-per-month/",
+      "summary": "Suno stated in a blog post on Monday (August 10) that the download restrictions \"will make it harder for bad actors to mass-export music\"",
+      "published": "2026-08-11T22:47:25.000Z",
+      "source": "Music Business Worldwide",
+      "sourceId": "mbw",
+      "via": null,
+      "category": "global",
+      "lang": "en",
+      "coverage": 1,
+      "titleJa": "Sunoは、「音楽業界と提携して開発された」新しいモデルを約束しながら、PROのサブスクライバーを1か月あたり20曲のダウンロードに制限しています",
+      "summaryJa": "Suno氏は、月曜日（ 8月10日）のブログ投稿で、ダウンロード制限は「悪い俳優が音楽を大量輸出することをより困難にする」と述べた",
+      "score": 21
+    },
     {
       "id": "a34b8157e219ddfb",
       "title": "‘The real debate isn’t AI versus artists – it’s whether innovation and rightsholder participation can coexist.’",
@@ -372,6 +416,21 @@
       "score": 23
     },
     {
+      "id": "e9a3bc171985fe30",
+      "title": "Spotify to label ‘AI personas’ and exclude AI music from personal recommendations",
+      "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxPRXhlTlVVTFRtdDd3Ql9ZOHRFQ1I3dTdDSlJuaUI0QmswTkE5eVVZSDdyOWowTnBIdDMzamZhU2RraWlXQ3h3bDhLeDc2LU95SmxTdmEwdWhoaXNPQWZwNUQwWHQtdjFSZlB3Rjl1OGxEcDV2a3RvYkZqWk1PTW44SEdsTTJmcWg3c2pQdnZ2bVFFMVZSZUg0elpkcVhjbThPdExybGZZR0JzeWJpMUtua3FqVzBGQVdGWkV0VVJsSnR0TUMtNzA3bXFtaw?oc=5",
+      "summary": "",
+      "published": "2026-08-11T13:00:00.000Z",
+      "source": "Los Angeles Times",
+      "sourceId": "gnews-en-aimusic",
+      "via": "Googleニュース",
+      "category": "global",
+      "lang": "en",
+      "coverage": 1,
+      "titleJa": "Spotifyが「AIペルソナ」にラベルを付け、AI音楽を個人的なおすすめから除外",
+      "score": 12
+    },
+    {
       "id": "35941720bb8662f6",
       "title": "Spotify to label AI artists with new ‘AI Persona’ badge – and keep their music out of recommendations by default",
       "url": "https://www.musicbusinessworldwide.com/spotifys-ai-persona-label-ai-generated-artists-and-keeps-them-out-of-recommendations-by-default/",
@@ -423,18 +482,32 @@
       "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOeFJpTlFVcHl1TFJpcF9meWoyaDRKYVl0NXRLZ2t1eGFXcXF2RllnRmdqUmtEYlZLZzItT1hRNDZlTnhGU0x6SGlNQk9haFc1VS1YOG9lV2NxVzBXcUdaREJnX1MxRWJ3Y1M2TVZlQVcyZ1ZwSW52VnlwRXB4SUVYQll3?oc=5",
       "summary": "",
       "published": "2026-08-10T23:24:14.000Z",
-      "source": "Digital Music News",
+      "source": "digitalmusicnews.com",
       "sourceId": "gnews-en-aimusic",
       "via": "Googleニュース",
       "category": "global",
       "lang": "en",
       "coverage": 1,
       "titleJa": "先週、Sunoはダウンロードを制限することでスロップを抑えることを約束しました。今、詳細があります",
-      "score": 21
+      "score": 16
     },
     {
       "id": "f355eecb968ed0d7",
       "title": "Suno AI、9月3日からダウンロード回数制限を導入",
+      "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTFBPV20wSmhNZEIxbzA2TG05T2NuamtKTmhCWjJwYl9aTUNtVVRyeUVDYU1UQXBzNW9MNm5xbGk1SEMtVHZSbFJFRU5vU216WVM3NmVVNjI5aw?oc=5",
+      "summary": "",
+      "published": "2026-08-10T21:22:03.000Z",
+      "source": "x.com",
+      "sourceId": "gnews-ja-suno",
+      "via": "Googleニュース",
+      "category": "jp",
+      "lang": "ja",
+      "coverage": 1,
+      "score": 19
+    },
+    {
+      "id": "3d7356314545adcc",
+      "title": "Suno AI音楽サービス、9月3日からダウンロード制限導入と旧モデル廃止",
       "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTFBPV20wSmhNZEIxbzA2TG05T2NuamtKTmhCWjJwYl9aTUNtVVRyeUVDYU1UQXBzNW9MNm5xbGk1SEMtVHZSbFJFRU5vU216WVM3NmVVNjI5aw?oc=5",
       "summary": "",
       "published": "2026-08-10T21:22:03.000Z",
@@ -452,7 +525,7 @@
       "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxObWdzLS1yY2NKWE9QdWlUZEFDcHR4TkpuNU5LanRXUzZkeDlyNjVXeHloNWplNExQOUp5VVFnTTRPWUNQQURla0lXaDNEdFdRZE4ycmp4VzNzZHZlQ0NNNTBtTU9TMXREVXVuc0U0SFYyOFV6R2ZFZTZqSHQ1RVdNVFJrUFpjc28zSVhSYVExNHFCemlYcVM4QzFZWENtS3gzbmZaY0JQTQ?oc=5",
       "summary": "",
       "published": "2026-08-10T20:00:00.000Z",
-      "source": "variety.com",
+      "source": "Variety",
       "sourceId": "gnews-en-aimusic",
       "via": "Googleニュース",
       "category": "global",
@@ -520,7 +593,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 6,
+      "coverage": 7,
       "titleJa": "当社には「芸術性と創造性をサポートすることに常に根ざした」「明確な一連の原則」があり、同社は最新の法的敗北による評判の損害を制限しようとしているとSuno CEOは述べています",
       "summaryJa": "プラットフォームは、ダウンロードを制限し、トラックの透かしを導入すると述べています",
       "score": 40
@@ -582,7 +655,7 @@
       "via": null,
       "category": "jp",
       "lang": "ja",
-      "coverage": 8,
+      "coverage": 9,
       "score": 45
     },
     {
@@ -611,7 +684,7 @@
       "via": null,
       "category": "jp",
       "lang": "ja",
-      "coverage": 16,
+      "coverage": 17,
       "score": 50
     },
     {
@@ -713,7 +786,7 @@
       "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE1KTEpEY3FTX2V0LXhuSGdCa1JYZ1I4RV9ZTUdrMDNzYTltSmpOMnYzeXFzOXd5RmZnXzVyM1ZyRVdXN2txOFdjYTNwSVpBVUhUY1E?oc=5",
       "summary": "",
       "published": "2026-08-07T10:00:00.000Z",
-      "source": "Gadget Gate",
+      "source": "gadget.phileweb.com",
       "sourceId": "gnews-ja-suno",
       "via": "Googleニュース",
       "category": "jp",
@@ -776,7 +849,7 @@
       "via": null,
       "category": "jp",
       "lang": "ja",
-      "coverage": 55,
+      "coverage": 59,
       "score": 46
     },
     {
@@ -841,7 +914,7 @@
       "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE51dXpkZ2R6UERFcVprSmNob0tZa0FYU2Z1UXBDT1p3YmRjYzRrTHdjYktZSHU2NzRjbDlnY0hVcVlPT0NvQldNdFZMWG0wSXVIYk1wZldDejYxWnhOVVg2dkFuZTZ5OVpjVkljUnVrNA?oc=5",
       "summary": "",
       "published": "2026-08-06T21:17:06.000Z",
-      "source": "Digital Music News",
+      "source": "digitalmusicnews.com",
       "sourceId": "gnews-en-aimusic",
       "via": "Googleニュース",
       "category": "global",
@@ -876,7 +949,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 21,
+      "coverage": 22,
       "titleJa": "Sunoは、AI生成音楽の透かしで合法的になりたいと考えています",
       "summaryJa": "Sunoは、「大規模な悪用」を防ぐために透かしとダウンロード制限を計画しています。",
       "score": 36
@@ -887,7 +960,7 @@
       "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQQlR2STdnYkxOOXRTQXZxenI5dmEzcnZJbzdHblBWdm1TNUxUNGU1eW4yRndoTFdQWE91T3lqVmhtOW93YmVacGNhMjlabnhRMUh2eDA3MF8tanlXaUlaeVhXTGN3T25uMmRSSjJqZmpqbTE3YUIxNFdDZnJXVWVDdVFOZTJlTVpDWTQyWDh2Ty00WFdQX1ZfT3lqZFByM3Foa1pHRERydEthejFhVkE?oc=5",
       "summary": "",
       "published": "2026-08-06T19:30:40.000Z",
-      "source": "gizmodo.com",
+      "source": "Gizmodo",
       "sourceId": "gnews-en-aimusic",
       "via": "Googleニュース",
       "category": "global",
@@ -1002,7 +1075,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 21,
+      "coverage": 22,
       "titleJa": "法的な争いの中で、Sunoは曲に透かしを入れ始めると言います",
       "summaryJa": "Sunoの透かし機能は、同社がいくつかの面で法的闘争を戦っているときに登場します。",
       "score": 36
@@ -1018,7 +1091,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 21,
+      "coverage": 22,
       "titleJa": "Sunoはビニール市場に進出し、ユーザーがAIの曲を12インチのレコードにプレスできるようにする予定",
       "summaryJa": "同社は、プラットフォーム上で作られた曲を物理的なレコードに変換するサービスであるSuno Vinylのウェイティングリストを開設しました",
       "score": 36
@@ -1114,7 +1187,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 17,
+      "coverage": 18,
       "titleJa": "スノ、AI楽曲のダウンロードを制限する計画を公開、詳細「原則」「AIは模倣ではなく独創性を可能にするべきである」",
       "summaryJa": "新しい投稿は、Sunoが画期的な裁判所判決でドイツの曲の著作権を侵害した責任を問われてから約1週間後に到着した。",
       "score": 47
@@ -1157,7 +1230,7 @@
       "url": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE5QWkpRenVuUWRXc1lnT3FNVWpNNFJuZE5FdHVzcGZVUkVxbmJZd2RwazNNUTJmXzk1cFZidUxMcVN3QlRZUjgtTldB?oc=5",
       "summary": "",
       "published": "2026-08-06T07:00:00.000Z",
-      "source": "SHIFT AI",
+      "source": "shift-ai.co.jp",
       "sourceId": "gnews-ja-suno",
       "via": "Googleニュース",
       "category": "jp",
@@ -1171,7 +1244,7 @@
       "url": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE5RWWpiZHVZSDR4VVBMWE9BN1hjekJWVC1mX2QtQTNnWWxfMUpxOU91N253MDl1WnI0cGZ2aDJyTzJ4TWhrMExGc0ZR?oc=5",
       "summary": "",
       "published": "2026-08-06T07:00:00.000Z",
-      "source": "SHIFT AI",
+      "source": "shift-ai.co.jp",
       "sourceId": "gnews-ja-suno",
       "via": "Googleニュース",
       "category": "jp",
@@ -1185,7 +1258,7 @@
       "url": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE13OTlpN2o0Ull1dzZnS1BTTVBSMnAzc0s4cENxNlhwT2VNQ2pIcU5IdDAyb19yd29kN0RucWVBaEhXMUNDZmRJOEZR?oc=5",
       "summary": "",
       "published": "2026-08-06T07:00:00.000Z",
-      "source": "SHIFT AI",
+      "source": "shift-ai.co.jp",
       "sourceId": "gnews-ja-suno",
       "via": "Googleニュース",
       "category": "jp",
@@ -1471,7 +1544,7 @@
       "category": "jp",
       "lang": "ja",
       "coverage": 5,
-      "score": 46
+      "score": 37
     },
     {
       "id": "20f0dcc050273d25",
@@ -1487,7 +1560,7 @@
       "coverage": 1,
       "titleJa": "カニエ・ウェストのハゲタカIIといじめっ子が使用したAI、新しい訴訟の申し立て",
       "summaryJa": "匿名のプロデューサーが、両方のアルバムの未払いとクレジットされていない作品について補償を求めています",
-      "score": 3
+      "score": -6
     },
     {
       "id": "71da5f0287a87577",
@@ -1656,7 +1729,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 31,
+      "coverage": 32,
       "score": 32
     },
     {
@@ -1732,8 +1805,8 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 1,
-      "score": -3
+      "coverage": 2,
+      "score": 5
     },
     {
       "id": "99cdc1acf4236841",
@@ -1741,7 +1814,7 @@
       "url": "https://news.google.com/rss/articles/CBMiSkFVX3lxTFBCWEJuRy1YQlNfTzdGaGpWUmlhR3VXOE1wQklycEJuM3ktdVlTQlc0bUZnYjJsMkZmMHdlRXdOdVAtVTVNamRXajJn?oc=5",
       "summary": "",
       "published": "2026-08-03T07:00:00.000Z",
-      "source": "SHIFT AI",
+      "source": "shift-ai.co.jp",
       "sourceId": "gnews-ja-suno",
       "via": "Googleニュース",
       "category": "jp",
@@ -1768,7 +1841,7 @@
       "title": "AIエージェント、音楽業界を静かに自動化 A&Rからリリース業務まで",
       "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE96dDBwOUxEVWlFQ1JBeHhCNzZLS3I1UnNHODZDZFctTWdxM010Vm4xc29VaDRITENKMXJvZTBlT0IyOUR1Q1RZSDZ0bjBTQ3VxbnZlMw?oc=5",
       "summary": "",
-      "published": "2026-08-03T07:00:00.000Z",
+      "published": "2026-08-03T04:35:43.000Z",
       "source": "音楽業界総合情報サイト",
       "sourceId": "gnews-ja-aimusic",
       "via": "Googleニュース",
@@ -1880,7 +1953,7 @@
       "title": "ドイツ裁判所、GEMAがSuno AIに全面勝訴 無断学習を著作権侵害と認定",
       "url": "https://news.google.com/rss/articles/CBMiQEFVX3lxTE9MeVl6OVB6ZzZCVDd4OFpxNVUzeWI2QnphZDZVaTZTT1pPeGp6bmkwS0RBV1JRQVhHcEdaTzVZSWI?oc=5",
       "summary": "",
-      "published": "2026-08-01T08:14:01.000Z",
+      "published": "2026-08-01T07:00:00.000Z",
       "source": "shiritomo",
       "sourceId": "gnews-ja-suno",
       "via": "Googleニュース",
@@ -1979,20 +2052,6 @@
       "score": 3
     },
     {
-      "id": "5c2c3670be0930bb",
-      "title": "AIによる音楽革命、Napsterより大きなものに DMN解説",
-      "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFBuLVJvRE1VQ0Jyd2Y0dFhndUlVQ2ZuR0tjWUMzaXNKRU4yQVAtZTNvRzNQQktKUnNKaTJMV09WaDZSYWNFMFVPM2hjUFlFZG8yRzZ1bQ?oc=5",
-      "summary": "",
-      "published": "2026-07-31T10:35:11.000Z",
-      "source": "音楽業界総合情報サイト",
-      "sourceId": "gnews-ja-aimusic",
-      "via": "Googleニュース",
-      "category": "jp",
-      "lang": "ja",
-      "coverage": 1,
-      "score": 11
-    },
-    {
       "id": "ae5b6f0111ad6491",
       "title": "Suno loses copyright infringement lawsuit brought by GEMA in Germany",
       "url": "https://www.musicbusinessworldwide.com/suno-infringed-copyright-in-gema-case-german-court-rules/",
@@ -2003,7 +2062,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 38,
+      "coverage": 39,
       "titleJa": "ドイツのGEMAが提起した著作権侵害訴訟でSunoが敗訴",
       "summaryJa": "AI音楽ジェネレーターのSunoは、ドイツの収集協会GEMAが提起した著作権侵害訴訟で敗訴しました。収集協会は、Sunoが権利者へのライセンスまたは支払いなしにAIツールをトレーニングするために、著作権で保護された音楽を使用、保存、複製したと主張しています。ロイター通信は金曜日の朝（ 7月31日）に、ミュンヘン地方裁判所がスノー氏に判決を下したと報じた。",
       "score": 34
@@ -2023,6 +2082,20 @@
       "titleJa": "ドイツの収集協会GEMAがSunoに対する著作権侵害訴訟に勝訴",
       "summaryJa": "GEMAはSunoに対する訴訟に勝利しました。判決は何と言っていましたか、今何が起こっていますか、そしてそれはメジャーレーベルの米国Suno訴訟にとって何を意味しますか？",
       "score": 34
+    },
+    {
+      "id": "5c2c3670be0930bb",
+      "title": "AIによる音楽革命、Napsterより大きなものに DMN解説",
+      "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFBuLVJvRE1VQ0Jyd2Y0dFhndUlVQ2ZuR0tjWUMzaXNKRU4yQVAtZTNvRzNQQktKUnNKaTJMV09WaDZSYWNFMFVPM2hjUFlFZG8yRzZ1bQ?oc=5",
+      "summary": "",
+      "published": "2026-07-31T07:00:00.000Z",
+      "source": "音楽業界総合情報サイト",
+      "sourceId": "gnews-ja-aimusic",
+      "via": "Googleニュース",
+      "category": "jp",
+      "lang": "ja",
+      "coverage": 1,
+      "score": 11
     },
     {
       "id": "671f3ef535d65f2f",
@@ -2058,7 +2131,7 @@
       "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNT2hZXzVXcjlxWkRNOUNTM3dFREVzZzlhSW02dzduVTdpMTBqZFpnalRQX1M4TUh0MG04OTZHanRhVmFybGNqUWZXZDFXSnRkTHEyUmVRUGoyLXo2eU5MdDI3azJNc2VkOTNZckQ3dkhYZk90LXpLcWx6YTc5YUpJaEZ3?oc=5",
       "summary": "",
       "published": "2026-07-31T07:00:00.000Z",
-      "source": "variety.com",
+      "source": "Variety",
       "sourceId": "gnews-en-aimusic",
       "via": "Googleニュース",
       "category": "global",
@@ -2240,7 +2313,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 88,
+      "coverage": 90,
       "score": 41
     },
     {
@@ -2263,12 +2336,12 @@
       "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1OSDNIc1UyWHV5T2JFN252RTctZW5TU0JPcjFkVHlGTXRBbUdQQkpvM0JvWTBzU3Jyc0lLVTIyOTBQZEVYa181aGNKekl6WGpWLVcxWS1YSnR3ZFd5dWNrTDg5MEFzSFZH?oc=5",
       "summary": "",
       "published": "2026-07-30T07:00:00.000Z",
-      "source": "窓の杜",
+      "source": "forest.watch.impress.co.jp",
       "sourceId": "gnews-ja-suno",
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 75,
+      "coverage": 77,
       "score": 41
     },
     {
@@ -2296,7 +2369,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 46,
+      "coverage": 47,
       "score": 41
     },
     {
@@ -2373,21 +2446,6 @@
       "score": 3
     },
     {
-      "id": "c84f21a3137683ff",
-      "title": "10 biggest AI music artists have made $6.1 million on Spotify and YouTube, report suggests",
-      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPSk1ZN3ZRMEZrZlZGWlBYX0xjZzVDTm1ZQlRBSWZHWWNPT1VyVU5rLTJGbUhMWmg1V1RlN2VibGZvUk9EYmZsMGdpT24yNVRlLUxHNHZQLWdJcjMxOE1zRml1UWVoRUlVek9ZTVFlaGl0cHdNczA1TGcxSjVVV1RrS0w2ZE5pV0wySDJ1UjJOdlNHbS1ybEE?oc=5",
-      "summary": "",
-      "published": "2026-07-27T20:05:54.000Z",
-      "source": "Paste Magazine",
-      "sourceId": "gnews-en-aimusic",
-      "via": "Googleニュース",
-      "category": "global",
-      "lang": "en",
-      "coverage": 1,
-      "titleJa": "最大のAI音楽アーティスト10人がSpotifyとYouTubeで610万$を稼いだことが報告書に示唆されている",
-      "score": -6
-    },
-    {
       "id": "fd382941beeace0e",
       "title": "ソニー、Udioを裁判所に引きずり、30,117曲が無断でAIトレーニングに使用されたと主張",
       "url": "https://news.google.com/rss/articles/CBMiREFVX3lxTFBycVNRMGw4SzFhZFJidk5laWNNbnZ5anotUmJyY1lGLXRVX2NOVnhyd1BYLW5qNnJBV191cGZtTGZleVhS0gFCQVVfeXFMTzJJZV9wbVpoYVd1SjA0N0drT1h0WWhzMi1aSkNPTXI1XzlmblA5c0ZOYms1UDB5dG5mZHVNcXFZUUN3?oc=5",
@@ -2414,6 +2472,21 @@
       "lang": "ja",
       "coverage": 1,
       "score": -3
+    },
+    {
+      "id": "c84f21a3137683ff",
+      "title": "10 biggest AI music artists have made $6.1 million on Spotify and YouTube, report suggests",
+      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPSk1ZN3ZRMEZrZlZGWlBYX0xjZzVDTm1ZQlRBSWZHWWNPT1VyVU5rLTJGbUhMWmg1V1RlN2VibGZvUk9EYmZsMGdpT24yNVRlLUxHNHZQLWdJcjMxOE1zRml1UWVoRUlVek9ZTVFlaGl0cHdNczA1TGcxSjVVV1RrS0w2ZE5pV0wySDJ1UjJOdlNHbS1ybEE?oc=5",
+      "summary": "",
+      "published": "2026-07-27T07:00:00.000Z",
+      "source": "Paste Magazine",
+      "sourceId": "gnews-en-aimusic",
+      "via": "Googleニュース",
+      "category": "global",
+      "lang": "en",
+      "coverage": 1,
+      "titleJa": "最大のAI音楽アーティスト10人がSpotifyとYouTubeで610万$を稼いだことが報告書に示唆されている",
+      "score": -6
     },
     {
       "id": "e50ecb76c0af2ce4",
@@ -2613,7 +2686,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 30,
+      "coverage": 31,
       "score": 21
     },
     {
@@ -2880,7 +2953,7 @@
       "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOYkxYakljVWh3dDFZZFhyYUNfYVB0Y2QtejZFREM3ZXU1SDdTcHNyTTBFY0ZueHhodk91UUk4WGlmb3ZFWlN3LTdJZ2lNYmxRMUhXUm1uVTFtUFBWNE1LZG5mNVIzd3FLc2J4TU9mMXdFeExMSy05NkJyRXVmc0Zic3UtRXFtYzdKaXo1Q21JWTFBa1hZczkwYkF3?oc=5",
       "summary": "",
       "published": "2026-07-21T07:00:00.000Z",
-      "source": "variety.com",
+      "source": "Variety",
       "sourceId": "gnews-en-aimusic",
       "via": "Googleニュース",
       "category": "global",
@@ -3131,7 +3204,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 72,
+      "coverage": 74,
       "score": 30
     },
     {
@@ -3272,7 +3345,7 @@
       "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNNXFGZnNMSWdPOVdSMkRzUXU1bmRlcUhCcTZ5LUwxeS1XdUZqUi1WTGdzcjZBTDFtVmJtTkxNSnZHc09FTk5pd0M3aDBYTmFZMWNCOTJWc2dFUnNodkxxU2lOM0dWWnJSYVFIc1lHbWVMeFZGX1JyRzh4SUlJS3Y3WHdfb1BHemFsWmotazdvQXh3TVhpVzR3eWY1LUhWVXVMQTZJOXRnckhXdmc?oc=5",
       "summary": "",
       "published": "2026-07-15T07:00:00.000Z",
-      "source": "variety.com",
+      "source": "Variety",
       "sourceId": "gnews-en-aimusic",
       "via": "Googleニュース",
       "category": "global",
