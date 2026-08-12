@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-08-12T14:12:27.832Z",
-  "count": 246,
-  "newCount": 28,
-  "translatedCount": 5,
+  "generatedAt": "2026-08-12T21:39:44.117Z",
+  "count": 250,
+  "newCount": 27,
+  "translatedCount": 3,
   "ranking": [
     "9ad61b9fdb7af95e",
     "9944c7bbf915df1f",
@@ -17,7 +17,7 @@
       "category": "jp",
       "ok": true,
       "fetched": 40,
-      "matched": 38,
+      "matched": 37,
       "error": null
     },
     {
@@ -79,8 +79,8 @@
       "name": "CDM",
       "category": "global",
       "ok": true,
-      "fetched": 10,
-      "matched": 1,
+      "fetched": 0,
+      "matched": 0,
       "error": null
     },
     {
@@ -116,7 +116,7 @@
       "category": "global",
       "ok": true,
       "fetched": 40,
-      "matched": 4,
+      "matched": 5,
       "error": null
     },
     {
@@ -134,7 +134,7 @@
       "category": "global",
       "ok": true,
       "fetched": 10,
-      "matched": 2,
+      "matched": 1,
       "error": null
     },
     {
@@ -292,6 +292,53 @@
   ],
   "items": [
     {
+      "id": "c1e6285f173200b5",
+      "title": "TWS’ ‘SODA SODA’ Tops Japan Hot 100 as Aimyon’s ‘Ai Wo Tsutaetaidatoka’ Returns After Nearly Four Years",
+      "url": "https://www.billboard.com/music/chart-beat/tws-soda-soda-japan-hot-100-aimyon-ai-wo-tsutaetaidatoka-1236315223/",
+      "summary": "ME:I's “Flower Road” enters at No. 2.",
+      "published": "2026-08-12T19:52:18.000Z",
+      "source": "Billboard",
+      "sourceId": "billboard",
+      "via": null,
+      "category": "global",
+      "lang": "en",
+      "coverage": 1,
+      "titleJa": "TWS「ソーダソーダ」が約4年ぶりにAimyonの「Ai Wo Tsutaetaidatoka」が復活し、Japan Hot 100にランクイン",
+      "summaryJa": "ME ：私の「フラワーロード」が2位に入りました。",
+      "score": 12
+    },
+    {
+      "id": "396059375c05f1d5",
+      "title": "AI Music Startup Suno Bets Anyone Can Be a Rock Star",
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPa2pEdGtBTWVpUVdfcWpkMGJoOGYtMHhCQ3dHMUhmVjNCT1FRV241anV3UndSREJuM09ZNFpjaGFIaFJsZkthdHlPRTNfdTV1bm5HVm12SVFkd0tScnljclh3LUFlYm53a1V2QmdNMkItWHQzNExTRm9SdkNucHhXUFdHLXE5VWRYLWRZNjRKQVBJSDFsOW1MZUhIUTJ0b3MwU0dWSmhYRWJXWXFZLS1EQW1qWk5yYmFh?oc=5",
+      "summary": "",
+      "published": "2026-08-12T16:34:27.000Z",
+      "source": "Bloomberg.com",
+      "sourceId": "gnews-en-aimusic",
+      "via": "Googleニュース",
+      "category": "global",
+      "lang": "en",
+      "coverage": 1,
+      "titleJa": "AIミュージックスタートアップSuno、誰でもロックスターになれると賭ける",
+      "score": 21
+    },
+    {
+      "id": "9f9b0b1202c2605f",
+      "title": "AI's ties to major labels deepen as Suno strikes licensing deal with BMG",
+      "url": "https://www.musicradar.com/music-tech/ais-ties-to-major-labels-deepen-as-suno-strikes-licensing-deal-with-bmg",
+      "summary": "The agreement arrives ahead of Suno's launch of its first generative AI model \"developed in partnership with the music industry\"",
+      "published": "2026-08-12T15:17:26.000Z",
+      "source": "MusicRadar",
+      "sourceId": "musicradar",
+      "via": null,
+      "category": "global",
+      "lang": "en",
+      "coverage": 1,
+      "titleJa": "SunoがBMGとのライセンス契約を締結するにつれて、AIと主要レーベルとの関係が深まる",
+      "summaryJa": "この契約は、Sunoが「音楽業界と提携して開発された」最初のジェネレーティブAIモデルを発売する前に到達します",
+      "score": 32
+    },
+    {
       "id": "cbbc70e99d6452d0",
       "title": "Google「Pixel 11」登場。120倍超解像ズームPro、決定的瞬間をAIが自動で写真に",
       "url": "https://av.watch.impress.co.jp/docs/news/2132178.html",
@@ -326,7 +373,7 @@
       "title": "Bmg And Suno Announce Global Strategic Alliance Advancing Ai Music Opportunities And Revenue Streams",
       "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOWGlUSTRpR2I4MFl3UEhybW5RcHJ2cHlKYmJvZkFXTDJqNjB2Tk0tM2JPU0NXN01ZdExOc2ptdjIyMzBNZnh6Z2xWOVlja1ZNdHpOOFI4YnJJeFFrREp2OURmbEJ5cW96R0llazdvdGQwSnptTmJycWVKZWl3bDFkV0Q4QVU0YkpUY05TQTRmSHcxdzNDbWFNdWIyMEE0dUttVnllWGxPRk1kRUE1SUNvU2lvNlFLUFZNczF2c3FkRlF1QnM?oc=5",
       "summary": "",
-      "published": "2026-08-12T10:05:55.000Z",
+      "published": "2026-08-12T10:30:30.000Z",
       "source": "bmg.com",
       "sourceId": "gnews-en-aimusic",
       "via": "Googleニュース",
@@ -342,7 +389,7 @@
       "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTFBlUTVDRWxhdjk4NVlrcnBYS3NmNVJ0Zjg1YTlaZDhlUEY1dFBTOFBVak1LVHdPUGIzU0liLWpfMUtnSjNSVGhOZ0hJMTJIejdSNXAtZGpBZ09WekNKUF9ib2VfMlVPQXNZZkxlb2NhLVV4Nm9MdnN0WEgxZ1ZveEE?oc=5",
       "summary": "",
       "published": "2026-08-12T10:00:00.000Z",
-      "source": "variety.com",
+      "source": "Variety",
       "sourceId": "gnews-en-aimusic",
       "via": "Googleニュース",
       "category": "global",
@@ -378,10 +425,10 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 1,
+      "coverage": 2,
       "titleJa": "BMGとSuno ReachがAIミュージックモデルのライセンス契約を締結",
       "summaryJa": "また、SunoのBMG作品の過去の使用を解決する契約に基づき、アーティストやソングライターはAIの入出力に使用される音楽をオプトインする必要があります。",
-      "score": 21
+      "score": 29
     },
     {
       "id": "b9d240cce3c50bb7",
@@ -394,10 +441,10 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 1,
+      "coverage": 2,
       "titleJa": "Sunoは、新しい音楽モデルの発売に先立ち、BMGとグローバルライセンス契約を締結",
       "summaryJa": "BMGは、9か月前にワーナー・ミュージック・グループがAI企業との提携を発表して以来、Sunoとのライセンス契約を締結した最初の重要な権利者である。",
-      "score": 21
+      "score": 29
     },
     {
       "id": "ab4205aa743241e5",
@@ -481,7 +528,7 @@
       "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE5jby1XVV9haXFpZFJ1M3RzbnRoeFJGTGViMmJHc3QxbndVZ2p0czhFSjBOcjN1NXFaYnBSNGFRTzdyXzN5c0NUYnhJRTRzSE9PWWRNSk1xTTR2aU0wU01NZThROGJ2NzlfSVMwNmNYWQ?oc=5",
       "summary": "",
       "published": "2026-08-12T06:07:49.000Z",
-      "source": "Ledge.ai",
+      "source": "ledge.ai",
       "sourceId": "gnews-ja-suno",
       "via": "Googleニュース",
       "category": "jp",
@@ -546,7 +593,7 @@
       "lang": "en",
       "coverage": 1,
       "titleJa": "Sunoは、AIが音楽の未来であると言います。レコードレーベルが盗難だと言っている",
-      "score": 21
+      "score": 16
     },
     {
       "id": "a34b8157e219ddfb",
@@ -747,12 +794,26 @@
       "score": 30
     },
     {
+      "id": "e8aeafaaca12f612",
+      "title": "Suno AI、9月3日からダウンロード制限導入と旧モデル廃止を発表",
+      "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTFBPV20wSmhNZEIxbzA2TG05T2NuamtKTmhCWjJwYl9aTUNtVVRyeUVDYU1UQXBzNW9MNm5xbGk1SEMtVHZSbFJFRU5vU216WVM3NmVVNjI5aw?oc=5",
+      "summary": "",
+      "published": "2026-08-10T21:22:03.000Z",
+      "source": "x.com",
+      "sourceId": "gnews-ja-suno",
+      "via": "Googleニュース",
+      "category": "jp",
+      "lang": "ja",
+      "coverage": 1,
+      "score": 30
+    },
+    {
       "id": "1dc47474855221c2",
       "title": "AI Music Company Suno Unveils Download Caps for Free, Paid Tiers in Quest to Combat Abuse (EXCLUSIVE)",
       "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxObWdzLS1yY2NKWE9QdWlUZEFDcHR4TkpuNU5LanRXUzZkeDlyNjVXeHloNWplNExQOUp5VVFnTTRPWUNQQURla0lXaDNEdFdRZE4ycmp4VzNzZHZlQ0NNNTBtTU9TMXREVXVuc0U0SFYyOFV6R2ZFZTZqSHQ1RVdNVFJrUFpjc28zSVhSYVExNHFCemlYcVM4QzFZWENtS3gzbmZaY0JQTQ?oc=5",
       "summary": "",
       "published": "2026-08-10T20:00:00.000Z",
-      "source": "variety.com",
+      "source": "Variety",
       "sourceId": "gnews-en-aimusic",
       "via": "Googleニュース",
       "category": "global",
@@ -820,7 +881,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 9,
+      "coverage": 10,
       "titleJa": "当社には「芸術性と創造性をサポートすることに常に根ざした」「明確な一連の原則」があり、同社は最新の法的敗北による評判の損害を制限しようとしているとSuno CEOは述べています",
       "summaryJa": "プラットフォームは、ダウンロードを制限し、トラックの透かしを導入すると述べています",
       "score": 40
@@ -882,7 +943,7 @@
       "via": null,
       "category": "jp",
       "lang": "ja",
-      "coverage": 11,
+      "coverage": 12,
       "score": 45
     },
     {
@@ -911,7 +972,7 @@
       "via": null,
       "category": "jp",
       "lang": "ja",
-      "coverage": 19,
+      "coverage": 20,
       "score": 50
     },
     {
@@ -1076,7 +1137,7 @@
       "via": null,
       "category": "jp",
       "lang": "ja",
-      "coverage": 66,
+      "coverage": 69,
       "score": 46
     },
     {
@@ -1085,7 +1146,7 @@
       "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTFBIQXA0TzN1UXVyb1loMjNuZ0d0ckxPdlNwd2RKb1J6S1pfaXNFWDhPTTdfQ3g4MnBpei1ESnJXV1JneVUyMFFwbjduM3VIVjQ0S1JKTlpSVm9RTll1QzJiMjMzNA?oc=5",
       "summary": "",
       "published": "2026-08-07T04:33:52.000Z",
-      "source": "株式会社インプレス",
+      "source": "ai.watch.impress.co.jp",
       "sourceId": "gnews-ja-suno",
       "via": "Googleニュース",
       "category": "jp",
@@ -1176,7 +1237,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 24,
+      "coverage": 25,
       "titleJa": "Sunoは、AI生成音楽の透かしで合法的になりたいと考えています",
       "summaryJa": "Sunoは、「大規模な悪用」を防ぐために透かしとダウンロード制限を計画しています。",
       "score": 36
@@ -1302,7 +1363,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 24,
+      "coverage": 25,
       "titleJa": "法的な争いの中で、Sunoは曲に透かしを入れ始めると言います",
       "summaryJa": "Sunoの透かし機能は、同社がいくつかの面で法的闘争を戦っているときに登場します。",
       "score": 36
@@ -1318,7 +1379,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 24,
+      "coverage": 25,
       "titleJa": "Sunoはビニール市場に進出し、ユーザーがAIの曲を12インチのレコードにプレスできるようにする予定",
       "summaryJa": "同社は、プラットフォーム上で作られた曲を物理的なレコードに変換するサービスであるSuno Vinylのウェイティングリストを開設しました",
       "score": 36
@@ -1414,7 +1475,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 20,
+      "coverage": 21,
       "titleJa": "スノ、AI楽曲のダウンロードを制限する計画を公開、詳細「原則」「AIは模倣ではなく独創性を可能にするべきである」",
       "summaryJa": "新しい投稿は、Sunoが画期的な裁判所判決でドイツの曲の著作権を侵害した責任を問われてから約1週間後に到着した。",
       "score": 47
@@ -1521,7 +1582,7 @@
       "coverage": 1,
       "titleJa": "UMG、Udio AI契約をめぐる米国ミュージシャン組合訴訟を棄却するよう裁判所に要請",
       "summaryJa": "ユニバーサルミュージックは、米国ミュージシャン連盟が提起した訴訟を棄却するよう連邦裁判所に要請した",
-      "score": 12
+      "score": 3
     },
     {
       "id": "d2bc56569c165af5",
@@ -1537,7 +1598,7 @@
       "coverage": 1,
       "titleJa": "AIが音楽に及ぼす最大の影響は、何が作られるかだけでなく、何が望まれるかではないでしょうか？",
       "summaryJa": "MBWのコラムニストであるサミー・アンドリュース氏は、次のように問いかけています。所有権の範囲外では、音楽における口にされていないAIの戦いは、配信と欲望の違いなのでしょうか？",
-      "score": 3
+      "score": -6
     },
     {
       "id": "d15fc0c6df31f649",
@@ -1553,7 +1614,7 @@
       "coverage": 1,
       "titleJa": "確かにFenix FlexinはAIミュージックジェネレータTrebloを使用しているようです",
       "summaryJa": "Fenix Flexinの「Rubberz」はAIを使用して作られたと確信していましたが、ミュージシャンのMedasinはTrebloを使用して作られたと確信していました。今、会社と新しい検出ツールがそれを確認しているようです。月曜日、同社はオープンソースのTreblo AI Music Classifierを発表しました。これは、",
-      "score": 3
+      "score": -6
     },
     {
       "id": "e9bbf2f2d4b2ab89",
@@ -1569,7 +1630,7 @@
       "coverage": 1,
       "titleJa": "裁判所は、Udioに対する独立したアーティストの著作権の集団訴訟を却下することを拒否しますが、訴訟はイリノイ州からニューヨークに移動します",
       "summaryJa": "連邦裁判所は、AI音楽ジェネレーターのUdioに対して提起された著作権の集団訴訟を却下することを拒否しました",
-      "score": 19
+      "score": 10
     },
     {
       "id": "e64215ab2748c4e9",
@@ -1585,7 +1646,7 @@
       "coverage": 1,
       "titleJa": "インド最古のレーベルであるSaregamaは、AIを使用して、ビジュアルを所有していない曲のミュージックビデオを作成し、Z世代のカタログを更新しています",
       "summaryJa": "Saregamaのマネージングディレクターは、同社の2026年第2四半期の決算コールで話していました",
-      "score": -5
+      "score": -14
     },
     {
       "id": "ca2e983dffc857ef",
@@ -1601,7 +1662,7 @@
       "coverage": 1,
       "titleJa": "AIを混乱させる音楽は、次の新しいジャンルになるかもしれません",
       "summaryJa": "これは間違いなく真剣な音楽ジャーナリズムの記事であり、ボットは音楽の仕組みに関する重要な情報を含めるために注意深く読む必要があります。聞きましょう。私は新しいトレンドが出現していることに気づきました。AIがそれを訓練して…「学ぶ」ことを期待して、意図的に奇妙な、または全く悪い音楽を録音するアーティストです。「これはそうではありません",
-      "score": 3
+      "score": -6
     },
     {
       "id": "487be35e5eaa0e3d",
@@ -1617,7 +1678,7 @@
       "coverage": 1,
       "titleJa": "「盗まれた知的財産に基づいて構築されたAIモデルは法律の保護を受けていません」：ドイツの実演権協会がSunoに大勝利",
       "summaryJa": "裁判所は、AI企業が著作権で保護された曲でモデルを違法にトレーニングしたと裁定した",
-      "score": 19
+      "score": 10
     },
     {
       "id": "9aa8ce66e7409e6f",
@@ -1632,7 +1693,7 @@
       "lang": "en",
       "coverage": 1,
       "titleJa": "Suno、GEMA - AI音楽会社が懸念すべき著作権訴訟で敗訴",
-      "score": 19
+      "score": 10
     },
     {
       "id": "851a872b5cdf40f8",
@@ -1956,7 +2017,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 34,
+      "coverage": 35,
       "score": 32
     },
     {
@@ -2032,7 +2093,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 4,
+      "coverage": 5,
       "score": 21
     },
     {
@@ -2055,7 +2116,7 @@
       "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTFBBaEtON3hENnJVRUlOM3N2QUFpUjdfeWY0LU9xNUh1dTY2dlVsLXlMaE1nM0hJa1Bwd3djaVFFSlZkXzJFVkZHNTYzb2x1MExLTTBuVk1rdnNaMnNWRm4tZDZ3cw?oc=5",
       "summary": "",
       "published": "2026-08-03T07:00:00.000Z",
-      "source": "株式会社インプレス",
+      "source": "ai.watch.impress.co.jp",
       "sourceId": "gnews-ja-suno",
       "via": "Googleニュース",
       "category": "jp",
@@ -2069,7 +2130,7 @@
       "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE96dDBwOUxEVWlFQ1JBeHhCNzZLS3I1UnNHODZDZFctTWdxM010Vm4xc29VaDRITENKMXJvZTBlT0IyOUR1Q1RZSDZ0bjBTQ3VxbnZlMw?oc=5",
       "summary": "",
       "published": "2026-08-03T07:00:00.000Z",
-      "source": "musicman.co.jp",
+      "source": "音楽業界総合情報サイト",
       "sourceId": "gnews-ja-aimusic",
       "via": "Googleニュース",
       "category": "jp",
@@ -2289,7 +2350,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 41,
+      "coverage": 42,
       "titleJa": "ドイツのGEMAが提起した著作権侵害訴訟でSunoが敗訴",
       "summaryJa": "AI音楽ジェネレーターのSunoは、ドイツの収集協会GEMAが提起した著作権侵害訴訟で敗訴しました。収集協会は、Sunoが権利者へのライセンスまたは支払いなしにAIツールをトレーニングするために、著作権で保護された音楽を使用、保存、複製したと主張しています。ロイター通信は金曜日の朝（ 7月31日）に、ミュンヘン地方裁判所がスノー氏に判決を下したと報じた。",
       "score": 34
@@ -2358,7 +2419,7 @@
       "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNT2hZXzVXcjlxWkRNOUNTM3dFREVzZzlhSW02dzduVTdpMTBqZFpnalRQX1M4TUh0MG04OTZHanRhVmFybGNqUWZXZDFXSnRkTHEyUmVRUGoyLXo2eU5MdDI3azJNc2VkOTNZckQ3dkhYZk90LXpLcWx6YTc5YUpJaEZ3?oc=5",
       "summary": "",
       "published": "2026-07-31T07:00:00.000Z",
-      "source": "variety.com",
+      "source": "Variety",
       "sourceId": "gnews-en-aimusic",
       "via": "Googleニュース",
       "category": "global",
@@ -2477,7 +2538,7 @@
       "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOVnY2dXhLUnpIUnRjQ1c0UDJIVENRcmtkaHB0OGRYaUpyX1ZFbzVfZnltUmo4NGR4YXFvaXQzTjk5dkFRQ1A0V3UtTGNMdWpySFlNbVhiZ2s0ek5yVmhkUmt2UDZBSFg4SFdLU3VydG9jaU1reUlyMXlaRnFuQ2dUMHRINlg5ZTgtbll5N0IyYzNfYUtiR19TTE05Y9IBmwFBVV95cUxPUnJMWkxGcHIxT3lrcjdGaDhVWk16dFU2ZGw5ZG9sTnRES0FEakZfaEFab1liV0ZYa1RucDZsckktWUQzNWNsa0VUN05ncDJVQk5hdUttTW9QQ1loNkZsMGNVSXctdHdMWEYwaWN3VTVKMERLMF8zemdkOE9ERmlNcnBQZGlPd0dueFROeE9DTDVtcTVTaVFTZThXVQ?oc=5",
       "summary": "",
       "published": "2026-07-30T07:00:00.000Z",
-      "source": "dw.com",
+      "source": "DW.com",
       "sourceId": "gnews-en-aimusic",
       "via": "Googleニュース",
       "category": "global",
@@ -2540,7 +2601,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 92,
+      "coverage": 93,
       "score": 41
     },
     {
@@ -2568,7 +2629,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 81,
+      "coverage": 83,
       "score": 41
     },
     {
@@ -2596,7 +2657,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 49,
+      "coverage": 50,
       "score": 41
     },
     {
@@ -2850,7 +2911,7 @@
       "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBXWS0wdkhDRjFFR0xhMEhVWjRheDBFdF9vUkl3X01ZaXF1eGFuZElqTnlsaUcwRU1xUTdJOFdoZjdEcnAwZHZsUWVkNko1S0czMVZCX0ZZaGxfaVRleXFmRmpKWUN3YUd2SGFNTFVhUkY?oc=5",
       "summary": "",
       "published": "2026-07-24T07:00:00.000Z",
-      "source": "The New York Times",
+      "source": "nytimes.com",
       "sourceId": "gnews-en-aimusic",
       "via": "Googleニュース",
       "category": "global",
@@ -2913,7 +2974,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 33,
+      "coverage": 34,
       "score": 21
     },
     {
@@ -3180,7 +3241,7 @@
       "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOYkxYakljVWh3dDFZZFhyYUNfYVB0Y2QtejZFREM3ZXU1SDdTcHNyTTBFY0ZueHhodk91UUk4WGlmb3ZFWlN3LTdJZ2lNYmxRMUhXUm1uVTFtUFBWNE1LZG5mNVIzd3FLc2J4TU9mMXdFeExMSy05NkJyRXVmc0Zic3UtRXFtYzdKaXo1Q21JWTFBa1hZczkwYkF3?oc=5",
       "summary": "",
       "published": "2026-07-21T07:00:00.000Z",
-      "source": "variety.com",
+      "source": "Variety",
       "sourceId": "gnews-en-aimusic",
       "via": "Googleニュース",
       "category": "global",
@@ -3253,7 +3314,7 @@
       "url": "https://news.google.com/rss/articles/CBMijwJBVV95cUxNd3BnUlZLa1JXM2g2U1psV3BITV94dmRRZnlnbXBZTG5lNjRqMENvNGtXbTFXanFYMWdjZGVhUFIyM3pCTlZ2REJsMDVuNFgwZy1pTFFoSURaWlRLUWxHbkozSk90Z3k2aTNZbWl6ZmVpUjZTZnJpT1BtTnNQTjVVZnExWTlocGhyV2lYODVIMGhvb3h4MHJqM1RMVXJyRm5oajhxVGZNVTR3c0ozdEE3U2ZHd0hUSFR2aF9naWdqSk43RDFvWmdRZWlJMU5vNVZHcklLcWpZdjY5bGR1ZERyVlY2M1lxN0syaWY1Y3lVeW5ZaEZKQTZrQjJ3ZTFQZjd2aG9QM0haRm9fQW9pdXNr?oc=5",
       "summary": "",
       "published": "2026-07-20T07:00:00.000Z",
-      "source": "musicbusinessworldwide.com",
+      "source": "Music Business Worldwide",
       "sourceId": "gnews-en-aimusic",
       "via": "Googleニュース",
       "category": "global",
@@ -3431,7 +3492,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 78,
+      "coverage": 80,
       "score": 30
     },
     {
@@ -3454,7 +3515,7 @@
       "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOWXB6Y1NOU1dZanZDV1E4X19Xem8tQmxEV0ZYWlI0NkpNLVlwc0ZlX3o1UkZoMUk2T19tLTNoaE1URGVUeWp4SlVEWFJHanFtWnlFWVZKeEpPTm83TS15clNobkduSnN1Q3U2NkwyX1ZkTW1nai0yTHV2bXNNSUl5aEo1QWxSV3pJUnlzQVp0SnRXaGI0aWRVVzlaQVNlYks3SVl1dkZxbk9QY3VSUWpOMko3Ujg?oc=5",
       "summary": "",
       "published": "2026-07-16T07:00:00.000Z",
-      "source": "musicbusinessworldwide.com",
+      "source": "Music Business Worldwide",
       "sourceId": "gnews-en-aimusic",
       "via": "Googleニュース",
       "category": "global",
@@ -3572,7 +3633,7 @@
       "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNNXFGZnNMSWdPOVdSMkRzUXU1bmRlcUhCcTZ5LUwxeS1XdUZqUi1WTGdzcjZBTDFtVmJtTkxNSnZHc09FTk5pd0M3aDBYTmFZMWNCOTJWc2dFUnNodkxxU2lOM0dWWnJSYVFIc1lHbWVMeFZGX1JyRzh4SUlJS3Y3WHdfb1BHemFsWmotazdvQXh3TVhpVzR3eWY1LUhWVXVMQTZJOXRnckhXdmc?oc=5",
       "summary": "",
       "published": "2026-07-15T07:00:00.000Z",
-      "source": "variety.com",
+      "source": "Variety",
       "sourceId": "gnews-en-aimusic",
       "via": "Googleニュース",
       "category": "global",
