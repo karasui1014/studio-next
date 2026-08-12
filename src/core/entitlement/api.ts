@@ -11,7 +11,7 @@
 import { useEffect, useMemo } from 'react'
 import { create } from 'zustand'
 
-import { useRoleStore, type Role, type RoleSource } from './role'
+import { useRoleStore, type Role } from './role'
 
 const TOKEN_KEY = 'studio-next:session'
 
@@ -80,9 +80,11 @@ export const usePremiumStore = create<PremiumState>((set) => ({
         const b = (await res.json().catch(() => ({}))) as { message?: string }
         return { ok: false, message: b.message ?? '確認できませんでした' }
       }
-      const b = (await res.json()) as { token: string; role: Role; source: string }
+      const b = (await res.json()) as { token: string; role: Role }
       writeToken(b.token)
-      useRoleStore.getState().setRoleFromSession(b.role, b.source as RoleSource)
+      // 加入経路はYouTubeメンバーシップのみ（Studio直販は無い・2026-08-12決定）。
+      // Workerが返す source（license/dev等・監査用の内部値）はUI表示には使わない。
+      useRoleStore.getState().setRoleFromSession(b.role, b.role === 'free' ? 'none' : 'youtube')
       await usePremiumStore.getState().refresh()
       return { ok: true }
     } catch {
@@ -107,7 +109,7 @@ export const usePremiumStore = create<PremiumState>((set) => ({
       const me = await call('/api/me')
       const meBody = (await me.json().catch(() => ({}))) as { role?: Role; exp?: number | null }
       const role: Role = meBody.role ?? 'free'
-      useRoleStore.getState().setRoleFromSession(role, role === 'free' ? 'none' : 'studio')
+      useRoleStore.getState().setRoleFromSession(role, role === 'free' ? 'none' : 'youtube')
       set({ sessionExpiresAt: role === 'free' ? null : (meBody.exp ?? null) })
 
       const res = await call('/api/content/premium')

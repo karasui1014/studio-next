@@ -184,18 +184,16 @@ Version 1 の開発憲章（サーバー・DB・ログイン禁止／データ�
 ## 権限（Role）
 
 権限は**価格ではなく Role** で管理します（`src/core/entitlement/role.ts`）。
+加入経路はYouTubeメンバーシップのみです（Studio直販は行いません）。
 
 | 入手経路 | 価格 | Role |
 |---|---|---|
-| Studio Premium（直販） | 980円 / 月 | `premium` |
 | YouTube「Studio Premium利用権付き」 | 1,290円 / 月 | `premium` |
-| Studio Master（直販） | 5,600円 / 月 | `master` |
 | YouTube「Studio Master利用権付き」 | 5,600円 / 月 | `master` |
 | YouTube「AI大好き部」 | 690円 / 月 | なし（応援用の段） |
 | YouTube「『企業様向け』Aiで曲作りしたい部」 | 35,000円 / 月 | **なし**（Studioとは無関係の別商品） |
 
-入手経路が違っても、最終的に同じ Role になります。加入プランに応じたキーを
-貼るだけで権限が付き、**Studioで別途登録し直す必要はありません**。
+加入プランに応じたキーを貼るだけで権限が付き、**Studioで別途登録し直す必要はありません**。
 画面側は必ず `useRole()` を通すので、将来サーバー方式へ移行しても
 差し替えるのは `role.ts` だけです。
 

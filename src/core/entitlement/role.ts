@@ -4,13 +4,11 @@ import { create } from 'zustand'
  * 権限（Role）
  *
  * ■ 原則: 価格ではなく Role で管理する
- * 入手経路が YouTube メンバーシップでも Studio 直販でも、最終的に同じ Role になる。
- * 画面側は「いくら払ったか」「どこで買ったか」を一切見ない。
+ * 加入経路はYouTubeメンバーシップのみ（Studio直販は行わない・2026-08-12決定）。
+ * 画面側は「いくら払ったか」を一切見ない。
  *
  *   YouTube「AIでMVを作りたい部」                 → role = premium
- *   Studio Premium（直販）                         → role = premium
  *   YouTube「AIでMVを1か月でマスターしたい方向け」  → role = master
- *   Studio Master（直販）                          → role = master
  *
  * ■ 認証について
  * Studio では別途アカウントを作らせない（V1の憲章どおりサーバー・ログインを持たない）。
@@ -20,22 +18,22 @@ import { create } from 'zustand'
 
 export type Role = 'free' | 'premium' | 'master'
 
-/** Roleをどこから得たか。表示の出し分けと将来の移行判断に使う。 */
-export type RoleSource = 'none' | 'youtube' | 'studio'
+/**
+ * Roleをどこから得たか。表示の出し分けに使う。
+ *
+ * ■ Studio直販は無い（2026-08-12決定）
+ * 加入経路はYouTubeメンバーシップのみ。かつてはStudioでの直接購入も
+ * 想定して 'studio' という値を持っていたが、実際に発行される経路が
+ * 存在しなかった（ライセンスキーは常にYouTube会員確認を経て発行される）。
+ * 存在しない経路をUIに残すと「（Studio直販）」のような誤った表示を生むため、
+ * 選択肢自体を削除した。
+ */
+export type RoleSource = 'none' | 'youtube'
 
 export const ROLE_LABEL: Record<Role, string> = {
   free: '無料プラン',
   premium: 'Studio Premium',
   master: 'Studio Master',
-}
-
-/**
- * Studio直販の価格。ここが「Studioというサービスそのものの値段」。
- * YouTube経由より安いのは、YouTube側にはメンバーシップ特典が別に付くため。
- */
-export const STUDIO_PRICE: Record<Exclude<Role, 'free'>, number> = {
-  premium: 980,
-  master: 5600,
 }
 
 /**
@@ -127,7 +125,7 @@ function loadSource(): RoleSource {
   if (!DEV) return 'none'
   try {
     const v = localStorage.getItem(SOURCE_KEY)
-    if (v === 'youtube' || v === 'studio') return v
+    if (v === 'youtube') return v
   } catch {
     /* noop */
   }
@@ -147,7 +145,7 @@ export const useRoleStore = create<RoleState>((set) => ({
   role: loadRole(),
   source: loadSource(),
 
-  setRole: (role, source = 'studio') => {
+  setRole: (role, source = 'youtube') => {
     // 本番では表示の昇格すら許さない。DevRoleSwitcher 自体も描画されない
     if (!DEV) return
     const nextSource: RoleSource = role === 'free' ? 'none' : source

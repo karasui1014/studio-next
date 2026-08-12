@@ -3,7 +3,7 @@ import { Check, MessageCircle, SquarePlay, Users, Zap } from 'lucide-react'
 
 import { apiConfigured, usePremiumStore } from '@/core/entitlement/api'
 import {
-  OFFICIAL_LINE_URL, STUDIO_PRICE, useRole, useRoleStore,
+  OFFICIAL_LINE_URL, useRole, useRoleStore,
   YOUTUBE_JOIN_URL, YOUTUBE_TIERS, type Role,
 } from '@/core/entitlement/role'
 import { cn } from '@/core/ui/cn'
@@ -33,8 +33,8 @@ interface RoleCard {
  * プラン。
  *
  * ■ 見せ方の原則
- * 権限は Role で管理し、価格は「入手経路」の情報として添えるだけにする。
- * メインの導線は YouTube メンバーシップ。Studio直販は同じRoleになる別ルート。
+ * 権限は Role で管理する。加入経路はYouTubeメンバーシップのみ
+ * （Studio直販は行わない・2026-08-12決定）。価格はYOUTUBE_TIERSの1本のみ。
  */
 const CARDS: RoleCard[] = [
   {
@@ -194,7 +194,6 @@ function MembershipBox() {
       <p className="mt-2 text-[11.5px] text-muted-foreground">
         いまの権限: <span className="font-semibold text-foreground">{label}</span>
         {source === 'youtube' && <span className="ml-1.5">（YouTubeメンバーシップ経由）</span>}
-        {source === 'studio' && <span className="ml-1.5">（Studio直販）</span>}
         {role !== 'free' && (
           <button
             type="button"
@@ -231,9 +230,7 @@ export function PlansPage() {
         <span className="font-semibold text-master">Master は人が伴走する学習環境</span>です。
         機能の多い・少ないではなく、目的が違います。
         <br />
-        加入は <strong className="text-foreground">Studio</strong> と
-        <strong className="text-foreground"> YouTubeメンバーシップ</strong> のどちらからでもできます。
-        どちらでも同じ権限になります。
+        加入は <strong className="text-foreground">YouTubeメンバーシップ</strong> から行います。
       </p>
 
       <div className="mt-5 grid gap-3 lg:grid-cols-3">
@@ -271,17 +268,17 @@ export function PlansPage() {
               </p>
 
               <p className="mt-3 text-[26px] font-extrabold tabular-nums">
-                {c.id === 'free' ? '¥0' : `¥${STUDIO_PRICE[c.id].toLocaleString()}`}
+                {c.id === 'free' ? '¥0' : `¥${tier?.price.toLocaleString()}`}
                 {c.id !== 'free' && (
                   <span className="text-[12px] font-semibold text-muted-foreground"> / 月</span>
                 )}
               </p>
 
-              {/* YouTube経由は別価格。同じ権限だが特典が付くぶん金額が違う。 */}
+              {/* 加入経路はYouTubeメンバーシップの1本のみ。プラン名だけ添える */}
               {tier && (
                 <p className="mt-1 flex items-start gap-1.5 text-[11px] leading-relaxed text-muted-foreground">
                   <SquarePlay className="mt-0.5 h-3.5 w-3.5 shrink-0 text-youtube" />
-                  YouTubeメンバーシップ「{tier.name}」なら ¥{tier.price.toLocaleString()} / 月
+                  YouTubeメンバーシップ「{tier.name}」
                 </p>
               )}
 
@@ -424,7 +421,7 @@ export function PlansPage() {
         <p className="text-[13.5px] font-bold">権限のしくみ</p>
         <p className="mt-1.5 text-[12px] leading-relaxed text-muted-foreground">
           Studioの権限は<strong className="text-foreground">価格ではなくRole（free / premium / master）</strong>で管理しています。
-          YouTubeメンバーシップ経由でも、将来のStudio直販でも、最終的に同じ権限になります。
+          加入経路はYouTubeメンバーシップのみです。
           <br />
           <span className="font-semibold text-premium">Premium は「制作環境」</span>。
           毎週コンテンツを配るのではなく、Studio自体が毎月良くなっていくことが価値です。
