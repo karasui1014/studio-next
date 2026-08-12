@@ -45,7 +45,7 @@ const TOOLS: ToolEntry[] = [
  * Discordの招待URLとは違い、ここに載せる8つはいずれも
  * 「元からログイン不要で誰でも開けるサイト」であり、限定性を持たない。
  * うち7つは V1（AI Music Studio）の公開ソースに以前から平文で書かれていたもの。
- * シーダンス2.5プロンプト工房はV1に無い新規ツールだが、同じ理由（ログイン不要・
+ * Seedance2.5プロンプト工房はV1に無い新規ツールだが、同じ理由（ログイン不要・
  * 誰でも開ける静的サイト）で公開コードに書いてよいと判断した（2026-08-12決定）。
  * ここでの「鍵」は本物のアクセス制御ではなく、導線の出し分けにすぎない
  * ——それはDiscordのときと同じ整理で、隠す価値のあるものを隠していない。
@@ -55,11 +55,11 @@ const TOOLS: ToolEntry[] = [
  *     （他所（このサイト自身）で既に無料公開済みのツールのため、Studio側でも無料開放にした）
  *   絵コンテツール・ギターコードTAB・マスタリング自動生成ツール : Premium以上（2026-08-10決定）
  *   字幕自動生成／楽曲批評／Seedance Batch Studio               : Masterのみ（2026-08-10決定）
- *   シーダンス2.5プロンプト工房                                 : Masterのみ（2026-08-12決定）
+ *   Seedance2.5プロンプト工房                                 : Masterのみ（2026-08-12決定）
  *     （Seedance Batch Studioと同じ動画生成の文脈のツールのため、同枠に揃えた）
  *
  * 名称・説明文・URLのうち7つは V1 の `src/lib/constants.ts`（EXTERNAL_TOOLS）と
- * 完全一致させている。シーダンス2.5プロンプト工房のみV1に対応がない新規追加。
+ * 完全一致させている。Seedance2.5プロンプト工房のみV1に対応がない新規追加。
  */
 interface ExternalTool {
   id: string
@@ -114,7 +114,7 @@ const EXTERNAL_TOOLS: ExternalTool[] = [
     requires: 'master',
   },
   {
-    id: 'seedance-prompt-koubou', emoji: '🎥', name: 'シーダンス2.5プロンプト工房',
+    id: 'seedance-prompt-koubou', emoji: '🎥', name: 'Seedance2.5プロンプト工房',
     desc: 'Seedance 2.5用のプロンプトを香盤表形式で組み立てる',
     url: 'https://karasui1014.github.io/lofi-detective-website/seedance-prompt-koubou/',
     requires: 'master',
