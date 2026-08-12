@@ -27,7 +27,6 @@
  */
 import { createHash, randomBytes } from 'node:crypto'
 import { execFileSync } from 'node:child_process'
-import { existsSync, readFileSync } from 'node:fs'
 import { dirname, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
@@ -38,6 +37,7 @@ import {
   readLedger,
   summarize,
 } from './license-ledger.mjs'
+import { keychainSetupHint, resolvePepper } from './lib/pepper.mjs'
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..')
 const workerDir = resolve(root, 'worker/api')
@@ -88,18 +88,9 @@ if (!limit.ok) {
 }
 
 // ---- pepper（値は表示しない）------------------------------------
-let pepper = process.env.LICENSE_PEPPER ?? ''
-if (!pepper && !isProd && existsSync(devVars)) {
-  const m = /^LICENSE_PEPPER\s*=\s*"?(.*?)"?\s*$/m.exec(readFileSync(devVars, 'utf8'))
-  if (m) pepper = m[1]
-}
+const pepper = resolvePepper({ isProd, devVarsPath: devVars })
 if (!pepper) {
-  console.error(
-    isProd
-      ? '本番用は LICENSE_PEPPER を環境変数で渡してください:\n' +
-        '  LICENSE_PEPPER=xxx node scripts/issue-license-key.mjs premium --name "..." --prod'
-      : 'worker/api/.dev.vars に LICENSE_PEPPER がありません。',
-  )
+  console.error(isProd ? keychainSetupHint() : 'worker/api/.dev.vars に LICENSE_PEPPER がありません。')
   process.exit(1)
 }
 

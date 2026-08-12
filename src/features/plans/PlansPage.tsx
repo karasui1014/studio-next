@@ -191,6 +191,22 @@ function MembershipBox() {
         </p>
       )}
 
+      {/* Discord招待URLはここに書かない。使いたい人の連絡先だけ案内する */}
+      <p className="mt-3 flex items-start gap-1.5 text-[11.5px] leading-relaxed text-muted-foreground">
+        <MessageCircle className="mt-0.5 h-3.5 w-3.5 shrink-0 text-master" />
+        Master限定のDiscordコミュニティを利用したい方は、
+        <a
+          href={OFFICIAL_LINE_URL}
+          target="_blank"
+          rel="noopener noreferrer external"
+          referrerPolicy="no-referrer"
+          className="font-semibold text-master underline underline-offset-2"
+        >
+          公式LINE
+        </a>
+        からご連絡ください。
+      </p>
+
       <p className="mt-2 text-[11.5px] text-muted-foreground">
         いまの権限: <span className="font-semibold text-foreground">{label}</span>
         {source === 'youtube' && <span className="ml-1.5">（YouTubeメンバーシップ経由）</span>}
