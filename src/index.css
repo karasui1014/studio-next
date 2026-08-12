@@ -78,6 +78,45 @@
     color-scheme: dark;
   }
 
+  /*
+    Suno風テーマ。
+    Sunoの公式カラーコードを写したものではなく、Sunoのアプリ画面の
+    「ほぼ黒に近い背景＋紫〜マゼンタの強いアクセント」という雰囲気だけを
+    独自パレットとして再現したもの。.dark と併用し（useTheme.ts参照）、
+    ここに書いた変数だけを上書きする。
+  */
+  .theme-suno {
+    --background: 267 35% 6%;
+    --foreground: 280 20% 96%;
+
+    --card: 267 30% 10%;
+    --card-foreground: 280 20% 96%;
+
+    --primary: 291 88% 62%;
+    --primary-foreground: 0 0% 100%;
+
+    --muted: 267 22% 15%;
+    --muted-foreground: 275 14% 70%;
+
+    --accent: 267 24% 18%;
+    --accent-foreground: 280 20% 96%;
+
+    --destructive: 350 85% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 267 22% 20%;
+    --input: 267 22% 20%;
+    --ring: 291 88% 62%;
+
+    --suno: 291 88% 65%;
+    --mv: 199 89% 62%;
+    --youtube: 350 85% 62%;
+
+    --premium: 38 95% 60%;
+    --master: 330 85% 68%;
+    --substack: 24 95% 62%;
+  }
+
   * {
     @apply border-border;
   }

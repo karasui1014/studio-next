@@ -1,12 +1,74 @@
+import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { Moon, Search, Sparkles, Sun } from 'lucide-react'
+import { Check, Moon, Palette, Search, Sparkles, Sun } from 'lucide-react'
 
 import { cn } from '@/core/ui/cn'
-import { useTheme } from '@/core/ui/useTheme'
+import { THEME_LABEL, useTheme, type Theme } from '@/core/ui/useTheme'
 import { useRole } from '@/core/entitlement/role'
 
+const THEME_ICON: Record<Theme, typeof Sun> = {
+  light: Sun,
+  dark: Moon,
+  suno: Palette,
+}
+
+const THEME_ORDER: Theme[] = ['light', 'dark', 'suno']
+
+function ThemePicker() {
+  const { theme, setTheme } = useTheme()
+  const [open, setOpen] = useState(false)
+  const ref = useRef<HTMLDivElement>(null)
+  const Icon = THEME_ICON[theme]
+
+  // 外側クリックで閉じる。毎日開くUIなので、開けっ放しは邪魔になる
+  useEffect(() => {
+    if (!open) return
+    const onClick = (e: MouseEvent) => {
+      if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false)
+    }
+    document.addEventListener('mousedown', onClick)
+    return () => document.removeEventListener('mousedown', onClick)
+  }, [open])
+
+  return (
+    <div className="relative" ref={ref}>
+      <button
+        type="button"
+        onClick={() => setOpen((v) => !v)}
+        aria-label="表示テーマを切り替える"
+        aria-expanded={open}
+        className="grid h-9 w-9 place-items-center rounded-lg text-muted-foreground hover:bg-accent"
+      >
+        <Icon className="h-[18px] w-[18px]" />
+      </button>
+
+      {open && (
+        <div className="absolute right-0 top-[calc(100%+6px)] z-40 w-40 overflow-hidden rounded-xl border border-border bg-card p-1 shadow-lg">
+          {THEME_ORDER.map((t) => {
+            const OptIcon = THEME_ICON[t]
+            return (
+              <button
+                key={t}
+                type="button"
+                onClick={() => { setTheme(t); setOpen(false) }}
+                className={cn(
+                  'flex w-full items-center gap-2.5 rounded-lg px-2.5 py-2 text-left text-[13px] font-medium hover:bg-accent',
+                  theme === t && 'text-primary',
+                )}
+              >
+                <OptIcon className="h-4 w-4 shrink-0" />
+                <span className="flex-1">{THEME_LABEL[t]}</span>
+                {theme === t && <Check className="h-3.5 w-3.5 shrink-0" />}
+              </button>
+            )
+          })}
+        </div>
+      )}
+    </div>
+  )
+}
+
 export function Topbar() {
-  const { theme, toggle } = useTheme()
   const { role, label } = useRole()
 
   return (
@@ -47,14 +109,7 @@ export function Topbar() {
           )}
         </Link>
 
-        <button
-          type="button"
-          onClick={toggle}
-          aria-label="表示テーマを切り替える"
-          className="grid h-9 w-9 place-items-center rounded-lg text-muted-foreground hover:bg-accent"
-        >
-          {theme === 'dark' ? <Moon className="h-[18px] w-[18px]" /> : <Sun className="h-[18px] w-[18px]" />}
-        </button>
+        <ThemePicker />
       </div>
     </header>
   )
