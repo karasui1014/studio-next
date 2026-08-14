@@ -1,14 +1,14 @@
 {
-  "generatedAt": "2026-08-14T04:39:53.320Z",
-  "count": 272,
+  "generatedAt": "2026-08-14T09:49:41.855Z",
+  "count": 275,
   "newCount": 27,
-  "translatedCount": 0,
+  "translatedCount": 3,
   "ranking": [
     "de6c39e1bb146d3a",
     "9ad61b9fdb7af95e",
-    "4039c95e313e6306",
     "1527c8b5953ddae8",
-    "6e0a5c6b5fcd39e5"
+    "4039c95e313e6306",
+    "06de06526b97eeea"
   ],
   "sources": [
     {
@@ -107,7 +107,7 @@
       "category": "global",
       "ok": true,
       "fetched": 15,
-      "matched": 2,
+      "matched": 4,
       "error": null
     },
     {
@@ -260,7 +260,7 @@
       "category": "jp",
       "ok": true,
       "fetched": 20,
-      "matched": 3,
+      "matched": 2,
       "error": null
     }
   ],
@@ -292,6 +292,38 @@
   ],
   "items": [
     {
+      "id": "f62e74fb5662d45d",
+      "title": "Kobalt signs on for Spotify’s AI fan-made covers and remixes",
+      "url": "https://musically.com/2026/08/14/kobalt-signs-on-for-spotifys-ai-fan-made-covers-and-remixes/",
+      "summary": "Kobalt has signed on for Spotify’s upcoming AI-powered ‘fan-made covers and remixes’ features, with a licensing deal.",
+      "published": "2026-08-14T07:29:43.000Z",
+      "source": "Music Ally",
+      "sourceId": "musically",
+      "via": null,
+      "category": "global",
+      "lang": "en",
+      "coverage": 1,
+      "titleJa": "KobaltがSpotifyのAIファンメイドのカバーとリミックスにサインオン",
+      "summaryJa": "Kobaltは、Spotifyの今後のAI搭載の「ファンメイドのカバーとリミックス」機能にライセンス契約でサインオンしました。",
+      "score": 12
+    },
+    {
+      "id": "4b0b05bd4abdd2fd",
+      "title": "Suno rolls out a major DAW update with its Suno Studio 2.0",
+      "url": "https://musically.com/2026/08/14/suno-rolls-out-a-major-daw-update-with-its-suno-studio-2-0/",
+      "summary": "Suno’s fortnight of big announcements – alright, the losing-a-big-lawsuit-to-GEMA one wasn’t its plan – continues. Meet Suno Studio 2.0.",
+      "published": "2026-08-14T07:11:13.000Z",
+      "source": "Music Ally",
+      "sourceId": "musically",
+      "via": null,
+      "category": "global",
+      "lang": "en",
+      "coverage": 1,
+      "titleJa": "Suno Studio 2.0でDAWのメジャーアップデートをロールアウト",
+      "summaryJa": "スノーが2週間にわたって発表してきたビッグアナウンス――さて、GEMA訴訟に敗訴したのは計画ではなかった――は続いている。Suno Studio 2.0をご紹介します。",
+      "score": 32
+    },
+    {
       "id": "e586bfe6ac49c1a0",
       "title": "中国MiniMax、音楽生成AI「Music3」を無償公開 日本語ボーカルで最大5分の楽曲をローカル生成可能に",
       "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTFBFaXpScHJDM0tUWkZJekFoc3BZOW1NYnVWNks1Zi1rNlVXRVB0dE10bVBRMlRZdHRwM2dyNE5MRXZNaHNoWGt0LVN5dXVjT3NUTzIydE5TWDVUY0Z0RlBUOVF1Qng3aVVzMGdHTGx0S3R5OHAz?oc=5",
@@ -316,8 +348,8 @@
       "via": null,
       "category": "jp",
       "lang": "ja",
-      "coverage": 2,
-      "score": 56
+      "coverage": 3,
+      "score": 64
     },
     {
       "id": "9c04894c87ca3d3f",
@@ -376,10 +408,10 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 3,
+      "coverage": 4,
       "titleJa": "Suno Studio 2.0がDAWにAIアシスタントを導入",
       "summaryJa": "Suno氏は、新しいチャットボットは音楽制作を理解しているため、「バンドの他のメンバー」のように話すことができると述べています。",
-      "score": 37
+      "score": 45
     },
     {
       "id": "6d91374cce08d3d4",
@@ -507,7 +539,7 @@
       "coverage": 1,
       "titleJa": "ブライアン・メイは、クイーンズ・ザ・ゲームのカバーを再現するようAIに依頼しました。彼は結果に満足していませんでした。「これがまもなく世界を支配する知性のようなものですか？ ？ ！」",
       "summaryJa": "ギタリストはまた、深刻な環境上の嘆願をしました",
-      "score": 12
+      "score": 7
     },
     {
       "id": "8bb7f73d5e3678b0",
@@ -716,7 +748,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 7,
+      "coverage": 8,
       "titleJa": "BMGとSuno ReachがAIミュージックモデルのライセンス契約を締結",
       "summaryJa": "また、SunoのBMG作品の過去の使用を解決する契約に基づき、アーティストやソングライターはAIの入出力に使用される音楽をオプトインする必要があります。",
       "score": 40
@@ -732,7 +764,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 7,
+      "coverage": 8,
       "titleJa": "Sunoは、新しい音楽モデルの発売に先立ち、BMGとグローバルライセンス契約を締結",
       "summaryJa": "BMGは、9か月前にワーナー・ミュージック・グループがAI企業との提携を発表して以来、Sunoとのライセンス契約を締結した最初の重要な権利者である。",
       "score": 40
@@ -866,8 +898,8 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 1,
-      "score": 10
+      "coverage": 2,
+      "score": 18
     },
     {
       "id": "06de06526b97eeea",
@@ -880,10 +912,10 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 3,
+      "coverage": 4,
       "titleJa": "Sunoは、「音楽業界と提携して開発された」新しいモデルを約束しながら、PROのサブスクライバーを1か月あたり20曲のダウンロードに制限しています",
       "summaryJa": "Suno氏は、月曜日（ 8月10日）のブログ投稿で、ダウンロード制限は「悪い俳優が音楽を大量輸出することをより困難にする」と述べた",
-      "score": 32
+      "score": 40
     },
     {
       "id": "396059375c05f1d5",
@@ -1054,7 +1086,7 @@
       "category": "jp",
       "lang": "ja",
       "coverage": 3,
-      "score": 35
+      "score": 31
     },
     {
       "id": "cff4ae2a527d584f",
@@ -1263,7 +1295,7 @@
       "via": null,
       "category": "jp",
       "lang": "ja",
-      "coverage": 17,
+      "coverage": 18,
       "score": 41
     },
     {
@@ -1292,7 +1324,7 @@
       "via": null,
       "category": "jp",
       "lang": "ja",
-      "coverage": 25,
+      "coverage": 26,
       "score": 50
     },
     {
@@ -1423,7 +1455,7 @@
       "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxOa2JVTGVUc3ZrbTJjM09XRE04cW42R0lRWUhhM205aFNUUE9SdHNCbFN3MkxhSW5Od0haSGlEYXhnU1lMTVJ2b05oZS1IeXhJcUlqY01xdVd4RHZFU212ZmVKY0VXUjhjdzJlZW5Ib2d1UDZtTTV2THN3TUdWc3ZFVDJaRFRhV1NwMmZqLWpPcU9ILVN2YVpxTkxJVnRSSjRfMEFhSlVrUy1ENlZwdm9ZY2xma2lsWHBiWmIwY01OUmktQkN1M0hLZXpyc0tEV05z?oc=5",
       "summary": "",
       "published": "2026-08-07T10:00:00.000Z",
-      "source": "Los Angeles Times",
+      "source": "latimes.com",
       "sourceId": "gnews-en-aimusic",
       "via": "Googleニュース",
       "category": "global",
@@ -1444,7 +1476,7 @@
       "category": "jp",
       "lang": "ja",
       "coverage": 1,
-      "score": 22
+      "score": 13
     },
     {
       "id": "5241609e63a63859",
@@ -1457,8 +1489,8 @@
       "via": null,
       "category": "jp",
       "lang": "ja",
-      "coverage": 85,
-      "score": 46
+      "coverage": 88,
+      "score": 37
     },
     {
       "id": "bd9ffb15b6db063a",
@@ -1557,7 +1589,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 30,
+      "coverage": 31,
       "titleJa": "Sunoは、AI生成音楽の透かしで合法的になりたいと考えています",
       "summaryJa": "Sunoは、「大規模な悪用」を防ぐために透かしとダウンロード制限を計画しています。",
       "score": 27
@@ -1683,7 +1715,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 30,
+      "coverage": 31,
       "titleJa": "法的な争いの中で、Sunoは曲に透かしを入れ始めると言います",
       "summaryJa": "Sunoの透かし機能は、同社がいくつかの面で法的闘争を戦っているときに登場します。",
       "score": 27
@@ -1699,7 +1731,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 30,
+      "coverage": 31,
       "titleJa": "Sunoはビニール市場に進出し、ユーザーがAIの曲を12インチのレコードにプレスできるようにする予定",
       "summaryJa": "同社は、プラットフォーム上で作られた曲を物理的なレコードに変換するサービスであるSuno Vinylのウェイティングリストを開設しました",
       "score": 27
@@ -1795,7 +1827,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 26,
+      "coverage": 27,
       "titleJa": "スノ、AI楽曲のダウンロードを制限する計画を公開、詳細「原則」「AIは模倣ではなく独創性を可能にするべきである」",
       "summaryJa": "新しい投稿は、Sunoが画期的な裁判所判決でドイツの曲の著作権を侵害した責任を問われてから約1週間後に到着した。",
       "score": 38
@@ -2351,7 +2383,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 40,
+      "coverage": 41,
       "score": 32
     },
     {
@@ -2427,7 +2459,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 10,
+      "coverage": 11,
       "score": 21
     },
     {
@@ -2543,12 +2575,12 @@
       "score": 6
     },
     {
-      "id": "cabd05054b10046e",
-      "title": "Suno v3.5／v4で6作品の侵害を認定、ドイツ一審がフェアユースを退ける",
-      "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTFBHSEhrRVhuQ19kYTdMN1RPUlQ2WHoxUGFLTEZpa1liMWdVYnJfQkY1U0FlaFJvMV9qUWZuU25ueXFTLW5mZzdHaFpBSEF0NmFOc1pyeHBPMUVPZEhOY2dPX1Noa2lsLWh0SlBV?oc=5",
+      "id": "3ed7f79eb9ab9442",
+      "title": "【Suno】空色のシグナル",
+      "url": "https://news.google.com/rss/articles/CBMiQkFVX3lxTE5lc1o1Y1BPUUdiTTlxV09RZW54UkQzbUlZN1gzNHdPSzFiVkh1UjFIajhNNURZNXFQcHdzR3QwRm5IZw?oc=5",
       "summary": "",
-      "published": "2026-08-01T11:59:00.000Z",
-      "source": "XenoSpectrum",
+      "published": "2026-08-01T08:26:04.000Z",
+      "source": "YouTube",
       "sourceId": "gnews-ja-suno",
       "via": "Googleニュース",
       "category": "jp",
@@ -2557,12 +2589,12 @@
       "score": 6
     },
     {
-      "id": "3ed7f79eb9ab9442",
-      "title": "【Suno】空色のシグナル",
-      "url": "https://news.google.com/rss/articles/CBMiQkFVX3lxTE5lc1o1Y1BPUUdiTTlxV09RZW54UkQzbUlZN1gzNHdPSzFiVkh1UjFIajhNNURZNXFQcHdzR3QwRm5IZw?oc=5",
+      "id": "cabd05054b10046e",
+      "title": "Suno v3.5／v4で6作品の侵害を認定、ドイツ一審がフェアユースを退ける",
+      "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTFBHSEhrRVhuQ19kYTdMN1RPUlQ2WHoxUGFLTEZpa1liMWdVYnJfQkY1U0FlaFJvMV9qUWZuU25ueXFTLW5mZzdHaFpBSEF0NmFOc1pyeHBPMUVPZEhOY2dPX1Noa2lsLWh0SlBV?oc=5",
       "summary": "",
-      "published": "2026-08-01T08:26:04.000Z",
-      "source": "YouTube",
+      "published": "2026-08-01T07:00:00.000Z",
+      "source": "XenoSpectrum",
       "sourceId": "gnews-ja-suno",
       "via": "Googleニュース",
       "category": "jp",
@@ -2798,7 +2830,7 @@
       "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOYjBLM01uX0dLclpkY041M29fZHdIbm52RmhrcUxBdEhxZ1dzeVlHY25tRVJYcGRIejJ5ZjZZOU9RYnhsaFdGX0dWdG9aRGxpRDE5QzItNFNqWm9RVDRheEYxaFVuRm54aXh3cmRNLTlLSEV1ZVZ5azgzMDNtUGR4dVNjQUp2b0R1eldwSTVqeFJXMmJZQWl2MkxMNzFGYkxKM3ZR?oc=5",
       "summary": "",
       "published": "2026-07-31T07:00:00.000Z",
-      "source": "Reuters",
+      "source": "reuters.com",
       "sourceId": "gnews-en-aimusic",
       "via": "Googleニュース",
       "category": "global",
@@ -2930,12 +2962,12 @@
       "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE56UklxM2pzOUtmQlBLWVZXek9PazhrSUtPb1NRNmJWRzNtV0lRbmMtdWRBd3NjNmE5ZU9MZ1AzNGNTRWVnT0xnQUxaSGlqSnpmdld5MTI1T3p1bHN2eG9hR0E4T3NHcDl5NDJ3dg?oc=5",
       "summary": "",
       "published": "2026-07-30T07:00:00.000Z",
-      "source": "ITmedia",
+      "source": "itmedia.co.jp",
       "sourceId": "gnews-ja-suno",
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 98,
+      "coverage": 99,
       "score": 41
     },
     {
@@ -2963,7 +2995,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 93,
+      "coverage": 95,
       "score": 41
     },
     {
@@ -2991,7 +3023,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 55,
+      "coverage": 56,
       "score": 41
     },
     {
@@ -3308,7 +3340,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 39,
+      "coverage": 40,
       "score": 21
     },
     {
@@ -3545,7 +3577,7 @@
       "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxQa01YMUNvZ3YwTVNvUEFHRU9FMkhBMGxGa2RYSmlBbXJBREd3VF9XekN3dWV2VlNmNFljRE42WmlOTzV0UzN6RDZpc3B1OXFaZG43N0tVa3F0endyZ0g4UlNhSUhWVEFMY2xmTTR6NllaUUNLNm1MQzBnRl9TNlhOR3FXMnJuX2E2TG54UHlER2dBMWFYZ2ZNbUE4U2JYenJhTVFoeFZpb0lia2ZpT19SbG02Z2pjTUdpZ2gxVnNzRzhSTGFZWTdHQzRnQkJ6QTd1?oc=5",
       "summary": "",
       "published": "2026-07-21T07:00:00.000Z",
-      "source": "Los Angeles Times",
+      "source": "latimes.com",
       "sourceId": "gnews-en-aimusic",
       "via": "Googleニュース",
       "category": "global",
@@ -3826,7 +3858,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 89,
+      "coverage": 90,
       "score": 30
     },
     {
@@ -3871,6 +3903,21 @@
       "lang": "en",
       "coverage": 1,
       "titleJa": "Suno、iMessageにAI Music Gunkを導入",
+      "score": 3
+    },
+    {
+      "id": "b70c1bbc4cdd81e9",
+      "title": "Suno Revenue and Usage Statistics (2026)",
+      "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE1hRk95X0thSUhzb0hpcTRucWRwZHduNUNodGpmRDl0T3prWGxlYmJUcmExYlJJX3pyd0pCYVFtcWMxc2Q2b1lvSTVfeDFqdWVzWG81dm9ySjBhVHJoLW5MV0RB?oc=5",
+      "summary": "",
+      "published": "2026-07-16T07:00:00.000Z",
+      "source": "Business of Apps",
+      "sourceId": "gnews-en-aimusic",
+      "via": "Googleニュース",
+      "category": "global",
+      "lang": "en",
+      "coverage": 1,
+      "titleJa": "Sunoの収益と使用状況の統計（ 2026年）",
       "score": 3
     },
     {
