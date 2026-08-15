@@ -3,6 +3,7 @@ import { useEffect } from 'react'
 
 import { usePremiumBootstrap } from '@/core/entitlement/api'
 
+import { EasterEggCredit } from './EasterEggCredit'
 import { Sidebar } from './Sidebar'
 import { TabBar } from './TabBar'
 import { Topbar } from './Topbar'
@@ -31,6 +32,7 @@ export function AppShell() {
         </main>
       </div>
       <TabBar />
+      <EasterEggCredit />
     </div>
   )
 }
