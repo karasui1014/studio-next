@@ -325,12 +325,29 @@ Premiumの価値を「毎週コンテンツを配ること」に置かない方�
 
 **YouTubeメンバーシップ**（実装：`src/core/entitlement/role.ts` の `YOUTUBE_TIERS`）
 
-| 段 | 価格 | 付与されるRole |
-|---|---|---|
-| AI大好き部 | 690円 / 月 | **なし**（応援用の段。Studioの権限は付かない） |
-| Studio Premium利用権付き<br>（現「AIでMVを作りたい部」） | 1,290円 / 月 | `premium` |
-| Studio Master利用権付き<br>（現「AIでMVを1か月でマスターしたい方向け」） | 5,600円 / 月 | `master` |
-| 「企業様向け」Aiで曲作りしたい部 | 35,000円 / 月 | **なし**（→ 下記） |
+| 段（YouTube側の商品名） | 価格 | 付与されるRole | Studio内の表示名 |
+|---|---|---|---|
+| Ai大好き部 | 690円 / 月 | **なし**（応援用の段。Studioの権限は付かない） | — |
+| AI音楽部 Studio Premium | 1,290円 / 月 | `premium` | Studio Premium |
+| AI音楽部 Studio Creator | 3,490円 / 月 | `creator` | Studio Creator |
+| AI音楽部Studio Master | 5,600円 / 月 | `master` | Studio Master |
+| 「企業様向け」Aiで曲作りしたい部 | 35,000円 / 月 | **なし**（→ 下記） | — |
+
+⚠️ **段名はYouTube Studioの実画面の表記をそのまま写すこと**（2026-08-19確認）。
+`Ai大好き部`（AIではない）、`AI音楽部Studio Master`（部とStudioの間に空白が無い）など
+段ごとに不揃いだが、**見た目を揃えるために書き換えてはいけない**。
+実物とずれた名前は、照合時に静かに全員 `free` へ倒れる原因になる。
+
+> **YouTubeの商品名とStudioのプラン名は別物です（✅ 2026-08-19決定）。**
+> Studio内では「AI音楽部」を付けず `Studio Creator` と表示し、
+> YouTubeの加入案内など**メンバーシップの正式名称が要る場所でだけ**
+> `AI音楽部 Studio Creator` と表示します。
+> 実装は `role.ts` の `ROLE_LABEL`（Studio名）と `YOUTUBE_TIERS[].youtubeName`（YouTube名）に
+> 分けてあり、画面側に直接書きません。
+>
+> Premium / Master の段名は 2026-08-19 に「AI音楽部 Studio ○○」へ改名されました。
+> 旧名（「AiでMVを作りたい部」など）は `scripts/membership-levels.mjs` の `aliases` に
+> 残してあります（改名前に申請した人の控えと突き合わせるため）。
 
 #### ⚠️ 35,000円「企業様向け」プランの扱い（✅ 2026-08-09 決定・厳守）
 
@@ -358,7 +375,7 @@ Roleは発行時に運営者が決めてKVへ記録した値だけで決まり�
 再びこの誤りが起きうるため、判断基準としてここに残します。
 
 プラン画面の価格表示は**YOUTUBE_TIERSの価格のみ**を大きく表示します
-（Premium 1,290円 / Master 5,600円）。二重価格ではありません。
+（Premium 1,290円 / Creator 3,490円 / Master 5,600円）。二重価格ではありません。
 
 Masterの5,600円は現行のYouTube最上位メンバーシップと同額です。
 既存メンバーとの公平性のため、この価格は下げません。
@@ -384,7 +401,25 @@ Masterの5,600円は現行のYouTube最上位メンバーシップと同額で�
 - お気に入り
 - 新機能先行公開
 
-**Studio Master**（Premiumのすべて ＋ ここから先は人が関わる）
+**Studio Creator**（✅ 新設・2026-08-18／Premiumのすべて ＋ 映像制作）
+
+位置づけは「機能が増えるプラン」ではなく、
+**AI音楽制作から、映像・ビジュアル表現まで制作領域を広げるプラン**です。
+対象は「AI音楽から映像制作まで、AIを使った制作の幅を広げたいクリエイター」。
+
+- Studio Premium のすべて
+- **Seedance Batch Studio**（外部ツール）
+- **シーダンス2.5 プロンプト工房**（外部ツール）
+
+この2つが Creator 限定機能です。2026-08-18 まではMaster限定でしたが、
+Creator新設にあたり Creator 以上へ引き下げました
+（Masterの差別化は「人が関わる伴走」に一本化する、という整理）。
+
+**Studio Master**（Creatorのすべて ＋ ここから先は人が関わる）
+
+⚠️ **Masterの価値を「さらに多くのAIツールが使えるプラン」にしないこと。**
+中心価値は人が関わる伴走・学習環境です。
+
 - 作品添削
 - AI音楽レビュー
 - Discord Master限定コミュニティ
@@ -441,17 +476,31 @@ Premiumで売るのは次の4つです。
 ✅ **決定**：**権限は価格ではなく Role で管理します。**
 
 ```
-free / premium / master
+free < premium < creator < master
 ```
+
+**上位は下位をすべて含みます（継承型）。**（✅ 2026-08-18 決定）
+
+| Role | 使えるもの |
+|---|---|
+| `free` | 無料機能のみ |
+| `premium` | Premium機能 |
+| `creator` | Premium機能 **＋ Creator限定機能** |
+| `master` | Premium機能 ＋ Creator機能 ＋ **Master機能** |
+
+Creator限定機能は **Seedance Batch Studio** と **シーダンス2.5 プロンプト工房** の2つです。
+Creatorを追加したことで**既存Masterユーザーが失う機能はありません**（Masterはcreatorを包含）。
 
 入手経路が違っても、最終的に同じ Role になります。
 **画面側は「いくら払ったか」「どこで買ったか」を一切見ません。**
 
 | 入手経路 | Role |
 |---|---|
-| YouTube「Studio Premium利用権付き」 1,290円 | `premium` |
-| YouTube「Studio Master利用権付き」 5,600円 | `master` |
-| YouTube「AI大好き部」 690円 | （権限なし・`free` のまま） |
+| YouTube「AI音楽部 Studio Premium」 1,290円 | `premium` |
+| YouTube「AI音楽部 Studio Creator」 3,490円 | `creator` |
+| YouTube「AI音楽部Studio Master」 5,600円 | `master` |
+| YouTube「Ai大好き部」 690円 | （権限なし・`free` のまま） |
+| YouTube「「企業様向け」Aiで曲作りしたい部」 35,000円 | （権限なし・`free` のまま。→ §4） |
 
 加入経路はYouTubeメンバーシップのみです（Studio直販は行いません・2026-08-12決定）。
 
@@ -460,29 +509,42 @@ free / premium / master
 **唯一の実装場所：`src/core/entitlement/role.ts`**
 
 ```ts
-export type Role = 'free' | 'premium' | 'master'
+export type Role = 'free' | 'premium' | 'creator' | 'master'
 export type RoleSource = 'none' | 'youtube'
+
+// 権限の並び。上下の比較は必ずこれを通す
+export const ROLE_RANK: Record<Role, number> = { free: 0, premium: 1, creator: 2, master: 3 }
+export function satisfiesRole(actual: Role, required: Role): boolean
 
 // 画面側はこれだけを使う
 export function useRole() {
-  return { role, source, paid, master, label }
+  return { role, source, paid, creator, master, label, can }
 }
 ```
 
 | エクスポート | 用途 |
 |---|---|
 | `useRole()` | **画面側は必ずこれを使う。** 直接ストアを触らない |
+| `useRole().can(required)` | その権限が `required` 以上か。プランが増えても画面は書き換え不要 |
+| `ROLE_RANK` / `satisfiesRole()` | 権限の並びと上下比較。**各画面が独自の順序表を持たないこと** |
 | `isPaid(role)` | Premium以上か |
+| `isCreator(role)` | Creator以上か |
 | `isMaster(role)` | Masterか |
+| `ROLE_LABEL` | **Studio内のプラン名**（例：Studio Creator）。「AI音楽部」は付けない |
+| `YOUTUBE_TIERS[].youtubeName` | **YouTube側の商品名**（例：AI音楽部 Studio Creator）。加入案内でだけ使う |
 | `YOUTUBE_TIERS` | YouTubeメンバーシップとRoleの対応（価格の唯一の出典） |
+| `youtubeTierFor(role)` | Roleに対応するYouTubeの段を引く |
+
+Worker側にも同じ並びがあります（`worker/api/src/session.ts` の `ROLE_RANK` と `satisfies()`）。
+フロントとWorkerで `Role` 型が二重に定義されているため、**プランを増やすときは両方**直すこと。
 | `YOUTUBE_JOIN_URL` | 「YouTubeで加入する」ボタンの遷移先（✅ 決定・2026-08-03） |
 | `OFFICIAL_LINE_URL` | 公式LINEの「友だち追加」URL（✅ 決定・2026-08-11） |
 | ~~`DISCORD_INVITE_URL`~~ | **2026-08-08 廃止。** 招待URLを公開コードに置かない方針へ変更したため、定数ごと削除した（→ §6「Discordの招待URL」） |
 
 **`YOUTUBE_JOIN_URL`** = `https://www.youtube.com/@AI音楽部-AImusic/join`
 （通常のチャンネルページではなく、**メンバーシップ加入画面へ直接遷移**させる）
-プラン画面の Premium・Master 両カードの「YouTubeで加入する」ボタンがこの1つの定数を参照する。
-URLを画面側に直接書かないこと。
+プラン画面の Premium・Creator・Master 各カードの「YouTubeで加入する」ボタンが
+**この1つの定数**を参照する。カードごとに別のURLを書かないこと。
 
 **`OFFICIAL_LINE_URL`** = `https://lin.ee/OxFaiLT`
 
@@ -763,14 +825,19 @@ KVが漏れても個人は特定できない、という形にしています。
 新しい判定ロジックは作らない。
 
 ```
-① Premium利用者がYouTubeでMaster対象プランへ変更する
+① 利用者がYouTubeで上位プラン（例：Master）へ変更する
 ② 公式LINEから「Masterに変更しました」と連絡する（自動判定はしない）
 ③ 運営者がYouTube Studioの会員一覧を目視で確認する
-④ 新しいMasterキーを発行する（旧Premiumキーのroleは書き換えない）
-⑤ 新しいMasterキーを公式LINEで本人に送る
+④ 新しい上位プランのキーを発行する（旧キーのroleは書き換えない）
+⑤ 新しいキーを公式LINEで本人に送る
 ⑥ 本人がプラン画面に新しいキーを入力する
-⑦ 旧Premiumキーを失効する
+⑦ 旧キーを失効する
 ```
+
+対象となる経路は Premium→Creator / Premium→Master / Creator→Master の3通り
+（およびその逆のダウングレード）。**どれも同じ型で扱い、専用ロジックは作らない。**
+連番の頭文字は Premium=`P` / Creator=`C` / Master=`M`
+（`scripts/license-ledger.mjs` の `PREFIX`）。
 
 **対象プラン**（→ §4 の価格表と同一。ここでも重複して明記する）
 
@@ -1105,14 +1172,16 @@ GET https://www.googleapis.com/youtube/v3/membershipsLevels?part=id,snippet
 Authorization: Bearer {運営者のaccess token}
 ```
 
-3つの段それぞれの `id`（不透明な固定文字列）が返るので、それを控えて Worker の
+各段の `id`（不透明な固定文字列）が返るので、それを控えて Worker の
 環境変数に設定します。
 
 | YouTubeの段 | 価格 | Role |
 |---|---|---|
-| AI大好き部 | ¥690 | **`free`**（Studio権限なし） |
-| Studio Premium利用権付き（現「AIでMVを作りたい部」） | ¥1,290 | `premium` |
-| Studio Master利用権付き（現「AIでMVを1か月でマスターしたい方向け」） | ¥5,600 | `master` |
+| Ai大好き部 | ¥690 | **`free`**（Studio権限なし） |
+| AI音楽部 Studio Premium | ¥1,290 | `premium` |
+| AI音楽部 Studio Creator | ¥3,490 | `creator` |
+| AI音楽部Studio Master | ¥5,600 | `master` |
+| 「企業様向け」Aiで曲作りしたい部 | ¥35,000 | **`free`**（Studio対象外・→ §4） |
 
 **✅ 対応は「表示名」ではなく「レベルID」で持つ。**
 表示名はYouTube側で改名できてしまうため、改名した瞬間に全員の権限が壊れます。
@@ -2292,6 +2361,7 @@ Worker が扱うのは**権限判定と限定コンテンツの配信だけ**で
 
 | 日付 | 内容 |
 |---|---|
+| **2026-08-19** | **Studio Creator（3,490円）を新設し、プラン体系を4段階に変更。** ①`Role` を `free < premium < creator < master` の**継承型4段階**に拡張（フロント`role.ts`・Worker`types.ts`の二重定義を両方）。上位は下位を必ず含むため、**既存Masterユーザーが失う機能は無い**。既存ユーザーのroleも書き換えていない（キーは1人1本で発行済みのものがそのまま有効） ②権限の上下比較を`ROLE_RANK`／`satisfiesRole()`に一本化。以前はPlansPage・ToolsPage・Workerがそれぞれ独自の順序表を持っており、プランが増えるたびに直し忘れる形だった。`loadRole()`の許可リストも個別列挙をやめて`ROLE_RANK`参照に変更（`creator`が漏れていて開発時にリロードすると権限が落ちるバグを修正） ③**Creator限定機能はSeedance Batch Studioとシーダンス2.5 プロンプト工房の2つ。** 2026-08-12まではMaster限定だったが、Creatorの目玉としてCreator以上へ引き下げた。Masterの差別化はDiscord（人が関わる伴走）に一本化 ④**「Studioのプラン名」と「YouTubeの商品名」を分離。** Studio内は`Studio Creator`（AI音楽部を付けない・`ROLE_LABEL`）、YouTubeの加入案内だけ`AI音楽部 Studio Creator`（`YOUTUBE_TIERS[].youtubeName`）。従来は`name`1本で、しかもPremium/Masterの表示名はYouTube側の実名と食い違っていた ⑤YouTube側でPremium/Masterが改名されたのを反映（`AI音楽部 Studio Premium` / `AI音楽部Studio Master`）。旧名は`membership-levels.mjs`の`aliases`へ退避（改名前の申請控えと突き合わせるため）。**段名は実画面の表記をそのまま写す**方針を明記した——`Ai大好き部`（AIではない）、Masterだけ「部」と「Studio」の間に空白が無い、など不揃いだが、揃えて書くと照合が外れて全員freeへ倒れる ⑥料金ページを4カード化。`lg:grid-cols-3`のままでは4枚目が余るため、スマホ1列→タブレット2×2→`xl`で4列と段階的に広げるレイアウトへ変更 ⑦ロック時の文言を「◯◯限定です」から「**Studio Creatorで利用できます**」へ。アップグレード手順のYouTube段名ハードコードも`role.ts`参照に変更（旧名のまま古くなっていた） ⑧**キー発行まわりの4段階対応**：`issue-license-key.mjs`が`premium|master`しか受け付けず**Creatorキーを発行できない状態だった**のを修正。台帳の連番プレフィックスに`C`を追加（`license-ledger.mjs`の`PREFIX`・行パターン・集計）、`revoke`／`check-license-expiry`の連番パターンも`[PCM]`へ拡張 ⑨型チェック・テスト180件・本番ビルド・Worker dry-run、free/premium/creator/masterの4権限とPC/タブレット/スマホの表示を実機確認 |
 | **2026-08-12（続報4）** | **初回実ユーザー（カラスイさん本人）へのMasterキー発行で、`LICENSE_PEPPER`不一致の障害を発見・解消。未決定事項#22を完了。** ①M-005発行→プラン画面で「確認できませんでした」。M-006を再発行しても同症状。KV記録・Worker健全性に問題は無く、2回とも同じ結果だったことから手入力ミスではなく構造的原因と判断 ②原因は、発行スクリプト実行時に手入力していた`LICENSE_PEPPER`と、本番Workerに`wrangler secret`で設定済みの値の食い違い。ハッシュ照合は1文字でもずれれば必ず不一致になる ③M-005はカラスイさんが送ってくれたスクリーンショットに実際のキー文字列がそのまま写っていたため、実害の有無に関わらず予防的に失効。M-006も切り分けのため失効 ④新しいpepperを`crypto.randomBytes`で生成し`wrangler secret put`で本番へ設定、同じ値を直後の発行コマンドに使い回すことで手入力のズレを無くし、**M-007**を発行 ⑤プラン画面で「Studio Masterになりました」「有効期限2026/9/11」「Master限定Discord案内カード」を実機確認。**Premium/Master/revokedの本番実キー検証がここで完了**（revoked確認はM-005・M-006の失効自体がそのまま実例になった：失効後にそのキーで新しいセッションを発行できないことを、2回目・3回目の発行がそれぞれ独立したKVレコードであることから間接的に確認） ⑥教訓として§5-Aに「pepperは1箇所に確定保存し、発行のたびに手入力しない」を明記 |
 | **2026-08-12（続報3）** | **第3テーマの配色とテーマ名を修正。** ①配色を「紫〜マゼンタ」から**「炭×琥珀×藍鼠」**（シーダンス2.5プロンプト工房の編集室UIと同じ考え方）へ全面的に作り直した。背景`hsl(225 17% 9%)`・primary`hsl(37 74% 56%)`（琥珀）など、実際のhexからHSLを算出して`.theme-suno`（当時の名称）の変数を差し替え ②**テーマ名を「Suno風」から「琥珀」へ変更。** 他社サービス名をテーマ名に使うのは公式提携・模倣と誤解されるもとなので避けるべき、との指摘を受けての対応。`Theme`型の値も`'suno'`→`'amber'`、CSSクラスも`.theme-suno`→`.theme-amber`に変更（保存済みの`'suno'`という古い値は3値のどれとも一致しないため、次回起動時は端末設定に自動で戻る＝実害なし）。アイコンもPalette→Flame（炎）に変更 ③型チェック・テスト180件・本番ビルド・実機確認すべて成功 |
 | **2026-08-12（続報2）** | **表示テーマにSuno風を追加し、ライト/ダーク/Suno風の3択にした。** `useTheme.ts`のThemeを`'light'\|'dark'\|'suno'`に拡張。Suno風は`index.css`の`.theme-suno`でCSS変数（`--primary`等）だけを上書きし、`.dark`クラスも併用することでV1由来の`dark:`ユーティリティ（emerald色の微調整など4箇所）もそのまま効かせる設計にした。**配色はSunoの公式カラーコードではなく、ほぼ黒の背景＋紫〜マゼンタの強いアクセントという雰囲気だけを寄せた独自パレット**（商標・見た目の直接模倣を避けるため）。Topbarのテーマボタンをトグルからドロップダウン（ライト/ダーク/Suno風を選択・現在値にチェック表示）に変更。型チェック・テスト180件・3テーマの実機確認すべて成功 |

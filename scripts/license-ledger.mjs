@@ -19,10 +19,14 @@ export const LEDGER_PATH = resolve(homedir(), '軍配/ledgers/LICENSES.md')
 /** Master の人数上限。ここを超える発行はスクリプトが拒否する */
 export const MASTER_LIMIT = 30
 
-const PREFIX = { premium: 'P', master: 'M' }
+/** 連番の頭文字。C（Creator）は2026-08-18のプラン追加で足したもの */
+const PREFIX = { premium: 'P', creator: 'C', master: 'M' }
 
-/** 表の行。書式が崩れると読めなくなるので、パターンは1箇所にまとめる */
-const ROW_RE = /^\|\s*([PM]-\d{3})\s*\|\s*([^|]*?)\s*\|\s*([^|]*?)\s*\|\s*([^|]*?)\s*\|\s*([^|]*?)\s*\|\s*([^|]*?)\s*\|\s*([^|]*?)\s*\|$/
+/**
+ * 表の行。書式が崩れると読めなくなるので、パターンは1箇所にまとめる。
+ * 頭文字を増やしたらここも広げること（既存の P-／M- 行はそのまま読める）。
+ */
+const ROW_RE = /^\|\s*([PCM]-\d{3})\s*\|\s*([^|]*?)\s*\|\s*([^|]*?)\s*\|\s*([^|]*?)\s*\|\s*([^|]*?)\s*\|\s*([^|]*?)\s*\|\s*([^|]*?)\s*\|$/
 
 export function readLedger() {
   if (!existsSync(LEDGER_PATH)) {
@@ -128,6 +132,7 @@ export function summarize(rows) {
     rows.filter((r) => r.serial.startsWith(`${p}-`) && (!state || r.state === state)).length
   return {
     premium: { total: count('P'), active: count('P', '有効'), revoked: count('P', '失効') },
+    creator: { total: count('C'), active: count('C', '有効'), revoked: count('C', '失効') },
     master: {
       total: count('M'),
       active: count('M', '有効'),

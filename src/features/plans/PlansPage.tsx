@@ -3,8 +3,8 @@ import { Check, Film, MessageCircle, SquarePlay, Users, Zap } from 'lucide-react
 
 import { apiConfigured, usePremiumStore } from '@/core/entitlement/api'
 import {
-  OFFICIAL_LINE_URL, ROLE_LABEL, useRole, useRoleStore,
-  YOUTUBE_JOIN_URL, YOUTUBE_TIERS, type Role,
+  OFFICIAL_LINE_URL, ROLE_LABEL, ROLE_RANK, useRole, useRoleStore,
+  YOUTUBE_JOIN_URL, youtubeTierFor, type Role,
 } from '@/core/entitlement/role'
 import { cn } from '@/core/ui/cn'
 
@@ -75,15 +75,17 @@ const CARDS: RoleCard[] = [
   },
   {
     id: 'creator',
-    kind: '制作環境＋動画',
+    kind: 'クリエイター向け制作環境',
     kindIcon: Film,
     name: 'Studio Creator',
-    purpose: '動画生成まで内製する',
-    target: 'MVや動画素材までまとめて自分の手で作りたいクリエイター',
+    purpose: 'AIで作れる範囲を映像まで広げる',
+    // Premium・Masterと同じく「どんな人のためのプランか」を1〜2文で。
+    // 断定の強い書き方（〜で止まっていた人へ／一人で仕上げられます）は避ける
+    target: 'AI音楽から映像制作まで、AIを使った制作の幅を広げたいクリエイター。',
     features: ['Studio Premium のすべて'],
     // Seedance関連の2ツールをMaster限定からCreator以上に変更（2026-08-18決定）。
     // Masterの差別化はDiscordコミュニティに一本化する。
-    externalFeatures: ['Seedance Batch Studio', 'Seedance2.5プロンプト工房'],
+    externalFeatures: ['Seedance Batch Studio', 'シーダンス2.5 プロンプト工房'],
   },
   {
     id: 'master',
@@ -107,12 +109,25 @@ const CARDS: RoleCard[] = [
   },
 ]
 
-function tierFor(role: Role) {
-  return YOUTUBE_TIERS.find((t) => t.role === role) ?? null
+/**
+ * プランごとの配色。Premium=琥珀（道具）／Creator=翠（映像）／Master=紅（人）
+ *
+ * ⚠️ クラス名は必ずリテラルで書くこと。`bg-${x}` のように組み立てると
+ * Tailwindがソースを読んでも見つけられず、CSSごと生成されない。
+ */
+const TONE: Record<Role, {
+  text: string
+  bg: string
+  chip: string
+  border: string
+  /** 淡い下地（アップグレード案内の背景） */
+  tint: string
+}> = {
+  free: { text: 'text-muted-foreground', bg: 'bg-muted', chip: 'bg-muted text-muted-foreground', border: 'border-border', tint: 'bg-muted/50' },
+  premium: { text: 'text-premium', bg: 'bg-premium', chip: 'bg-premium/15 text-premium', border: 'border-premium/45', tint: 'bg-premium/[0.06]' },
+  creator: { text: 'text-creator', bg: 'bg-creator', chip: 'bg-creator/15 text-creator', border: 'border-creator/45', tint: 'bg-creator/[0.06]' },
+  master: { text: 'text-master', bg: 'bg-master', chip: 'bg-master/15 text-master', border: 'border-master/40', tint: 'bg-master/[0.06]' },
 }
-
-/** 権限の並び。アップグレード導線の「今より上か」の判定にだけ使う（価格ではなくRole） */
-const ROLE_RANK: Record<Role, number> = { free: 0, premium: 1, creator: 2, master: 3 }
 
 /**
  * 権限の受け取り。
@@ -255,47 +270,45 @@ export function PlansPage() {
       <h1 className="text-xl font-bold">プラン</h1>
       <p className="mt-1 text-[12.5px] leading-relaxed text-muted-foreground">
         <span className="font-semibold text-premium">Premium は制作環境</span>、
-        <span className="font-semibold text-creator">Creator は動画生成まで含む制作環境</span>、
+        <span className="font-semibold text-creator">Creator は映像制作まで広げる制作環境</span>、
         <span className="font-semibold text-master">Master は人が伴走する学習環境</span>です。
         機能の多い・少ないではなく、目的が違います。
         <br />
         加入は <strong className="text-foreground">YouTubeメンバーシップ</strong> から行います。
       </p>
 
-      <div className="mt-5 grid gap-3 lg:grid-cols-3">
+      {/*
+        4プランを比較しやすい並べ方（2026-08-19）。
+        4枚を無理に横一列にすると1枚あたりが細くなり、価格も説明も読みにくくなる。
+        スマホ=1列 → タブレット=2×2 → 広い画面でだけ4列、と段階的に広げる。
+      */}
+      <div className="mt-5 grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
         {CARDS.map((c) => {
           const current = role === c.id
-          const tier = tierFor(c.id)
+          const tier = youtubeTierFor(c.id)
+          const tone = TONE[c.id]
 
           return (
             <div
               key={c.id}
               className={cn(
                 'flex flex-col rounded-2xl border bg-card p-5',
-                c.id === 'premium' && 'border-premium/45 shadow-lg shadow-premium/10',
-                c.id === 'creator' && 'border-creator/45 shadow-lg shadow-creator/10',
-                c.id === 'master' && 'border-master/40 bg-gradient-to-b from-master/[0.05] to-card',
-                c.id === 'free' && 'border-border',
+                tone.border,
+                c.id === 'premium' && 'shadow-lg shadow-premium/10',
+                c.id === 'creator' && 'shadow-lg shadow-creator/10',
+                c.id === 'master' && 'bg-gradient-to-b from-master/[0.05] to-card',
               )}
             >
               <span className={cn(
                 'inline-flex w-fit items-center gap-1.5 rounded-full px-2.5 py-1 text-[10.5px] font-bold tracking-wide',
-                c.id === 'premium' && 'bg-premium/15 text-premium',
-                c.id === 'creator' && 'bg-creator/15 text-creator',
-                c.id === 'master' && 'bg-master/15 text-master',
-                c.id === 'free' && 'bg-muted text-muted-foreground',
+                tone.chip,
               )}>
-                {c.kindIcon && <c.kindIcon className="h-3 w-3" />}
+                {c.kindIcon && <c.kindIcon className="h-3 w-3 shrink-0" />}
                 {c.kind}
               </span>
 
               <p className="mt-2.5 text-[16px] font-extrabold">{c.name}</p>
-              <p className={cn(
-                'mt-1 text-[12.5px] font-semibold',
-                c.id === 'premium' && 'text-premium',
-                c.id === 'creator' && 'text-creator',
-                c.id === 'master' && 'text-master',
-              )}>
+              <p className={cn('mt-1 text-[12.5px] font-semibold', c.id !== 'free' && tone.text)}>
                 {c.purpose}
               </p>
 
@@ -310,11 +323,11 @@ export function PlansPage() {
               {tier && (
                 <p className="mt-1 flex items-start gap-1.5 text-[11px] leading-relaxed text-muted-foreground">
                   <SquarePlay className="mt-0.5 h-3.5 w-3.5 shrink-0 text-youtube" />
-                  YouTubeメンバーシップ「{tier.name}」
+                  YouTubeメンバーシップ「{tier.youtubeName}」
                 </p>
               )}
 
-              <p className="mt-2 min-h-[40px] text-[11.5px] leading-relaxed text-muted-foreground">
+              <p className="mt-2 min-h-[56px] text-[11.5px] leading-relaxed text-muted-foreground">
                 {c.target}
               </p>
 
@@ -330,13 +343,7 @@ export function PlansPage() {
                   <li key={f} className="flex items-start gap-2 text-[12.5px] leading-snug">
                     <Check className={cn(
                       'mt-0.5 h-3.5 w-3.5 shrink-0',
-                      c.id === 'premium'
-                        ? 'text-premium'
-                        : c.id === 'creator'
-                          ? 'text-creator'
-                          : c.id === 'master'
-                            ? 'text-master'
-                            : 'text-primary',
+                      c.id === 'free' ? 'text-primary' : tone.text,
                     )} />
                     {f}
                   </li>
@@ -393,21 +400,17 @@ export function PlansPage() {
                   すでに有料プランの人が、今より上位のカードを見ているときだけの導線
                   （premium→creator／premium→master／creator→master）。
                   free の人には出さない（初回加入と混同させないため）。
+                  Master の人にはそもそも上位が無いので、この分岐に入らない。
                   上位プランの特典は上のリストに既出なので、ここでは重複列挙しない。
                 */
-                <div className={cn(
-                  'mt-4 rounded-lg border p-3.5',
-                  c.id === 'master' ? 'border-master/30 bg-master/[0.06]' : 'border-creator/30 bg-creator/[0.06]',
-                )}>
-                  <p className={cn(
-                    'flex items-center gap-1.5 text-[13px] font-bold',
-                    c.id === 'master' ? 'text-master' : 'text-creator',
-                  )}>
+                <div className={cn('mt-4 rounded-lg border p-3.5', tone.border, tone.tint)}>
+                  <p className={cn('flex items-center gap-1.5 text-[13px] font-bold', tone.text)}>
                     {c.id === 'master' ? <Users className="h-3.5 w-3.5" /> : <Film className="h-3.5 w-3.5" />}
                     {c.name}にアップグレードする
                   </p>
                   <p className="mt-1.5 text-[11.5px] leading-relaxed text-muted-foreground">
-                    YouTubeで{c.name}対象プランへ変更したあと、公式LINEから
+                    {/* YouTube側の案内なので、ここだけはYouTubeの商品名で書く（→ role.ts） */}
+                    YouTubeメンバーシップを「{tier?.youtubeName}」へ変更したあと、公式LINEから
                     「{c.name}に変更しました」とお送りください。
                     メンバーシップを確認後、{c.name}用ライセンスキーをご案内します。
                   </p>
@@ -418,7 +421,7 @@ export function PlansPage() {
                     referrerPolicy="no-referrer"
                     className={cn(
                       'mt-3 flex h-10 items-center justify-center gap-1.5 rounded-lg text-[13px] font-bold text-white',
-                      c.id === 'master' ? 'bg-master' : 'bg-creator',
+                      tone.bg,
                     )}
                   >
                     <MessageCircle className="h-4 w-4" />
@@ -433,7 +436,7 @@ export function PlansPage() {
                   referrerPolicy="no-referrer"
                   className={cn(
                     'mt-4 inline-flex h-11 items-center justify-center gap-2 rounded-lg text-[13.5px] font-bold text-white',
-                    c.id === 'premium' ? 'bg-premium' : c.id === 'creator' ? 'bg-creator' : 'bg-master',
+                    tone.bg,
                   )}
                 >
                   <SquarePlay className="h-4 w-4" />
@@ -474,11 +477,12 @@ export function PlansPage() {
           <span className="font-semibold text-premium">Premium は「制作環境」</span>。
           毎週コンテンツを配るのではなく、Studio自体が毎月良くなっていくことが価値です。
           <br />
-          <span className="font-semibold text-creator">Creator は「動画生成まで」</span>。
-          Seedanceの動画生成ツールが加わり、MVの素材まで自分の手で作れるようになります。
+          <span className="font-semibold text-creator">Creator は「制作領域の拡張」</span>。
+          Premiumの制作環境に映像の生成ツールが加わり、AI音楽から映像制作まで扱えるようになります。
           <br />
           <span className="font-semibold text-master">Master は「人の伴走」</span>。
-          添削・レビューはカラスイさんの時間そのものなので、人数に上限があります。
+          ツールが増えるプランではありません。添削・レビュー・ライブはカラスイさんの時間
+          そのものなので、人数に上限があります。
         </p>
       </div>
     </div>

@@ -25,7 +25,7 @@ const workerDir = resolve(root, 'worker/api')
 
 const args = process.argv.slice(2)
 const isProd = args.includes('--prod')
-const serial = args.find((a) => /^[PM]-\d{3}$/.test(a))
+const serial = args.find((a) => /^[PCM]-\d{3}$/.test(a))
 
 if (!serial) {
   console.error('使い方: node scripts/check-license-expiry.mjs <連番> [--prod]')

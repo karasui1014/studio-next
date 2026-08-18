@@ -23,7 +23,7 @@ AI音楽クリエイターが毎日最初に開くホーム画面。
 | 曲一覧・曲詳細 | 制作中の曲の管理（自動保存） |
 | 制作ツール | 歌詞レビュー／MVアイデア／AIプロデューサー／プロンプト工房 |
 | データ管理 | JSONで書き出し・読み込み（**無料のまま**） |
-| プラン | Roleで管理（free / premium / master）。Studio直販とYouTubeメンバーシップの両方から |
+| プラン | Roleで管理（`free < premium < creator < master` の継承型）。加入経路はYouTubeメンバーシップのみ |
 
 ---
 
@@ -186,12 +186,18 @@ Version 1 の開発憲章（サーバー・DB・ログイン禁止／データ�
 権限は**価格ではなく Role** で管理します（`src/core/entitlement/role.ts`）。
 加入経路はYouTubeメンバーシップのみです（Studio直販は行いません）。
 
-| 入手経路 | 価格 | Role |
-|---|---|---|
-| YouTube「Studio Premium利用権付き」 | 1,290円 / 月 | `premium` |
-| YouTube「Studio Master利用権付き」 | 5,600円 / 月 | `master` |
-| YouTube「AI大好き部」 | 690円 / 月 | なし（応援用の段） |
-| YouTube「『企業様向け』Aiで曲作りしたい部」 | 35,000円 / 月 | **なし**（Studioとは無関係の別商品） |
+| 入手経路（YouTubeの商品名） | 価格 | Role | Studio内の表示名 |
+|---|---|---|---|
+| YouTube「AI音楽部 Studio Premium」 | 1,290円 / 月 | `premium` | Studio Premium |
+| YouTube「AI音楽部 Studio Creator」 | 3,490円 / 月 | `creator` | Studio Creator |
+| YouTube「AI音楽部Studio Master」 | 5,600円 / 月 | `master` | Studio Master |
+| YouTube「Ai大好き部」 | 690円 / 月 | なし（応援用の段） | — |
+| YouTube「『企業様向け』Aiで曲作りしたい部」 | 35,000円 / 月 | **なし**（Studioとは無関係の別商品） | — |
+
+権限は継承型で、上位は下位をすべて含みます（`free < premium < creator < master`）。
+Creator限定は **Seedance Batch Studio** と **シーダンス2.5 プロンプト工房** の2つです。
+**Studio内では「AI音楽部」を付けず** `Studio Creator` と表示し、
+YouTubeの加入案内でだけ正式な商品名を出します（`ROLE_LABEL` と `youtubeName` の使い分け）。
 
 加入プランに応じたキーを貼るだけで権限が付き、**Studioで別途登録し直す必要はありません**。
 画面側は必ず `useRole()` を通すので、将来サーバー方式へ移行しても

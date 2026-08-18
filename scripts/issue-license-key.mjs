@@ -52,6 +52,7 @@ if (args.includes('--status')) {
   const s = summarize(rows)
   console.log('\n=== ライセンス発行状況 ===\n')
   console.log(`  Premium : 有効 ${s.premium.active}名（失効 ${s.premium.revoked} / 累計 ${s.premium.total}）`)
+  console.log(`  Creator : 有効 ${s.creator.active}名（失効 ${s.creator.revoked} / 累計 ${s.creator.total}）`)
   console.log(`  Master  : 有効 ${s.master.active}名（失効 ${s.master.revoked} / 累計 ${s.master.total}）`)
   console.log(`            上限 ${s.master.limit}名 — 残り ${s.master.remaining}枠`)
   if (s.master.remaining <= 0) console.log('            ⚠️ 上限に達しています。新規発行はできません')
@@ -61,9 +62,9 @@ if (args.includes('--status')) {
 }
 
 const role = args[0]
-if (role !== 'premium' && role !== 'master') {
+if (role !== 'premium' && role !== 'creator' && role !== 'master') {
   console.error('使い方:')
-  console.error('  node scripts/issue-license-key.mjs <premium|master> --name "表示名" [--prod]')
+  console.error('  node scripts/issue-license-key.mjs <premium|creator|master> --name "表示名" [--prod]')
   console.error('  node scripts/issue-license-key.mjs --status')
   process.exit(1)
 }

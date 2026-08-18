@@ -32,7 +32,7 @@
 
 import { pathToFileURL } from 'node:url'
 
-/** @typedef {'free'|'premium'|'master'} Role */
+/** @typedef {'free'|'premium'|'creator'|'master'} Role */
 
 /**
  * 段の定義。
@@ -49,10 +49,20 @@ import { pathToFileURL } from 'node:url'
  * （`AI` と `Ai` の違い、5,600円の段名が別物）。
  * 実物を確認せずに書いた名前は、静かに全員 free に倒れる。
  *
- * 各段の `current` が **2026-08-08 にYouTube Studioの実画面で確認した現行の表記**。
- * `aliases` は表記ゆれ・旧称・将来の改名案で、照合の保険として持つ。
- * 改名したら `current` を差し替え、古い名前は `aliases` へ落とすこと
- * （消すと、改名前に申請した人の控えと突き合わせられなくなる）。
+ * 各段の `current` が現行の表記。`aliases` は表記ゆれ・旧称・将来の改名案で、
+ * 照合の保険として持つ。改名したら `current` を差し替え、古い名前は `aliases` へ
+ * 落とすこと（消すと、改名前に申請した人の控えと突き合わせられなくなる）。
+ *
+ * 最終確認：**2026-08-19**、YouTube Studioの実画面の表記そのままで確定。
+ *
+ *   ¥   690  Ai大好き部                      （Ai。AI ではない）
+ *   ¥ 1,290  AI音楽部 Studio Premium         （部とStudioの間に空白あり）
+ *   ¥ 3,490  AI音楽部 Studio Creator         （同上・2026-08-18新設）
+ *   ¥ 5,600  AI音楽部Studio Master           （**空白なし**）
+ *   ¥35,000  「企業様向け」Aiで曲作りしたい部   （Studio対象外）
+ *
+ * 表記が段ごとに不揃いだが、ここは見た目を整える場所ではなく実物を写す場所。
+ * 揃えたくなったらYouTube側を直してから `current` を差し替えること。
  */
 export const MEMBERSHIP_LEVELS = [
   {
@@ -64,22 +74,40 @@ export const MEMBERSHIP_LEVELS = [
   {
     role: 'premium',
     price: 1290,
-    current: 'AiでMVを作りたい部',
+    // 2026-08-19にYouTube側で改名。旧名は申請の控えと突き合わせるため aliases に残す
+    current: 'AI音楽部 Studio Premium',
     aliases: [
+      'AiでMVを作りたい部', // 〜2026-08-19の実名
       'AIでMVを作りたい部',
       'AIでMVを作りたい部Studio Premium', // 未保存ドラフトにあった名前
-      'Studio Premium利用権付き', // 将来の改名案（PROJECT_SPEC.md の表記）
+      'Studio Premium利用権付き', // かつての改名案（PROJECT_SPEC.md の旧表記）
     ],
+  },
+  {
+    /**
+     * 2026-08-18新設。Studio Premium と Studio Master の中間。
+     * 解放されるのは Seedance Batch Studio と シーダンス2.5 プロンプト工房。
+     */
+    role: 'creator',
+    price: 3490,
+    current: 'AI音楽部 Studio Creator',
+    aliases: ['Ai音楽部 Studio Creator', 'Studio Creator利用権付き'],
   },
   {
     role: 'master',
     price: 5600,
-    current: 'AiでMVを作りたい部1ヶ月でマスターしたい方向け',
+    // 2026-08-19にYouTube側で改名。旧名は申請の控えと突き合わせるため aliases に残す
+    // 「部」と「Studio」の間に空白が無いのがYouTube側の実表記（2026-08-19確認）。
+    // 空白入りは aliases 側に置く（normalizeName が空白を落とすので実害は無いが、
+    // current は必ず実物と一致させる）
+    current: 'AI音楽部Studio Master',
     aliases: [
+      'AI音楽部 Studio Master', // 空白入りの表記ゆれ
+      'AiでMVを作りたい部1ヶ月でマスターしたい方向け', // 〜2026-08-19の実名
       'AIでMVを作りたい部1ヶ月でマスターしたい方向け',
       'AIMVを1か月でマスターしたい方向けMaster', // 未保存ドラフトにあった名前
       'AIでMVを1か月でマスターしたい方向け',
-      'Studio Master利用権付き', // 将来の改名案（PROJECT_SPEC.md の表記）
+      'Studio Master利用権付き', // かつての改名案（PROJECT_SPEC.md の旧表記）
     ],
   },
   {

@@ -102,13 +102,15 @@ describe('状況に応じた提案', () => {
     expect(buildSecretaryMessage(ctx({ songs })).text).toContain('完成作')
   })
 
-  it('Master限定のツール名は出さない（プランによって開けないため）', () => {
+  it('有料プラン限定のツール名は出さない（プランによって開けないため）', () => {
     const songs = [
       song({ title: '完成作', status: 'published', lyrics: 'あ', sunoPrompt: 'x', mvPrompt: 'y' }),
     ]
     const text = buildSecretaryMessage(ctx({ songs })).text
-    for (const masterOnly of ['楽曲批評', '批評ツール', '字幕', 'Seedance']) {
-      expect(text).not.toContain(masterOnly)
+    // 楽曲批評・字幕はMaster限定、SeedanceはCreator以上（2026-08-18にMasterから引き下げ）。
+    // どの段であれ「開けない人がいる」ツールを秘書が名指ししてはいけない
+    for (const gated of ['楽曲批評', '批評ツール', '字幕', 'Seedance', 'シーダンス']) {
+      expect(text).not.toContain(gated)
     }
   })
 

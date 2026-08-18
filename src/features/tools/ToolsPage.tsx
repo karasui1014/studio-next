@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom'
 import { Construction, Lock, SquareArrowOutUpRight } from 'lucide-react'
 
 import { recordActivity } from '@/core/storage/activity'
-import { useRole, type Role } from '@/core/entitlement/role'
+import {
+  ROLE_LABEL, satisfiesRole, useRole, youtubeTierFor, type Role,
+} from '@/core/entitlement/role'
 import { cn } from '@/core/ui/cn'
-
-const TIER_RANK: Record<Role, number> = { free: 0, premium: 1, creator: 2, master: 3 }
 
 interface ToolEntry {
   id: string
@@ -55,12 +55,12 @@ const TOOLS: ToolEntry[] = [
  *     （他所（このサイト自身）で既に無料公開済みのツールのため、Studio側でも無料開放にした）
  *   絵コンテツール・ギターコードTAB・マスタリング自動生成ツール : Premium以上（2026-08-10決定）
  *   字幕自動生成／楽曲批評ツール                                : Masterのみ（2026-08-10決定）
- *   Seedance Batch Studio／Seedance2.5プロンプト工房            : Creator以上（2026-08-18変更）
+ *   Seedance Batch Studio／シーダンス2.5 プロンプト工房         : Creator以上（2026-08-18変更）
  *     （新設のStudio Creatorの目玉として、Masterのみ限定からCreator以上に引き下げた。
  *       Masterの差別化はDiscordコミュニティに一本化する）
  *
  * 名称・説明文・URLのうち7つは V1 の `src/lib/constants.ts`（EXTERNAL_TOOLS）と
- * 完全一致させている。Seedance2.5プロンプト工房のみV1に対応がない新規追加。
+ * 完全一致させている。シーダンス2.5 プロンプト工房のみV1に対応がない新規追加。
  */
 interface ExternalTool {
   id: string
@@ -115,32 +115,39 @@ const EXTERNAL_TOOLS: ExternalTool[] = [
     requires: 'creator',
   },
   {
-    id: 'seedance-prompt-koubou', emoji: '🎥', name: 'Seedance2.5プロンプト工房',
+    id: 'seedance-prompt-koubou', emoji: '🎥', name: 'シーダンス2.5 プロンプト工房',
     desc: 'Seedance 2.5用のプロンプトを香盤表形式で組み立てる',
     url: 'https://karasui1014.github.io/lofi-detective-website/seedance-prompt-koubou/',
     requires: 'creator',
   },
 ]
 
-const UPGRADE_STEPS: Record<'premium' | 'creator' | 'master', { membership: string; line: string }> = {
-  premium: {
-    membership: 'YouTubeメンバーシップを「AIでMVを作りたい部」以上に加入・変更する',
-    line: '公式LINEで「チャンネル名」と「Premiumに加入した」旨を送る',
-  },
-  creator: {
-    membership: 'YouTubeメンバーシップを「Ai音楽部 Studio Creator」に加入・変更する',
-    line: '公式LINEで「チャンネル名」と「Creatorに変更した」旨を送る',
-  },
-  master: {
-    membership: 'YouTubeメンバーシップを「AIでMVを1か月でマスターしたい方向け」に変更する',
-    line: '公式LINEで「チャンネル名」と「Masterに変更した」旨を送る',
-  },
+/** ロック表示に現れるのは有料プランだけ（free のツールは誰にもロックされない） */
+type PaidRole = Exclude<Role, 'free'>
+
+/**
+ * アップグレード案内の手順。
+ *
+ * YouTube側の商品名は `role.ts` の YOUTUBE_TIERS から引く。ここに直接書くと、
+ * YouTubeで改名したときに古い名前が残る——実際 2026-08-19 の改名まで
+ * 「AIでMVを作りたい部」という旧名がこの場所に固定で書かれていた。
+ */
+function upgradeSteps(required: PaidRole): string[] {
+  const plan = ROLE_LABEL[required]
+  const youtubeName = youtubeTierFor(required)?.youtubeName ?? plan
+  return [
+    `YouTubeメンバーシップ「${youtubeName}」に加入・変更する`,
+    `公式LINEで「チャンネル名」と「${plan}に加入した」旨を送る`,
+    'こちらでメンバーシップを確認し、新しいライセンスキーをお送りします',
+    '「プラン」画面でキーを入力する',
+  ]
 }
 
-const TIER_LABEL: Record<'premium' | 'creator' | 'master', string> = {
-  premium: 'Premium',
-  creator: 'Creator',
-  master: 'Master',
+/** プランごとの配色。Premium=琥珀／Creator=翠／Master=紅 */
+function tierTone(required: PaidRole) {
+  if (required === 'master') return { text: 'text-master', bg: 'bg-master', border: 'border-master/30', tint: 'bg-master/[0.04]', chip: 'bg-master/12' }
+  if (required === 'creator') return { text: 'text-creator', bg: 'bg-creator', border: 'border-creator/30', tint: 'bg-creator/[0.04]', chip: 'bg-creator/12' }
+  return { text: 'text-premium', bg: 'bg-premium', border: 'border-premium/30', tint: 'bg-premium/[0.04]', chip: 'bg-premium/12' }
 }
 
 /** ロックされたツール共通のカード。ネイティブ・外部どちらの表示にも使う。 */
@@ -151,66 +158,57 @@ function LockedCard({
 }: {
   emoji: string
   name: string
-  requires: 'premium' | 'creator' | 'master'
+  requires: PaidRole
 }) {
   const [expanded, setExpanded] = useState(false)
-  const tierLabel = TIER_LABEL[requires]
-  const steps = UPGRADE_STEPS[requires]
+  // 「使えません」ではなく「どのプランなら使えるか」を言う。
+  // 閉じた状態でも解放条件が分かるようにしておく（2026-08-19）
+  const plan = ROLE_LABEL[requires]
+  const steps = upgradeSteps(requires)
+  const tone = tierTone(requires)
 
   return (
-    <div
-      className={cn(
-        'rounded-xl border p-4',
-        requires === 'master' ? 'border-master/30 bg-master/[0.04]' : requires === 'creator' ? 'border-creator/30 bg-creator/[0.04]' : 'border-premium/30 bg-premium/[0.04]',
-      )}
-    >
+    <div className={cn('rounded-xl border p-4', tone.border, tone.tint)}>
       <button
         type="button"
         onClick={() => setExpanded((v) => !v)}
         className="flex w-full items-start gap-3.5 text-left"
       >
-        <span
-          className={cn(
-            'grid h-11 w-11 shrink-0 place-items-center rounded-xl text-xl',
-            requires === 'master' ? 'bg-master/12' : requires === 'creator' ? 'bg-creator/12' : 'bg-premium/12',
-          )}
-        >
+        <span className={cn('grid h-11 w-11 shrink-0 place-items-center rounded-xl text-xl', tone.chip)}>
           {emoji}
         </span>
         <span className="min-w-0 flex-1">
           <span className="flex items-center gap-1.5 text-[14px] font-bold">
             {name}
-            <Lock className={cn('h-3.5 w-3.5', requires === 'master' ? 'text-master' : requires === 'creator' ? 'text-creator' : 'text-premium')} />
+            <Lock className={cn('h-3.5 w-3.5', tone.text)} />
           </span>
           <span className="mt-1 block text-[12px] leading-relaxed text-muted-foreground">
-            {tierLabel}限定です。タップで詳しく
+            <span className={cn('font-semibold', tone.text)}>{plan}</span>
+            で利用できます。タップで詳しく
           </span>
         </span>
       </button>
 
       {expanded && (
         <div className="mt-3 rounded-lg border border-border bg-card p-3 text-[12.5px] leading-relaxed">
-          <p className={cn('font-bold', requires === 'master' ? 'text-master' : requires === 'creator' ? 'text-creator' : 'text-premium')}>
-            {tierLabel}プランへのアップグレード
-          </p>
+          <p className={cn('font-bold', tone.text)}>{plan}へのアップグレード</p>
           <p className="mt-1.5 text-muted-foreground">
-            {name}は Studio {tierLabel} でご利用いただけます。
+            {name}は {plan} でご利用いただけます。
             アップグレードの流れは以下のとおりです。
           </p>
           <ol className="mt-2 space-y-1 text-muted-foreground">
-            <li>1. {steps.membership}</li>
-            <li>2. {steps.line}</li>
-            <li>3. こちらでメンバーシップを確認し、新しいライセンスキーをお送りします</li>
-            <li>4. 「プラン」画面でキーを入力する</li>
+            {steps.map((s, i) => (
+              <li key={s}>{i + 1}. {s}</li>
+            ))}
           </ol>
           <Link
             to="/plans"
             className={cn(
               'mt-3 inline-flex h-9 items-center justify-center rounded-lg px-4 text-[12.5px] font-bold text-white',
-              requires === 'master' ? 'bg-master' : requires === 'creator' ? 'bg-creator' : 'bg-premium',
+              tone.bg,
             )}
           >
-            {tierLabel}プランを見る
+            {plan}を見る
           </Link>
         </div>
       )}
@@ -219,7 +217,7 @@ function LockedCard({
 }
 
 function ExternalToolCard({ tool, role }: { tool: ExternalTool; role: Role }) {
-  const locked = TIER_RANK[tool.requires] > TIER_RANK[role]
+  const locked = !satisfiesRole(role, tool.requires)
 
   if (!locked) {
     return (
@@ -248,7 +246,7 @@ function ExternalToolCard({ tool, role }: { tool: ExternalTool; role: Role }) {
   }
 
   // requires が 'free' なら誰にとってもロックされない（above の !locked 分岐で必ず拾われる）
-  return <LockedCard emoji={tool.emoji} name={tool.name} requires={tool.requires as 'premium' | 'creator' | 'master'} />
+  return <LockedCard emoji={tool.emoji} name={tool.name} requires={tool.requires as PaidRole} />
 }
 
 export function ToolsPage() {
@@ -256,8 +254,8 @@ export function ToolsPage() {
 
   // 鍵つきツールをなるべく下に揃える（2026-08-10決定）。ロック状態が同じもの同士の順序は変えない。
   const sortedExternalTools = [...EXTERNAL_TOOLS].sort((a, b) => {
-    const aLocked = TIER_RANK[a.requires] > TIER_RANK[role] ? 1 : 0
-    const bLocked = TIER_RANK[b.requires] > TIER_RANK[role] ? 1 : 0
+    const aLocked = satisfiesRole(role, a.requires) ? 0 : 1
+    const bLocked = satisfiesRole(role, b.requires) ? 0 : 1
     return aLocked - bLocked
   })
 

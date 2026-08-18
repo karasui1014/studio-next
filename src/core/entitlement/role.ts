@@ -7,8 +7,15 @@ import { create } from 'zustand'
  * 加入経路はYouTubeメンバーシップのみ（Studio直販は行わない・2026-08-12決定）。
  * 画面側は「いくら払ったか」を一切見ない。
  *
- *   YouTube「AIでMVを作りたい部」                 → role = premium
- *   YouTube「AIでMVを1か月でマスターしたい方向け」  → role = master
+ *   YouTube「AI音楽部 Studio Premium」 → role = premium
+ *   YouTube「AI音楽部 Studio Creator」 → role = creator
+ *   YouTube「AI音楽部Studio Master」   → role = master
+ *
+ * ■ 「Studioのプラン名」と「YouTubeの商品名」は別物（2026-08-19決定）
+ * Studio内では `ROLE_LABEL`（例：Studio Creator）を使う。**「AI音楽部」は付けない。**
+ * YouTubeの加入案内など、メンバーシップの正式名称を出す場所でだけ
+ * `YOUTUBE_TIERS[].youtubeName`（例：AI音楽部 Studio Creator）を使う。
+ * この2つを混ぜて画面に直接書かないこと——改名のたびに探し回ることになる。
  *
  * ■ 認証について
  * Studio では別途アカウントを作らせない（V1の憲章どおりサーバー・ログインを持たない）。
@@ -17,6 +24,26 @@ import { create } from 'zustand'
  */
 
 export type Role = 'free' | 'premium' | 'creator' | 'master'
+
+/**
+ * 権限の強さ。`free < premium < creator < master`
+ *
+ * 上位は下位をすべて含む（creator は premium の機能を全部使える）。
+ * 画面側で「今より上か」を比べるときは、必ずこの表を通すこと。
+ * 各画面が独自の順序表を持つと、プランが増えたときに片方だけ直し忘れる。
+ * Worker側にも同じ並びがある（`worker/api/src/session.ts` の ROLE_RANK）。
+ */
+export const ROLE_RANK: Record<Role, number> = {
+  free: 0,
+  premium: 1,
+  creator: 2,
+  master: 3,
+}
+
+/** actual が required 以上の権限を持つか */
+export function satisfiesRole(actual: Role, required: Role): boolean {
+  return ROLE_RANK[actual] >= ROLE_RANK[required]
+}
 
 /**
  * Roleをどこから得たか。表示の出し分けに使う。
@@ -30,6 +57,12 @@ export type Role = 'free' | 'premium' | 'creator' | 'master'
  */
 export type RoleSource = 'none' | 'youtube'
 
+/**
+ * **Studio Next の中で表示するプラン名。**
+ *
+ * ここに「AI音楽部」は付けない。付けるのはYouTube側の商品名だけ
+ * （→ `YOUTUBE_TIERS[].youtubeName`）。
+ */
 export const ROLE_LABEL: Record<Role, string> = {
   free: '無料プラン',
   premium: 'Studio Premium',
@@ -39,21 +72,34 @@ export const ROLE_LABEL: Record<Role, string> = {
 
 /**
  * YouTubeメンバーシップとRoleの対応。ここを唯一の正とする。
+ *
+ * `youtubeName` は **YouTube側の商品名**であり、Studio内のプラン名とは別物。
+ * YouTubeの加入案内で「どの段に入ればいいか」を伝える場面でだけ使う。
  * role が null の段は、Studioの権限が付かない応援用の段。
+ *
+ * ⚠️ 35,000円「企業様向け」の段は、Studioの権限体系とは無関係の別商品のため
+ * ここには載せない（PROJECT_SPEC.md §4で明文化）。手動でキーを発行するときの
+ * 判断基準は `scripts/membership-levels.mjs` 側に「権限なし」として明示してある。
  */
 export const YOUTUBE_TIERS: {
   role: Exclude<Role, 'free'> | null
-  name: string
+  /** YouTubeメンバーシップの商品名。Studio内のプラン名（ROLE_LABEL）とは別 */
+  youtubeName: string
   price: number
   note?: string
 }[] = [
-  { role: null, name: 'AI大好き部', price: 690, note: 'Studioの権限は付きません' },
-  { role: 'premium', name: 'Studio Premium利用権付き', price: 1290, note: '現「AIでMVを作りたい部」' },
-  // premium/master と違い、YouTube側の実名をそのまま name に入れている。
-  // 新設時（2026-08-18）に実名を確認できたため、表示と実態を最初から一致させられた。
-  { role: 'creator', name: 'Ai音楽部 Studio Creator', price: 3490, note: '2026-08-18新設' },
-  { role: 'master', name: 'Studio Master利用権付き', price: 5600, note: '現「AIでMVを1か月でマスターしたい方向け」' },
+  { role: null, youtubeName: 'Ai大好き部', price: 690, note: 'Studioの権限は付きません' },
+  { role: 'premium', youtubeName: 'AI音楽部 Studio Premium', price: 1290 },
+  { role: 'creator', youtubeName: 'AI音楽部 Studio Creator', price: 3490, note: '2026-08-18新設' },
+  // 「部」と「Studio」の間に空白が無いのはYouTube側の実表記どおり。
+  // 揃っていないが、ここは見た目を整える場所ではなく実物を写す場所（2026-08-19確認）
+  { role: 'master', youtubeName: 'AI音楽部Studio Master', price: 5600 },
 ]
+
+/** Roleに対応するYouTubeメンバーシップの段（無ければ null） */
+export function youtubeTierFor(role: Role) {
+  return YOUTUBE_TIERS.find((t) => t.role === role) ?? null
+}
 
 /**
  * Master限定のDiscordコミュニティについて。
@@ -89,7 +135,12 @@ export const OFFICIAL_LINE_URL = 'https://lin.ee/OxFaiLT'
 
 /** Premium以上か（Creator・Master は Premium をすべて含む） */
 export function isPaid(role: Role): boolean {
-  return role === 'premium' || role === 'creator' || role === 'master'
+  return satisfiesRole(role, 'premium')
+}
+
+/** Creator以上か（Master は Creator をすべて含む） */
+export function isCreator(role: Role): boolean {
+  return satisfiesRole(role, 'creator')
 }
 
 export function isMaster(role: Role): boolean {
@@ -118,7 +169,9 @@ function loadRole(): Role {
   if (!DEV) return 'free' // 本番: localStorage は権限の根拠にしない
   try {
     const v = localStorage.getItem(ROLE_KEY)
-    if (v === 'free' || v === 'premium' || v === 'master') return v
+    // ROLE_RANK を判定に使う。ここに個別の値を並べると、
+    // プランが増えたときに書き足し忘れて静かに free へ落ちる
+    if (v !== null && v in ROLE_RANK) return v as Role
   } catch {
     /* 読めなければ無料として扱う */
   }
@@ -179,7 +232,10 @@ export function useRole() {
     role,
     source,
     paid: isPaid(role),
+    creator: isCreator(role),
     master: isMaster(role),
     label: ROLE_LABEL[role],
+    /** この権限が required 以上か。プランが増えても画面側は書き換えずに済む */
+    can: (required: Role) => satisfiesRole(role, required),
   }
 }
