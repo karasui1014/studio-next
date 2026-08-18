@@ -128,7 +128,7 @@ const UPGRADE_STEPS: Record<'premium' | 'creator' | 'master', { membership: stri
     line: '公式LINEで「チャンネル名」と「Premiumに加入した」旨を送る',
   },
   creator: {
-    membership: 'YouTubeメンバーシップをStudio Creator対象プランに変更する',
+    membership: 'YouTubeメンバーシップを「Ai音楽部 Studio Creator」に加入・変更する',
     line: '公式LINEで「チャンネル名」と「Creatorに変更した」旨を送る',
   },
   master: {

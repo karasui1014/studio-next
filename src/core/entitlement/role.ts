@@ -49,7 +49,9 @@ export const YOUTUBE_TIERS: {
 }[] = [
   { role: null, name: 'AI大好き部', price: 690, note: 'Studioの権限は付きません' },
   { role: 'premium', name: 'Studio Premium利用権付き', price: 1290, note: '現「AIでMVを作りたい部」' },
-  { role: 'creator', name: 'Studio Creator利用権付き', price: 3490, note: '要YouTube側新規作成（未設定）' },
+  // premium/master と違い、YouTube側の実名をそのまま name に入れている。
+  // 新設時（2026-08-18）に実名を確認できたため、表示と実態を最初から一致させられた。
+  { role: 'creator', name: 'Ai音楽部 Studio Creator', price: 3490, note: '2026-08-18新設' },
   { role: 'master', name: 'Studio Master利用権付き', price: 5600, note: '現「AIでMVを1か月でマスターしたい方向け」' },
 ]
 
