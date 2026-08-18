@@ -6,7 +6,7 @@ import { recordActivity } from '@/core/storage/activity'
 import { useRole, type Role } from '@/core/entitlement/role'
 import { cn } from '@/core/ui/cn'
 
-const TIER_RANK: Record<Role, number> = { free: 0, premium: 1, master: 2 }
+const TIER_RANK: Record<Role, number> = { free: 0, premium: 1, creator: 2, master: 3 }
 
 interface ToolEntry {
   id: string
@@ -54,9 +54,10 @@ const TOOLS: ToolEntry[] = [
  *   スタイルプロンプト工房                                     : 無料（2026-08-10決定）
  *     （他所（このサイト自身）で既に無料公開済みのツールのため、Studio側でも無料開放にした）
  *   絵コンテツール・ギターコードTAB・マスタリング自動生成ツール : Premium以上（2026-08-10決定）
- *   字幕自動生成／楽曲批評／Seedance Batch Studio               : Masterのみ（2026-08-10決定）
- *   Seedance2.5プロンプト工房                                 : Masterのみ（2026-08-12決定）
- *     （Seedance Batch Studioと同じ動画生成の文脈のツールのため、同枠に揃えた）
+ *   字幕自動生成／楽曲批評ツール                                : Masterのみ（2026-08-10決定）
+ *   Seedance Batch Studio／Seedance2.5プロンプト工房            : Creator以上（2026-08-18変更）
+ *     （新設のStudio Creatorの目玉として、Masterのみ限定からCreator以上に引き下げた。
+ *       Masterの差別化はDiscordコミュニティに一本化する）
  *
  * 名称・説明文・URLのうち7つは V1 の `src/lib/constants.ts`（EXTERNAL_TOOLS）と
  * 完全一致させている。Seedance2.5プロンプト工房のみV1に対応がない新規追加。
@@ -111,25 +112,35 @@ const EXTERNAL_TOOLS: ExternalTool[] = [
     id: 'seedance', emoji: '🎞', name: 'Seedance Batch Studio',
     desc: '動画素材をまとめてバッチ生成する',
     url: 'https://seedance-batch-studio.karasui.chatgpt.site/',
-    requires: 'master',
+    requires: 'creator',
   },
   {
     id: 'seedance-prompt-koubou', emoji: '🎥', name: 'Seedance2.5プロンプト工房',
     desc: 'Seedance 2.5用のプロンプトを香盤表形式で組み立てる',
     url: 'https://karasui1014.github.io/lofi-detective-website/seedance-prompt-koubou/',
-    requires: 'master',
+    requires: 'creator',
   },
 ]
 
-const UPGRADE_STEPS: Record<'premium' | 'master', { membership: string; line: string }> = {
+const UPGRADE_STEPS: Record<'premium' | 'creator' | 'master', { membership: string; line: string }> = {
   premium: {
     membership: 'YouTubeメンバーシップを「AIでMVを作りたい部」以上に加入・変更する',
     line: '公式LINEで「チャンネル名」と「Premiumに加入した」旨を送る',
+  },
+  creator: {
+    membership: 'YouTubeメンバーシップをStudio Creator対象プランに変更する',
+    line: '公式LINEで「チャンネル名」と「Creatorに変更した」旨を送る',
   },
   master: {
     membership: 'YouTubeメンバーシップを「AIでMVを1か月でマスターしたい方向け」に変更する',
     line: '公式LINEで「チャンネル名」と「Masterに変更した」旨を送る',
   },
+}
+
+const TIER_LABEL: Record<'premium' | 'creator' | 'master', string> = {
+  premium: 'Premium',
+  creator: 'Creator',
+  master: 'Master',
 }
 
 /** ロックされたツール共通のカード。ネイティブ・外部どちらの表示にも使う。 */
@@ -140,17 +151,17 @@ function LockedCard({
 }: {
   emoji: string
   name: string
-  requires: 'premium' | 'master'
+  requires: 'premium' | 'creator' | 'master'
 }) {
   const [expanded, setExpanded] = useState(false)
-  const tierLabel = requires === 'master' ? 'Master' : 'Premium'
+  const tierLabel = TIER_LABEL[requires]
   const steps = UPGRADE_STEPS[requires]
 
   return (
     <div
       className={cn(
         'rounded-xl border p-4',
-        requires === 'master' ? 'border-master/30 bg-master/[0.04]' : 'border-premium/30 bg-premium/[0.04]',
+        requires === 'master' ? 'border-master/30 bg-master/[0.04]' : requires === 'creator' ? 'border-creator/30 bg-creator/[0.04]' : 'border-premium/30 bg-premium/[0.04]',
       )}
     >
       <button
@@ -161,7 +172,7 @@ function LockedCard({
         <span
           className={cn(
             'grid h-11 w-11 shrink-0 place-items-center rounded-xl text-xl',
-            requires === 'master' ? 'bg-master/12' : 'bg-premium/12',
+            requires === 'master' ? 'bg-master/12' : requires === 'creator' ? 'bg-creator/12' : 'bg-premium/12',
           )}
         >
           {emoji}
@@ -169,7 +180,7 @@ function LockedCard({
         <span className="min-w-0 flex-1">
           <span className="flex items-center gap-1.5 text-[14px] font-bold">
             {name}
-            <Lock className={cn('h-3.5 w-3.5', requires === 'master' ? 'text-master' : 'text-premium')} />
+            <Lock className={cn('h-3.5 w-3.5', requires === 'master' ? 'text-master' : requires === 'creator' ? 'text-creator' : 'text-premium')} />
           </span>
           <span className="mt-1 block text-[12px] leading-relaxed text-muted-foreground">
             {tierLabel}限定です。タップで詳しく
@@ -179,7 +190,7 @@ function LockedCard({
 
       {expanded && (
         <div className="mt-3 rounded-lg border border-border bg-card p-3 text-[12.5px] leading-relaxed">
-          <p className={cn('font-bold', requires === 'master' ? 'text-master' : 'text-premium')}>
+          <p className={cn('font-bold', requires === 'master' ? 'text-master' : requires === 'creator' ? 'text-creator' : 'text-premium')}>
             {tierLabel}プランへのアップグレード
           </p>
           <p className="mt-1.5 text-muted-foreground">
@@ -196,7 +207,7 @@ function LockedCard({
             to="/plans"
             className={cn(
               'mt-3 inline-flex h-9 items-center justify-center rounded-lg px-4 text-[12.5px] font-bold text-white',
-              requires === 'master' ? 'bg-master' : 'bg-premium',
+              requires === 'master' ? 'bg-master' : requires === 'creator' ? 'bg-creator' : 'bg-premium',
             )}
           >
             {tierLabel}プランを見る
@@ -237,7 +248,7 @@ function ExternalToolCard({ tool, role }: { tool: ExternalTool; role: Role }) {
   }
 
   // requires が 'free' なら誰にとってもロックされない（above の !locked 分岐で必ず拾われる）
-  return <LockedCard emoji={tool.emoji} name={tool.name} requires={tool.requires as 'premium' | 'master'} />
+  return <LockedCard emoji={tool.emoji} name={tool.name} requires={tool.requires as 'premium' | 'creator' | 'master'} />
 }
 
 export function ToolsPage() {

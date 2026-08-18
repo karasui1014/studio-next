@@ -16,7 +16,7 @@ import { create } from 'zustand'
  * この層だけ差し替えれば、将来サーバーを持つ判断をしても画面側は書き換えずに済む。
  */
 
-export type Role = 'free' | 'premium' | 'master'
+export type Role = 'free' | 'premium' | 'creator' | 'master'
 
 /**
  * Roleをどこから得たか。表示の出し分けに使う。
@@ -33,6 +33,7 @@ export type RoleSource = 'none' | 'youtube'
 export const ROLE_LABEL: Record<Role, string> = {
   free: '無料プラン',
   premium: 'Studio Premium',
+  creator: 'Studio Creator',
   master: 'Studio Master',
 }
 
@@ -48,6 +49,7 @@ export const YOUTUBE_TIERS: {
 }[] = [
   { role: null, name: 'AI大好き部', price: 690, note: 'Studioの権限は付きません' },
   { role: 'premium', name: 'Studio Premium利用権付き', price: 1290, note: '現「AIでMVを作りたい部」' },
+  { role: 'creator', name: 'Studio Creator利用権付き', price: 3490, note: '要YouTube側新規作成（未設定）' },
   { role: 'master', name: 'Studio Master利用権付き', price: 5600, note: '現「AIでMVを1か月でマスターしたい方向け」' },
 ]
 
@@ -83,9 +85,9 @@ export const YOUTUBE_JOIN_URL = 'https://www.youtube.com/@AI音楽部-AImusic/jo
  */
 export const OFFICIAL_LINE_URL = 'https://lin.ee/OxFaiLT'
 
-/** Premium以上か（Master は Premium をすべて含む） */
+/** Premium以上か（Creator・Master は Premium をすべて含む） */
 export function isPaid(role: Role): boolean {
-  return role === 'premium' || role === 'master'
+  return role === 'premium' || role === 'creator' || role === 'master'
 }
 
 export function isMaster(role: Role): boolean {

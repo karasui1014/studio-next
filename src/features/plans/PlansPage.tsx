@@ -1,9 +1,9 @@
 import { useState } from 'react'
-import { Check, MessageCircle, SquarePlay, Users, Zap } from 'lucide-react'
+import { Check, Film, MessageCircle, SquarePlay, Users, Zap } from 'lucide-react'
 
 import { apiConfigured, usePremiumStore } from '@/core/entitlement/api'
 import {
-  OFFICIAL_LINE_URL, useRole, useRoleStore,
+  OFFICIAL_LINE_URL, ROLE_LABEL, useRole, useRoleStore,
   YOUTUBE_JOIN_URL, YOUTUBE_TIERS, type Role,
 } from '@/core/entitlement/role'
 import { cn } from '@/core/ui/cn'
@@ -11,7 +11,7 @@ import { cn } from '@/core/ui/cn'
 interface RoleCard {
   id: Role
   kind: string
-  kindIcon: typeof Zap | typeof Users | null
+  kindIcon: typeof Zap | typeof Film | typeof Users | null
   name: string
   purpose: string
   target: string
@@ -74,6 +74,18 @@ const CARDS: RoleCard[] = [
     externalFeatures: ['絵コンテツール', 'ギターコードTAB', 'マスタリング自動生成ツール'],
   },
   {
+    id: 'creator',
+    kind: '制作環境＋動画',
+    kindIcon: Film,
+    name: 'Studio Creator',
+    purpose: '動画生成まで内製する',
+    target: 'MVや動画素材までまとめて自分の手で作りたいクリエイター',
+    features: ['Studio Premium のすべて'],
+    // Seedance関連の2ツールをMaster限定からCreator以上に変更（2026-08-18決定）。
+    // Masterの差別化はDiscordコミュニティに一本化する。
+    externalFeatures: ['Seedance Batch Studio', 'Seedance2.5プロンプト工房'],
+  },
+  {
     id: 'master',
     kind: '学習環境（伴走）',
     kindIcon: Users,
@@ -81,7 +93,7 @@ const CARDS: RoleCard[] = [
     purpose: '本気でAI音楽を学び、成長する',
     target: 'AI音楽をもっと深く学びたい人。作品を見てもらいながら、制作力を伸ばしたい人。',
     seats: '少人数制（30名まで）— 添削の質を守るため人数に上限があります',
-    features: ['Studio Premium のすべて'],
+    features: ['Studio Creator のすべて'],
     // Master の特典はすべて Discord の中で提供する。
     // Studio 側に機能として実装されているものはない（＝ここは運用の約束）。
     // Discordの招待URLは公式LINEから手動でお送りするため、この画面には出さない。
@@ -98,6 +110,9 @@ const CARDS: RoleCard[] = [
 function tierFor(role: Role) {
   return YOUTUBE_TIERS.find((t) => t.role === role) ?? null
 }
+
+/** 権限の並び。アップグレード導線の「今より上か」の判定にだけ使う（価格ではなくRole） */
+const ROLE_RANK: Record<Role, number> = { free: 0, premium: 1, creator: 2, master: 3 }
 
 /**
  * 権限の受け取り。
@@ -134,10 +149,7 @@ function MembershipBox() {
     if (res.ok) {
       // 権限名はAPIが返した検証済みの値から出す。入力内容からは決めない
       const applied = useRoleStore.getState().role
-      setMessage({
-        ok: true,
-        text: applied === 'master' ? 'Studio Master になりました。' : 'Studio Premium になりました。',
-      })
+      setMessage({ ok: true, text: `${ROLE_LABEL[applied]} になりました。` })
       setKey('')
     } else {
       // 「無効」「失効済み」「打ち間違い」を区別して伝えない。
@@ -236,13 +248,14 @@ function MembershipBox() {
 }
 
 export function PlansPage() {
-  const { role, master } = useRole()
+  const { role, master, paid } = useRole()
 
   return (
     <div className="animate-fade-in pb-6">
       <h1 className="text-xl font-bold">プラン</h1>
       <p className="mt-1 text-[12.5px] leading-relaxed text-muted-foreground">
         <span className="font-semibold text-premium">Premium は制作環境</span>、
+        <span className="font-semibold text-creator">Creator は動画生成まで含む制作環境</span>、
         <span className="font-semibold text-master">Master は人が伴走する学習環境</span>です。
         機能の多い・少ないではなく、目的が違います。
         <br />
@@ -260,6 +273,7 @@ export function PlansPage() {
               className={cn(
                 'flex flex-col rounded-2xl border bg-card p-5',
                 c.id === 'premium' && 'border-premium/45 shadow-lg shadow-premium/10',
+                c.id === 'creator' && 'border-creator/45 shadow-lg shadow-creator/10',
                 c.id === 'master' && 'border-master/40 bg-gradient-to-b from-master/[0.05] to-card',
                 c.id === 'free' && 'border-border',
               )}
@@ -267,6 +281,7 @@ export function PlansPage() {
               <span className={cn(
                 'inline-flex w-fit items-center gap-1.5 rounded-full px-2.5 py-1 text-[10.5px] font-bold tracking-wide',
                 c.id === 'premium' && 'bg-premium/15 text-premium',
+                c.id === 'creator' && 'bg-creator/15 text-creator',
                 c.id === 'master' && 'bg-master/15 text-master',
                 c.id === 'free' && 'bg-muted text-muted-foreground',
               )}>
@@ -278,6 +293,7 @@ export function PlansPage() {
               <p className={cn(
                 'mt-1 text-[12.5px] font-semibold',
                 c.id === 'premium' && 'text-premium',
+                c.id === 'creator' && 'text-creator',
                 c.id === 'master' && 'text-master',
               )}>
                 {c.purpose}
@@ -314,7 +330,13 @@ export function PlansPage() {
                   <li key={f} className="flex items-start gap-2 text-[12.5px] leading-snug">
                     <Check className={cn(
                       'mt-0.5 h-3.5 w-3.5 shrink-0',
-                      c.id === 'premium' ? 'text-premium' : c.id === 'master' ? 'text-master' : 'text-primary',
+                      c.id === 'premium'
+                        ? 'text-premium'
+                        : c.id === 'creator'
+                          ? 'text-creator'
+                          : c.id === 'master'
+                            ? 'text-master'
+                            : 'text-primary',
                     )} />
                     {f}
                   </li>
@@ -366,28 +388,38 @@ export function PlansPage() {
                 <p className="mt-4 grid h-11 place-items-center rounded-lg border border-border text-[13.5px] font-bold text-muted-foreground">
                   いま使っている権限
                 </p>
-              ) : c.id === 'master' && role === 'premium' ? (
+              ) : paid && ROLE_RANK[c.id] > ROLE_RANK[role] ? (
                 /*
-                  Premiumの人がMasterカードを見ているときだけの導線。
+                  すでに有料プランの人が、今より上位のカードを見ているときだけの導線
+                  （premium→creator／premium→master／creator→master）。
                   free の人には出さない（初回加入と混同させないため）。
-                  Master特典は上のリストに既出なので、ここでは重複列挙しない。
+                  上位プランの特典は上のリストに既出なので、ここでは重複列挙しない。
                 */
-                <div className="mt-4 rounded-lg border border-master/30 bg-master/[0.06] p-3.5">
-                  <p className="flex items-center gap-1.5 text-[13px] font-bold text-master">
-                    <Users className="h-3.5 w-3.5" />
-                    Masterにアップグレードする
+                <div className={cn(
+                  'mt-4 rounded-lg border p-3.5',
+                  c.id === 'master' ? 'border-master/30 bg-master/[0.06]' : 'border-creator/30 bg-creator/[0.06]',
+                )}>
+                  <p className={cn(
+                    'flex items-center gap-1.5 text-[13px] font-bold',
+                    c.id === 'master' ? 'text-master' : 'text-creator',
+                  )}>
+                    {c.id === 'master' ? <Users className="h-3.5 w-3.5" /> : <Film className="h-3.5 w-3.5" />}
+                    {c.name}にアップグレードする
                   </p>
                   <p className="mt-1.5 text-[11.5px] leading-relaxed text-muted-foreground">
-                    YouTubeでMaster対象プランへ変更したあと、公式LINEから
-                    「Masterに変更しました」とお送りください。
-                    メンバーシップを確認後、Master用ライセンスキーをご案内します。
+                    YouTubeで{c.name}対象プランへ変更したあと、公式LINEから
+                    「{c.name}に変更しました」とお送りください。
+                    メンバーシップを確認後、{c.name}用ライセンスキーをご案内します。
                   </p>
                   <a
                     href={OFFICIAL_LINE_URL}
                     target="_blank"
                     rel="noopener noreferrer external"
                     referrerPolicy="no-referrer"
-                    className="mt-3 flex h-10 items-center justify-center gap-1.5 rounded-lg bg-master text-[13px] font-bold text-white"
+                    className={cn(
+                      'mt-3 flex h-10 items-center justify-center gap-1.5 rounded-lg text-[13px] font-bold text-white',
+                      c.id === 'master' ? 'bg-master' : 'bg-creator',
+                    )}
                   >
                     <MessageCircle className="h-4 w-4" />
                     公式LINEで連絡する
@@ -401,7 +433,7 @@ export function PlansPage() {
                   referrerPolicy="no-referrer"
                   className={cn(
                     'mt-4 inline-flex h-11 items-center justify-center gap-2 rounded-lg text-[13.5px] font-bold text-white',
-                    c.id === 'premium' ? 'bg-premium' : 'bg-master',
+                    c.id === 'premium' ? 'bg-premium' : c.id === 'creator' ? 'bg-creator' : 'bg-master',
                   )}
                 >
                   <SquarePlay className="h-4 w-4" />
@@ -436,11 +468,14 @@ export function PlansPage() {
       <div className="mt-6 rounded-xl border border-dashed border-border bg-muted/50 p-4">
         <p className="text-[13.5px] font-bold">権限のしくみ</p>
         <p className="mt-1.5 text-[12px] leading-relaxed text-muted-foreground">
-          Studioの権限は<strong className="text-foreground">価格ではなくRole（free / premium / master）</strong>で管理しています。
+          Studioの権限は<strong className="text-foreground">価格ではなくRole（free / premium / creator / master）</strong>で管理しています。
           加入経路はYouTubeメンバーシップのみです。
           <br />
           <span className="font-semibold text-premium">Premium は「制作環境」</span>。
           毎週コンテンツを配るのではなく、Studio自体が毎月良くなっていくことが価値です。
+          <br />
+          <span className="font-semibold text-creator">Creator は「動画生成まで」</span>。
+          Seedanceの動画生成ツールが加わり、MVの素材まで自分の手で作れるようになります。
           <br />
           <span className="font-semibold text-master">Master は「人の伴走」</span>。
           添削・レビューはカラスイさんの時間そのものなので、人数に上限があります。

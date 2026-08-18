@@ -36,6 +36,7 @@
     --youtube: 0 72% 51%;
 
     --premium: 38 92% 45%;
+    --creator: 165 65% 38%;
     --master: 330 75% 52%;
     --substack: 24 95% 53%;
 
@@ -72,6 +73,7 @@
     --youtube: 0 72% 60%;
 
     --premium: 38 92% 58%;
+    --creator: 165 60% 55%;
     --master: 330 80% 66%;
     --substack: 24 95% 62%;
 
@@ -112,6 +114,7 @@
     --youtube: 4 69% 63%;
 
     --premium: 38 80% 60%;
+    --creator: 165 55% 52%;
     --master: 330 70% 62%;
     --substack: 24 90% 58%;
   }

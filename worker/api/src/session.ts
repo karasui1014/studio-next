@@ -14,6 +14,9 @@
  */
 import type { Env, Role, SessionClaims } from './types'
 
+/** 権限の並び（free < premium < creator < master）。検証・上下比較の両方で使う唯一の正 */
+const ROLE_RANK: Record<Role, number> = { free: 0, premium: 1, creator: 2, master: 3 }
+
 const ALG = { name: 'HMAC', hash: 'SHA-256' } as const
 /**
  * 30日（2026-08-10変更・元は24時間）。
@@ -116,7 +119,7 @@ export async function verifySession(
   try {
     const claims = JSON.parse(new TextDecoder().decode(b64urlDecode(payload))) as SessionClaims
     if (typeof claims.exp !== 'number' || claims.exp < Math.floor(Date.now() / 1000)) return null
-    if (claims.role !== 'premium' && claims.role !== 'master' && claims.role !== 'free') return null
+    if (ROLE_RANK[claims.role] === undefined) return null
     return claims
   } catch {
     return null
@@ -130,9 +133,7 @@ export function bearerFrom(request: Request): string | null {
   return m ? m[1] : null
 }
 
-/** master は premium を包含する（PROJECT_SPEC.md の isPaid と同じ考え方） */
+/** 上位ロールは下位をすべて包含する（PROJECT_SPEC.md の isPaid と同じ考え方） */
 export function satisfies(actual: Role, required: Role): boolean {
-  if (required === 'free') return true
-  if (required === 'premium') return actual === 'premium' || actual === 'master'
-  return actual === 'master'
+  return ROLE_RANK[actual] >= ROLE_RANK[required]
 }

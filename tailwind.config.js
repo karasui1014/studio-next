@@ -21,8 +21,9 @@ export default {
         mv: 'hsl(var(--mv))',
         youtube: 'hsl(var(--youtube))',
 
-        // プランの色。Premium=道具/効率、Master=人/温度
+        // プランの色。Premium=道具/効率、Creator=動画/創作、Master=人/温度
         premium: 'hsl(var(--premium))',
+        creator: 'hsl(var(--creator))',
         master: 'hsl(var(--master))',
         substack: 'hsl(var(--substack))',
       },

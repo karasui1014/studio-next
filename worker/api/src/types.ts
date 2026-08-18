@@ -1,4 +1,4 @@
-export type Role = 'free' | 'premium' | 'master'
+export type Role = 'free' | 'premium' | 'creator' | 'master'
 
 export interface Env {
   /** 会員名簿・ライセンスキー・レート制限 */

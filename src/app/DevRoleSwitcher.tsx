@@ -2,8 +2,8 @@ import { cn } from '@/core/ui/cn'
 import { apiConfigured, usePremiumStore } from '@/core/entitlement/api'
 import { ROLE_LABEL, useRoleStore, type Role } from '@/core/entitlement/role'
 
-const ROLES: Role[] = ['free', 'premium', 'master']
-const SHORT: Record<Role, string> = { free: '無料', premium: 'Premium', master: 'Master' }
+const ROLES: Role[] = ['free', 'premium', 'creator', 'master']
+const SHORT: Record<Role, string> = { free: '無料', premium: 'Premium', creator: 'Creator', master: 'Master' }
 
 /**
  * 検証用の権限切替バー。**本番ビルドでは描画しない。**
