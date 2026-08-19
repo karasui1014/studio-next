@@ -23,6 +23,12 @@ interface RoleCard {
    * 実際の受け渡しは公式LINEなど既存の案内経路で行う。
    */
   externalFeatures?: string[]
+  /**
+   * externalFeatures の見出し。省略時は「Studioの外で提供するもの」。
+   * Creator だけ、外部ツールの置き場所ではなく
+   * 「ここから制作領域が広がる」という意味づけを見出しに持たせている。
+   */
+  externalFeaturesLabel?: string
   /** Master のように「ここから先は人が関わる」もの */
   humanFeatures?: string[]
   note?: string
@@ -81,10 +87,16 @@ const CARDS: RoleCard[] = [
     purpose: 'AIで作れる範囲を映像まで広げる',
     // Premium・Masterと同じく「どんな人のためのプランか」を1〜2文で。
     // 断定の強い書き方（〜で止まっていた人へ／一人で仕上げられます）は避ける
-    target: 'AI音楽から映像制作まで、AIを使った制作の幅を広げたいクリエイター。',
+    target:
+      'AI音楽を作るだけでなく、MV・ショート動画などの映像制作まで自分で進めたいクリエイター向け。',
     features: ['Studio Premium のすべて'],
     // Seedance関連の2ツールをMaster限定からCreator以上に変更（2026-08-18決定）。
     // Masterの差別化はDiscordコミュニティに一本化する。
+    //
+    // 見出しをCreatorだけ差し替えているのは、「Premiumにツールが2つ増えたプラン」ではなく
+    // 「制作領域が映像まで広がるプラン」として読ませるため（2026-08-19決定）。
+    // ツール名は正式表記のまま。省略も日本語化もしない。
+    externalFeaturesLabel: 'ここから映像制作まで広がります',
     externalFeatures: ['Seedance Batch Studio', 'シーダンス2.5 プロンプト工房'],
   },
   {
@@ -352,8 +364,12 @@ export function PlansPage() {
 
               {c.externalFeatures && (
                 <>
-                  <p className="mt-3.5 flex items-center gap-2 text-[10.5px] font-bold tracking-wide text-muted-foreground">
-                    Studioの外で提供するもの
+                  <p className={cn(
+                    'mt-3.5 flex items-center gap-2 text-[10.5px] font-bold tracking-wide',
+                    // 見出しを差し替えているカード（Creator）だけ、そこが要点だと分かるよう色を付ける
+                    c.externalFeaturesLabel ? tone.text : 'text-muted-foreground',
+                  )}>
+                    {c.externalFeaturesLabel ?? 'Studioの外で提供するもの'}
                     <span className="h-px flex-1 bg-border" />
                   </p>
                   <ul className="mt-2 space-y-1.5">
