@@ -120,6 +120,10 @@ if (target.plan === 'master') {
   console.log(`   Master: 有効 ${s.master.active}名 / 上限 ${s.master.limit}名（残り ${s.master.remaining}枠）`)
 }
 console.log()
-console.log('   ⚠️ 反映は即時ではありません。発行済みセッションは最大30日有効です。')
-console.log(`   正確な期限: node scripts/check-license-expiry.mjs ${serial}${isProd ? ' --prod' : ''}`)
+console.log('   この人は次にStudioを開いた時点で無料プランに戻ります。')
+console.log('   （KVの反映に1分ほどかかります。開きっぱなしの画面は再読み込みで切り替わります）')
+console.log()
+console.log('   ⚠️ 2026-09-18ごろまでの経過措置：')
+console.log('      失効の即時反映より前にキーを入れた人は、従来どおり最大30日残ります。')
+console.log(`      残り期間: node scripts/check-license-expiry.mjs ${serial}${isProd ? ' --prod' : ''}`)
 console.log()
