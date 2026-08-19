@@ -68,13 +68,21 @@ function timingSafeEqual(a: Uint8Array, b: Uint8Array): boolean {
   return diff === 0
 }
 
+/**
+ * セッショントークンを発行する。
+ *
+ * `serial` を渡すと `sid` として封じ、以後このトークンは失効確認の対象になる
+ * （→ `membership.ts` の `isSerialRevoked`）。**生のキーやハッシュは載せない。**
+ */
 export async function issueSession(
   role: Role,
   src: string,
   env: Env,
+  serial?: string,
 ): Promise<{ token: string; expiresAt: number }> {
   const now = Math.floor(Date.now() / 1000)
   const claims: SessionClaims = { role, src, iat: now, exp: now + TTL_SECONDS }
+  if (serial) claims.sid = serial
 
   const header = b64urlEncode(enc.encode(JSON.stringify({ alg: 'HS256', typ: 'JWT' })))
   const payload = b64urlEncode(enc.encode(JSON.stringify(claims)))

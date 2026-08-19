@@ -21,6 +21,11 @@ export interface Membership {
   role: Role
   /** 何をもって会員と判定したか。監査用 */
   source: 'license' | 'youtube' | 'dev'
+  /**
+   * ライセンスの連番（例: `C-002`）。トークンに載せ、失効確認に使う。
+   * dev モードなど、台帳に紐づかない発行では付かない。
+   */
+  serial?: string
 }
 
 /** ライセンスキーの正規化。表記ゆれで弾かれないようにする */
@@ -77,9 +82,53 @@ async function resolveByLicense(key: string, env: Env): Promise<Membership | nul
       /* 記録できなくてもログインは通す */
     }
 
-    return { role, source: 'license' }
+    // 連番はトークンに載せ、以後の失効確認に使う（→ isSerialRevoked）。
+    // 索引が無い古い発行分では undefined になり、その場合は従来どおりの挙動に戻る
+    const serial = typeof rec.serial === 'string' ? rec.serial : undefined
+    return { role, source: 'license', serial }
   } catch {
     return null
+  }
+}
+
+/**
+ * 連番から「いま失効しているか」を引く。
+ *
+ * ■ なぜ連番から引けるのか
+ * 生のキーは誰も保存していないため、キーからは辿れない。
+ * 発行時に作った索引 `serial:<連番>` → ハッシュ を経由して本体を読む。
+ *
+ * ■ 判断に迷う場合の倒し方
+ *   失効フラグが立っている / 索引が無い / レコードが無い → **失効扱い**
+ *     台帳から消えたキーを通し続けるより、止める方が安全。
+ *   KV自体が落ちて読めなかった（例外）              → **失効扱いにしない**
+ *     こちらの障害で、正規の会員を締め出さないため。
+ *     トークンには署名と有効期限があり、無条件に通すわけではない。
+ *   （PROJECT_SPEC.md §5-A「確認できなかった場合はRoleを変えない」と同じ考え方）
+ */
+export async function isSerialRevoked(serial: string, env: Env): Promise<boolean> {
+  let hash: string | null
+  let raw: string | null
+
+  // ここで捕まえるのは「KVが読めなかった」だけ。
+  // データの中身がおかしい場合と混ぜると、壊れたレコードまで通してしまう
+  try {
+    hash = await env.ROSTER_KV.get(`serial:${serial}`)
+    if (!hash) return true
+    raw = await env.ROSTER_KV.get(`license:${hash}`)
+  } catch {
+    // KVの障害。ここで true を返すと、障害中は全員が無料に落ちる
+    return false
+  }
+
+  if (!raw) return true
+
+  try {
+    const rec = JSON.parse(raw) as Record<string, unknown>
+    return rec.revoked === true
+  } catch {
+    // レコードが壊れている＝データ側の異常。追跡できないものは通さない
+    return true
   }
 }
 

@@ -23,9 +23,9 @@
  * 場所:  KV の `premium:content`
  * public/ には決して置かない。置いた時点で URL 直打ちで読めてしまう。
  */
-import { resolveMembership, type Credential } from './membership'
+import { isSerialRevoked, resolveMembership, type Credential } from './membership'
 import { bearerFrom, issueSession, satisfies, verifySession } from './session'
-import type { Env, Role } from './types'
+import type { Env, Role, SessionClaims } from './types'
 
 interface PremiumContent {
   updatedAt?: string
@@ -74,8 +74,30 @@ function json(body: unknown, status: number, cors: Headers): Response {
 }
 
 /**
+ * トークンを検証し、**そのライセンスがまだ生きているか**まで確かめる。
+ *
+ * ■ ここが失効の即時反映の要（2026-08-19追加）
+ * 署名と有効期限だけを見ていた頃は、キーを失効させても発行済みトークンが
+ * 最大30日そのまま通っていた。ここでKVの失効フラグを見ることで、
+ * **次にアプリが開かれた時点**で権限が落ちるようになる。
+ * フロントは起動時に必ず `/api/me` を呼ぶので、追加の通信は発生しない。
+ *
+ * ■ `sid` が無いトークン（経過措置）
+ * この仕組みより前に発行されたトークンには連番が入っていない。
+ * 弾くと既存の会員が全員キーを入れ直す羽目になるため、従来どおり通す。
+ * TTLが30日なので、この経過措置は最長30日で自然に終わる。
+ */
+async function authenticate(request: Request, env: Env): Promise<SessionClaims | null> {
+  const claims = await verifySession(bearerFrom(request), env)
+  if (!claims) return null
+  if (claims.sid && (await isSerialRevoked(claims.sid, env))) return null
+  return claims
+}
+
+/**
  * 権限を要求する。満たさなければ Response（エラー）を返す。
  * 「未ログイン」と「権限不足」を区別して返す——案内文を出し分けられるように。
+ * 失効済みのライセンスは「未ログイン」側に倒れる（＝本文は返らない）。
  */
 async function require(
   request: Request,
@@ -83,7 +105,7 @@ async function require(
   cors: Headers,
   needed: Role,
 ): Promise<{ role: Role } | Response> {
-  const claims = await verifySession(bearerFrom(request), env)
+  const claims = await authenticate(request, env)
   if (!claims) {
     return json({ error: 'unauthenticated', message: 'ログインが必要です' }, 401, cors)
   }
@@ -157,13 +179,21 @@ export default {
         )
       }
 
-      const { token, expiresAt } = await issueSession(membership.role, membership.source, env)
+      // 連番を封じる。以後このトークンは失効確認の対象になる
+      const { token, expiresAt } = await issueSession(
+        membership.role,
+        membership.source,
+        env,
+        membership.serial,
+      )
       return json({ token, role: membership.role, source: membership.source, expiresAt }, 200, cors)
     }
 
     // --- 自分の権限 ------------------------------------------------
     if (request.method === 'GET' && url.pathname === '/api/me') {
-      const claims = await verifySession(bearerFrom(request), env)
+      // 失効済みライセンスのトークンはここで free に倒れる（→ authenticate）。
+      // フロントは起動時にこれを呼ぶので、退会処理が次回起動で効く
+      const claims = await authenticate(request, env)
       // 無効なトークンは「free」として答える。ここで役割を捏造しないことが肝
       // expはセッションの有効期限（秒・UNIX時間）。画面側で「いつまで有効か」を示すために返す
       return json(
