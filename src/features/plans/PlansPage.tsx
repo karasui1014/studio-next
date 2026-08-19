@@ -309,6 +309,10 @@ export function PlansPage() {
           const current = role === c.id
           const tier = youtubeTierFor(c.id)
           const tone = TONE[c.id]
+          // Premium・Creatorは項目が少なく、flex-1をチェックリストに置いたままだと
+          // 直後の見出しとの間が不自然に空く。この2枚だけ余白の吸収先を
+          // カード最下部（ボタン直前）へ動かす（2026-08-19）。Masterは対象外。
+          const tightGap = c.id === 'premium' || c.id === 'creator'
 
           return (
             <div
@@ -362,12 +366,10 @@ export function PlansPage() {
 
               {/*
                 flex-1 でカード内の余白を吸収し、4枚の「YouTubeで加入する」ボタンを
-                行の下端で揃えている。ただし externalFeaturesIntro を持つカード（Creator）は
-                項目が1つしかなく、この余白がチェック項目の直後にそのまま出ると
-                見出しとの間が不自然に空いて見える。その場合だけ、余白を吸収する場所を
+                行の下端で揃えている。tightGap のカードだけ、その吸収先を
                 このリストからカード最下部（ボタン直前）へ動かす（2026-08-19）。
               */}
-              <ul className={cn('mt-3.5 space-y-1.5', !c.externalFeaturesIntro && 'flex-1')}>
+              <ul className={cn('mt-3.5 space-y-1.5', !tightGap && 'flex-1')}>
                 {c.features.map((f) => (
                   <li key={f} className="flex items-start gap-2 text-[12.5px] leading-snug">
                     <Check className={cn(
@@ -381,7 +383,7 @@ export function PlansPage() {
 
               {c.externalFeatures && (
                 <>
-                  {c.externalFeaturesIntro ? (
+                  {c.externalFeaturesIntro && (
                     <div className="mt-3.5">
                       <p className={cn('text-[13px] font-bold leading-snug', tone.text)}>
                         {c.externalFeaturesIntro.tagline}
@@ -390,13 +392,13 @@ export function PlansPage() {
                         {c.externalFeaturesIntro.description}
                       </p>
                     </div>
-                  ) : (
-                    <p className="mt-3.5 flex items-center gap-2 text-[10.5px] font-bold tracking-wide text-muted-foreground">
-                      Studioの外で提供するもの
-                      <span className="h-px flex-1 bg-border" />
-                    </p>
                   )}
-                  <ul className="mt-2 space-y-1.5">
+                  {/*
+                    見出し「Studioの外で提供するもの」は廃止（2026-08-19）。
+                    externalFeaturesIntro を持たないカードは、見出し無しで
+                    チェックリストの直後にそのまま外部ツールを続ける。
+                  */}
+                  <ul className={cn('space-y-1.5', c.externalFeaturesIntro ? 'mt-2' : 'mt-2.5')}>
                     {c.externalFeatures.map((f) => (
                       <li key={f} className="text-[12.5px] leading-snug text-muted-foreground">
                         <span className="flex items-start gap-2">
@@ -416,7 +418,7 @@ export function PlansPage() {
 
               {/* 上のリストから移した余白の吸収先。ボタンの直前に置くことで、カード内の
                   縦位置は変わらず、不自然な空きだけをここへ寄せる */}
-              {c.externalFeaturesIntro && <div className="flex-1" />}
+              {tightGap && <div className="flex-1" />}
 
               {c.humanFeatures && (
                 <>
