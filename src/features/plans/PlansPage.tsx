@@ -24,11 +24,14 @@ interface RoleCard {
    */
   externalFeatures?: string[]
   /**
-   * externalFeatures の見出し。省略時は「Studioの外で提供するもの」。
-   * Creator だけ、外部ツールの置き場所ではなく
-   * 「ここから制作領域が広がる」という意味づけを見出しに持たせている。
+   * externalFeatures の上に置く見出し＋説明文。
+   * 省略時は「Studioの外で提供するもの」という素っ気ない見出しだけになる（Premium）。
+   * Creator だけ、「アップグレードすると何ができるようになるか」が伝わる
+   * コピーに差し替えている（2026-08-19）。
    */
-  externalFeaturesLabel?: string
+  externalFeaturesIntro?: { tagline: string; description: string }
+  /** externalFeatures の各項目に添える一言説明（キー = 項目名の文字列） */
+  externalFeatureNotes?: Record<string, string>
   /** Master のように「ここから先は人が関わる」もの */
   humanFeatures?: string[]
   note?: string
@@ -93,11 +96,18 @@ const CARDS: RoleCard[] = [
     // Seedance関連の2ツールをMaster限定からCreator以上に変更（2026-08-18決定）。
     // Masterの差別化はDiscordコミュニティに一本化する。
     //
-    // 見出しをCreatorだけ差し替えているのは、「Premiumにツールが2つ増えたプラン」ではなく
-    // 「制作領域が映像まで広がるプラン」として読ませるため（2026-08-19決定）。
+    // 「Premiumにツールが2つ増えたプラン」ではなく「制作領域が映像まで広がるプラン」として
+    // 読ませるため、見出し・説明・各ツールの一言説明をCreatorだけ持たせている（2026-08-19）。
     // ツール名は正式表記のまま。省略も日本語化もしない。
-    externalFeaturesLabel: 'ここから映像制作まで広がります',
+    externalFeaturesIntro: {
+      tagline: '「音楽から映像制作まで、AIでつくる」',
+      description: '作った楽曲をMVやショート動画へ。AIを使った映像制作まで、自分で進められます。',
+    },
     externalFeatures: ['Seedance Batch Studio', 'シーダンス2.5 プロンプト工房'],
+    externalFeatureNotes: {
+      'Seedance Batch Studio': '複数の動画生成をまとめて進められる制作ツール',
+      'シーダンス2.5 プロンプト工房': 'イメージから映像生成用プロンプトを作成',
+    },
   },
   {
     id: 'master',
@@ -364,19 +374,33 @@ export function PlansPage() {
 
               {c.externalFeatures && (
                 <>
-                  <p className={cn(
-                    'mt-3.5 flex items-center gap-2 text-[10.5px] font-bold tracking-wide',
-                    // 見出しを差し替えているカード（Creator）だけ、そこが要点だと分かるよう色を付ける
-                    c.externalFeaturesLabel ? tone.text : 'text-muted-foreground',
-                  )}>
-                    {c.externalFeaturesLabel ?? 'Studioの外で提供するもの'}
-                    <span className="h-px flex-1 bg-border" />
-                  </p>
+                  {c.externalFeaturesIntro ? (
+                    <div className="mt-3.5">
+                      <p className={cn('text-[13px] font-bold leading-snug', tone.text)}>
+                        {c.externalFeaturesIntro.tagline}
+                      </p>
+                      <p className="mt-1 text-[11.5px] leading-relaxed text-muted-foreground">
+                        {c.externalFeaturesIntro.description}
+                      </p>
+                    </div>
+                  ) : (
+                    <p className="mt-3.5 flex items-center gap-2 text-[10.5px] font-bold tracking-wide text-muted-foreground">
+                      Studioの外で提供するもの
+                      <span className="h-px flex-1 bg-border" />
+                    </p>
+                  )}
                   <ul className="mt-2 space-y-1.5">
                     {c.externalFeatures.map((f) => (
-                      <li key={f} className="flex items-start gap-2 text-[12.5px] leading-snug text-muted-foreground">
-                        <span className="mt-0.5 shrink-0">↗</span>
-                        {f}
+                      <li key={f} className="text-[12.5px] leading-snug text-muted-foreground">
+                        <span className="flex items-start gap-2">
+                          <span className="mt-0.5 shrink-0">↗</span>
+                          <span>{f}</span>
+                        </span>
+                        {c.externalFeatureNotes?.[f] && (
+                          <span className="mt-0.5 block pl-5 text-[11px] leading-relaxed">
+                            {c.externalFeatureNotes[f]}
+                          </span>
+                        )}
                       </li>
                     ))}
                   </ul>
