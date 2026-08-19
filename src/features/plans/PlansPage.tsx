@@ -360,7 +360,14 @@ export function PlansPage() {
                 </p>
               )}
 
-              <ul className="mt-3.5 flex-1 space-y-1.5">
+              {/*
+                flex-1 でカード内の余白を吸収し、4枚の「YouTubeで加入する」ボタンを
+                行の下端で揃えている。ただし externalFeaturesIntro を持つカード（Creator）は
+                項目が1つしかなく、この余白がチェック項目の直後にそのまま出ると
+                見出しとの間が不自然に空いて見える。その場合だけ、余白を吸収する場所を
+                このリストからカード最下部（ボタン直前）へ動かす（2026-08-19）。
+              */}
+              <ul className={cn('mt-3.5 space-y-1.5', !c.externalFeaturesIntro && 'flex-1')}>
                 {c.features.map((f) => (
                   <li key={f} className="flex items-start gap-2 text-[12.5px] leading-snug">
                     <Check className={cn(
@@ -406,6 +413,10 @@ export function PlansPage() {
                   </ul>
                 </>
               )}
+
+              {/* 上のリストから移した余白の吸収先。ボタンの直前に置くことで、カード内の
+                  縦位置は変わらず、不自然な空きだけをここへ寄せる */}
+              {c.externalFeaturesIntro && <div className="flex-1" />}
 
               {c.humanFeatures && (
                 <>
