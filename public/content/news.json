@@ -1,14 +1,14 @@
 {
-  "generatedAt": "2026-08-20T13:37:43.138Z",
-  "count": 329,
-  "newCount": 28,
-  "translatedCount": 0,
+  "generatedAt": "2026-08-20T21:22:29.782Z",
+  "count": 333,
+  "newCount": 31,
+  "translatedCount": 3,
   "ranking": [
     "de6c39e1bb146d3a",
     "07016b237813ccb3",
+    "3cf7d30598e0c29b",
     "ee8d9ab5cee083fc",
-    "150557c56944071c",
-    "3cf7d30598e0c29b"
+    "ca0896e7d24abe7d"
   ],
   "sources": [
     {
@@ -98,7 +98,7 @@
       "category": "global",
       "ok": true,
       "fetched": 10,
-      "matched": 0,
+      "matched": 2,
       "error": null
     },
     {
@@ -116,7 +116,7 @@
       "category": "global",
       "ok": true,
       "fetched": 40,
-      "matched": 3,
+      "matched": 2,
       "error": null
     },
     {
@@ -292,6 +292,38 @@
   ],
   "items": [
     {
+      "id": "36f00de6719be8e3",
+      "title": "Apple Music to slap AI labels on Suno tracks – but pushes the onus onto record companies",
+      "url": "https://www.musicbusinessworldwide.com/apple-music-to-slap-ai-labels-on-suno-music-but-pushes-the-onus-onto-record-companies/",
+      "summary": "The move was announced in a message to industry partners from Apple on Thursday (August 20), obtained by MBW.",
+      "published": "2026-08-20T21:02:40.000Z",
+      "source": "Music Business Worldwide",
+      "sourceId": "mbw",
+      "via": null,
+      "category": "global",
+      "lang": "en",
+      "coverage": 1,
+      "titleJa": "Apple MusicがSunoのトラックでAIレーベルを叩くが、レコード会社に責任を押し付ける",
+      "summaryJa": "この動きは、MBWが入手した木曜日（ 8月20日）にAppleから業界パートナーへのメッセージで発表されました。",
+      "score": 21
+    },
+    {
+      "id": "6cf7aac731d312ba",
+      "title": "UMG-backed Music IP Holdings unveils AI music patent portfolio, aiming to ‘set a standard for how AI and music grow together’",
+      "url": "https://www.musicbusinessworldwide.com/umg-backed-music-ip-holdings-unveils-ai-music-patent-portfolio-aiming-to-set-a-standard-for-how-ai-and-music-grow-together/",
+      "summary": "Licenses, secured by Udio and GRAI, will support the development of licensed AI services including covers, remixes, and \"a wide range of interactive music experiences\"",
+      "published": "2026-08-20T20:16:15.000Z",
+      "source": "Music Business Worldwide",
+      "sourceId": "mbw",
+      "via": null,
+      "category": "global",
+      "lang": "en",
+      "coverage": 1,
+      "titleJa": "UMGが支援する音楽IPホールディングス、AI音楽特許ポートフォリオを発表、「AIと音楽がどのように共に成長するかの基準を設定する」ことを目指す",
+      "summaryJa": "UdioとGRAIによって保護されたライセンスは、カバー、リミックス、「幅広いインタラクティブな音楽体験」を含むライセンスされたAIサービスの開発をサポートします",
+      "score": 32
+    },
+    {
       "id": "e70a1fd685aa0fb0",
       "title": "EVABEAT Melody Sauce 3 レビュー：AIによる約1,000パターンのコード進行生成に対応した制作支援プラグイン",
       "url": "https://www.snrec.jp/entry/product/evabeat_melody-sauce-3",
@@ -331,7 +363,7 @@
       "category": "jp",
       "lang": "ja",
       "coverage": 1,
-      "score": 26
+      "score": 21
     },
     {
       "id": "3cf7d30598e0c29b",
@@ -344,7 +376,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 17,
+      "coverage": 20,
       "score": 45
     },
     {
@@ -386,7 +418,7 @@
       "via": null,
       "category": "jp",
       "lang": "ja",
-      "coverage": 7,
+      "coverage": 8,
       "score": 52
     },
     {
@@ -402,6 +434,21 @@
       "lang": "ja",
       "coverage": 1,
       "score": 10
+    },
+    {
+      "id": "f5961ed030f4ed2c",
+      "title": "Round Hill Music Sues Suno, Anthropic for Copyright Infringement, Seeking Up to $1 Billion in Damages",
+      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPUnFUZ2JIblhfekN2eEZROFg2TzNyOVlpMkNhZGJobUlkbjJrNUxVeWszQU1zMURRdXdSU0tjSHBhV2doaUFCYUtTeEQ1NmhON3FDb2F5RzVWR2k3ZGU1bXNYM055a3VGcHBTSTdWRDBzM3lldF9yQWJkYnViaGdQdzZGcGVkZVhwOFk4YVA0U2lVVkpVclB1THpWUUE3akhPYzNCc1IwSGo?oc=5",
+      "summary": "",
+      "published": "2026-08-18T18:07:00.000Z",
+      "source": "Variety",
+      "sourceId": "gnews-en-aimusic",
+      "via": "Googleニュース",
+      "category": "global",
+      "lang": "en",
+      "coverage": 1,
+      "titleJa": "ラウンドヒル・ミュージック、Anthropicの著作権侵害でSunoを訴え、最大10億$の損害賠償を求めている",
+      "score": 23
     },
     {
       "id": "fdff677b6e149cb7",
@@ -462,10 +509,10 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 2,
+      "coverage": 3,
       "titleJa": "ラウンドヒルは、SunoとAnthropicをそれぞれ最大10億$で訴えています。決着をつけようとしているわけではありません。",
       "summaryJa": "各苦情は、故意に侵害された作品ごとに最大150,000 $の法定損害賠償を求めています。",
-      "score": 24
+      "score": 32
     },
     {
       "id": "7a1c5171647a5001",
@@ -595,7 +642,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 9,
+      "coverage": 10,
       "score": 34
     },
     {
@@ -656,7 +703,7 @@
       "coverage": 1,
       "titleJa": "Suno、Anthropic Face $ 1 B AIトレーニングをめぐるラウンドヒルミュージックの著作権訴訟",
       "summaryJa": "Sunoが音楽業界との和解に達すると、Round Hillは戦いを計画していると言います。「これらの事件を裁判にかけるつもりです。」",
-      "score": 23
+      "score": 19
     },
     {
       "id": "b06ec6090dfafac2",
@@ -672,7 +719,7 @@
       "coverage": 1,
       "titleJa": "UMGとソニーが訴訟を起こす中、ロバート・キンクルはスノーとの取引を正当化します。「私の意見では、あなたはそれを受け入れます」。",
       "summaryJa": "Kynclは金曜日（ 8月14日）にSemaforのMixed Signalsポッドキャストに出演し、SunoとNetflixで音楽サービスを開始した理由について話し合った。",
-      "score": 16
+      "score": 12
     },
     {
       "id": "ee8d9ab5cee083fc",
@@ -685,10 +732,10 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 10,
+      "coverage": 11,
       "titleJa": "SunoのBMGライセンス契約、ダウンロード上限、透かしなどについて知っておくべき5つのこと",
       "summaryJa": "BMG取引は権利を提供し、キャップとウォーターマークはコントロールを提供します。他の2つは新しい出口です。1つはプロフェッショナル、もう1つはフィジカルです。",
-      "score": 47
+      "score": 43
     },
     {
       "id": "57dae9f7301e0484",
@@ -704,7 +751,7 @@
       "coverage": 1,
       "titleJa": "Jamendoは、Sunoに対する著作権侵害訴訟を提起してから6週間後に取り下げます",
       "summaryJa": "Sunoがプラットフォームのルールを書き換え、今後数週間以内にオーディオウォーターマークと指紋技術を採用すると述べているため、撤回が到着しました。",
-      "score": 23
+      "score": 19
     },
     {
       "id": "59f634d1ee647190",
@@ -718,7 +765,7 @@
       "category": "jp",
       "lang": "ja",
       "coverage": 1,
-      "score": 21
+      "score": 17
     },
     {
       "id": "dc0c3de08c0b1a0e",
@@ -802,7 +849,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 17,
+      "coverage": 18,
       "score": 30
     },
     {
@@ -950,10 +997,10 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 24,
+      "coverage": 25,
       "titleJa": "Suno、MIDIサポート、AIチャットバーを備えたStudio 2.0をリリース...ダウンロード制限なし",
       "summaryJa": "Sunoは、「グラミー賞を受賞したアーティスト」が過去にSuno Studioを使用して「チャートトップのヒットを作った」と主張している",
-      "score": 47
+      "score": 38
     },
     {
       "id": "192b20b8c5b83041",
@@ -969,7 +1016,7 @@
       "coverage": 1,
       "titleJa": "BeatportがAI生成音楽を禁止",
       "summaryJa": "人間の創造を支援するツールと、それを完全に置き換えるシステムとの間には違いがあります。…",
-      "score": 3
+      "score": -6
     },
     {
       "id": "1527c8b5953ddae8",
@@ -982,10 +1029,10 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 29,
+      "coverage": 30,
       "titleJa": "Suno Studio 2.0がDAWにAIアシスタントを導入",
       "summaryJa": "Suno氏は、新しいチャットボットは音楽制作を理解しているため、「バンドの他のメンバー」のように話すことができると述べています。",
-      "score": 36
+      "score": 27
     },
     {
       "id": "69b01aef69801f0e",
@@ -1000,7 +1047,7 @@
       "lang": "en",
       "coverage": 1,
       "titleJa": "Sunoは本物の音楽制作ツールのように見えようとしています",
-      "score": 12
+      "score": 3
     },
     {
       "id": "08dbef746631b3c5",
@@ -1015,7 +1062,7 @@
       "lang": "en",
       "coverage": 1,
       "titleJa": "Suno、MIDIサポートとAIチャットバーを備えたStudio 2.0を発表",
-      "score": 23
+      "score": 14
     },
     {
       "id": "6d91374cce08d3d4",
@@ -1031,7 +1078,7 @@
       "coverage": 1,
       "titleJa": "AIアシスタントが月間ユーザー数10億人を突破した翌日、TicketmasterがGoogleのGeminiでコネクテッドアプリをリリース",
       "summaryJa": "Ticketmasterによると、対象となるイベントは、関連するファン検索に基づいて自動的に表示され、クライアントからの追加の実装は必要ありません。",
-      "score": 14
+      "score": 5
     },
     {
       "id": "33b0982eb5011bcc",
@@ -1047,7 +1094,7 @@
       "coverage": 1,
       "titleJa": "Spotifyは、AIが生成したアーティストにラベルを付け、デフォルトで編集上またはアルゴリズム上の推奨事項から除外します",
       "summaryJa": "リスナーがAIによって生成されたプロフィールに従わない限り、Spotifyは人間以外のアーティストを推奨事項に含めることはありません。",
-      "score": 3
+      "score": -6
     },
     {
       "id": "17ee74ee2011166e",
@@ -1063,7 +1110,7 @@
       "coverage": 1,
       "titleJa": "ユニバーサルとMerlinの取引後、SpotifyはAI搭載の「ファンメイド」カバーとリミックスのためにKobaltと契約を結びました",
       "summaryJa": "これは、ユニバーサルミュージックグループ以外の音楽パブリッシャーとのこのツールの最初の契約です。",
-      "score": 3
+      "score": -6
     },
     {
       "id": "22a0a89c12e71b73",
@@ -1079,7 +1126,7 @@
       "coverage": 1,
       "titleJa": "SunoはBMGと「グローバルアライアンス」を結成し、ミュージシャンにAIの使用よりも「本当の選択肢」を提供",
       "summaryJa": "BMGは、アーティストの選択は契約の「指針」であり、「強力な保護を確立する」と述べています。",
-      "score": 12
+      "score": 3
     },
     {
       "id": "f6fabae68d03749f",
@@ -1395,7 +1442,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 33,
+      "coverage": 34,
       "titleJa": "BMGとSuno ReachがAIミュージックモデルのライセンス契約を締結",
       "summaryJa": "また、SunoのBMG作品の過去の使用を解決する契約に基づき、アーティストやソングライターはAIの入出力に使用される音楽をオプトインする必要があります。",
       "score": 27
@@ -1563,6 +1610,20 @@
       "score": 21
     },
     {
+      "id": "d2cb019c1328c752",
+      "title": "Spotify、AI生成アーティストを識別するラベル「AI Persona」導入 (音楽ナタリー)",
+      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxONWItMkdWVXFvMVBCc0VhVG14NHZiVVFMT29XRVBURldFOWpfV1dGYnhHMzRKQWRXTF8yc3I4dEs0TDd5TEpVMnJyd0IzbXptTnNuZVlhWHdKYlcwMkJLdFZyeFhpenRQVG42Rm1OZHZZNDRpTnNkeTdjTVJaanJoUlBFUWpod1R5NUhzeG9R?oc=5",
+      "summary": "",
+      "published": "2026-08-12T01:48:10.000Z",
+      "source": "Yahoo!ニュース",
+      "sourceId": "gnews-ja-aimusic",
+      "via": "Googleニュース",
+      "category": "jp",
+      "lang": "ja",
+      "coverage": 1,
+      "score": -3
+    },
+    {
       "id": "06de06526b97eeea",
       "title": "Suno limits Pro subscribers to 20 song downloads per month, while promising new models ‘developed in partnership with the music industry’",
       "url": "https://www.musicbusinessworldwide.com/suno-limits-subscribers-downloads-per-month/",
@@ -1573,7 +1634,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 29,
+      "coverage": 30,
       "titleJa": "Sunoは、「音楽業界と提携して開発された」新しいモデルを約束しながら、PROのサブスクライバーを1か月あたり20曲のダウンロードに制限しています",
       "summaryJa": "Suno氏は、月曜日（ 8月10日）のブログ投稿で、ダウンロード制限は「悪い俳優が音楽を大量輸出することをより困難にする」と述べた",
       "score": 27
@@ -1984,7 +2045,7 @@
       "via": null,
       "category": "jp",
       "lang": "ja",
-      "coverage": 43,
+      "coverage": 44,
       "score": 32
     },
     {
@@ -2042,7 +2103,7 @@
       "via": null,
       "category": "jp",
       "lang": "ja",
-      "coverage": 51,
+      "coverage": 52,
       "score": 41
     },
     {
@@ -2163,7 +2224,7 @@
       "via": null,
       "category": "jp",
       "lang": "ja",
-      "coverage": 169,
+      "coverage": 172,
       "score": 37
     },
     {
@@ -2277,7 +2338,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 56,
+      "coverage": 57,
       "titleJa": "Sunoは、AI生成音楽の透かしで合法的になりたいと考えています",
       "summaryJa": "Sunoは、「大規模な悪用」を防ぐために透かしとダウンロード制限を計画しています。",
       "score": 27
@@ -2373,7 +2434,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 56,
+      "coverage": 57,
       "titleJa": "法的な争いの中で、Sunoは曲に透かしを入れ始めると言います",
       "summaryJa": "Sunoの透かし機能は、同社がいくつかの面で法的闘争を戦っているときに登場します。",
       "score": 27
@@ -2389,7 +2450,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 56,
+      "coverage": 57,
       "titleJa": "Sunoはビニール市場に進出し、ユーザーがAIの曲を12インチのレコードにプレスできるようにする予定",
       "summaryJa": "同社は、プラットフォーム上で作られた曲を物理的なレコードに変換するサービスであるSuno Vinylのウェイティングリストを開設しました",
       "score": 27
@@ -2485,7 +2546,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 52,
+      "coverage": 53,
       "titleJa": "スノ、AI楽曲のダウンロードを制限する計画を公開、詳細「原則」「AIは模倣ではなく独創性を可能にするべきである」",
       "summaryJa": "新しい投稿は、Sunoが画期的な裁判所判決でドイツの曲の著作権を侵害した責任を問われてから約1週間後に到着した。",
       "score": 38
@@ -3143,7 +3204,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 66,
+      "coverage": 67,
       "score": 32
     },
     {
@@ -3219,7 +3280,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 36,
+      "coverage": 37,
       "score": 21
     },
     {
@@ -3491,7 +3552,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 69,
+      "coverage": 70,
       "titleJa": "ドイツのGEMAが提起した著作権侵害訴訟でSunoが敗訴",
       "summaryJa": "AI音楽ジェネレーターのSunoは、ドイツの収集協会GEMAが提起した著作権侵害訴訟で敗訴しました。収集協会は、Sunoが権利者へのライセンスまたは支払いなしにAIツールをトレーニングするために、著作権で保護された音楽を使用、保存、複製したと主張しています。ロイター通信は金曜日の朝（ 7月31日）に、ミュンヘン地方裁判所がスノー氏に判決を下したと報じた。",
       "score": 34
@@ -3648,7 +3709,7 @@
       "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOVnY2dXhLUnpIUnRjQ1c0UDJIVENRcmtkaHB0OGRYaUpyX1ZFbzVfZnltUmo4NGR4YXFvaXQzTjk5dkFRQ1A0V3UtTGNMdWpySFlNbVhiZ2s0ek5yVmhkUmt2UDZBSFg4SFdLU3VydG9jaU1reUlyMXlaRnFuQ2dUMHRINlg5ZTgtbll5N0IyYzNfYUtiR19TTE05Y9IBmwFBVV95cUxPUnJMWkxGcHIxT3lrcjdGaDhVWk16dFU2ZGw5ZG9sTnRES0FEakZfaEFab1liV0ZYa1RucDZsckktWUQzNWNsa0VUN05ncDJVQk5hdUttTW9QQ1loNkZsMGNVSXctdHdMWEYwaWN3VTVKMERLMF8zemdkOE9ERmlNcnBQZGlPd0dueFROeE9DTDVtcTVTaVFTZThXVQ?oc=5",
       "summary": "",
       "published": "2026-07-31T07:00:00.000Z",
-      "source": "DW.com",
+      "source": "dw.com",
       "sourceId": "gnews-en-aimusic",
       "via": "Googleニュース",
       "category": "global",
@@ -3742,7 +3803,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 140,
+      "coverage": 141,
       "score": 41
     },
     {
@@ -3798,7 +3859,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 81,
+      "coverage": 82,
       "score": 41
     },
     {
