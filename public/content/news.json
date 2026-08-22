@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-08-21T21:18:38.122Z",
+  "generatedAt": "2026-08-22T03:31:14.595Z",
   "count": 341,
   "newCount": 32,
-  "translatedCount": 1,
+  "translatedCount": 0,
   "ranking": [
     "07016b237813ccb3",
-    "3cf7d30598e0c29b",
     "ee8d9ab5cee083fc",
+    "3cf7d30598e0c29b",
     "36f00de6719be8e3",
     "bc9a5a861ae0c7ff"
   ],
@@ -177,10 +177,10 @@
       "id": "dtmstation",
       "name": "DTMステーション",
       "category": "jp",
-      "ok": true,
-      "fetched": 10,
-      "matched": 2,
-      "error": null
+      "ok": false,
+      "fetched": 0,
+      "matched": 0,
+      "error": "fetch failed"
     },
     {
       "id": "icon-jp",
@@ -374,8 +374,8 @@
       "via": null,
       "category": "jp",
       "lang": "ja",
-      "coverage": 2,
-      "score": 23
+      "coverage": 3,
+      "score": 31
     },
     {
       "id": "24ccb5beb8f164de",
@@ -391,7 +391,7 @@
       "coverage": 1,
       "titleJa": "UdioとGRAIがUMGとLiquidaxが支援するAI音楽特許を採用",
       "summaryJa": "この動きにより、UMGとそのパートナーは、参加しているAIモデルによって著作権がどのように使用され、補償されるかについて、より多くのコントロールを得ることができます。",
-      "score": 21
+      "score": 16
     },
     {
       "id": "36f00de6719be8e3",
@@ -404,7 +404,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 5,
+      "coverage": 6,
       "titleJa": "Apple MusicがSunoのトラックでAIレーベルを叩くが、レコード会社に責任を押し付ける",
       "summaryJa": "この動きは、MBWが入手した木曜日（ 8月20日）にAppleから業界パートナーへのメッセージで発表されました。",
       "score": 40
@@ -493,8 +493,8 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 31,
-      "score": 45
+      "coverage": 33,
+      "score": 41
     },
     {
       "id": "42039208a333b6ab",
@@ -508,7 +508,7 @@
       "category": "jp",
       "lang": "ja",
       "coverage": 1,
-      "score": 31
+      "score": 27
     },
     {
       "id": "2cf4380a1c7226d9",
@@ -522,7 +522,7 @@
       "category": "jp",
       "lang": "ja",
       "coverage": 2,
-      "score": 32
+      "score": 28
     },
     {
       "id": "07016b237813ccb3",
@@ -535,8 +535,8 @@
       "via": null,
       "category": "jp",
       "lang": "ja",
-      "coverage": 12,
-      "score": 52
+      "coverage": 13,
+      "score": 48
     },
     {
       "id": "7e72d4d1669399ce",
@@ -550,7 +550,7 @@
       "category": "jp",
       "lang": "ja",
       "coverage": 1,
-      "score": 10
+      "score": 6
     },
     {
       "id": "f5961ed030f4ed2c",
@@ -626,7 +626,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 7,
+      "coverage": 8,
       "titleJa": "ラウンドヒルは、SunoとAnthropicをそれぞれ最大10億$で訴えています。決着をつけようとしているわけではありません。",
       "summaryJa": "各苦情は、故意に侵害された作品ごとに最大150,000 $の法定損害賠償を求めています。",
       "score": 36
@@ -773,7 +773,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 14,
+      "coverage": 15,
       "score": 30
     },
     {
@@ -847,10 +847,10 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 1,
+      "coverage": 2,
       "titleJa": "UMGとソニーが訴訟を起こす中、ロバート・キンクルはスノーとの取引を正当化します。「私の意見では、あなたはそれを受け入れます」。",
       "summaryJa": "Kynclは金曜日（ 8月14日）にSemaforのMixed Signalsポッドキャストに出演し、SunoとNetflixで音楽サービスを開始した理由について話し合った。",
-      "score": 12
+      "score": 20
     },
     {
       "id": "ee8d9ab5cee083fc",
@@ -863,7 +863,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 15,
+      "coverage": 16,
       "titleJa": "SunoのBMGライセンス契約、ダウンロード上限、透かしなどについて知っておくべき5つのこと",
       "summaryJa": "BMG取引は権利を提供し、キャップとウォーターマークはコントロールを提供します。他の2つは新しい出口です。1つはプロフェッショナル、もう1つはフィジカルです。",
       "score": 43
@@ -980,7 +980,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 24,
+      "coverage": 25,
       "score": 30
     },
     {
@@ -1128,7 +1128,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 29,
+      "coverage": 30,
       "titleJa": "Suno、MIDIサポート、AIチャットバーを備えたStudio 2.0をリリース...ダウンロード制限なし",
       "summaryJa": "Sunoは、「グラミー賞を受賞したアーティスト」が過去にSuno Studioを使用して「チャートトップのヒットを作った」と主張している",
       "score": 38
@@ -1160,7 +1160,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 34,
+      "coverage": 35,
       "titleJa": "Suno Studio 2.0がDAWにAIアシスタントを導入",
       "summaryJa": "Suno氏は、新しいチャットボットは音楽制作を理解しているため、「バンドの他のメンバー」のように話すことができると述べています。",
       "score": 27
@@ -1472,21 +1472,6 @@
       "score": 5
     },
     {
-      "id": "7e1591ce378c1f65",
-      "title": "Bmg And Suno Announce Global Strategic Alliance Advancing Ai Music Opportunities And Revenue Streams",
-      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOWGlUSTRpR2I4MFl3UEhybW5RcHJ2cHlKYmJvZkFXTDJqNjB2Tk0tM2JPU0NXN01ZdExOc2ptdjIyMzBNZnh6Z2xWOVlja1ZNdHpOOFI4YnJJeFFrREp2OURmbEJ5cW96R0llazdvdGQwSnptTmJycWVKZWl3bDFkV0Q4QVU0YkpUY05TQTRmSHcxdzNDbWFNdWIyMEE0dUttVnllWGxPRk1kRUE1SUNvU2lvNlFLUFZNczF2c3FkRlF1QnM?oc=5",
-      "summary": "",
-      "published": "2026-08-12T10:30:30.000Z",
-      "source": "bmg.com",
-      "sourceId": "gnews-en-aimusic",
-      "via": "Googleニュース",
-      "category": "global",
-      "lang": "en",
-      "coverage": 1,
-      "titleJa": "BMGとSuno、AI音楽の機会と収益の流れを促進するグローバル戦略的提携を発表",
-      "score": 14
-    },
-    {
       "id": "1028482ba54d7c96",
       "title": "Suno signs another music licensing deal – with BMG",
       "url": "https://musically.com/2026/08/12/suno-bmg-ai-music-licensing-deal/",
@@ -1513,7 +1498,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 38,
+      "coverage": 39,
       "titleJa": "BMGとSuno ReachがAIミュージックモデルのライセンス契約を締結",
       "summaryJa": "また、SunoのBMG作品の過去の使用を解決する契約に基づき、アーティストやソングライターはAIの入出力に使用される音楽をオプトインする必要があります。",
       "score": 27
@@ -1595,6 +1580,21 @@
       "titleJa": "Spotifyは、プラットフォームがAI生成の「アーティスト」をマークするために「ペルソナバッジ」を追加するため、ついにAIスロップに厳しくなりました",
       "summaryJa": "対策は、人間のアーティストを乗っ取ろうとする詐欺師を阻止する必要があります",
       "score": -6
+    },
+    {
+      "id": "7e1591ce378c1f65",
+      "title": "Bmg And Suno Announce Global Strategic Alliance Advancing Ai Music Opportunities And Revenue Streams",
+      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOWGlUSTRpR2I4MFl3UEhybW5RcHJ2cHlKYmJvZkFXTDJqNjB2Tk0tM2JPU0NXN01ZdExOc2ptdjIyMzBNZnh6Z2xWOVlja1ZNdHpOOFI4YnJJeFFrREp2OURmbEJ5cW96R0llazdvdGQwSnptTmJycWVKZWl3bDFkV0Q4QVU0YkpUY05TQTRmSHcxdzNDbWFNdWIyMEE0dUttVnllWGxPRk1kRUE1SUNvU2lvNlFLUFZNczF2c3FkRlF1QnM?oc=5",
+      "summary": "",
+      "published": "2026-08-12T07:00:00.000Z",
+      "source": "bmg.com",
+      "sourceId": "gnews-en-aimusic",
+      "via": "Googleニュース",
+      "category": "global",
+      "lang": "en",
+      "coverage": 1,
+      "titleJa": "BMGとSuno、AI音楽の機会と収益の流れを促進するグローバル戦略的提携を発表",
+      "score": 14
     },
     {
       "id": "4f9c6ce35b10620b",
@@ -2176,7 +2176,7 @@
       "via": null,
       "category": "jp",
       "lang": "ja",
-      "coverage": 48,
+      "coverage": 49,
       "score": 32
     },
     {
@@ -2234,7 +2234,7 @@
       "via": null,
       "category": "jp",
       "lang": "ja",
-      "coverage": 56,
+      "coverage": 57,
       "score": 41
     },
     {
@@ -2355,7 +2355,7 @@
       "via": null,
       "category": "jp",
       "lang": "ja",
-      "coverage": 187,
+      "coverage": 191,
       "score": 37
     },
     {
@@ -2469,7 +2469,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 61,
+      "coverage": 62,
       "titleJa": "Sunoは、AI生成音楽の透かしで合法的になりたいと考えています",
       "summaryJa": "Sunoは、「大規模な悪用」を防ぐために透かしとダウンロード制限を計画しています。",
       "score": 27
@@ -2565,7 +2565,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 61,
+      "coverage": 62,
       "titleJa": "法的な争いの中で、Sunoは曲に透かしを入れ始めると言います",
       "summaryJa": "Sunoの透かし機能は、同社がいくつかの面で法的闘争を戦っているときに登場します。",
       "score": 27
@@ -2581,7 +2581,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 61,
+      "coverage": 62,
       "titleJa": "Sunoはビニール市場に進出し、ユーザーがAIの曲を12インチのレコードにプレスできるようにする予定",
       "summaryJa": "同社は、プラットフォーム上で作られた曲を物理的なレコードに変換するサービスであるSuno Vinylのウェイティングリストを開設しました",
       "score": 27
@@ -2677,7 +2677,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 57,
+      "coverage": 58,
       "titleJa": "スノ、AI楽曲のダウンロードを制限する計画を公開、詳細「原則」「AIは模倣ではなく独創性を可能にするべきである」",
       "summaryJa": "新しい投稿は、Sunoが画期的な裁判所判決でドイツの曲の著作権を侵害した責任を問われてから約1週間後に到着した。",
       "score": 38
@@ -3029,10 +3029,10 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 3,
+      "coverage": 4,
       "titleJa": "Sunoのデータ侵害について知っておくべき5つのこと–そしてAI音楽会社がモデルをどのように訓練しているかを暴露したハッキング",
       "summaryJa": "記録が公開されたSunoの顧客の一部は、違反について通知されていないと述べた。",
-      "score": 19
+      "score": 27
     },
     {
       "id": "959b092b745b9cc7",
@@ -3335,7 +3335,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 71,
+      "coverage": 72,
       "score": 32
     },
     {
@@ -3411,7 +3411,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 41,
+      "coverage": 42,
       "score": 21
     },
     {
@@ -3654,7 +3654,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 74,
+      "coverage": 75,
       "titleJa": "ドイツのGEMAが提起した著作権侵害訴訟でSunoが敗訴",
       "summaryJa": "AI音楽ジェネレーターのSunoは、ドイツの収集協会GEMAが提起した著作権侵害訴訟で敗訴しました。収集協会は、Sunoが権利者へのライセンスまたは支払いなしにAIツールをトレーニングするために、著作権で保護された音楽を使用、保存、複製したと主張しています。ロイター通信は金曜日の朝（ 7月31日）に、ミュンヘン地方裁判所がスノー氏に判決を下したと報じた。",
       "score": 34
@@ -3920,7 +3920,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 145,
+      "coverage": 147,
       "score": 41
     },
     {
@@ -3976,7 +3976,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 86,
+      "coverage": 87,
       "score": 41
     },
     {
@@ -4293,7 +4293,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 64,
+      "coverage": 65,
       "score": 21
     },
     {
