@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-08-26T03:42:09.899Z",
-  "count": 372,
-  "newCount": 39,
+  "generatedAt": "2026-08-26T09:28:39.761Z",
+  "count": 375,
+  "newCount": 33,
   "translatedCount": 0,
   "ranking": [
     "7f1fd98150c73d94",
-    "21d36372c94ad925",
     "5260a75c2f019f73",
     "36f00de6719be8e3",
+    "21d36372c94ad925",
     "4d5e0d1237823de0"
   ],
   "sources": [
@@ -17,7 +17,7 @@
       "category": "jp",
       "ok": true,
       "fetched": 40,
-      "matched": 37,
+      "matched": 35,
       "error": null
     },
     {
@@ -292,6 +292,20 @@
   ],
   "items": [
     {
+      "id": "ac47446afea7f8e1",
+      "title": "AIで制作の楽曲、音楽チャートから除外 オーストラリア",
+      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE4zMV9MTlZpeGl1SmtfUE5wdFpUZk4wSmpqTzBDeVBMdmRBeHBhYnVCcGlocng4NlFocWtQTEplMTRHdC1lV3FzdTZlRzJCTnBiT21NbUxuMWhpcG44TjFUQ2pvVVXSAWRBVV95cUxOMzFfTE5WaXhpdUprX1BOcHRaVGZOMEpqak8wQ3lQTHZkQXhwYWJ1QnBpaHJ4ODZRaHFrUExKZTE0R3QtZVdxc3U2ZUcyQk5wYk9tTW1MbjFoaXBuOE4xVENqb1VV?oc=5",
+      "summary": "",
+      "published": "2026-08-26T05:23:38.000Z",
+      "source": "BBC",
+      "sourceId": "gnews-ja-aimusic",
+      "via": "Googleニュース",
+      "category": "jp",
+      "lang": "ja",
+      "coverage": 1,
+      "score": 15
+    },
+    {
       "id": "abf5336727e89043",
       "title": "MetaのAIグラス「Meta Glasses」日本発売。50600円から",
       "url": "https://av.watch.impress.co.jp/docs/news/2135673.html",
@@ -432,7 +446,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 4,
+      "coverage": 5,
       "score": 39
     },
     {
@@ -462,8 +476,8 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 8,
-      "score": 39
+      "coverage": 10,
+      "score": 34
     },
     {
       "id": "5b8745aa47f7b871",
@@ -479,7 +493,7 @@
       "coverage": 1,
       "titleJa": "ARIAは、完全にAI生成されたトラックを除いて、チャートのAI適格性ルールを設定します",
       "summaryJa": "資格を得るには、録音は「実質的に人間が作った」ものであり、「ストリームやチャートの操作に関する懸念がない」ものでなければなりません。",
-      "score": 12
+      "score": 7
     },
     {
       "id": "5e86d6d84111cbe5",
@@ -600,6 +614,20 @@
       "score": 29
     },
     {
+      "id": "d81d88679aed6e03",
+      "title": "生成AIと一緒に音楽プレーヤー「DAL Player」を鍛え直す。24bitの壁とGitHub初公開まで【藤本健のDigital Audio Laboratory】",
+      "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE8tUlc0cjlldW53blJnakxjMUg5bjlLTFdwQ1lENlUtWExwbVRTT2syNkdPOXh0UTA3S0pFOEJPQm8ydkJyNnd5cDNrNldqeWhHdWxYS2RmVWJCZTB3cVp3d2tuVmtQYVcyTUFZ?oc=5",
+      "summary": "",
+      "published": "2026-08-23T23:00:00.000Z",
+      "source": "AV Watch",
+      "sourceId": "gnews-ja-aimusic",
+      "via": "Googleニュース",
+      "category": "jp",
+      "lang": "ja",
+      "coverage": 1,
+      "score": 21
+    },
+    {
       "id": "d4cc9a1f39fffb81",
       "title": "Here’s What Dr. Dre Really Thinks About AI in Music",
       "url": "https://www.billboard.com/music/music-news/dr-dre-ai-music-1236322613/",
@@ -644,6 +672,20 @@
       "titleJa": "Musical Spirographを使用したブラウザでのDoodleジェネレーティブコンポジション",
       "summaryJa": "子供の頃にスピログラフを持っていて、それに夢中になっていたのを覚えています。その幾何学模様は催眠的で豪華です。私はまた、生成的な音楽作曲が大好きです。ブラウザタブでこれら2つのことを一緒にすると、私は夢中になります。ミュージカルスピログラフは比較的シンプルなコンセプトです。に従って画面の周りにダッシュする一連のポイント",
       "score": 3
+    },
+    {
+      "id": "a48faa450a276ccd",
+      "title": "AIを活用した音楽：データを作成したアーティストへの報酬は誰が支払うのか？",
+      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPOTRHNi1VWWQ1dXlKNWpFUGdfNlJlQWx1MERsb3p6MnU2bVR1SjBQTlpHOWQ3WlpRQVEyLThoQVlkaEdHOW40Z2tJYzY1RmF1Vjd0OUM3Q3RrYXZFWXRpLTgxZ0NKMFgxV0VUa0NLclJPWThtLTRSM3dES0kxVzBEOVdPbktZRjRqdkx6dG9CRVVSaXM?oc=5",
+      "summary": "",
+      "published": "2026-08-22T03:10:32.000Z",
+      "source": "Vietnam.vn",
+      "sourceId": "gnews-ja-aimusic",
+      "via": "Googleニュース",
+      "category": "jp",
+      "lang": "ja",
+      "coverage": 1,
+      "score": 6
     },
     {
       "id": "826db73c79dc95c4",
@@ -931,7 +973,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 65,
+      "coverage": 67,
       "score": 32
     },
     {
@@ -973,7 +1015,7 @@
       "via": null,
       "category": "jp",
       "lang": "ja",
-      "coverage": 25,
+      "coverage": 26,
       "score": 39
     },
     {
@@ -1211,7 +1253,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 27,
+      "coverage": 28,
       "score": 21
     },
     {
@@ -1255,7 +1297,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 18,
+      "coverage": 19,
       "titleJa": "UMGとソニーが訴訟を起こす中、ロバート・キンクルはスノーとの取引を正当化します。「私の意見では、あなたはそれを受け入れます」。",
       "summaryJa": "Kynclは金曜日（ 8月14日）にSemaforのMixed Signalsポッドキャストに出演し、SunoとNetflixで音楽サービスを開始した理由について話し合った。",
       "score": 27
@@ -1271,7 +1313,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 32,
+      "coverage": 33,
       "titleJa": "SunoのBMGライセンス契約、ダウンロード上限、透かしなどについて知っておくべき5つのこと",
       "summaryJa": "BMG取引は権利を提供し、キャップとウォーターマークはコントロールを提供します。他の2つは新しい出口です。1つはプロフェッショナル、もう1つはフィジカルです。",
       "score": 34
@@ -1354,7 +1396,7 @@
       "title": "係争中の音楽生成AI「Suno」、アナログレコード市場参入",
       "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE1UQXJxUzBFOTYzczFtYlcxOFQ0Vk5yM0VzR0hwRGRkOGtRZXlRSWE5U19MRVhQeGwtVEstTlhkYnU1eERNRjBWNzQ2Nklab1NMc1NSMQ?oc=5",
       "summary": "",
-      "published": "2026-08-17T09:00:35.000Z",
+      "published": "2026-08-17T07:00:00.000Z",
       "source": "音楽業界総合情報サイト",
       "sourceId": "gnews-ja-suno",
       "via": "Googleニュース",
@@ -1500,20 +1542,6 @@
       "score": 14
     },
     {
-      "id": "e586bfe6ac49c1a0",
-      "title": "中国MiniMax、音楽生成AI「Music3」を無償公開 日本語ボーカルで最大5分の楽曲をローカル生成可能に",
-      "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTFBFaXpScHJDM0tUWkZJekFoc3BZOW1NYnVWNks1Zi1rNlVXRVB0dE10bVBRMlRZdHRwM2dyNE5MRXZNaHNoWGt0LVN5dXVjT3NUTzIydE5TWDVUY0Z0RlBUOVF1Qng3aVVzMGdHTGx0S3R5OHAz?oc=5",
-      "summary": "",
-      "published": "2026-08-14T07:00:00.000Z",
-      "source": "BigGo ファイナンス",
-      "sourceId": "gnews-ja-suno",
-      "via": "Googleニュース",
-      "category": "jp",
-      "lang": "ja",
-      "coverage": 1,
-      "score": 30
-    },
-    {
       "id": "167be9cbb0654953",
       "title": "Suno Studio 2.0公開｜ブラウザDAWにMIDIとオートメーション搭載",
       "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE1lYWI1cDBsaGJybU4xbjNabGRWcjQwMVp1ZkhjWERsOXZrU2xqc3J3RGNoMXZodDdZRlJLU2FVLUxaZDNVNW1aU1dhMmFHMmVfMzkw?oc=5",
@@ -1566,7 +1594,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 46,
+      "coverage": 47,
       "titleJa": "Suno、MIDIサポート、AIチャットバーを備えたStudio 2.0をリリース...ダウンロード制限なし",
       "summaryJa": "Sunoは、「グラミー賞を受賞したアーティスト」が過去にSuno Studioを使用して「チャートトップのヒットを作った」と主張している",
       "score": 38
@@ -1598,7 +1626,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 50,
+      "coverage": 51,
       "titleJa": "Suno Studio 2.0がDAWにAIアシスタントを導入",
       "summaryJa": "Suno氏は、新しいチャットボットは音楽制作を理解しているため、「バンドの他のメンバー」のように話すことができると述べています。",
       "score": 27
@@ -1745,6 +1773,20 @@
       "titleJa": "ブライアン・メイは、クイーンズ・ザ・ゲームのカバーを再現するようAIに依頼しました。彼は結果に満足していませんでした。「これがまもなく世界を支配する知性のようなものですか？ ？ ！」",
       "summaryJa": "ギタリストはまた、深刻な環境上の嘆願をしました",
       "score": -6
+    },
+    {
+      "id": "e586bfe6ac49c1a0",
+      "title": "中国MiniMax、音楽生成AI「Music3」を無償公開 日本語ボーカルで最大5分の楽曲をローカル生成可能に",
+      "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTFBFaXpScHJDM0tUWkZJekFoc3BZOW1NYnVWNks1Zi1rNlVXRVB0dE10bVBRMlRZdHRwM2dyNE5MRXZNaHNoWGt0LVN5dXVjT3NUTzIydE5TWDVUY0Z0RlBUOVF1Qng3aVVzMGdHTGx0S3R5OHAz?oc=5",
+      "summary": "",
+      "published": "2026-08-13T07:00:00.000Z",
+      "source": "BigGo ファイナンス",
+      "sourceId": "gnews-ja-suno",
+      "via": "Googleニュース",
+      "category": "jp",
+      "lang": "ja",
+      "coverage": 1,
+      "score": 30
     },
     {
       "id": "08dbef746631b3c5",
@@ -1936,7 +1978,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 54,
+      "coverage": 55,
       "titleJa": "BMGとSuno ReachがAIミュージックモデルのライセンス契約を締結",
       "summaryJa": "また、SunoのBMG作品の過去の使用を解決する契約に基づき、アーティストやソングライターはAIの入出力に使用される音楽をオプトインする必要があります。",
       "score": 27
@@ -1952,7 +1994,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 29,
+      "coverage": 30,
       "titleJa": "Sunoは、新しい音楽モデルの発売に先立ち、BMGとグローバルライセンス契約を締結",
       "summaryJa": "BMGは、9か月前にワーナー・ミュージック・グループがAI企業との提携を発表して以来、Sunoとのライセンス契約を締結した最初の重要な権利者である。",
       "score": 27
@@ -2203,7 +2245,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 37,
+      "coverage": 38,
       "titleJa": "Sunoは、「音楽業界と提携して開発された」新しいモデルを約束しながら、PROのサブスクライバーを1か月あたり20曲のダウンロードに制限しています",
       "summaryJa": "Suno氏は、月曜日（ 8月10日）のブログ投稿で、ダウンロード制限は「悪い俳優が音楽を大量輸出することをより困難にする」と述べた",
       "score": 27
@@ -2614,7 +2656,7 @@
       "via": null,
       "category": "jp",
       "lang": "ja",
-      "coverage": 65,
+      "coverage": 66,
       "score": 32
     },
     {
@@ -2672,7 +2714,7 @@
       "via": null,
       "category": "jp",
       "lang": "ja",
-      "coverage": 73,
+      "coverage": 74,
       "score": 41
     },
     {
@@ -2807,7 +2849,7 @@
       "via": null,
       "category": "jp",
       "lang": "ja",
-      "coverage": 248,
+      "coverage": 251,
       "score": 37
     },
     {
@@ -2937,7 +2979,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 78,
+      "coverage": 79,
       "titleJa": "Sunoは、AI生成音楽の透かしで合法的になりたいと考えています",
       "summaryJa": "Sunoは、「大規模な悪用」を防ぐために透かしとダウンロード制限を計画しています。",
       "score": 27
@@ -3033,7 +3075,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 78,
+      "coverage": 79,
       "titleJa": "法的な争いの中で、Sunoは曲に透かしを入れ始めると言います",
       "summaryJa": "Sunoの透かし機能は、同社がいくつかの面で法的闘争を戦っているときに登場します。",
       "score": 27
@@ -3049,7 +3091,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 78,
+      "coverage": 79,
       "titleJa": "Sunoはビニール市場に進出し、ユーザーがAIの曲を12インチのレコードにプレスできるようにする予定",
       "summaryJa": "同社は、プラットフォーム上で作られた曲を物理的なレコードに変換するサービスであるSuno Vinylのウェイティングリストを開設しました",
       "score": 27
@@ -3145,7 +3187,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 74,
+      "coverage": 75,
       "titleJa": "スノ、AI楽曲のダウンロードを制限する計画を公開、詳細「原則」「AIは模倣ではなく独創性を可能にするべきである」",
       "summaryJa": "新しい投稿は、Sunoが画期的な裁判所判決でドイツの曲の著作権を侵害した責任を問われてから約1週間後に到着した。",
       "score": 38
@@ -3775,7 +3817,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 88,
+      "coverage": 89,
       "score": 32
     },
     {
@@ -3851,7 +3893,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 55,
+      "coverage": 56,
       "score": 21
     },
     {
@@ -4094,7 +4136,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 91,
+      "coverage": 92,
       "titleJa": "ドイツのGEMAが提起した著作権侵害訴訟でSunoが敗訴",
       "summaryJa": "AI音楽ジェネレーターのSunoは、ドイツの収集協会GEMAが提起した著作権侵害訴訟で敗訴しました。収集協会は、Sunoが権利者へのライセンスまたは支払いなしにAIツールをトレーニングするために、著作権で保護された音楽を使用、保存、複製したと主張しています。ロイター通信は金曜日の朝（ 7月31日）に、ミュンヘン地方裁判所がスノー氏に判決を下したと報じた。",
       "score": 34
@@ -4193,7 +4235,7 @@
       "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQbmFORUk2Tkt3UjM5MC1lQzNkSXVSVXRvelExTDhBNnc5RlhUVzItTDRiMkNONTgtd0JIdTE5dDNBVzhvWlFQRm8xVXJEc2ROOHY2RHBmeUhlblVnMnc2NFYtU0FieU9TMGpEZ3JHT1FTeGQ1WXFzYWxYdHlXaElKLXZhcEh6VUQ4YktNeDVuQzNPWENVb28yeWhpMU5xRE1WWEU1ZDBqZ0VNblpfNktTZ3hzQjZSb28?oc=5",
       "summary": "",
       "published": "2026-07-31T07:00:00.000Z",
-      "source": "musicweek.com",
+      "source": "Music Wee",
       "sourceId": "gnews-en-aimusic",
       "via": "Googleニュース",
       "category": "global",
@@ -4375,7 +4417,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 179,
+      "coverage": 181,
       "score": 41
     },
     {
@@ -4431,7 +4473,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 103,
+      "coverage": 104,
       "score": 41
     },
     {
