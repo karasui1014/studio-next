@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-08-26T09:28:39.761Z",
-  "count": 375,
-  "newCount": 33,
-  "translatedCount": 0,
+  "generatedAt": "2026-08-26T13:44:29.050Z",
+  "count": 382,
+  "newCount": 38,
+  "translatedCount": 7,
   "ranking": [
-    "7f1fd98150c73d94",
     "5260a75c2f019f73",
     "36f00de6719be8e3",
+    "7f1fd98150c73d94",
     "21d36372c94ad925",
     "4d5e0d1237823de0"
   ],
@@ -106,8 +106,8 @@
       "name": "Music Ally",
       "category": "global",
       "ok": true,
-      "fetched": 14,
-      "matched": 0,
+      "fetched": 15,
+      "matched": 7,
       "error": null
     },
     {
@@ -292,6 +292,54 @@
   ],
   "items": [
     {
+      "id": "8d3913d7bf3b2219",
+      "title": "ElevenMusic AI tool adds ‘section-by-section’ editing for songs",
+      "url": "https://musically.com/2026/08/26/elevenmusic-ai-tool-adds-section-by-section-editing-for-songs/",
+      "summary": "Stability AI may be raising big funding from the biggest music companies, but one of its rivals in the label-approved AI-music sector is rolling out new features this week. The post is from Music Ally .",
+      "published": "2026-08-26T12:58:16.000Z",
+      "source": "Music Ally",
+      "sourceId": "musically",
+      "via": null,
+      "category": "global",
+      "lang": "en",
+      "coverage": 1,
+      "titleJa": "ElevenMusic AIツールが曲の「セクションごと」の編集を追加",
+      "summaryJa": "Stability AIは大手音楽会社から大きな資金を調達しているかもしれないが、レーベルが承認したAI音楽セクターのライバルの1つが今週、新機能を展開している。この投稿はMusic Allyからのものです。",
+      "score": 12
+    },
+    {
+      "id": "cb70607eaa88ee8f",
+      "title": "Stability AI raises $76m from investors including major labels",
+      "url": "https://musically.com/2026/08/26/stability-ai-raises-76m-from-investors-including-major-labels/",
+      "summary": "The three major labels are no longer merely licensing AI startups: they’re also investing in them. Witness Stability AI’s announcement yesterday of a $76m Series B funding round from investors including UMG, Sony Music and WMG – as well as gaming giant Electronic Arts. The post is from Music Ally .",
+      "published": "2026-08-26T12:30:00.000Z",
+      "source": "Music Ally",
+      "sourceId": "musically",
+      "via": null,
+      "category": "global",
+      "lang": "en",
+      "coverage": 1,
+      "titleJa": "Stability AIが主要レーベルを含む投資家から7600万$を調達",
+      "summaryJa": "3つの主要レーベルは、もはや単なるAIスタートアップのライセンス供与ではなく、AIスタートアップにも投資している。昨日、Stability AIがUMG、Sony Music、WMGなどの投資家から$ 76 MのシリーズB資金調達ラウンドを発表しました。この投稿はMusic Allyからのものです。",
+      "score": 4
+    },
+    {
+      "id": "6ba7a4589ab1b4fe",
+      "title": "Billboard and Luminate promise more transparency around AI music",
+      "url": "https://musically.com/2026/08/26/billboard-and-luminate-promise-more-transparency-around-ai-music/",
+      "summary": "Trade publication Billboard and research firm Luminate are longstanding partners, particularly around the former’s US charts. They also both made AI-music-related announcements yesterday. The post is from Music Ally .",
+      "published": "2026-08-26T12:30:00.000Z",
+      "source": "Music Ally",
+      "sourceId": "musically",
+      "via": null,
+      "category": "global",
+      "lang": "en",
+      "coverage": 1,
+      "titleJa": "ビルボードとLuminateは、AI音楽に関する透明性を高めることを約束します",
+      "summaryJa": "業界誌ビルボード（ Billboard ）と調査会社ルミネート（ Luminate ）は、特に前者の米国チャートの周りで、長年のパートナーです。両社とも昨日、AI関連の発表を行った。この投稿はMusic Allyからのものです。",
+      "score": 12
+    },
+    {
       "id": "ac47446afea7f8e1",
       "title": "AIで制作の楽曲、音楽チャートから除外 オーストラリア",
       "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE4zMV9MTlZpeGl1SmtfUE5wdFpUZk4wSmpqTzBDeVBMdmRBeHBhYnVCcGlocng4NlFocWtQTEplMTRHdC1lV3FzdTZlRzJCTnBiT21NbUxuMWhpcG44TjFUQ2pvVVXSAWRBVV95cUxOMzFfTE5WaXhpdUprX1BOcHRaVGZOMEpqak8wQ3lQTHZkQXhwYWJ1QnBpaHJ4ODZRaHFrUExKZTE0R3QtZVdxc3U2ZUcyQk5wYk9tTW1MbjFoaXBuOE4xVENqb1VV?oc=5",
@@ -433,7 +481,55 @@
       "category": "jp",
       "lang": "ja",
       "coverage": 1,
-      "score": 15
+      "score": 10
+    },
+    {
+      "id": "bc3ddf12333cb248",
+      "title": "TikTok’s SoundOn signs AI-assisted ‘Gina’s Pet Bangers’ creator Gina Jones",
+      "url": "https://musically.com/2026/08/25/ginas-pet-bangers-tiktok-soundon-ai-music/",
+      "summary": "TikTok is signing AI-music creators now? The story of Gina Jones, SoundOn and Gina’s Pet Bangers is. morenuanced than that. The post is from Music Ally .",
+      "published": "2026-08-25T13:12:42.000Z",
+      "source": "Music Ally",
+      "sourceId": "musically",
+      "via": null,
+      "category": "global",
+      "lang": "en",
+      "coverage": 1,
+      "titleJa": "TikTokのSoundOnは、AI支援の「ジーナのペットバンガーズ」クリエイターのジーナ・ジョーンズに署名",
+      "summaryJa": "TikTokは現在、AI音楽クリエイターと契約していますか？ジーナ・ジョーンズ、サウンドオン、ジーナのペット・バンガーズのストーリーは、それよりもニュアンスがあります。この投稿はMusic Allyからのものです。",
+      "score": 7
+    },
+    {
+      "id": "e847b9ada85f69c6",
+      "title": "ARIA updates its chart rules for songs using generative AI",
+      "url": "https://musically.com/2026/08/25/aria-updates-its-chart-rules-for-songs-using-generative-ai/",
+      "summary": "Last month a group of labels including all three majors proposed new rules governing how music made using GenAI technologies should be treated by official charts. The post is from Music Ally .",
+      "published": "2026-08-25T12:30:00.000Z",
+      "source": "Music Ally",
+      "sourceId": "musically",
+      "via": null,
+      "category": "global",
+      "lang": "en",
+      "coverage": 1,
+      "titleJa": "ARIA、ジェネレーティブAIを使用して曲のチャートルールを更新",
+      "summaryJa": "先月、3つのメジャーすべてを含むレーベルのグループが、GenAIテクノロジーを使用して作られた音楽を公式チャートで扱う方法を規定する新しい規則を提案しました。この投稿はMusic Allyからのものです。",
+      "score": 7
+    },
+    {
+      "id": "5b1fb64eec440f2a",
+      "title": "Chartmetric says its Flow AI is ‘not just another AI chatbot’",
+      "url": "https://musically.com/2026/08/25/chartmetric-says-its-flow-ai-is-not-just-another-ai-chatbot/",
+      "summary": "If there’s one area of the music industry that’s ripe for some positive involvement of AI, it’s analytics. Having a deluge of streaming and social data hitting you in the nose is all very well, but making sense of it is another challenge. The post is from Music Ally .",
+      "published": "2026-08-25T12:30:00.000Z",
+      "source": "Music Ally",
+      "sourceId": "musically",
+      "via": null,
+      "category": "global",
+      "lang": "en",
+      "coverage": 1,
+      "titleJa": "Chartmetricは、そのFlow AIは「単なる別のAIチャットボットではない」と述べています",
+      "summaryJa": "音楽業界にAIの積極的な関与のために熟した分野が1つあるとすれば、それは分析です。大量のストリーミングとソーシャルデータがあなたの鼻に当たることはすべて非常に良いことですが、それを理解することは別の課題です。この投稿はMusic Allyからのものです。",
+      "score": 7
     },
     {
       "id": "7f1fd98150c73d94",
@@ -446,8 +542,8 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 5,
-      "score": 39
+      "coverage": 6,
+      "score": 34
     },
     {
       "id": "996f676b2697162d",
@@ -463,7 +559,7 @@
       "coverage": 1,
       "titleJa": "AIモデルは、彼らの録音に基づいて象徴的なジャズピアニストを識別すると同時に、彼らの「音楽の指紋」を明らかにすることができます",
       "summaryJa": "研究は、帰属のない著作物の可能性のある著者を示唆するために使用される可能性がある、とその著者は言う",
-      "score": 12
+      "score": 7
     },
     {
       "id": "21d36372c94ad925",
@@ -476,7 +572,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 10,
+      "coverage": 12,
       "score": 34
     },
     {
@@ -542,6 +638,22 @@
       "score": 7
     },
     {
+      "id": "fab4c83b9311f1f2",
+      "title": "Jimmy Iovine says AI-music firms: ‘have terrible communication skills’",
+      "url": "https://musically.com/2026/08/24/jimmy-iovine-says-ai-music-firms-have-terrible-communication-skills/",
+      "summary": "Former Apple Music exec Jimmy Iovine is always good for a snappy quote or two about music-tech, particularly when he’s being interviewed alongside his Beats co-founder Dr Dre. Their latest profile, in the New York Times, continues the trend. The post is from Music Ally .",
+      "published": "2026-08-24T14:25:15.000Z",
+      "source": "Music Ally",
+      "sourceId": "musically",
+      "via": null,
+      "category": "global",
+      "lang": "en",
+      "coverage": 1,
+      "titleJa": "Jimmy Iovine氏は、AI音楽会社は「コミュニケーションスキルが低い」と述べています",
+      "summaryJa": "元Apple MusicのエグゼクティブであるJimmy Iovine氏は、特にBeatsの共同創設者であるDr Dre氏と一緒にインタビューを受けているとき、音楽技術についてのスナッピーな引用をするのに適しています。ニューヨーク・タイムズに掲載された彼らの最新のプロフィールは、この傾向を続けています。この投稿はMusic Allyからのものです。",
+      "score": 7
+    },
+    {
       "id": "07aff8a73426258a",
       "title": "Dr Dre has words for those who oppose the use of AI in music: \"You sound like the person that would have been against the drum machine when it came out. Or synthesizers\"",
       "url": "https://www.musicradar.com/music-tech/dr-dre-has-words-for-those-who-oppose-the-use-of-ai-in-music-you-sound-like-the-person-that-would-have-been-against-the-drum-machine-when-it-came-out-or-synthesizers",
@@ -582,8 +694,8 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 2,
-      "score": 18
+      "coverage": 3,
+      "score": 26
     },
     {
       "id": "ce1b99c712ca9844",
@@ -738,7 +850,7 @@
       "summary": "",
       "published": "2026-08-21T11:01:33.000Z",
       "source": "DIGLE MAGAZINE",
-      "sourceId": "gnews-ja-aimusic",
+      "sourceId": "gnews-ja-suno",
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
@@ -973,7 +1085,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 67,
+      "coverage": 69,
       "score": 32
     },
     {
@@ -1015,7 +1127,7 @@
       "via": null,
       "category": "jp",
       "lang": "ja",
-      "coverage": 26,
+      "coverage": 27,
       "score": 39
     },
     {
@@ -1253,7 +1365,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 28,
+      "coverage": 29,
       "score": 21
     },
     {
@@ -1297,7 +1409,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 19,
+      "coverage": 20,
       "titleJa": "UMGとソニーが訴訟を起こす中、ロバート・キンクルはスノーとの取引を正当化します。「私の意見では、あなたはそれを受け入れます」。",
       "summaryJa": "Kynclは金曜日（ 8月14日）にSemaforのMixed Signalsポッドキャストに出演し、SunoとNetflixで音楽サービスを開始した理由について話し合った。",
       "score": 27
@@ -1313,7 +1425,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 33,
+      "coverage": 34,
       "titleJa": "SunoのBMGライセンス契約、ダウンロード上限、透かしなどについて知っておくべき5つのこと",
       "summaryJa": "BMG取引は権利を提供し、キャップとウォーターマークはコントロールを提供します。他の2つは新しい出口です。1つはプロフェッショナル、もう1つはフィジカルです。",
       "score": 34
@@ -1460,7 +1572,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 26,
+      "coverage": 27,
       "score": 21
     },
     {
@@ -1542,6 +1654,20 @@
       "score": 14
     },
     {
+      "id": "e586bfe6ac49c1a0",
+      "title": "中国MiniMax、音楽生成AI「Music3」を無償公開 日本語ボーカルで最大5分の楽曲をローカル生成可能に",
+      "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTFBFaXpScHJDM0tUWkZJekFoc3BZOW1NYnVWNks1Zi1rNlVXRVB0dE10bVBRMlRZdHRwM2dyNE5MRXZNaHNoWGt0LVN5dXVjT3NUTzIydE5TWDVUY0Z0RlBUOVF1Qng3aVVzMGdHTGx0S3R5OHAz?oc=5",
+      "summary": "",
+      "published": "2026-08-14T07:00:00.000Z",
+      "source": "BigGo ファイナンス",
+      "sourceId": "gnews-ja-suno",
+      "via": "Googleニュース",
+      "category": "jp",
+      "lang": "ja",
+      "coverage": 1,
+      "score": 30
+    },
+    {
       "id": "167be9cbb0654953",
       "title": "Suno Studio 2.0公開｜ブラウザDAWにMIDIとオートメーション搭載",
       "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE1lYWI1cDBsaGJybU4xbjNabGRWcjQwMVp1ZkhjWERsOXZrU2xqc3J3RGNoMXZodDdZRlJLU2FVLUxaZDNVNW1aU1dhMmFHMmVfMzkw?oc=5",
@@ -1594,7 +1720,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 47,
+      "coverage": 48,
       "titleJa": "Suno、MIDIサポート、AIチャットバーを備えたStudio 2.0をリリース...ダウンロード制限なし",
       "summaryJa": "Sunoは、「グラミー賞を受賞したアーティスト」が過去にSuno Studioを使用して「チャートトップのヒットを作った」と主張している",
       "score": 38
@@ -1626,7 +1752,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 51,
+      "coverage": 52,
       "titleJa": "Suno Studio 2.0がDAWにAIアシスタントを導入",
       "summaryJa": "Suno氏は、新しいチャットボットは音楽制作を理解しているため、「バンドの他のメンバー」のように話すことができると述べています。",
       "score": 27
@@ -1773,20 +1899,6 @@
       "titleJa": "ブライアン・メイは、クイーンズ・ザ・ゲームのカバーを再現するようAIに依頼しました。彼は結果に満足していませんでした。「これがまもなく世界を支配する知性のようなものですか？ ？ ！」",
       "summaryJa": "ギタリストはまた、深刻な環境上の嘆願をしました",
       "score": -6
-    },
-    {
-      "id": "e586bfe6ac49c1a0",
-      "title": "中国MiniMax、音楽生成AI「Music3」を無償公開 日本語ボーカルで最大5分の楽曲をローカル生成可能に",
-      "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTFBFaXpScHJDM0tUWkZJekFoc3BZOW1NYnVWNks1Zi1rNlVXRVB0dE10bVBRMlRZdHRwM2dyNE5MRXZNaHNoWGt0LVN5dXVjT3NUTzIydE5TWDVUY0Z0RlBUOVF1Qng3aVVzMGdHTGx0S3R5OHAz?oc=5",
-      "summary": "",
-      "published": "2026-08-13T07:00:00.000Z",
-      "source": "BigGo ファイナンス",
-      "sourceId": "gnews-ja-suno",
-      "via": "Googleニュース",
-      "category": "jp",
-      "lang": "ja",
-      "coverage": 1,
-      "score": 30
     },
     {
       "id": "08dbef746631b3c5",
@@ -1978,7 +2090,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 55,
+      "coverage": 56,
       "titleJa": "BMGとSuno ReachがAIミュージックモデルのライセンス契約を締結",
       "summaryJa": "また、SunoのBMG作品の過去の使用を解決する契約に基づき、アーティストやソングライターはAIの入出力に使用される音楽をオプトインする必要があります。",
       "score": 27
@@ -1994,7 +2106,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 30,
+      "coverage": 31,
       "titleJa": "Sunoは、新しい音楽モデルの発売に先立ち、BMGとグローバルライセンス契約を締結",
       "summaryJa": "BMGは、9か月前にワーナー・ミュージック・グループがAI企業との提携を発表して以来、Sunoとのライセンス契約を締結した最初の重要な権利者である。",
       "score": 27
@@ -2112,7 +2224,7 @@
       "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPa2pEdGtBTWVpUVdfcWpkMGJoOGYtMHhCQ3dHMUhmVjNCT1FRV241anV3UndSREJuM09ZNFpjaGFIaFJsZkthdHlPRTNfdTV1bm5HVm12SVFkd0tScnljclh3LUFlYm53a1V2QmdNMkItWHQzNExTRm9SdkNucHhXUFdHLXE5VWRYLWRZNjRKQVBJSDFsOW1MZUhIUTJ0b3MwU0dWSmhYRWJXWXFZLS1EQW1qWk5yYmFh?oc=5",
       "summary": "",
       "published": "2026-08-12T07:00:00.000Z",
-      "source": "Bloomberg.com",
+      "source": "Bloomberg",
       "sourceId": "gnews-en-aimusic",
       "via": "Googleニュース",
       "category": "global",
@@ -2245,7 +2357,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 38,
+      "coverage": 39,
       "titleJa": "Sunoは、「音楽業界と提携して開発された」新しいモデルを約束しながら、PROのサブスクライバーを1か月あたり20曲のダウンロードに制限しています",
       "summaryJa": "Suno氏は、月曜日（ 8月10日）のブログ投稿で、ダウンロード制限は「悪い俳優が音楽を大量輸出することをより困難にする」と述べた",
       "score": 27
@@ -2714,7 +2826,7 @@
       "via": null,
       "category": "jp",
       "lang": "ja",
-      "coverage": 74,
+      "coverage": 75,
       "score": 41
     },
     {
@@ -2849,7 +2961,7 @@
       "via": null,
       "category": "jp",
       "lang": "ja",
-      "coverage": 251,
+      "coverage": 254,
       "score": 37
     },
     {
@@ -2979,7 +3091,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 79,
+      "coverage": 80,
       "titleJa": "Sunoは、AI生成音楽の透かしで合法的になりたいと考えています",
       "summaryJa": "Sunoは、「大規模な悪用」を防ぐために透かしとダウンロード制限を計画しています。",
       "score": 27
@@ -3075,7 +3187,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 79,
+      "coverage": 80,
       "titleJa": "法的な争いの中で、Sunoは曲に透かしを入れ始めると言います",
       "summaryJa": "Sunoの透かし機能は、同社がいくつかの面で法的闘争を戦っているときに登場します。",
       "score": 27
@@ -3091,7 +3203,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 79,
+      "coverage": 80,
       "titleJa": "Sunoはビニール市場に進出し、ユーザーがAIの曲を12インチのレコードにプレスできるようにする予定",
       "summaryJa": "同社は、プラットフォーム上で作られた曲を物理的なレコードに変換するサービスであるSuno Vinylのウェイティングリストを開設しました",
       "score": 27
@@ -3187,7 +3299,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 75,
+      "coverage": 76,
       "titleJa": "スノ、AI楽曲のダウンロードを制限する計画を公開、詳細「原則」「AIは模倣ではなく独創性を可能にするべきである」",
       "summaryJa": "新しい投稿は、Sunoが画期的な裁判所判決でドイツの曲の著作権を侵害した責任を問われてから約1週間後に到着した。",
       "score": 38
@@ -3817,7 +3929,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 89,
+      "coverage": 90,
       "score": 32
     },
     {
@@ -3893,7 +4005,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 56,
+      "coverage": 57,
       "score": 21
     },
     {
@@ -4136,7 +4248,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 92,
+      "coverage": 93,
       "titleJa": "ドイツのGEMAが提起した著作権侵害訴訟でSunoが敗訴",
       "summaryJa": "AI音楽ジェネレーターのSunoは、ドイツの収集協会GEMAが提起した著作権侵害訴訟で敗訴しました。収集協会は、Sunoが権利者へのライセンスまたは支払いなしにAIツールをトレーニングするために、著作権で保護された音楽を使用、保存、複製したと主張しています。ロイター通信は金曜日の朝（ 7月31日）に、ミュンヘン地方裁判所がスノー氏に判決を下したと報じた。",
       "score": 34
@@ -4308,7 +4420,7 @@
       "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOVnY2dXhLUnpIUnRjQ1c0UDJIVENRcmtkaHB0OGRYaUpyX1ZFbzVfZnltUmo4NGR4YXFvaXQzTjk5dkFRQ1A0V3UtTGNMdWpySFlNbVhiZ2s0ek5yVmhkUmt2UDZBSFg4SFdLU3VydG9jaU1reUlyMXlaRnFuQ2dUMHRINlg5ZTgtbll5N0IyYzNfYUtiR19TTE05Y9IBmwFBVV95cUxPUnJMWkxGcHIxT3lrcjdGaDhVWk16dFU2ZGw5ZG9sTnRES0FEakZfaEFab1liV0ZYa1RucDZsckktWUQzNWNsa0VUN05ncDJVQk5hdUttTW9QQ1loNkZsMGNVSXctdHdMWEYwaWN3VTVKMERLMF8zemdkOE9ERmlNcnBQZGlPd0dueFROeE9DTDVtcTVTaVFTZThXVQ?oc=5",
       "summary": "",
       "published": "2026-07-31T07:00:00.000Z",
-      "source": "dw.com",
+      "source": "DW.com",
       "sourceId": "gnews-en-aimusic",
       "via": "Googleニュース",
       "category": "global",
@@ -4417,7 +4529,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 181,
+      "coverage": 183,
       "score": 41
     },
     {
@@ -4473,7 +4585,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 104,
+      "coverage": 105,
       "score": 41
     },
     {
