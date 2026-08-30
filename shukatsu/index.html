@@ -105,7 +105,7 @@ button{font:inherit;color:inherit}
 .ring{flex:none}
 .dial-pct{font-family:var(--mono);font-size:27px;font-variant-numeric:tabular-nums;letter-spacing:-.03em;line-height:1.1}
 .dial-sub{font-size:12.5px;color:var(--ink3);line-height:1.5}
-.clues{display:grid;grid-template-columns:repeat(8,1fr);gap:5px;margin-top:15px}
+.clues{display:grid;grid-template-columns:repeat(9,1fr);gap:5px;margin-top:15px}
 .clue{height:14px;border-radius:4px;background:var(--sunken);border:0;padding:0;cursor:pointer;transition:transform .12s}
 .clue:hover{transform:scale(1.25)}
 .clue.part{background:var(--tan)}
@@ -164,6 +164,8 @@ button{font:inherit;color:inherit}
 .in:hover{border-color:var(--accent-line)}
 .in:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
 textarea.in{resize:vertical;min-height:64px;overflow:hidden}
+.secret{margin:8px 0 0;padding:9px 12px;border-radius:9px;background:var(--caution-soft);
+  border:1px solid color-mix(in srgb,var(--caution) 30%,transparent);font-size:12.5px;line-height:1.65;color:var(--ink)}
 .qrow{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
 .qchip{border:1px dashed var(--line-strong);background:transparent;color:var(--ink2);border-radius:999px;
   padding:5px 12px;font-size:13px;cursor:pointer}
@@ -174,6 +176,44 @@ textarea.in{resize:vertical;min-height:64px;overflow:hidden}
 .chip[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--accent-ink);font-weight:500}
 .chip-read{display:inline-block;border:1px solid var(--accent-line);background:var(--accent-soft);color:var(--accent);
   border-radius:999px;padding:3px 13px;font-size:14px;font-weight:500}
+
+/* ---------- 手順・給付のカード ---------- */
+.emerg{margin:22px 0 0;padding:16px 18px;border-radius:var(--r);background:var(--surface);
+  border:1px solid var(--line);border-left:4px solid var(--caution);box-shadow:var(--shadow)}
+.emerg h2{font-family:var(--serif);font-size:16.5px;margin:0 0 4px;font-weight:700}
+.emerg p{margin:0 0 12px;font-size:13.5px;color:var(--ink2)}
+.emerg-btns{display:flex;flex-wrap:wrap;gap:9px}
+.gsec{display:flex;flex-direction:column;gap:8px}
+.ggroup{font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--brown);
+  margin:16px 0 2px;padding-top:12px;border-top:1px solid var(--line)}
+.gsec .ggroup:first-child{border-top:0;padding-top:0;margin-top:2px}
+.gitem{border:1px solid var(--line);border-radius:var(--r);background:var(--surface);overflow:hidden}
+.gitem[data-done="1"]{background:var(--surface2);border-color:var(--line)}
+.ghead{display:flex;align-items:flex-start;gap:2px}
+.gcheck{flex:none;border:0;background:none;padding:14px 6px 14px 13px;cursor:pointer;line-height:0}
+.gcheck .tick{margin-top:0}
+.gitem[data-done="1"] .gcheck .tick{background:var(--done);border-color:var(--done);color:#fff}
+.gopen{flex:1;min-width:0;border:0;background:none;text-align:left;padding:12px 13px 12px 4px;cursor:pointer;
+  display:flex;flex-wrap:wrap;align-items:center;gap:6px 9px}
+.gopen:hover .gtitle{color:var(--accent)}
+.gtitle{font-size:15px;font-weight:500;line-height:1.55;flex:1;min-width:180px}
+.gitem[data-done="1"] .gtitle{color:var(--ink3)}
+.badge{flex:none;font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;padding:3px 9px;border-radius:999px;
+  border:1px solid var(--line-strong);color:var(--ink2);white-space:nowrap}
+.badge.now{background:var(--caution-soft);border-color:color-mix(in srgb,var(--caution) 35%,transparent);color:var(--caution)}
+.badge.due{background:var(--tan-soft);border-color:var(--tan);color:#7A5A32}
+.badge.who{background:var(--accent-soft);border-color:var(--accent-line);color:var(--accent)}
+.gcaret{flex:none;color:var(--ink3);font-size:12px;font-family:var(--mono)}
+.gbody{padding:2px 15px 15px 44px;border-top:1px solid var(--line)}
+.gdl{display:grid;grid-template-columns:auto 1fr;gap:3px 12px;margin:12px 0 0;font-size:13.5px}
+.gdl dt{font-family:var(--mono);font-size:11px;color:var(--ink3);padding-top:4px;white-space:nowrap}
+.gdl dd{margin:0;line-height:1.7}
+.gsteps{margin:12px 0 0;padding-left:1.3em;font-size:13.5px;line-height:1.8}
+.gsteps li{margin-bottom:5px}
+.gnote{margin:12px 0 0;padding:10px 13px;border-radius:9px;background:var(--caution-soft);
+  font-size:13px;line-height:1.7}
+.gmemo{margin-top:12px}
+.gcount{font-family:var(--mono);font-size:11.5px;color:var(--ink3);font-variant-numeric:tabular-nums}
 
 /* ---------- くり返し行 ---------- */
 .rows{display:flex;flex-direction:column;gap:10px}
@@ -283,6 +323,209 @@ var PLACES = ["金庫","寝室の引き出し","仏壇の引き出し","リビ�
    im   … スマホのキーボード種別
    ======================================================================= */
 var SCHEMA = [
+{id:"afterlife", kind:"guide", n:"そのときの手順", lead:"期限のある手続きを、順番に",
+ say:"あわてなくていい。ただ、期限のあるものだけは先に片づけよう。上から順でいい。",
+ warn:"金額や期限は法改正や自治体で変わる。必ず窓口で確かめて。この一覧は2026年8月時点の目安。", f:[
+  {k:"steps", l:"やること", t:"guide", items:[
+
+  {id:"a1", g:"当日〜数日", pri:"最優先", t:"死亡診断書を受け取り、コピーを10枚とる", due:"役所に出す前に",
+   where:"病院・診療所（事故や自宅での死亡は警察が出す「死体検案書」）",
+   how:["医師から死亡診断書を受け取る。左半分が死亡届になっている一枚の用紙。",
+        "役所に出す前に、コピーを10枚ほど取っておく。",
+        "保険・年金・銀行と、あとの手続きで何枚も必要になる。"],
+   note:"原本は死亡届として役所に提出してしまい、手元に残らない。あとから取り直すと手数料と時間がかかる。ここが最初のつまずきどころ。"},
+
+  {id:"a2", g:"当日〜数日", pri:"最優先", t:"葬儀社を決めて、搬送を頼む", due:"数時間のうちに",
+   where:"葬儀社",
+   how:["病院からは数時間のうちに搬送を求められることが多い。",
+        "決めている葬儀社があれば「葬儀の希望」の章を見る。",
+        "急いで決めると高くつきやすい。可能なら2社に見積もりを聞く。"],
+   note:"病院が紹介する葬儀社は割高なことがある。断ってかまわない。"},
+
+  {id:"a3", g:"7日以内", pri:"期限", t:"死亡届を出す／火葬許可証をもらう", due:"死亡を知った日から7日以内",
+   where:"市区町村の役所（死亡地・本籍地・届出人の住所地のどこでもよい）",
+   need:"死亡診断書、届出人の印鑑、本人確認書類",
+   how:["死亡診断書の左側が死亡届。記入して役所に出す。",
+        "同時に「火葬許可申請書」を出すと、火葬許可証がもらえる。",
+        "火葬後、火葬済の印が押されて戻る。これが埋葬許可証になり、納骨のときに要る。",
+        "多くの葬儀社が代行してくれる。頼めるなら頼む。"],
+   note:"国外で亡くなったときは、知った日から3か月以内。"},
+
+  {id:"a4", g:"10〜14日以内", pri:"期限", t:"年金を止める（年金受給権者死亡届）",
+   due:"厚生年金は10日以内、国民年金は14日以内",
+   where:"年金事務所・年金相談センター",
+   need:"年金証書、死亡を明らかにする書類",
+   how:["止めないと払われ続け、あとでまとめて返すことになる。",
+        "同時に「未支給年金」を請求する。亡くなった月の分まではもらえる。"],
+   note:"マイナンバーが日本年金機構に収録されていれば死亡届は原則いらない。ただし未支給年金の請求は別に必要。"},
+
+  {id:"a5", g:"10〜14日以内", pri:"期限", t:"健康保険・介護保険の資格喪失、保険証の返却",
+   due:"14日以内（会社の健康保険は5日以内・会社が行う）",
+   where:"市区町村の役所（国保・後期高齢者・介護保険）",
+   need:"保険証、介護保険証、本人確認書類",
+   how:["国民健康保険・後期高齢者医療の資格喪失届を出し、保険証を返す。",
+        "介護保険の資格喪失届も同じ窓口で出せることが多い。",
+        "この窓口で「葬祭費」の申請書ももらえる。ついでに聞く。"]},
+
+  {id:"a6", g:"10〜14日以内", pri:"期限", t:"世帯主変更届", due:"14日以内",
+   where:"市区町村の役所", need:"本人確認書類、印鑑",
+   how:["亡くなった人が世帯主で、残る世帯員が2人以上のときに必要。",
+        "残るのが1人だけなら届出はいらない。"]},
+
+  {id:"a7", g:"すみやかに", pri:"重要", t:"銀行に連絡する（口座は凍結される）", due:"生活費の目処を立ててから",
+   where:"取引のある金融機関",
+   how:["連絡すると口座は凍結され、引き出しも引き落としもできなくなる。",
+        "葬儀費用などは「預貯金の払戻し制度」で一定額まで引き出せる（1金融機関あたり上限150万円）。",
+        "解約には戸籍一式と相続人全員の書類が要る。法務局で「法定相続情報一覧図」を作ると、各行で使い回せて楽になる。"],
+   note:"急いで連絡すると生活費まで止まる。当面の支払いの目処を立ててからでも遅くない。"},
+
+  {id:"a8", g:"すみやかに", pri:"重要", t:"公共料金・通信・サブスクの名義変更と解約", due:"早いほどよい",
+   where:"各社",
+   how:["電気・ガス・水道・電話・NHK・インターネット。",
+        "「デジタルのこと」の章にサブスクの一覧がある。",
+        "口座が凍結されると引き落としが止まり、督促が来ることがある。"]},
+
+  {id:"a9", g:"すみやかに", pri:"重要", t:"運転免許証・パスポート・車の手続き", due:"すみやかに",
+   where:"警察署（免許）、パスポートセンター、運輸支局（車）",
+   how:["運転免許証は警察署へ返納。","パスポートは失効の届出。",
+        "車は移転登録（名義変更）。自賠責と任意保険の名義も変える。"]},
+
+  {id:"a10", g:"3か月以内", pri:"期限", t:"相続放棄・限定承認を決める",
+   due:"相続の開始を知った時から3か月",
+   where:"亡くなった人の住所地の家庭裁判所",
+   how:["借金のほうが多いなら相続放棄を検討する。",
+        "3か月を過ぎると、原則として単純承認になり、借金も引き継ぐ。",
+        "財産の調査が終わらないときは、期間の伸長を申し立てられる。"],
+   note:"故人の預金を使ったり財産を処分すると、放棄できなくなることがある。判断がつくまで手をつけない。"},
+
+  {id:"a11", g:"4か月以内", pri:"期限", t:"準確定申告", due:"相続の開始を知った日の翌日から4か月",
+   where:"亡くなった人の住所地の税務署",
+   how:["その年の1月1日から死亡日までの所得を申告する。",
+        "自営業、給与以外の収入があった人、医療費が多かった人は必要。",
+        "医療費控除で還付されることがある。"]},
+
+  {id:"a12", g:"10か月以内", pri:"期限", t:"相続税の申告と納付", due:"10か月",
+   where:"亡くなった人の住所地の税務署",
+   how:["基礎控除（3,000万円＋600万円×法定相続人の数）を超えるときに必要。",
+        "配偶者の税額軽減や小規模宅地等の特例は、申告して初めて使える。",
+        "期限までに分割が終わらないときも、いったん申告しておく。"]},
+
+  {id:"a13", g:"3年以内", pri:"義務", t:"不動産の相続登記", due:"取得を知った日から3年以内",
+   where:"法務局",
+   how:["2024年4月から義務。正当な理由なく怠ると10万円以下の過料。",
+        "分割が決まらないときは「相続人申告登記」でいったん義務を果たせる。"]}
+
+  ]}
+]},
+
+{id:"benefits", kind:"guide", n:"申請しないと出ないお金", lead:"黙っていても振り込まれない",
+ say:"どれも、こちらから言わないと出ない。もらえるのに気づかれないまま、時効になるものが多い。",
+ warn:"金額と時効は制度改正や自治体で変わる。2026年8月時点の目安として見て、必ず窓口で確かめて。", f:[
+  {k:"claims", l:"請求できるもの", t:"guide", items:[
+
+  {id:"b1", pri:"ほぼ全員", t:"葬祭費（国民健康保険・後期高齢者医療）",
+   amount:"3〜7万円（自治体による。東京23区は一律7万円）",
+   due:"葬儀の日の翌日から2年",
+   who:"葬儀を行った人（喪主）",
+   where:"市区町村の国民健康保険の窓口",
+   need:"保険証、葬儀の領収書または会葬礼状（喪主の名前がわかるもの）、喪主名義の口座、印鑑",
+   how:["資格喪失届を出すときに、同じ窓口で申請できる。まとめてやる。",
+        "領収書か会葬礼状で「誰が喪主か」を示す。捨てないこと。"],
+   note:"会社の健康保険に入っていた人は、葬祭費ではなく埋葬料。両方はもらえない。"},
+
+  {id:"b2", pri:"ほぼ全員", t:"埋葬料・埋葬費（健康保険・共済）",
+   amount:"一律5万円（埋葬費は実際にかかった額で5万円まで）",
+   due:"死亡の日の翌日から2年（埋葬費は埋葬した日の翌日から2年）",
+   who:"生計を維持されていた家族。いなければ実際に埋葬した人",
+   where:"協会けんぽの都道府県支部、または勤務先の健康保険組合",
+   need:"健康保険埋葬料（費）支給申請書、死亡を証明する書類、（埋葬費なら）領収書",
+   how:["勤務先の総務に聞くのがいちばん早い。",
+        "扶養に入っていた家族が亡くなったときは「家族埋葬料」5万円。"]},
+
+  {id:"b3", pri:"ほぼ全員", t:"未支給年金", amount:"亡くなった月の分まで",
+   due:"時効5年", who:"生計を同じくしていた配偶者・子・父母など",
+   where:"年金事務所",
+   how:["年金は後払いなので、必ず未払い分が残る。","受給停止の届出と同時に請求する。"]},
+
+  {id:"b4", pri:"住宅ローンがある人", t:"団体信用生命保険（団信）",
+   amount:"住宅ローンの残高が全額なくなる", due:"契約による。すぐに",
+   who:"ローン契約者の遺族", where:"借入先の金融機関",
+   how:["申請しないと、ローンの引き落としが続いてしまう。",
+        "あわせて抵当権の抹消登記も必要になる。"],
+   note:"見落とすと数千万円の差になる。住宅ローンがあるなら、真っ先に確認する。"},
+
+  {id:"b5", pri:"該当者", t:"生命保険の死亡保険金", amount:"契約による",
+   due:"時効3年（かんぽ生命は5年）", who:"証券に書かれた受取人",
+   where:"保険会社",
+   need:"保険証券、死亡診断書のコピー、受取人の本人確認書類、戸籍",
+   how:["「保険」の章に契約の一覧がある。まずそこを見る。",
+        "証券が見つからないときは、生命保険協会の「生命保険契約照会制度」で契約の有無を調べられる（有料）。"],
+   note:"時効を過ぎても支払われることがある。気づいた時点で必ず問い合わせる。"},
+
+  {id:"b6", pri:"子がいる家庭", t:"遺族基礎年金",
+   amount:"年 約80万円＋子の加算（子1人あたり年 約23万円）",
+   due:"時効5年",
+   who:"18歳になった年度の3月末までの子がいる配偶者、または子",
+   where:"市区町村の年金窓口、または年金事務所",
+   need:"年金手帳、戸籍謄本、住民票、死亡診断書のコピー、請求者の口座",
+   how:["国民年金の加入者・受給者が亡くなったとき。",
+        "保険料の納付要件がある。未納が多いと受けられないことがある。"]},
+
+  {id:"b7", pri:"会社員の遺族", t:"遺族厚生年金",
+   amount:"老齢厚生年金の報酬比例部分の4分の3", due:"時効5年",
+   who:"配偶者・子・父母・孫・祖父母（この順で最も優先される人）",
+   where:"年金事務所",
+   how:["厚生年金に入っていた人が亡くなったとき。",
+        "子のない30歳未満の妻は5年間の有期。",
+        "40〜65歳の子のない妻には中高齢寡婦加算がつくことがある。"]},
+
+  {id:"b8", pri:"該当者", t:"寡婦年金",
+   amount:"夫の老齢基礎年金の4分の3を、60歳から65歳になるまで",
+   due:"時効2年",
+   who:"国民年金第1号を10年以上納めた夫と、10年以上婚姻していた妻",
+   where:"市区町村の年金窓口",
+   note:"死亡一時金とは、どちらか一方しか選べない。"},
+
+  {id:"b9", pri:"該当者", t:"死亡一時金", amount:"12〜32万円", due:"時効2年",
+   who:"国民年金を3年以上納めた人が年金を受けずに亡くなり、遺族基礎年金を受けられない遺族",
+   where:"市区町村の年金窓口",
+   note:"寡婦年金とは、どちらか一方しか選べない。"},
+
+  {id:"b10", pri:"該当者", t:"高額療養費の払い戻し",
+   amount:"自己負担限度額を超えた分", due:"診療を受けた月の翌月1日から2年",
+   who:"相続人", where:"加入していた健康保険（国保は市区町村、会社員は健保）",
+   how:["亡くなる前の入院・治療費が高額だったときに戻る。",
+        "申請書が郵送されてくることもあるが、来ないこともある。こちらから聞く。"]},
+
+  {id:"b11", pri:"仕事が原因のとき", t:"労災の遺族補償給付・葬祭料",
+   amount:"遺族補償年金と葬祭料（31万5千円＋給付基礎日額30日分 など）",
+   due:"遺族補償は5年、葬祭料は2年",
+   who:"生計を維持されていた遺族", where:"労働基準監督署",
+   how:["仕事が原因の死亡、通勤中の事故のとき。",
+        "過労死や自死でも認められることがある。迷ったら相談する。"]},
+
+  {id:"b12", pri:"勤めていた人", t:"勤務先の死亡退職金・弔慰金・団体保険",
+   amount:"会社の規定による", due:"会社の規定による",
+   where:"勤務先の総務・人事",
+   how:["就業規則に死亡退職金や弔慰金の定めがあることが多い。",
+        "会社がまとめて入っている団体保険から出ることもある。",
+        "以前の勤務先の企業年金が残っていることもある。"]},
+
+  {id:"b13", pri:"子がいる家庭", t:"児童扶養手当・遺児のための給付",
+   amount:"自治体・団体による", where:"市区町村の子育て支援の窓口",
+   how:["ひとり親になったときの手当。",
+        "交通事故が原因なら、自動車事故対策機構の育成資金などもある。"]},
+
+  {id:"b14", pri:"該当者", t:"クレジットカード・共済の付帯保険",
+   amount:"契約による", where:"カード会社・共済",
+   how:["旅行中や事故のときは、カードの付帯保険が出ることがある。",
+        "県民共済・こくみん共済にも death 保障がある。加入していないか確かめる。"]}
+
+  ]},
+  {k:"where", l:"確かめる先", t:"long", ph:"自分の市区町村の窓口や、相談先を書いておく（例：〇〇市役所 保険年金課 000-000-0000）",
+   h:"日本年金機構 nenkin.go.jp ／ 全国健康保険協会 kyoukaikenpo.or.jp ／ 法務省（相続登記）moj.go.jp ／ 国税庁 nta.go.jp ／ お住まいの市区町村。制度は変わるので、必ず窓口で最新を確かめてください。"}
+]},
+
 {id:"basic", n:"わたしのこと", lead:"名前・住所・身分証のありか",
  say:"まずは基本情報から。手続きの人が最初に聞くのはここ。埋めておくと、あとがぐっと早い。", f:[
   {k:"name", l:"氏名", t:"text"},
@@ -528,7 +771,12 @@ function el(tag, a, kids){
     if(v == null || v === false) continue;
     if(k === "class") e.className = v;
     else if(k === "text") e.textContent = v;
-    else if(k === "svg") e.innerHTML = v;
+    else if(k === "svg"){
+      /* ここは innerHTML。渡してよいのはコード内で組み立てた <svg>/<img> だけで、
+         利用者が書いた文字列は絶対に通さない。念のため実行時にも弾く。 */
+      if(typeof v !== "string" || !/^\s*<(svg|img)[\s>]/i.test(v)) throw new Error("unsafe markup");
+      e.innerHTML = v;
+    }
     else if(k.slice(0,2) === "on") e.addEventListener(k.slice(2), v);
     else e.setAttribute(k, v === true ? "" : v);
   }
@@ -567,16 +815,88 @@ function speech(line, mood, size){
    状態
    ======================================================================= */
 function emptyState(){ return { v:1, owner:"", intro:"", updatedAt:"", d:{} }; }
-function normalize(o){
-  var s = emptyState();
-  if(o && typeof o === "object"){
-    if(typeof o.owner === "string") s.owner = o.owner;
-    if(typeof o.intro === "string") s.intro = o.intro;
-    if(typeof o.updatedAt === "string") s.updatedAt = o.updatedAt;
-    if(o.d && typeof o.d === "object") s.d = o.d;
+/* 取り込んだJSONや埋め込みデータは、schema にある形だけを残して作り直す。
+   知らないキーは捨て、__proto__ などは通さず、長さにも上限をつける。 */
+var MAXSTR = 20000, MAXROWS = 300, MAXITEMS = 300;
+function safeKey(k){ return k !== "__proto__" && k !== "constructor" && k !== "prototype"; }
+function str(v, max){
+  if(typeof v === "number" || typeof v === "boolean") v = String(v);
+  if(typeof v !== "string") return "";
+  var m = max || MAXSTR;
+  return v.length > m ? v.slice(0, m) : v;
+}
+function pickFlags(src, allowed){
+  var out = null;
+  if(src && typeof src === "object" && !Array.isArray(src)){
+    Object.keys(src).forEach(function(k){
+      if(!safeKey(k) || !allowed[k] || !src[k]) return;
+      if(!out) out = {};
+      out[k] = true;
+    });
   }
-  SCHEMA.forEach(function(sec){ if(!s.d[sec.id] || typeof s.d[sec.id] !== "object") s.d[sec.id] = {}; });
-  return s;
+  return out;
+}
+function pickTexts(src, allowed){
+  var out = null;
+  if(src && typeof src === "object" && !Array.isArray(src)){
+    Object.keys(src).forEach(function(k){
+      if(!safeKey(k) || !allowed[k] || isBlank(src[k])) return;
+      if(!out) out = {};
+      out[k] = str(src[k], 2000);
+    });
+  }
+  return out;
+}
+function normalize(o){
+  var out = { v:1, owner:"", intro:"", updatedAt:"", d:{} };
+  var src = {};
+  if(o && typeof o === "object"){
+    out.owner = str(o.owner, 200);
+    out.intro = str(o.intro);
+    out.updatedAt = str(o.updatedAt, 40);
+    if(o.d && typeof o.d === "object" && !Array.isArray(o.d)) src = o.d;
+  }
+  SCHEMA.forEach(function(sec){
+    var from = (safeKey(sec.id) && src[sec.id] && typeof src[sec.id] === "object" && !Array.isArray(src[sec.id]))
+      ? src[sec.id] : {};
+    var to = {};
+    sec.f.forEach(function(f){
+      var v = from[f.k], i;
+      if(f.t === "list"){
+        if(!Array.isArray(v)) return;
+        var rows = [];
+        v.slice(0, MAXROWS).forEach(function(r){
+          if(!r || typeof r !== "object" || Array.isArray(r)) return;
+          var row = {}, any = false;
+          f.c.forEach(function(c){ if(!isBlank(r[c.k])){ row[c.k] = str(r[c.k]); any = true; } });
+          if(any) rows.push(row);
+        });
+        if(rows.length) to[f.k] = rows;
+      } else if(f.t === "tasks"){
+        var custom = [];
+        if(Array.isArray(from[f.k + "_custom"])){
+          custom = from[f.k + "_custom"].slice(0, MAXITEMS).map(function(x){ return str(x, 300); })
+            .filter(function(x){ return x.trim() !== ""; });
+          if(custom.length) to[f.k + "_custom"] = custom;
+        }
+        var known = {};
+        f.items.concat(custom).forEach(function(t){ known[t] = 1; });
+        var td = pickFlags(from[f.k + "_done"], known);
+        if(td) to[f.k + "_done"] = td;
+      } else if(f.t === "guide"){
+        var ids = {};
+        f.items.forEach(function(it){ ids[it.id] = 1; });
+        var gd = pickFlags(from[f.k + "_done"], ids);
+        if(gd) to[f.k + "_done"] = gd;
+        var gm = pickTexts(from[f.k + "_memo"], ids);
+        if(gm) to[f.k + "_memo"] = gm;
+      } else {
+        if(!isBlank(v)) to[f.k] = str(v);
+      }
+    });
+    out.d[sec.id] = to;
+  });
+  return out;
 }
 function readEmbedded(){
   var n = document.getElementById("note-data");
@@ -603,6 +923,39 @@ function readDraft(){
   } catch(e){ return null; }
 }
 function clearDraft(){ try { localStorage.removeItem(LS + ".draft"); } catch(e){} }
+
+/* パスワード・暗証番号・カード番号らしきものを見つける。
+   ここは「ありか」を書く場所なので、秘密そのものが入っていたら知らせる。 */
+var RE_SECRET = /(パスワード|ぱすわーど|暗証|PIN\b|password|passcode|passwd)\s*[:：=＝\-–—]\s*\S/i;
+function looksSecret(v){
+  if(isBlank(v)) return "";
+  var t = String(v);
+  if(RE_SECRET.test(t)) return "パスワードや暗証番号そのものに見える";
+  if(/(?:\d[ \-]?){12,19}/.test(t)) return "カード番号やマイナンバーのような長い数字が入っている";
+  return "";
+}
+function scanSecrets(){
+  var hits = [];
+  SCHEMA.forEach(function(sec, i){
+    sec.f.forEach(function(f){
+      var v = get(sec.id, f.k), why;
+      if(f.t === "list"){
+        if(!Array.isArray(v)) return;
+        v.forEach(function(row){
+          f.c.forEach(function(c){
+            why = looksSecret(row && row[c.k]);
+            if(why) hits.push({ i: i, sec: sec, label: f.l + "／" + c.l, why: why });
+          });
+        });
+        return;
+      }
+      if(f.t === "guide" || f.t === "tasks") return;
+      why = looksSecret(v);
+      if(why) hits.push({ i: i, sec: sec, label: f.l, why: why });
+    });
+  });
+  return hits;
+}
 
 function get(secId, key){ var s = state.d[secId]; return s ? s[key] : undefined; }
 function set(secId, key, v){
@@ -631,8 +984,27 @@ function fieldFilled(sec, f){
   if(f.t === "list") return Array.isArray(v) && v.some(rowHasContent);
   return !isBlank(v);
 }
+function isGuide(sec){ return sec.kind === "guide"; }
+function guideItems(sec){
+  var out = [];
+  sec.f.forEach(function(f){ if(f.t === "guide") out = out.concat(f.items); });
+  return out;
+}
+function guideDone(sec){
+  var n = 0;
+  sec.f.forEach(function(f){
+    if(f.t !== "guide") return;
+    var d = get(sec.id, f.k + "_done") || {};
+    f.items.forEach(function(it){ if(d[it.id]) n++; });
+  });
+  return n;
+}
 function sectionProgress(sec){
   var done = 0, total = 0;
+  if(isGuide(sec)){
+    total = guideItems(sec).length; done = guideDone(sec);
+    return { done: done, total: total, pct: total ? Math.round(done / total * 100) : 0 };
+  }
   sec.f.forEach(function(f){
     if(f.t === "tasks"){
       var items = taskItems(sec, f), checked = get(sec.id, f.k + "_done") || {};
@@ -647,7 +1019,10 @@ function sectionProgress(sec){
 }
 function overallProgress(){
   var done = 0, total = 0;
-  SCHEMA.forEach(function(sec){ var p = sectionProgress(sec); done += p.done; total += p.total; });
+  SCHEMA.forEach(function(sec){
+    if(isGuide(sec)) return;          /* 手順・給付は「書く」ものではないので記入率に入れない */
+    var p = sectionProgress(sec); done += p.done; total += p.total;
+  });
   return { done: done, total: total, pct: total ? Math.round(done / total * 100) : 0 };
 }
 
@@ -679,13 +1054,18 @@ function save(){
     toast(localOnly ? "この端末に保存した" : "保存した");
     return;
   }
+  var doc = buildDoc(state);
+  if(doc.length > 6000000){
+    toast("内容が大きすぎる。長い文章を減らしてから保存して。");
+    return;
+  }
   saving = true; paintSaveBar();
   try {
     sessionStorage.setItem(LS + ".justSaved", "1");
     sessionStorage.setItem(LS + ".route", route);
     sessionStorage.setItem(LS + ".scroll", String(window.scrollY || 0));
   } catch(e){}
-  artifactNS.publish(buildDoc(state)).catch(function(err){
+  artifactNS.publish(doc).catch(function(err){
     try { sessionStorage.removeItem(LS + ".justSaved"); } catch(e){}
     saving = false; paintSaveBar();
     var code = err && err.code;
@@ -812,6 +1192,19 @@ function coverView(){
   var left = el("div", {});
   left.appendChild(speech(coverLine(p.pct), p.pct === 100 ? "wink" : "smile", 68));
 
+  var g1 = SCHEMA[0], g2 = SCHEMA[1];
+  var gp1 = sectionProgress(g1), gp2 = sectionProgress(g2);
+  left.appendChild(el("div", { "class":"emerg" }, [
+    el("h2", { text:"もしものときは、まずここ" }),
+    el("p", { text:"期限のある手続きと、申請しないと出ないお金。あわてず、上から順に。" }),
+    el("div", { "class":"emerg-btns" }, [
+      el("button", { "class":"btn btn-sm", type:"button", onclick:function(){ go("sec:" + g1.id); } },
+        [ g1.n, el("span", { "class":"gcount", text:"　" + gp1.done + "/" + gp1.total }) ]),
+      el("button", { "class":"btn btn-sm", type:"button", onclick:function(){ go("sec:" + g2.id); } },
+        [ g2.n, el("span", { "class":"gcount", text:"　" + gp2.done + "/" + gp2.total }) ])
+    ])
+  ]));
+
   var acts = el("div", { style:"display:flex;flex-wrap:wrap;gap:10px;margin-top:18px" });
   if(!readOnly){
     acts.appendChild(el("button", { "class":"btn btn-tan btn-lg", text:"聞き込みモードで書く",
@@ -841,7 +1234,7 @@ function coverView(){
   ]));
 
   wrap.appendChild(el("div", { "class":"list-head", id:"toc" }, [
-    el("h2", { text:"もくじ" }), el("span", { text:"16 SECTIONS" })
+    el("h2", { text:"もくじ" }), el("span", { text: SCHEMA.length + " SECTIONS" })
   ]));
   wrap.appendChild(el("input", { "class":"search", type:"search", value: query, placeholder:"章や書いた内容を探す",
     oninput:function(e){ query = e.target.value; var h = document.getElementById("sec-meters"); if(h) h.replaceChildren.apply(h, sectionCards()); } }));
@@ -866,7 +1259,7 @@ function sectionCards(){
       el("span", { "class":"sec-idx", text: pad2(x.i + 1) }),
       el("span", { "class":"sec-name", text: x.sec.n }),
       el("span", { "class":"sec-meter" }, [
-        el("span", { "class":"sec-pct", text: p.pct + "%" }),
+        el("span", { "class":"sec-pct", text: isGuide(x.sec) ? (p.done + " / " + p.total + " 済") : (p.pct + "%") }),
         el("span", { "class":"sec-bar" + (p.pct === 100 ? " full" : "") }, [ el("b", { style:"width:" + p.pct + "%" }) ])
       ]),
       el("span", { "class":"sec-lead", text: x.sec.lead })
@@ -917,8 +1310,19 @@ function plainField(sec, f){
   var wrap = el("div", { "class":"field" }, [ el("span", { "class":"f-label", text: f.l }) ]);
   if(f.h) wrap.appendChild(el("p", { "class":"f-help", text: f.h }));
   if(editable()){
-    if(f.t === "choice") wrap.appendChild(choiceInput(f, get(sec.id, f.k) || "", function(v){ set(sec.id, f.k, v); }));
-    else wrap.appendChild(textInput(f, get(sec.id, f.k), function(v){ set(sec.id, f.k, v); }));
+    if(f.t === "choice"){
+      wrap.appendChild(choiceInput(f, get(sec.id, f.k) || "", function(v){ set(sec.id, f.k, v); }));
+    } else {
+      var alert = el("p", { "class":"secret", hidden:"" });
+      function checkSecret(v){
+        var why = looksSecret(v);
+        alert.textContent = why ? (why + "。ここには「どこにあるか」だけを書いて。") : "";
+        alert.hidden = !why;
+      }
+      wrap.appendChild(textInput(f, get(sec.id, f.k), function(v){ set(sec.id, f.k, v); checkSecret(v); }));
+      wrap.appendChild(alert);
+      checkSecret(get(sec.id, f.k));
+    }
   } else {
     wrap.appendChild(readValue(f, get(sec.id, f.k)));
   }
@@ -1014,7 +1418,82 @@ function tasksField(sec, f){
   paint();
   return wrap;
 }
+function guideField(sec, f){
+  var wrap = el("div", { "class":"field", style:"border-top:0;padding-top:4px" });
+  var host = el("div", { "class":"gsec" });
+  wrap.appendChild(host);
+
+  function doneMap(){ var d = get(sec.id, f.k + "_done"); return (d && typeof d === "object") ? d : {}; }
+  function memoMap(){ var m = get(sec.id, f.k + "_memo"); return (m && typeof m === "object") ? m : {}; }
+  function copyMap(cur){
+    var o = {};
+    for(var k in cur) if(Object.prototype.hasOwnProperty.call(cur, k)) o[k] = cur[k];
+    return o;
+  }
+
+  function paint(){
+    var done = doneMap(), memo = memoMap(), kids = [], lastGroup = null;
+    f.items.forEach(function(it){
+      if(it.g && it.g !== lastGroup){ lastGroup = it.g; kids.push(el("div", { "class":"ggroup", text: it.g })); }
+      var isDone = !!done[it.id];
+      var body = el("div", { "class":"gbody", hidden:"" });
+      var dl = el("dl", { "class":"gdl" });
+      function row(label, v){ if(isBlank(v)) return; dl.appendChild(el("dt", { text: label })); dl.appendChild(el("dd", { text: v })); }
+      row("いくら", it.amount); row("だれが", it.who); row("どこへ", it.where);
+      row("いつまで", it.due); row("要るもの", it.need);
+      if(dl.childNodes.length) body.appendChild(dl);
+      if(it.how && it.how.length){
+        body.appendChild(el("ol", { "class":"gsteps" }, it.how.map(function(h){ return el("li", { text: h }); })));
+      }
+      if(it.note) body.appendChild(el("p", { "class":"gnote", text: it.note }));
+      if(editable()){
+        body.appendChild(el("div", { "class":"gmemo" }, [
+          el("span", { "class":"mini-label", text:"メモ（いつ・どこで済ませたか）" }),
+          el("input", { "class":"in", type:"text", value: memo[it.id] || "", placeholder:"例：8/12 市役所で申請ずみ",
+            oninput:function(e){
+              var m = copyMap(memoMap()); m[it.id] = e.target.value;
+              set(sec.id, f.k + "_memo", m);
+            }})
+        ]));
+      } else if(!isBlank(memo[it.id])){
+        body.appendChild(el("p", { "class":"gnote", text:"メモ：" + memo[it.id] }));
+      }
+
+      var caret = el("span", { "class":"gcaret", text:"＋" });
+      var open = el("button", { "class":"gopen", type:"button", "aria-expanded":"false",
+        onclick:function(){
+          var shown = !body.hidden;
+          body.hidden = shown;
+          open.setAttribute("aria-expanded", String(!shown));
+          caret.textContent = shown ? "＋" : "−";
+        }}, [
+        el("span", { "class":"gtitle", text: it.t }),
+        it.pri ? el("span", { "class":"badge " + (it.pri === "最優先" || it.pri === "期限" ? "now" : (it.pri === "義務" || it.pri === "重要" ? "due" : "who")), text: it.pri }) : null,
+        it.due ? el("span", { "class":"badge due", text: it.due }) : null,
+        caret
+      ]);
+      kids.push(el("div", { "class":"gitem", "data-done": isDone ? "1" : "0" }, [
+        el("div", { "class":"ghead" }, [
+          el("button", { "class":"gcheck", type:"button", "aria-pressed": String(isDone),
+            "aria-label": (isDone ? "済を取り消す：" : "済にする：") + it.t,
+            onclick:function(){
+              var d = copyMap(doneMap());
+              if(d[it.id]) delete d[it.id]; else d[it.id] = true;
+              set(sec.id, f.k + "_done", d); paint();
+            }}, [ el("span", { "class":"tick", text:"✓" }) ]),
+          open
+        ]),
+        body
+      ]));
+    });
+    host.replaceChildren.apply(host, kids);
+  }
+  paint();
+  return wrap;
+}
+
 function fieldNode(sec, f){
+  if(f.t === "guide") return guideField(sec, f);
   if(f.t === "list") return listField(sec, f);
   if(f.t === "tasks") return tasksField(sec, f);
   return plainField(sec, f);
@@ -1033,14 +1512,15 @@ function sectionView(id){
   ]));
 
   var bar = el("div", { "class":"secbar" });
-  if(editable()){
+  if(editable() && !isGuide(sec)){
     bar.appendChild(el("button", { "class":"btn btn-tan btn-sm", type:"button", text:"この章をひとつずつ",
       onclick:function(){ startAsk(sec.id); } }));
     bar.appendChild(el("button", { "class":"btn btn-sm", type:"button", "aria-pressed": String(onlyEmpty),
       text:"未記入だけ", onclick:function(){ onlyEmpty = !onlyEmpty; render(); } }));
   }
   bar.appendChild(el("span", { "class":"spacer" }));
-  bar.appendChild(el("span", { "class":"sec-pct", text:"この章 " + p.pct + "%" }));
+  bar.appendChild(el("span", { "class":"sec-pct",
+    text: isGuide(sec) ? ("済んだもの " + p.done + " / " + p.total) : ("この章 " + p.pct + "%") }));
   wrap.appendChild(bar);
 
   if(sec.warn) wrap.appendChild(el("div", { "class":"notice", style:"margin-top:14px;max-width:740px;align-items:center" }, [
@@ -1050,6 +1530,7 @@ function sectionView(id){
 
   var fields = el("div", { "class":"fields" });
   var shown = sec.f.filter(function(f){
+    if(isGuide(sec)) return true;
     if(!onlyEmpty || !editable()) return true;
     if(f.t === "tasks") return true;
     return !fieldFilled(sec, f);
@@ -1073,6 +1554,7 @@ function buildAskQueue(secId){
   var q = [];
   SCHEMA.forEach(function(sec){
     if(secId && sec.id !== secId) return;
+    if(isGuide(sec)) return;
     sec.f.forEach(function(f){
       if(f.t === "list" || f.t === "tasks") return;
       if(fieldFilled(sec, f)) return;
@@ -1178,6 +1660,17 @@ function fullView(){
     var body = [];
     sec.f.forEach(function(f){
       var v = get(sec.id, f.k);
+      if(f.t === "guide"){
+        var gdone = get(sec.id, f.k + "_done") || {}, gmemo = get(sec.id, f.k + "_memo") || {};
+        var glines = f.items.map(function(it){
+          return (gdone[it.id] ? "済　" : "□　") + it.t
+               + (it.due ? "（" + it.due + "）" : "")
+               + (isBlank(gmemo[it.id]) ? "" : "\n　　" + gmemo[it.id]);
+        }).join("\n");
+        body.push(el("div", { "class":"field" }, [ el("span", { "class":"f-label", text: f.l }),
+          el("p", { "class":"f-val", text: glines }) ]));
+        return;
+      }
       if(f.t === "tasks"){
         var done = get(sec.id, f.k + "_done") || {};
         var items = taskItems(sec, f).filter(function(it){ return !done[it]; });
@@ -1233,8 +1726,44 @@ function openMenu(){
     menuItem("全文を表示・印刷する", "書いたところだけを一枚にまとめる", function(){ closeSheet(); go("full"); }),
     menuItem("バックアップを保存する", "JSONファイルとして手元に残す", doExport),
     menuItem("バックアップから読み込む", "保存したJSONを取り込む", doImport),
+    menuItem("渡す前に点検する", "秘密そのものを書いていないか調べる", openCheck),
+    menuItem("この端末の下書きを消す", "借りた端末や共用の端末で使ったあとに", clearLocal),
     menuItem("この引き継ぎ書について", "できること・気をつけること", openAbout)
   ]));
+}
+function openCheck(){
+  var hits = scanSecrets();
+  var body;
+  if(!hits.length){
+    body = el("div", {}, [
+      speech("パスワードや番号そのものらしきものは見つからなかった。このまま渡して大丈夫。", "smile", 58),
+      el("div", { "class":"hint", style:"margin-top:14px",
+        text:"見つけられるのは「パスワード：〇〇」のような書き方と、12桁以上の数字だけ。書いた本人の目でも、もう一度たしかめて。" })
+    ]);
+  } else {
+    body = el("div", {}, [
+      speech("気になるところが" + hits.length + "件ある。渡す前に見ておこう。", "point", 58),
+      el("div", { style:"display:flex;flex-direction:column;gap:8px;margin-top:14px" },
+        hits.map(function(h){
+          return el("button", { "class":"gitem", type:"button",
+            style:"text-align:left;padding:12px 14px;cursor:pointer;border-radius:10px",
+            onclick:function(){ closeSheet(); go("sec:" + h.sec.id); } }, [
+            el("div", { style:"font-size:14.5px;font-weight:500" }, [ pad2(h.i + 1) + "　" + h.sec.n ]),
+            el("div", { style:"font-size:13px;color:var(--ink2);margin-top:2px", text: h.label + "：" + h.why })
+          ]);
+        })),
+      el("div", { "class":"notice", style:"margin-top:14px;margin-bottom:0" },
+        [ el("span", { text:"番号やパスワードそのものではなく、「どこにあるか」に書きかえてください。心当たりがなければ、そのままで構いません。" }) ])
+    ]);
+  }
+  sheet("渡す前の点検", null, body);
+}
+function clearLocal(){
+  if(!window.confirm("この端末に残っている下書きと表示の設定を消します。保存ずみの内容は消えません。よろしいですか？")) return;
+  clearDraft();
+  try { localStorage.removeItem(LS + ".mode"); } catch(e){}
+  closeSheet();
+  toast("この端末に残っていた下書きを消した");
 }
 function openShare(){
   sheet("パートナーに渡す", "このページのURLを送るだけ。アプリを入れてもらう必要はない。", el("div", {}, [
@@ -1246,17 +1775,24 @@ function openShare(){
     el("div", { "class":"hint", style:"margin-top:6px",
       text:"「最初に読む人へ」「訃報の連絡先」「書類のありか」の三つが埋まっていれば、もう渡す価値のある引き継ぎ書。URL は必ず届く方法で伝えて、この引き継ぎ書があること自体も、口で話しておくと確実。" }),
     el("div", { "class":"notice", style:"margin-top:12px;margin-bottom:0" },
-      [ el("span", {}, [ el("b", { text:"渡す前に　" }), "暗証番号・パスワード・口座番号のすべてを書いていないか、もう一度たしかめて。ここは「ありか」を書く場所。" ]) ])
+      [ el("span", {}, [ el("b", { text:"渡す前に　" }), "暗証番号・パスワード・口座番号のすべてを書いていないか、もう一度たしかめて。ここは「ありか」を書く場所。" ]) ]),
+    el("div", { style:"margin-top:12px" }, [
+      el("button", { "class":"btn btn-sm", type:"button", text:"いま点検する", onclick: openCheck })
+    ])
   ]));
 }
 function openAbout(){
   sheet("この引き継ぎ書について", null, el("div", {}, [
     speech("書きにくいところは、聞き込みモードで一問ずつ聞くよ。空欄のまま次に進んでも大丈夫。", "smile", 58),
     el("p", { style:"margin:16px 0 12px;color:var(--ink2);font-size:14px",
-      text:"16の章に分かれた、夫婦のための引き継ぎ書。書いた内容はこのページ自体に保存され、URLを知っている人だけが開ける。「保存する」を押したときに記録され、押すまではこの端末に下書きとして残る。" }),
+      text: SCHEMA.length + "の章に分かれた、夫婦のための引き継ぎ書。書いた内容はこのページ自体に保存され、URLを知っている人だけが開ける。「保存する」を押したときに記録され、押すまではこの端末に下書きとして残る。" }),
     el("div", { "class":"notice", style:"margin-bottom:12px" },
       [ el("span", {}, [ el("b", { text:"法的な効力はない　" }), "財産の分け方を確実に残すなら、遺言書（公正証書遺言、または法務局で保管される自筆証書遺言）が必要。ここは、その手前にある「伝えること」のための場所。" ]) ]),
-    el("div", { "class":"hint", text:"バックアップは「メニュー → バックアップを保存する」から JSON で書き出せる。年に一度、見直して書き出しておくと安心。" })
+    el("div", { "class":"hint", text:"バックアップは「メニュー → バックアップを保存する」から JSON で書き出せる。年に一度、見直して書き出しておくと安心。" }),
+    el("div", { "class":"hint", style:"margin-top:12px" }, [
+      el("b", { text:"保存される場所" }),
+      el("span", { text:" … 保存した内容はこのページの中に入り、URLを知っていて、かつ共有された人だけが開ける。保存前の下書きは、書いている端末のブラウザにだけ残る。共用の端末を使ったときは「この端末の下書きを消す」で消せる。書きかえられるかどうかは共有の設定で決まり、画面の「編集」ボタンでは変えられない。" })
+    ])
   ]));
 }
 
