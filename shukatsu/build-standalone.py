@@ -30,26 +30,45 @@ CONF = os.path.join(HERE, "people.json")
 OUTDIR = os.path.join(ROOT, "public", "shukatsu")
 ID_RE = re.compile(r"^[a-z0-9][a-z0-9-]{0,31}$")
 
-FAVICON = ("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'"
-           "%3E%3Ctext y='26' font-size='26'%3E%F0%9F%95%8A%3C/text%3E%3C/svg%3E")
-
-
 def esc(t):
     return (str(t).replace("&", "&amp;").replace("<", "&lt;")
             .replace(">", "&gt;").replace('"', "&quot;"))
 
 
-def head(title, depth):
-    """depth … 一覧からの階層。相対パスの ../ の数に使う。"""
+def head(title, depth, manifest=None):
+    """depth … 一覧からの階層。アイコンへの相対パスに使う。"""
+    up = "../" * depth
     return (
         "<!doctype html>\n<html lang=\"ja\">\n<head>\n"
         "<meta charset=\"utf-8\">\n"
         "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, viewport-fit=cover\">\n"
         "<meta name=\"robots\" content=\"noindex, nofollow\">\n"
+        "<meta name=\"theme-color\" content=\"#2E5F63\">\n"
         "<title>" + esc(title) + "</title>\n"
-        "<link rel=\"icon\" href=\"" + FAVICON + "\">\n"
-        "</head>\n<body>\n"
+        "<link rel=\"icon\" sizes=\"32x32\" href=\"" + up + "icons/icon-32.png\">\n"
+        "<link rel=\"icon\" sizes=\"48x48\" href=\"" + up + "icons/icon-48.png\">\n"
+        "<link rel=\"apple-touch-icon\" href=\"" + up + "icons/apple-touch-icon.png\">\n"
+        "<meta name=\"apple-mobile-web-app-title\" content=\"" + esc(title) + "\">\n"
+        "<meta name=\"apple-mobile-web-app-capable\" content=\"yes\">\n"
+        + ("<link rel=\"manifest\" href=\"" + manifest + "\">\n" if manifest else "")
+        + "</head>\n<body>\n"
     )
+
+
+def manifest_json(name, short, start, depth):
+    """ホーム画面に追加したとき、その人のノートが開くようにする。"""
+    up = "../" * depth
+    return json.dumps({
+        "name": name, "short_name": short, "start_url": start,
+        "display": "standalone", "orientation": "portrait",
+        "background_color": "#F5F1E8", "theme_color": "#2E5F63",
+        "icons": [
+            {"src": up + "icons/icon-192.png", "sizes": "192x192", "type": "image/png"},
+            {"src": up + "icons/icon-512.png", "sizes": "512x512", "type": "image/png"},
+            {"src": up + "icons/icon-maskable.png", "sizes": "512x512",
+             "type": "image/png", "purpose": "maskable"}
+        ]
+    }, ensure_ascii=False, indent=2)
 
 
 def load_people(args):
@@ -96,7 +115,7 @@ def build_note(body, person):
     if not n:
         sys.exit("index.html に `var NOTE = {};` が見つからない。生成を中止した。")
     title = "%s の引き継ぎ書" % person["name"]
-    return head(title, 1) + out + "\n</body>\n</html>\n"
+    return head(title, 1, manifest="./app.webmanifest") + out + "\n</body>\n</html>\n"
 
 
 def build_index(people):
@@ -105,7 +124,7 @@ def build_index(people):
         '<span class="go">ひらく →</span></a>'.format(id=esc(p["id"]), name=esc(p["name"]))
         for p in people
     )
-    return head("夫婦引き継ぎ書", 0) + """<style>
+    return head("夫婦引き継ぎ書", 0, manifest="./app.webmanifest") + """<style>
 :root{--paper:#F5F1E8;--surface:#FFFDF7;--line:#E2D9C7;--ink:#3E4540;--ink2:#6E6C5E;
   --ink3:#9C947F;--accent:#4C888C;--tan:#D9B98C;
   --sans:'Zen Kaku Gothic New','Hiragino Sans','Noto Sans JP',system-ui,sans-serif;
@@ -177,12 +196,16 @@ def main():
         dest = os.path.join(d, "index.html")
         with open(dest, "w", encoding="utf-8") as f:
             f.write(build_note(body, p))
+        with open(os.path.join(d, "app.webmanifest"), "w", encoding="utf-8") as f:
+            f.write(manifest_json("%s の引き継ぎ書" % p["name"], p["name"], "./", 1))
         print("%-12s %-8s %5.0f KB  → /shukatsu/%s/"
               % (p["id"], p["name"], os.path.getsize(dest) / 1024, p["id"]))
 
     idx = os.path.join(OUTDIR, "index.html")
     with open(idx, "w", encoding="utf-8") as f:
         f.write(build_index(people))
+    with open(os.path.join(OUTDIR, "app.webmanifest"), "w", encoding="utf-8") as f:
+        f.write(manifest_json("夫婦引き継ぎ書", "引き継ぎ書", "./", 0))
     print("一覧 %.0f KB  → /shukatsu/" % (os.path.getsize(idx) / 1024))
 
 

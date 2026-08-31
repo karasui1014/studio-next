@@ -148,6 +148,32 @@ python3 assets/build-art.py --crop # 切り出しだけ
 章には `say`（案内役のセリフ）と、必要なら `warn`（注意書き）を持たせます。
 `kind:"guide"` をつけると、記入率から外れ、聞き込みモードでも飛ばされます。
 
+## アイコンとファビコン
+
+キャラクターシートの顔まわりを切り出し、瞳と同じ深い浅葱（`#2E5F63`）の
+角丸にのせています。16pxでは細部が潰れますが、タン色の帽子と暗い髪の
+かたまりで見分けがつきます。
+
+```bash
+python3 shukatsu/assets/build-icons.py
+```
+
+| ファイル | 用途 |
+|---|---|
+| `icon-32.png` / `icon-48.png` | ブラウザのタブ |
+| `apple-touch-icon.png` (180) | iOSのホーム画面。**角丸なし**（iOSが自分で丸めるため） |
+| `icon-192.png` / `icon-512.png` | Androidのホーム画面・スプラッシュ |
+| `icon-maskable.png` (512) | Androidのアダプティブ用。外側20%が削られても顔が残る余白 |
+
+出力先は `public/shukatsu/icons/`。あわせて `index.html` の `FAVICON`
+（48pxのdata URI）も差し替わります。Artifact版は外部ファイルを読めないため、
+そちらは埋め込みで持ちます。
+
+`app.webmanifest` を人ごとに置いてあるので、「ホーム画面に追加」すると
+その人のノートが直接開きます（`display: standalone`、テーマ色 `#2E5F63`）。
+
+切り出す位置や背景色は `build-icons.py` の `BOX` と `BG` で変えられます。
+
 ## 暗証番号による施錠
 
 **開くには暗証番号が要ります。1時間さわらなければ自動で鍵がかかります。**
