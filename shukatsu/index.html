@@ -1766,11 +1766,11 @@ function clearLocal(){
   toast("この端末に残っていた下書きを消した");
 }
 function openShare(){
-  sheet("パートナーに渡す", "このページのURLを送るだけ。アプリを入れてもらう必要はない。", el("div", {}, [
+  sheet("パートナーに渡す", "URLを送るだけで、相手のスマホでも同じ内容が開ける。アプリもClaudeのアカウントも要らない。", el("div", {}, [
     el("ol", { "class":"steps" }, [
-      el("li", { text:"Claude の共有メニューから、このページを共有する。「閲覧のみ」を選べば、相手は読めるが書き換えはできない。" }),
+      el("li", { text:"Claude の共有メニューから、このページを共有する。「リンクを知っている全員が閲覧可」にすると、相手はアカウントなしで開ける。「編集も許可」を選ばなければ、開けても書き換えはできない。" }),
       el("li", { text:"出てきた URL を、パートナーに送る。" }),
-      el("li", { text:"相手はスマホのブラウザで開くだけ。もくじから読める。" })
+      el("li", { text:"相手はスマホの標準ブラウザ（Safari・Chromeなど）で開くだけ。もくじから読める。" })
     ]),
     el("div", { "class":"hint", style:"margin-top:6px",
       text:"「最初に読む人へ」「訃報の連絡先」「書類のありか」の三つが埋まっていれば、もう渡す価値のある引き継ぎ書。URL は必ず届く方法で伝えて、この引き継ぎ書があること自体も、口で話しておくと確実。" }),
@@ -1778,6 +1778,15 @@ function openShare(){
       [ el("span", {}, [ el("b", { text:"渡す前に　" }), "暗証番号・パスワード・口座番号のすべてを書いていないか、もう一度たしかめて。ここは「ありか」を書く場所。" ]) ]),
     el("div", { style:"margin-top:12px" }, [
       el("button", { "class":"btn btn-sm", type:"button", text:"いま点検する", onclick: openCheck })
+    ]),
+    el("div", { "class":"intro", style:"margin-top:16px" }, [
+      el("h2", { text:"念のため、紙かPDFでも" }),
+      el("p", { "class":"f-help", style:"margin-bottom:10px",
+        text:"URLは便利だけど、Claudeというサービスに頼った仕組み。リンクをなくしたり、何年も先に仕様が変わったりすることもある。全文をPDFにして、スマホに保存するかメールで送るか、一枚印刷して大切な書類と一緒に置いておくと、より確実。" }),
+      el("button", { "class":"btn btn-tan btn-sm", type:"button", text:"全文をPDF・印刷にする",
+        onclick:function(){ closeSheet(); go("full"); setTimeout(function(){
+          try { window.print(); } catch(e){ toast("この画面からは印刷できなかった。"); }
+        }, 200); } })
     ])
   ]));
 }
