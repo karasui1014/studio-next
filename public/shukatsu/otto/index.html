@@ -265,6 +265,25 @@ textarea.in{resize:vertical;min-height:64px;overflow:hidden}
 .ask-foot-in{max-width:620px;margin:0 auto;display:flex;align-items:center;gap:10px}
 .ask-done{text-align:center;padding:20px 0}
 
+/* ---------- 鍵の画面 ---------- */
+.lockwrap{display:flex;align-items:center;justify-content:center;min-height:100dvh;padding:24px 18px}
+.lockcard{width:100%;max-width:400px;text-align:center;background:var(--surface);border:1px solid var(--line);
+  border-radius:18px;padding:30px 24px 26px;box-shadow:var(--shadow)}
+.lockcard .akari{margin:0 auto 6px}
+.lock-t{font-family:var(--serif);font-size:22px;font-weight:700;margin:0 0 8px;line-height:1.45}
+.lock-s{font-size:13.5px;color:var(--ink2);margin:0 0 18px;line-height:1.75;text-align:left}
+.lock-hint{font-size:13px;color:var(--ink2);background:var(--surface2);border:1px solid var(--line);
+  border-radius:9px;padding:9px 12px;margin:0 0 14px;text-align:left}
+.lockcard .in{margin-bottom:10px;text-align:center;font-size:17px;letter-spacing:.08em}
+.lockcard .in[type="text"]{text-align:left;letter-spacing:0;font-size:14.5px}
+.lock-agree{display:flex;gap:9px;align-items:flex-start;text-align:left;font-size:12.5px;color:var(--ink2);
+  line-height:1.7;margin:6px 0 12px;cursor:pointer}
+.lock-agree input{margin-top:4px;flex:none;width:17px;height:17px;accent-color:var(--accent)}
+.lockerr{margin:0 0 12px;padding:9px 12px;border-radius:9px;background:var(--caution-soft);
+  border:1px solid color-mix(in srgb,var(--caution) 30%,transparent);font-size:13px;color:var(--ink)}
+.lockcard .btn-lg{width:100%;justify-content:center}
+.lock-note{font-size:12px;color:var(--ink3);line-height:1.7;margin:16px 0 0;text-align:left}
+
 /* ---------- 保存バー・トースト ---------- */
 .savebar{position:fixed;left:0;right:0;bottom:0;z-index:50;background:var(--surface);border-top:1px solid var(--line);
   padding:11px 18px calc(11px + env(safe-area-inset-bottom));box-shadow:0 -8px 24px -18px rgba(0,0,0,.5)}
@@ -914,31 +933,107 @@ function normalize(o){
   });
   return out;
 }
-function readEmbedded(){
-  var n = document.getElementById("note-data");
-  try { return normalize(JSON.parse(n.textContent)); } catch(e){ return emptyState(); }
-}
+/* =======================================================================
+   暗証番号と施錠
 
-var published = readEmbedded();
-var state = clone(published);
+   画面を隠すだけの鍵は、開発者ツールで素通りされる。中身が口座や
+   健康の情報なので、暗証番号から鍵を作って本文そのものを暗号化する
+   （PBKDF2-SHA256 で鍵を導出し、AES-GCM で包む）。
+   暗証番号を知らない限り、保存されているのは意味のない文字列だけになる。
+
+   解錠中の鍵はタブの sessionStorage に置き、1時間さわらなければ失効する。
+   タブを閉じれば消える。再読み込みのたびに入れ直さずに済ませるため。
+   ======================================================================= */
+var IDLE_MS = 60 * 60 * 1000;      /* 1時間さわらなければ施錠 */
+var PBKDF2_ITER = 250000;
+var VKEY = LS + ".vault", HKEY = LS + ".hint", LKEY = LS + ".label", SKEY = LS + ".sk";
+
+var cryptoKey = null;              /* 解錠中だけ持つ。施錠で捨てる */
+var locked = true;
+var lockMode = "unlock";           /* "setup"（初回）か "unlock" */
+var lockBusy = false, lockErr = "";
+var lastAct = Date.now(), idleTimer = null;
+
+function hasCrypto(){
+  return !!(window.crypto && window.crypto.subtle && typeof window.crypto.subtle.deriveKey === "function");
+}
+function b64(bytes){
+  var s = "", a = new Uint8Array(bytes);
+  for(var i = 0; i < a.length; i++) s += String.fromCharCode(a[i]);
+  return btoa(s);
+}
+function unb64(t){
+  var raw = atob(t), a = new Uint8Array(raw.length);
+  for(var i = 0; i < raw.length; i++) a[i] = raw.charCodeAt(i);
+  return a;
+}
+function deriveKey(pass, salt, iter){
+  return window.crypto.subtle.importKey("raw", new TextEncoder().encode(pass), "PBKDF2", false, ["deriveKey"])
+    .then(function(base){
+      return window.crypto.subtle.deriveKey(
+        { name:"PBKDF2", salt: salt, iterations: iter, hash:"SHA-256" },
+        base, { name:"AES-GCM", length:256 }, true, ["encrypt","decrypt"]);
+    });
+}
+function seal(obj){
+  var iv = window.crypto.getRandomValues(new Uint8Array(12));
+  var salt = unb64(currentSalt);
+  return window.crypto.subtle.encrypt({ name:"AES-GCM", iv: iv }, cryptoKey,
+      new TextEncoder().encode(JSON.stringify(obj)))
+    .then(function(ct){
+      return { v:1, iter: PBKDF2_ITER, salt: currentSalt, iv: b64(iv), ct: b64(ct), at: Date.now() };
+    });
+}
+function unseal(vault, key){
+  return window.crypto.subtle.decrypt({ name:"AES-GCM", iv: unb64(vault.iv) }, key, unb64(vault.ct))
+    .then(function(pt){ return JSON.parse(new TextDecoder().decode(pt)); });
+}
+var currentSalt = "";
+
+function isVault(o){ return !!(o && typeof o === "object" && o.ct && o.salt && o.iv); }
+function localVault(){
+  try { var raw = localStorage.getItem(VKEY); return raw ? JSON.parse(raw) : null; } catch(e){ return null; }
+}
+function writeLocalVault(v){ try { localStorage.setItem(VKEY, JSON.stringify(v)); } catch(e){} }
+function readHint(){ try { return localStorage.getItem(HKEY) || ""; } catch(e){ return ""; } }
+function writeHint(t){ try { t ? localStorage.setItem(HKEY, t) : localStorage.removeItem(HKEY); } catch(e){} }
+function writeLabel(t){ try { t ? localStorage.setItem(LKEY, t) : localStorage.removeItem(LKEY); } catch(e){} }
+
+/* 解錠中の鍵をタブに預ける。期限つきなので、放っておけば失効する。 */
+function persistKey(key){
+  if(!key) return Promise.resolve();
+  return window.crypto.subtle.exportKey("raw", key).then(function(raw){
+    try { sessionStorage.setItem(SKEY, JSON.stringify({ k: b64(raw), until: Date.now() + IDLE_MS, salt: currentSalt })); } catch(e){}
+  }, function(){});
+}
+function restoreKey(){
+  var o;
+  try { o = JSON.parse(sessionStorage.getItem(SKEY) || "null"); } catch(e){ o = null; }
+  if(!o || !o.k || !o.until || Date.now() > o.until) { dropKey(); return Promise.resolve(null); }
+  currentSalt = o.salt || "";
+  return window.crypto.subtle.importKey("raw", unb64(o.k), { name:"AES-GCM" }, true, ["encrypt","decrypt"])
+    .then(function(k){ return k; }, function(){ return null; });
+}
+function dropKey(){ try { sessionStorage.removeItem(SKEY); } catch(e){} }
+
+var published = emptyState();
+var state = emptyState();
 var dirty = false, saving = false, readOnly = false, localOnly = false;
 var artifactNS = null, downloadsNS = null;
 var mode = "read";
 try { mode = localStorage.getItem(LS + ".mode") === "edit" ? "edit" : "read"; } catch(e){}
-var route = "home", query = "", restoreOffer = null, onlyEmpty = false;
+var route = "home", query = "", onlyEmpty = false;
 
+/* 書き換えのたびに包み直すが、打鍵ごとでは重いので少し待つ。 */
+var vaultTimer = null;
 function writeDraft(){
-  try { localStorage.setItem(LS + ".draft", JSON.stringify({ at: Date.now(), data: state })); } catch(e){}
+  if(!cryptoKey) return;
+  clearTimeout(vaultTimer);
+  vaultTimer = setTimeout(function(){
+    seal(state).then(writeLocalVault, function(){});
+  }, 400);
 }
-function readDraft(){
-  try {
-    var raw = localStorage.getItem(LS + ".draft");
-    if(!raw) return null;
-    var o = JSON.parse(raw);
-    return o && o.data ? { at: o.at || 0, data: normalize(o.data) } : null;
-  } catch(e){ return null; }
-}
-function clearDraft(){ try { localStorage.removeItem(LS + ".draft"); } catch(e){} }
+function clearDraft(){ try { localStorage.removeItem(VKEY); } catch(e){} }
 
 /* パスワード・暗証番号・カード番号らしきものを見つける。
    ここは「ありか」を書く場所なので、秘密そのものが入っていたら知らせる。 */
@@ -1062,26 +1157,36 @@ function buildDoc(data){
 
 /* ---------- 保存 ---------- */
 function save(){
-  if(saving) return;
+  if(saving || !cryptoKey) return;
   state.updatedAt = new Date().toISOString();
-  writeDraft();
-  if(!artifactNS || localOnly){
-    dirty = false; paintSaveBar();
-    toast(localOnly ? "この端末に保存した" : "保存した");
-    return;
-  }
-  var doc = buildDoc(state);
-  if(doc.length > 6000000){
-    toast("内容が大きすぎる。長い文章を減らしてから保存して。");
-    return;
-  }
   saving = true; paintSaveBar();
-  try {
-    sessionStorage.setItem(LS + ".justSaved", "1");
-    sessionStorage.setItem(LS + ".route", route);
-    sessionStorage.setItem(LS + ".scroll", String(window.scrollY || 0));
-  } catch(e){}
-  artifactNS.publish(doc).catch(function(err){
+  clearTimeout(vaultTimer);
+  seal(state).then(function(vault){
+    writeLocalVault(vault);
+    if(!artifactNS || localOnly){
+      saving = false; dirty = false; paintSaveBar();
+      toast(localOnly ? "この端末に保存した" : "保存した");
+      return;
+    }
+    var doc = buildDoc(vault);
+    if(doc.length > 6000000){
+      saving = false; paintSaveBar();
+      toast("内容が大きすぎる。長い文章を減らしてから保存して。");
+      return;
+    }
+    try {
+      sessionStorage.setItem(LS + ".justSaved", "1");
+      sessionStorage.setItem(LS + ".route", route);
+      sessionStorage.setItem(LS + ".scroll", String(window.scrollY || 0));
+    } catch(e){}
+    return publishDoc(doc);
+  }).catch(function(){
+    saving = false; paintSaveBar();
+    toast("保存できなかった。もう一度試して。");
+  });
+}
+function publishDoc(doc){
+  return artifactNS.publish(doc).catch(function(err){
     try { sessionStorage.removeItem(LS + ".justSaved"); } catch(e){}
     saving = false; paintSaveBar();
     var code = err && err.code;
@@ -1152,6 +1257,8 @@ function topbar(){
             try { localStorage.setItem(LS + ".mode", mode); } catch(e){}
             render();
           }}),
+        el("button", { "class":"btn btn-quiet btn-sm", "aria-label":"鍵をかける", title:"鍵をかける",
+          onclick:function(){ lockNow(); }, text:"🔒" }),
         el("button", { "class":"btn btn-quiet btn-sm", "aria-label":"メニュー", onclick:openMenu, text:"•••" })
       ])
     ]),
@@ -1232,6 +1339,17 @@ function coverView(){
   left.appendChild(acts);
 
   if(editable()){
+    left.appendChild(el("div", { "class":"field", style:"border-top:0;margin-top:14px;padding-bottom:0" }, [
+      el("label", { "class":"f-label", for:"owner-in", text:"この引き継ぎ書の名前" }),
+      el("p", { "class":"f-help", text:"表紙と、入口の一覧に出る名前。いつでも変えられる。" }),
+      el("input", { "class":"in", id:"owner-in", type:"text", value: state.owner || "",
+        placeholder: NOTE.name || "例：太郎",
+        oninput:function(e){
+          state.owner = e.target.value;
+          writeLabel(e.target.value.trim());   /* 入口の一覧が読む。名前だけは暗号化しない */
+          markDirty();
+        }})
+    ]));
     left.appendChild(el("div", { "class":"intro" }, [
       el("h2", { text:"最初に読む人へ" }),
       el("p", { "class":"f-help", style:"margin-bottom:8px",
@@ -1816,6 +1934,10 @@ function openAbout(){
       [ el("span", {}, [ el("b", { text:"法的な効力はない　" }), "財産の分け方を確実に残すなら、遺言書（公正証書遺言、または法務局で保管される自筆証書遺言）が必要。ここは、その手前にある「伝えること」のための場所。" ]) ]),
     el("div", { "class":"hint", text:"バックアップは「メニュー → バックアップを保存する」から JSON で書き出せる。年に一度、見直して書き出しておくと安心。" }),
     el("div", { "class":"hint", style:"margin-top:12px" }, [
+      el("b", { text:"暗証番号のこと" }),
+      el("span", { text:" … 本文は暗証番号から作った鍵で暗号化してあります（PBKDF2 + AES-GCM）。番号を知らない人には意味のない文字列にしか見えません。1時間さわらないと自動で鍵がかかり、もう一度入れることになります。上部の🔒でいつでも手動でかけられます。忘れると誰にも開けません。紙に書いて、この引き継ぎ書のありかと一緒に保管してください。" })
+    ]),
+    el("div", { "class":"hint", style:"margin-top:12px" }, [
       el("b", { text:"保存される場所" }),
       el("span", { text:" … 保存した内容はこのページの中に入り、URLを知っていて、かつ共有された人だけが開ける。保存前の下書きは、書いている端末のブラウザにだけ残る。共用の端末を使ったときは「この端末の下書きを消す」で消せる。書きかえられるかどうかは共有の設定で決まり、画面の「編集」ボタンでは変えられない。" })
     ])
@@ -1870,7 +1992,7 @@ function paintSaveBar(){
       el("span", { "class":"savebar-t", text: saving ? "保存している…" : "まだ保存していない変更がある" }),
       (!localOnly && !saving) ? el("button", { "class":"btn btn-sm", type:"button", text:"元にもどす", onclick:function(){
         if(!window.confirm("最後に保存したときの内容にもどします。書きかけの内容は消えます。")) return;
-        state = clone(published); clearDraft(); dirty = false; render(); toast("もとにもどした");
+        state = clone(published); dirty = false; writeDraft(); render(); toast("もとにもどした");
       }}) : null,
       el("button", { "class":"btn btn-solid btn-sm", type:"button", text: saving ? "保存中" : "保存する",
         disabled: saving ? "" : null, onclick: save })
@@ -1880,19 +2002,9 @@ function paintSaveBar(){
 
 /* ---------- 描画 ---------- */
 function render(){
+  if(!hasCrypto()){ root.replaceChildren(noCryptoView()); return; }
+  if(locked){ root.replaceChildren(lockView()); return; }
   var kids = topbar();
-  if(restoreOffer){
-    kids.push(el("div", { "class":"wrap" }, [ el("div", { "class":"banner" }, [
-      el("span", { style:"flex:1;min-width:180px", text:"この端末に、保存していない変更が残っている。" }),
-      el("button", { "class":"btn btn-sm", type:"button", text:"反映する", onclick:function(){
-        state = restoreOffer.data; restoreOffer = null; dirty = true; render();
-        toast("下書きを反映した。確かめて「保存する」を押して。");
-      }}),
-      el("button", { "class":"btn btn-quiet btn-sm", type:"button", text:"破棄する", onclick:function(){
-        restoreOffer = null; clearDraft(); render();
-      }})
-    ])]));
-  }
   if(localOnly && route === "home"){
     kids.push(el("div", { "class":"wrap" }, [ el("div", { "class":"banner",
       text:"いまはこの端末のブラウザにだけ保存している。共有されたURLから開くと、同じ内容をふたりで見られる。" }) ]));
@@ -1909,14 +2021,159 @@ function render(){
   paintSaveBar();
 }
 
-/* ---------- 起動 ---------- */
-function enterLocalOnly(){
-  localOnly = true;
-  var d = readDraft();
-  if(d && JSON.stringify(d.data) !== JSON.stringify(published)){ state = d.data; restoreOffer = null; dirty = false; }
+/* ---------- 施錠と解錠 ---------- */
+function lockNow(quiet){
+  cryptoKey = null; locked = true; lockMode = "unlock"; lockErr = "";
+  state = emptyState(); published = emptyState();
+  dirty = false; saving = false; route = "home"; query = ""; onlyEmpty = false;
+  clearTimeout(vaultTimer);
+  dropKey();
+  closeSheet(); if(askEl) { askEl.remove(); askEl = null; document.body.style.overflow = ""; }
+  render();
+  if(!quiet) toast("鍵をかけた");
+}
+function afterUnlock(data, key){
+  cryptoKey = key;
+  state = normalize(data);
+  published = clone(state);
+  locked = false; lockErr = ""; dirty = false;
+  touch();
+  startIdleWatch();
   render();
 }
+/* 初回。暗証番号を決めて、いまの内容を包む。 */
+function doSetup(pass, hint){
+  var salt = window.crypto.getRandomValues(new Uint8Array(16));
+  currentSalt = b64(salt);
+  return deriveKey(pass, salt, PBKDF2_ITER).then(function(key){
+    cryptoKey = key;
+    return seal(emptyState()).then(function(v){
+      writeLocalVault(v);
+      writeHint(hint || "");
+      return persistKey(key).then(function(){ afterUnlock(emptyState(), key); });
+    });
+  });
+}
+/* 解錠。手元と公開ぶんの両方を試す（片方だけ新しいことがある）。 */
+function tryUnlock(pass){
+  var cands = [];
+  var lv = localVault(), ev = isVault(embedded) ? embedded : null;
+  if(lv && ev) cands = (lv.at || 0) >= (ev.at || 0) ? [lv, ev] : [ev, lv];
+  else cands = [lv || ev];
+  cands = cands.filter(Boolean);
+  if(!cands.length) return Promise.reject(new Error("no-vault"));
+
+  function attempt(i){
+    if(i >= cands.length) return Promise.reject(new Error("bad-pass"));
+    var v = cands[i];
+    return deriveKey(pass, unb64(v.salt), v.iter || PBKDF2_ITER).then(function(key){
+      return unseal(v, key).then(function(data){
+        currentSalt = v.salt;
+        return persistKey(key).then(function(){ afterUnlock(data, key); });
+      }, function(){ return attempt(i + 1); });
+    });
+  }
+  return attempt(0);
+}
+function touch(){
+  lastAct = Date.now();
+  if(cryptoKey){
+    try {
+      var o = JSON.parse(sessionStorage.getItem(SKEY) || "null");
+      if(o){ o.until = Date.now() + IDLE_MS; sessionStorage.setItem(SKEY, JSON.stringify(o)); }
+    } catch(e){}
+  }
+}
+function startIdleWatch(){
+  if(idleTimer) return;
+  idleTimer = setInterval(function(){
+    if(!locked && Date.now() - lastAct > IDLE_MS){ lockNow(true); toast("1時間さわらなかったので、鍵をかけた"); }
+  }, 30000);
+}
+["pointerdown","keydown","wheel","touchstart"].forEach(function(ev){
+  window.addEventListener(ev, function(){ if(!locked) touch(); }, { passive:true });
+});
+document.addEventListener("visibilitychange", function(){
+  if(document.visibilityState !== "visible") return;
+  if(!locked && Date.now() - lastAct > IDLE_MS){ lockNow(true); toast("1時間さわらなかったので、鍵をかけた"); }
+  else if(!locked) touch();
+});
+
+/* ---------- 鍵の画面 ---------- */
+function lockView(){
+  var setup = lockMode === "setup";
+  var wrap = el("main", { "class":"wrap lockwrap" });
+  var pass = el("input", { "class":"in", type:"password", inputmode:"numeric",
+    autocomplete: setup ? "new-password" : "current-password",
+    placeholder: setup ? "4文字以上" : "暗証番号", "aria-label":"暗証番号" });
+  var pass2 = setup ? el("input", { "class":"in", type:"password", autocomplete:"new-password",
+    placeholder:"もう一度", "aria-label":"暗証番号（確認）" }) : null;
+  var hint = setup ? el("input", { "class":"in", type:"text", placeholder:"ヒント（任意・暗証番号そのものは書かない）" }) : null;
+  var agree = setup ? el("input", { type:"checkbox", id:"agree-lost" }) : null;
+  var err = el("p", { "class":"lockerr", hidden: lockErr ? null : "", text: lockErr });
+  var btn = el("button", { "class":"btn btn-solid btn-lg", type:"button",
+    text: setup ? "この暗証番号にする" : "ひらく" });
+
+  function go(){
+    if(lockBusy) return;
+    var p = pass.value;
+    if(setup){
+      if(p.length < 4){ show("4文字以上にして。"); return; }
+      if(p !== pass2.value){ show("2つが一致していない。"); return; }
+      if(!agree.checked){ show("忘れたときのことを確認して、チェックを入れて。"); return; }
+    } else if(!p){ show("暗証番号を入れて。"); return; }
+    lockBusy = true; btn.disabled = true; btn.textContent = "確かめている…";
+    var work = setup ? doSetup(p, hint.value.trim()) : tryUnlock(p);
+    work.then(function(){ lockBusy = false; }, function(e){
+      lockBusy = false; btn.disabled = false;
+      btn.textContent = setup ? "この暗証番号にする" : "ひらく";
+      show(e && e.message === "no-vault" ? "保存されたものが見つからない。" : "暗証番号が違う。");
+      pass.value = ""; pass.focus();
+    });
+  }
+  function show(m){ lockErr = m; err.textContent = m; err.hidden = false; }
+  btn.addEventListener("click", go);
+  [pass, pass2, hint].forEach(function(i){
+    if(i) i.addEventListener("keydown", function(e){ if(e.key === "Enter"){ e.preventDefault(); go(); } });
+  });
+  setTimeout(function(){ pass.focus(); }, 80);
+
+  var h = readHint();
+  wrap.appendChild(el("div", { "class":"lockcard" }, [
+    el("span", { svg: akari(74, setup ? "smile" : "normal") }),
+    el("h1", { "class":"lock-t", text: setup ? "暗証番号を決める" : (NOTE.name ? NOTE.name + "の引き継ぎ書" : "夫婦引き継ぎ書") }),
+    el("p", { "class":"lock-s", text: setup
+      ? "この番号で中身を暗号化します。番号を知らない人には、意味のない文字列にしか見えません。"
+      : "暗証番号を入れると開きます。" }),
+    (!setup && h) ? el("p", { "class":"lock-hint", text:"ヒント： " + h }) : null,
+    pass, pass2, hint,
+    setup ? el("label", { "class":"lock-agree", for:"agree-lost" }, [
+      agree, el("span", { text:"忘れたら中身は二度と読めなくなることを理解した。紙に書いて、この引き継ぎ書のありかと一緒に保管する。" })
+    ]) : null,
+    err, btn,
+    setup ? el("p", { "class":"lock-note", text:"パートナーにも同じ番号を伝えておいてください。あなたに何かあったとき、開けるのはこの番号を知っている人だけです。" }) : null
+  ]));
+  return wrap;
+}
+function noCryptoView(){
+  return el("main", { "class":"wrap lockwrap" }, [
+    el("div", { "class":"lockcard" }, [
+      el("span", { svg: akari(74, "surprise") }),
+      el("h1", { "class":"lock-t", text:"この開き方では鍵が使えない" }),
+      el("p", { "class":"lock-s", text:"暗証番号による保護には、暗号化の仕組み（Web Crypto）が要ります。この環境では使えないため、中身を開きません。https のURLから開き直してください。" })
+    ])
+  ]);
+}
+
+/* ---------- 起動 ---------- */
+var embedded = {};
+function enterLocalOnly(){ localOnly = true; if(!locked) render(); }
+
 function boot(){
+  try { embedded = JSON.parse(document.getElementById("note-data").textContent) || {}; } catch(e){ embedded = {}; }
+
+  if(!hasCrypto()){ render(); return; }
+
   var justSaved = false, wantRoute = null, wantScroll = 0;
   try {
     if(sessionStorage.getItem(LS + ".justSaved")){ justSaved = true; sessionStorage.removeItem(LS + ".justSaved"); }
@@ -1925,18 +2182,33 @@ function boot(){
     sessionStorage.removeItem(LS + ".route");
     sessionStorage.removeItem(LS + ".scroll");
   } catch(e){}
-  if(justSaved) clearDraft();
-  var d = readDraft();
-  if(d && JSON.stringify(d.data) !== JSON.stringify(published)) restoreOffer = d;
-  if(wantRoute) route = wantRoute;
+
+  var haveVault = !!localVault() || isVault(embedded);
+  lockMode = haveVault ? "unlock" : "setup";
   render();
-  if(justSaved) toast("保存した");
-  if(wantScroll) setTimeout(function(){ window.scrollTo(0, wantScroll); }, 60);
 
   if(window.claude && typeof window.claude.use === "function"){
     window.claude.use("artifact").then(function(ns){ artifactNS = ns; if(!ns) enterLocalOnly(); }, function(){ enterLocalOnly(); });
     window.claude.use("downloads").then(function(ns){ downloadsNS = ns; }, function(){});
   } else enterLocalOnly();
+
+  /* 同じタブで1時間以内に開けてあれば、入れ直さずに続けられる */
+  if(!haveVault) return;
+  restoreKey().then(function(key){
+    if(!key) return;
+    var lv = localVault(), ev = isVault(embedded) ? embedded : null;
+    var cands = (lv && ev) ? ((lv.at || 0) >= (ev.at || 0) ? [lv, ev] : [ev, lv]) : [lv || ev];
+    (function attempt(i){
+      if(i >= cands.length){ dropKey(); return; }
+      unseal(cands[i], key).then(function(data){
+        currentSalt = cands[i].salt;
+        afterUnlock(data, key);
+        if(wantRoute){ route = wantRoute; render(); }
+        if(justSaved) toast("保存した");
+        if(wantScroll) setTimeout(function(){ window.scrollTo(0, wantScroll); }, 60);
+      }, function(){ attempt(i + 1); });
+    })(0);
+  });
 }
 
 window.addEventListener("keydown", function(e){

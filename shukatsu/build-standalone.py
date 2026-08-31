@@ -101,7 +101,7 @@ def build_note(body, person):
 
 def build_index(people):
     cards = "\n".join(
-        '  <a class="card" href="./{id}/"><span class="nm">{name}</span>'
+        '  <a class="card" href="./{id}/" data-id="{id}"><span class="nm">{name}</span>'
         '<span class="go">ひらく →</span></a>'.format(id=esc(p["id"]), name=esc(p["name"]))
         for p in people
     )
@@ -136,9 +136,22 @@ h1{font-family:var(--serif);font-size:clamp(26px,7vw,34px);font-weight:700;margi
   <h1>夫婦引き継ぎ書</h1>
   <p class="lead">どちらのノートを開きますか。ひとりずつ別々に保存されます。</p>
 """ + cards + """
-  <p class="note">書いた内容は、開いた端末のブラウザにだけ残ります。相手の端末には送られず、
-  インターネットにも公開されません。二人で同じ内容を見たいときは、Claude の共有リンクの方を使ってください。</p>
+  <p class="note">中身は暗証番号で暗号化して、開いた端末のブラウザにだけ残ります。
+  相手の端末には送られず、インターネットにも公開されません。1時間さわらないと自動で鍵がかかります。
+  二人で同じ内容を見たいときは、Claude の共有リンクの方を使ってください。</p>
 </main>
+<script>
+/* ノート側で名前を変えたら、この一覧にも反映する。
+   名前だけは暗号化せずに置いてある（一覧が読むため）。本文は読めない。 */
+(function(){
+  try {
+    document.querySelectorAll(".card[data-id]").forEach(function(a){
+      var label = localStorage.getItem("endingnote.v1." + a.dataset.id + ".label");
+      if(label) a.querySelector(".nm").textContent = label;
+    });
+  } catch(e){}
+})();
+</script>
 </body>
 </html>
 """
