@@ -3,7 +3,25 @@
 Studio Next とは無関係の、個人用の引き継ぎ書（エンディングノート）です。単一の HTML ファイルで完結しています。
 
 - `index.html` … アプリ本体（CSS・JS・データ・キャラクターをすべて内包）
-- 公開先 … Claude の Artifact。URL を送ればスマホのブラウザで開けます。
+
+配信先は2つあります。
+
+| | URL | 保存先 | 用途 |
+|---|---|---|---|
+| **Artifact** | claude.ai の共有リンク | ページ自体（共有相手と同じ内容を見られる） | 夫婦で書いて共有する本番 |
+| **GitHub Pages** | https://karasui1014.github.io/studio-next/shukatsu/ | 各端末の localStorage | Claudeを使っていない人に見せる公開版 |
+
+公開版は `window.claude` が無い環境で動くので localOnly モードになり、
+**書いた内容が公開されることはありません**（各自の端末に留まります）。
+このリポジトリは Public なので、記入済みの内容は絶対にコミットしないでください。
+
+```bash
+python3 shukatsu/build-standalone.py   # public/shukatsu/index.html を作り直す
+```
+
+`public/` は `vite build` がそのまま `dist/` にコピーするため、既存の公開
+ワークフロー（`.github/workflows/deploy.yml`、main への push で起動）に
+そのまま乗ります。
 
 ## 案内役
 
