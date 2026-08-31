@@ -6,18 +6,44 @@ Studio Next とは無関係の、個人用の引き継ぎ書（エンディン�
 
 配信先は2つあります。
 
-| | URL | 保存先 | 用途 |
-|---|---|---|---|
-| **Artifact** | claude.ai の共有リンク | ページ自体（共有相手と同じ内容を見られる） | 夫婦で書いて共有する本番 |
-| **GitHub Pages** | https://karasui1014.github.io/studio-next/shukatsu/ | 各端末の localStorage | Claudeを使っていない人に見せる公開版 |
+| | 保存先 | 用途 |
+|---|---|---|
+| **Artifact**（claude.ai の共有リンク） | ページ自体。共有相手と同じ内容を見られる | 二人で書いて共有する本番 |
+| **GitHub Pages** | 各端末の localStorage。人ごとに分離 | Claudeを使っていない人に見せる公開版 |
+
+### 公開版は人ごとに作る
+
+```
+https://karasui1014.github.io/studio-next/shukatsu/        一覧（誰のを開くか選ぶ）
+https://karasui1014.github.io/studio-next/shukatsu/otto/   夫のノート
+https://karasui1014.github.io/studio-next/shukatsu/tsuma/  妻のノート
+```
+
+誰のぶんを作るかは `shukatsu/people.json` で決めます。
+
+```bash
+python3 shukatsu/build-standalone.py                     # people.json の通りに作る
+python3 shukatsu/build-standalone.py otto=太郎 tsuma=花子   # 名前を指定（設定も書き換わる）
+python3 shukatsu/build-standalone.py --list              # いま誰のぶんがあるか
+```
+
+`id` は URL に使うので半角英小文字・数字・ハイフンのみ。`name` は画面に出る名前です。
+
+> **なぜ人ごとに分ける必要があるのか**
+>
+> localStorage は origin（ドメイン）単位で共有されます。`/shukatsu/otto/` と
+> `/shukatsu/tsuma/` はパスが違うだけで同じ保存場所を読み書きするため、
+> ページを分けただけでは二人の記入が混ざります。
+>
+> そこでビルド時に `var NOTE = {};` を `var NOTE = {"id":"otto","name":"夫"};`
+> に差し替え、保存キーに id を混ぜています（`endingnote.v1.otto` /
+> `endingnote.v1.tsuma`）。分離はテストで固定してあります。
+>
+> Artifact 版では `NOTE` が空のままなので、保存キーも表示も従来どおりです。
 
 公開版は `window.claude` が無い環境で動くので localOnly モードになり、
 **書いた内容が公開されることはありません**（各自の端末に留まります）。
 このリポジトリは Public なので、記入済みの内容は絶対にコミットしないでください。
-
-```bash
-python3 shukatsu/build-standalone.py   # public/shukatsu/index.html を作り直す
-```
 
 `public/` は `vite build` がそのまま `dist/` にコピーするため、既存の公開
 ワークフロー（`.github/workflows/deploy.yml`、main への push で起動）に
