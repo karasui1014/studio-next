@@ -149,7 +149,7 @@ h1{font-family:var(--serif);font-size:clamp(26px,7vw,34px);font-weight:700;margi
 .note{margin-top:28px;padding:14px 16px;background:var(--surface);border:1px solid var(--line);
   border-radius:12px;font-size:13px;color:var(--ink2);line-height:1.75}
 </style>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&family=Shippori+Mincho:wght@700&family=Zen+Kaku+Gothic+New:wght@400;500&display=swap">
+<link rel="stylesheet" media="print" onload="this.media='all'" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&family=Shippori+Mincho:wght@700&family=Zen+Kaku+Gothic+New:wght@400;500&display=swap">
 <main class="wrap">
   <p class="eyebrow">HANDOVER NOTE</p>
   <h1>夫婦引き継ぎ書</h1>

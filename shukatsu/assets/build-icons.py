@@ -14,8 +14,8 @@
 あわせて shukatsu/index.html の FAVICON（data URI）を差し替える。
 Artifact 版は外部ファイルを読めないので、そちらは埋め込みで持つ。
 
-元絵は assets/akari-normal.webp（キャラクターシートのバストアップ・通常表情）。
-顔まわりだけを切り出し、瞳と同じ深い浅葱の角丸の上に置いている。
+元絵は assets/akari-normal.webp（顔まわりに詰めた通常表情）。
+肩を少し落として、瞳と同じ深い浅葱の角丸の上に置いている。
 16pxでは細部は潰れるが、タン色の帽子と暗い髪のかたまりで見分けがつく。
 """
 import base64, io, os, re, sys
@@ -29,7 +29,7 @@ OUT = os.path.join(ROOT, "public", "shukatsu", "icons")
 HTML = os.path.join(SHUKATSU, "index.html")
 
 BG = (46, 95, 99, 255)          # 深い浅葱（--eye と同系）
-BOX = (0.06, 0.02, 0.94, 0.72)  # 元絵のどこを使うか（顔まわり）
+BOX = (0.02, 0.00, 0.98, 0.88)  # 元絵のどこを使うか（肩を落とす）
 ROUND = 0.22                    # 角丸の半径（辺に対する比）
 
 
