@@ -6,15 +6,18 @@
   python3 shukatsu/build-standalone.py --list             # いま誰のぶんがあるか見る
 
 出力:
-  public/shukatsu/index.html        … 一覧（誰のノートを開くか選ぶページ）
-  public/shukatsu/<id>/index.html   … その人のノート
+  public/shukatsu/index.html        … 入口（鍵の画面で誰のぶんを開くか選ぶ）
+  public/shukatsu/<id>/index.html   … その人から始まる同じアプリ（ホーム画面用）
 
-なぜ人ごとに分けるか
---------------------
+どのページも中身は同じで、`var PEOPLE` に全員が入る。鍵の画面で
+どちらのぶんを開くか選び、その人の暗証番号で解錠する。人ごとのURLは
+「最初に選ばれている人」が違うだけで、開いたあとに選びなおせる。
+
+なぜ人ごとに保存先を分けるか
+----------------------------
 localStorage は origin（ドメイン）単位で共有される。パスが違っても同じ
 場所を読み書きするので、ページを分けただけでは二人の記入が混ざる。
-そこでビルド時に `var NOTE = {}` を差し替え、保存キーに id を混ぜている
-（endingnote.v1.otto / endingnote.v1.tsuma）。
+そこで保存キーに id を混ぜている（endingnote.v1.otto / endingnote.v1.tsuma）。
 
 公開版は window.claude が無い環境で動くため localOnly モードになり、
 書いた内容はその端末の localStorage にだけ残る。誰かの記入内容が
@@ -29,6 +32,12 @@ SRC = os.path.join(HERE, "index.html")
 CONF = os.path.join(HERE, "people.json")
 OUTDIR = os.path.join(ROOT, "public", "shukatsu")
 ID_RE = re.compile(r"^[a-z0-9][a-z0-9-]{0,31}$")
+
+def jsval(obj):
+    """JS のソースへ埋める値。名前に `</script>` が入っても抜け出せないようにする。"""
+    return (json.dumps(obj, ensure_ascii=False)
+            .replace("<", "\\u003c").replace(">", "\\u003e").replace("&", "\\u0026"))
+
 
 def esc(t):
     return (str(t).replace("&", "&amp;").replace("<", "&lt;")
@@ -108,72 +117,31 @@ def load_people(args):
     return people
 
 
-def build_note(body, person):
-    """その人ぶんのノートを組み立てる。NOTE を差し替えて保存先を分ける。"""
-    note = json.dumps({"id": person["id"], "name": person["name"]}, ensure_ascii=False)
-    out, n = re.subn(r"var NOTE = \{\};", "var NOTE = " + note + ";", body, count=1)
+def inject(body, people, person):
+    """PEOPLE に全員を、NOTE に最初に選ばれている人を入れる。"""
+    roster = jsval([{"id": p["id"], "name": p["name"]} for p in people])
+    out, n = re.subn(r"var PEOPLE = \[.*?\n\];",
+                     lambda m: "var PEOPLE = " + roster + ";", body, count=1, flags=re.S)
+    if not n:
+        sys.exit("index.html に `var PEOPLE = [...]` が見つからない。生成を中止した。")
+    note = jsval({"id": person["id"], "name": person["name"]}) if person else "{}"
+    out, n = re.subn(r"var NOTE = \{\};", lambda m: "var NOTE = " + note + ";", out, count=1)
     if not n:
         sys.exit("index.html に `var NOTE = {};` が見つからない。生成を中止した。")
+    return out
+
+
+def build_note(body, people, person):
+    """その人から始まるページ。ホーム画面に追加したときの入口になる。"""
     title = "%s の引き継ぎ書" % person["name"]
-    return head(title, 1, manifest="./app.webmanifest") + out + "\n</body>\n</html>\n"
+    return (head(title, 1, manifest="./app.webmanifest")
+            + inject(body, people, person) + "\n</body>\n</html>\n")
 
 
-def build_index(people):
-    cards = "\n".join(
-        '  <a class="card" href="./{id}/" data-id="{id}"><span class="nm">{name}</span>'
-        '<span class="go">ひらく →</span></a>'.format(id=esc(p["id"]), name=esc(p["name"]))
-        for p in people
-    )
-    return head("夫婦引き継ぎ書", 0, manifest="./app.webmanifest") + """<style>
-:root{--paper:#F5F1E8;--surface:#FFFDF7;--line:#E2D9C7;--ink:#3E4540;--ink2:#6E6C5E;
-  --ink3:#9C947F;--accent:#4C888C;--tan:#D9B98C;
-  --sans:'Zen Kaku Gothic New','Hiragino Sans','Noto Sans JP',system-ui,sans-serif;
-  --serif:'Shippori Mincho','Hiragino Mincho ProN','Yu Mincho',serif;
-  --mono:'IBM Plex Mono',ui-monospace,Menlo,monospace}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
-  --paper:#1A1D1B;--surface:#232724;--line:#363B37;--ink:#EDE7DA;--ink2:#B5AF9F;
-  --ink3:#8B8677;--accent:#7FC4C6;--tan:#C9A97C}}
-*{box-sizing:border-box}
-body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);
-  font-size:16px;line-height:1.8;-webkit-font-smoothing:antialiased}
-.wrap{max-width:520px;margin:0 auto;padding:48px 20px 60px}
-.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.2em;color:var(--tan);margin:0 0 10px}
-h1{font-family:var(--serif);font-size:clamp(26px,7vw,34px);font-weight:700;margin:0 0 12px;line-height:1.35}
-.lead{margin:0 0 30px;color:var(--ink2);font-size:14.5px}
-.card{display:flex;align-items:center;gap:14px;padding:20px 22px;margin-bottom:11px;
-  background:var(--surface);border:1px solid var(--line);border-radius:14px;
-  text-decoration:none;color:inherit;transition:border-color .15s,transform .12s}
-.card:hover{border-color:var(--accent);transform:translateY(-1px)}
-.nm{flex:1;font-family:var(--serif);font-weight:700;font-size:19px}
-.go{font-family:var(--mono);font-size:12px;color:var(--accent)}
-.note{margin-top:28px;padding:14px 16px;background:var(--surface);border:1px solid var(--line);
-  border-radius:12px;font-size:13px;color:var(--ink2);line-height:1.75}
-</style>
-<link rel="stylesheet" media="print" onload="this.media='all'" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&family=Shippori+Mincho:wght@700&family=Zen+Kaku+Gothic+New:wght@400;500&display=swap">
-<main class="wrap">
-  <p class="eyebrow">HANDOVER NOTE</p>
-  <h1>夫婦引き継ぎ書</h1>
-  <p class="lead">どちらのノートを開きますか。ひとりずつ別々に保存されます。</p>
-""" + cards + """
-  <p class="note">中身は暗証番号で暗号化して、開いた端末のブラウザにだけ残ります。
-  相手の端末には送られず、インターネットにも公開されません。1時間さわらないと自動で鍵がかかります。
-  二人で同じ内容を見たいときは、Claude の共有リンクの方を使ってください。</p>
-</main>
-<script>
-/* ノート側で名前を変えたら、この一覧にも反映する。
-   名前だけは暗号化せずに置いてある（一覧が読むため）。本文は読めない。 */
-(function(){
-  try {
-    document.querySelectorAll(".card[data-id]").forEach(function(a){
-      var label = localStorage.getItem("endingnote.v1." + a.dataset.id + ".label");
-      if(label) a.querySelector(".nm").textContent = label;
-    });
-  } catch(e){}
-})();
-</script>
-</body>
-</html>
-"""
+def build_index(body, people):
+    """入口。誰も選ばずに開く（前に開いた人か、いちばん上の人から始まる）。"""
+    return (head("夫婦引き継ぎ書", 0, manifest="./app.webmanifest")
+            + inject(body, people, None) + "\n</body>\n</html>\n")
 
 
 def main():
@@ -195,7 +163,7 @@ def main():
         os.makedirs(d, exist_ok=True)
         dest = os.path.join(d, "index.html")
         with open(dest, "w", encoding="utf-8") as f:
-            f.write(build_note(body, p))
+            f.write(build_note(body, people, p))
         with open(os.path.join(d, "app.webmanifest"), "w", encoding="utf-8") as f:
             f.write(manifest_json("%s の引き継ぎ書" % p["name"], p["name"], "./", 1))
         print("%-12s %-8s %5.0f KB  → /shukatsu/%s/"
@@ -203,10 +171,10 @@ def main():
 
     idx = os.path.join(OUTDIR, "index.html")
     with open(idx, "w", encoding="utf-8") as f:
-        f.write(build_index(people))
+        f.write(build_index(body, people))
     with open(os.path.join(OUTDIR, "app.webmanifest"), "w", encoding="utf-8") as f:
         f.write(manifest_json("夫婦引き継ぎ書", "引き継ぎ書", "./", 0))
-    print("一覧 %.0f KB  → /shukatsu/" % (os.path.getsize(idx) / 1024))
+    print("入口 %.0f KB  → /shukatsu/" % (os.path.getsize(idx) / 1024))
 
 
 if __name__ == "__main__":
