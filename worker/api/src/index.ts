@@ -13,6 +13,11 @@
  *   GET  /api/content/master   master のみ
  *   GET  /api/health           死活確認（認証不要・秘密は返さない）
  *
+ *   GET  /api/kakei/meta       ふたりの家計：塩と版番号（認証不要）
+ *   GET  /api/kakei            ふたりの家計：暗号文を返す（合言葉が要る）
+ *   PUT  /api/kakei            ふたりの家計：暗号文を預かる（合言葉と版番号が要る）
+ * 家計の中身は端末で暗号化されてから届く。ここも KV も復号できない（→ kakei.ts）。
+ *
  * ■ 限定コンテンツの持ち方 —— KV に置く（Workerには埋め込まない）
  * Worker のコードに同梱すると、更新のたびに再デプロイが要り、
  * 手元にファイルが無い環境（CI など）からデプロイすると内容が消える。
@@ -23,6 +28,15 @@
  * 場所:  KV の `premium:content`
  * public/ には決して置かない。置いた時点で URL 直打ちで読めてしまう。
  */
+import {
+  decidePut,
+  loadDoc as loadKakei,
+  sameSecret,
+  sha256Hex,
+  saveDoc as saveKakei,
+  tooManyKakeiAttempts,
+  type KakeiPut,
+} from './kakei'
 import { isSerialRevoked, resolveMembership, type Credential } from './membership'
 import { bearerFrom, issueSession, satisfies, verifySession } from './session'
 import type { Env, Role, SessionClaims } from './types'
@@ -59,8 +73,8 @@ function corsHeaders(origin: string | null, env: Env): Headers {
   const h = new Headers()
   if (origin && allowed.includes(origin)) h.set('Access-Control-Allow-Origin', origin)
   h.set('Vary', 'Origin')
-  h.set('Access-Control-Allow-Methods', 'GET,POST,OPTIONS')
-  h.set('Access-Control-Allow-Headers', 'Content-Type,Authorization')
+  h.set('Access-Control-Allow-Methods', 'GET,POST,PUT,OPTIONS')
+  h.set('Access-Control-Allow-Headers', 'Content-Type,Authorization,X-Kakei-Auth')
   h.set('Access-Control-Max-Age', '86400')
   return h
 }
@@ -221,6 +235,59 @@ export default {
       if (gate instanceof Response) return gate
       const c = await loadPremium(env)
       return json({ master: c.master ?? {} }, 200, cors)
+    }
+
+    // --- ふたりの家計 ------------------------------------------------
+    // 中身は暗号文のまま扱う。ここで復号する手段は無い（→ kakei.ts）
+    if (url.pathname === '/api/kakei/meta' && request.method === 'GET') {
+      const doc = await loadKakei(env)
+      // salt は秘密ではない。合言葉を入れる前に、鍵の作り方を知る必要がある
+      return json({ exists: !!doc, salt: doc?.salt ?? null, rev: doc?.rev ?? 0 }, 200, cors)
+    }
+
+    if (url.pathname === '/api/kakei' && (request.method === 'GET' || request.method === 'PUT')) {
+      const ip = request.headers.get('CF-Connecting-IP') ?? 'local'
+      if (await tooManyKakeiAttempts(ip, env)) {
+        return json({ error: 'rate_limited', message: '試行が多すぎます' }, 429, cors)
+      }
+      const token = request.headers.get('X-Kakei-Auth') ?? ''
+      const current = await loadKakei(env)
+
+      if (request.method === 'GET') {
+        if (!current) return json({ error: 'not_found' }, 404, cors)
+        if (!token || !sameSecret(await sha256Hex(token), current.verifier)) {
+          return json({ error: 'unauthorized', message: '合言葉が違います' }, 401, cors)
+        }
+        // verifier は返さない。錠前の形まで渡す理由がない
+        return json(
+          { salt: current.salt, iv: current.iv, ct: current.ct, rev: current.rev, at: current.at },
+          200,
+          cors,
+        )
+      }
+
+      let body: KakeiPut
+      try {
+        body = (await request.json()) as KakeiPut
+      } catch {
+        return json({ error: 'bad_request' }, 400, cors)
+      }
+      const verdict = await decidePut(current, body, token)
+      if (!verdict.ok) {
+        const c = verdict.current
+        return json(
+          {
+            error: verdict.error,
+            message: verdict.message,
+            // 競合のときだけ、相手の版を一緒に返す（読み直しの往復を省く）
+            ...(c ? { current: { salt: c.salt, iv: c.iv, ct: c.ct, rev: c.rev, at: c.at } } : {}),
+          },
+          verdict.status,
+          cors,
+        )
+      }
+      await saveKakei(verdict.doc, env)
+      return json({ ok: true, rev: verdict.doc.rev, at: verdict.doc.at }, 200, cors)
     }
 
     return json({ error: 'not_found' }, 404, cors)

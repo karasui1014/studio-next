@@ -206,13 +206,11 @@ button{font:inherit;color:inherit}
   border:1px dashed var(--line-strong);border-radius:var(--r)}
 </style>
 <div id="root"></div>
-<script type="application/json" id="note-data">{"v":1}</script>
 <script id="app-js">
 (function(){
 "use strict";
 
 var TITLE = "ふたりの家計";
-var FONT_URL = "https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Shippori+Mincho:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap";
 var LS = "kakei.v1";
 var VKEY = LS + ".vault", HKEY = LS + ".hint", SKEY = LS + ".key";
 
@@ -375,16 +373,29 @@ function stampHistory(s){
 }
 
 /* =======================================================================
-   鍵（暗証番号で中身そのものを暗号化する）
+   鍵と保存
+
+   合言葉から PBKDF2 で64バイトを作り、
+     前半32バイト … 中身を暗号化する鍵。この端末から出ない
+     後半32バイト … サーバーに「書いてよい人だ」と示す札（token）
+   サーバーが持つのは token のハッシュと暗号文だけ。預けたものが丸ごと
+   漏れても、そこから中身も合言葉も復元できない。
+
+   相手は Claude を使っていなくてよい。ふつうのWebページとして開き、
+   合言葉を入れれば同じ数字が見える。
    ======================================================================= */
+var API = "https://studio-next-api.karasui1969.workers.dev";
 var IDLE_MS = 60 * 60 * 1000;
 var PBKDF2_ITER = 250000;
-var cryptoKey = null, currentSalt = "";
-var locked = true, lockMode = "unlock", lockBusy = false, lockErr = "";
+var MIN_PASS = 8;   /* ネットに置くので、4桁では足りない */
+
+var cryptoKey = null, authToken = "", currentSalt = "";
+var serverRev = 0;
+var locked = true, booting = true, lockMode = "unlock", lockBusy = false, lockErr = "";
 var lastAct = Date.now(), idleTimer = null;
 
 function hasCrypto(){
-  return !!(window.crypto && window.crypto.subtle && typeof window.crypto.subtle.deriveKey === "function");
+  return !!(window.crypto && window.crypto.subtle && typeof window.crypto.subtle.deriveBits === "function");
 }
 function b64(bytes){
   var s = "", a = new Uint8Array(bytes);
@@ -396,12 +407,19 @@ function unb64(t){
   for(var i = 0; i < raw.length; i++) a[i] = raw.charCodeAt(i);
   return a;
 }
-function deriveKey(pass, salt, iter){
-  return window.crypto.subtle.importKey("raw", new TextEncoder().encode(pass), "PBKDF2", false, ["deriveKey"])
+/* 合言葉から鍵と札の2つを作る。1回の導出から切り分けるので、
+   どちらか一方が漏れても、もう一方は作れない。 */
+function deriveBoth(pass, salt, iter){
+  return window.crypto.subtle.importKey("raw", new TextEncoder().encode(pass), "PBKDF2", false, ["deriveBits"])
     .then(function(base){
-      return window.crypto.subtle.deriveKey(
-        { name:"PBKDF2", salt: salt, iterations: iter, hash:"SHA-256" },
-        base, { name:"AES-GCM", length:256 }, true, ["encrypt","decrypt"]);
+      return window.crypto.subtle.deriveBits(
+        { name:"PBKDF2", salt: salt, iterations: iter || PBKDF2_ITER, hash:"SHA-256" }, base, 512);
+    })
+    .then(function(bits){
+      var all = new Uint8Array(bits);
+      var token = b64(all.slice(32));
+      return window.crypto.subtle.importKey("raw", all.slice(0, 32), { name:"AES-GCM" }, true, ["encrypt","decrypt"])
+        .then(function(key){ return { key: key, token: token }; });
     });
 }
 function seal(obj){
@@ -409,7 +427,7 @@ function seal(obj){
   return window.crypto.subtle.encrypt({ name:"AES-GCM", iv: iv }, cryptoKey,
       new TextEncoder().encode(JSON.stringify(obj)))
     .then(function(ct){
-      return { v:1, iter: PBKDF2_ITER, salt: currentSalt, iv: b64(iv), ct: b64(ct), at: Date.now() };
+      return { v:2, salt: currentSalt, iv: b64(iv), ct: b64(ct), at: Date.now() };
     });
 }
 function unseal(vault, key){
@@ -417,7 +435,8 @@ function unseal(vault, key){
     .then(function(pt){ return JSON.parse(new TextDecoder().decode(pt)); });
 }
 function isVault(o){ return !!(o && typeof o === "object" && o.ct && o.salt && o.iv); }
-function embeddedVault(){ return isVault(embedded) ? embedded : (embedded && isVault(embedded.vault) ? embedded.vault : null); }
+
+/* この端末の控え。ネットにつながらないときの命綱 */
 function localVault(){
   try { var raw = localStorage.getItem(VKEY); return raw ? JSON.parse(raw) : null; } catch(e){ return null; }
 }
@@ -425,29 +444,72 @@ function writeLocalVault(v){ try { localStorage.setItem(VKEY, JSON.stringify(v))
 function readHint(){ try { return localStorage.getItem(HKEY) || ""; } catch(e){ return ""; } }
 function writeHint(t){ try { t ? localStorage.setItem(HKEY, t) : localStorage.removeItem(HKEY); } catch(e){} }
 
-function persistKey(key){
+/* 解錠中の鍵と札はタブに預ける。期限つきで、タブを閉じれば消える */
+function persistKey(key, token){
   if(!key) return Promise.resolve();
   return window.crypto.subtle.exportKey("raw", key).then(function(raw){
-    try { sessionStorage.setItem(SKEY, JSON.stringify({ k: b64(raw), until: Date.now() + IDLE_MS, salt: currentSalt })); } catch(e){}
+    try {
+      sessionStorage.setItem(SKEY, JSON.stringify({
+        k: b64(raw), t: token, salt: currentSalt, until: Date.now() + IDLE_MS }));
+    } catch(e){}
   }, function(){});
 }
 function restoreKey(){
   var o;
   try { o = JSON.parse(sessionStorage.getItem(SKEY) || "null"); } catch(e){ o = null; }
   if(!o || !o.k || !o.until || Date.now() > o.until){ dropKey(); return Promise.resolve(null); }
-  currentSalt = o.salt || "";
   return window.crypto.subtle.importKey("raw", unb64(o.k), { name:"AES-GCM" }, true, ["encrypt","decrypt"])
-    .then(function(k){ return k; }, function(){ return null; });
+    .then(function(k){ return { key: k, token: o.t || "", salt: o.salt || "" }; }, function(){ return null; });
 }
 function dropKey(){ try { sessionStorage.removeItem(SKEY); } catch(e){} }
 
 /* =======================================================================
-   保存
+   サーバーとのやりとり
+
+   失敗は必ず {code, ...} の形で投げる。画面側は code だけを見る。
    ======================================================================= */
-var embedded = {};
+function fail(code, extra){
+  var e = new Error(code); e.code = code;
+  if(extra) for(var k in extra) if(Object.prototype.hasOwnProperty.call(extra, k)) e[k] = extra[k];
+  return e;
+}
+function apiMeta(){
+  return fetch(API + "/api/kakei/meta", { cache:"no-store" }).then(function(r){
+    if(!r.ok) throw fail("server");
+    return r.json();
+  });
+}
+function apiGet(token){
+  return fetch(API + "/api/kakei", { cache:"no-store", headers: { "X-Kakei-Auth": token } })
+    .then(function(r){
+      if(r.status === 401) throw fail("bad-pass");
+      if(r.status === 404) throw fail("no-vault");
+      if(r.status === 429) throw fail("rate_limited");
+      if(!r.ok) throw fail("server");
+      return r.json();
+    });
+}
+function apiPut(vault, rev, token){
+  return fetch(API + "/api/kakei", {
+    method:"PUT",
+    headers: { "Content-Type":"application/json", "X-Kakei-Auth": token },
+    body: JSON.stringify({ salt: vault.salt, iv: vault.iv, ct: vault.ct, rev: rev })
+  }).then(function(r){
+    return r.json().catch(function(){ return {}; }).then(function(body){
+      if(r.ok) return body;
+      if(r.status === 409) throw fail("conflict", { current: body.current });
+      if(r.status === 401) throw fail("bad-pass");
+      if(r.status === 429) throw fail("rate_limited");
+      throw fail("server");
+    });
+  });
+}
+
+/* =======================================================================
+   いまの状態
+   ======================================================================= */
 var state = emptyState(), published = emptyState();
 var dirty = false, saving = false, readOnly = false, localOnly = false;
-var artifactNS = null;
 var route = "home";
 
 var vaultTimer = null;
@@ -458,24 +520,7 @@ function writeDraft(){
 }
 function markDirty(){ dirty = true; writeDraft(); paintSaveBar(); }
 
-function buildDoc(data){
-  var css = document.getElementById("app-css").textContent;
-  var js  = document.getElementById("app-js").textContent;
-  var json = JSON.stringify(data).replace(/</g, "\\u003c").replace(/>/g, "\\u003e").replace(/&/g, "\\u0026");
-  return [
-    "<!doctype html>", '<html lang="ja">', "<head>", '<meta charset="utf-8">',
-    '<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">',
-    "<title>" + TITLE + "</title>",
-    FAVICON ? '<link rel="icon" href="' + FAVICON + '">' : "",
-    '<link rel="preconnect" href="https://fonts.googleapis.com">',
-    '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>',
-    /* フォントを待って画面が白いままにならないようにする */
-    '<link rel="stylesheet" media="print" onload="this.media=\'all\'" href="' + FONT_URL + '">',
-    '<style id="app-css">' + css + "</style>", "</head>", "<body>", '<div id="root"></div>',
-    '<script type="application/json" id="note-data">' + json + "<\/script>",
-    '<script id="app-js">' + js + "<\/script>", "</body>", "</html>"
-  ].join("\n");
-}
+/* ---------- 保存 ---------- */
 function save(){
   if(saving || !cryptoKey) return;
   stampHistory(state);
@@ -484,43 +529,59 @@ function save(){
   clearTimeout(vaultTimer);
   seal(state).then(function(vault){
     writeLocalVault(vault);
-    published = clone(state);
-    if(!artifactNS || localOnly){
+    if(localOnly){
       saving = false; dirty = false; paintSaveBar(); render();
-      toast(localOnly ? "この端末に保存した" : "保存した");
+      toast("この端末に保存した。ネットにつながったら、もう一度保存して。");
       return;
     }
-    var nd = { v:1, vault: vault };
-    var doc = buildDoc(nd);
-    try {
-      sessionStorage.setItem(LS + ".justSaved", "1");
-      sessionStorage.setItem(LS + ".route", route);
-    } catch(e){}
-    embedded = nd;
-    return publishDoc(doc);
+    return apiPut(vault, serverRev, authToken).then(function(res){
+      serverRev = res.rev;
+      published = clone(state);
+      saving = false; dirty = false; paintSaveBar(); render();
+      toast("保存した");
+    }, function(err){
+      saving = false; paintSaveBar();
+      var code = err && err.code;
+      if(code === "conflict") conflictSheet(err.current);
+      else if(code === "bad-pass") toast("合言葉が変わっている。開き直して。");
+      else if(code === "rate_limited") toast("保存が続きすぎた。少し待ってからもう一度。");
+      else toast("ネットにつながらない。入れた数字はこの端末に残してある。");
+    });
   }).catch(function(){
     saving = false; paintSaveBar();
     toast("保存できなかった。もう一度試して。");
   });
 }
-function publishDoc(doc){
-  return artifactNS.publish(doc).catch(function(err){
-    try { sessionStorage.removeItem(LS + ".justSaved"); } catch(e){}
-    saving = false; paintSaveBar();
-    var code = err && err.code;
-    if(code === "conflict"){
-      toast("相手が先に保存したみたい。いちど開き直して、最新のほうに入れ直して。");
-    } else if(code === "not_writer" || code === "not_granted" || code === "consent_required" || code === "not_declared"){
-      readOnly = true; render();
-      toast("この家計簿は見るだけ。書けるのは、作った人と共有された人だけ。");
-    } else if(code === "too_large"){
-      toast("中身が大きすぎて保存できなかった。古い記録を減らしてみて。");
-    } else if(code === "rate_limited"){
-      toast("保存の間隔が短すぎる。少し待ってからもう一度。");
-    } else {
-      toast("保存できなかった。入れた数字はこの端末に残してある。");
-    }
-  });
+/* 相手が先に保存していたとき。黙って上書きしない */
+function conflictSheet(current){
+  sheet("相手が先に保存していました", "どちらを残すか選んでください。", [
+    el("div", { "class":"menu" }, [
+      menuItem("相手の数字を読み込む", "いま画面に入れた変更は消えます（この端末に控えは残ります）", function(){
+        if(!current){ reloadFromServer(); return; }
+        unseal(current, cryptoKey).then(function(data){
+          serverRev = current.rev;
+          state = normalize(data); published = clone(state); dirty = false;
+          render(); toast("相手の数字を読み込んだ");
+        }, function(){ toast("読み込めなかった"); });
+      }),
+      menuItem("自分の数字で上書きする", "相手が入れた変更は消えます", function(){
+        if(current) serverRev = current.rev;
+        save();
+      })
+    ])
+  ]);
+}
+/* サーバーから読み直す */
+function reloadFromServer(quiet){
+  if(localOnly || !cryptoKey) return Promise.resolve();
+  return apiGet(authToken).then(function(doc){
+    return unseal(doc, cryptoKey).then(function(data){
+      serverRev = doc.rev;
+      state = normalize(data); published = clone(state); dirty = false;
+      render();
+      if(!quiet) toast("最新を読み込んだ");
+    });
+  }, function(){ if(!quiet) toast("読み込めなかった"); });
 }
 
 /* =======================================================================
@@ -909,7 +970,8 @@ function openMenu(){
     el("div", { "class":"menu" }, [
       menuItem("使いかた", "毎月なにをすればいいか", openAbout),
       menuItem("ふたりで使うには", "相手に渡す方法", openShare),
-      menuItem("鍵をかける", "暗証番号を入れ直すまで中身を隠す", function(){ lockNow(); })
+      menuItem("最新を読み込む", "相手が保存したぶんを取り込む", function(){ reloadFromServer(); }),
+      menuItem("鍵をかける", "合言葉を入れ直すまで中身を隠す", function(){ lockNow(); })
     ])
   ]);
 }
@@ -918,21 +980,24 @@ function openAbout(){
     el("ol", { "class":"steps" }, [
       el("li", { text:"マネーフォワードなど、いつも使っている家計アプリを開く。" }),
       el("li", { text:"このページの「数字を入れる」で、貯蓄の合計・ローン残高・毎月の収支を書き写す。" }),
-      el("li", { text:"「保存する」を押す。押した月の数字が1点だけ記録され、グラフが伸びていきます。" })
+      el("li", { text:"「保存する」を押す。押した月の数字が1点だけ記録され、グラフが伸びていきます。" }),
+      el("li", { text:"保存すると、相手の画面にも同じ数字が出ます（相手は次に開いたときに反映されます）。" })
     ]),
     el("p", { "class":"f-help", style:"margin-top:14px",
       text:"マネーフォワードから自動で数字を取り込むことはできません（外部のアプリに数字を渡す仕組みが公開されていないため）。手で書き写すぶん、口座のログイン情報をどこにも預けずに済みます。" })
   ]);
 }
 function openShare(){
-  sheet("ふたりで使うには", "このページのリンクを相手に共有すれば、同じ数字を二人で見られます。", [
+  sheet("ふたりで使うには", "相手は Claude を使っていなくて大丈夫です。ふつうのWebページとして開けます。", [
     el("ol", { "class":"steps" }, [
-      el("li", { text:"このページの共有リンクを相手に送る。" }),
-      el("li", { text:"暗証番号も伝える。番号を知らない人には、中身は意味のない文字列にしか見えません。" }),
-      el("li", { text:"相手がリンクを開いて暗証番号を入れれば、同じ画面が出ます。" })
+      el("li", { text:"このページのURLを相手に送る。" }),
+      el("li", { text:"合言葉も伝える（URLとは別のメッセージで送ると安心）。" }),
+      el("li", { text:"相手がURLを開いて合言葉を入れれば、同じ数字が見えて、書き換えもできます。" })
     ]),
     el("p", { "class":"f-help", style:"margin-top:14px",
-      text:"同時に二人で書き換えると、あとから保存したほうが勝ちます。入力は「どちらかが月に一度」にしておくと安心です。" })
+      text:"数字はこの端末で暗号化してから預けています。預け先には意味のない文字列しか残らないので、合言葉を知らない人には中身が見えません。" }),
+    el("p", { "class":"f-help",
+      text:"同時にふたりで書き換えたときは、あとから保存した人に「相手が先に保存しています」と出ます。どちらを残すかその場で選べます。" })
   ]);
 }
 
@@ -956,12 +1021,13 @@ function paintSaveBar(){
 function render(){
   root.textContent = "";
   if(!hasCrypto()){ root.appendChild(noCryptoView()); return; }
+  if(booting){ root.appendChild(bootingView()); return; }
   if(locked){ root.appendChild(lockView()); paintSaveBar(); return; }
   root.appendChild(topbar());
   root.appendChild(route === "edit" ? editView() : homeView());
   if(localOnly){
     var b = el("div", { "class":"wrap" }, [
-      el("p", { "class":"f-help", text:"いまは共有できない開き方です。書いた内容はこの端末にだけ残ります。" })
+      el("p", { "class":"f-help", text:"サーバーにつながっていません。書いた数字はこの端末にだけ残ります。つながったらもう一度保存してください。" })
     ]);
     root.appendChild(b);
   }
@@ -972,7 +1038,7 @@ function render(){
    施錠・解錠
    ======================================================================= */
 function lockNow(quiet){
-  cryptoKey = null; locked = true; lockMode = "unlock"; lockErr = "";
+  cryptoKey = null; authToken = ""; locked = true; lockMode = "unlock"; lockErr = "";
   state = emptyState(); published = emptyState();
   dirty = false; saving = false; route = "home";
   clearTimeout(vaultTimer);
@@ -981,8 +1047,8 @@ function lockNow(quiet){
   render();
   if(!quiet) toast("鍵をかけた");
 }
-function afterUnlock(data, key){
-  cryptoKey = key;
+function afterUnlock(data, key, token){
+  cryptoKey = key; authToken = token;
   state = normalize(data);
   published = clone(state);
   locked = false; lockErr = ""; dirty = false;
@@ -990,38 +1056,47 @@ function afterUnlock(data, key){
   startIdleWatch();
   render();
 }
+/* 最初の1回。合言葉を決めて、空の家計簿をサーバーに置く */
 function doSetup(pass, hint){
   var salt = window.crypto.getRandomValues(new Uint8Array(16));
   currentSalt = b64(salt);
-  return deriveKey(pass, salt, PBKDF2_ITER).then(function(key){
-    cryptoKey = key;
+  return deriveBoth(pass, salt).then(function(kt){
+    cryptoKey = kt.key;
     return seal(emptyState()).then(function(v){
       writeLocalVault(v);
       writeHint(hint || "");
-      return persistKey(key).then(function(){ afterUnlock(emptyState(), key); });
+      if(localOnly){
+        return persistKey(kt.key, kt.token).then(function(){ afterUnlock(emptyState(), kt.key, kt.token); });
+      }
+      return apiPut(v, 0, kt.token).then(function(res){
+        serverRev = res.rev;
+        return persistKey(kt.key, kt.token).then(function(){ afterUnlock(emptyState(), kt.key, kt.token); });
+      });
     });
   });
 }
-/* 手元と、ページに埋まっているぶんの両方を試す（片方だけ新しいことがある）。 */
-function candidates(){
-  var lv = localVault(), ev = embeddedVault();
-  var c = (lv && ev) ? ((lv.at || 0) >= (ev.at || 0) ? [lv, ev] : [ev, lv]) : [lv || ev];
-  return c.filter(Boolean);
-}
+/* 解錠。ネットにつながっていればサーバーから、だめならこの端末の控えから */
 function tryUnlock(pass){
-  var cands = candidates();
-  if(!cands.length) return Promise.reject(new Error("no-vault"));
-  function attempt(i){
-    if(i >= cands.length) return Promise.reject(new Error("bad-pass"));
-    var v = cands[i];
-    return deriveKey(pass, unb64(v.salt), v.iter || PBKDF2_ITER).then(function(key){
-      return unseal(v, key).then(function(data){
-        currentSalt = v.salt;
-        return persistKey(key).then(function(){ afterUnlock(data, key); });
-      }, function(){ return attempt(i + 1); });
+  if(localOnly){
+    var lv = localVault();
+    if(!lv) return Promise.reject(new Error("no-vault"));
+    currentSalt = lv.salt;
+    return deriveBoth(pass, unb64(lv.salt), lv.iter).then(function(kt){
+      return unseal(lv, kt.key).then(function(data){
+        return persistKey(kt.key, kt.token).then(function(){ afterUnlock(data, kt.key, kt.token); });
+      }, function(){ throw new Error("bad-pass"); });
     });
   }
-  return attempt(0);
+  if(!currentSalt) return Promise.reject(new Error("no-vault"));
+  return deriveBoth(pass, unb64(currentSalt)).then(function(kt){
+    return apiGet(kt.token).then(function(doc){
+      return unseal(doc, kt.key).then(function(data){
+        serverRev = doc.rev;
+        writeLocalVault(doc);
+        return persistKey(kt.key, kt.token).then(function(){ afterUnlock(data, kt.key, kt.token); });
+      }, function(){ throw new Error("bad-pass"); });
+    }, function(e){ throw new Error((e && e.code) || "server"); });
+  });
 }
 function touch(){
   lastAct = Date.now();
@@ -1041,10 +1116,14 @@ function startIdleWatch(){
 ["pointerdown","keydown","wheel","touchstart"].forEach(function(ev){
   window.addEventListener(ev, function(){ if(!locked) touch(); }, { passive:true });
 });
+/* 戻ってきたら、相手が保存していないか確かめる */
 document.addEventListener("visibilitychange", function(){
   if(document.visibilityState !== "visible") return;
   if(!locked && Date.now() - lastAct > IDLE_MS){ lockNow(true); toast("1時間さわらなかったので、鍵をかけた"); }
-  else if(!locked) touch();
+  else if(!locked){
+    touch();
+    if(!dirty && !localOnly) reloadFromServer(true);
+  }
 });
 
 function lockView(){
@@ -1052,29 +1131,33 @@ function lockView(){
   var wrap = el("main", { "class":"wrap lockwrap" });
   var pass = el("input", { "class":"in", type:"password", inputmode:"numeric",
     autocomplete: setup ? "new-password" : "current-password",
-    placeholder: setup ? "4文字以上" : "暗証番号", "aria-label":"暗証番号" });
+    placeholder: setup ? "8文字以上" : "合言葉", "aria-label":"合言葉" });
   var pass2 = setup ? el("input", { "class":"in", type:"password", autocomplete:"new-password",
-    placeholder:"もう一度", "aria-label":"暗証番号（確認）" }) : null;
-  var hint = setup ? el("input", { "class":"in", type:"text", placeholder:"ヒント（任意・暗証番号そのものは書かない）" }) : null;
+    placeholder:"もう一度", "aria-label":"合言葉（確認）" }) : null;
+  var hint = setup ? el("input", { "class":"in", type:"text", placeholder:"ヒント（任意・合言葉そのものは書かない）" }) : null;
   var agree = setup ? el("input", { type:"checkbox", id:"agree-lost" }) : null;
   var err = el("p", { "class":"lockerr", hidden: lockErr ? null : "", text: lockErr });
   var btn = el("button", { "class":"btn btn-solid btn-lg", type:"button",
-    text: setup ? "この暗証番号にする" : "ひらく" });
+    text: setup ? "この合言葉にする" : "ひらく" });
 
   function submit(){
     if(lockBusy) return;
     var p = pass.value;
     if(setup){
-      if(p.length < 4){ show("4文字以上にして。"); return; }
+      if(p.length < MIN_PASS){ show(MIN_PASS + "文字以上にして。ネット上に置くので、短いと破られる。"); return; }
       if(p !== pass2.value){ show("2つが一致していない。"); return; }
       if(!agree.checked){ show("忘れたときのことを確認して、チェックを入れて。"); return; }
-    } else if(!p){ show("暗証番号を入れて。"); return; }
+    } else if(!p){ show("合言葉を入れて。"); return; }
     lockBusy = true; btn.disabled = true; btn.textContent = "確かめている…";
     var work = setup ? doSetup(p, hint.value.trim()) : tryUnlock(p);
     work.then(function(){ lockBusy = false; }, function(e){
       lockBusy = false; btn.disabled = false;
-      btn.textContent = setup ? "この暗証番号にする" : "ひらく";
-      show(e && e.message === "no-vault" ? "保存されたものが見つからない。" : "暗証番号が違う。");
+      btn.textContent = setup ? "この合言葉にする" : "ひらく";
+      var msg = e && e.message;
+      show(msg === "no-vault" ? "保存されたものが見つからない。"
+        : msg === "rate_limited" ? "試しすぎ。少し待ってからもう一度。"
+        : msg === "server" ? "サーバーにつながらなかった。少し待ってからもう一度。"
+        : "合言葉が違う。");
       pass.value = ""; pass.focus();
     });
   }
@@ -1089,10 +1172,10 @@ function lockView(){
   var img = akari(74, setup ? "smile" : "normal");
   wrap.appendChild(el("div", { "class":"lockcard" }, [
     img ? el("span", { svg: img }) : null,
-    el("h1", { "class":"lock-t", text: setup ? "暗証番号を決める" : TITLE }),
+    el("h1", { "class":"lock-t", text: setup ? "合言葉を決める" : TITLE }),
     el("p", { "class":"lock-s", text: setup
-      ? "この番号で中身を暗号化します。番号を知らない人には、意味のない文字列にしか見えません。"
-      : "暗証番号を入れると開きます。" }),
+      ? "この合言葉で中身を暗号化します。合言葉を知らない人には、預けた先でも意味のない文字列にしか見えません。"
+      : "合言葉を入れると開きます。" }),
     (!setup && h) ? el("p", { "class":"lock-hint", text:"ヒント： " + h }) : null,
     pass, pass2, hint,
     setup ? el("label", { "class":"lock-agree", for:"agree-lost" }, [
@@ -1100,9 +1183,19 @@ function lockView(){
     ]) : null,
     err, btn,
     setup ? el("p", { "class":"lock-note",
-      text:"この番号はふたりで共有するものです。相手にも必ず伝えてください。" }) : null
+      text:"この合言葉はふたりで共有するものです。相手にも必ず伝えてください。リンクを知られても、合言葉がなければ中身は開けません。" }) : null
   ]));
   return wrap;
+}
+function bootingView(){
+  var img = akari(74, "normal");
+  return el("main", { "class":"wrap lockwrap" }, [
+    el("div", { "class":"lockcard" }, [
+      img ? el("span", { svg: img }) : null,
+      el("h1", { "class":"lock-t", text: TITLE }),
+      el("p", { "class":"lock-s", text:"つないでいます…" })
+    ])
+  ]);
 }
 function noCryptoView(){
   var img = akari(74, "surprise");
@@ -1110,7 +1203,7 @@ function noCryptoView(){
     el("div", { "class":"lockcard" }, [
       img ? el("span", { svg: img }) : null,
       el("h1", { "class":"lock-t", text:"この開き方では鍵が使えない" }),
-      el("p", { "class":"lock-s", text:"暗証番号による保護には、暗号化の仕組み（Web Crypto）が要ります。この環境では使えないため、中身を開きません。https のURLから開き直してください。" })
+      el("p", { "class":"lock-s", text:"合言葉による保護には、暗号化の仕組み（Web Crypto）が要ります。この開き方では使えないため、中身を開きません。https のURLから開き直してください。" })
     ])
   ]);
 }
@@ -1118,40 +1211,43 @@ function noCryptoView(){
 /* =======================================================================
    起動
    ======================================================================= */
-function enterLocalOnly(){ localOnly = true; if(!locked) render(); }
-
 function boot(){
-  try { embedded = JSON.parse(document.getElementById("note-data").textContent) || {}; } catch(e){ embedded = {}; }
-  if(!hasCrypto()){ render(); return; }
-
-  var justSaved = false, wantRoute = null;
-  try {
-    if(sessionStorage.getItem(LS + ".justSaved")){ justSaved = true; sessionStorage.removeItem(LS + ".justSaved"); }
-    wantRoute = sessionStorage.getItem(LS + ".route");
-    sessionStorage.removeItem(LS + ".route");
-  } catch(e){}
-
-  var haveVault = candidates().length > 0;
-  lockMode = haveVault ? "unlock" : "setup";
+  if(!hasCrypto()){ booting = false; render(); return; }
   render();
-
-  if(window.claude && typeof window.claude.use === "function"){
-    window.claude.use("artifact").then(function(ns){ artifactNS = ns; if(!ns) enterLocalOnly(); }, function(){ enterLocalOnly(); });
-  } else enterLocalOnly();
-
-  if(!haveVault) return;
-  restoreKey().then(function(key){
-    if(!key) return;
-    var cands = candidates();
-    (function attempt(i){
-      if(i >= cands.length){ dropKey(); return; }
-      unseal(cands[i], key).then(function(data){
-        currentSalt = cands[i].salt;
-        afterUnlock(data, key);
-        if(wantRoute){ route = wantRoute; render(); }
-        if(justSaved) toast("保存した");
-      }, function(){ attempt(i + 1); });
-    })(0);
+  apiMeta().then(function(m){
+    booting = false;
+    currentSalt = m.salt || "";
+    serverRev = m.rev || 0;
+    lockMode = m.exists ? "unlock" : "setup";
+    render();
+    resume();
+  }, function(){
+    /* サーバーに届かない。この端末の控えだけで動かす */
+    booting = false; localOnly = true;
+    var lv = localVault();
+    if(lv) currentSalt = lv.salt;
+    lockMode = lv ? "unlock" : "setup";
+    render();
+    resume();
+  });
+}
+/* 同じタブで1時間以内に開けてあれば、入れ直さずに続けられる */
+function resume(){
+  restoreKey().then(function(kt){
+    if(!kt || !kt.key) return;
+    if(kt.salt && currentSalt && kt.salt !== currentSalt){ dropKey(); return; }
+    if(localOnly){
+      var lv = localVault();
+      if(!lv) return;
+      unseal(lv, kt.key).then(function(data){ afterUnlock(data, kt.key, kt.token); }, function(){ dropKey(); });
+      return;
+    }
+    apiGet(kt.token).then(function(doc){
+      unseal(doc, kt.key).then(function(data){
+        serverRev = doc.rev;
+        afterUnlock(data, kt.key, kt.token);
+      }, function(){ dropKey(); });
+    }, function(){ dropKey(); });
   });
 }
 
