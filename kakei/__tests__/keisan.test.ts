@@ -112,3 +112,55 @@ describe('ymPlus', () => {
     expect(api.ymPlus(13)).toBe(`${Math.floor(t / 12)}年${(t % 12) + 1}月`)
   })
 })
+
+/* ---------- 入金予定 ---------- */
+const pay = new Function(
+  ['num', 'nextPayday', 'daysUntil', 'untilText'].map(grab).join('\n') +
+    '; return { nextPayday, daysUntil, untilText };',
+)() as {
+  nextPayday: (day: number, today: Date) => Date
+  daysUntil: (d: Date, today: Date) => number
+  untilText: (n: number) => string
+}
+
+describe('nextPayday（次の入金日）', () => {
+  it('まだ来ていない日は、今月の日付', () => {
+    const t = pay.nextPayday(25, new Date(2026, 8, 4))
+    expect([t.getFullYear(), t.getMonth() + 1, t.getDate()]).toEqual([2026, 9, 25])
+  })
+
+  it('当日は今日を返す（もらう日を過ぎてから翌月へ送る）', () => {
+    const t = pay.nextPayday(25, new Date(2026, 8, 25))
+    expect(t.getDate()).toBe(25)
+    expect(t.getMonth() + 1).toBe(9)
+  })
+
+  it('過ぎていれば翌月', () => {
+    const t = pay.nextPayday(5, new Date(2026, 8, 10))
+    expect([t.getFullYear(), t.getMonth() + 1, t.getDate()]).toEqual([2026, 10, 5])
+  })
+
+  it('12月をまたぐと年が変わる', () => {
+    const t = pay.nextPayday(5, new Date(2026, 11, 20))
+    expect([t.getFullYear(), t.getMonth() + 1, t.getDate()]).toEqual([2027, 1, 5])
+  })
+
+  it('その月に無い日は、その月の最終日に寄せる（31日→2月28日）', () => {
+    const t = pay.nextPayday(31, new Date(2027, 1, 10))
+    expect([t.getMonth() + 1, t.getDate()]).toEqual([2, 28])
+  })
+})
+
+describe('daysUntil / untilText', () => {
+  it('時刻に関係なく、日付の差で数える', () => {
+    const today = new Date(2026, 8, 4, 23, 50)
+    expect(pay.daysUntil(new Date(2026, 8, 5, 0, 10), today)).toBe(1)
+    expect(pay.daysUntil(new Date(2026, 8, 4, 0, 10), today)).toBe(0)
+  })
+
+  it('0と1は言い換える', () => {
+    expect(pay.untilText(0)).toBe('今日')
+    expect(pay.untilText(1)).toBe('あした')
+    expect(pay.untilText(21)).toBe('あと21日')
+  })
+})
