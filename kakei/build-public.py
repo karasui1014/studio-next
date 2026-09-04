@@ -7,7 +7,7 @@
 
 ふたりで共有したいときは Artifact 版（claude.ai の共有リンク）を使う。
 """
-import pathlib, shutil, json
+import pathlib, json
 
 here = pathlib.Path(__file__).resolve().parent
 root = here.parent
@@ -17,17 +17,17 @@ out.mkdir(parents=True, exist_ok=True)
 html = (here / "index.html").read_text(encoding="utf-8")
 # ホーム画面に追加できるようにする。Artifact 版は外部ファイルを読めないので、公開版だけに足す。
 extra = (
-    '<meta name="theme-color" content="#2E5F63">\n'
+    '<meta name="theme-color" content="#F5F1E8">\n'
     '<link rel="manifest" href="app.webmanifest">\n'
     '<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">\n'
 )
 html = html.replace("<title>ふたりの家計</title>\n", "<title>ふたりの家計</title>\n" + extra, 1)
 (out / "index.html").write_text(html, encoding="utf-8")
 
-# アイコンは引き継ぎ書と同じ探偵なので、そのまま借りる
-icons_src = root / "public" / "shukatsu" / "icons"
-if icons_src.is_dir():
-    shutil.copytree(icons_src, out / "icons", dirs_exist_ok=True)
+# アイコンは assets/build-icons.py が public/kakei/icons/ に直接作る。
+# ここで上書きしないこと（引き継ぎ書のアイコンで潰してしまうため）。
+if not (out / "icons" / "icon-192.png").exists():
+    print("※ アイコンがまだ無い: python3 kakei/assets/build-icons.py を先に実行")
 
 manifest = {
     "name": "ふたりの家計",
@@ -36,7 +36,7 @@ manifest = {
     "scope": "./",
     "display": "standalone",
     "background_color": "#F5F1E8",
-    "theme_color": "#2E5F63",
+    "theme_color": "#F5F1E8",
     "icons": [
         {"src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png"},
         {"src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png"},
