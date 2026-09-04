@@ -102,7 +102,10 @@ button{font:inherit;color:inherit}
 
 /* ---------- カード ---------- */
 .cards{display:grid;gap:11px;margin:22px 0 0;grid-template-columns:1fr 1fr}
-@media (min-width:760px){.cards{grid-template-columns:repeat(4,1fr)}}
+@media (min-width:760px){.cards{grid-template-columns:repeat(3,1fr)}}
+/* 枚数が奇数のとき、最後の1枚が半端に残らないように横いっぱいへ */
+.cards .card:last-child:nth-child(odd){grid-column:1/-1}
+@media (min-width:760px){.cards .card:last-child:nth-child(odd){grid-column:auto}}
 .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:15px 16px;box-shadow:var(--shadow)}
 .card-t{font-size:12.5px;color:var(--ink3);margin:0 0 3px;letter-spacing:.03em}
 .card-n{font-family:var(--mono);font-size:clamp(19px,5vw,24px);font-variant-numeric:tabular-nums;letter-spacing:-.02em;line-height:1.3}
@@ -117,7 +120,7 @@ button{font:inherit;color:inherit}
 .block-head h2{font-family:var(--serif);font-size:19px;margin:0;font-weight:700}
 .block-head span{font-family:var(--mono);font-size:11px;color:var(--ink3);letter-spacing:.12em}
 
-/* ---------- ローン・積立の行 ---------- */
+/* ---------- ローンの行 ---------- */
 .item{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px 17px;
   box-shadow:var(--shadow);margin-bottom:11px}
 .item-top{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:10px}
@@ -133,6 +136,20 @@ button{font:inherit;color:inherit}
 .facts dd b{font-family:var(--mono);font-weight:500}
 .warn{margin:10px 0 0;padding:9px 12px;border-radius:9px;background:var(--caution-soft);
   border:1px solid color-mix(in srgb,var(--caution) 28%,transparent);font-size:12.5px;line-height:1.65}
+
+/* ---------- 入金予定 ---------- */
+.pays{display:grid;gap:8px}
+@media (min-width:700px){.pays{grid-template-columns:1fr 1fr}}
+.pay{display:flex;align-items:center;gap:13px;background:var(--surface);border:1px solid var(--line);
+  border-radius:var(--r);padding:12px 15px;box-shadow:var(--shadow)}
+.pay-day{flex:none;font-family:var(--mono);font-size:23px;line-height:1;font-variant-numeric:tabular-nums;
+  letter-spacing:-.02em;color:var(--ink2);min-width:44px}
+.pay-day small{font-family:var(--sans);font-size:11px;margin-left:2px;color:var(--ink3)}
+.pay-name{flex:1;min-width:0;font-size:14.5px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.pay-left{flex:none;font-family:var(--mono);font-size:12px;color:var(--ink3);font-variant-numeric:tabular-nums}
+.pay.next{border-color:var(--accent);background:var(--accent-soft)}
+.pay.next .pay-day{color:var(--accent)}
+.pay.next .pay-left{color:var(--accent);font-weight:500}
 
 /* ---------- グラフ ---------- */
 .chart{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px 14px 10px;box-shadow:var(--shadow)}
@@ -322,10 +339,19 @@ function yearsText(months){
 /* =======================================================================
    状態
    ======================================================================= */
+/* 入金予定のはじめの中身。画面から足したり消したりできる */
+function defaultPaydays(){
+  return [
+    { id: uid(), name:"会社の給料日", day: 25 },
+    { id: uid(), name:"DomoAi 投稿分", day: 5 },
+    { id: uid(), name:"DomoAi アフィリエイト", day: 13 },
+    { id: uid(), name:"YouTube 支払い", day: 21 }
+  ];
+}
 function emptyState(){
   return { v:1, updatedAt:"", note:"",
-    savings: 0, income: 0, expense: 0,
-    loans: [], funds: [], history: [] };
+    savings: 0, income: 0, side: 0, expense: 0,
+    loans: [], paydays: defaultPaydays(), history: [] };
 }
 var MAXROWS = 40, MAXHIST = 240;
 function safeKey(k){ return k !== "__proto__" && k !== "constructor" && k !== "prototype"; }
@@ -342,37 +368,63 @@ function normalize(o){
   s.note = str(o.note, 2000);
   s.savings = num(o.savings);
   s.income = num(o.income);
+  s.side = num(o.side);
   s.expense = num(o.expense);
   if(Array.isArray(o.loans)) s.loans = o.loans.slice(0, MAXROWS).map(function(r){
     r = (r && typeof r === "object") ? r : {};
     return { id: str(r.id, 12) || uid(), name: str(r.name, 60), balance: num(r.balance),
              monthly: num(r.monthly), rate: num(r.rate), origin: num(r.origin) };
   });
-  if(Array.isArray(o.funds)) s.funds = o.funds.slice(0, MAXROWS).map(function(r){
+  if(Array.isArray(o.paydays)) s.paydays = o.paydays.slice(0, MAXROWS).map(function(r){
     r = (r && typeof r === "object") ? r : {};
-    return { id: str(r.id, 12) || uid(), name: str(r.name, 60), goal: num(r.goal),
-             current: num(r.current), monthly: num(r.monthly) };
+    var d = Math.round(num(r.day));
+    return { id: str(r.id, 12) || uid(), name: str(r.name, 60), day: (d >= 1 && d <= 31) ? d : 1 };
   });
   if(Array.isArray(o.history)) s.history = o.history.slice(-MAXHIST).map(function(h){
     h = (h && typeof h === "object") ? h : {};
-    return { ym: /^\d{4}-\d{2}$/.test(h.ym) ? h.ym : "", savings: num(h.savings),
-             funds: num(h.funds), debt: num(h.debt) };
+    return { ym: /^\d{4}-\d{2}$/.test(h.ym) ? h.ym : "", savings: num(h.savings), debt: num(h.debt) };
   }).filter(function(h){ return !!h.ym && safeKey(h.ym); });
   return s;
 }
-function totalFunds(s){ return (s.funds || []).reduce(function(a, f){ return a + num(f.current); }, 0); }
 function totalDebt(s){ return (s.loans || []).reduce(function(a, l){ return a + num(l.balance); }, 0); }
-function totalAssets(s){ return num(s.savings) + totalFunds(s); }
-function netWorth(s){ return totalAssets(s) - totalDebt(s); }
+/* 今月入ってきたお金。本業の手取りと副業を足したもの */
+function totalIncome(s){ return num(s.income) + num(s.side); }
+function netWorth(s){ return num(s.savings) - totalDebt(s); }
 
 /* 保存のたびに、その月の記録を1点だけ残す（同じ月は上書き）。 */
 function stampHistory(s){
   var ym = ymNow();
-  var row = { ym: ym, savings: num(s.savings), funds: totalFunds(s), debt: totalDebt(s) };
+  var row = { ym: ym, savings: num(s.savings), debt: totalDebt(s) };
   var h = (s.history || []).filter(function(x){ return x.ym !== ym; });
   h.push(row);
   h.sort(function(a, b){ return a.ym < b.ym ? -1 : 1; });
   s.history = h.slice(-MAXHIST);
+}
+
+/* 毎月○日の「次にくる日」。月末が無い月（2月31日など）はその月の最終日に寄せる。
+   今日が当日なら、今日を返す（もらえる日を過ぎてから翌月へ送る）。 */
+function nextPayday(day, today){
+  var now = today || new Date();
+  var y = now.getFullYear(), m = now.getMonth(), d = now.getDate();
+  function make(yy, mm){
+    var last = new Date(yy, mm + 1, 0).getDate();
+    return new Date(yy, mm, Math.min(day, last));
+  }
+  var t = make(y, m);
+  if(t.getDate() < d) t = make(m === 11 ? y + 1 : y, (m + 1) % 12);
+  return t;
+}
+/* 今日から何日後か。0なら今日 */
+function daysUntil(date, today){
+  var now = today || new Date();
+  var a = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+  var b = new Date(date.getFullYear(), date.getMonth(), date.getDate());
+  return Math.round((b - a) / 86400000);
+}
+function untilText(n){
+  if(n === 0) return "今日";
+  if(n === 1) return "あした";
+  return "あと" + n + "日";
 }
 
 /* =======================================================================
@@ -628,7 +680,7 @@ function deltaBadge(){
   var h = state.history || [];
   if(h.length < 2) return null;
   var prev = h[h.length - 2], now = h[h.length - 1];
-  var d = (now.savings + now.funds - now.debt) - (prev.savings + prev.funds - prev.debt);
+  var d = (now.savings - now.debt) - (prev.savings - prev.debt);
   if(Math.abs(d) < 0.05) return el("span", { "class":"delta", text:"前回とほぼ同じ" });
   return el("span", { "class":"delta " + (d > 0 ? "up" : "down"),
     text: (d > 0 ? "▲ +" : "▼ ") + man(d) + "万円（前回から）" });
@@ -636,7 +688,7 @@ function deltaBadge(){
 function homeLine(){
   var s = state;
   if(!s.updatedAt) return "まずは「数字を入れる」から。貯蓄の合計だけでも入れれば、ここに全体が出るよ。";
-  var net = netWorth(s), debt = totalDebt(s), flow = num(s.income) - num(s.expense);
+  var net = netWorth(s), debt = totalDebt(s), flow = totalIncome(s) - num(s.expense);
   if(debt > 0 && net < 0) return "いまは借りているほうが多い。焦らなくていい、毎月の返済で確実に減っている。";
   if(flow < 0) return "毎月の支出が収入を上回っている。まずはここを見直すのが一番効くよ。";
   if(debt > 0) return "純資産はプラス。ローンも毎月ちゃんと減っている。この調子。";
@@ -654,7 +706,7 @@ function homeView(){
       ]),
       deltaBadge()
     ]),
-    el("p", { "class":"card-s", text:"貯蓄と積立をぜんぶ足して、ローンの残りを引いた金額です。" })
+    el("p", { "class":"card-s", text:"貯蓄から、ローンの残りを引いた金額です。" })
   ]));
 
   wrap.appendChild(el("div", { "class":"cards" }, [
@@ -662,22 +714,31 @@ function homeView(){
       el("p", { "class":"card-t", text:"貯蓄" }),
       el("p", { "class":"card-n", text: man(s.savings) }, [ el("small", { text:"万円" }) ])
     ]),
-    el("div", { "class":"card" }, [
-      el("p", { "class":"card-t", text:"積立（合計）" }),
-      el("p", { "class":"card-n", text: man(totalFunds(s)) }, [ el("small", { text:"万円" }) ]),
-      el("p", { "class":"card-s", text: (s.funds || []).length + "件" })
-    ]),
     el("div", { "class":"card debt" }, [
       el("p", { "class":"card-t", text:"ローン残り" }),
       el("p", { "class":"card-n", text: man(totalDebt(s)) }, [ el("small", { text:"万円" }) ]),
       el("p", { "class":"card-s", text: (s.loans || []).length + "件" })
     ]),
-    el("div", { "class":"card" + (flow > 0 ? " good" : (flow < 0 ? " debt" : "")) }, [
-      el("p", { "class":"card-t", text:"毎月の残り" }),
-      el("p", { "class":"card-n", text: man(flow) }, [ el("small", { text:"万円" }) ]),
-      el("p", { "class":"card-s", text:"収入 " + man(s.income) + " − 支出 " + man(s.expense) })
+    el("div", { "class":"card" }, [
+      el("p", { "class":"card-t", text:"今月の収入 合計" }),
+      el("p", { "class":"card-n", text: man(totalIncome(s)) }, [ el("small", { text:"万円" }) ]),
+      el("p", { "class":"card-s", text:"本業 " + man(s.income) + " ＋ 副業 " + man(s.side) })
+    ]),
+    el("div", { "class":"card" + (num(s.side) > 0 ? " good" : "") }, [
+      el("p", { "class":"card-t", text:"副業収益" }),
+      el("p", { "class":"card-n", text: man(s.side) }, [ el("small", { text:"万円" }) ]),
+      el("p", { "class":"card-s", text: totalIncome(s) > 0
+        ? "収入の " + Math.round(num(s.side) / totalIncome(s) * 100) + "％" : "" })
+    ]),
+    el("div", { "class":"card" + (flow < 0 ? " debt" : "") }, [
+      el("p", { "class":"card-t", text:"今月の支出 合計" }),
+      el("p", { "class":"card-n", text: man(s.expense) }, [ el("small", { text:"万円" }) ]),
+      el("p", { "class":"card-s", text: flow >= 0
+        ? "収入のほうが " + man(flow) + " 多い" : "支出のほうが " + man(-flow) + " 多い" })
     ])
   ]));
+
+  wrap.appendChild(paydayBlock(s));
 
   wrap.appendChild(speech(homeLine(), net >= 0 ? "smile" : "think"));
 
@@ -689,16 +750,6 @@ function homeView(){
     ]);
     loans.forEach(function(l){ lb.appendChild(loanCard(l)); });
     wrap.appendChild(lb);
-  }
-
-  /* 積立 */
-  var funds = (s.funds || []).filter(function(f){ return f.name || f.goal || f.current; });
-  if(funds.length){
-    var fb = el("section", { "class":"block" }, [
-      el("div", { "class":"block-head" }, [ el("h2", { text:"積立" }), el("span", { text:"SAVINGS GOAL" }) ])
-    ]);
-    funds.forEach(function(f){ fb.appendChild(fundCard(f)); });
-    wrap.appendChild(fb);
   }
 
   /* 推移 */
@@ -718,6 +769,33 @@ function homeView(){
 
   wrap.appendChild(el("div", { style:"height:120px" }));
   return wrap;
+}
+/* 入金予定。近い順に並べ、いちばん近いものを目立たせる */
+function paydayBlock(s){
+  var list = (s.paydays || []).filter(function(x){ return x.name || x.day; }).map(function(x){
+    var when = nextPayday(x.day);
+    return { name: x.name || "入金", day: x.day, when: when, left: daysUntil(when) };
+  }).sort(function(a, b){ return a.left - b.left; });
+
+  var box = el("section", { "class":"block" }, [
+    el("div", { "class":"block-head" }, [
+      el("h2", { text:"入金予定" }), el("span", { text:"PAYDAY" })
+    ])
+  ]);
+  if(!list.length){
+    box.appendChild(el("p", { "class":"empty", text:"まだありません。「数字を入れる」から足せます。" }));
+    return box;
+  }
+  var rows = el("div", { "class":"pays" });
+  list.forEach(function(x, i){
+    rows.appendChild(el("div", { "class":"pay" + (i === 0 ? " next" : "") }, [
+      el("span", { "class":"pay-day", text: x.day }, [ el("small", { text:"日" }) ]),
+      el("span", { "class":"pay-name", text: x.name }),
+      el("span", { "class":"pay-left", text: untilText(x.left) })
+    ]));
+  });
+  box.appendChild(rows);
+  return box;
 }
 function loanCard(l){
   var p = payoff(l.balance, l.monthly, l.rate);
@@ -744,35 +822,12 @@ function loanCard(l){
     p.done ? el("p", { "class":"card-s", text:"完済ずみ。おつかれさま。" }) : null
   ]);
 }
-function fundCard(f){
-  var goal = num(f.goal), cur = num(f.current), mo = num(f.monthly);
-  var pct = goal > 0 ? Math.max(0, Math.min(1, cur / goal)) : 0;
-  var facts = [];
-  facts.push(el("dt", { text:"目標" }), el("dd", {}, [ el("b", { text: goal ? man(goal) + "万円" : "未設定" }) ]));
-  if(goal > cur && mo > 0){
-    var months = (goal - cur) / mo;
-    facts.push(el("dt", { text:"到達予定" }), el("dd", {}, [ el("b", { text: ymPlus(months) }) ]),
-               el("dt", { text:"毎月" }), el("dd", { text: man(mo) + "万円ずつ" }));
-  } else if(goal > 0 && cur >= goal){
-    facts.push(el("dt", { text:"状態" }), el("dd", {}, [ el("b", { text:"目標を達成" }) ]));
-  } else if(mo > 0){
-    facts.push(el("dt", { text:"毎月" }), el("dd", { text: man(mo) + "万円ずつ" }));
-  }
-  return el("div", { "class":"item" }, [
-    el("div", { "class":"item-top" }, [
-      el("span", { "class":"item-name", text: f.name || "積立" }),
-      el("span", { "class":"item-num", text: man(cur) + (goal ? " / " + man(goal) : "") + "万円" })
-    ]),
-    el("div", { "class":"bar" }, [ el("b", { style:"width:" + Math.round(pct * 100) + "%" }) ]),
-    el("dl", { "class":"facts" }, facts)
-  ]);
-}
-/* 貯蓄＋積立とローン残高を、月ごとの折れ線で描く */
+/* 貯蓄とローン残高を、月ごとの折れ線で描く */
 function chartSvg(hist){
   var h = hist.slice(-24);
   var W = 640, H = 220, PL = 46, PR = 12, PT = 14, PB = 26;
-  var asset = h.map(function(r){ return r.savings + r.funds; });
-  var debt = h.map(function(r){ return r.debt; });
+  var asset = h.map(function(r){ return num(r.savings); });
+  var debt = h.map(function(r){ return num(r.debt); });
   var max = Math.max.apply(null, asset.concat(debt).concat([1]));
   var step = Math.pow(10, Math.floor(Math.log(max) / Math.LN10));
   var top = Math.ceil(max / step) * step;
@@ -802,7 +857,7 @@ function chartSvg(hist){
 }
 function legend(){
   return el("div", { "class":"legend" }, [
-    el("span", {}, [ el("i", { style:"background:var(--accent)" }), "貯蓄＋積立" ]),
+    el("span", {}, [ el("i", { style:"background:var(--accent)" }), "貯蓄" ]),
     el("span", {}, [ el("i", { style:"background:var(--tan)" }), "ローン残り" ]),
     el("span", { "class":"card-s", text:"たてじくの単位は万円" })
   ]);
@@ -840,10 +895,13 @@ function editView(){
   form.appendChild(field("貯蓄の合計", "銀行・証券・現金をぜんぶ足した金額。細かく分けなくていい。",
     moneyInput(state.savings, function(v){ state.savings = v; markDirty(); }, "例：850")));
 
-  form.appendChild(field("毎月の収入", "手取りの合計。ふたりぶん。",
+  form.appendChild(field("本業の収入（今月）", "手取りの合計。ふたりぶん。",
     moneyInput(state.income, function(v){ state.income = v; markDirty(); }, "例：45")));
 
-  form.appendChild(field("毎月の支出", "家賃・食費・光熱費など、出ていくお金の合計。",
+  form.appendChild(field("副業収益（今月）", "本業以外で入ってきたお金。無い月は0のままで。",
+    moneyInput(state.side, function(v){ state.side = v; markDirty(); }, "例：3.5")));
+
+  form.appendChild(field("今月の支出 合計", "家賃・食費・光熱費など、出ていったお金の合計。",
     moneyInput(state.expense, function(v){ state.expense = v; markDirty(); }, "例：38")));
 
   /* ローン */
@@ -895,47 +953,50 @@ function editView(){
   }
   paintLoans();
 
-  /* 積立 */
+  /* 入金予定 */
   form.appendChild(el("div", { "class":"block-head", style:"margin-top:34px" }, [
-    el("h2", { text:"積立" }), el("span", { text:"SAVINGS GOAL" })
+    el("h2", { text:"入金予定" }), el("span", { text:"PAYDAY" })
   ]));
   form.appendChild(el("p", { "class":"f-help",
-    text:"教育費・車の買い替えなど、目的を決めて貯めているぶん。目標と毎月の金額を入れると、いつ届くかが出ます。" }));
-  var fundBox = el("div");
-  form.appendChild(fundBox);
-  form.appendChild(el("button", { "class":"btn btn-sm", type:"button", text:"＋ 積立を足す", onclick:function(){
-    state.funds.push({ id: uid(), name:"", goal:0, current:0, monthly:0 }); markDirty(); paintFunds();
+    text:"給料日や、副業の入金日。毎月何日かを入れると、ダッシュボードに「あと◯日」と出ます。" }));
+  var payBox = el("div");
+  form.appendChild(payBox);
+  form.appendChild(el("button", { "class":"btn btn-sm", type:"button", text:"＋ 入金予定を足す", onclick:function(){
+    state.paydays.push({ id: uid(), name:"", day: 1 }); markDirty(); paintPays();
   }}));
 
-  function paintFunds(){
-    fundBox.textContent = "";
-    if(!state.funds.length){
-      fundBox.appendChild(el("p", { "class":"empty", text:"まだありません。教育費の積立などがあれば足してください。" }));
+  function paintPays(){
+    payBox.textContent = "";
+    if(!state.paydays.length){
+      payBox.appendChild(el("p", { "class":"empty", text:"まだありません。" }));
       return;
     }
-    state.funds.forEach(function(f, i){
-      fundBox.appendChild(el("div", { "class":"row" }, [
+    state.paydays.forEach(function(x, i){
+      var dayIn = el("input", { "class":"in", type:"text", inputmode:"numeric",
+        value: x.day ? String(x.day) : "", placeholder:"25" });
+      dayIn.addEventListener("input", function(){
+        var d = Math.round(num(dayIn.value));
+        x.day = (d >= 1 && d <= 31) ? d : 1;
+        markDirty();
+      });
+      payBox.appendChild(el("div", { "class":"row" }, [
         el("div", { "class":"row-top" }, [
           el("span", { "class":"row-n", text: pad2(i + 1) }),
           el("span", { "class":"spacer" }),
           el("button", { "class":"del", type:"button", text:"消す", onclick:function(){
-            state.funds.splice(i, 1); markDirty(); paintFunds();
+            state.paydays.splice(i, 1); markDirty(); paintPays();
           }})
         ]),
         el("div", { "class":"grid2" }, [
-          el("div", { "class":"span" }, [ el("span", { "class":"mini-label", text:"名前" }),
-            textInput(f.name, function(v){ f.name = v; markDirty(); }, "例：教育費") ]),
-          el("div", {}, [ el("span", { "class":"mini-label", text:"いま貯まっている額" }),
-            moneyInput(f.current, function(v){ f.current = v; markDirty(); }, "例：120") ]),
-          el("div", {}, [ el("span", { "class":"mini-label", text:"目標" }),
-            moneyInput(f.goal, function(v){ f.goal = v; markDirty(); }, "例：500") ]),
-          el("div", { "class":"span" }, [ el("span", { "class":"mini-label", text:"毎月いくら積む" }),
-            moneyInput(f.monthly, function(v){ f.monthly = v; markDirty(); }, "例：3") ])
+          el("div", {}, [ el("span", { "class":"mini-label", text:"名前" }),
+            textInput(x.name, function(v){ x.name = v; markDirty(); }, "例：会社の給料日") ]),
+          el("div", {}, [ el("span", { "class":"mini-label", text:"毎月何日" }),
+            el("div", { "class":"money" }, [ dayIn, el("span", { text:"日" }) ]) ])
         ])
       ]));
     });
   }
-  paintFunds();
+  paintPays();
 
   /* メモ */
   var ta = el("textarea", { "class":"in", rows:"3", placeholder:"来月は車検、など" });
@@ -982,7 +1043,7 @@ function openAbout(){
   sheet("使いかた", "月に一度、5分で終わります。", [
     el("ol", { "class":"steps" }, [
       el("li", { text:"マネーフォワードなど、いつも使っている家計アプリを開く。" }),
-      el("li", { text:"このページの「数字を入れる」で、貯蓄の合計・ローン残高・毎月の収支を書き写す。" }),
+      el("li", { text:"このページの「数字を入れる」で、貯蓄の合計・ローン残高・今月の収入と支出を書き写す。" }),
       el("li", { text:"「保存する」を押す。押した月の数字が1点だけ記録され、グラフが伸びていきます。" }),
       el("li", { text:"保存すると、相手の画面にも同じ数字が出ます（相手は次に開いたときに反映されます）。" })
     ]),
