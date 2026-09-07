@@ -387,7 +387,7 @@ function normalize(o){
   return s;
 }
 function totalDebt(s){ return (s.loans || []).reduce(function(a, l){ return a + num(l.balance); }, 0); }
-/* 今月入ってきたお金。本業の手取りと副業を足したもの */
+/* 現時点までに入ってきたお金。本業の手取りと副業を足したもの */
 function totalIncome(s){ return num(s.income) + num(s.side); }
 function netWorth(s){ return num(s.savings) - totalDebt(s); }
 
@@ -690,7 +690,7 @@ function homeLine(){
   if(!s.updatedAt) return "まずは「数字を入れる」から。貯蓄の合計だけでも入れれば、ここに全体が出るよ。";
   var net = netWorth(s), debt = totalDebt(s), flow = totalIncome(s) - num(s.expense);
   if(debt > 0 && net < 0) return "いまは借りているほうが多い。焦らなくていい、毎月の返済で確実に減っている。";
-  if(flow < 0) return "毎月の支出が収入を上回っている。まずはここを見直すのが一番効くよ。";
+  if(flow < 0) return "いまのところ支出が収入を上回っている。まずはここを見直すのが一番効くよ。";
   if(debt > 0) return "純資産はプラス。ローンも毎月ちゃんと減っている。この調子。";
   return "借金なし、貯蓄あり。ふたりでよくやってる。";
 }
@@ -720,18 +720,18 @@ function homeView(){
       el("p", { "class":"card-s", text: (s.loans || []).length + "件" })
     ]),
     el("div", { "class":"card" }, [
-      el("p", { "class":"card-t", text:"今月の収入 合計" }),
+      el("p", { "class":"card-t", text:"収入 現時点の合計" }),
       el("p", { "class":"card-n", text: man(totalIncome(s)) }, [ el("small", { text:"万円" }) ]),
       el("p", { "class":"card-s", text:"本業 " + man(s.income) + " ＋ 副業 " + man(s.side) })
     ]),
     el("div", { "class":"card" + (num(s.side) > 0 ? " good" : "") }, [
-      el("p", { "class":"card-t", text:"副業収益" }),
+      el("p", { "class":"card-t", text:"副業収益 現時点の合計" }),
       el("p", { "class":"card-n", text: man(s.side) }, [ el("small", { text:"万円" }) ]),
       el("p", { "class":"card-s", text: totalIncome(s) > 0
         ? "収入の " + Math.round(num(s.side) / totalIncome(s) * 100) + "％" : "" })
     ]),
     el("div", { "class":"card" + (flow < 0 ? " debt" : "") }, [
-      el("p", { "class":"card-t", text:"今月の支出 合計" }),
+      el("p", { "class":"card-t", text:"支出 現時点の合計" }),
       el("p", { "class":"card-n", text: man(s.expense) }, [ el("small", { text:"万円" }) ]),
       el("p", { "class":"card-s", text: flow >= 0
         ? "収入のほうが " + man(flow) + " 多い" : "支出のほうが " + man(-flow) + " 多い" })
@@ -886,22 +886,22 @@ function editView(){
   var wrap = el("main", { "class":"wrap" });
   wrap.appendChild(el("section", { "class":"head" }, [
     el("p", { "class":"eyebrow", text:"INPUT ／ 数字を入れる" }),
-    el("h1", { style:"font-family:var(--serif);font-size:26px;margin:0 0 6px", text:"今月の数字" })
+    el("h1", { style:"font-family:var(--serif);font-size:26px;margin:0 0 6px", text:"現時点の合計" })
   ]));
-  wrap.appendChild(speech("マネーフォワードの画面を見ながら、月に一度、数字を書き写すだけでいい。金額はぜんぶ「万円」で。", "point", 56));
+  wrap.appendChild(speech("マネーフォワードの画面を見ながら、いまの数字を書き写すだけでいい。金額はぜんぶ「万円」で。", "point", 56));
 
   var form = el("div", { "class":"form" });
 
   form.appendChild(field("貯蓄の合計", "銀行・証券・現金をぜんぶ足した金額。細かく分けなくていい。",
     moneyInput(state.savings, function(v){ state.savings = v; markDirty(); }, "例：850")));
 
-  form.appendChild(field("本業の収入（今月）", "手取りの合計。ふたりぶん。",
+  form.appendChild(field("本業の収入（現時点の合計）", "いまのところ入った手取りの合計。ふたりぶん。",
     moneyInput(state.income, function(v){ state.income = v; markDirty(); }, "例：45")));
 
-  form.appendChild(field("副業収益（今月）", "本業以外で入ってきたお金。無い月は0のままで。",
+  form.appendChild(field("副業収益（現時点の合計）", "本業以外で入ってきたお金。まだ無ければ0のままで。",
     moneyInput(state.side, function(v){ state.side = v; markDirty(); }, "例：3.5")));
 
-  form.appendChild(field("今月の支出 合計", "家賃・食費・光熱費など、出ていったお金の合計。",
+  form.appendChild(field("支出（現時点の合計）", "家賃・食費・光熱費など、いまのところ出ていったお金の合計。",
     moneyInput(state.expense, function(v){ state.expense = v; markDirty(); }, "例：38")));
 
   /* ローン */
@@ -1043,7 +1043,7 @@ function openAbout(){
   sheet("使いかた", "月に一度、5分で終わります。", [
     el("ol", { "class":"steps" }, [
       el("li", { text:"マネーフォワードなど、いつも使っている家計アプリを開く。" }),
-      el("li", { text:"このページの「数字を入れる」で、貯蓄の合計・ローン残高・今月の収入と支出を書き写す。" }),
+      el("li", { text:"このページの「数字を入れる」で、貯蓄の合計・ローン残高・現時点の収入と支出を書き写す。" }),
       el("li", { text:"「保存する」を押す。押した月の数字が1点だけ記録され、グラフが伸びていきます。" }),
       el("li", { text:"保存すると、相手の画面にも同じ数字が出ます（相手は次に開いたときに反映されます）。" })
     ]),
