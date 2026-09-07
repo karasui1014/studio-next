@@ -114,6 +114,11 @@ button{font:inherit;color:inherit}
 .card.debt .card-n{color:var(--caution)}
 .card.good .card-n{color:var(--done)}
 
+/* ふたりぶんの内訳。カードの数字の下に小さく添える */
+.split{display:flex;flex-wrap:wrap;gap:4px 14px;margin:7px 0 0;font-family:var(--mono);
+  font-size:12.5px;font-variant-numeric:tabular-nums;color:var(--ink2)}
+.split i{font-family:var(--sans);font-style:normal;font-size:11px;color:var(--ink3);margin-right:5px}
+
 /* ---------- 区切り ---------- */
 .block{margin:38px 0 0}
 .block-head{display:flex;align-items:baseline;gap:12px;margin:0 0 12px}
@@ -350,7 +355,7 @@ function defaultPaydays(){
 }
 function emptyState(){
   return { v:1, updatedAt:"", note:"",
-    savings: 0, income: 0, side: 0, expense: 0,
+    savings: 0, income: 0, sideY: 0, sideM: 0, expense: 0,
     loans: [], paydays: defaultPaydays(), history: [] };
 }
 var MAXROWS = 40, MAXHIST = 240;
@@ -368,7 +373,10 @@ function normalize(o){
   s.note = str(o.note, 2000);
   s.savings = num(o.savings);
   s.income = num(o.income);
-  s.side = num(o.side);
+  s.sideY = num(o.sideY);
+  s.sideM = num(o.sideM);
+  /* 分ける前の副業収益（1本だけ）は、まさひろのぶんとして引き継ぐ */
+  if(!o.sideY && !o.sideM && num(o.side)) s.sideM = num(o.side);
   s.expense = num(o.expense);
   if(Array.isArray(o.loans)) s.loans = o.loans.slice(0, MAXROWS).map(function(r){
     r = (r && typeof r === "object") ? r : {};
@@ -387,8 +395,10 @@ function normalize(o){
   return s;
 }
 function totalDebt(s){ return (s.loans || []).reduce(function(a, l){ return a + num(l.balance); }, 0); }
+/* 副業はふたりぶんある。合計はいつもこれを通す */
+function totalSide(s){ return num(s.sideY) + num(s.sideM); }
 /* 現時点までに入ってきたお金。本業の手取りと副業を足したもの */
-function totalIncome(s){ return num(s.income) + num(s.side); }
+function totalIncome(s){ return num(s.income) + totalSide(s); }
 function netWorth(s){ return num(s.savings) - totalDebt(s); }
 
 /* 保存のたびに、その月の記録を1点だけ残す（同じ月は上書き）。 */
@@ -722,13 +732,17 @@ function homeView(){
     el("div", { "class":"card" }, [
       el("p", { "class":"card-t", text:"収入 現時点の合計" }),
       el("p", { "class":"card-n", text: man(totalIncome(s)) }, [ el("small", { text:"万円" }) ]),
-      el("p", { "class":"card-s", text:"本業 " + man(s.income) + " ＋ 副業 " + man(s.side) })
+      el("p", { "class":"card-s", text:"本業 " + man(s.income) + " ＋ 副業 " + man(totalSide(s)) })
     ]),
-    el("div", { "class":"card" + (num(s.side) > 0 ? " good" : "") }, [
+    el("div", { "class":"card" + (totalSide(s) > 0 ? " good" : "") }, [
       el("p", { "class":"card-t", text:"副業収益 現時点の合計" }),
-      el("p", { "class":"card-n", text: man(s.side) }, [ el("small", { text:"万円" }) ]),
+      el("p", { "class":"card-n", text: man(totalSide(s)) }, [ el("small", { text:"万円" }) ]),
+      el("div", { "class":"split" }, [
+        el("span", {}, [ el("i", { text:"ゆきこ" }), man(s.sideY) ]),
+        el("span", {}, [ el("i", { text:"まさひろ" }), man(s.sideM) ])
+      ]),
       el("p", { "class":"card-s", text: totalIncome(s) > 0
-        ? "収入の " + Math.round(num(s.side) / totalIncome(s) * 100) + "％" : "" })
+        ? "収入の " + Math.round(totalSide(s) / totalIncome(s) * 100) + "％" : "" })
     ]),
     el("div", { "class":"card" + (flow < 0 ? " debt" : "") }, [
       el("p", { "class":"card-t", text:"支出 現時点の合計" }),
@@ -898,8 +912,11 @@ function editView(){
   form.appendChild(field("本業の収入（現時点の合計）", "いまのところ入った手取りの合計。ふたりぶん。",
     moneyInput(state.income, function(v){ state.income = v; markDirty(); }, "例：45")));
 
-  form.appendChild(field("副業収益（現時点の合計）", "本業以外で入ってきたお金。まだ無ければ0のままで。",
-    moneyInput(state.side, function(v){ state.side = v; markDirty(); }, "例：3.5")));
+  form.appendChild(field("副業収益・ゆきこ（現時点の合計）", "ゆきこが本業以外で得たお金。まだ無ければ0のままで。",
+    moneyInput(state.sideY, function(v){ state.sideY = v; markDirty(); }, "例：1.5")));
+
+  form.appendChild(field("副業収益・まさひろ（現時点の合計）", "まさひろが本業以外で得たお金。まだ無ければ0のままで。",
+    moneyInput(state.sideM, function(v){ state.sideM = v; markDirty(); }, "例：3.5")));
 
   form.appendChild(field("支出（現時点の合計）", "家賃・食費・光熱費など、いまのところ出ていったお金の合計。",
     moneyInput(state.expense, function(v){ state.expense = v; markDirty(); }, "例：38")));
