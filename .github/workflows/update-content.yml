@@ -33,7 +33,13 @@ jobs:
         env:
           MYMEMORY_EMAIL: ${{ secrets.MYMEMORY_EMAIL }}
 
+      # ここで失敗してもニュースの更新は止めない（continue-on-error）。
+      # ただし結果は id で拾っておき、コミットを済ませたあとに改めて失敗させる。
+      # 2026-08-03〜09-09 の間、Substack が Actions からのアクセスを
+      # HTTP 403 で断っていたのに「成功」と表示され続け、
+      # 1か月以上 Picks が止まっていることに気づけなかったため（2026-09-09）。
       - name: Substackの記事を取り込む
+        id: picks
         run: node scripts/collect-picks.mjs
         continue-on-error: true
 
@@ -48,3 +54,18 @@ jobs:
           git add public/content
           git commit -m "ニュース自動更新 $(TZ=Asia/Tokyo date '+%Y-%m-%d %H:%M JST')"
           git push
+
+      # ニュースのコミットを終えてから落とす。ここで初めてワークフローが赤くなり、
+      # GitHub から通知が届く（＝止まったことに気づける）。
+      - name: Substackを取り込めたか確かめる
+        if: steps.picks.outcome == 'failure'
+        run: |
+          echo "::error title=カラスイ Picks が更新できていません::Substack から記事を取得できませんでした（HTTP 403 など）。ニュースは更新済みですが、Picks は前回のままです。"
+          echo ""
+          echo "手元のMacからは取得できることが多いので、次を実行すると反映できます:"
+          echo "    cd ~/\"AI音楽部 Studio Next\""
+          echo "    npm run picks"
+          echo "    git add public/content/picks.json && git commit -m \"カラスイ Picks を更新\" && git push"
+          echo ""
+          echo "詳しい手順は OPERATIONS.md の「Substackに記事を書いたとき」を見てください。"
+          exit 1
