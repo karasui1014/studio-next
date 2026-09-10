@@ -57,8 +57,15 @@ jobs:
 
       # ニュースのコミットを終えてから落とす。ここで初めてワークフローが赤くなり、
       # GitHub から通知が届く（＝止まったことに気づける）。
+      #
+      # 落とすのは朝6:00の回（cron '0 21 * * *'）と手動実行のときだけ。
+      # Substack が断り続けている間、1日4回すべてで落とすと通知が多すぎて
+      # 本当に記事を書いた日のお知らせが埋もれるため（2026-09-10）。
+      # 取り込みの試行自体は4回とも行う（通れば昼や夜の回でも反映される）。
       - name: Substackを取り込めたか確かめる
-        if: steps.picks.outcome == 'failure'
+        if: >-
+          steps.picks.outcome == 'failure' &&
+          (github.event_name == 'workflow_dispatch' || github.event.schedule == '0 21 * * *')
         run: |
           echo "::error title=カラスイ Picks が更新できていません::Substack から記事を取得できませんでした（HTTP 403 など）。ニュースは更新済みですが、Picks は前回のままです。"
           echo ""
