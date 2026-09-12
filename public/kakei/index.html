@@ -22,6 +22,8 @@
   --serif:'Shippori Mincho','Hiragino Mincho ProN','Yu Mincho','Noto Serif JP',serif;
   --mono:'IBM Plex Mono','SFMono-Regular',ui-monospace,Menlo,monospace;
   --r:12px; --shadow:0 1px 2px rgba(62,69,64,.05),0 10px 26px -16px rgba(62,69,64,.35);
+  /* 背景の質感。方眼の点と、上からの光 */
+  --grid:rgba(138,122,103,.18); --glow:rgba(217,185,140,.55); --glow2:rgba(76,136,140,.18);
 }
 @media (prefers-color-scheme:dark){
   :root:not([data-theme="light"]){
@@ -32,6 +34,7 @@
     --tan:#C9A97C; --tan-soft:#3A322A; --brown:#A08D77;
     --done:#8CBE99; --caution:#D69084; --caution-soft:#33221F;
     --shadow:0 1px 2px rgba(0,0,0,.4),0 12px 28px -18px rgba(0,0,0,.85);
+    --grid:rgba(237,231,218,.08); --glow:rgba(201,169,124,.22); --glow2:rgba(127,196,198,.14);
   }
 }
 :root[data-theme="dark"]{
@@ -42,11 +45,26 @@
   --tan:#C9A97C; --tan-soft:#3A322A; --brown:#A08D77;
   --done:#8CBE99; --caution:#D69084; --caution-soft:#33221F;
   --shadow:0 1px 2px rgba(0,0,0,.4),0 12px 28px -18px rgba(0,0,0,.85);
+  --grid:rgba(237,231,218,.08); --glow:rgba(201,169,124,.22); --glow2:rgba(127,196,198,.14);
 }
 *,*::before,*::after{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.8;
-  font-feature-settings:"palt" 1;-webkit-font-smoothing:antialiased}
+body{margin:0;color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.8;
+  font-feature-settings:"palt" 1;-webkit-font-smoothing:antialiased;
+  background:var(--paper);min-height:100dvh}
+/* 背景は3枚重ね。上から順に、方眼の点／上からの温かい光／下からの浅葱の差し色。
+   本文の裏に敷くので position:fixed で置き、スクロールしても動かさない
+   （background-attachment:fixed は一部のスマホで描画が重くなるため使わない）。 */
+body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background:
+    radial-gradient(var(--grid) 1px, transparent 1.6px) 0 0/22px 22px,
+    radial-gradient(120% 55% at 50% -8%, var(--glow), transparent 62%),
+    radial-gradient(90% 45% at 100% 100%, var(--glow2), transparent 60%),
+    var(--paper);}
+/* 紙のざらつき。SVGのノイズを薄くかぶせる。画像ファイルは持たない */
+body::after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.5;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='.055'/%3E%3C/svg%3E");}
+@media print{ body::before,body::after{display:none} }
 img,svg{max-width:100%}
 button{font:inherit;color:inherit}
 :focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:6px}
@@ -106,7 +124,7 @@ button{font:inherit;color:inherit}
 /* 枚数が奇数のとき、最後の1枚が半端に残らないように横いっぱいへ */
 .cards .card:last-child:nth-child(odd){grid-column:1/-1}
 @media (min-width:760px){.cards .card:last-child:nth-child(odd){grid-column:auto}}
-.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:15px 16px;box-shadow:var(--shadow)}
+.card{background:color-mix(in srgb,var(--surface) 88%,transparent);backdrop-filter:blur(3px);border:1px solid var(--line);border-radius:var(--r);padding:15px 16px;box-shadow:var(--shadow)}
 .card-t{font-size:12.5px;color:var(--ink3);margin:0 0 3px;letter-spacing:.03em}
 .card-n{font-family:var(--mono);font-size:clamp(19px,5vw,24px);font-variant-numeric:tabular-nums;letter-spacing:-.02em;line-height:1.3}
 .card-n small{font-family:var(--sans);font-size:12px;color:var(--ink3);margin-left:3px;letter-spacing:0}
@@ -126,7 +144,7 @@ button{font:inherit;color:inherit}
 .block-head span{font-family:var(--mono);font-size:11px;color:var(--ink3);letter-spacing:.12em}
 
 /* ---------- ローンの行 ---------- */
-.item{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px 17px;
+.item{background:color-mix(in srgb,var(--surface) 88%,transparent);backdrop-filter:blur(3px);border:1px solid var(--line);border-radius:var(--r);padding:16px 17px;
   box-shadow:var(--shadow);margin-bottom:11px}
 .item-top{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:10px}
 .item-name{font-family:var(--serif);font-weight:700;font-size:16.5px}
@@ -145,7 +163,7 @@ button{font:inherit;color:inherit}
 /* ---------- 入金予定 ---------- */
 .pays{display:grid;gap:8px}
 @media (min-width:700px){.pays{grid-template-columns:1fr 1fr}}
-.pay{display:flex;align-items:center;gap:13px;background:var(--surface);border:1px solid var(--line);
+.pay{display:flex;align-items:center;gap:13px;background:color-mix(in srgb,var(--surface) 88%,transparent);backdrop-filter:blur(3px);border:1px solid var(--line);
   border-radius:var(--r);padding:12px 15px;box-shadow:var(--shadow)}
 .pay-day{flex:none;font-family:var(--mono);font-size:23px;line-height:1;font-variant-numeric:tabular-nums;
   letter-spacing:-.02em;color:var(--ink2);min-width:44px}
