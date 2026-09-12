@@ -164,3 +164,50 @@ describe('daysUntil / untilText', () => {
     expect(pay.untilText(21)).toBe('あと21日')
   })
 })
+
+/* ---------- 案内役のひとこと ---------- */
+describe('pickFrom（ひとことの選び方）', () => {
+  it('直前と同じものは続けて出さない', () => {
+    const api = new Function(
+      grab('pickFrom') + '\nvar lastLine = "";\nreturn { pick: pickFrom, last: () => lastLine };',
+    )() as { pick: (l: string[]) => string }
+    // 2つしかない中から100回引いても、同じ言葉が2回続かない
+    const list = ['あ', 'い']
+    let prev = ''
+    for (let i = 0; i < 100; i++) {
+      const line = api.pick(list)
+      expect(line).not.toBe(prev)
+      expect(list).toContain(line)
+      prev = line
+    }
+  })
+
+  it('選択肢が1つしか無いときは、それを出し続ける（空にならない）', () => {
+    const api = new Function(
+      grab('pickFrom') + '\nvar lastLine = "";\nreturn { pick: pickFrom };',
+    )() as { pick: (l: string[]) => string }
+    expect(api.pick(['ひとつだけ'])).toBe('ひとつだけ')
+    expect(api.pick(['ひとつだけ'])).toBe('ひとつだけ')
+  })
+})
+
+describe('LINES（言葉の中身）', () => {
+  /* LINES は関数ではないので、宣言からそのまま切り出して評価する */
+  const src = html.slice(html.indexOf('var LINES = {'), html.indexOf('/* 直前に出した'))
+  const lines = new Function(src + 'return LINES;')() as Record<string, string[]>
+
+  it('どの場面にも複数の言葉がある（毎回同じにならない）', () => {
+    for (const [key, list] of Object.entries(lines)) {
+      expect(list.length, key).toBeGreaterThanOrEqual(3)
+    }
+  })
+
+  it('責める言葉を混ぜない', () => {
+    const ng = ['だめ', 'ダメ', '無駄', 'まずい', '危険', '失敗']
+    for (const [key, list] of Object.entries(lines)) {
+      for (const line of list) {
+        for (const w of ng) expect(line, `${key}: ${line}`).not.toContain(w)
+      }
+    }
+  })
+})
