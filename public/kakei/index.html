@@ -22,8 +22,8 @@
   --serif:'Shippori Mincho','Hiragino Mincho ProN','Yu Mincho','Noto Serif JP',serif;
   --mono:'IBM Plex Mono','SFMono-Regular',ui-monospace,Menlo,monospace;
   --r:12px; --shadow:0 1px 2px rgba(62,69,64,.05),0 10px 26px -16px rgba(62,69,64,.35);
-  /* 背景の質感。方眼の点と、上からの光 */
-  --grid:rgba(138,122,103,.18); --glow:rgba(217,185,140,.55); --glow2:rgba(76,136,140,.18);
+  /* 背景の質感。上からの光と、右下の差し色 */
+  --glow:rgba(217,185,140,.55); --glow2:rgba(76,136,140,.18);
 }
 @media (prefers-color-scheme:dark){
   :root:not([data-theme="light"]){
@@ -34,7 +34,7 @@
     --tan:#C9A97C; --tan-soft:#3A322A; --brown:#A08D77;
     --done:#8CBE99; --caution:#D69084; --caution-soft:#33221F;
     --shadow:0 1px 2px rgba(0,0,0,.4),0 12px 28px -18px rgba(0,0,0,.85);
-    --grid:rgba(237,231,218,.08); --glow:rgba(201,169,124,.22); --glow2:rgba(127,196,198,.14);
+    --glow:rgba(201,169,124,.22); --glow2:rgba(127,196,198,.14);
   }
 }
 :root[data-theme="dark"]{
@@ -45,24 +45,24 @@
   --tan:#C9A97C; --tan-soft:#3A322A; --brown:#A08D77;
   --done:#8CBE99; --caution:#D69084; --caution-soft:#33221F;
   --shadow:0 1px 2px rgba(0,0,0,.4),0 12px 28px -18px rgba(0,0,0,.85);
-  --grid:rgba(237,231,218,.08); --glow:rgba(201,169,124,.22); --glow2:rgba(127,196,198,.14);
+  --glow:rgba(201,169,124,.22); --glow2:rgba(127,196,198,.14);
 }
 *,*::before,*::after{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
 body{margin:0;color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.8;
   font-feature-settings:"palt" 1;-webkit-font-smoothing:antialiased;
   background:var(--paper);min-height:100dvh}
-/* 背景は3枚重ね。上から順に、方眼の点／上からの温かい光／下からの浅葱の差し色。
+/* 背景は2枚重ね。上からの温かい光と、右下の浅葱の差し色。
+   方眼の点も敷いていたが、文字が読みにくいという声があったのでやめた。
    本文の裏に敷くので position:fixed で置き、スクロールしても動かさない
    （background-attachment:fixed は一部のスマホで描画が重くなるため使わない）。 */
 body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
   background:
-    radial-gradient(var(--grid) 1px, transparent 1.6px) 0 0/22px 22px,
     radial-gradient(120% 55% at 50% -8%, var(--glow), transparent 62%),
     radial-gradient(90% 45% at 100% 100%, var(--glow2), transparent 60%),
     var(--paper);}
 /* 紙のざらつき。SVGのノイズを薄くかぶせる。画像ファイルは持たない */
-body::after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.5;
+body::after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.38;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='.055'/%3E%3C/svg%3E");}
 @media print{ body::before,body::after{display:none} }
 img,svg{max-width:100%}
@@ -242,6 +242,8 @@ button{font:inherit;color:inherit}
 .menu button{display:flex;flex-direction:column;width:100%;text-align:left;border:0;background:none;padding:13px 9px;
   border-radius:9px;cursor:pointer;font-size:15px}
 .menu button:hover{background:var(--surface2)}
+.menu button.on{background:var(--accent-soft);color:var(--accent)}
+.menu button.on small{color:var(--accent)}
 .menu small{display:block;color:var(--ink3);font-size:12.5px;line-height:1.5}
 .steps{margin:0;padding-left:1.1em;color:var(--ink2);font-size:14px}
 .steps li{margin-bottom:8px}
@@ -255,7 +257,7 @@ button{font:inherit;color:inherit}
 
 var TITLE = "ふたりの家計";
 var LS = "kakei.v1";
-var VKEY = LS + ".vault", HKEY = LS + ".hint", SKEY = LS + ".key";
+var VKEY = LS + ".vault", HKEY = LS + ".hint", SKEY = LS + ".key", TKEY = LS + ".theme";
 
 var FAVICON = "data:image/png;base64,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"; /*FAVICON*/
 var ART = {
@@ -428,6 +430,39 @@ function stampHistory(s){
   h.sort(function(a, b){ return a.ym < b.ym ? -1 : 1; });
   s.history = h.slice(-MAXHIST);
 }
+
+/* =======================================================================
+   明るい・暗いの切り替え
+
+   既定は「自動」＝端末の設定にしたがう。選んだときだけ <html> に印をつける。
+   合言葉を入れる前の画面にも効かせたいので、鍵より先に読み込む。
+   ======================================================================= */
+var THEMES = [
+  { id:"auto",  name:"自動",   note:"スマホやパソコンの設定に合わせる" },
+  { id:"light", name:"明るい", note:"いつも生成りの紙の色" },
+  { id:"dark",  name:"暗い",   note:"いつも夜の色。暗い場所で目が楽" }
+];
+function readTheme(){
+  var t;
+  try { t = localStorage.getItem(TKEY); } catch(e){ t = null; }
+  return (t === "light" || t === "dark") ? t : "auto";
+}
+function applyTheme(t){
+  var root = document.documentElement;
+  if(t === "light" || t === "dark") root.setAttribute("data-theme", t);
+  else root.removeAttribute("data-theme");
+  /* スマホの上下の帯の色も合わせる */
+  var dark = t === "dark" || (t === "auto" && window.matchMedia &&
+    window.matchMedia("(prefers-color-scheme: dark)").matches);
+  var meta = document.querySelector('meta[name="theme-color"]');
+  if(!meta){ meta = document.createElement("meta"); meta.name = "theme-color"; document.head.appendChild(meta); }
+  meta.content = dark ? "#1A1D1B" : "#F5F1E8";
+}
+function setTheme(t){
+  try { t === "auto" ? localStorage.removeItem(TKEY) : localStorage.setItem(TKEY, t); } catch(e){}
+  applyTheme(t);
+}
+applyTheme(readTheme());
 
 /* 毎月○日の「次にくる日」。月末が無い月（2月31日など）はその月の最終日に寄せる。
    今日が当日なら、今日を返す（もらえる日を過ぎてから翌月へ送る）。 */
@@ -713,14 +748,62 @@ function deltaBadge(){
   return el("span", { "class":"delta " + (d > 0 ? "up" : "down"),
     text: (d > 0 ? "▲ +" : "▼ ") + man(d) + "万円（前回から）" });
 }
+/* 案内役のひとこと。
+   見るたびに変わるように、そのときの状況に合う言葉の中から1つ選ぶ。
+   数字が悪いときでも責めない。事実は数字が示しているので、ここは前を向かせる役。 */
+var LINES = {
+  start: [
+    "まずは貯蓄の合計だけでいい。ひとつ入れれば、ここに全体が出るよ。",
+    "はじめの一歩がいちばん価値がある。数字は少しずつで大丈夫。",
+    "見えるようにするだけで、もう半分は片づいている。"
+  ],
+  debt: [
+    "借りているほうが多い時期は、誰にでもある。毎月ちゃんと減っているのが何よりの証拠。",
+    "残高の数字より、減っているという事実のほうが大事。方向は合っている。",
+    "家を買った人は、みんなここを通っている。焦らなくていい。",
+    "返した分は、確実にふたりのものになっている。"
+  ],
+  spend: [
+    "使った月があっていい。気づいて見ているだけで、もう立て直せる。",
+    "今月は出ていったけれど、把握できているなら怖くない。",
+    "支出が多い月は、たいてい理由がある。来月の自分に任せよう。"
+  ],
+  ok: [
+    "純資産はプラス。ローンも減っている。この調子でいい。",
+    "きちんと積み上がっている。ふたりでよくやっている。",
+    "数字が静かに味方してくれている。悪くない流れ。",
+    "先月より前に進んでいる。それで充分。"
+  ],
+  great: [
+    "借金なし、貯蓄あり。胸を張っていい。",
+    "身軽な状態を保てている。これはなかなかできない。",
+    "守るものがある人の数字になってきた。",
+    "ここまで来たら、あとは続けるだけ。"
+  ],
+  side: [
+    "副業のぶんが効いている。増やした分だけ、選べることが増える。",
+    "自分で作った収入は、金額以上の意味がある。",
+    "本業以外の柱があるのは強い。"
+  ]
+};
+/* 直前に出したものは避ける。2回続けて同じ言葉だと「選ばれている感」が消える */
+var lastLine = "";
+function pickFrom(list){
+  var pool = list.length > 1 ? list.filter(function(x){ return x !== lastLine; }) : list;
+  var line = pool[Math.floor(Math.random() * pool.length)];
+  lastLine = line;
+  return line;
+}
 function homeLine(){
   var s = state;
-  if(!s.updatedAt) return "まずは「数字を入れる」から。貯蓄の合計だけでも入れれば、ここに全体が出るよ。";
+  if(!s.updatedAt) return pickFrom(LINES.start);
   var net = netWorth(s), debt = totalDebt(s), flow = totalIncome(s) - num(s.expense);
-  if(debt > 0 && net < 0) return "いまは借りているほうが多い。焦らなくていい、毎月の返済で確実に減っている。";
-  if(flow < 0) return "いまのところ支出が収入を上回っている。まずはここを見直すのが一番効くよ。";
-  if(debt > 0) return "純資産はプラス。ローンも毎月ちゃんと減っている。この調子。";
-  return "借金なし、貯蓄あり。ふたりでよくやってる。";
+  /* 副業が育っている月は、そこを見てあげる */
+  if(totalSide(s) > 0 && totalIncome(s) > 0 && totalSide(s) / totalIncome(s) >= 0.15) return pickFrom(LINES.side);
+  if(debt > 0 && net < 0) return pickFrom(LINES.debt);
+  if(flow < 0) return pickFrom(LINES.spend);
+  if(debt > 0) return pickFrom(LINES.ok);
+  return pickFrom(LINES.great);
 }
 function homeView(){
   var s = state, wrap = el("main", { "class":"wrap" });
@@ -772,7 +855,7 @@ function homeView(){
 
   wrap.appendChild(paydayBlock(s));
 
-  wrap.appendChild(speech(homeLine(), net >= 0 ? "smile" : "think"));
+  wrap.appendChild(speech(homeLine(), net >= 0 ? "smile" : "point"));
 
   /* ローン */
   var loans = (s.loans || []).filter(function(l){ return l.name || l.balance; });
@@ -1070,8 +1153,27 @@ function openMenu(){
       menuItem("使いかた", "毎月なにをすればいいか", openAbout),
       menuItem("ふたりで使うには", "相手に渡す方法", openShare),
       menuItem("最新を読み込む", "相手が保存したぶんを取り込む", function(){ reloadFromServer(); }),
+      menuItem("見た目", themeName() + "（明るい・暗いを選ぶ）", openTheme),
       menuItem("鍵をかける", "合言葉を入れ直すまで中身を隠す", function(){ lockNow(); })
     ])
+  ]);
+}
+function themeName(){
+  var now = readTheme(), name = "自動";
+  THEMES.forEach(function(t){ if(t.id === now) name = t.name; });
+  return name;
+}
+function openTheme(){
+  var now = readTheme();
+  sheet("見た目", "この端末だけの設定です。相手の画面は変わりません。", [
+    el("div", { "class":"menu" }, THEMES.map(function(t){
+      return el("button", { type:"button", "aria-pressed": t.id === now ? "true" : "false",
+        "class": t.id === now ? "on" : null,
+        onclick:function(){ setTheme(t.id); closeSheet(); render(); toast("見た目を「" + t.name + "」にした"); } }, [
+        el("span", { text: (t.id === now ? "✓ " : "") + t.name }),
+        el("small", { text: t.note })
+      ]);
+    }))
   ]);
 }
 function openAbout(){
