@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-09-22T17:25:11.830Z",
+  "generatedAt": "2026-09-22T23:25:57.690Z",
   "count": 400,
-  "newCount": 35,
+  "newCount": 5,
   "translatedCount": 1,
   "ranking": [
     "37a9db60cf6fd9de",
@@ -15,28 +15,28 @@
       "id": "gnews-ja-aimusic",
       "name": "Googleニュース（AI音楽）",
       "category": "jp",
-      "ok": true,
-      "fetched": 40,
-      "matched": 33,
-      "error": null
+      "ok": false,
+      "fetched": 0,
+      "matched": 0,
+      "error": "HTTP 503"
     },
     {
       "id": "gnews-ja-suno",
       "name": "Googleニュース（Suno/生成AI作曲）",
       "category": "jp",
-      "ok": true,
-      "fetched": 40,
-      "matched": 40,
-      "error": null
+      "ok": false,
+      "fetched": 0,
+      "matched": 0,
+      "error": "HTTP 503"
     },
     {
       "id": "gnews-en-aimusic",
       "name": "Google News (AI music)",
       "category": "global",
-      "ok": true,
-      "fetched": 40,
-      "matched": 40,
-      "error": null
+      "ok": false,
+      "fetched": 0,
+      "matched": 0,
+      "error": "HTTP 503"
     },
     {
       "id": "google-deepmind",
@@ -98,7 +98,7 @@
       "category": "global",
       "ok": true,
       "fetched": 10,
-      "matched": 1,
+      "matched": 2,
       "error": null
     },
     {
@@ -306,6 +306,22 @@
       "titleJa": "Lunacy Audio、新しいAIプラグイン共有プラットフォーム「NOVA」を発表",
       "summaryJa": "ブラウザベースのプラットフォームは完全に無料で、さまざまなプレミアムランクにアップグレードしてより多くのツールにアクセスすることができます。",
       "score": 35
+    },
+    {
+      "id": "7376d88441feb4b9",
+      "title": "Suno confirms V6 model was trained on ‘creations’ from users, as it blasts latest Sony and Universal lawsuit",
+      "url": "https://www.musicbusinessworldwide.com/suno-confirms-v6-model-was-trained-on-creations-from-users-as-it-blasts-latest-sony-and-universal-lawsuit/",
+      "summary": "The company set out that description in a statement responding to a second copyright lawsuit filed by Universal Music Group and Sony Music Entertainment.",
+      "published": "2026-09-22T14:25:56.000Z",
+      "source": "Music Business Worldwide",
+      "sourceId": "mbw",
+      "via": null,
+      "category": "global",
+      "lang": "en",
+      "coverage": 1,
+      "titleJa": "Sunoは、最新のソニーとユニバーサルの訴訟を爆発させるため、V 6モデルがユーザーからの「クリエイション」について訓練されたことを確認します",
+      "summaryJa": "同社は、ユニバーサルミュージックグループとソニーミュージックエンタテインメントが提起した2回目の著作権訴訟に対応する声明で、その説明を記載した。",
+      "score": 28
     },
     {
       "id": "f5a3566a14c03e64",
@@ -589,7 +605,7 @@
       "category": "jp",
       "lang": "ja",
       "coverage": 23,
-      "score": 57
+      "score": 53
     },
     {
       "id": "9c13f552d6d19ce3",
@@ -603,7 +619,7 @@
       "category": "jp",
       "lang": "ja",
       "coverage": 1,
-      "score": 10
+      "score": 6
     },
     {
       "id": "ba9990e399807359",
@@ -617,7 +633,7 @@
       "category": "jp",
       "lang": "ja",
       "coverage": 1,
-      "score": 19
+      "score": 15
     },
     {
       "id": "dcf02cffac6e03a2",
@@ -6155,22 +6171,6 @@
       "titleJa": "UdioとGRAIがUMGとLiquidaxが支援するAI音楽特許を採用",
       "summaryJa": "この動きにより、UMGとそのパートナーは、参加しているAIモデルによって著作権がどのように使用され、補償されるかについて、より多くのコントロールを得ることができます。",
       "score": 3
-    },
-    {
-      "id": "36f00de6719be8e3",
-      "title": "Apple Music to slap AI labels on Suno tracks – but pushes the onus onto record companies",
-      "url": "https://www.musicbusinessworldwide.com/apple-music-to-slap-ai-labels-on-suno-music-but-pushes-the-onus-onto-record-companies/",
-      "summary": "The move was announced in a message to industry partners from Apple on Thursday (August 20), obtained by MBW.",
-      "published": "2026-08-20T21:02:40.000Z",
-      "source": "Music Business Worldwide",
-      "sourceId": "mbw",
-      "via": null,
-      "category": "global",
-      "lang": "en",
-      "coverage": 20,
-      "titleJa": "Apple MusicがSunoのトラックでAIレーベルを叩くが、レコード会社に責任を押し付ける",
-      "summaryJa": "この動きは、MBWが入手した木曜日（ 8月20日）にAppleから業界パートナーへのメッセージで発表されました。",
-      "score": 27
     }
   ]
 }
