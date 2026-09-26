@@ -1,14 +1,14 @@
 {
-  "generatedAt": "2026-09-25T23:45:30.677Z",
+  "generatedAt": "2026-09-26T08:01:59.193Z",
   "count": 400,
-  "newCount": 35,
-  "translatedCount": 0,
+  "newCount": 33,
+  "translatedCount": 1,
   "ranking": [
     "1f8ece4a9691ed29",
     "37a9db60cf6fd9de",
     "5dad79e7a7c9afd7",
-    "69f4f76ccc67d841",
-    "5260a75c2f019f73"
+    "5260a75c2f019f73",
+    "126480adeb3f0646"
   ],
   "sources": [
     {
@@ -224,7 +224,7 @@
       "category": "jp",
       "ok": true,
       "fetched": 30,
-      "matched": 1,
+      "matched": 0,
       "error": null
     },
     {
@@ -292,6 +292,20 @@
   ],
   "items": [
     {
+      "id": "45596a65e5cb1a35",
+      "title": "AI音楽「潤い / Milia」",
+      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE5uaHRZMGpacTZtOFZjZ1V5SHRGT0FscC1kZTFvMm1FVHhZeXZCLXJ6MThBUndJQ0dIbGFMTGQyS3ZpSnlUczV2VDJGUTJnS2dzQ1ZnSkFn?oc=5",
+      "summary": "",
+      "published": "2026-09-26T04:47:04.000Z",
+      "source": "x.com",
+      "sourceId": "gnews-ja-aimusic",
+      "via": "Googleニュース",
+      "category": "jp",
+      "lang": "ja",
+      "coverage": 1,
+      "score": 15
+    },
+    {
       "id": "be9e6f39e2c8f282",
       "title": "From Warner Music’s leadership shake-up to Suno’s courtroom defiance… it’s MBW’s Weekly Round-Up",
       "url": "https://www.musicbusinessworldwide.com/from-warner-musics-leadership-shake-up-to-sunos-courtroom-defiance-its-mbws-weekly-round-up/",
@@ -318,10 +332,10 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 2,
+      "coverage": 3,
       "titleJa": "ソニーとUMGがSunoを再び訴える",
       "summaryJa": "ソニーとユニバーサルミュージックグループは、Sunoに対してさらに別の訴訟を起こしました。レーベルは、新しいv 6モデルがまだ著作権を侵害していると主張している。なぜなら、それは以前のモデルからのユーザー出力で訓練されているからだ。以前のモデル自体は、YouTubeや他のソースからリッピングされた無許可の音楽で訓練されていたからだ。ソニーとUMGは、署名しなかった注目すべきホールドアウトである",
-      "score": 29
+      "score": 37
     },
     {
       "id": "1f73e8629bda9765",
@@ -395,7 +409,7 @@
       "category": "jp",
       "lang": "ja",
       "coverage": 1,
-      "score": 26
+      "score": 21
     },
     {
       "id": "69f4f76ccc67d841",
@@ -408,8 +422,8 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 4,
-      "score": 39
+      "coverage": 5,
+      "score": 34
     },
     {
       "id": "6e120fbb38a8dc1e",
@@ -423,7 +437,7 @@
       "category": "jp",
       "lang": "ja",
       "coverage": 1,
-      "score": 19
+      "score": 14
     },
     {
       "id": "a76f112370b20f2a",
@@ -437,7 +451,7 @@
       "category": "jp",
       "lang": "ja",
       "coverage": 1,
-      "score": 15
+      "score": 10
     },
     {
       "id": "9f227f0ac87678d1",
@@ -451,7 +465,7 @@
       "category": "jp",
       "lang": "ja",
       "coverage": 1,
-      "score": 15
+      "score": 10
     },
     {
       "id": "b56dfa0b454a6c06",
@@ -465,7 +479,7 @@
       "category": "jp",
       "lang": "ja",
       "coverage": 1,
-      "score": 15
+      "score": 10
     },
     {
       "id": "cc289f238f19ccb3",
@@ -745,7 +759,7 @@
       "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTFBLOXFUR01UUXkyOENfR2dEdGxoR1hWTFptLTQyUG5rTVlpdTBoenNLZUhlOUZrRUM3Q185anN0eS1STERTZXVGa2RQaUo4MG9FYUgtMU1IUHZ1M2JXVlpneHY4MWlGNGoza3ZPNXUzeHBkQTNwTldpblhB?oc=5",
       "summary": "",
       "published": "2026-09-23T12:29:23.000Z",
-      "source": "pasqualepillitteri.it",
+      "source": "Pasquale Pillitteri",
       "sourceId": "gnews-ja-suno",
       "via": "Googleニュース",
       "category": "jp",
@@ -823,7 +837,7 @@
       "category": "jp",
       "lang": "ja",
       "coverage": 5,
-      "score": 34
+      "score": 30
     },
     {
       "id": "16bcf07ccf3a3650",
@@ -831,13 +845,13 @@
       "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE0yS1Y2SGlkQ18wN0lZQ0M4WWRDQ3czd0RaWEw0WlZlRjg5ZDRVeU9KZHUtU0VNSDNMNVQ3VE5NaXhnd2RmdF9ud0hzUEdyS3F6R1luRVVxcTcyRnFs?oc=5",
       "summary": "",
       "published": "2026-09-23T02:23:04.000Z",
-      "source": "YouTube",
+      "source": "youtu.be",
       "sourceId": "gnews-ja-suno",
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
       "coverage": 1,
-      "score": 10
+      "score": 6
     },
     {
       "id": "7b83802095b0b4fe",
@@ -881,7 +895,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 5,
+      "coverage": 6,
       "titleJa": "Sunoは、最新のソニーとユニバーサルの訴訟を爆発させるため、V 6モデルがユーザーからの「クリエイション」について訓練されたことを確認します",
       "summaryJa": "同社は、ユニバーサルミュージックグループとソニーミュージックエンタテインメントが提起した2回目の著作権訴訟に対応する声明で、その説明を記載した。",
       "score": 43
@@ -967,6 +981,21 @@
       "score": 12
     },
     {
+      "id": "942a440d1f25434a",
+      "title": "After the Big Deal: Suno v6 Disappoints Users and Labels Alike",
+      "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE0yX0lNdFEyVWwzcHlJamFja1ZXTGdRYXpBVE9BY2FpQVo2S2ptUDZOT2lKR1hFZG8xUVpnejBQc2lzNDd4TGlVVnRrMzJPZUFJV1BBSnJxeC0yWFE?oc=5",
+      "summary": "",
+      "published": "2026-09-22T10:55:59.000Z",
+      "source": "Gearnews.com",
+      "sourceId": "gnews-en-aimusic",
+      "via": "Googleニュース",
+      "category": "global",
+      "lang": "en",
+      "coverage": 1,
+      "titleJa": "大きな取引の後： Suno v 6はユーザーとレーベルを失望させます",
+      "score": 12
+    },
+    {
       "id": "e1743c425fcc1c58",
       "title": "プレイリスト・マーケのSubmitHub、AI音楽の投稿禁止 「これ以上ノイズ必要ない」 | ニュース | IT×エンタメの最前線を届ける",
       "url": "https://news.google.com/rss/articles/CBMiR0FVX3lxTE1ra2wzLVZWNnE4RTdmZzd0bzhoMVNhVklEbS1tdk5Mc1pncWlDZ3N2d1NXRzBENG9MSm55TkpuM29SdGRuY1g4?oc=5",
@@ -1037,6 +1066,20 @@
       "score": 39
     },
     {
+      "id": "3e9757ab685da5ed",
+      "title": "Suno AIのプロンプトの書き方＆コツ5選！メタタグ・ジャンル・楽器一覧も",
+      "url": "https://news.google.com/rss/articles/CBMiSkFVX3lxTFBJZ0czZHZRVV9xNDNUUzAtUFRKRVFqbXNUaHpKQ3dpOXM0TU9uZndESl9EeG1FY1VTQjZkdzRqNTM2UUpzNkpKM2FR?oc=5",
+      "summary": "",
+      "published": "2026-09-22T07:00:00.000Z",
+      "source": "SHIFT AI",
+      "sourceId": "gnews-ja-suno",
+      "via": "Googleニュース",
+      "category": "jp",
+      "lang": "ja",
+      "coverage": 1,
+      "score": 15
+    },
+    {
       "id": "ed5ac17f25868f92",
       "title": "SIQA、AI音楽の来歴を確認する「SIQA Verified Registry」とiOSアプリを発表|プレイリスト＆カルチャーメディア",
       "url": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE1EclM0dHNYR0ZZbk9Scko3Z2ZpMXhnZXlGaThDZjhvaUpuM0FEaEJ0UzRpZi1QUUYzTU96YTJwZk9oY2ZlRTFXTF91NA?oc=5",
@@ -1061,7 +1104,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 9,
+      "coverage": 10,
       "titleJa": "「Sunoの死」： Redditユーザーはv 6モデルアップデート後にSunoに反対しています",
       "summaryJa": "このアップデートでは、音楽レーベルも満足していません。「V 6は新たなスタートではありません。同じ毒された木の果実です。」",
       "score": 47
@@ -1176,7 +1219,7 @@
       "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE8wUUJXZ2hCOTBiWmw4S1k1elo0Q3I0WURGN1FZUVRDenhOUmZPSzg0elZxUmc3RnFCdlQzZ01vUmxRZXp1LU9CUUxvZ0dackxoX2lIMXU0NTVfdVlT?oc=5",
       "summary": "",
       "published": "2026-09-20T10:14:39.000Z",
-      "source": "YouTube",
+      "source": "youtu.be",
       "sourceId": "gnews-ja-suno",
       "via": "Googleニュース",
       "category": "jp",
@@ -1190,7 +1233,7 @@
       "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE9kM0prQkg5OFA4UmtpSnRZWTRSRDUxVllHel93a3BmZzBxWFZwV0loTlVFSmp3RnB6R0FQckpKSFhOMDBxOEp6VktPejhYVmZ0Qks4?oc=5",
       "summary": "",
       "published": "2026-09-20T01:24:08.000Z",
-      "source": "innovaTopia",
+      "source": "innovatopia.jp",
       "sourceId": "gnews-ja-suno",
       "via": "Googleニュース",
       "category": "jp",
@@ -1204,12 +1247,12 @@
       "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBxRHBoNUNRN25GU3NpRFYyd1AyRHcxMUdnTFBsWlVyNGc0ZFZZNDVGcXVMRjhtX1ZCVkhQTUdsNUJOeUdQNjFYNTNPdkVUNUdlMnhRcTFaclc2bUZGZ1d0Tm1yYjg4Zk0?oc=5",
       "summary": "",
       "published": "2026-09-19T23:16:02.000Z",
-      "source": "techno-edge.net",
+      "source": "テクノエッジ TechnoEdge",
       "sourceId": "gnews-ja-suno",
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 47,
+      "coverage": 49,
       "score": 53
     },
     {
@@ -1232,7 +1275,7 @@
       "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE8yNURCNVlWY1V5MGd1Qm9yUU0xMjAtRFh6R3B1RE05RmdXM2V2NVFadUY4LVdxRmhlS0taY2IzbmhKc29ZcWtkdndHeGFFYkV2T01RejhrNEhpX092cEI1eHV1WTVVQ25uNnp6LVNHekF4V1hG?oc=5",
       "summary": "",
       "published": "2026-09-19T18:06:00.000Z",
-      "source": "BigGo ファイナンス",
+      "source": "finance.biggo.jp",
       "sourceId": "gnews-ja-suno",
       "via": "Googleニュース",
       "category": "jp",
@@ -1312,7 +1355,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 26,
+      "coverage": 27,
       "titleJa": "いくつかのレーベルがSunoと取引する中、アーティストの担当者は「それはワイルドでワイルドな西部」と鳴り響きます",
       "summaryJa": "SunoがWMGなどと提携して新しいv 6音楽モデルを発表したことで、マネージャーや弁護士は急速に進化するAI音楽の世界に自分たちの考えを提示しています。",
       "score": 27
@@ -1374,7 +1417,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 23,
+      "coverage": 24,
       "titleJa": "ユニバーサルとソニーは、プラットフォームのv 6モデルが「同じ毒された木の果実」であると主張して、2度目のSunoを訴えた",
       "summaryJa": "米国の著作権法では、意図的な侵害に対する損害賠償は、作品ごとに最大$ 150,000に設定されています。その上限では、60,202の録音は理論的には最大90億$をわずかに上回ります。",
       "score": 34
@@ -1385,7 +1428,7 @@
       "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPWVdDT19YVmxneU1vM2h2c1NjS2pBM3VINGRnMGVjaUU0WTBZd3U0RklGU0o3UmgtUy1UV3JsNHNWV1FIay0xenNoN0JRanlqdFBtdmRYOXl1a1lFY0lqMm9uVWE2MU1mMWVWemxwOUJ5MzlRUHRlTW1SbEVnWEN2MHR6SUVvaGF1Zmd3elFtM0QwdjdiYjZiMWktcmtyaFJUUUNOUQ?oc=5",
       "summary": "",
       "published": "2026-09-18T16:42:00.000Z",
-      "source": "variety.com",
+      "source": "Variety",
       "sourceId": "gnews-en-aimusic",
       "via": "Googleニュース",
       "category": "global",
@@ -1563,7 +1606,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 17,
+      "coverage": 18,
       "titleJa": "「サブスクリプションをキャンセルします」： SunoユーザーはV 6アップデートを「うぬぼれた、一般的な、魂のないゴミ」と非難しました",
       "summaryJa": "業界に支えられたV 6モデルのリリースに続いて、AI音楽プラットフォームの最も熱心なサポーターの一部が船を放棄している",
       "score": 38
@@ -1620,7 +1663,7 @@
       "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE1hZGFBcVhiZzZMWlFSd19venhQTzh1Z1JnLS15eElCWVZycFRIWFhDQU9tRTF6c1ZETkw0eEhyT24wekpWM1FBUmpNT3h6TUZ2XzExVnpvUGM0cUpYM3ZtbkF6d2NkOWhhY2dMZnZYcVROd3RZ?oc=5",
       "summary": "",
       "published": "2026-09-17T10:35:00.000Z",
-      "source": "BigGo ファイナンス",
+      "source": "finance.biggo.jp",
       "sourceId": "gnews-ja-aimusic",
       "via": "Googleニュース",
       "category": "jp",
@@ -1819,20 +1862,6 @@
       "score": -6
     },
     {
-      "id": "31e1cbf731ca3dce",
-      "title": "「今の気分に合う音楽」をAIに相談、「Rakuten Music」に新機能",
-      "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9YYTFwYjVWeVd2Y1kxVlFPUlc0RmIyLVFKZGluclN4dWlEdGhyN2RLb0ZqRFRFX05oWkV6elZPUlVNY3R6dWFLUHA1YkYzZ1hXd3RHTi1RZHM0d3YyNWUwdXlKTnpPMm8?oc=5",
-      "summary": "",
-      "published": "2026-09-16T08:48:09.000Z",
-      "source": "k-tai.watch.impress.co.jp",
-      "sourceId": "gnews-ja-aimusic",
-      "via": "Googleニュース",
-      "category": "jp",
-      "lang": "ja",
-      "coverage": 1,
-      "score": 8
-    },
-    {
       "id": "2fc012a2a05fdb0b",
       "title": "Rokid、ディスプレイ非搭載で約38.5gのAIグラス。カメラ、スピーカー搭載",
       "url": "https://av.watch.impress.co.jp/docs/news/2141470.html",
@@ -1873,6 +1902,20 @@
       "lang": "ja",
       "coverage": 3,
       "score": 13
+    },
+    {
+      "id": "31e1cbf731ca3dce",
+      "title": "「今の気分に合う音楽」をAIに相談、「Rakuten Music」に新機能",
+      "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9YYTFwYjVWeVd2Y1kxVlFPUlc0RmIyLVFKZGluclN4dWlEdGhyN2RLb0ZqRFRFX05oWkV6elZPUlVNY3R6dWFLUHA1YkYzZ1hXd3RHTi1RZHM0d3YyNWUwdXlKTnpPMm8?oc=5",
+      "summary": "",
+      "published": "2026-09-16T07:00:00.000Z",
+      "source": "ケータイ Watch",
+      "sourceId": "gnews-ja-aimusic",
+      "via": "Googleニュース",
+      "category": "jp",
+      "lang": "ja",
+      "coverage": 1,
+      "score": 8
     },
     {
       "id": "6ae4f99dc6b96cf5",
@@ -2008,7 +2051,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 145,
+      "coverage": 148,
       "score": 21
     },
     {
@@ -2074,7 +2117,7 @@
       "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9nellqWUFwWWVQXzN4X0pDNXZxY2duWXR2NnBMQlUxQzh3ck9hR0Q0V2s1eEdMMFBWc0Nxb3FGZkg3ZzBGb0lJOVNsOTBHcEdkSXhSSjlabkxkN1Nj?oc=5",
       "summary": "",
       "published": "2026-09-15T07:00:00.000Z",
-      "source": "YouTube",
+      "source": "youtu.be",
       "sourceId": "gnews-ja-suno",
       "via": "Googleニュース",
       "category": "jp",
@@ -2171,20 +2214,6 @@
       "score": 21
     },
     {
-      "id": "3e9757ab685da5ed",
-      "title": "Suno AIのプロンプトの書き方＆コツ5選！メタタグ・ジャンル・楽器一覧も",
-      "url": "https://news.google.com/rss/articles/CBMiSkFVX3lxTFBJZ0czZHZRVV9xNDNUUzAtUFRKRVFqbXNUaHpKQ3dpOXM0TU9uZndESl9EeG1FY1VTQjZkdzRqNTM2UUpzNkpKM2FR?oc=5",
-      "summary": "",
-      "published": "2026-09-13T07:00:00.000Z",
-      "source": "SHIFT AI",
-      "sourceId": "gnews-ja-suno",
-      "via": "Googleニュース",
-      "category": "jp",
-      "lang": "ja",
-      "coverage": 1,
-      "score": 6
-    },
-    {
       "id": "e06d280fcc3e8ebf",
       "title": "「サビだけ直せるの、曲作りが変わりそう」――Suno v6、無料期間48時間の中身",
       "url": "https://news.google.com/rss/articles/CBMiQkFVX3lxTFBxbjNueDhWbU4wRlVVX3d2VzZvWWFSbE9BSllTLWxESjJhMm9iNlhRRHFnUEE0SnpaV3dNREJfSHY0UQ?oc=5",
@@ -2209,7 +2238,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 40,
+      "coverage": 41,
       "score": 21
     },
     {
@@ -2223,7 +2252,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 33,
+      "coverage": 34,
       "score": 30
     },
     {
@@ -2298,7 +2327,7 @@
       "via": null,
       "category": "jp",
       "lang": "ja",
-      "coverage": 59,
+      "coverage": 60,
       "score": 63
     },
     {
@@ -2408,7 +2437,7 @@
       "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5IcXVEQWVtQkNrZ1BBdWhjLXhlWlZBWTNYLVBIU2s4bnlfWUZ5SGZETi0yRHZtRkpiZ19LMURJRHJMWXRvNEJaaGVyOXJBeU9idnhYVGZ5R0REUE1La3BSbdIBZkFVX3lxTFBUdTE4UllrUDFGMHZ2VnhoOHhrekZscEthaHc0TFByTDBkWFBGN3IyWER4dFJ2bmpvcEZYal9KeVg2dTBHelhvQ3AtUjBFamgtXy1lUlVSMG1NVkVuYzNUZ3RvQXZLZw?oc=5",
       "summary": "",
       "published": "2026-09-11T07:00:00.000Z",
-      "source": "リアルサウンド",
+      "source": "realsound.jp",
       "sourceId": "gnews-ja-aimusic",
       "via": "Googleニュース",
       "category": "jp",
@@ -2864,7 +2893,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 66,
+      "coverage": 67,
       "titleJa": "Sunoは、著作権訴訟が積み重なるにつれて、AIモデルをライセンスされた音楽で訓練された新しいモデルに置き換える",
       "summaryJa": "一連の訴訟に取り組んでいるSuno氏は、新しいモデルであるSuno v 6は、以前のバージョンのAIモデルのトレーニングに使用した音楽を使用してトレーニングされていないと述べた。",
       "score": 45
@@ -3032,7 +3061,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 73,
+      "coverage": 75,
       "score": 37
     },
     {
@@ -3086,7 +3115,7 @@
       "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxOLTNqMGJ1ejdRUHl3bk5OSHBRMlhOVFZoQllqUC1WbUx5N2tuc1IyX1YwaTdDTE43bVVmWHppSUNIbkVvQV9sWHAwalhtMld0cHN3N09LaDBVQzBzU3M4ZF8tNVlEWC1yeWFabFdJS0dvdXdHVGxfVmsxSjA0SGduVFIycHQ?oc=5",
       "summary": "",
       "published": "2026-09-09T07:00:00.000Z",
-      "source": "variety.com",
+      "source": "Variety",
       "sourceId": "gnews-en-aimusic",
       "via": "Googleニュース",
       "category": "global",
@@ -3164,7 +3193,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 69,
+      "coverage": 71,
       "score": 37
     },
     {
@@ -3234,7 +3263,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 59,
+      "coverage": 60,
       "titleJa": "Sunoは、AIを訓練するためにYouTubeオーディオを取得したことを認めていますが、UMGとソニーが「ストリームリッピング」の主張をもたらすという立場に挑戦しています",
       "summaryJa": "AI音楽会社は、UMGとソニー・ミュージックエンタテインメントからの最初の修正された苦情に対する回答を提出しました。",
       "score": 27
@@ -3368,7 +3397,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 79,
+      "coverage": 80,
       "score": 21
     },
     {
@@ -3406,7 +3435,7 @@
       "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPTUJJcjIwd0xhb3V1dGU3dnM5UlhkMHY3aUlOc1hFVThWNnJNNF80VS13SnpMallNMTFfVmtiMWFod2VrbUk3cVhIZ2Nnb0lxWmZHOF9qbmUyRmZ3cERNS1FfN21pU2MtRlRBY2tFdUxyMVpab1BOMVRxTG1PN1IyaENGSVFXaHpxWEVKcw?oc=5",
       "summary": "",
       "published": "2026-09-08T07:00:00.000Z",
-      "source": "variety.com",
+      "source": "Variety",
       "sourceId": "gnews-en-aimusic",
       "via": "Googleニュース",
       "category": "global",
@@ -3454,7 +3483,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 55,
+      "coverage": 56,
       "score": 41
     },
     {
@@ -4101,7 +4130,7 @@
       "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQakI0Wmx2QXFpZVdqU2NhVk9JWWNvMGdsVEJ2YmpENVhNUmtxVkx0RW14clpiYkgzc0MtcWFlM3VTV0gxOGhPbkF6SUxaekZCd1dFbUY4VHFUNkZXQVEyUmJsbC1scWZlOGFsSE5od3EzbWZRYktmV3pRZWdHV3ZZem5TRzlhLTc4OXkxai1iXzl2OWpLQVhxZ3lCMDk?oc=5",
       "summary": "",
       "published": "2026-09-03T07:00:00.000Z",
-      "source": "variety.com",
+      "source": "Variety",
       "sourceId": "gnews-en-aimusic",
       "via": "Googleニュース",
       "category": "global",
@@ -4180,7 +4209,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 72,
+      "coverage": 73,
       "score": 30
     },
     {
@@ -4189,7 +4218,7 @@
       "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE4xWXFmUkVBNms3anBfTklQeU4tUGptcGZZOWZKRXRSRl94dVJ3N2o5OEZaSFlaU1Z1TXMyZWZBY3piUGJGRzZ0YTlZcWZPWVBJM0RPbFJTb0dWWEU2?oc=5",
       "summary": "",
       "published": "2026-09-03T07:00:00.000Z",
-      "source": "YouTube",
+      "source": "youtu.be",
       "sourceId": "gnews-ja-suno",
       "via": "Googleニュース",
       "category": "jp",
@@ -4617,7 +4646,7 @@
       "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1ZSnhIOXZVYnk5enhoMlJJdmVzQlJEWFYzQnBkQ1Nqc3RZWHNRMEpXclFTLTRVVDJtV2pudmxVZDlFVFFFVXZCYkxIQmJET1FwX3NfVzJDc21YZzc1?oc=5",
       "summary": "",
       "published": "2026-09-02T07:00:00.000Z",
-      "source": "YouTube",
+      "source": "youtu.be",
       "sourceId": "gnews-ja-suno",
       "via": "Googleニュース",
       "category": "jp",
@@ -4708,7 +4737,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 95,
+      "coverage": 96,
       "titleJa": "Jason IsbellがSunoを訴える",
       "summaryJa": "400ユニットのフロントマンが率いるミュージシャンのグループが、許可なく作品を使用したとして会社を非難する",
       "score": 27
@@ -4754,7 +4783,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 87,
+      "coverage": 88,
       "titleJa": "Jason IsbellさんとDavid Loweryさんは、集団訴訟でSunoさんを訴えています。重要なのは、著作権ではなく、アイデンティティの主張でMikey Shulmanの会社を攻撃していることです。",
       "summaryJa": "訴訟は、Sunoが曲、書面による説明、およびその人を呼び起こすカバー画像を生成することによって、ミュージシャンの名前に応答する製品を構築したと非難しています",
       "score": 34
@@ -4985,7 +5014,7 @@
       "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOYkltSHFUWHhZRkQxY29iZzY3a3h6Z0ZlSTZKaWRSbHRjX2JnNXdCcWdqbkpQMUJ4SHJuVnY1TmFXX01NYmQzOG1oYl9reU9xWHFZV0F0TkZxMTJlbi1XOHkyWmpNQk9CU2xjWkotZ1BxalJsWXhqbUZTbG5UVXdEcHRibFVubUU4c0pHU0VZNGlsenVOc1ptc3kwRXlaZVBZZzhCbQ?oc=5",
       "summary": "",
       "published": "2026-09-01T07:00:00.000Z",
-      "source": "variety.com",
+      "source": "Variety",
       "sourceId": "gnews-en-aimusic",
       "via": "Googleニュース",
       "category": "global",
@@ -5134,7 +5163,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 95,
+      "coverage": 96,
       "titleJa": "Sunoは再び訴えられ、スペインのAI曲を作るためにメキシコの音楽カタログでモデルを訓練したと非難された",
       "summaryJa": "メキシコの地方レーベルと出版社は、そのカタログがSunoが「スペイン語AIユーザー市場のかなりのシェアを獲得するのに役立った」と主張している。",
       "score": 27
@@ -6145,36 +6174,6 @@
       "titleJa": "ユニバーサル、ソニー、ワーナー、Stability AIで7600万$の資金調達ラウンドに参加",
       "summaryJa": "3つの主要な音楽会社はすべて、ジェネレーションAI会社への7600万$のシリーズB投資に参加することで、Stability AIの株式をバンクしました。ユニバーサルミュージックグループ、ソニーミュージックグループ、ワーナーミュージックグループは、ゲーム大手エレクトロニックアーツ、および投資会社AMDベンチャーズを含むシリーズB投資家連合に参加しています…続きを読む",
       "score": -14
-    },
-    {
-      "id": "5a9a6d57f7fccaf5",
-      "title": "アップル、オンデバイスAIとプロの高負荷な仕事をこなす“究極のデスクトップ”「Mac Studio」",
-      "url": "https://av.watch.impress.co.jp/docs/news/2135552.html",
-      "summary": "アップルは24日、「M5 Max」と、新しい「M5 Ultra」を搭載したMac Studioの新モデルを発表した。予約受付を開始しており、9月22日から販売開始。なお、512GBユニファイドメモリを搭載したMac Studioは、10月後半に加わる予定。M5 Max搭載Mac Studioの価格は419,800円から。M5 Ultra搭載Mac Studioは949,800円から。",
-      "published": "2026-08-25T15:42:31.000Z",
-      "source": "AV Watch",
-      "sourceId": "av-watch",
-      "via": null,
-      "category": "jp",
-      "lang": "ja",
-      "coverage": 1,
-      "score": 8
-    },
-    {
-      "id": "bc3ddf12333cb248",
-      "title": "TikTok’s SoundOn signs AI-assisted ‘Gina’s Pet Bangers’ creator Gina Jones",
-      "url": "https://musically.com/2026/08/25/ginas-pet-bangers-tiktok-soundon-ai-music/",
-      "summary": "TikTok is signing AI-music creators now? The story of Gina Jones, SoundOn and Gina’s Pet Bangers is. morenuanced than that. The post is from Music Ally .",
-      "published": "2026-08-25T13:12:42.000Z",
-      "source": "Music Ally",
-      "sourceId": "musically",
-      "via": null,
-      "category": "global",
-      "lang": "en",
-      "coverage": 1,
-      "titleJa": "TikTokのSoundOnは、AI支援の「ジーナのペットバンガーズ」クリエイターのジーナ・ジョーンズに署名",
-      "summaryJa": "TikTokは現在、AI音楽クリエイターと契約していますか？ジーナ・ジョーンズ、サウンドオン、ジーナのペット・バンガーズのストーリーは、それよりもニュアンスがあります。この投稿はMusic Allyからのものです。",
-      "score": -6
     }
   ]
 }
