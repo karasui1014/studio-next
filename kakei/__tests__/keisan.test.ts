@@ -354,3 +354,64 @@ describe('ymText / ymPlusMonths', () => {
     expect(mon.ymPlusMonths('2026-01', 23)).toBe('2027-12')
   })
 })
+
+/* ---------- 入金予定から入れる ---------- */
+const link = new Function(
+  ['num', 'pad2', 'ymNow', 'uid', 'newMonth', 'sortMonths', 'linkName', 'readLink', 'writeLink']
+    .map(grab)
+    .join('\n') + '; return { linkName, readLink, writeLink };',
+)() as {
+  linkName: (s: object, link: string) => string | null
+  readLink: (s: object, ym: string, link: string) => number
+  writeLink: (s: object, ym: string, link: string, v: number) => void
+}
+
+const baseState = () => ({
+  sideKinds: [{ id: 'kyt', name: 'YouTube', who: 'M' }],
+  months: [{ id: 'm1', ym: '2026-10', income: 46, sides: { kyt: 2 }, expense: 38 }],
+})
+
+describe('入金の行き先', () => {
+  it('名前を引ける。消された種目は null', () => {
+    const s = baseState()
+    expect(link.linkName(s, 'income')).toBe('本業の収入')
+    expect(link.linkName(s, 'kyt')).toBe('YouTube')
+    expect(link.linkName(s, 'kazure')).toBe(null)
+  })
+
+  it('いま入っている金額を読める。無い月は0', () => {
+    const s = baseState()
+    expect(link.readLink(s, '2026-10', 'kyt')).toBe(2)
+    expect(link.readLink(s, '2026-10', 'income')).toBe(46)
+    expect(link.readLink(s, '2026-09', 'kyt')).toBe(0)
+  })
+
+  it('その月の行が無ければ作って入れる', () => {
+    const s = baseState()
+    link.writeLink(s, '2026-11', 'kyt', 3)
+    expect(s.months.length).toBe(2)
+    expect(link.readLink(s, '2026-11', 'kyt')).toBe(3)
+    // 新しい月は後ろ（古い順）に並ぶ
+    expect(s.months.map((x) => x.ym)).toEqual(['2026-10', '2026-11'])
+  })
+
+  it('同じ月に入れ直すと置き換わる（二重に足さない）', () => {
+    const s = baseState()
+    link.writeLink(s, '2026-10', 'kyt', 5)
+    expect(link.readLink(s, '2026-10', 'kyt')).toBe(5)
+    expect(s.months.length).toBe(1)
+  })
+
+  it('0を入れるとその種目は消える（0の行を抱えこまない）', () => {
+    const s = baseState()
+    link.writeLink(s, '2026-10', 'kyt', 0)
+    expect(s.months[0].sides).toEqual({})
+  })
+
+  it('本業の収入にも入れられる', () => {
+    const s = baseState()
+    link.writeLink(s, '2026-10', 'income', 50)
+    expect(s.months[0].income).toBe(50)
+    expect(s.months[0].sides).toEqual({ kyt: 2 })
+  })
+})
