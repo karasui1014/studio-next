@@ -268,9 +268,16 @@ button{font:inherit;color:inherit}
 .scrim{position:fixed;inset:0;z-index:80;background:rgba(30,34,31,.5);display:flex;align-items:flex-end;justify-content:center}
 @media (min-width:700px){.scrim{align-items:center}}
 .sheet{background:var(--surface);width:100%;max-width:540px;max-height:86vh;overflow:auto;border-radius:18px 18px 0 0;
-  border:1px solid var(--line);padding:22px 20px calc(22px + env(safe-area-inset-bottom))}
+  border:1px solid var(--line);padding:18px 20px calc(22px + env(safe-area-inset-bottom));
+  overscroll-behavior:contain}
 @media (min-width:700px){.sheet{border-radius:16px}}
-.sheet h2{font-family:var(--serif);font-size:19px;margin:0 0 4px;font-weight:700}
+.sheet-head{display:flex;align-items:flex-start;gap:12px;margin:0 0 4px}
+.sheet h2{font-family:var(--serif);font-size:19px;margin:0;font-weight:700;flex:1;min-width:0}
+.sheet-x{flex:none;width:34px;height:34px;margin:-4px -4px 0 0;border:1px solid var(--line);
+  background:var(--surface2);color:var(--ink2);border-radius:50%;font-size:14px;line-height:1;
+  display:flex;align-items:center;justify-content:center;cursor:pointer}
+.sheet-x:hover{border-color:var(--accent-line);color:var(--accent)}
+.sheet-back{width:100%;justify-content:center;margin-top:18px}
 .sheet-sub{margin:0 0 16px;color:var(--ink2);font-size:14px}
 .menu{display:flex;flex-direction:column;gap:2px;margin:0 -8px}
 .menu button{display:flex;flex-direction:column;width:100%;text-align:left;border:0;background:none;padding:13px 9px;
@@ -1575,14 +1582,50 @@ function editView(){
 }
 
 /* ---------- シート ---------- */
-function closeSheet(){ if(openSheetEl){ openSheetEl.remove(); openSheetEl = null; } }
+/* 小さい画面を開いているあいだ、後ろの本文が動かないようにする。
+   overflow:hidden だけでは iPhone の Safari が後ろを動かしてしまうので、
+   body を position:fixed で止め、閉じたら元の位置へ戻す。 */
+var scrollLock = -1;
+function lockScroll(){
+  if(scrollLock >= 0) return;
+  scrollLock = window.scrollY || 0;
+  document.body.style.position = "fixed";
+  document.body.style.top = (-scrollLock) + "px";
+  document.body.style.left = "0";
+  document.body.style.right = "0";
+  document.body.style.width = "100%";
+}
+function unlockScroll(){
+  if(scrollLock < 0) return;
+  var y = scrollLock;
+  scrollLock = -1;
+  document.body.style.position = "";
+  document.body.style.top = "";
+  document.body.style.left = "";
+  document.body.style.right = "";
+  document.body.style.width = "";
+  window.scrollTo(0, y);
+}
+function closeSheet(){
+  if(openSheetEl){ openSheetEl.remove(); openSheetEl = null; }
+  unlockScroll();
+}
 function sheet(title, sub, body){
-  closeSheet();
+  /* 画面を入れ替えるときは、止めたままにする（戻して止め直すと背景が跳ねる） */
+  if(openSheetEl){ openSheetEl.remove(); openSheetEl = null; }
+  lockScroll();
   var s = el("div", { "class":"scrim", onclick:function(e){ if(e.target === s) closeSheet(); } }, [
-    el("div", { "class":"sheet", role:"dialog", "aria-modal":"true" }, [
-      el("h2", { text: title }),
+    el("div", { "class":"sheet", role:"dialog", "aria-modal":"true", "aria-label": title }, [
+      el("div", { "class":"sheet-head" }, [
+        el("h2", { text: title }),
+        el("button", { "class":"sheet-x", type:"button", "aria-label":"閉じる",
+          text:"✕", onclick: closeSheet })
+      ]),
       sub ? el("p", { "class":"sheet-sub", text: sub }) : null
-    ].concat(body))
+    ].concat(body).concat([
+      /* 下にも大きく置く。スマホでは上の✕より押しやすい */
+      el("button", { "class":"btn sheet-back", type:"button", text:"← 戻る", onclick: closeSheet })
+    ]))
   ]);
   document.body.appendChild(s);
   openSheetEl = s;
