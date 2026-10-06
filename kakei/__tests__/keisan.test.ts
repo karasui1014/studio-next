@@ -214,67 +214,111 @@ describe('LINES（言葉の中身）', () => {
 
 /* ---------- 月ごとの収支 ---------- */
 const mon = new Function(
-  ['num', 'pad2', 'ymNow', 'mSide', 'mIncome', 'mFlow', 'grandTotal', 'ymText', 'ymPlusMonths', 'sortMonths', 'latestMonth']
+  ['num', 'pad2', 'ymNow', 'uid', 'mSide', 'mSideBy', 'mSideRows', 'mIncome', 'mFlow', 'grandTotal',
+   'ymText', 'ymPlusMonths', 'sortMonths', 'latestMonth']
     .map(grab)
-    .join('\n') + '; return { mSide, mIncome, mFlow, grandTotal, ymText, ymPlusMonths, sortMonths, latestMonth };',
+    .join('\n') +
+    '; return { mSide, mSideBy, mSideRows, mIncome, mFlow, grandTotal, ymText, ymPlusMonths, sortMonths, latestMonth };',
 )() as {
   mSide: (m: object) => number
+  mSideBy: (s: object, m: object, who: string) => number
+  mSideRows: (s: object, m: object) => { name: string; who: string; amount: number }[]
   mIncome: (m: object) => number
   mFlow: (m: object) => number
-  grandTotal: (s: object) => { income: number; sideY: number; sideM: number; expense: number; all: number; flow: number }
+  grandTotal: (s: object) => {
+    income: number; side: number; sideY: number; sideM: number
+    expense: number; all: number; flow: number; byKind: Record<string, number>
+  }
   ymText: (ym: string, withYear?: boolean) => string
   ymPlusMonths: (ym: string, n: number) => string
   sortMonths: (s: { months: { ym: string }[] }) => void
   latestMonth: (s: object) => { ym: string }
 }
 
-const m = (ym: string, income: number, sideY: number, sideM: number, expense: number) =>
-  ({ ym, income, sideY, sideM, expense })
+/* 種目: YouTube と DomoAi はまさひろ、ハンドメイドはゆきこ */
+const kinds = [
+  { id: 'kyt', name: 'YouTube', who: 'M' },
+  { id: 'kdo', name: 'DomoAi 投稿分', who: 'M' },
+  { id: 'khm', name: 'ハンドメイド販売', who: 'Y' },
+]
+const m = (ym: string, income: number, sides: Record<string, number>, expense: number) =>
+  ({ ym, income, sides, expense })
 
 describe('月ごとの計算', () => {
-  it('その月の収入は 本業＋副業ふたりぶん', () => {
-    expect(mon.mSide(m('2026-10', 46, 2, 3.5, 38))).toBe(5.5)
-    expect(mon.mIncome(m('2026-10', 46, 2, 3.5, 38))).toBe(51.5)
+  const oct = m('2026-10', 46, { kyt: 2, kdo: 1.2, khm: 1.5 }, 38)
+
+  it('その月の副業は、種目をぜんぶ足したもの', () => {
+    expect(mon.mSide(oct)).toBeCloseTo(4.7, 6)
+  })
+
+  it('だれの副業かで分けて足せる', () => {
+    const s = { sideKinds: kinds }
+    expect(mon.mSideBy(s, oct, 'M')).toBeCloseTo(3.2, 6)
+    expect(mon.mSideBy(s, oct, 'Y')).toBeCloseTo(1.5, 6)
+  })
+
+  it('その月の収入は 本業＋副業', () => {
+    expect(mon.mIncome(oct)).toBeCloseTo(50.7, 6)
   })
 
   it('その月の収支は 収入−支出', () => {
-    expect(mon.mFlow(m('2026-10', 46, 2, 3.5, 38))).toBe(13.5)
-    expect(mon.mFlow(m('2026-10', 30, 0, 0, 38))).toBe(-8)
+    expect(mon.mFlow(oct)).toBeCloseTo(12.7, 6)
+    expect(mon.mFlow(m('2026-10', 30, {}, 38))).toBe(-8)
+  })
+
+  it('0の種目は内訳に出さない（並べても意味がないため）', () => {
+    const s = { sideKinds: kinds }
+    const rows = mon.mSideRows(s, m('2026-10', 46, { kyt: 2, kdo: 0 }, 38))
+    expect(rows.map((r) => r.name)).toEqual(['YouTube'])
+  })
+
+  it('消された種目に残った金額は、人ごとの合計に混ざらない', () => {
+    // sides に、種目一覧にはもう無い id が残っている場合
+    const s = { sideKinds: kinds }
+    const ghost = m('2026-10', 46, { kyt: 2, kazure: 9 }, 38)
+    expect(mon.mSideBy(s, ghost, 'M')).toBe(2)
+    expect(mon.mSideBy(s, ghost, 'Y')).toBe(0)
   })
 
   it('空の月は0になる（未入力でも壊れない）', () => {
     expect(mon.mIncome({})).toBe(0)
     expect(mon.mFlow({})).toBe(0)
+    expect(mon.mSide({})).toBe(0)
   })
 })
 
 describe('grandTotal（総合計）', () => {
   const s = {
+    sideKinds: kinds,
     months: [
-      m('2026-08', 44, 1, 2, 36),
-      m('2026-09', 45, 1.5, 3, 39),
-      m('2026-10', 46, 2, 3.5, 38),
+      m('2026-09', 45, { kyt: 1.8, kdo: 1, khm: 1 }, 39),
+      m('2026-10', 46, { kyt: 2, kdo: 1.2, khm: 1.5 }, 38),
     ],
   }
 
   it('すべての月を足す', () => {
     const g = mon.grandTotal(s)
-    expect(g.income).toBe(135)
-    expect(g.all).toBeCloseTo(148, 6)
-    expect(g.expense).toBe(113)
-    expect(g.flow).toBeCloseTo(35, 6)
+    expect(g.income).toBe(91)
+    expect(g.side).toBeCloseTo(8.5, 6)
+    expect(g.all).toBeCloseTo(99.5, 6)
+    expect(g.expense).toBe(77)
+    expect(g.flow).toBeCloseTo(22.5, 6)
   })
 
-  it('副業はふたり別々にも足す', () => {
+  it('人ごとにも、種目ごとにも足す', () => {
     const g = mon.grandTotal(s)
-    expect(g.sideY).toBeCloseTo(4.5, 6)
-    expect(g.sideM).toBeCloseTo(8.5, 6)
+    expect(g.sideY).toBeCloseTo(2.5, 6)
+    expect(g.sideM).toBeCloseTo(6, 6)
+    expect(g.byKind.kyt).toBeCloseTo(3.8, 6)
+    expect(g.byKind.kdo).toBeCloseTo(2.2, 6)
+    expect(g.byKind.khm).toBeCloseTo(2.5, 6)
   })
 
   it('1行も無ければ全部0', () => {
-    const g = mon.grandTotal({ months: [] })
+    const g = mon.grandTotal({ sideKinds: kinds, months: [] })
     expect(g.all).toBe(0)
     expect(g.flow).toBe(0)
+    expect(g.byKind.kyt).toBe(0)
   })
 })
 

@@ -175,6 +175,15 @@ button{font:inherit;color:inherit}
 .mtotal{background:var(--accent-soft);border-top:1px solid var(--accent-line);font-weight:500}
 .mtotal span:first-child{font-family:var(--sans);color:var(--accent)}
 
+.kindlist{background:color-mix(in srgb,var(--surface) 88%,transparent);backdrop-filter:blur(3px);
+  border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);overflow:hidden}
+.kindrow{display:flex;align-items:baseline;gap:10px;padding:11px 14px;border-top:1px solid var(--line)}
+.kindrow:first-child{border-top:0}
+.kind-name{flex:1;min-width:0;font-size:14.5px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.kind-who{flex:none;font-size:11px;color:var(--ink3);border:1px solid var(--line);border-radius:999px;padding:2px 9px}
+.kind-num{flex:none;font-family:var(--mono);font-size:15px;font-variant-numeric:tabular-nums}
+.kind-num small{font-family:var(--sans);font-size:11px;color:var(--ink3);margin-left:3px}
+
 /* ---------- 入金予定 ---------- */
 .pays{display:grid;gap:8px}
 @media (min-width:700px){.pays{grid-template-columns:1fr 1fr}}
@@ -390,12 +399,23 @@ function defaultPaydays(){
 }
 function emptyState(){
   return { v:2, updatedAt:"", note:"",
-    savings: 0, months: [], loans: [], paydays: defaultPaydays(), history: [] };
+    savings: 0, months: [], sideKinds: defaultKinds(), loans: [],
+    paydays: defaultPaydays(), history: [] };
 }
 /* 月の行をひとつ作る。ym は "2026-10" の形 */
 function newMonth(ym){
-  return { id: uid(), ym: ym || ymNow(), income: 0, sideY: 0, sideM: 0, expense: 0 };
+  return { id: uid(), ym: ym || ymNow(), income: 0, sides: {}, expense: 0 };
 }
+/* 副業の種目。はじめの中身。画面から足したり名前を変えたりできる。
+   who は "Y"（ゆきこ）か "M"（まさひろ）。 */
+function defaultKinds(){
+  return [
+    { id: uid(), name:"DomoAi 投稿分", who:"M" },
+    { id: uid(), name:"DomoAi アフィリエイト", who:"M" },
+    { id: uid(), name:"YouTube", who:"M" }
+  ];
+}
+var WHO = { Y:"ゆきこ", M:"まさひろ" };
 var MAXROWS = 40, MAXHIST = 240, MAXMONTHS = 120;
 function safeKey(k){ return k !== "__proto__" && k !== "constructor" && k !== "prototype"; }
 function str(v, max){
@@ -410,10 +430,25 @@ function normalize(o){
   s.updatedAt = str(o.updatedAt, 40);
   s.note = str(o.note, 2000);
   s.savings = num(o.savings);
+  if(Array.isArray(o.sideKinds)) s.sideKinds = o.sideKinds.slice(0, MAXROWS).map(function(k){
+    k = (k && typeof k === "object") ? k : {};
+    return { id: str(k.id, 12) || uid(), name: str(k.name, 60), who: k.who === "Y" ? "Y" : "M" };
+  });
   if(Array.isArray(o.months)) s.months = o.months.slice(0, MAXMONTHS).map(function(m){
     m = (m && typeof m === "object") ? m : {};
+    var sides = {};
+    if(m.sides && typeof m.sides === "object" && !Array.isArray(m.sides)){
+      Object.keys(m.sides).forEach(function(k){
+        if(safeKey(k) && k.length <= 12 && num(m.sides[k])) sides[k] = num(m.sides[k]);
+      });
+    }
+    /* 種目に分ける前の形（ゆきこ／まさひろの2つだけ）を引き継ぐ */
+    if(!Object.keys(sides).length && (num(m.sideY) || num(m.sideM))){
+      if(num(m.sideY)) sides[kindFor(s, "Y")] = num(m.sideY);
+      if(num(m.sideM)) sides[kindFor(s, "M")] = num(m.sideM);
+    }
     return { id: str(m.id, 12) || uid(), ym: /^\d{4}-\d{2}$/.test(m.ym) ? m.ym : "",
-             income: num(m.income), sideY: num(m.sideY), sideM: num(m.sideM), expense: num(m.expense) };
+             income: num(m.income), sides: sides, expense: num(m.expense) };
   }).filter(function(m){ return !!m.ym; });
   /* 月ごとに分ける前の数字（1か月ぶんしか無い）は、その月の行として引き継ぐ。
      いつのぶんかは updatedAt から拾い、無ければ今月に置く。
@@ -424,8 +459,10 @@ function normalize(o){
     if(o2.income || o2.sideY || o2.sideM || o2.expense){
       var ym0 = (typeof o.updatedAt === "string" && /^\d{4}-\d{2}/.test(o.updatedAt))
         ? o.updatedAt.slice(0, 7) : ymNow();
-      s.months = [{ id: uid(), ym: ym0, income: o2.income, sideY: o2.sideY,
-                    sideM: o2.sideM, expense: o2.expense }];
+      var sides0 = {};
+      if(o2.sideY) sides0[kindFor(s, "Y")] = o2.sideY;
+      if(o2.sideM) sides0[kindFor(s, "M")] = o2.sideM;
+      s.months = [{ id: uid(), ym: ym0, income: o2.income, sides: sides0, expense: o2.expense }];
     }
   }
   sortMonths(s);
@@ -454,24 +491,58 @@ function netWorth(s){ return num(s.savings) - totalDebt(s); }
 function sortMonths(s){
   (s.months || []).sort(function(a, b){ return a.ym < b.ym ? -1 : (a.ym > b.ym ? 1 : 0); });
 }
-function mSide(m){ return num(m.sideY) + num(m.sideM); }
+/* 古い形を引き継ぐときの受け皿。その人の種目が無ければ「副業（名前）」を作る */
+function kindFor(s, who){
+  var found = null;
+  (s.sideKinds || []).forEach(function(k){ if(!found && k.who === who) found = k; });
+  if(found) return found.id;
+  var k2 = { id: uid(), name:"副業（" + WHO[who] + "）", who: who };
+  s.sideKinds.push(k2);
+  return k2.id;
+}
+/* その月の副業の合計。種目をぜんぶ足す */
+function mSide(m){
+  var t = 0, sd = m.sides || {};
+  Object.keys(sd).forEach(function(k){ t += num(sd[k]); });
+  return t;
+}
+/* その月の、ある人ぶんの副業 */
+function mSideBy(s, m, who){
+  var t = 0, sd = m.sides || {};
+  (s.sideKinds || []).forEach(function(k){ if(k.who === who) t += num(sd[k.id]); });
+  return t;
+}
+/* その月の種目ごとの金額。0のものは出さない */
+function mSideRows(s, m){
+  var sd = m.sides || {}, out = [];
+  (s.sideKinds || []).forEach(function(k){
+    if(num(sd[k.id])) out.push({ name: k.name || "副業", who: k.who, amount: num(sd[k.id]) });
+  });
+  return out;
+}
 function mIncome(m){ return num(m.income) + mSide(m); }
 /* その月の収支。入ったお金から出ていったお金を引く */
 function mFlow(m){ return mIncome(m) - num(m.expense); }
 /* いちばん新しい月。1行も無ければ空の月を返す（画面が0で出る） */
 function latestMonth(s){
   var ms = s.months || [];
-  return ms.length ? ms[ms.length - 1] : { ym:"", income:0, sideY:0, sideM:0, expense:0 };
+  return ms.length ? ms[ms.length - 1] : { ym:"", income:0, sides:{}, expense:0 };
 }
 /* すべての月を足した総合計 */
 function grandTotal(s){
-  return (s.months || []).reduce(function(a, m){
-    a.income += num(m.income); a.sideY += num(m.sideY); a.sideM += num(m.sideM);
-    a.expense += num(m.expense);
-    a.all = a.income + a.sideY + a.sideM;
-    a.flow = a.all - a.expense;
-    return a;
-  }, { income:0, sideY:0, sideM:0, expense:0, all:0, flow:0 });
+  var g = { income:0, side:0, sideY:0, sideM:0, expense:0, all:0, flow:0, byKind:{} };
+  (s.sideKinds || []).forEach(function(k){ g.byKind[k.id] = 0; });
+  (s.months || []).forEach(function(m){
+    g.income += num(m.income);
+    g.expense += num(m.expense);
+    g.sideY += mSideBy(s, m, "Y");
+    g.sideM += mSideBy(s, m, "M");
+    (s.sideKinds || []).forEach(function(k){ g.byKind[k.id] += num((m.sides || {})[k.id]); });
+  });
+  g.side = g.sideY + g.sideM;
+  g.all = g.income + g.side;
+  g.flow = g.all - g.expense;
+  return g;
 }
 /* "2026-10" → 今年なら "10月"、ほかの年なら "2025年10月" */
 function ymText(ym, withYear){
@@ -907,8 +978,8 @@ function homeView(){
       el("p", { "class":"card-t", text:"副業収益" + (when ? " " + when : "") }),
       el("p", { "class":"card-n", text: man(mSide(last)) }, [ el("small", { text:"万円" }) ]),
       el("div", { "class":"split" }, [
-        el("span", {}, [ el("i", { text:"ゆきこ" }), man(last.sideY) ]),
-        el("span", {}, [ el("i", { text:"まさひろ" }), man(last.sideM) ])
+        el("span", {}, [ el("i", { text:"ゆきこ" }), man(mSideBy(s, last, "Y")) ]),
+        el("span", {}, [ el("i", { text:"まさひろ" }), man(mSideBy(s, last, "M")) ])
       ]),
       el("p", { "class":"card-s", text: mIncome(last) > 0
         ? "収入の " + Math.round(mSide(last) / mIncome(last) * 100) + "％" : "" })
@@ -980,9 +1051,11 @@ function monthBlock(s){
       el("span", { text: man(m.expense) }),
       el("span", { "class": f < 0 ? "m-minus" : "m-plus", text: (f >= 0 ? "+" : "−") + man(Math.abs(f)) })
     ]));
-    if(mSide(m) > 0){
-      tbl.appendChild(el("div", { "class":"msub" },
-        "副業 ゆきこ " + man(m.sideY) + " ／ まさひろ " + man(m.sideM)));
+    var rows = mSideRows(s, m);
+    if(rows.length){
+      tbl.appendChild(el("div", { "class":"msub" }, "副業 " + rows.map(function(r){
+        return r.name + " " + man(r.amount);
+      }).join(" ／ ")));
     }
   });
   var g = grandTotal(s);
@@ -997,6 +1070,25 @@ function monthBlock(s){
   box.appendChild(el("p", { "class":"card-s", style:"margin-top:9px",
     text: ms.length + "か月ぶん。副業の総合計は ゆきこ " + man(g.sideY)
       + "万円／まさひろ " + man(g.sideM) + "万円。" }));
+
+  /* 種目ごとの総合計。多い順に並べる */
+  var kinds = (s.sideKinds || []).map(function(k){
+    return { name: k.name || "副業", who: k.who, total: g.byKind[k.id] || 0 };
+  }).filter(function(k){ return k.total > 0; }).sort(function(a, b){ return b.total - a.total; });
+  if(kinds.length){
+    var kb = el("div", { "class":"kindlist" });
+    kinds.forEach(function(k){
+      kb.appendChild(el("div", { "class":"kindrow" }, [
+        el("span", { "class":"kind-name", text: k.name }),
+        el("span", { "class":"kind-who", text: WHO[k.who] }),
+        el("span", { "class":"kind-num", text: man(k.total) }, [ el("small", { text:"万円" }) ])
+      ]));
+    });
+    box.appendChild(el("div", { "class":"block-head", style:"margin-top:22px" }, [
+      el("h2", { text:"副業の種目ごと" }), el("span", { text:"SIDE" })
+    ]));
+    box.appendChild(kb);
+  }
   return box;
 }
 
@@ -1173,18 +1265,75 @@ function editView(){
             moneyInput(m.income, function(v){ m.income = v; markDirty(); }, "例：45") ]),
           el("div", {}, [ el("span", { "class":"mini-label", text:"支出" }),
             moneyInput(m.expense, function(v){ m.expense = v; markDirty(); }, "例：38") ]),
-          el("div", {}, [ el("span", { "class":"mini-label", text:"副業・ゆきこ" }),
-            moneyInput(m.sideY, function(v){ m.sideY = v; markDirty(); }, "例：1.5") ]),
-          el("div", {}, [ el("span", { "class":"mini-label", text:"副業・まさひろ" }),
-            moneyInput(m.sideM, function(v){ m.sideM = v; markDirty(); }, "例：3.5") ])
+          el("div", { "class":"span" }, [
+            el("span", { "class":"mini-label", text:"副業（種目ごと）" }),
+            state.sideKinds.length
+              ? el("div", { "class":"grid2" }, state.sideKinds.map(function(k){
+                  return el("div", {}, [
+                    el("span", { "class":"mini-label", text: (k.name || "副業") + "（" + WHO[k.who] + "）" }),
+                    moneyInput((m.sides || {})[k.id], function(v){
+                      if(!m.sides) m.sides = {};
+                      if(v) m.sides[k.id] = v; else delete m.sides[k.id];
+                      markDirty();
+                    }, "0")
+                  ]);
+                }))
+              : el("p", { "class":"f-help", text:"下の「副業の種目」で先に種目を作ってください。" })
+          ])
         ])
       ]));
     });
   }
   paintMonths();
 
+  /* 副業の種目 */
+  form.appendChild(el("div", { "class":"block-head", style:"margin-top:34px" }, [
+    el("h2", { text:"副業の種目" }), el("span", { text:"SIDE" })
+  ]));
+  form.appendChild(el("p", { "class":"f-help",
+    text:"ここで作った種目が、上の月ごとの入力欄に並びます。だれの副業かも選べます。" }));
+  var kindBox = el("div");
+  form.appendChild(kindBox);
+  form.appendChild(el("button", { "class":"btn btn-sm", type:"button", text:"＋ 種目を足す", onclick:function(){
+    state.sideKinds.push({ id: uid(), name:"", who:"M" });
+    markDirty(); paintKinds(); paintMonths();
+  }}));
+
+  function paintKinds(){
+    kindBox.textContent = "";
+    if(!state.sideKinds.length){
+      kindBox.appendChild(el("p", { "class":"empty", text:"まだありません。" }));
+      return;
+    }
+    state.sideKinds.forEach(function(k, i){
+      var whoRow = el("div", { "class":"chips" }, ["Y","M"].map(function(w){
+        return el("button", { "class":"chip", type:"button", "aria-pressed": k.who === w ? "true" : "false",
+          text: WHO[w], onclick:function(){ k.who = w; markDirty(); paintKinds(); paintMonths(); } });
+      }));
+      kindBox.appendChild(el("div", { "class":"row" }, [
+        el("div", { "class":"row-top" }, [
+          el("span", { "class":"row-n", text: pad2(i + 1) }),
+          el("span", { "class":"spacer" }),
+          el("button", { "class":"del", type:"button", text:"消す", onclick:function(){
+            var id = k.id;
+            state.sideKinds.splice(i, 1);
+            /* その種目に入れてあった金額も一緒に消す。残すと合計に出てこない幽霊になる */
+            state.months.forEach(function(m){ if(m.sides) delete m.sides[id]; });
+            markDirty(); paintKinds(); paintMonths();
+          }})
+        ]),
+        el("div", { "class":"grid2" }, [
+          el("div", {}, [ el("span", { "class":"mini-label", text:"名前" }),
+            textInput(k.name, function(v){ k.name = v; markDirty(); paintMonths(); }, "例：YouTube") ]),
+          el("div", {}, [ el("span", { "class":"mini-label", text:"だれの副業" }), whoRow ])
+        ])
+      ]));
+    });
+  }
+  paintKinds();
+
   /* ローン */
-  form.appendChild(el("div", { "class":"block-head", style:"margin-top:30px" }, [
+  form.appendChild(el("div", { "class":"block-head", style:"margin-top:34px" }, [
     el("h2", { text:"ローン" }), el("span", { text:"LOAN" })
   ]));
   form.appendChild(el("p", { "class":"f-help",
