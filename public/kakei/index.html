@@ -160,6 +160,24 @@ button{font:inherit;color:inherit}
 .warn{margin:10px 0 0;padding:9px 12px;border-radius:9px;background:var(--caution-soft);
   border:1px solid color-mix(in srgb,var(--caution) 28%,transparent);font-size:12.5px;line-height:1.65}
 
+/* ---------- 月ごとの収支 ---------- */
+.mtbl{background:color-mix(in srgb,var(--surface) 88%,transparent);backdrop-filter:blur(3px);
+  border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);overflow:hidden}
+.mrow{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:8px;align-items:baseline;
+  padding:11px 14px;border-top:1px solid var(--line);font-family:var(--mono);font-size:14px;
+  font-variant-numeric:tabular-nums;text-align:right}
+.mrow span:first-child{text-align:left}
+.mrow:first-child{border-top:0}
+.mhead{font-family:var(--sans);font-size:11.5px;color:var(--ink3);padding:9px 14px;
+  background:var(--surface2);border-top:0;letter-spacing:.04em}
+.m-ym{font-family:var(--sans);font-size:14px}
+.m-plus{color:var(--done)}
+.m-minus{color:var(--caution)}
+.msub{padding:0 14px 10px;text-align:right;font-size:11.5px;color:var(--ink3);
+  font-family:var(--mono);font-variant-numeric:tabular-nums}
+.mtotal{background:var(--accent-soft);border-top:1px solid var(--accent-line);font-weight:500}
+.mtotal span:first-child{font-family:var(--sans);color:var(--accent)}
+
 /* ---------- 入金予定 ---------- */
 .pays{display:grid;gap:8px}
 @media (min-width:700px){.pays{grid-template-columns:1fr 1fr}}
@@ -374,11 +392,14 @@ function defaultPaydays(){
   ];
 }
 function emptyState(){
-  return { v:1, updatedAt:"", note:"",
-    savings: 0, income: 0, sideY: 0, sideM: 0, expense: 0,
-    loans: [], paydays: defaultPaydays(), history: [] };
+  return { v:2, updatedAt:"", note:"",
+    savings: 0, months: [], loans: [], paydays: defaultPaydays(), history: [] };
 }
-var MAXROWS = 40, MAXHIST = 240;
+/* 月の行をひとつ作る。ym は "2026-10" の形 */
+function newMonth(ym){
+  return { id: uid(), ym: ym || ymNow(), income: 0, sideY: 0, sideM: 0, expense: 0 };
+}
+var MAXROWS = 40, MAXHIST = 240, MAXMONTHS = 120;
 function safeKey(k){ return k !== "__proto__" && k !== "constructor" && k !== "prototype"; }
 function str(v, max){
   if(typeof v === "number") v = String(v);
@@ -392,12 +413,25 @@ function normalize(o){
   s.updatedAt = str(o.updatedAt, 40);
   s.note = str(o.note, 2000);
   s.savings = num(o.savings);
-  s.income = num(o.income);
-  s.sideY = num(o.sideY);
-  s.sideM = num(o.sideM);
-  /* 分ける前の副業収益（1本だけ）は、まさひろのぶんとして引き継ぐ */
-  if(!o.sideY && !o.sideM && num(o.side)) s.sideM = num(o.side);
-  s.expense = num(o.expense);
+  if(Array.isArray(o.months)) s.months = o.months.slice(0, MAXMONTHS).map(function(m){
+    m = (m && typeof m === "object") ? m : {};
+    return { id: str(m.id, 12) || uid(), ym: /^\d{4}-\d{2}$/.test(m.ym) ? m.ym : "",
+             income: num(m.income), sideY: num(m.sideY), sideM: num(m.sideM), expense: num(m.expense) };
+  }).filter(function(m){ return !!m.ym; });
+  /* 月ごとに分ける前の数字（1か月ぶんしか無い）は、その月の行として引き継ぐ。
+     いつのぶんかは updatedAt から拾い、無ければ今月に置く。
+     分ける前の副業収益（1本だけ）は、まさひろのぶんとして引き継ぐ。 */
+  if(!s.months.length){
+    var o2 = { income: num(o.income), sideY: num(o.sideY), sideM: num(o.sideM), expense: num(o.expense) };
+    if(!o2.sideY && !o2.sideM && num(o.side)) o2.sideM = num(o.side);
+    if(o2.income || o2.sideY || o2.sideM || o2.expense){
+      var ym0 = (typeof o.updatedAt === "string" && /^\d{4}-\d{2}/.test(o.updatedAt))
+        ? o.updatedAt.slice(0, 7) : ymNow();
+      s.months = [{ id: uid(), ym: ym0, income: o2.income, sideY: o2.sideY,
+                    sideM: o2.sideM, expense: o2.expense }];
+    }
+  }
+  sortMonths(s);
   if(Array.isArray(o.loans)) s.loans = o.loans.slice(0, MAXROWS).map(function(r){
     r = (r && typeof r === "object") ? r : {};
     return { id: str(r.id, 12) || uid(), name: str(r.name, 60), balance: num(r.balance),
@@ -415,11 +449,47 @@ function normalize(o){
   return s;
 }
 function totalDebt(s){ return (s.loans || []).reduce(function(a, l){ return a + num(l.balance); }, 0); }
-/* 副業はふたりぶんある。合計はいつもこれを通す */
-function totalSide(s){ return num(s.sideY) + num(s.sideM); }
-/* 現時点までに入ってきたお金。本業の手取りと副業を足したもの */
-function totalIncome(s){ return num(s.income) + totalSide(s); }
 function netWorth(s){ return num(s.savings) - totalDebt(s); }
+
+/* ---------- 月ごとの数字 ---------- */
+/* 古い月から新しい月の順に並べる。同じ月が2行あっても消さない
+   （入力の誤りなので、画面に並べて気づけるようにする）。 */
+function sortMonths(s){
+  (s.months || []).sort(function(a, b){ return a.ym < b.ym ? -1 : (a.ym > b.ym ? 1 : 0); });
+}
+function mSide(m){ return num(m.sideY) + num(m.sideM); }
+function mIncome(m){ return num(m.income) + mSide(m); }
+/* その月の収支。入ったお金から出ていったお金を引く */
+function mFlow(m){ return mIncome(m) - num(m.expense); }
+/* いちばん新しい月。1行も無ければ空の月を返す（画面が0で出る） */
+function latestMonth(s){
+  var ms = s.months || [];
+  return ms.length ? ms[ms.length - 1] : { ym:"", income:0, sideY:0, sideM:0, expense:0 };
+}
+/* すべての月を足した総合計 */
+function grandTotal(s){
+  return (s.months || []).reduce(function(a, m){
+    a.income += num(m.income); a.sideY += num(m.sideY); a.sideM += num(m.sideM);
+    a.expense += num(m.expense);
+    a.all = a.income + a.sideY + a.sideM;
+    a.flow = a.all - a.expense;
+    return a;
+  }, { income:0, sideY:0, sideM:0, expense:0, all:0, flow:0 });
+}
+/* "2026-10" → 今年なら "10月"、ほかの年なら "2025年10月" */
+function ymText(ym, withYear){
+  var m = /^(\d{4})-(\d{2})$/.exec(ym || "");
+  if(!m) return "";
+  var sameYear = String(new Date().getFullYear()) === m[1];
+  return (withYear || !sameYear ? m[1] + "年" : "") + Number(m[2]) + "月";
+}
+/* "2026-10" を n か月進める。年またぎもここで吸収する */
+function ymPlusMonths(ym, n){
+  var m = /^(\d{4})-(\d{2})$/.exec(ym || "");
+  if(!m) return ymNow();
+  var t = Number(m[1]) * 12 + (Number(m[2]) - 1) + n;
+  return Math.floor(t / 12) + "-" + pad2(t % 12 + 1);
+}
 
 /* 保存のたびに、その月の記録を1点だけ残す（同じ月は上書き）。 */
 function stampHistory(s){
@@ -797,9 +867,9 @@ function pickFrom(list){
 function homeLine(){
   var s = state;
   if(!s.updatedAt) return pickFrom(LINES.start);
-  var net = netWorth(s), debt = totalDebt(s), flow = totalIncome(s) - num(s.expense);
+  var net = netWorth(s), debt = totalDebt(s), last = latestMonth(s), flow = mFlow(last);
   /* 副業が育っている月は、そこを見てあげる */
-  if(totalSide(s) > 0 && totalIncome(s) > 0 && totalSide(s) / totalIncome(s) >= 0.15) return pickFrom(LINES.side);
+  if(mSide(last) > 0 && mIncome(last) > 0 && mSide(last) / mIncome(last) >= 0.15) return pickFrom(LINES.side);
   if(debt > 0 && net < 0) return pickFrom(LINES.debt);
   if(flow < 0) return pickFrom(LINES.spend);
   if(debt > 0) return pickFrom(LINES.ok);
@@ -807,7 +877,8 @@ function homeLine(){
 }
 function homeView(){
   var s = state, wrap = el("main", { "class":"wrap" });
-  var net = netWorth(s), flow = num(s.income) - num(s.expense);
+  var net = netWorth(s), last = latestMonth(s), flow = mFlow(last);
+  var when = last.ym ? ymText(last.ym) : "";
 
   wrap.appendChild(el("section", { "class":"head" }, [
     el("p", { "class":"eyebrow", text:"NET WORTH ／ 純資産" }),
@@ -831,27 +902,29 @@ function homeView(){
       el("p", { "class":"card-s", text: (s.loans || []).length + "件" })
     ]),
     el("div", { "class":"card" }, [
-      el("p", { "class":"card-t", text:"収入 現時点の合計" }),
-      el("p", { "class":"card-n", text: man(totalIncome(s)) }, [ el("small", { text:"万円" }) ]),
-      el("p", { "class":"card-s", text:"本業 " + man(s.income) + " ＋ 副業 " + man(totalSide(s)) })
+      el("p", { "class":"card-t", text:"収入" + (when ? " " + when : "") }),
+      el("p", { "class":"card-n", text: man(mIncome(last)) }, [ el("small", { text:"万円" }) ]),
+      el("p", { "class":"card-s", text:"本業 " + man(last.income) + " ＋ 副業 " + man(mSide(last)) })
     ]),
-    el("div", { "class":"card" + (totalSide(s) > 0 ? " good" : "") }, [
-      el("p", { "class":"card-t", text:"副業収益 現時点の合計" }),
-      el("p", { "class":"card-n", text: man(totalSide(s)) }, [ el("small", { text:"万円" }) ]),
+    el("div", { "class":"card" + (mSide(last) > 0 ? " good" : "") }, [
+      el("p", { "class":"card-t", text:"副業収益" + (when ? " " + when : "") }),
+      el("p", { "class":"card-n", text: man(mSide(last)) }, [ el("small", { text:"万円" }) ]),
       el("div", { "class":"split" }, [
-        el("span", {}, [ el("i", { text:"ゆきこ" }), man(s.sideY) ]),
-        el("span", {}, [ el("i", { text:"まさひろ" }), man(s.sideM) ])
+        el("span", {}, [ el("i", { text:"ゆきこ" }), man(last.sideY) ]),
+        el("span", {}, [ el("i", { text:"まさひろ" }), man(last.sideM) ])
       ]),
-      el("p", { "class":"card-s", text: totalIncome(s) > 0
-        ? "収入の " + Math.round(totalSide(s) / totalIncome(s) * 100) + "％" : "" })
+      el("p", { "class":"card-s", text: mIncome(last) > 0
+        ? "収入の " + Math.round(mSide(last) / mIncome(last) * 100) + "％" : "" })
     ]),
     el("div", { "class":"card" + (flow < 0 ? " debt" : "") }, [
-      el("p", { "class":"card-t", text:"支出 現時点の合計" }),
-      el("p", { "class":"card-n", text: man(s.expense) }, [ el("small", { text:"万円" }) ]),
-      el("p", { "class":"card-s", text: flow >= 0
-        ? "収入のほうが " + man(flow) + " 多い" : "支出のほうが " + man(-flow) + " 多い" })
+      el("p", { "class":"card-t", text:"支出" + (when ? " " + when : "") }),
+      el("p", { "class":"card-n", text: man(last.expense) }, [ el("small", { text:"万円" }) ]),
+      el("p", { "class":"card-s", text: !last.ym ? "まだ入っていません"
+        : (flow >= 0 ? "この月の収支は ＋" + man(flow) : "この月の収支は −" + man(-flow)) })
     ])
   ]));
+
+  wrap.appendChild(monthBlock(s));
 
   wrap.appendChild(paydayBlock(s));
 
@@ -885,6 +958,51 @@ function homeView(){
   wrap.appendChild(el("div", { style:"height:120px" }));
   return wrap;
 }
+/* 月ごとの収支。新しい月を上にして、いちばん下に総合計を置く */
+function monthBlock(s){
+  var box = el("section", { "class":"block" }, [
+    el("div", { "class":"block-head" }, [
+      el("h2", { text:"月ごとの収支" }), el("span", { text:"MONTHLY" })
+    ])
+  ]);
+  var ms = (s.months || []).slice().reverse();
+  if(!ms.length){
+    box.appendChild(el("p", { "class":"empty", text:"まだありません。「数字を入れる」から、月ごとに入れられます。" }));
+    return box;
+  }
+  var tbl = el("div", { "class":"mtbl" });
+  tbl.appendChild(el("div", { "class":"mrow mhead" }, [
+    el("span", { text:"月" }), el("span", { text:"収入" }),
+    el("span", { text:"支出" }), el("span", { text:"収支" })
+  ]));
+  ms.forEach(function(m){
+    var f = mFlow(m);
+    tbl.appendChild(el("div", { "class":"mrow" }, [
+      el("span", { "class":"m-ym", text: ymText(m.ym) }),
+      el("span", { text: man(mIncome(m)) }),
+      el("span", { text: man(m.expense) }),
+      el("span", { "class": f < 0 ? "m-minus" : "m-plus", text: (f >= 0 ? "+" : "−") + man(Math.abs(f)) })
+    ]));
+    if(mSide(m) > 0){
+      tbl.appendChild(el("div", { "class":"msub" },
+        "副業 ゆきこ " + man(m.sideY) + " ／ まさひろ " + man(m.sideM)));
+    }
+  });
+  var g = grandTotal(s);
+  tbl.appendChild(el("div", { "class":"mrow mtotal" }, [
+    el("span", { text:"総合計" }),
+    el("span", { text: man(g.all) }),
+    el("span", { text: man(g.expense) }),
+    el("span", { "class": g.flow < 0 ? "m-minus" : "m-plus",
+      text: (g.flow >= 0 ? "+" : "−") + man(Math.abs(g.flow)) })
+  ]));
+  box.appendChild(tbl);
+  box.appendChild(el("p", { "class":"card-s", style:"margin-top:9px",
+    text: ms.length + "か月ぶん。副業の総合計は ゆきこ " + man(g.sideY)
+      + "万円／まさひろ " + man(g.sideM) + "万円。" }));
+  return box;
+}
+
 /* 入金予定。近い順に並べ、いちばん近いものを目立たせる */
 function paydayBlock(s){
   var list = (s.paydays || []).filter(function(x){ return x.name || x.day; }).map(function(x){
@@ -1001,26 +1119,72 @@ function editView(){
   var wrap = el("main", { "class":"wrap" });
   wrap.appendChild(el("section", { "class":"head" }, [
     el("p", { "class":"eyebrow", text:"INPUT ／ 数字を入れる" }),
-    el("h1", { style:"font-family:var(--serif);font-size:26px;margin:0 0 6px", text:"現時点の合計" })
+    el("h1", { style:"font-family:var(--serif);font-size:26px;margin:0 0 6px", text:"数字を書き写す" })
   ]));
-  wrap.appendChild(speech("マネーフォワードの画面を見ながら、いまの数字を書き写すだけでいい。金額はぜんぶ「万円」で。", "point", 56));
+  wrap.appendChild(speech("マネーフォワードの画面を見ながら、その月の数字を書き写すだけでいい。金額はぜんぶ「万円」で。", "point", 56));
 
   var form = el("div", { "class":"form" });
 
   form.appendChild(field("貯蓄の合計", "銀行・証券・現金をぜんぶ足した金額。細かく分けなくていい。",
     moneyInput(state.savings, function(v){ state.savings = v; markDirty(); }, "例：850")));
 
-  form.appendChild(field("本業の収入（現時点の合計）", "いまのところ入った手取りの合計。ふたりぶん。",
-    moneyInput(state.income, function(v){ state.income = v; markDirty(); }, "例：45")));
+  /* 月ごとの収入と支出 */
+  form.appendChild(el("div", { "class":"block-head", style:"margin-top:30px" }, [
+    el("h2", { text:"月ごとの収入と支出" }), el("span", { text:"MONTHLY" })
+  ]));
+  form.appendChild(el("p", { "class":"f-help",
+    text:"月ごとに1行ずつ。入れたぶんだけ、ダッシュボードに月の収支と総合計が出ます。" }));
+  var monBox = el("div");
+  form.appendChild(monBox);
+  form.appendChild(el("button", { "class":"btn btn-sm", type:"button", text:"＋ 月を足す", onclick:function(){
+    /* まだ使っていない月を出す。初回は今月、以降はその次の月 */
+    var used = {};
+    state.months.forEach(function(m){ used[m.ym] = true; });
+    var ym = ymNow();
+    while(used[ym]) ym = ymPlusMonths(ym, 1);
+    state.months.push(newMonth(ym));
+    sortMonths(state);
+    markDirty(); paintMonths();
+  }}));
 
-  form.appendChild(field("副業収益・ゆきこ（現時点の合計）", "ゆきこが本業以外で得たお金。まだ無ければ0のままで。",
-    moneyInput(state.sideY, function(v){ state.sideY = v; markDirty(); }, "例：1.5")));
-
-  form.appendChild(field("副業収益・まさひろ（現時点の合計）", "まさひろが本業以外で得たお金。まだ無ければ0のままで。",
-    moneyInput(state.sideM, function(v){ state.sideM = v; markDirty(); }, "例：3.5")));
-
-  form.appendChild(field("支出（現時点の合計）", "家賃・食費・光熱費など、いまのところ出ていったお金の合計。",
-    moneyInput(state.expense, function(v){ state.expense = v; markDirty(); }, "例：38")));
+  function paintMonths(){
+    monBox.textContent = "";
+    if(!state.months.length){
+      monBox.appendChild(el("p", { "class":"empty", text:"まだありません。「＋ 月を足す」から今月のぶんを作れます。" }));
+      return;
+    }
+    /* 新しい月が上。ダッシュボードの並びと合わせる */
+    state.months.slice().reverse().forEach(function(m){
+      var ymIn = el("input", { "class":"in", type:"month", value: m.ym });
+      ymIn.addEventListener("change", function(){
+        if(/^\d{4}-\d{2}$/.test(ymIn.value)){ m.ym = ymIn.value; sortMonths(state); markDirty(); paintMonths(); }
+        else ymIn.value = m.ym;
+      });
+      monBox.appendChild(el("div", { "class":"row" }, [
+        el("div", { "class":"row-top" }, [
+          el("span", { "class":"row-n", text: ymText(m.ym, true) }),
+          el("span", { "class":"spacer" }),
+          el("button", { "class":"del", type:"button", text:"消す", onclick:function(){
+            var i = state.months.indexOf(m);
+            if(i >= 0) state.months.splice(i, 1);
+            markDirty(); paintMonths();
+          }})
+        ]),
+        el("div", { "class":"grid2" }, [
+          el("div", { "class":"span" }, [ el("span", { "class":"mini-label", text:"どの月" }), ymIn ]),
+          el("div", {}, [ el("span", { "class":"mini-label", text:"本業の収入" }),
+            moneyInput(m.income, function(v){ m.income = v; markDirty(); }, "例：45") ]),
+          el("div", {}, [ el("span", { "class":"mini-label", text:"支出" }),
+            moneyInput(m.expense, function(v){ m.expense = v; markDirty(); }, "例：38") ]),
+          el("div", {}, [ el("span", { "class":"mini-label", text:"副業・ゆきこ" }),
+            moneyInput(m.sideY, function(v){ m.sideY = v; markDirty(); }, "例：1.5") ]),
+          el("div", {}, [ el("span", { "class":"mini-label", text:"副業・まさひろ" }),
+            moneyInput(m.sideM, function(v){ m.sideM = v; markDirty(); }, "例：3.5") ])
+        ])
+      ]));
+    });
+  }
+  paintMonths();
 
   /* ローン */
   form.appendChild(el("div", { "class":"block-head", style:"margin-top:30px" }, [
@@ -1180,7 +1344,7 @@ function openAbout(){
   sheet("使いかた", "月に一度、5分で終わります。", [
     el("ol", { "class":"steps" }, [
       el("li", { text:"マネーフォワードなど、いつも使っている家計アプリを開く。" }),
-      el("li", { text:"このページの「数字を入れる」で、貯蓄の合計・ローン残高・現時点の収入と支出を書き写す。" }),
+      el("li", { text:"このページの「数字を入れる」で、貯蓄の合計・ローン残高・その月の収入と支出を書き写す。" }),
       el("li", { text:"「保存する」を押す。押した月の数字が1点だけ記録され、グラフが伸びていきます。" }),
       el("li", { text:"保存すると、相手の画面にも同じ数字が出ます（相手は次に開いたときに反映されます）。" })
     ]),

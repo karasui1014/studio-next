@@ -211,3 +211,102 @@ describe('LINES（言葉の中身）', () => {
     }
   })
 })
+
+/* ---------- 月ごとの収支 ---------- */
+const mon = new Function(
+  ['num', 'pad2', 'ymNow', 'mSide', 'mIncome', 'mFlow', 'grandTotal', 'ymText', 'ymPlusMonths', 'sortMonths', 'latestMonth']
+    .map(grab)
+    .join('\n') + '; return { mSide, mIncome, mFlow, grandTotal, ymText, ymPlusMonths, sortMonths, latestMonth };',
+)() as {
+  mSide: (m: object) => number
+  mIncome: (m: object) => number
+  mFlow: (m: object) => number
+  grandTotal: (s: object) => { income: number; sideY: number; sideM: number; expense: number; all: number; flow: number }
+  ymText: (ym: string, withYear?: boolean) => string
+  ymPlusMonths: (ym: string, n: number) => string
+  sortMonths: (s: { months: { ym: string }[] }) => void
+  latestMonth: (s: object) => { ym: string }
+}
+
+const m = (ym: string, income: number, sideY: number, sideM: number, expense: number) =>
+  ({ ym, income, sideY, sideM, expense })
+
+describe('月ごとの計算', () => {
+  it('その月の収入は 本業＋副業ふたりぶん', () => {
+    expect(mon.mSide(m('2026-10', 46, 2, 3.5, 38))).toBe(5.5)
+    expect(mon.mIncome(m('2026-10', 46, 2, 3.5, 38))).toBe(51.5)
+  })
+
+  it('その月の収支は 収入−支出', () => {
+    expect(mon.mFlow(m('2026-10', 46, 2, 3.5, 38))).toBe(13.5)
+    expect(mon.mFlow(m('2026-10', 30, 0, 0, 38))).toBe(-8)
+  })
+
+  it('空の月は0になる（未入力でも壊れない）', () => {
+    expect(mon.mIncome({})).toBe(0)
+    expect(mon.mFlow({})).toBe(0)
+  })
+})
+
+describe('grandTotal（総合計）', () => {
+  const s = {
+    months: [
+      m('2026-08', 44, 1, 2, 36),
+      m('2026-09', 45, 1.5, 3, 39),
+      m('2026-10', 46, 2, 3.5, 38),
+    ],
+  }
+
+  it('すべての月を足す', () => {
+    const g = mon.grandTotal(s)
+    expect(g.income).toBe(135)
+    expect(g.all).toBeCloseTo(148, 6)
+    expect(g.expense).toBe(113)
+    expect(g.flow).toBeCloseTo(35, 6)
+  })
+
+  it('副業はふたり別々にも足す', () => {
+    const g = mon.grandTotal(s)
+    expect(g.sideY).toBeCloseTo(4.5, 6)
+    expect(g.sideM).toBeCloseTo(8.5, 6)
+  })
+
+  it('1行も無ければ全部0', () => {
+    const g = mon.grandTotal({ months: [] })
+    expect(g.all).toBe(0)
+    expect(g.flow).toBe(0)
+  })
+})
+
+describe('月の並べ替えと取り出し', () => {
+  it('古い月から新しい月の順に並べ、いちばん新しい月を取れる', () => {
+    const s = { months: [{ ym: '2026-10' }, { ym: '2025-12' }, { ym: '2026-02' }] }
+    mon.sortMonths(s)
+    expect(s.months.map((x) => x.ym)).toEqual(['2025-12', '2026-02', '2026-10'])
+    expect(mon.latestMonth(s).ym).toBe('2026-10')
+  })
+
+  it('1行も無いときは空の月を返す（画面が0で出る）', () => {
+    expect(mon.latestMonth({ months: [] }).ym).toBe('')
+  })
+})
+
+describe('ymText / ymPlusMonths', () => {
+  it('今年なら月だけ、ほかの年なら年もつける', () => {
+    const thisYear = new Date().getFullYear()
+    expect(mon.ymText(`${thisYear}-10`)).toBe('10月')
+    expect(mon.ymText(`${thisYear - 1}-10`)).toBe(`${thisYear - 1}年10月`)
+    expect(mon.ymText(`${thisYear}-10`, true)).toBe(`${thisYear}年10月`)
+  })
+
+  it('形が違えば空（壊れた値を画面に出さない）', () => {
+    expect(mon.ymText('2026/10')).toBe('')
+    expect(mon.ymText('')).toBe('')
+  })
+
+  it('月を進めると年もまたぐ', () => {
+    expect(mon.ymPlusMonths('2026-10', 1)).toBe('2026-11')
+    expect(mon.ymPlusMonths('2026-12', 1)).toBe('2027-01')
+    expect(mon.ymPlusMonths('2026-01', 23)).toBe('2027-12')
+  })
+})
