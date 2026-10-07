@@ -1,14 +1,14 @@
 {
-  "generatedAt": "2026-10-07T00:19:13.279Z",
+  "generatedAt": "2026-10-07T09:25:34.562Z",
   "count": 400,
-  "newCount": 28,
+  "newCount": 31,
   "translatedCount": 1,
   "ranking": [
     "e4445f3b8c4c2a5c",
     "d61d2874e87bed8c",
-    "0756330123a7b1d3",
     "59a2fc79536d2335",
-    "aed6914cb4ca9bf0"
+    "2e51b44bf88cf4be",
+    "11f165f65f3b988b"
   ],
   "sources": [
     {
@@ -98,7 +98,7 @@
       "category": "global",
       "ok": true,
       "fetched": 10,
-      "matched": 2,
+      "matched": 3,
       "error": null
     },
     {
@@ -134,7 +134,7 @@
       "category": "global",
       "ok": true,
       "fetched": 10,
-      "matched": 1,
+      "matched": 0,
       "error": null
     },
     {
@@ -291,6 +291,50 @@
     }
   ],
   "items": [
+    {
+      "id": "3a8870d185434f30",
+      "title": "Michael Smith, man behind $8M AI song and bot streaming fraud, sentenced to 18 months in prison",
+      "url": "https://www.musicbusinessworldwide.com/man-behind-8m-ai-song-and-bot-streaming-fraud-is-sentenced-to-18-months-in-prison/",
+      "summary": "US District Judge John G. Koeltl also ordered Michael Smith to forfeit USD $8,091,843.64, the loss figure agreed by both sides.",
+      "published": "2026-10-07T07:29:53.000Z",
+      "source": "Music Business Worldwide",
+      "sourceId": "mbw",
+      "via": null,
+      "category": "global",
+      "lang": "en",
+      "coverage": 1,
+      "titleJa": "マイケル・スミス、$ 800万のAI曲とボットストリーミング詐欺の背後にいる男、懲役18ヶ月の判決",
+      "summaryJa": "米国地方裁判所のジョン・G・ケルトル判事は、マイケル・スミスに対し、両当事者が合意した損失額である8,091,843.64 $を没収するよう命じた。",
+      "score": 12
+    },
+    {
+      "id": "846c67ce2816cdf8",
+      "title": "マイケル・スミス、AI音楽ストリーミング詐欺で18か月の刑を受ける",
+      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOWWNYNmVTVjg5dE5JT3QtZVhyUlUyLXd6VlNUbmlNdHpsaEp2THdkNXA5Vlp6a1dIX2pWNmI0VmNaQTVoSjU5WE9tZF8xNTlqOG84bG9rYmxsY1Q4T0daY0lJdHIySF9mdXNHalJ2RWNiMjZGNkdvcGxwV1B3ZG5haVlrSnFfMmx0R2xta0FZRV83Nmk5TGFzVEZn?oc=5",
+      "summary": "",
+      "published": "2026-10-07T02:40:19.000Z",
+      "source": "Unite.AI",
+      "sourceId": "gnews-ja-aimusic",
+      "via": "Googleニュース",
+      "category": "jp",
+      "lang": "ja",
+      "coverage": 1,
+      "score": 15
+    },
+    {
+      "id": "0b0ed5c3ee203663",
+      "title": "生成AI音楽「Suno」で5,528万件超のメールアドレス流出―Stripe購入情報も含む、2025年11月の侵害が2026年7月に判明",
+      "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE1xYkw5dDk3cnFLbVFzbUsxb2ppOTFRa0RSZjlLOG04bDJLeUNwV1gxX3lKVVYyVkVNVGJ5X2ZCNEhPc1ZkV19HS1JBcGRJVDJiTzctR1hoaGRRRmJuenlEeU1FREs2T1dYRU1vT1FSRndsYkxJUU5xQg?oc=5",
+      "summary": "",
+      "published": "2026-10-07T02:30:08.000Z",
+      "source": "合同会社ロケットボーイズ",
+      "sourceId": "gnews-ja-suno",
+      "via": "Googleニュース",
+      "category": "jp",
+      "lang": "ja",
+      "coverage": 1,
+      "score": 24
+    },
     {
       "id": "066e18fcea89e09e",
       "title": "AI Music Streaming Fraudster Sentenced to 1.5 Years in Prison for $8M Royalties Scam",
@@ -470,7 +514,7 @@
       "category": "jp",
       "lang": "ja",
       "coverage": 1,
-      "score": 24
+      "score": 19
     },
     {
       "id": "72b664ea961f93c6",
@@ -531,8 +575,8 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 1,
-      "score": 19
+      "coverage": 2,
+      "score": 27
     },
     {
       "id": "e9e24a00dfd400c8",
@@ -666,8 +710,8 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 2,
-      "score": 18
+      "coverage": 3,
+      "score": 26
     },
     {
       "id": "1cf7fe49c2fd2fc8",
@@ -681,7 +725,7 @@
       "category": "jp",
       "lang": "ja",
       "coverage": 1,
-      "score": 10
+      "score": 6
     },
     {
       "id": "7103968de9e4beca",
@@ -695,7 +739,7 @@
       "category": "jp",
       "lang": "ja",
       "coverage": 1,
-      "score": 19
+      "score": 15
     },
     {
       "id": "f9e4bcf1115cf6bd",
@@ -1229,7 +1273,7 @@
       "category": "jp",
       "lang": "ja",
       "coverage": 1,
-      "score": 17
+      "score": 8
     },
     {
       "id": "0756330123a7b1d3",
@@ -1242,8 +1286,8 @@
       "via": null,
       "category": "jp",
       "lang": "ja",
-      "coverage": 28,
-      "score": 41
+      "coverage": 29,
+      "score": 32
     },
     {
       "id": "9e8066aa9693552a",
@@ -1257,7 +1301,7 @@
       "category": "jp",
       "lang": "ja",
       "coverage": 1,
-      "score": 6
+      "score": -3
     },
     {
       "id": "14c9d927bbc806f4",
@@ -1271,7 +1315,7 @@
       "category": "jp",
       "lang": "ja",
       "coverage": 1,
-      "score": 15
+      "score": 6
     },
     {
       "id": "cca439d64dd60681",
@@ -1672,7 +1716,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 34,
+      "coverage": 35,
       "score": 32
     },
     {
@@ -1702,7 +1746,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 46,
+      "coverage": 47,
       "titleJa": "ソニーとUMGがSunoを再び訴える",
       "summaryJa": "ソニーとユニバーサルミュージックグループは、Sunoに対してさらに別の訴訟を起こしました。レーベルは、新しいv 6モデルがまだ著作権を侵害していると主張している。なぜなら、それは以前のモデルからのユーザー出力で訓練されているからだ。以前のモデル自体は、YouTubeや他のソースからリッピングされた無許可の音楽で訓練されていたからだ。ソニーとUMGは、署名しなかった注目すべきホールドアウトである",
       "score": 27
@@ -1834,7 +1878,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 44,
+      "coverage": 45,
       "score": 21
     },
     {
@@ -2267,6 +2311,20 @@
       "score": 21
     },
     {
+      "id": "6c876913ab09e55b",
+      "title": "【自作COVER】《兎坂46》by Izumi-chan ──Suno AIに編曲してもらった♪【DTM】",
+      "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBOaDhDOWNIVTdDVTNKanZJZGdjSk1MdWxwd0xiVG5lWjE0Y0JjMUhGWDVRUW56Z01RVFVnWDU0cWpPYlJpeFV0ZkdqWmRFZmpWVnRaVS0xRkRlSVQ2?oc=5",
+      "summary": "",
+      "published": "2026-09-23T07:00:00.000Z",
+      "source": "YouTube",
+      "sourceId": "gnews-ja-suno",
+      "via": "Googleニュース",
+      "category": "jp",
+      "lang": "ja",
+      "coverage": 1,
+      "score": 6
+    },
+    {
       "id": "5ea08d536de7f944",
       "title": "AI音楽「たった一枚の布で / Milia」",
       "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE95NkItSnVnMVRWYmNObkpHNHJSMXVwa1lUeW91Y1dsQnlUYkN6UkJEazl4cWVOOG40REtwTWg1SFhMdGV5d1hMN3pIVnc5YVhwTzBJNHF3?oc=5",
@@ -2307,7 +2365,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 49,
+      "coverage": 50,
       "titleJa": "Sunoは、最新のソニーとユニバーサルの訴訟を爆発させるため、V 6モデルがユーザーからの「クリエイション」について訓練されたことを確認します",
       "summaryJa": "同社は、ユニバーサルミュージックグループとソニーミュージックエンタテインメントが提起した2回目の著作権訴訟に対応する声明で、その説明を記載した。",
       "score": 34
@@ -2573,7 +2631,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 53,
+      "coverage": 54,
       "titleJa": "「Sunoの死」： Redditユーザーはv 6モデルアップデート後にSunoに反対しています",
       "summaryJa": "このアップデートでは、音楽レーベルも満足していません。「V 6は新たなスタートではありません。同じ毒された木の果実です。」",
       "score": 38
@@ -2721,7 +2779,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 125,
+      "coverage": 126,
       "score": 44
     },
     {
@@ -2895,7 +2953,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 70,
+      "coverage": 71,
       "titleJa": "いくつかのレーベルがSunoと取引する中、アーティストの担当者は「それはワイルドでワイルドな西部」と鳴り響きます",
       "summaryJa": "SunoがWMGなどと提携して新しいv 6音楽モデルを発表したことで、マネージャーや弁護士は急速に進化するAI音楽の世界に自分たちの考えを提示しています。",
       "score": 27
@@ -2927,7 +2985,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 67,
+      "coverage": 68,
       "titleJa": "ユニバーサルとソニーは、プラットフォームのv 6モデルが「同じ毒された木の果実」であると主張して、2度目のSunoを訴えた",
       "summaryJa": "米国の著作権法では、意図的な侵害に対する損害賠償は、作品ごとに最大$ 150,000に設定されています。その上限では、60,202の録音は理論的には最大90億$をわずかに上回ります。",
       "score": 34
@@ -2987,7 +3045,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 9,
+      "coverage": 10,
       "score": 28
     },
     {
@@ -3204,7 +3262,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 58,
+      "coverage": 59,
       "titleJa": "「サブスクリプションをキャンセルします」： SunoユーザーはV 6アップデートを「うぬぼれた、一般的な、魂のないゴミ」と非難しました",
       "summaryJa": "業界に支えられたV 6モデルのリリースに続いて、AI音楽プラットフォームの最も熱心なサポーターの一部が船を放棄している",
       "score": 38
@@ -3338,7 +3396,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 50,
+      "coverage": 51,
       "titleJa": "ユニバーサルとワーナーのプレス裁判所、SunoとUdioの取引をめぐる米国ミュージシャンの訴訟を終結",
       "summaryJa": "この訴訟は、レコード会社との組合の団体交渉協定である録音労働協定の第21条（ a ）に基づいている。",
       "score": 27
@@ -3677,7 +3735,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 266,
+      "coverage": 268,
       "score": 21
     },
     {
@@ -3967,7 +4025,7 @@
       "via": null,
       "category": "jp",
       "lang": "ja",
-      "coverage": 103,
+      "coverage": 104,
       "score": 63
     },
     {
@@ -4547,7 +4605,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 110,
+      "coverage": 111,
       "titleJa": "Sunoは、著作権訴訟が積み重なるにつれて、AIモデルをライセンスされた音楽で訓練された新しいモデルに置き換える",
       "summaryJa": "一連の訴訟に取り組んでいるSuno氏は、新しいモデルであるSuno v 6は、以前のバージョンのAIモデルのトレーニングに使用した音楽を使用してトレーニングされていないと述べた。",
       "score": 45
@@ -4579,7 +4637,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 47,
+      "coverage": 48,
       "titleJa": "Suno、WMG、BMG、Believeと提携してv 6 AI音楽モデルを発表",
       "summaryJa": "最高製品責任者のJack Brody氏によると、Sunoの以前のモデルは廃止されます",
       "score": 38
@@ -4638,7 +4696,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 52,
+      "coverage": 53,
       "titleJa": "Sunoは、v 6 AI音楽モデルを発売します。知っておくべきことは次のとおりです。",
       "summaryJa": "今日はSunoにとって重要な日です。最新のAI音楽モデルを発売しています。Suno v 6は、音楽の権利者と共に開発された最初の世代です。この投稿はMusic Allyからのものです。",
       "score": 27
@@ -4715,7 +4773,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 124,
+      "coverage": 125,
       "score": 37
     },
     {
@@ -4947,7 +5005,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 103,
+      "coverage": 104,
       "titleJa": "Sunoは、AIを訓練するためにYouTubeオーディオを取得したことを認めていますが、UMGとソニーが「ストリームリッピング」の主張をもたらすという立場に挑戦しています",
       "summaryJa": "AI音楽会社は、UMGとソニー・ミュージックエンタテインメントからの最初の修正された苦情に対する回答を提出しました。",
       "score": 27
@@ -5081,7 +5139,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 123,
+      "coverage": 124,
       "score": 21
     },
     {
@@ -6129,70 +6187,6 @@
       "coverage": 1,
       "titleJa": "現在、カナダのSOCANはSunoを訴え、「Both Sides Now」や「Sk 8 er Boi」などのヒット曲を違法にコピーしたと主張している",
       "summaryJa": "SOCANは、Sunoを裁判にかけた3番目の徴収団体であり、そのうちの1つが勝利して以来、最初に申請した徴収団体です。",
-      "score": 3
-    },
-    {
-      "id": "cad82326b2e14dd4",
-      "title": "Armin van Buuren and Laidback Luke Partner With ‘Responsible’ AI Music Company Moises",
-      "url": "https://www.billboard.com/pro/armin-van-buuren-and-laidback-luke-partner-with-moises/",
-      "summary": "The two dance music icons are the first members of Moises' Artist Partnerships program and will help the company shape new AI-powered producer and DJ tools.",
-      "published": "2026-09-02T16:00:00.000Z",
-      "source": "Billboard",
-      "sourceId": "billboard",
-      "via": null,
-      "category": "global",
-      "lang": "en",
-      "coverage": 1,
-      "titleJa": "Armin van BuurenとLaidback Lukeが「Responsible」AI Music Company Moisesと提携",
-      "summaryJa": "この2つのダンスミュージックアイコンは、Moisesのアーティストパートナーシッププログラムの最初のメンバーであり、同社が新しいAIプロデューサーとDJツールを形作るのに役立ちます。",
-      "score": 3
-    },
-    {
-      "id": "73ab4f5efbb9205c",
-      "title": "Report explores AI’s indies impact and infrastructure erosion",
-      "url": "https://musically.com/2026/09/02/report-explores-ais-indies-impact-and-infrastructure-erosion/",
-      "summary": "Research firm Stvdio and Secretly Distribution have published a report on the independent-music sector, billing it as “a fight for music’s infrastructure”. The post is from Music Ally .",
-      "published": "2026-09-02T12:30:00.000Z",
-      "source": "Music Ally",
-      "sourceId": "musically",
-      "via": null,
-      "category": "global",
-      "lang": "en",
-      "coverage": 1,
-      "titleJa": "AIのインディーズの影響とインフラストラクチャの浸食を調査したレポート",
-      "summaryJa": "調査会社のStvdioとSecretly Distributionは、独立系音楽セクターに関するレポートを発表し、「音楽のインフラストラクチャのための戦い」と主張している。この投稿はMusic Allyからのものです。",
-      "score": -6
-    },
-    {
-      "id": "930898737ca824fd",
-      "title": "Sonos is opening its devices up to more AI assistants and agents",
-      "url": "https://musically.com/2026/09/02/sonos-is-opening-its-devices-up-to-more-ai-assistants-and-agents/",
-      "summary": "2024 was Sonos’s annus horribilis and no mistake: privacy mis-steps; a widely-hated app update; delayed product launches and layoffs. The post is from Music Ally .",
-      "published": "2026-09-02T12:30:00.000Z",
-      "source": "Music Ally",
-      "sourceId": "musically",
-      "via": null,
-      "category": "global",
-      "lang": "en",
-      "coverage": 1,
-      "titleJa": "Sonosは、より多くのAIアシスタントとエージェントにデバイスを開放しています",
-      "summaryJa": "2024年はSonosの恐怖の年であり、間違いはありませんでした。プライバシーのミスステップ、広く嫌われているアプリのアップデート、製品の発売とレイオフの遅れです。この投稿はMusic Allyからのものです。",
-      "score": 5
-    },
-    {
-      "id": "74c04c92ade92c91",
-      "title": "Suno sued by musicians including David Lowery and Jason Isbell",
-      "url": "https://musically.com/2026/09/02/suno-sued-by-musicians-including-david-lowery-and-jason-isbell/",
-      "summary": "The latest lawsuit filed against AI-music firm Suno comes from a group of US-based musicians: Jason Isbell, David Lowery, Guy Forsyth and Eduardo Calle. The post is from Music Ally .",
-      "published": "2026-09-02T11:30:00.000Z",
-      "source": "Music Ally",
-      "sourceId": "musically",
-      "via": null,
-      "category": "global",
-      "lang": "en",
-      "coverage": 1,
-      "titleJa": "デヴィッド・ロウリーやジェイソン・イズベルなどのミュージシャンによって訴えられたスノ",
-      "summaryJa": "AI音楽会社Sunoに対して提起された最新の訴訟は、米国を拠点とするミュージシャンのグループ、Jason Isbell、David Lowery、Guy Forsyth、Eduardo Calleによるものだ。この投稿はMusic Allyからのものです。",
       "score": 3
     }
   ]
