@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-10-09T09:42:04.942Z",
+  "generatedAt": "2026-10-09T15:37:36.477Z",
   "count": 400,
-  "newCount": 38,
-  "translatedCount": 8,
+  "newCount": 29,
+  "translatedCount": 2,
   "ranking": [
     "d61d2874e87bed8c",
+    "d4b0ba00b88d989a",
     "8d24729150ba743c",
     "2e51b44bf88cf4be",
-    "d4b0ba00b88d989a",
     "b2781812f9b48ba1"
   ],
   "sources": [
@@ -17,7 +17,7 @@
       "category": "jp",
       "ok": true,
       "fetched": 40,
-      "matched": 35,
+      "matched": 36,
       "error": null
     },
     {
@@ -107,7 +107,7 @@
       "category": "global",
       "ok": true,
       "fetched": 15,
-      "matched": 3,
+      "matched": 2,
       "error": null
     },
     {
@@ -224,7 +224,7 @@
       "category": "jp",
       "ok": true,
       "fetched": 30,
-      "matched": 1,
+      "matched": 0,
       "error": null
     },
     {
@@ -292,6 +292,66 @@
   ],
   "items": [
     {
+      "id": "d590c32c429133c5",
+      "title": "New Suno live music division to help make it the “first creative entertainment platform”",
+      "url": "https://musically.com/2026/10/09/new-suno-live-music-division-to-help-make-it-the-first-creative-entertainment-platform/",
+      "summary": "Part of Suno’s licensing deal with Warner Music Group last November involved acquiring concert-discovery platform Songkick. It felt like a strange quirk at the time – what does an AI music-generating platform have to do with live gigs? – but now we’ll find out how this seemingly odd-couple relationship will work. The post is from Music Ally .",
+      "published": "2026-10-09T13:20:53.000Z",
+      "source": "Music Ally",
+      "sourceId": "musically",
+      "via": null,
+      "category": "global",
+      "lang": "en",
+      "coverage": 1,
+      "titleJa": "「初のクリエイティブエンターテイメントプラットフォーム」を実現するための新しいSunoライブミュージック部門",
+      "summaryJa": "昨年11月のワーナー・ミュージック・グループとのSunoのライセンス契約の一部には、コンサート発見プラットフォームSongkickの買収が含まれていた。当時は奇妙な癖のように感じられました。AI音楽生成プラットフォームはライブギグと何の関係があるのでしょうか？しかし、今度はこの一見奇妙なカップルの関係がどのように機能するかを見ていきましょう。この投稿はMusic Allyからのものです。",
+      "score": 21
+    },
+    {
+      "id": "5d759d35e69dfb4f",
+      "title": "Cornelius国内ツアー完走、フィジカルな演奏とサイケなAIで描き出す「Refractions」の世界（音楽ナタリー）",
+      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE1XZXRJUVZBOXZPdkk4SWNRWW9mMjFUeXc3X1hYc1k2ZE1pNkdLMDhQbVppM0d1c0p6dkpyckVqNDZSYTdrYk5HbkxkY0JTNWozV0lBS1BMV3ExWjBBNlB1TTY5MUljckgzcHNXYkx3akpXNDhMMVpZTkNGRjRpOGs?oc=5",
+      "summary": "",
+      "published": "2026-10-09T13:00:11.000Z",
+      "source": "Yahoo!ニュース",
+      "sourceId": "gnews-ja-aimusic",
+      "via": "Googleニュース",
+      "category": "jp",
+      "lang": "ja",
+      "coverage": 1,
+      "score": 15
+    },
+    {
+      "id": "190b7d8966f4ea4c",
+      "title": "AI音楽「塩水にくぐらせた恋 / Milia」",
+      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE5uVnE3R1E1eWlmTmlVcFZFTTFxRlhYOHNJYVA3RFhXemROdWxEUG5pazNZZ0piRDV6S2UwMm1wLUtmU19vSkZCVloxRDBPTDVDLVk2NzJB?oc=5",
+      "summary": "",
+      "published": "2026-10-09T10:27:19.000Z",
+      "source": "X",
+      "sourceId": "gnews-ja-aimusic",
+      "via": "Googleニュース",
+      "category": "jp",
+      "lang": "ja",
+      "coverage": 1,
+      "score": 15
+    },
+    {
+      "id": "e54db0c9ae20e486",
+      "title": "Meta and TikTok announce new agentic AI advertising features",
+      "url": "https://musically.com/2026/10/09/meta-and-tiktok-announce-new-agentic-ai-advertising-features/",
+      "summary": "It’s Advertising Week in New York, and both Meta and TikTok have announced new advertising features that move them further into the world of agentic AI. The post is from Music Ally .",
+      "published": "2026-10-09T09:55:15.000Z",
+      "source": "Music Ally",
+      "sourceId": "musically",
+      "via": null,
+      "category": "global",
+      "lang": "en",
+      "coverage": 1,
+      "titleJa": "MetaとTikTokが新しいエージェント型AI広告機能を発表",
+      "summaryJa": "ニューヨークでAdvertising Weekが開催され、MetaとTikTokの両方が、エージェント型AIの世界にさらに足を踏み入れる新しい広告機能を発表しました。この投稿はMusic Allyからのものです。",
+      "score": 23
+    },
+    {
       "id": "eda107e5fd916f7b",
       "title": "Grimes Shares First Song From AI-Inspired Album Psy Opera",
       "url": "https://pitchfork.com/story/grimes-shares-first-song-from-ai-inspired-album-psy-opera/",
@@ -308,6 +368,20 @@
       "score": 12
     },
     {
+      "id": "b2735e5e570b8ea0",
+      "title": "ネットミームになった「顔」は勝手に使っていいの？生成AI楽曲「INMU KING」が異例のヒット（弁護士ドットコムニュース）",
+      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE1MMkxTRVYyRF80cnUwQVBDMzJISE1QYUdEUHlDQU1JSC1FZktsNHh4T0tWLUtGTHRUZFhDT0kzd0wtODVfY0Y0V3daSEVBOTVsUkswak5IckowYVJXLXRlWFNLQ21nN1BYX3Fxa0FDMmQzM1JBZ0g4MnkxeUM1OTQ?oc=5",
+      "summary": "",
+      "published": "2026-10-09T03:05:00.000Z",
+      "source": "Yahoo!ニュース",
+      "sourceId": "gnews-ja-aimusic",
+      "via": "Googleニュース",
+      "category": "jp",
+      "lang": "ja",
+      "coverage": 1,
+      "score": 15
+    },
+    {
       "id": "913b32e10e0caa29",
       "title": "自作AI楽曲をボットで連続再生して著作権使用料をだまし取っていた男性、再生回数が多すぎてバレる",
       "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE1YOXk0WG9SRlNDcGo4TkR5RnJHd2ZKV084YVZCUnd1VHRtTEdYWU1oNUJ6R0hCcmE2WlVrWkRPNkRfcFBOZVJQMVFGTkRicGNSZXR2SjNrcU9IUnIybVZscUo2NGJtTGRiTkhCMU5pSQ?oc=5",
@@ -318,8 +392,8 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 1,
-      "score": 22
+      "coverage": 2,
+      "score": 30
     },
     {
       "id": "b60ee7d9db88d741",
@@ -366,7 +440,7 @@
       "lang": "en",
       "coverage": 1,
       "titleJa": "Songkickの買収後、SunoはMichael Chuaをライブエクスペリエンス部門のリーダーに任命します",
-      "score": 13
+      "score": 8
     },
     {
       "id": "795f623330f5db86",
@@ -381,7 +455,7 @@
       "lang": "en",
       "coverage": 1,
       "titleJa": "Suno、Ticketmasterのエグゼクティブを採用し、新しいライブ体験部門を率いる",
-      "score": 21
+      "score": 16
     },
     {
       "id": "0f00c216dd06b448",
@@ -397,7 +471,7 @@
       "coverage": 1,
       "titleJa": "Elon Muskは、XのAIボットGrokが音楽タスクにSunoを使用すると述べています",
       "summaryJa": "イーロン・マスクのツイートのほとんどを避けようとしたことは許されるだろう、特に彼が深夜の投稿バーストになったとき。しかし、彼の最新作の1つは音楽に直接関連しています。この投稿はMusic Allyからのものです。",
-      "score": 21
+      "score": 16
     },
     {
       "id": "e42f448e1fc04d8f",
@@ -413,7 +487,7 @@
       "coverage": 1,
       "titleJa": "Google、AI搭載の「実験的ゲーム」プラットフォーム「Playground」を発表",
       "summaryJa": "ゲーム制作におけるAIの使用は、ゲーム業界でも、音楽へのAIの使用が私たちの世界で挑発しているのと同じくらい多くの議論を引き起こしています。どちらの場合も、Googleはテクノロジーを構築するものの中心にいます。この投稿はMusic Allyからのものです。",
-      "score": 23
+      "score": 18
     },
     {
       "id": "8d24729150ba743c",
@@ -426,8 +500,8 @@
       "via": null,
       "category": "jp",
       "lang": "ja",
-      "coverage": 5,
-      "score": 46
+      "coverage": 6,
+      "score": 41
     },
     {
       "id": "d3ef2f7cfc7c2e81",
@@ -555,8 +629,8 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 2,
-      "score": 38
+      "coverage": 3,
+      "score": 46
     },
     {
       "id": "9687409b8db19de2",
@@ -862,7 +936,7 @@
       "coverage": 1,
       "titleJa": "「困難になりつつある」：ソニーは、ディープフェイクAIトラックの数が6ヶ月で2倍になったことを明らかにしました",
       "summaryJa": "社長は、ストリームの最大10 ％が不正である可能性があると推定しています",
-      "score": 7
+      "score": 3
     },
     {
       "id": "87c271dc7677618d",
@@ -878,7 +952,7 @@
       "coverage": 1,
       "titleJa": "FenderはAIツールとより多くのアーティストコンテンツでウェブサイトを刷新",
       "summaryJa": "フェンダーは、しばらくの間、単なる楽器メーカーではありませんでした。過去10年間、私たちは音楽教育におけるその動きについて書いてきました。例えば、Fender Studioの音楽制作アプリとFender Nextのアーティスト開発プログラムです。この投稿はMusic Allyからのものです。",
-      "score": 7
+      "score": 3
     },
     {
       "id": "16b93f55b25d00ee",
@@ -892,7 +966,7 @@
       "category": "jp",
       "lang": "ja",
       "coverage": 1,
-      "score": 19
+      "score": 15
     },
     {
       "id": "54ffb9163c0a968e",
@@ -905,8 +979,8 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 7,
-      "score": 34
+      "coverage": 8,
+      "score": 30
     },
     {
       "id": "281d54adf5d88b86",
@@ -922,7 +996,7 @@
       "coverage": 1,
       "titleJa": "ARIA BOSS、AIロビー活動の要求についてオーストラリアの政治家に警告",
       "summaryJa": "オーストラリアは、音楽業界がいくつかのハイテク企業と戦って政治家の耳を傾けている国の1つであり、後者はAI技術をカバーするためにどのような規則を設けるべきかを検討している。この投稿はMusic Allyからのものです。",
-      "score": 7
+      "score": 3
     },
     {
       "id": "d74293de8b4f268b",
@@ -938,7 +1012,7 @@
       "coverage": 1,
       "titleJa": "サービス利用規約をめぐるイタリアでの調査に直面するSuno",
       "summaryJa": "ウォッチドッグの懸念には、価格の変更、アカウントの終了、米国を拠点とする仲裁、およびユーザーが人格権を放棄する必要があると述べたコンテンツライセンスが含まれます",
-      "score": 23
+      "score": 19
     },
     {
       "id": "7a63e2088fedb72f",
@@ -952,7 +1026,7 @@
       "category": "jp",
       "lang": "ja",
       "coverage": 1,
-      "score": 10
+      "score": 6
     },
     {
       "id": "22ad0e4adff2d8b9",
@@ -966,7 +1040,7 @@
       "category": "jp",
       "lang": "ja",
       "coverage": 1,
-      "score": 19
+      "score": 15
     },
     {
       "id": "aed6914cb4ca9bf0",
@@ -1041,7 +1115,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 10,
+      "coverage": 11,
       "score": 39
     },
     {
@@ -1118,7 +1192,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 5,
+      "coverage": 6,
       "titleJa": "米国の控訴裁判所は、AIトレーニングをめぐる「フェアユース」の防御を棄却した。レーベルとスノとの戦いにはどういう意味があるのでしょうか？",
       "summaryJa": "米国控訴裁判所は、9月29日にトムソン・ロイターとAI法務調査会社ROSS Intelligenceに対して判決を下しました",
       "score": 36
@@ -1134,7 +1208,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 12,
+      "coverage": 13,
       "score": 50
     },
     {
@@ -1232,8 +1306,8 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 3,
-      "score": 22
+      "coverage": 4,
+      "score": 30
     },
     {
       "id": "d6ae8d65eaf1ca8f",
@@ -1324,7 +1398,7 @@
       "lang": "en",
       "coverage": 1,
       "titleJa": "検察は、$ 800万のAI音楽ストリーミング詐欺の背後にある男性のために4年近くの刑務所を望んでいます",
-      "score": 3
+      "score": -6
     },
     {
       "id": "6b5c9773d22cd4be",
@@ -1340,7 +1414,7 @@
       "coverage": 1,
       "titleJa": "「人々がとても素晴らしいものを叩くのを聞くとイライラします」：トッド・エドワーズは音楽制作におけるAIについて楽観的です",
       "summaryJa": "「Spliceパックを使用している場合は、他の人の音を使用しています。私の考えでは、それも同じです。業界の偽善は狂っています…」と家の伝説は言います。「人々がとても素晴らしいものを叩くのを聞くとイライラする」という投稿：トッド・エドワーズは、音楽制作におけるAIについて楽観的で、MusicTechで最初に登場しました。",
-      "score": 3
+      "score": -6
     },
     {
       "id": "060af44ecaebab02",
@@ -1356,7 +1430,7 @@
       "coverage": 1,
       "titleJa": "Sunoは200万人の加入者を「はるかに超えて」おり、年間収益は3億$",
       "summaryJa": "AI音楽会社Sunoがユーザーと収益の統計を発表してからしばらく経ちました。まだ新しい数字は得られていないが、CEOのMikey Shulman氏はBloombergとのインタビューで最新情報を提供した。この投稿はMusic Allyからのものです。",
-      "score": 23
+      "score": 14
     },
     {
       "id": "3154031521c93c5a",
@@ -1370,7 +1444,7 @@
       "category": "jp",
       "lang": "ja",
       "coverage": 1,
-      "score": 15
+      "score": 6
     },
     {
       "id": "5113f9ac120c12ea",
@@ -1385,7 +1459,7 @@
       "lang": "en",
       "coverage": 1,
       "titleJa": "AIミュージックメーカーのSunoが音声を生成するようになりました",
-      "score": 12
+      "score": 3
     },
     {
       "id": "b184f79505d02309",
@@ -1521,7 +1595,7 @@
       "title": "なぜ「AIで作った曲」はこんなに嫌われるのか（note）",
       "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE12dXlUOG1HUjFtWWpLNUtDdFRJR0F1WG5rMFZsdE4yT2JMRWVLVU1WV1Y4QW9zU2EyZUhmcTAtbEl4MDVIRE8tQklzWGhUQWdaUDRWNExMMEtZRTBLUXF0UWhzV1ppdXVMTG5QTW9GdnBoVFVCcFh0c1lENnVVNnM?oc=5",
       "summary": "",
-      "published": "2026-10-01T08:49:07.000Z",
+      "published": "2026-10-01T07:00:00.000Z",
       "source": "Yahoo!ニュース",
       "sourceId": "gnews-ja-suno",
       "via": "Googleニュース",
@@ -1543,6 +1617,21 @@
       "lang": "ja",
       "coverage": 1,
       "score": -3
+    },
+    {
+      "id": "142e4cf3c199228e",
+      "title": "Watch Suno's Mikey Shulman on the AI Music Landscape",
+      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNRjgtQVltdklKbXBLRFlBeVFScGJCR0k0V2pwcXlvM2xuVHc1eE1vc2xldmE3RXQxSWwxem9UWFlOaGRGSThBT2ZhLXlIMHJqb3doLWJfWEJuLUtCUmRXZ3A4VVl1SzZNOEhRbHZPUUFUbm9VWVhKUHozV3ZVcF9MWi1pc0FMSkplN3JKZ0NtMjFsYVY0c1FxTnhvRU9yYmhOT2tr?oc=5",
+      "summary": "",
+      "published": "2026-10-01T07:00:00.000Z",
+      "source": "Bloomberg.com",
+      "sourceId": "gnews-en-aimusic",
+      "via": "Googleニュース",
+      "category": "global",
+      "lang": "en",
+      "coverage": 1,
+      "titleJa": "AI音楽の風景でSunoのMikey Shulmanを見る",
+      "score": 3
     },
     {
       "id": "e4445f3b8c4c2a5c",
@@ -1571,21 +1660,6 @@
       "lang": "ja",
       "coverage": 1,
       "score": 6
-    },
-    {
-      "id": "142e4cf3c199228e",
-      "title": "Watch Suno's Mikey Shulman on the AI Music Landscape",
-      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNRjgtQVltdklKbXBLRFlBeVFScGJCR0k0V2pwcXlvM2xuVHc1eE1vc2xldmE3RXQxSWwxem9UWFlOaGRGSThBT2ZhLXlIMHJqb3doLWJfWEJuLUtCUmRXZ3A4VVl1SzZNOEhRbHZPUUFUbm9VWVhKUHozV3ZVcF9MWi1pc0FMSkplN3JKZ0NtMjFsYVY0c1FxTnhvRU9yYmhOT2tr?oc=5",
-      "summary": "",
-      "published": "2026-10-01T00:00:00.000Z",
-      "source": "Bloomberg.com",
-      "sourceId": "gnews-en-aimusic",
-      "via": "Googleニュース",
-      "category": "global",
-      "lang": "en",
-      "coverage": 1,
-      "titleJa": "AI音楽の風景でSunoのMikey Shulmanを見る",
-      "score": 3
     },
     {
       "id": "fa245a82f5e943df",
@@ -1781,7 +1855,7 @@
       "via": null,
       "category": "jp",
       "lang": "ja",
-      "coverage": 37,
+      "coverage": 38,
       "score": 32
     },
     {
@@ -2241,7 +2315,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 43,
+      "coverage": 44,
       "score": 32
     },
     {
@@ -2271,7 +2345,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 55,
+      "coverage": 56,
       "titleJa": "ソニーとUMGがSunoを再び訴える",
       "summaryJa": "ソニーとユニバーサルミュージックグループは、Sunoに対してさらに別の訴訟を起こしました。レーベルは、新しいv 6モデルがまだ著作権を侵害していると主張している。なぜなら、それは以前のモデルからのユーザー出力で訓練されているからだ。以前のモデル自体は、YouTubeや他のソースからリッピングされた無許可の音楽で訓練されていたからだ。ソニーとUMGは、署名しなかった注目すべきホールドアウトである",
       "score": 27
@@ -2890,7 +2964,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 58,
+      "coverage": 59,
       "titleJa": "Sunoは、最新のソニーとユニバーサルの訴訟を爆発させるため、V 6モデルがユーザーからの「クリエイション」について訓練されたことを確認します",
       "summaryJa": "同社は、ユニバーサルミュージックグループとソニーミュージックエンタテインメントが提起した2回目の著作権訴訟に対応する声明で、その説明を記載した。",
       "score": 34
@@ -3156,7 +3230,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 62,
+      "coverage": 63,
       "titleJa": "「Sunoの死」： Redditユーザーはv 6モデルアップデート後にSunoに反対しています",
       "summaryJa": "このアップデートでは、音楽レーベルも満足していません。「V 6は新たなスタートではありません。同じ毒された木の果実です。」",
       "score": 38
@@ -3493,7 +3567,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 79,
+      "coverage": 80,
       "titleJa": "いくつかのレーベルがSunoと取引する中、アーティストの担当者は「それはワイルドでワイルドな西部」と鳴り響きます",
       "summaryJa": "SunoがWMGなどと提携して新しいv 6音楽モデルを発表したことで、マネージャーや弁護士は急速に進化するAI音楽の世界に自分たちの考えを提示しています。",
       "score": 27
@@ -3525,7 +3599,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 76,
+      "coverage": 77,
       "titleJa": "ユニバーサルとソニーは、プラットフォームのv 6モデルが「同じ毒された木の果実」であると主張して、2度目のSunoを訴えた",
       "summaryJa": "米国の著作権法では、意図的な侵害に対する損害賠償は、作品ごとに最大$ 150,000に設定されています。その上限では、60,202の録音は理論的には最大90億$をわずかに上回ります。",
       "score": 34
@@ -3817,7 +3891,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 67,
+      "coverage": 68,
       "titleJa": "「サブスクリプションをキャンセルします」： SunoユーザーはV 6アップデートを「うぬぼれた、一般的な、魂のないゴミ」と非難しました",
       "summaryJa": "業界に支えられたV 6モデルのリリースに続いて、AI音楽プラットフォームの最も熱心なサポーターの一部が船を放棄している",
       "score": 38
@@ -3951,7 +4025,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 59,
+      "coverage": 60,
       "titleJa": "ユニバーサルとワーナーのプレス裁判所、SunoとUdioの取引をめぐる米国ミュージシャンの訴訟を終結",
       "summaryJa": "この訴訟は、レコード会社との組合の団体交渉協定である録音労働協定の第21条（ a ）に基づいている。",
       "score": 27
@@ -4290,7 +4364,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 280,
+      "coverage": 281,
       "score": 21
     },
     {
@@ -4580,7 +4654,7 @@
       "via": null,
       "category": "jp",
       "lang": "ja",
-      "coverage": 112,
+      "coverage": 113,
       "score": 63
     },
     {
@@ -4876,7 +4950,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 10,
+      "coverage": 11,
       "titleJa": "ユニバーサルミュージックは、ElevenLabsとAI音楽プラットフォームを立ち上げています",
       "summaryJa": "木曜日の発表によると、ユニバーサルミュージックグループは、ユーザーがライセンスされた音楽のカタログから曲のリミックス、マッシュアップ、トラックの新しいテイクを作成することを可能にする新しいAI搭載プラットフォームを立ち上げている。レコードレーベルは、同社を専門とするElevenLabsとの複数年のライセンス契約を通じてプラットフォームを開発しています。",
       "score": 27
@@ -6123,80 +6197,6 @@
       "lang": "ja",
       "coverage": 1,
       "score": 17
-    },
-    {
-      "id": "5d6e5f4cb8efcb2b",
-      "title": "サウンドハウンドAI【SOUN】：株価・株式情報",
-      "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE5POFUyVFFfLUtSY1I5NVZNdzB2Y3JfMzlPUG1OdHI2M2Y3SGJYc1gtY3E2S1JOelJNZmV6STFrUWRjcDVHTElxUG5qRU41VGc?oc=5",
-      "summary": "",
-      "published": "2026-09-05T06:38:22.000Z",
-      "source": "Yahoo!ファイナンス",
-      "sourceId": "gnews-ja-suno",
-      "via": "Googleニュース",
-      "category": "jp",
-      "lang": "ja",
-      "coverage": 1,
-      "score": -11
-    },
-    {
-      "id": "4125d197045679c4",
-      "title": "ポン出しと本気の境界線 - AI音楽に魂がないんじゃない、お前が手を抜いているだけだ｜MIUZIQ VALE-TUDE",
-      "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE5aVElZZV9DSEJzVGkzaHpWTW1zWENzRDJ4S3VCZkJqa3Y5X1pVUWJWYWdVXzBpMWRtaVBJOWFRLXh6VmVOM0xmZlVsSXNFV251aVhiSTIxaVNVUERpS2c?oc=5",
-      "summary": "",
-      "published": "2026-09-05T05:07:56.000Z",
-      "source": "note",
-      "sourceId": "gnews-ja-aimusic",
-      "via": "Googleニュース",
-      "category": "jp",
-      "lang": "ja",
-      "coverage": 1,
-      "score": -3
-    },
-    {
-      "id": "12a99aa75e34b995",
-      "title": "ローランド、AIアシスト音楽制作ツール「Melody Flip」無料公開。ソニーCSLの研究知見を活用",
-      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFBpMEgxZEc2RFFKZXh2Wms4QWVxdHhGbHhUMXZiQUZGb0E3aEFWV01sdE5fWEFUZktfUmlmQV9iM0hPdGlIRzhYdkFhbWFULWswTlE4OWJoX0F4a2hxVnc3Uw?oc=5",
-      "summary": "",
-      "published": "2026-09-05T04:48:58.000Z",
-      "source": "pronews.com",
-      "sourceId": "gnews-ja-aimusic",
-      "via": "Googleニュース",
-      "category": "jp",
-      "lang": "ja",
-      "coverage": 1,
-      "score": 20
-    },
-    {
-      "id": "ba7e7b23f1f5ad85",
-      "title": "Dolly Parton’s Sister Stella Calls Out ‘Fake AI Garbage’ & ‘Snarky Tweets’ About Singer’s Death",
-      "url": "https://www.billboard.com/music/music-news/dolly-parton-death-sister-stella-fake-ai-garbage-1236334801/",
-      "summary": "\"Use my sister's life as an example for tolerance and respect toward others,\" the younger Parton wrote.",
-      "published": "2026-09-04T21:54:15.000Z",
-      "source": "Billboard",
-      "sourceId": "billboard",
-      "via": null,
-      "category": "global",
-      "lang": "en",
-      "coverage": 1,
-      "titleJa": "ドリー・パートンの姉妹ステラが歌手の死について「偽のAIゴミ」と「卑劣なつぶやき」を呼びかける",
-      "summaryJa": "「姉の人生を、他者への寛容と敬意の模範として使ってください」と、若いパートンは書いています。",
-      "score": -6
-    },
-    {
-      "id": "3135c7640b98c95f",
-      "title": "Roland is getting into generative AI music with Melody Flip",
-      "url": "https://www.theverge.com/ai-artificial-intelligence/990197/roland-ai-music-melody-flip",
-      "summary": "It's not quite the \"push button; get song\" of Suno, but Roland's new Melody Flip tool marks the company's foray into generative AI music. Available as a plug-in for your digital audio workstation (DAW), Melody Flip offers around 250 \"Palettes,\" which are essentially themed collections of musical ideas sorted by genre. You can start from",
-      "published": "2026-09-04T17:51:35.000Z",
-      "source": "The Verge",
-      "sourceId": "theverge",
-      "via": null,
-      "category": "global",
-      "lang": "en",
-      "coverage": 10,
-      "titleJa": "RolandはMelody FlipでジェネレーティブAI音楽に取り組んでいます",
-      "summaryJa": "Sunoの「プッシュボタン」ではありませんが、Rolandの新しいMelody Flipツールは、同社のジェネレーティブAI音楽への進出を示しています。Melody Flipは、デジタルオーディオワークステーション（ DAW ）用のプラグインとして利用可能で、ジャンル別にソートされた音楽アイデアの本質的にテーマ化されたコレクションである約250の「パレット」を提供します。から始めることができます",
-      "score": 27
     }
   ]
 }
