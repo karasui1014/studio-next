@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-10-08T19:04:17.185Z",
+  "generatedAt": "2026-10-09T00:55:44.977Z",
   "count": 400,
   "newCount": 32,
-  "translatedCount": 1,
+  "translatedCount": 2,
   "ranking": [
     "d61d2874e87bed8c",
-    "2e51b44bf88cf4be",
     "8d24729150ba743c",
-    "d4b0ba00b88d989a",
+    "2e51b44bf88cf4be",
+    "b2781812f9b48ba1",
     "54ffb9163c0a968e"
   ],
   "sources": [
@@ -17,7 +17,7 @@
       "category": "jp",
       "ok": true,
       "fetched": 40,
-      "matched": 36,
+      "matched": 35,
       "error": null
     },
     {
@@ -89,7 +89,7 @@
       "category": "global",
       "ok": true,
       "fetched": 10,
-      "matched": 1,
+      "matched": 0,
       "error": null
     },
     {
@@ -98,7 +98,7 @@
       "category": "global",
       "ok": true,
       "fetched": 10,
-      "matched": 1,
+      "matched": 2,
       "error": null
     },
     {
@@ -161,7 +161,7 @@
       "category": "global",
       "ok": true,
       "fetched": 20,
-      "matched": 1,
+      "matched": 0,
       "error": null
     },
     {
@@ -292,6 +292,22 @@
   ],
   "items": [
     {
+      "id": "b60ee7d9db88d741",
+      "title": "Suno hires Ticketmaster’s Michael Chua to lead its live music team, including Songkick",
+      "url": "https://www.musicbusinessworldwide.com/suno-hires-ticketmasters-michael-chua-to-lead-its-live-music-team-including-songkick/",
+      "summary": "In the role, Chua will lead the AI music company's live music operations, which include concert discovery platform Songkick.",
+      "published": "2026-10-08T19:08:33.000Z",
+      "source": "Music Business Worldwide",
+      "sourceId": "mbw",
+      "via": null,
+      "category": "global",
+      "lang": "en",
+      "coverage": 1,
+      "titleJa": "Sunoは、Songkickを含むライブミュージックチームを率いるTicketmasterのMichael Chuaを雇います",
+      "summaryJa": "Chuaは、コンサート発見プラットフォームSongkickを含むAIミュージック会社のライブミュージック事業を率います。",
+      "score": 21
+    },
+    {
       "id": "aa27ee8c27ed7c6a",
       "title": "Elon Musk says Grok Bot will use Suno’s AI music models, alongside Anthropic’s Claude and Midjourney",
       "url": "https://www.musicbusinessworldwide.com/elon-musk-says-grok-bot-will-use-sunos-ai-music-models-alongside-anthropics-claude-and-midjourney/",
@@ -306,6 +322,21 @@
       "titleJa": "イーロン・マスク氏によると、Grok Botは、AnthropicのClaudeとMidjourneyと並んで、SunoのAI音楽モデルを使用するという。",
       "summaryJa": "Sunoは現在、公式の公開APIを提供していません。MBWは7月に、同社が1社の立ち上げを検討していると報告した。",
       "score": 32
+    },
+    {
+      "id": "795f623330f5db86",
+      "title": "Suno Hires Ticketmaster Executive to Lead New Live Experiences Division",
+      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPYlZGdkxDcUJRVlNReWJJZDgwVFNnR1lIZ0NtRFZ5ZkFCQmR2WlRWX2hFX21fb05QdmItdlBncFg2dGlNLUlqU0hNQUQxU19fb09vakVmcDB2WVJHaWJScTc1WE9Vc19zWFlMWVZmWkdySF9uWjk4N1J2NHJHekJZT3FqZlRTeno1VEJaYVNyTFIyT0U?oc=5",
+      "summary": "",
+      "published": "2026-10-08T13:01:12.000Z",
+      "source": "Billboard",
+      "sourceId": "gnews-en-aimusic",
+      "via": "Googleニュース",
+      "category": "global",
+      "lang": "en",
+      "coverage": 1,
+      "titleJa": "Suno、Ticketmasterのエグゼクティブを採用し、新しいライブ体験部門を率いる",
+      "score": 21
     },
     {
       "id": "0f00c216dd06b448",
@@ -350,8 +381,8 @@
       "via": null,
       "category": "jp",
       "lang": "ja",
-      "coverage": 3,
-      "score": 38
+      "coverage": 4,
+      "score": 46
     },
     {
       "id": "d3ef2f7cfc7c2e81",
@@ -406,8 +437,8 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 2,
-      "score": 23
+      "coverage": 3,
+      "score": 31
     },
     {
       "id": "f8ce8c073b73c384",
@@ -465,7 +496,7 @@
       "category": "jp",
       "lang": "ja",
       "coverage": 1,
-      "score": 35
+      "score": 30
     },
     {
       "id": "9687409b8db19de2",
@@ -481,7 +512,7 @@
       "coverage": 1,
       "titleJa": "RIAAのCEOが中間選挙、AI Deepfakes、トランプ氏と対談：「音楽は非常に超党派的な問題だ」",
       "summaryJa": "Billboard On the Recordの最新エピソードでは、RIAAのCEO兼会長であるMitch Glazier氏が、NapsterとAIについて、そして彼がNO FAKES法がまもなく可決されると確信している理由について語っています。",
-      "score": 12
+      "score": 7
     },
     {
       "id": "6d040ea8f30c9725",
@@ -800,7 +831,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 5,
+      "coverage": 6,
       "score": 34
     },
     {
@@ -891,7 +922,7 @@
       "coverage": 1,
       "titleJa": "ソニーミュージック、デジタルプラットフォームから26万曲以上のAI Deepfake曲の削除を要請",
       "summaryJa": "大手音楽会社は、この問題は急速に拡大しており、ディープフェイクの問題は「アーティストに害を及ぼし、ファンを誤解させ、AIの倫理的な使用を損なう」と述べている。",
-      "score": 7
+      "score": 3
     },
     {
       "id": "7b03d5412890932f",
@@ -907,7 +938,7 @@
       "coverage": 1,
       "titleJa": "Miltone 4 EXP （オーバーハイム4音声クローン）ハンズオンデモ",
       "summaryJa": "4 EXPは、「スタンドアロンのシンセサイザーとして、またはオリジナルのFour VoiceをEight Voiceに変えるためのエキスパンダーとして、非常に高い基準で行われています。」…",
-      "score": 7
+      "score": 3
     },
     {
       "id": "1689779896d23f1a",
@@ -936,7 +967,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 8,
+      "coverage": 9,
       "score": 39
     },
     {
@@ -1013,10 +1044,10 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 3,
+      "coverage": 4,
       "titleJa": "米国の控訴裁判所は、AIトレーニングをめぐる「フェアユース」の防御を棄却した。レーベルとスノとの戦いにはどういう意味があるのでしょうか？",
       "summaryJa": "米国控訴裁判所は、9月29日にトムソン・ロイターとAI法務調査会社ROSS Intelligenceに対して判決を下しました",
-      "score": 28
+      "score": 36
     },
     {
       "id": "d61d2874e87bed8c",
@@ -1029,7 +1060,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 10,
+      "coverage": 11,
       "score": 50
     },
     {
@@ -1071,7 +1102,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 6,
+      "coverage": 7,
       "score": 30
     },
     {
@@ -1293,7 +1324,7 @@
       "category": "jp",
       "lang": "ja",
       "coverage": 1,
-      "score": 26
+      "score": 17
     },
     {
       "id": "a0c3443c791fac99",
@@ -1308,7 +1339,7 @@
       "lang": "en",
       "coverage": 1,
       "titleJa": "AIスタートアップSunoの新しいツールが音声に音楽を加える",
-      "score": 12
+      "score": 3
     },
     {
       "id": "e98777271099d1e1",
@@ -1322,7 +1353,7 @@
       "category": "jp",
       "lang": "ja",
       "coverage": 1,
-      "score": 6
+      "score": -3
     },
     {
       "id": "4b49967eee21d0ab",
@@ -1647,7 +1678,7 @@
       "via": null,
       "category": "jp",
       "lang": "ja",
-      "coverage": 35,
+      "coverage": 36,
       "score": 32
     },
     {
@@ -2077,7 +2108,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 41,
+      "coverage": 42,
       "score": 32
     },
     {
@@ -2107,7 +2138,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 53,
+      "coverage": 54,
       "titleJa": "ソニーとUMGがSunoを再び訴える",
       "summaryJa": "ソニーとユニバーサルミュージックグループは、Sunoに対してさらに別の訴訟を起こしました。レーベルは、新しいv 6モデルがまだ著作権を侵害していると主張している。なぜなら、それは以前のモデルからのユーザー出力で訓練されているからだ。以前のモデル自体は、YouTubeや他のソースからリッピングされた無許可の音楽で訓練されていたからだ。ソニーとUMGは、署名しなかった注目すべきホールドアウトである",
       "score": 27
@@ -2239,7 +2270,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 51,
+      "coverage": 52,
       "score": 21
     },
     {
@@ -2726,7 +2757,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 56,
+      "coverage": 57,
       "titleJa": "Sunoは、最新のソニーとユニバーサルの訴訟を爆発させるため、V 6モデルがユーザーからの「クリエイション」について訓練されたことを確認します",
       "summaryJa": "同社は、ユニバーサルミュージックグループとソニーミュージックエンタテインメントが提起した2回目の著作権訴訟に対応する声明で、その説明を記載した。",
       "score": 34
@@ -2992,7 +3023,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 60,
+      "coverage": 61,
       "titleJa": "「Sunoの死」： Redditユーザーはv 6モデルアップデート後にSunoに反対しています",
       "summaryJa": "このアップデートでは、音楽レーベルも満足していません。「V 6は新たなスタートではありません。同じ毒された木の果実です。」",
       "score": 38
@@ -3140,7 +3171,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 132,
+      "coverage": 133,
       "score": 44
     },
     {
@@ -3314,7 +3345,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 77,
+      "coverage": 78,
       "titleJa": "いくつかのレーベルがSunoと取引する中、アーティストの担当者は「それはワイルドでワイルドな西部」と鳴り響きます",
       "summaryJa": "SunoがWMGなどと提携して新しいv 6音楽モデルを発表したことで、マネージャーや弁護士は急速に進化するAI音楽の世界に自分たちの考えを提示しています。",
       "score": 27
@@ -3346,7 +3377,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 74,
+      "coverage": 75,
       "titleJa": "ユニバーサルとソニーは、プラットフォームのv 6モデルが「同じ毒された木の果実」であると主張して、2度目のSunoを訴えた",
       "summaryJa": "米国の著作権法では、意図的な侵害に対する損害賠償は、作品ごとに最大$ 150,000に設定されています。その上限では、60,202の録音は理論的には最大90億$をわずかに上回ります。",
       "score": 34
@@ -3623,7 +3654,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 65,
+      "coverage": 66,
       "titleJa": "「サブスクリプションをキャンセルします」： SunoユーザーはV 6アップデートを「うぬぼれた、一般的な、魂のないゴミ」と非難しました",
       "summaryJa": "業界に支えられたV 6モデルのリリースに続いて、AI音楽プラットフォームの最も熱心なサポーターの一部が船を放棄している",
       "score": 38
@@ -3757,7 +3788,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 57,
+      "coverage": 58,
       "titleJa": "ユニバーサルとワーナーのプレス裁判所、SunoとUdioの取引をめぐる米国ミュージシャンの訴訟を終結",
       "summaryJa": "この訴訟は、レコード会社との組合の団体交渉協定である録音労働協定の第21条（ a ）に基づいている。",
       "score": 27
@@ -4096,7 +4127,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 278,
+      "coverage": 279,
       "score": 21
     },
     {
@@ -4386,7 +4417,7 @@
       "via": null,
       "category": "jp",
       "lang": "ja",
-      "coverage": 110,
+      "coverage": 111,
       "score": 63
     },
     {
@@ -4980,7 +5011,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 117,
+      "coverage": 118,
       "titleJa": "Sunoは、著作権訴訟が積み重なるにつれて、AIモデルをライセンスされた音楽で訓練された新しいモデルに置き換える",
       "summaryJa": "一連の訴訟に取り組んでいるSuno氏は、新しいモデルであるSuno v 6は、以前のバージョンのAIモデルのトレーニングに使用した音楽を使用してトレーニングされていないと述べた。",
       "score": 45
@@ -5012,7 +5043,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 54,
+      "coverage": 55,
       "titleJa": "Suno、WMG、BMG、Believeと提携してv 6 AI音楽モデルを発表",
       "summaryJa": "最高製品責任者のJack Brody氏によると、Sunoの以前のモデルは廃止されます",
       "score": 38
@@ -5071,7 +5102,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 59,
+      "coverage": 60,
       "titleJa": "Sunoは、v 6 AI音楽モデルを発売します。知っておくべきことは次のとおりです。",
       "summaryJa": "今日はSunoにとって重要な日です。最新のAI音楽モデルを発売しています。Suno v 6は、音楽の権利者と共に開発された最初の世代です。この投稿はMusic Allyからのものです。",
       "score": 27
@@ -5103,7 +5134,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 44,
+      "coverage": 45,
       "titleJa": "Sunoは、ライセンスされた音楽でAI音楽モデルをゼロから再構築しました",
       "summaryJa": "業界に裏打ちされたV 6モデルのリリースに加えて、AIミュージックプラットフォームは、ユーザーが参加アーティストの音楽を使用して作成し、リミックスできるツールの開発を発表しました",
       "score": 38
@@ -5148,7 +5179,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 134,
+      "coverage": 135,
       "score": 37
     },
     {
@@ -5280,7 +5311,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 118,
+      "coverage": 119,
       "score": 37
     },
     {
@@ -6165,36 +6196,6 @@
       "lang": "ja",
       "coverage": 1,
       "score": 20
-    },
-    {
-      "id": "93333350bee7356b",
-      "title": "どんな曲でもAIでカラオケ化、歌えばリアルタイムに“ケロケロ声”に！元m.o.v.eのMOTSUさんがiOSアプリ「MoTune」リリース。無料のDAWプラグインも",
-      "url": "https://www.dtmstation.com/archives/79304.html",
-      "summary": "「Gamble Rumble」「around the world」「DOGFIGHT」など、アニメ「頭文字D」シリーズの主題歌で広く知られたユニット、m.o.v.e。そのMC/ラッパーだったMOTSUさんが、DeeJei",
-      "published": "2026-09-04T02:59:17.000Z",
-      "source": "DTMステーション",
-      "sourceId": "dtmstation",
-      "via": null,
-      "category": "jp",
-      "lang": "ja",
-      "coverage": 1,
-      "score": 20
-    },
-    {
-      "id": "a7224565d9efa26d",
-      "title": "Suno Pulls Controversial Mary J. Blige Ad in Which She Calls AI Music Generator ‘Pretty Dope’",
-      "url": "https://www.billboard.com/pro/suno-mary-j-blige-ad-dropped-ai-music-generation/",
-      "summary": "The company says it entered an agreement with someone who falsely presented as Blige's rep.",
-      "published": "2026-09-03T22:03:20.000Z",
-      "source": "Billboard",
-      "sourceId": "billboard",
-      "via": null,
-      "category": "global",
-      "lang": "en",
-      "coverage": 1,
-      "score": 3,
-      "titleJa": "スノ、AI音楽ジェネレーターを「かなりヤバい」と呼んで物議を醸すメアリー・J・ブライジの広告を制作",
-      "summaryJa": "同社は、ブライジの担当者として虚偽の提示をした誰かと契約を結んだと述べています。"
     }
   ]
 }
