@@ -1,14 +1,14 @@
 {
-  "generatedAt": "2026-10-09T18:34:24.346Z",
+  "generatedAt": "2026-10-10T00:27:05.750Z",
   "count": 400,
-  "newCount": 30,
-  "translatedCount": 3,
+  "newCount": 28,
+  "translatedCount": 0,
   "ranking": [
     "d4b0ba00b88d989a",
     "d61d2874e87bed8c",
+    "913b32e10e0caa29",
     "8d24729150ba743c",
-    "2e51b44bf88cf4be",
-    "913b32e10e0caa29"
+    "2e51b44bf88cf4be"
   ],
   "sources": [
     {
@@ -436,8 +436,8 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 3,
-      "score": 38
+      "coverage": 4,
+      "score": 46
     },
     {
       "id": "b60ee7d9db88d741",
@@ -453,7 +453,7 @@
       "coverage": 1,
       "titleJa": "Sunoは、Songkickを含むライブミュージックチームを率いるTicketmasterのMichael Chuaを雇います",
       "summaryJa": "Chuaは、コンサート発見プラットフォームSongkickを含むAIミュージック会社のライブミュージック事業を率います。",
-      "score": 21
+      "score": 16
     },
     {
       "id": "aa27ee8c27ed7c6a",
@@ -544,7 +544,7 @@
       "via": null,
       "category": "jp",
       "lang": "ja",
-      "coverage": 7,
+      "coverage": 8,
       "score": 41
     },
     {
@@ -600,8 +600,8 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 3,
-      "score": 26
+      "coverage": 4,
+      "score": 34
     },
     {
       "id": "f8ce8c073b73c384",
@@ -673,7 +673,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 4,
+      "coverage": 6,
       "score": 54
     },
     {
@@ -906,6 +906,20 @@
       "score": 10
     },
     {
+      "id": "8eeb5af49f5e9a78",
+      "title": "マイケル・スミス、AI音楽ストリーミング詐欺で18か月の懲役を受ける",
+      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOWWNYNmVTVjg5dE5JT3QtZVhyUlUyLXd6VlNUbmlNdHpsaEp2THdkNXA5Vlp6a1dIX2pWNmI0VmNaQTVoSjU5WE9tZF8xNTlqOG84bG9rYmxsY1Q4T0daY0lJdHIySF9mdXNHalJ2RWNiMjZGNkdvcGxwV1B3ZG5haVlrSnFfMmx0R2xta0FZRV83Nmk5TGFzVEZn?oc=5",
+      "summary": "",
+      "published": "2026-10-07T02:38:03.000Z",
+      "source": "Unite.AI",
+      "sourceId": "gnews-ja-aimusic",
+      "via": "Googleニュース",
+      "category": "jp",
+      "lang": "ja",
+      "coverage": 1,
+      "score": 10
+    },
+    {
       "id": "0b0ed5c3ee203663",
       "title": "生成AI音楽「Suno」で5,528万件超のメールアドレス流出―Stripe購入情報も含む、2025年11月の侵害が2026年7月に判明",
       "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE1xYkw5dDk3cnFLbVFzbUsxb2ppOTFRa0RSZjlLOG04bDJLeUNwV1gxX3lKVVYyVkVNVGJ5X2ZCNEhPc1ZkV19HS1JBcGRJVDJiTzctR1hoaGRRRmJuenlEeU1FREs2T1dYRU1vT1FSRndsYkxJUU5xQg?oc=5",
@@ -933,7 +947,7 @@
       "coverage": 1,
       "titleJa": "AI音楽ストリーミング詐欺師、800万$のロイヤリティ詐欺で懲役1.5年の判決",
       "summaryJa": "マイケル・スミス氏は今年初め、ストリーミング詐欺をめぐる初の刑事事件で、ボットを使用して偽の曲を何十億回もストリーミングしたことを認めた。",
-      "score": 14
+      "score": 10
     },
     {
       "id": "59a2fc79536d2335",
@@ -948,7 +962,7 @@
       "lang": "en",
       "coverage": 1,
       "titleJa": "イタリアの規制当局、AI音楽スタートアップSunoの利用規約を調査",
-      "score": 23
+      "score": 19
     },
     {
       "id": "c44683930f3be002",
@@ -1023,7 +1037,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 9,
+      "coverage": 10,
       "score": 30
     },
     {
@@ -1159,7 +1173,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 12,
+      "coverage": 13,
       "score": 39
     },
     {
@@ -1236,7 +1250,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 7,
+      "coverage": 8,
       "titleJa": "米国の控訴裁判所は、AIトレーニングをめぐる「フェアユース」の防御を棄却した。レーベルとスノとの戦いにはどういう意味があるのでしょうか？",
       "summaryJa": "米国控訴裁判所は、9月29日にトムソン・ロイターとAI法務調査会社ROSS Intelligenceに対して判決を下しました",
       "score": 36
@@ -1252,7 +1266,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 14,
+      "coverage": 15,
       "score": 50
     },
     {
@@ -1396,7 +1410,7 @@
       "coverage": 1,
       "titleJa": "ショーン・パーカーは、音楽を中心にStability AIを再構築しています",
       "summaryJa": "かつて音楽業界に許しを求めることがどのようなものかを教えていたショーン・パーカーは、レーベルの祝福とお金を持って戻ってきました。",
-      "score": 3
+      "score": -6
     },
     {
       "id": "7031538d39afed2d",
@@ -1411,7 +1425,7 @@
       "lang": "en",
       "coverage": 1,
       "titleJa": "AIミュージックジェネレータSunoが、マッチングするバックグラウンドミュージックで音声を作成できるようになりました",
-      "score": 12
+      "score": 3
     },
     {
       "id": "5a715bfeb550b0a1",
@@ -1697,13 +1711,13 @@
       "title": "SUNO プロンプト辞典「prompt-jukebox」、「◯◯っぽい音」の作り方を統計で解説する 15 ページと、アーティストの時代ごとに音を選べる「時代区分」を公開",
       "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5sbGtwb3ZTcXJjeWhScW1HckhYZVh2NjRZdzNodHlESnBmZHhnWVJKZzdXaUtRa1lpblpwN1NUdEN0c1N3bTd5MnBaRmFQeFpMM0JmSGxZNkhrNkZqMzhCNXFIYl8wSy0xeXc?oc=5",
       "summary": "",
-      "published": "2026-10-01T03:00:02.000Z",
+      "published": "2026-10-01T07:00:00.000Z",
       "source": "PR TIMES",
       "sourceId": "gnews-ja-suno",
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 5,
+      "coverage": 6,
       "score": 55
     },
     {
@@ -1914,7 +1928,7 @@
       "via": null,
       "category": "jp",
       "lang": "ja",
-      "coverage": 39,
+      "coverage": 40,
       "score": 32
     },
     {
@@ -2374,7 +2388,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 45,
+      "coverage": 46,
       "score": 32
     },
     {
@@ -2404,7 +2418,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 57,
+      "coverage": 58,
       "titleJa": "ソニーとUMGがSunoを再び訴える",
       "summaryJa": "ソニーとユニバーサルミュージックグループは、Sunoに対してさらに別の訴訟を起こしました。レーベルは、新しいv 6モデルがまだ著作権を侵害していると主張している。なぜなら、それは以前のモデルからのユーザー出力で訓練されているからだ。以前のモデル自体は、YouTubeや他のソースからリッピングされた無許可の音楽で訓練されていたからだ。ソニーとUMGは、署名しなかった注目すべきホールドアウトである",
       "score": 27
@@ -3023,7 +3037,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 60,
+      "coverage": 61,
       "titleJa": "Sunoは、最新のソニーとユニバーサルの訴訟を爆発させるため、V 6モデルがユーザーからの「クリエイション」について訓練されたことを確認します",
       "summaryJa": "同社は、ユニバーサルミュージックグループとソニーミュージックエンタテインメントが提起した2回目の著作権訴訟に対応する声明で、その説明を記載した。",
       "score": 34
@@ -3289,7 +3303,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 64,
+      "coverage": 65,
       "titleJa": "「Sunoの死」： Redditユーザーはv 6モデルアップデート後にSunoに反対しています",
       "summaryJa": "このアップデートでは、音楽レーベルも満足していません。「V 6は新たなスタートではありません。同じ毒された木の果実です。」",
       "score": 38
@@ -3437,7 +3451,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 135,
+      "coverage": 136,
       "score": 44
     },
     {
@@ -3626,7 +3640,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 81,
+      "coverage": 82,
       "titleJa": "いくつかのレーベルがSunoと取引する中、アーティストの担当者は「それはワイルドでワイルドな西部」と鳴り響きます",
       "summaryJa": "SunoがWMGなどと提携して新しいv 6音楽モデルを発表したことで、マネージャーや弁護士は急速に進化するAI音楽の世界に自分たちの考えを提示しています。",
       "score": 27
@@ -3658,7 +3672,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 78,
+      "coverage": 79,
       "titleJa": "ユニバーサルとソニーは、プラットフォームのv 6モデルが「同じ毒された木の果実」であると主張して、2度目のSunoを訴えた",
       "summaryJa": "米国の著作権法では、意図的な侵害に対する損害賠償は、作品ごとに最大$ 150,000に設定されています。その上限では、60,202の録音は理論的には最大90億$をわずかに上回ります。",
       "score": 34
@@ -3965,7 +3979,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 69,
+      "coverage": 70,
       "titleJa": "「サブスクリプションをキャンセルします」： SunoユーザーはV 6アップデートを「うぬぼれた、一般的な、魂のないゴミ」と非難しました",
       "summaryJa": "業界に支えられたV 6モデルのリリースに続いて、AI音楽プラットフォームの最も熱心なサポーターの一部が船を放棄している",
       "score": 38
@@ -4099,7 +4113,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 61,
+      "coverage": 62,
       "titleJa": "ユニバーサルとワーナーのプレス裁判所、SunoとUdioの取引をめぐる米国ミュージシャンの訴訟を終結",
       "summaryJa": "この訴訟は、レコード会社との組合の団体交渉協定である録音労働協定の第21条（ a ）に基づいている。",
       "score": 27
@@ -4438,7 +4452,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 282,
+      "coverage": 283,
       "score": 21
     },
     {
@@ -4728,7 +4742,7 @@
       "via": null,
       "category": "jp",
       "lang": "ja",
-      "coverage": 114,
+      "coverage": 115,
       "score": 63
     },
     {
@@ -5024,7 +5038,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 12,
+      "coverage": 13,
       "titleJa": "ユニバーサルミュージックは、ElevenLabsとAI音楽プラットフォームを立ち上げています",
       "summaryJa": "木曜日の発表によると、ユニバーサルミュージックグループは、ユーザーがライセンスされた音楽のカタログから曲のリミックス、マッシュアップ、トラックの新しいテイクを作成することを可能にする新しいAI搭載プラットフォームを立ち上げている。レコードレーベルは、同社を専門とするElevenLabsとの複数年のライセンス契約を通じてプラットフォームを開発しています。",
       "score": 27
@@ -6185,22 +6199,6 @@
       "lang": "ja",
       "coverage": 1,
       "score": -3
-    },
-    {
-      "id": "87faf45f8c8a948d",
-      "title": "Nirosta Steel Issues Apology for Following AI Accounts",
-      "url": "https://pitchfork.com/story/nirosta-steel-issues-apology/",
-      "summary": "“I did not realize that a few of the accounts contained highly toxic content, so I deleted my profile. Those accounts don’t reflect my interests in any way.”",
-      "published": "2026-09-05T15:09:07.000Z",
-      "source": "Pitchfork",
-      "sourceId": "pitchfork",
-      "via": null,
-      "category": "global",
-      "lang": "en",
-      "coverage": 1,
-      "titleJa": "Nirosta Steel、AIアカウントをフォローしたことについて謝罪",
-      "summaryJa": "「いくつかのアカウントに非常に有害なコンテンツが含まれていることに気づかなかったので、プロフィールを削除しました。」",
-      "score": -6
     }
   ]
 }
