@@ -1,42 +1,42 @@
 {
-  "generatedAt": "2026-10-11T09:21:45.650Z",
+  "generatedAt": "2026-10-11T15:10:13.389Z",
   "count": 400,
-  "newCount": 33,
-  "translatedCount": 1,
+  "newCount": 5,
+  "translatedCount": 0,
   "ranking": [
     "d4b0ba00b88d989a",
     "d61d2874e87bed8c",
     "913b32e10e0caa29",
-    "8d24729150ba743c",
-    "2e51b44bf88cf4be"
+    "2e51b44bf88cf4be",
+    "8d24729150ba743c"
   ],
   "sources": [
     {
       "id": "gnews-ja-aimusic",
       "name": "Googleニュース（AI音楽）",
       "category": "jp",
-      "ok": true,
-      "fetched": 40,
-      "matched": 35,
-      "error": null
+      "ok": false,
+      "fetched": 0,
+      "matched": 0,
+      "error": "HTTP 503"
     },
     {
       "id": "gnews-ja-suno",
       "name": "Googleニュース（Suno/生成AI作曲）",
       "category": "jp",
-      "ok": true,
-      "fetched": 40,
-      "matched": 40,
-      "error": null
+      "ok": false,
+      "fetched": 0,
+      "matched": 0,
+      "error": "HTTP 503"
     },
     {
       "id": "gnews-en-aimusic",
       "name": "Google News (AI music)",
       "category": "global",
-      "ok": true,
-      "fetched": 40,
-      "matched": 40,
-      "error": null
+      "ok": false,
+      "fetched": 0,
+      "matched": 0,
+      "error": "HTTP 503"
     },
     {
       "id": "google-deepmind",
@@ -317,7 +317,7 @@
       "category": "jp",
       "lang": "ja",
       "coverage": 1,
-      "score": 26
+      "score": 21
     },
     {
       "id": "80d2c77d4668f261",
@@ -568,7 +568,7 @@
       "lang": "en",
       "coverage": 1,
       "titleJa": "Songkickの買収後、SunoはMichael Chuaをライブエクスペリエンス部門のリーダーに任命します",
-      "score": 8
+      "score": 4
     },
     {
       "id": "795f623330f5db86",
@@ -583,7 +583,7 @@
       "lang": "en",
       "coverage": 1,
       "titleJa": "Suno、Ticketmasterのエグゼクティブを採用し、新しいライブ体験部門を率いる",
-      "score": 16
+      "score": 12
     },
     {
       "id": "0f00c216dd06b448",
@@ -599,7 +599,7 @@
       "coverage": 1,
       "titleJa": "Elon Muskは、XのAIボットGrokが音楽タスクにSunoを使用すると述べています",
       "summaryJa": "イーロン・マスクのツイートのほとんどを避けようとしたことは許されるだろう、特に彼が深夜の投稿バーストになったとき。しかし、彼の最新作の1つは音楽に直接関連しています。この投稿はMusic Allyからのものです。",
-      "score": 16
+      "score": 12
     },
     {
       "id": "e42f448e1fc04d8f",
@@ -615,7 +615,7 @@
       "coverage": 1,
       "titleJa": "Google、AI搭載の「実験的ゲーム」プラットフォーム「Playground」を発表",
       "summaryJa": "ゲーム制作におけるAIの使用は、ゲーム業界でも、音楽へのAIの使用が私たちの世界で挑発しているのと同じくらい多くの議論を引き起こしています。どちらの場合も、Googleはテクノロジーを構築するものの中心にいます。この投稿はMusic Allyからのものです。",
-      "score": 18
+      "score": 14
     },
     {
       "id": "263bd62a7e5ff63a",
@@ -630,7 +630,7 @@
       "lang": "en",
       "coverage": 1,
       "titleJa": "AI音楽ストリーミング詐欺：ミュージシャンが$ 800万スキームで18か月を獲得",
-      "score": 7
+      "score": 3
     },
     {
       "id": "833e9a1472468508",
@@ -644,7 +644,7 @@
       "category": "jp",
       "lang": "ja",
       "coverage": 1,
-      "score": 19
+      "score": 15
     },
     {
       "id": "8d24729150ba743c",
@@ -658,7 +658,7 @@
       "category": "jp",
       "lang": "ja",
       "coverage": 13,
-      "score": 41
+      "score": 37
     },
     {
       "id": "d3ef2f7cfc7c2e81",
@@ -1437,7 +1437,7 @@
       "category": "jp",
       "lang": "ja",
       "coverage": 1,
-      "score": 6
+      "score": -3
     },
     {
       "id": "11f165f65f3b988b",
@@ -1451,7 +1451,7 @@
       "category": "jp",
       "lang": "ja",
       "coverage": 8,
-      "score": 30
+      "score": 21
     },
     {
       "id": "1cf7fe49c2fd2fc8",
@@ -2071,7 +2071,7 @@
       "via": null,
       "category": "jp",
       "lang": "ja",
-      "coverage": 45,
+      "coverage": 46,
       "score": 32
     },
     {
