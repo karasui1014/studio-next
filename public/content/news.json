@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-10-12T18:18:09.710Z",
+  "generatedAt": "2026-10-12T21:27:34.772Z",
   "count": 400,
-  "newCount": 29,
-  "translatedCount": 4,
+  "newCount": 26,
+  "translatedCount": 1,
   "ranking": [
     "d4b0ba00b88d989a",
     "913b32e10e0caa29",
@@ -71,7 +71,7 @@
       "category": "global",
       "ok": true,
       "fetched": 15,
-      "matched": 1,
+      "matched": 0,
       "error": null
     },
     {
@@ -475,7 +475,7 @@
       "category": "jp",
       "lang": "ja",
       "coverage": 1,
-      "score": 10
+      "score": 6
     },
     {
       "id": "d51ccc54a624e0ce",
@@ -787,7 +787,7 @@
       "via": null,
       "category": "jp",
       "lang": "ja",
-      "coverage": 17,
+      "coverage": 18,
       "score": 37
     },
     {
@@ -872,7 +872,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 13,
+      "coverage": 14,
       "score": 30
     },
     {
@@ -945,7 +945,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 20,
+      "coverage": 21,
       "score": 50
     },
     {
@@ -1246,10 +1246,10 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 2,
+      "coverage": 3,
       "titleJa": "AI音楽ストリーミング詐欺師、800万$のロイヤリティ詐欺で懲役1.5年の判決",
       "summaryJa": "マイケル・スミス氏は今年初め、ストリーミング詐欺をめぐる初の刑事事件で、ボットを使用して偽の曲を何十億回もストリーミングしたことを認めた。",
-      "score": 18
+      "score": 26
     },
     {
       "id": "59a2fc79536d2335",
@@ -1567,7 +1567,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 17,
+      "coverage": 18,
       "titleJa": "米国の控訴裁判所は、AIトレーニングをめぐる「フェアユース」の防御を棄却した。レーベルとスノとの戦いにはどういう意味があるのでしょうか？",
       "summaryJa": "米国控訴裁判所は、9月29日にトムソン・ロイターとAI法務調査会社ROSS Intelligenceに対して判決を下しました",
       "score": 27
@@ -1583,7 +1583,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 25,
+      "coverage": 26,
       "score": 41
     },
     {
@@ -1784,7 +1784,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 7,
+      "coverage": 8,
       "titleJa": "Sunoは200万人の加入者と3億$の収益を「はるかに超えている」とMikey Shulmanは言う。彼はAI音楽にはまだ「確固たるルール」がないことは「良い」と主張する",
       "summaryJa": "シュルマン氏はまた、WMGとBMGが彼らの取引から何を得て、誰がAIのルールを設定すべきかを説明しました。",
       "score": 27
@@ -2063,7 +2063,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 13,
+      "coverage": 14,
       "score": 55
     },
     {
@@ -2274,7 +2274,7 @@
       "via": null,
       "category": "jp",
       "lang": "ja",
-      "coverage": 50,
+      "coverage": 51,
       "score": 32
     },
     {
@@ -2696,6 +2696,21 @@
       "score": -6
     },
     {
+      "id": "5cbb9e7f562f310f",
+      "title": "Sony and UMG Sue Suno Again Over AI Music Training – What ‘Model Laundering’ Means",
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxObEF2TmVfejVCakw5bU5SVGRUWXpPcDBzT0xmcE92dm9jcGhoWGFDTkRfOWlJOWNwWEVQRlhubnFzNzZvYTlOdE9SX2UzeWV0OUFkM0owbUpLZ3lEeWozUmp4MDRZalppZVAtcllFSUhEZHpJQ2JyZE53eTBXRXlDNTIzZE9WR3IzUkdCcmdDZjNKZVdObFF1YW1rV01ldVhjZldpeTFmbVczNnM?oc=5",
+      "summary": "",
+      "published": "2026-09-27T07:00:00.000Z",
+      "source": "RouteNote",
+      "sourceId": "gnews-en-aimusic",
+      "via": "Googleニュース",
+      "category": "global",
+      "lang": "en",
+      "coverage": 1,
+      "titleJa": "ソニーとUMGのスー・スノがAI音楽トレーニングについて語る「モデル・ローンダリング」の意味",
+      "score": 3
+    },
+    {
       "id": "ac96d118841cefde",
       "title": "歌声合成ソフト「VoiSona」のバイリンガルボイスライブラリ「Bennett Fantasia（CV：Du Du Danyon）」が販売開始！ダウンロード版及び数量限定パッケージ版の割引セール開催！",
       "url": "https://ascii.jp/elem/000/004/437/4437489/?rss",
@@ -2748,7 +2763,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 55,
+      "coverage": 56,
       "score": 32
     },
     {
@@ -2778,7 +2793,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 67,
+      "coverage": 68,
       "titleJa": "ソニーとUMGがSunoを再び訴える",
       "summaryJa": "ソニーとユニバーサルミュージックグループは、Sunoに対してさらに別の訴訟を起こしました。レーベルは、新しいv 6モデルがまだ著作権を侵害していると主張している。なぜなら、それは以前のモデルからのユーザー出力で訓練されているからだ。以前のモデル自体は、YouTubeや他のソースからリッピングされた無許可の音楽で訓練されていたからだ。ソニーとUMGは、署名しなかった注目すべきホールドアウトである",
       "score": 27
@@ -2840,8 +2855,8 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 1,
-      "score": -3
+      "coverage": 2,
+      "score": 5
     },
     {
       "id": "df349f6857347731",
@@ -3426,7 +3441,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 70,
+      "coverage": 71,
       "titleJa": "Sunoは、最新のソニーとユニバーサルの訴訟を爆発させるため、V 6モデルがユーザーからの「クリエイション」について訓練されたことを確認します",
       "summaryJa": "同社は、ユニバーサルミュージックグループとソニーミュージックエンタテインメントが提起した2回目の著作権訴訟に対応する声明で、その説明を記載した。",
       "score": 34
@@ -3707,7 +3722,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 74,
+      "coverage": 75,
       "titleJa": "「Sunoの死」： Redditユーザーはv 6モデルアップデート後にSunoに反対しています",
       "summaryJa": "このアップデートでは、音楽レーベルも満足していません。「V 6は新たなスタートではありません。同じ毒された木の果実です。」",
       "score": 38
@@ -3813,7 +3828,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 6,
+      "coverage": 7,
       "score": 21
     },
     {
@@ -3869,7 +3884,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 145,
+      "coverage": 146,
       "score": 44
     },
     {
@@ -4132,7 +4147,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 88,
+      "coverage": 89,
       "titleJa": "ユニバーサルとソニーは、プラットフォームのv 6モデルが「同じ毒された木の果実」であると主張して、2度目のSunoを訴えた",
       "summaryJa": "米国の著作権法では、意図的な侵害に対する損害賠償は、作品ごとに最大$ 150,000に設定されています。その上限では、60,202の録音は理論的には最大90億$をわずかに上回ります。",
       "score": 34
@@ -4454,7 +4469,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 79,
+      "coverage": 80,
       "titleJa": "「サブスクリプションをキャンセルします」： SunoユーザーはV 6アップデートを「うぬぼれた、一般的な、魂のないゴミ」と非難しました",
       "summaryJa": "業界に支えられたV 6モデルのリリースに続いて、AI音楽プラットフォームの最も熱心なサポーターの一部が船を放棄している",
       "score": 38
@@ -4588,7 +4603,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 71,
+      "coverage": 72,
       "titleJa": "ユニバーサルとワーナーのプレス裁判所、SunoとUdioの取引をめぐる米国ミュージシャンの訴訟を終結",
       "summaryJa": "この訴訟は、レコード会社との組合の団体交渉協定である録音労働協定の第21条（ a ）に基づいている。",
       "score": 27
@@ -4927,7 +4942,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 302,
+      "coverage": 304,
       "score": 21
     },
     {
@@ -6185,20 +6200,6 @@
       "lang": "ja",
       "coverage": 1,
       "score": 18
-    },
-    {
-      "id": "269d4f31cd0b5f5e",
-      "title": "216基LEDで360度ライトショー、JBL「Pulse 6」。AI Sound Boost搭載",
-      "url": "https://av.watch.impress.co.jp/docs/news/2139457.html",
-      "summary": "ハーマンインターナショナルは、JBLブランドよりポータブルBluetoothスピーカー「JBL Pulse 6」を9月17日に発売する。カラーはブラック。価格はオープンで、直販価格は49,500円。",
-      "published": "2026-09-09T06:00:00.000Z",
-      "source": "AV Watch",
-      "sourceId": "av-watch",
-      "via": null,
-      "category": "jp",
-      "lang": "ja",
-      "coverage": 1,
-      "score": -10
     }
   ]
 }
