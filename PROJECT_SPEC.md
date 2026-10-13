@@ -2033,6 +2033,20 @@ DevRoleSwitcher の現行仕様は **§5-A** に記載しています。
 
 別の刊行物を使う場合は環境変数 `SUBSTACK_FEED` で切り替えられます。
 
+✅ **決定（2026-10-13）**：Substack は GitHub Actions からの直接取得を **HTTP 403**（Cloudflare の確認画面）で断ることがあるため、
+直接取れなかったときだけ **feed2json（Toptal の無料サービス）経由**で取り直します。
+
+| 項目 | 値 |
+|---|---|
+| 回り道のURL | `https://www.toptal.com/developers/feed2json/convert?url=（フィードURL）` |
+| 受け取る形式 | JSON Feed（`items[].url / title / content_html / summary / date_published`） |
+| 画像 | JSON Feed には enclosure が無いので、本文の最初の `substackcdn.com/image/…` を使う |
+| 使ったかどうか | `picks.json` の `source` に、実際に取得したURLが入る |
+| 止めたいとき | 環境変数 `SUBSTACK_FALLBACK=off` |
+
+feed2json は外部のサービスなので、止まると取り込めなくなります。そのときは従来どおり
+ワークフローが朝6時の回で失敗し、通知が届きます（OPERATIONS.md の手順で手動更新）。
+
 ### 取得する項目
 
 | 項目 | 取得元 |
