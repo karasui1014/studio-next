@@ -22,6 +22,15 @@ const ROOT = dirname(fileURLToPath(import.meta.url));
 const OUT_PATH = join(ROOT, '..', 'public', 'content', 'picks.json');
 
 const FEED_URL = process.env.SUBSTACK_FEED || 'https://karasui.substack.com/feed';
+/**
+ * 回り道。Substack は GitHub Actions からの直接の取得を HTTP 403（Cloudflare の確認画面）で
+ * 断ることがある（2026-08〜09、2026-09-09〜10-13 に発生）。
+ * 直接取れなかったときだけ、feed2json（Toptal の無料サービス）に RSS を取ってきてもらい、
+ * JSON Feed 形式で受け取る（2026-10-13 に Actions から取得できることを確認）。
+ * SUBSTACK_FALLBACK=off で回り道を使わない。
+ */
+const FALLBACK_URL = process.env.SUBSTACK_FALLBACK_URL || `https://www.toptal.com/developers/feed2json/convert?url=${encodeURIComponent(FEED_URL)}`;
+const USE_FALLBACK = process.env.SUBSTACK_FALLBACK !== 'off';
 const MAX_ITEMS = 20;
 const EXCERPT_MAX = 300;   // ホームで見せる冒頭の長さ
 const TIMEOUT_MS = 15000;
@@ -101,7 +110,7 @@ function slugOf(url) {
 
 // ---------- 取得 ----------
 
-async function fetchFeed(url) {
+async function fetchFeed(url, accept = 'application/rss+xml, application/xml, text/xml, */*') {
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), TIMEOUT_MS);
   try {
@@ -109,7 +118,7 @@ async function fetchFeed(url) {
       signal: controller.signal,
       headers: {
         'User-Agent': 'AIMusicClubStudio/2.0 (personal reader)',
-        Accept: 'application/rss+xml, application/xml, text/xml, */*',
+        Accept: accept,
       },
     });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
@@ -119,12 +128,8 @@ async function fetchFeed(url) {
   }
 }
 
-async function main() {
-  if (!isSafeUrl(FEED_URL)) throw new Error('取得先のURLが不正です');
-
-  console.log(`▶ Substackから記事を取得します\n   ${FEED_URL}\n`);
-  const xml = await fetchFeed(FEED_URL);
-
+/** Substack の RSS（XML）から記事を取り出す */
+function itemsFromRss(xml) {
   const chunks = [...xml.matchAll(/<item\b[\s\S]*?<\/item\s*>/gi)]
     .map((m) => m[0])
     .slice(0, MAX_ITEMS);
@@ -159,15 +164,66 @@ async function main() {
       image: isSafeUrl(image) ? image : '',
       published,
     });
-
-    console.log(`  ✅ ${clamp(title, 46)}`);
   }
+  return items;
+}
+
+/** feed2json が返す JSON Feed から記事を取り出す（RSS と同じ形にそろえる） */
+function itemsFromJsonFeed(text) {
+  const feed = JSON.parse(text);
+  const items = [];
+  for (const it of (Array.isArray(feed.items) ? feed.items : []).slice(0, MAX_ITEMS)) {
+    const url = String(it.url || it.id || it.guid || '').trim();
+    const title = stripHtml(it.title);
+    if (!title || !isSafeUrl(url)) continue;
+
+    const body = removeSubscribeCta(stripHtml(it.content_html || it.content_text));
+    const meta = removeSubscribeCta(stripHtml(it.summary));
+    const summary = body.length > meta.length ? body : meta;
+    // JSON Feed には enclosure が無いので、本文の最初の Substack の画像を使う
+    const imgMatch = String(it.image || it.content_html || '').match(/https:\/\/substackcdn\.com\/image\/[^"'\s)]+/i);
+    const image = it.image || (imgMatch ? decodeEntities(imgMatch[0]) : '');
+    const published = Number.isNaN(Date.parse(it.date_published)) ? null : new Date(it.date_published).toISOString();
+
+    items.push({
+      id: slugOf(url),
+      title: clamp(title, 200),
+      url,
+      excerpt: clamp(summary, EXCERPT_MAX),
+      image: isSafeUrl(image) ? image : '',
+      published,
+    });
+  }
+  return items;
+}
+
+/** まず Substack に直接取りに行き、だめなら回り道を使う */
+async function collect() {
+  try {
+    const items = itemsFromRss(await fetchFeed(FEED_URL));
+    if (items.length) return { items, source: FEED_URL };
+    throw new Error('記事が0件でした（確認画面が返ってきた可能性）');
+  } catch (err) {
+    if (!USE_FALLBACK) throw err;
+    console.log(`⚠️ Substack から直接取得できませんでした（${err.message}）。回り道（feed2json）を使います。`);
+  }
+  const items = itemsFromJsonFeed(await fetchFeed(FALLBACK_URL, 'application/json'));
+  if (!items.length) throw new Error('回り道（feed2json）からも記事を取得できませんでした');
+  return { items, source: FALLBACK_URL };
+}
+
+async function main() {
+  if (!isSafeUrl(FEED_URL)) throw new Error('取得先のURLが不正です');
+
+  console.log(`▶ Substackから記事を取得します\n   ${FEED_URL}\n`);
+  const { items, source } = await collect();
+  items.forEach((i) => console.log(`  ✅ ${clamp(i.title, 46)}`));
 
   items.sort((a, b) => Date.parse(b.published || 0) - Date.parse(a.published || 0));
 
   const payload = {
     generatedAt: new Date().toISOString(),
-    source: FEED_URL,
+    source,
     count: items.length,
     items,
   };
