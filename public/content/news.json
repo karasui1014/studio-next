@@ -1,14 +1,14 @@
 {
-  "generatedAt": "2026-10-13T19:37:11.776Z",
+  "generatedAt": "2026-10-14T00:04:10.859Z",
   "count": 400,
-  "newCount": 28,
-  "translatedCount": 2,
+  "newCount": 30,
+  "translatedCount": 1,
   "ranking": [
     "d4b0ba00b88d989a",
+    "aa27ee8c27ed7c6a",
     "913b32e10e0caa29",
     "8d24729150ba743c",
-    "53c95da2ed8fb111",
-    "aa27ee8c27ed7c6a"
+    "53c95da2ed8fb111"
   ],
   "sources": [
     {
@@ -98,7 +98,7 @@
       "category": "global",
       "ok": true,
       "fetched": 10,
-      "matched": 1,
+      "matched": 2,
       "error": null
     },
     {
@@ -134,7 +134,7 @@
       "category": "global",
       "ok": true,
       "fetched": 10,
-      "matched": 2,
+      "matched": 0,
       "error": null
     },
     {
@@ -260,7 +260,7 @@
       "category": "jp",
       "ok": true,
       "fetched": 20,
-      "matched": 0,
+      "matched": 1,
       "error": null
     }
   ],
@@ -291,6 +291,50 @@
     }
   ],
   "items": [
+    {
+      "id": "56096450e2a77a1e",
+      "title": "AIが楽曲をリアルタイム分離、演奏・練習・制作を1台で次世代ポータブルアンプ&Bluetoothワイヤレススピーカー「JBL BandBox Solo」「JBL BandBox Trio」一般販売開始",
+      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9hTVJyZjJsYnRaVkdyVlUzbnVsTUxwdDZ6R3dzMk9LUVMyRTFsT2JNeWdHZHRraDNqNVdkTndFTHcyMmh3a3l5THJGaURacXYyclNNNmRqdXUwWC1HVXg4TVJqQWtLOUJaVEE?oc=5",
+      "summary": "",
+      "published": "2026-10-13T22:00:02.000Z",
+      "source": "PR TIMES",
+      "sourceId": "gnews-ja-aimusic",
+      "via": "Googleニュース",
+      "category": "jp",
+      "lang": "ja",
+      "coverage": 1,
+      "score": 8
+    },
+    {
+      "id": "a0aa64655349aee1",
+      "title": "JBL、AIでボーカルやギターを分離。演奏が一緒に楽しめる「BandBox Solo/Trio」一般販売",
+      "url": "https://av.watch.impress.co.jp/docs/news/2147704.html",
+      "summary": "ハーマンインターナショナルは、JBLよりクラウドファンディングにて販売していた、演奏練習にも使えるBluetoothスピーカー「BandBox Solo」と「BandBox Trio」2機種の一般販売を10月30日に開始する。価格はオープンで、直販価格はSoloが54,890円、Trioが132,000円。",
+      "published": "2026-10-13T22:00:00.000Z",
+      "source": "AV Watch",
+      "sourceId": "av-watch",
+      "via": null,
+      "category": "jp",
+      "lang": "ja",
+      "coverage": 1,
+      "score": 8
+    },
+    {
+      "id": "24c535ae3226544c",
+      "title": "Raye says ticket scalpers used AI bots to create ‘hundreds of thousands of fake registrations’ as 1.8M sign up for 5,000 Royal Albert Hall seats",
+      "url": "https://www.musicbusinessworldwide.com/raye-says-scalpers-used-ai-bots-to-create-hundreds-of-thousands-of-fake-registrations-as-1-8m-sign-up-for-5000-royal-albert-hall-seats/",
+      "summary": "Presale registration for the show ran through a sign-up page hosted by fan marketing platform co:brand.",
+      "published": "2026-10-13T21:37:46.000Z",
+      "source": "Music Business Worldwide",
+      "sourceId": "mbw",
+      "via": null,
+      "category": "global",
+      "lang": "en",
+      "coverage": 1,
+      "titleJa": "Raye氏によると、チケットスキャルパーはAIボットを使用して「数十万件の偽の登録」を作成し、180万人がロイヤルアルバートホールの5,000席にサインアップしたという。",
+      "summaryJa": "ショーのプレセール登録は、ファンマーケティングプラットフォームco: brandがホストするサインアップページを通じて行われました。",
+      "score": 12
+    },
     {
       "id": "e84e9a5d1daccaad",
       "title": "10 Key Issues Driving the Latin Music Industry Today: AI, Distribution, Touring & More at Latin Music Week",
@@ -422,7 +466,7 @@
       "via": "Googleニュース",
       "category": "global",
       "lang": "en",
-      "coverage": 4,
+      "coverage": 5,
       "titleJa": "ノースカロライナ州の男性、800万$のAI音楽詐欺計画で有罪判決",
       "score": 36
     },
@@ -440,7 +484,7 @@
       "coverage": 1,
       "titleJa": "AIを使用してヤマハCS -80シンセサイザーにパッチを適用",
       "summaryJa": "ここでは、AIを使用してYamaha CS -80シンセサイザーのパッチを作成する方法を説明します。…",
-      "score": 12
+      "score": 7
     },
     {
       "id": "2fdc22b96b67e75c",
@@ -816,7 +860,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 10,
+      "coverage": 11,
       "score": 30
     },
     {
@@ -860,10 +904,10 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 2,
+      "coverage": 3,
       "titleJa": "イーロン・マスク氏によると、Grok Botは、AnthropicのClaudeとMidjourneyと並んで、SunoのAI音楽モデルを使用するという。",
       "summaryJa": "Sunoは現在、公式の公開APIを提供していません。MBWは7月に、同社が1社の立ち上げを検討していると報告した。",
-      "score": 31
+      "score": 39
     },
     {
       "id": "7174ee307e6e1d44",
@@ -981,7 +1025,7 @@
       "via": null,
       "category": "jp",
       "lang": "ja",
-      "coverage": 22,
+      "coverage": 23,
       "score": 37
     },
     {
@@ -1139,7 +1183,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 25,
+      "coverage": 26,
       "score": 50
     },
     {
@@ -1455,10 +1499,10 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 7,
+      "coverage": 8,
       "titleJa": "AI音楽ストリーミング詐欺師、800万$のロイヤリティ詐欺で懲役1.5年の判決",
       "summaryJa": "マイケル・スミス氏は今年初め、ストリーミング詐欺をめぐる初の刑事事件で、ボットを使用して偽の曲を何十億回もストリーミングしたことを認めた。",
-      "score": 34
+      "score": 25
     },
     {
       "id": "59a2fc79536d2335",
@@ -1473,7 +1517,7 @@
       "lang": "en",
       "coverage": 1,
       "titleJa": "イタリアの規制当局、AI音楽スタートアップSunoの利用規約を調査",
-      "score": 19
+      "score": 10
     },
     {
       "id": "c44683930f3be002",
@@ -1776,7 +1820,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 22,
+      "coverage": 23,
       "titleJa": "米国の控訴裁判所は、AIトレーニングをめぐる「フェアユース」の防御を棄却した。レーベルとスノとの戦いにはどういう意味があるのでしょうか？",
       "summaryJa": "米国控訴裁判所は、9月29日にトムソン・ロイターとAI法務調査会社ROSS Intelligenceに対して判決を下しました",
       "score": 27
@@ -1807,7 +1851,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 31,
+      "coverage": 32,
       "score": 41
     },
     {
@@ -1863,7 +1907,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 9,
+      "coverage": 10,
       "score": 21
     },
     {
@@ -2008,7 +2052,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 12,
+      "coverage": 13,
       "titleJa": "Sunoは200万人の加入者と3億$の収益を「はるかに超えている」とMikey Shulmanは言う。彼はAI音楽にはまだ「確固たるルール」がないことは「良い」と主張する",
       "summaryJa": "シュルマン氏はまた、WMGとBMGが彼らの取引から何を得て、誰がAIのルールを設定すべきかを説明しました。",
       "score": 27
@@ -2287,7 +2331,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 18,
+      "coverage": 19,
       "score": 55
     },
     {
@@ -2482,10 +2526,10 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 2,
+      "coverage": 3,
       "titleJa": "AI音楽検出ツールを運用するオーディオAI企業Modulateが2500万$を調達",
       "summaryJa": "ボストンに本社を置くスタートアップは、これまでに6,000万$を調達しています",
-      "score": -6
+      "score": 2
     },
     {
       "id": "b43322c2070839a6",
@@ -2512,7 +2556,7 @@
       "via": null,
       "category": "jp",
       "lang": "ja",
-      "coverage": 55,
+      "coverage": 56,
       "score": 32
     },
     {
@@ -2983,7 +3027,7 @@
       "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE54VnJXTENBQ3BjcVNIVzg0U3FSejNTNW5XZEd4VWp3dVBwWkw4QllQMFF0a2p5X09kNnNydUJiWTBjczVQc21PbXJud2VXT3F2djdYYm1rbEs1d9IBX0FVX3lxTFA5cjV0UmN0a2JGZEZEM1p6UlJ5ZXVqM0FQX0JkbFEySG02bWpmcVd0ZjhkeTlXQnlvWFgtMkhLMVFralg2YnVVOU01bDJKUW9CeEhBbjJ6R3R2OXIwdnFR?oc=5",
       "summary": "",
       "published": "2026-09-26T07:00:00.000Z",
-      "source": "Real Sound｜リアルサウンド",
+      "source": "リアルサウンド",
       "sourceId": "gnews-ja-aimusic",
       "via": "Googleニュース",
       "category": "jp",
@@ -3016,7 +3060,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 60,
+      "coverage": 61,
       "score": 32
     },
     {
@@ -3046,7 +3090,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 72,
+      "coverage": 73,
       "titleJa": "ソニーとUMGがSunoを再び訴える",
       "summaryJa": "ソニーとユニバーサルミュージックグループは、Sunoに対してさらに別の訴訟を起こしました。レーベルは、新しいv 6モデルがまだ著作権を侵害していると主張している。なぜなら、それは以前のモデルからのユーザー出力で訓練されているからだ。以前のモデル自体は、YouTubeや他のソースからリッピングされた無許可の音楽で訓練されていたからだ。ソニーとUMGは、署名しなかった注目すべきホールドアウトである",
       "score": 27
@@ -3167,6 +3211,20 @@
       "coverage": 1,
       "titleJa": "大手レーベルはAI音楽会社を訴え、アーティストが報酬を失うことを恐れてカタログのライセンスを取得した",
       "score": -6
+    },
+    {
+      "id": "ca089323ec208532",
+      "title": "【22th Album 創作曲】Autumn Drift(suno No.252) #piano #創作曲 #music #音史 #instrumental #autumndrift #suno",
+      "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE0zeUZXaTl2TW9YX3NBSnJ1djBWa0N0TV84c0p2ZFphQTVzc3Z0UDZnVXFwdzdZdUJsd19HQVBoSnRnMEdYZEZibFdCYmZIVjZqby1yam9SM3BkTlpN?oc=5",
+      "summary": "",
+      "published": "2026-09-25T07:00:00.000Z",
+      "source": "YouTube",
+      "sourceId": "gnews-ja-suno",
+      "via": "Googleニュース",
+      "category": "jp",
+      "lang": "ja",
+      "coverage": 1,
+      "score": 6
     },
     {
       "id": "9443fa699372c774",
@@ -3694,7 +3752,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 75,
+      "coverage": 76,
       "titleJa": "Sunoは、最新のソニーとユニバーサルの訴訟を爆発させるため、V 6モデルがユーザーからの「クリエイション」について訓練されたことを確認します",
       "summaryJa": "同社は、ユニバーサルミュージックグループとソニーミュージックエンタテインメントが提起した2回目の著作権訴訟に対応する声明で、その説明を記載した。",
       "score": 34
@@ -4081,7 +4139,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 11,
+      "coverage": 12,
       "score": 21
     },
     {
@@ -4137,7 +4195,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 150,
+      "coverage": 151,
       "score": 44
     },
     {
@@ -4356,6 +4414,20 @@
       "lang": "ja",
       "coverage": 1,
       "score": 6
+    },
+    {
+      "id": "3d2930d29d6e36b9",
+      "title": "『オリジナル曲』 夜風 ~蒼 ~ #ai作曲",
+      "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE45cTBhS3NwWm1rQXM5LVh0dEdfS0xMaXFHMjRnOEs4Wno5eXhSbmZxaDJ5UUhxZjZfNEk2WXNJaGxJbTlVZFpFVlJoSmFOdUdpeGJJUE1rRmxFWVJu?oc=5",
+      "summary": "",
+      "published": "2026-09-19T07:00:00.000Z",
+      "source": "YouTube",
+      "sourceId": "gnews-ja-suno",
+      "via": "Googleニュース",
+      "category": "jp",
+      "lang": "ja",
+      "coverage": 1,
+      "score": -3
     },
     {
       "id": "621106434e06b9b7",
@@ -4722,7 +4794,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 84,
+      "coverage": 85,
       "titleJa": "「サブスクリプションをキャンセルします」： SunoユーザーはV 6アップデートを「うぬぼれた、一般的な、魂のないゴミ」と非難しました",
       "summaryJa": "業界に支えられたV 6モデルのリリースに続いて、AI音楽プラットフォームの最も熱心なサポーターの一部が船を放棄している",
       "score": 38
@@ -5209,7 +5281,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 313,
+      "coverage": 315,
       "score": 21
     },
     {
@@ -6123,82 +6195,6 @@
       "titleJa": "MetaがMuseを発表：「すべての人のために構築されたパーソナルAIエージェント」",
       "summaryJa": "7月、Metaのマーク・ザッカーバーグ最高経営責任者（ CEO ）は、「数十億人」が使用することを望んでいた「次の波の製品と収益ラインの基盤となる新しい個人エージェント」の開発作業について語った。この投稿はMusic Allyからのものです。",
       "score": 5
-    },
-    {
-      "id": "7463df75442f2f84",
-      "title": "Suno replaces its AI models with a new one trained on licensed music as copyright suits pile up",
-      "url": "https://techcrunch.com/2026/09/09/suno-replaces-its-ai-models-with-a-new-one-trained-on-licensed-music-as-copyright-suits-pile-up/",
-      "summary": "As it grapples with a bevy of lawsuits, Suno said its new model, Suno v6, is not trained using music it used to train previous versions of the AI model.",
-      "published": "2026-09-09T12:05:34.000Z",
-      "source": "TechCrunch",
-      "sourceId": "techcrunch",
-      "via": null,
-      "category": "global",
-      "lang": "en",
-      "coverage": 118,
-      "titleJa": "Sunoは、著作権訴訟が積み重なるにつれて、AIモデルをライセンスされた音楽で訓練された新しいモデルに置き換える",
-      "summaryJa": "一連の訴訟に取り組んでいるSuno氏は、新しいモデルであるSuno v 6は、以前のバージョンのAIモデルのトレーニングに使用した音楽を使用してトレーニングされていないと述べた。",
-      "score": 45
-    },
-    {
-      "id": "ff1f7162daaae3b8",
-      "title": "Suno Launches First AI Music Models ‘in Partnership With the Music Industry’",
-      "url": "https://www.billboard.com/pro/suno-launches-ai-music-models-partnership-with-music-biz/",
-      "summary": "To explain Suno's new v6 models and how they are trained, CEO Mikey Shulman returns to music business podcast Billboard On the Record for an exclusive video interview.",
-      "published": "2026-09-09T11:57:00.000Z",
-      "source": "Billboard",
-      "sourceId": "billboard",
-      "via": null,
-      "category": "global",
-      "lang": "en",
-      "coverage": 1,
-      "titleJa": "Suno、「音楽業界とのパートナーシップ」で初のAI音楽モデルを発表",
-      "summaryJa": "Sunoの新しいv 6モデルとそれらがどのように訓練されているかを説明するために、CEOのMikey Shulmanは音楽ビジネスのポッドキャストBillboard On the Recordに戻り、独占ビデオインタビューを行います。",
-      "score": 14
-    },
-    {
-      "id": "d642b96f9386d5d8",
-      "title": "Suno launches v6 AI music models in partnership with WMG, BMG, and Believe",
-      "url": "https://www.musicbusinessworldwide.com/suno-v6-ai-music-models-launch-in-partnership-with-wmg-bmg-and-believe/",
-      "summary": "Suno's previous models will be retired, according to Chief Product Officer Jack Brody",
-      "published": "2026-09-09T11:08:50.000Z",
-      "source": "Music Business Worldwide",
-      "sourceId": "mbw",
-      "via": null,
-      "category": "global",
-      "lang": "en",
-      "coverage": 55,
-      "titleJa": "Suno、WMG、BMG、Believeと提携してv 6 AI音楽モデルを発表",
-      "summaryJa": "最高製品責任者のJack Brody氏によると、Sunoの以前のモデルは廃止されます",
-      "score": 38
-    },
-    {
-      "id": "f4d46744987e3bc0",
-      "title": "Suno、ワーナー・ミュージックおよびBMGと提携し、新たなAI音楽モデルをリリース",
-      "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTFB2T09xRmlHZ1FydHRhZVRNTmoxRU9MZ3NCYmt2RlFXNy12UGtUYW41djRmQ1dZTWw4N0RIdVA3cGJiVFp2Y3pQOU9scUhSdG5qYjB0amtXbHZMZ05iNHNZMWpaWkhINnhHblBCS0pXQ3ZybV9xOVQwbA?oc=5",
-      "summary": "",
-      "published": "2026-09-09T10:00:30.000Z",
-      "source": "TradingView",
-      "sourceId": "gnews-ja-suno",
-      "via": "Googleニュース",
-      "category": "jp",
-      "lang": "ja",
-      "coverage": 23,
-      "score": 41
-    },
-    {
-      "id": "db90661519bbf8bf",
-      "title": "勝手に曲を作らない、“弾いて操る”AI。Roland×Neutone「Project LYDIA」の正体【ADC Japan 2026レポート⑥】",
-      "url": "https://www.dtmstation.com/archives/79443.html",
-      "summary": "DTMや電子楽器、オーディオ関係を研究・開発する人たちが世界中から秋葉原に集まったイベントADC Japan 2026。そこで発表された、さまざまな技術、トピックスについてこれまで5回にわたって紹介してきました。開催され",
-      "published": "2026-09-09T09:24:33.000Z",
-      "source": "DTMステーション",
-      "sourceId": "dtmstation",
-      "via": null,
-      "category": "jp",
-      "lang": "ja",
-      "coverage": 1,
-      "score": 8
     }
   ]
 }
