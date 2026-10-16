@@ -1,14 +1,14 @@
 {
-  "generatedAt": "2026-10-15T23:30:12.468Z",
+  "generatedAt": "2026-10-16T07:34:17.919Z",
   "count": 400,
-  "newCount": 27,
-  "translatedCount": 2,
+  "newCount": 25,
+  "translatedCount": 0,
   "ranking": [
     "2bb555fb48f279d5",
-    "913b32e10e0caa29",
+    "6c87f8c31b223ec0",
     "8ccf4e3ce5821341",
-    "53c95da2ed8fb111",
-    "b2735e5e570b8ea0"
+    "7ed64b170efdc3c3",
+    "53c95da2ed8fb111"
   ],
   "sources": [
     {
@@ -197,7 +197,7 @@
       "category": "jp",
       "ok": true,
       "fetched": 30,
-      "matched": 0,
+      "matched": 1,
       "error": null
     },
     {
@@ -242,7 +242,7 @@
       "category": "jp",
       "ok": true,
       "fetched": 30,
-      "matched": 1,
+      "matched": 0,
       "error": null
     },
     {
@@ -292,6 +292,49 @@
   ],
   "items": [
     {
+      "id": "6c87f8c31b223ec0",
+      "title": "付属ソフト・シンセやAIアシスタントが進化。ダンス・ミュージック特化型DAWの最新版！ IMAGE-LINE SOFTWARE FL Studio 2026 レビュー",
+      "url": "https://www.snrec.jp/entry/product/image%E2%80%91line_fl-studio-2026",
+      "summary": "ベルギー発のDAW、FL Studioの最新バージョンが登場。付属ソフト音源Flexの大幅な進化や、サウンド・パックの追加、ブラウザー、アートワークの刷新が行われた。また、データをクラウドに自動同期するFL Cloud Project Backup機能もサブスクリプション・サービスとして使用可能に。ワークフロー・アシスタント機能のGopherは質問の回答だけでなく、トラックの整理やパラメーター編集などプロジェクトを直接操作できるようになった。なお、FL Studioは“ライフタイム・フリー・アップデート”により、正規ライセンスを持っていれば以後のアップデートは無償で対応可能だ。このほか、製品版と同機能を備えるトライアル版や、他社製DAWユーザーを対象にしたクロスグレード版も用意されている。",
+      "published": "2026-10-16T04:00:00.000Z",
+      "source": "サンレコ",
+      "sourceId": "snrec",
+      "via": null,
+      "category": "jp",
+      "lang": "ja",
+      "coverage": 1,
+      "score": 38
+    },
+    {
+      "id": "42866a54a4f30781",
+      "title": "エイサップ・ロッキー、音楽におけるAIに対して極めて穏当なスタンス「何が標準で何がそうじゃないかなんて、俺が決めることじゃない」",
+      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTFA3Ym5GdWxHdk1RQTU0S1NTMWJ1c1ZyeHVvTHN5Z21Cai1Rak9IT2U0SFdzZGpJS1NJd0puOFZtblFCc0NaT3JVZUN1TmJRckpnRmJYOV80R0RkX09NMzVINm44V1lWLWstVWJ4c3V6czllOGdDMHd1X2xXMXdNMkE?oc=5",
+      "summary": "",
+      "published": "2026-10-16T02:05:03.000Z",
+      "source": "Yahoo!ニュース",
+      "sourceId": "gnews-ja-aimusic",
+      "via": "Googleニュース",
+      "category": "jp",
+      "lang": "ja",
+      "coverage": 1,
+      "score": 15
+    },
+    {
+      "id": "0d927c35e9230e16",
+      "title": "Kid Rock talks political controversy, AI music, new haircut and more",
+      "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxNQXF4RTVJblFaOGxwcVdXSk42OWpWSEw4OFc0Uk9rNGJjUXFHUmJYYzRpMmYwaVYtYUpnTkF0bUJCX21YZjdRUHBnQmtRNFRvNWlHODZiN2N4WWtsUFdXcWtKQWxUNllFVkN5b2ZGczduTHBkdUQ2SHdSaVFzTHBFUWJuaTVVZkRMS0xxMlRMUnZWSVYxZ3o1QWp3Z2FXQ0tZLW5sNHY5dm1vc0pQNEpvVWpDTDA3Q0NTZFpXT0FmNEluNEJwanNTcVNMSVRGTzJoNTlnNmEyWHE?oc=5",
+      "summary": "",
+      "published": "2026-10-16T00:03:00.000Z",
+      "source": "Detroit Free Press",
+      "sourceId": "gnews-en-aimusic",
+      "via": "Googleニュース",
+      "category": "global",
+      "lang": "en",
+      "coverage": 1,
+      "titleJa": "キッドロックが政治論争、AI音楽、新しいヘアカットなどについて語る",
+      "score": 12
+    },
+    {
       "id": "4a90f3f373b399cc",
       "title": "韓国では、著作権法がAI音楽の普及に追いつくのに苦慮している。",
       "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxONEtvZWs0VjBSamFGM3dBUTZyTHBrVzQ3NDNTQlFrTWNmUlJTNDB3MVJpcjJ2SXhSWDJfTWY2QURuWnU5S2NmYnNxZHZDbDNLRGQ0UEs5V2pJSVpyZGh3WlBqVmZucmVPanR2Qm9OYTA4WVVTR0Z6OTY4THNsckFBQw?oc=5",
@@ -325,7 +368,7 @@
       "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOU2M0em0yMlpfUmEybVQwVnd4aTFCRkpfYnVpZ3lQX2FuUno0YTBqNmJuT1h0N0RLNjV2ZzF3dHdNYzVaQXIyMFV4eHR4alpXS0JqazN2cmxWRU1FRkxLZHRwc0V1aWtzQjFjR3dxbmxoYkQxVWFLWTJ6cUUyR1YtOEp2dFVodmI4dGVLamZLeGhydTQ1V3RZZTluT2tDYVA2TjRpeW85WnBnNGlRYXpEaUxSQTlTVzh5c2FXdTBmaFFaTDYxS0xJZg?oc=5",
       "summary": "",
       "published": "2026-10-15T19:11:00.000Z",
-      "source": "Bloomberg.com",
+      "source": "Bloomberg",
       "sourceId": "gnews-en-aimusic",
       "via": "Googleニュース",
       "category": "global",
@@ -489,21 +532,6 @@
       "score": 12
     },
     {
-      "id": "0d927c35e9230e16",
-      "title": "Kid Rock talks political controversy, AI music, new haircut and more",
-      "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxNQXF4RTVJblFaOGxwcVdXSk42OWpWSEw4OFc0Uk9rNGJjUXFHUmJYYzRpMmYwaVYtYUpnTkF0bUJCX21YZjdRUHBnQmtRNFRvNWlHODZiN2N4WWtsUFdXcWtKQWxUNllFVkN5b2ZGczduTHBkdUQ2SHdSaVFzTHBFUWJuaTVVZkRMS0xxMlRMUnZWSVYxZ3o1QWp3Z2FXQ0tZLW5sNHY5dm1vc0pQNEpvVWpDTDA3Q0NTZFpXT0FmNEluNEJwanNTcVNMSVRGTzJoNTlnNmEyWHE?oc=5",
-      "summary": "",
-      "published": "2026-10-15T10:30:00.000Z",
-      "source": "Detroit Free Press",
-      "sourceId": "gnews-en-aimusic",
-      "via": "Googleニュース",
-      "category": "global",
-      "lang": "en",
-      "coverage": 1,
-      "titleJa": "キッドロックが政治論争、AI音楽、新しいヘアカットなどについて語る",
-      "score": 12
-    },
-    {
       "id": "7d54fa78e445cf92",
       "title": "AI音楽「秋風が君を連れてくる / Milia」",
       "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTFAySkQ2VHlzX00wSTdrM0JjaUIwU01CckJVV2RacU02VEthY1JyLWVyMWQ1X0JvYnJ3c1pqdV9BeXg0OUs2ZDFjdWlkZ21TelNwbDRjb05B?oc=5",
@@ -557,7 +585,7 @@
       "category": "jp",
       "lang": "ja",
       "coverage": 1,
-      "score": 15
+      "score": 10
     },
     {
       "id": "a92b7219a04b257f",
@@ -571,7 +599,21 @@
       "category": "jp",
       "lang": "ja",
       "coverage": 1,
-      "score": 16
+      "score": 11
+    },
+    {
+      "id": "121c125393453c27",
+      "title": "YouTube Music、配信サービスでAI生成楽曲が広がるなかAIラベルを導入",
+      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQX25ycWdXc0p2cUQtM1BINDduNFQtb0NnN3p2REtjSTZKXzhUMzhKaVJFclJzeEk4dGhvelRlTWFjN01WUm41UkpkVzJpb1dwNDR1NEVLVVRSdjRhWkZqdTFaU1phcjdrQm1vNXBWREFmQ2lvbFFDX3FZOEpaQ1UzbHlIaU50YUgxZFNaSDMxbGZ3QTA?oc=5",
+      "summary": "",
+      "published": "2026-10-15T04:58:59.000Z",
+      "source": "Mezha.net",
+      "sourceId": "gnews-ja-aimusic",
+      "via": "Googleニュース",
+      "category": "jp",
+      "lang": "ja",
+      "coverage": 1,
+      "score": 17
     },
     {
       "id": "00c94cdec71e5ba0",
@@ -585,7 +627,7 @@
       "category": "jp",
       "lang": "ja",
       "coverage": 1,
-      "score": 15
+      "score": 10
     },
     {
       "id": "586a2b059a844bbb",
@@ -599,7 +641,7 @@
       "category": "jp",
       "lang": "ja",
       "coverage": 1,
-      "score": 15
+      "score": 10
     },
     {
       "id": "8e2932bcdcb2b228",
@@ -613,7 +655,7 @@
       "category": "jp",
       "lang": "ja",
       "coverage": 1,
-      "score": 15
+      "score": 10
     },
     {
       "id": "ace076e87d35e75a",
@@ -627,7 +669,7 @@
       "category": "jp",
       "lang": "ja",
       "coverage": 1,
-      "score": 15
+      "score": 10
     },
     {
       "id": "0407e0bc08715ab0",
@@ -641,7 +683,7 @@
       "category": "jp",
       "lang": "ja",
       "coverage": 1,
-      "score": 15
+      "score": 10
     },
     {
       "id": "1d46f25f334cea04",
@@ -655,7 +697,7 @@
       "category": "jp",
       "lang": "ja",
       "coverage": 1,
-      "score": 15
+      "score": 10
     },
     {
       "id": "dcf119c0052873ae",
@@ -668,8 +710,8 @@
       "via": null,
       "category": "jp",
       "lang": "ja",
-      "coverage": 5,
-      "score": 39
+      "coverage": 6,
+      "score": 34
     },
     {
       "id": "2bb555fb48f279d5",
@@ -682,8 +724,8 @@
       "via": null,
       "category": "jp",
       "lang": "ja",
-      "coverage": 9,
-      "score": 57
+      "coverage": 11,
+      "score": 52
     },
     {
       "id": "3b6c47c89ca92629",
@@ -881,20 +923,6 @@
       "lang": "ja",
       "coverage": 1,
       "score": 10
-    },
-    {
-      "id": "121c125393453c27",
-      "title": "YouTube Music、配信サービスでAI生成楽曲が広がるなかAIラベルを導入",
-      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQX25ycWdXc0p2cUQtM1BINDduNFQtb0NnN3p2REtjSTZKXzhUMzhKaVJFclJzeEk4dGhvelRlTWFjN01WUm41UkpkVzJpb1dwNDR1NEVLVVRSdjRhWkZqdTFaU1phcjdrQm1vNXBWREFmQ2lvbFFDX3FZOEpaQ1UzbHlIaU50YUgxZFNaSDMxbGZ3QTA?oc=5",
-      "summary": "",
-      "published": "2026-10-14T04:58:59.000Z",
-      "source": "Mezha.net",
-      "sourceId": "gnews-ja-aimusic",
-      "via": "Googleニュース",
-      "category": "jp",
-      "lang": "ja",
-      "coverage": 1,
-      "score": 17
     },
     {
       "id": "bfaa61a87bef938b",
@@ -1115,7 +1143,7 @@
       "category": "jp",
       "lang": "ja",
       "coverage": 1,
-      "score": 10
+      "score": 6
     },
     {
       "id": "53c95da2ed8fb111",
@@ -1128,9 +1156,9 @@
       "via": "Googleニュース",
       "category": "global",
       "lang": "en",
-      "coverage": 13,
+      "coverage": 14,
       "titleJa": "ノースカロライナ州の男性、800万$のAI音楽詐欺計画で有罪判決",
-      "score": 31
+      "score": 27
     },
     {
       "id": "2c53df3cda7fc5c3",
@@ -1479,7 +1507,7 @@
       "category": "jp",
       "lang": "ja",
       "coverage": 1,
-      "score": 6
+      "score": -3
     },
     {
       "id": "2d75397f21f9eb25",
@@ -1493,7 +1521,7 @@
       "category": "jp",
       "lang": "ja",
       "coverage": 1,
-      "score": 6
+      "score": -3
     },
     {
       "id": "eda107e5fd916f7b",
@@ -1509,7 +1537,7 @@
       "coverage": 1,
       "titleJa": "GrimesがAIにインスパイアされたアルバム「PSY OPERA」のファーストソングをシェア",
       "summaryJa": "このアルバムは、この歌手が「ポップミュージックからの休止中に歴史の女性として目撃した」すべてをカバーすることを約束している",
-      "score": 3
+      "score": -6
     },
     {
       "id": "b2735e5e570b8ea0",
@@ -1522,8 +1550,8 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 19,
-      "score": 30
+      "coverage": 20,
+      "score": 21
     },
     {
       "id": "913b32e10e0caa29",
@@ -1537,7 +1565,7 @@
       "category": "jp",
       "lang": "ja",
       "coverage": 11,
-      "score": 37
+      "score": 28
     },
     {
       "id": "b60ee7d9db88d741",
@@ -1566,7 +1594,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 10,
+      "coverage": 11,
       "titleJa": "イーロン・マスク氏によると、Grok Botは、AnthropicのClaudeとMidjourneyと並んで、SunoのAI音楽モデルを使用するという。",
       "summaryJa": "Sunoは現在、公式の公開APIを提供していません。MBWは7月に、同社が1社の立ち上げを検討していると報告した。",
       "score": 38
@@ -1701,7 +1729,7 @@
       "via": null,
       "category": "jp",
       "lang": "ja",
-      "coverage": 31,
+      "coverage": 32,
       "score": 28
     },
     {
@@ -1859,7 +1887,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 34,
+      "coverage": 36,
       "score": 41
     },
     {
@@ -2189,7 +2217,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 13,
+      "coverage": 14,
       "titleJa": "AI音楽ストリーミング詐欺師、800万$のロイヤリティ詐欺で懲役1.5年の判決",
       "summaryJa": "マイケル・スミス氏は今年初め、ストリーミング詐欺をめぐる初の刑事事件で、ボットを使用して偽の曲を何十億回もストリーミングしたことを認めた。",
       "score": 25
@@ -2524,7 +2552,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 31,
+      "coverage": 32,
       "titleJa": "米国の控訴裁判所は、AIトレーニングをめぐる「フェアユース」の防御を棄却した。レーベルとスノとの戦いにはどういう意味があるのでしょうか？",
       "summaryJa": "米国控訴裁判所は、9月29日にトムソン・ロイターとAI法務調査会社ROSS Intelligenceに対して判決を下しました",
       "score": 27
@@ -2555,7 +2583,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 40,
+      "coverage": 41,
       "score": 41
     },
     {
@@ -2987,7 +3015,7 @@
       "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPUUlwX19xVEpZcmlyNTQ0dGdVOGVWa1hwdkV4UWFtSnhYdTVJeW5sejhnM0Zsd0NvMjlBY3hEeHBoQmgtZjlNVlNQVHAya0l2U3htTnIzaVFHMlFUQzFiTG5WZVVVUEdwOEZWLWZ0WE1USWl2WW03Uk5EU2k5djFvU3RiLVhBZ3RnWU51cktzcDZTcTM5bUNWbkhkTURpdnNBaGxPT1lB?oc=5",
       "summary": "",
       "published": "2026-10-01T07:00:00.000Z",
-      "source": "Bloomberg.com",
+      "source": "Bloomberg",
       "sourceId": "gnews-en-aimusic",
       "via": "Googleニュース",
       "category": "global",
@@ -3050,7 +3078,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 27,
+      "coverage": 28,
       "score": 55
     },
     {
@@ -3837,7 +3865,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 81,
+      "coverage": 82,
       "titleJa": "ソニーとUMGがSunoを再び訴える",
       "summaryJa": "ソニーとユニバーサルミュージックグループは、Sunoに対してさらに別の訴訟を起こしました。レーベルは、新しいv 6モデルがまだ著作権を侵害していると主張している。なぜなら、それは以前のモデルからのユーザー出力で訓練されているからだ。以前のモデル自体は、YouTubeや他のソースからリッピングされた無許可の音楽で訓練されていたからだ。ソニーとUMGは、署名しなかった注目すべきホールドアウトである",
       "score": 27
@@ -4499,7 +4527,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 84,
+      "coverage": 85,
       "titleJa": "Sunoは、最新のソニーとユニバーサルの訴訟を爆発させるため、V 6モデルがユーザーからの「クリエイション」について訓練されたことを確認します",
       "summaryJa": "同社は、ユニバーサルミュージックグループとソニーミュージックエンタテインメントが提起した2回目の著作権訴訟に対応する声明で、その説明を記載した。",
       "score": 34
@@ -4886,7 +4914,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 20,
+      "coverage": 21,
       "score": 21
     },
     {
@@ -5248,7 +5276,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 100,
+      "coverage": 101,
       "titleJa": "ユニバーサルとソニーは、プラットフォームのv 6モデルが「同じ毒された木の果実」であると主張して、2度目のSunoを訴えた",
       "summaryJa": "米国の著作権法では、意図的な侵害に対する損害賠償は、作品ごとに最大$ 150,000に設定されています。その上限では、60,202の録音は理論的には最大90億$をわずかに上回ります。",
       "score": 34
@@ -5570,7 +5598,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 93,
+      "coverage": 94,
       "titleJa": "「サブスクリプションをキャンセルします」： SunoユーザーはV 6アップデートを「うぬぼれた、一般的な、魂のないゴミ」と非難しました",
       "summaryJa": "業界に支えられたV 6モデルのリリースに続いて、AI音楽プラットフォームの最も熱心なサポーターの一部が船を放棄している",
       "score": 38
@@ -5704,7 +5732,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 76,
+      "coverage": 77,
       "titleJa": "ユニバーサルとワーナーのプレス裁判所、SunoとUdioの取引をめぐる米国ミュージシャンの訴訟を終結",
       "summaryJa": "この訴訟は、レコード会社との組合の団体交渉協定である録音労働協定の第21条（ a ）に基づいている。",
       "score": 27
@@ -6158,38 +6186,6 @@
       "lang": "ja",
       "coverage": 1,
       "score": 14
-    },
-    {
-      "id": "e5adc48187ce1770",
-      "title": "In addition to its vinyl move, now Suno is readying a merch store.",
-      "url": "https://www.musicbusinessworldwide.com/in-addition-to-its-vinyl-move-now-suno-is-readying-a-merch-store/",
-      "summary": "Suno is using Fourthwall for the service, which runs stores for brands including New York Magazine, Vox, and Eater",
-      "published": "2026-09-14T18:19:30.000Z",
-      "source": "Music Business Worldwide",
-      "sourceId": "mbw",
-      "via": null,
-      "category": "global",
-      "lang": "en",
-      "coverage": 1,
-      "titleJa": "アナログレコードに加えて、Sunoはグッズショップの準備を進めています。",
-      "summaryJa": "Sunoは、ニューヨークマガジン、Vox、Eaterなどのブランドの店舗を運営するFourthwallをサービスに使用しています",
-      "score": 3
-    },
-    {
-      "id": "9dc559ba989f1bc0",
-      "title": "A Vinyl Bar in Shibuya is a startup offering fun music apps without any AI prompting",
-      "url": "https://techcrunch.com/2026/09/14/a-vinyl-bar-in-shibuya-is-a-startup-offering-fun-music-apps-without-any-ai-prompting/",
-      "summary": "Former Spotify exec's company releases experimental \"singles\" that involves users in music making.",
-      "published": "2026-09-14T13:55:00.000Z",
-      "source": "TechCrunch",
-      "sourceId": "techcrunch",
-      "via": null,
-      "category": "global",
-      "lang": "en",
-      "coverage": 1,
-      "titleJa": "渋谷のビニールバーは、AIプロンプトなしで楽しい音楽アプリを提供するスタートアップです",
-      "summaryJa": "元Spotify幹部の会社は、音楽制作にユーザーを関与させる実験的な「シングル」をリリースしています。",
-      "score": -6
     }
   ]
 }
