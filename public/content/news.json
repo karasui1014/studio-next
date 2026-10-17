@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-10-17T12:31:29.771Z",
+  "generatedAt": "2026-10-17T16:01:14.115Z",
   "count": 400,
-  "newCount": 21,
+  "newCount": 22,
   "translatedCount": 0,
   "ranking": [
     "2bb555fb48f279d5",
@@ -292,6 +292,20 @@
   ],
   "items": [
     {
+      "id": "a248dbd8ecb4cb58",
+      "title": "UMGとソニー、DistroKidにAI生成楽曲の配信データ開示を要求 Suno訴訟で約1,200万曲に注目",
+      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5obml1TnZURXJjZXNxdmx6QXFMc3ZLVl9NVlVlaGExdl9ESzd3MUY3eGswU3VPaVJibWpRYmhya3pISzE3a3R5SjV2dFlEMEVNTWtaRjlfVlNodVoyZnk2ckt0aFRJbHBJM2JDWkUxT1NwanhadnZCNXFMMEZIRWM?oc=5",
+      "summary": "",
+      "published": "2026-10-17T13:04:42.000Z",
+      "source": "Yahoo!ニュース",
+      "sourceId": "gnews-ja-suno",
+      "via": "Googleニュース",
+      "category": "jp",
+      "lang": "ja",
+      "coverage": 1,
+      "score": 31
+    },
+    {
       "id": "1ce16fdfd2dd50d2",
       "title": "Deezer、完全AI生成音楽を検索結果から除外する機能を2026年末までに展開へ",
       "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1wZzJhMWRiZEwtbUswVUxnUERRTVVaR1h5azlGRnhHbHdYLTllamxERXJyS1ItWDRVdXNjeU1zQTlWWHNmRDJHY0V2dHdCYk9KX012TC0yUVFMRDk5ODFkeXBsbTBaWTgx0gFoQVVfeXFMTXBnMmExZGJkTC1tSzBVTGdQRFFNVVpHWHlrOUZGeEdsd1gtOWVqbERFcnJLUi1YNFV1c2N5TXNBOVZYc2ZEMkdjRXZ0d0JiT0pfTXZMLTJRUUxEOTk4MWR5cGxtMFpZODE?oc=5",
@@ -359,10 +373,10 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 3,
+      "coverage": 4,
       "titleJa": "UMGとSony Demand DistroKidがSunoからアップロードしたAI曲の数を教えてくれる：「Staggering Scale」",
       "summaryJa": "音楽大手は、AI曲の「洪水」を可能にしたと非難する新しい法的ファイリングで、巨大なDIYディストリビューターへの圧力を強めています。",
-      "score": 37
+      "score": 45
     },
     {
       "id": "16ae07f859d42b15",
@@ -377,7 +391,7 @@
       "lang": "en",
       "coverage": 1,
       "titleJa": "$ AP Rockyは、ラッパーが「実践的に」物事を行うことを好むと言っているため、AI音楽に対する彼の立場を明らかにします",
-      "score": 12
+      "score": 7
     },
     {
       "id": "7294eb1b2583fb8d",
@@ -871,7 +885,7 @@
       "via": null,
       "category": "jp",
       "lang": "ja",
-      "coverage": 11,
+      "coverage": 12,
       "score": 34
     },
     {
@@ -885,7 +899,7 @@
       "via": null,
       "category": "jp",
       "lang": "ja",
-      "coverage": 21,
+      "coverage": 23,
       "score": 52
     },
     {
@@ -1039,7 +1053,7 @@
       "coverage": 1,
       "titleJa": "Deezerはまもなく、AIが生成した音楽をフィルタリングできるようになります",
       "summaryJa": "Deezer氏は、新しいトグルは年末までに展開されると述べた。",
-      "score": 7
+      "score": 3
     },
     {
       "id": "7fcdb5a0d624fdbc",
@@ -1054,7 +1068,7 @@
       "lang": "en",
       "coverage": 1,
       "titleJa": "YouTube MusicがAI音楽の新しいレーベルを追加",
-      "score": 7
+      "score": 3
     },
     {
       "id": "187652290df5b241",
@@ -1346,7 +1360,7 @@
       "via": "Googleニュース",
       "category": "global",
       "lang": "en",
-      "coverage": 19,
+      "coverage": 20,
       "titleJa": "ノースカロライナ州の男性、800万$のAI音楽詐欺計画で有罪判決",
       "score": 27
     },
@@ -1754,7 +1768,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 24,
+      "coverage": 25,
       "score": 21
     },
     {
@@ -1798,7 +1812,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 16,
+      "coverage": 17,
       "titleJa": "イーロン・マスク氏によると、Grok Botは、AnthropicのClaudeとMidjourneyと並んで、SunoのAI音楽モデルを使用するという。",
       "summaryJa": "Sunoは現在、公式の公開APIを提供していません。MBWは7月に、同社が1社の立ち上げを検討していると報告した。",
       "score": 38
@@ -1816,21 +1830,6 @@
       "lang": "ja",
       "coverage": 1,
       "score": -3
-    },
-    {
-      "id": "795f623330f5db86",
-      "title": "Suno Hires Ticketmaster Executive to Lead New Live Experiences Division",
-      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPYlZGdkxDcUJRVlNReWJJZDgwVFNnR1lIZ0NtRFZ5ZkFCQmR2WlRWX2hFX21fb05QdmItdlBncFg2dGlNLUlqU0hNQUQxU19fb09vakVmcDB2WVJHaWJScTc1WE9Vc19zWFlMWVZmWkdySF9uWjk4N1J2NHJHekJZT3FqZlRTeno1VEJaYVNyTFIyT0U?oc=5",
-      "summary": "",
-      "published": "2026-10-08T13:01:12.000Z",
-      "source": "Billboard",
-      "sourceId": "gnews-en-aimusic",
-      "via": "Googleニュース",
-      "category": "global",
-      "lang": "en",
-      "coverage": 1,
-      "titleJa": "Suno、Ticketmasterのエグゼクティブを採用し、新しいライブ体験部門を率いる",
-      "score": 3
     },
     {
       "id": "0f00c216dd06b448",
@@ -1918,7 +1917,7 @@
       "via": null,
       "category": "jp",
       "lang": "ja",
-      "coverage": 37,
+      "coverage": 38,
       "score": 28
     },
     {
@@ -1976,6 +1975,21 @@
       "lang": "ja",
       "coverage": 1,
       "score": -3
+    },
+    {
+      "id": "795f623330f5db86",
+      "title": "Suno Hires Ticketmaster Executive to Lead New Live Experiences Division",
+      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPYlZGdkxDcUJRVlNReWJJZDgwVFNnR1lIZ0NtRFZ5ZkFCQmR2WlRWX2hFX21fb05QdmItdlBncFg2dGlNLUlqU0hNQUQxU19fb09vakVmcDB2WVJHaWJScTc1WE9Vc19zWFlMWVZmWkdySF9uWjk4N1J2NHJHekJZT3FqZlRTeno1VEJaYVNyTFIyT0U?oc=5",
+      "summary": "",
+      "published": "2026-10-08T07:00:00.000Z",
+      "source": "Billboard",
+      "sourceId": "gnews-en-aimusic",
+      "via": "Googleニュース",
+      "category": "global",
+      "lang": "en",
+      "coverage": 1,
+      "titleJa": "Suno、Ticketmasterのエグゼクティブを採用し、新しいライブ体験部門を率いる",
+      "score": 3
     },
     {
       "id": "7174ee307e6e1d44",
@@ -2046,7 +2060,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 41,
+      "coverage": 42,
       "score": 41
     },
     {
@@ -2770,7 +2784,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 37,
+      "coverage": 38,
       "titleJa": "米国の控訴裁判所は、AIトレーニングをめぐる「フェアユース」の防御を棄却した。レーベルとスノとの戦いにはどういう意味があるのでしょうか？",
       "summaryJa": "米国控訴裁判所は、9月29日にトムソン・ロイターとAI法務調査会社ROSS Intelligenceに対して判決を下しました",
       "score": 27
@@ -2801,7 +2815,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 46,
+      "coverage": 47,
       "score": 41
     },
     {
@@ -3016,7 +3030,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 26,
+      "coverage": 27,
       "titleJa": "Sunoは200万人の加入者と3億$の収益を「はるかに超えている」とMikey Shulmanは言う。彼はAI音楽にはまだ「確固たるルール」がないことは「良い」と主張する",
       "summaryJa": "シュルマン氏はまた、WMGとBMGが彼らの取引から何を得て、誰がAIのルールを設定すべきかを説明しました。",
       "score": 27
@@ -3310,7 +3324,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 33,
+      "coverage": 34,
       "score": 55
     },
     {
@@ -3911,20 +3925,6 @@
       "score": 6
     },
     {
-      "id": "78e6ed10e2fa6eaf",
-      "title": "ペルソナの亡霊 ★★★ #ai #音楽 #suno #オリジナル曲 #rock #ガールズバンド",
-      "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBURDNySTI4MkYzelZPcXg3WGxmMDl6ZXNOazhYa1JOLVJEd3ZHc3ZXTFA1ZjF5S3k2aTB1azc0SThHdVRIZktGWVZNWVJHcTIzZmF5NzVfX1diOUc2?oc=5",
-      "summary": "",
-      "published": "2026-09-28T05:26:37.000Z",
-      "source": "YouTube",
-      "sourceId": "gnews-ja-suno",
-      "via": "Googleニュース",
-      "category": "jp",
-      "lang": "ja",
-      "coverage": 1,
-      "score": 6
-    },
-    {
       "id": "3f7b40b1cf0ce250",
       "title": "Engram is a sampler that turns broken AI hallucinations into music",
       "url": "https://www.theverge.com/ai-artificial-intelligence/1001193/engram-sampler-ai-hallucinations-music",
@@ -3954,6 +3954,20 @@
       "coverage": 1,
       "titleJa": "AI「音楽」の最新情報",
       "score": -6
+    },
+    {
+      "id": "78e6ed10e2fa6eaf",
+      "title": "ペルソナの亡霊 ★★★ #ai #音楽 #suno #オリジナル曲 #rock #ガールズバンド",
+      "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFBURDNySTI4MkYzelZPcXg3WGxmMDl6ZXNOazhYa1JOLVJEd3ZHc3ZXTFA1ZjF5S3k2aTB1azc0SThHdVRIZktGWVZNWVJHcTIzZmF5NzVfX1diOUc2?oc=5",
+      "summary": "",
+      "published": "2026-09-27T07:00:00.000Z",
+      "source": "YouTube",
+      "sourceId": "gnews-ja-suno",
+      "via": "Googleニュース",
+      "category": "jp",
+      "lang": "ja",
+      "coverage": 1,
+      "score": 6
     },
     {
       "id": "b233ab30001b347d",
@@ -4097,7 +4111,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 87,
+      "coverage": 88,
       "titleJa": "ソニーとUMGがSunoを再び訴える",
       "summaryJa": "ソニーとユニバーサルミュージックグループは、Sunoに対してさらに別の訴訟を起こしました。レーベルは、新しいv 6モデルがまだ著作権を侵害していると主張している。なぜなら、それは以前のモデルからのユーザー出力で訓練されているからだ。以前のモデル自体は、YouTubeや他のソースからリッピングされた無許可の音楽で訓練されていたからだ。ソニーとUMGは、署名しなかった注目すべきホールドアウトである",
       "score": 27
@@ -4759,7 +4773,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 90,
+      "coverage": 91,
       "titleJa": "Sunoは、最新のソニーとユニバーサルの訴訟を爆発させるため、V 6モデルがユーザーからの「クリエイション」について訓練されたことを確認します",
       "summaryJa": "同社は、ユニバーサルミュージックグループとソニーミュージックエンタテインメントが提起した2回目の著作権訴訟に対応する声明で、その説明を記載した。",
       "score": 34
@@ -5146,7 +5160,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 21,
+      "coverage": 22,
       "score": 21
     },
     {
@@ -5508,7 +5522,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 106,
+      "coverage": 107,
       "titleJa": "ユニバーサルとソニーは、プラットフォームのv 6モデルが「同じ毒された木の果実」であると主張して、2度目のSunoを訴えた",
       "summaryJa": "米国の著作権法では、意図的な侵害に対する損害賠償は、作品ごとに最大$ 150,000に設定されています。その上限では、60,202の録音は理論的には最大90億$をわずかに上回ります。",
       "score": 34
@@ -6168,20 +6182,6 @@
       "lang": "ja",
       "coverage": 1,
       "score": -3
-    },
-    {
-      "id": "9eed822c81df7f28",
-      "title": "「哲学はない」さだまさし、AI楽曲に辛口評価で賛否…「誰でも作れるのを恐れているだけ」音楽家の “危機感” 指摘する声も",
-      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTFBLQ3RWNEdlcWlORzBCVnQyeS1jRFNoSXZMY2NYZUstenhNMW5Dc2hSdUdQcmN5ZjFyRmVSUEd5ekJVd01uOUdlZVhqV0RzTmlRNmJJaGktMm8tUWI4aXRHSjdjOVZQVG04NkVMaGFYSmZyU1lWZ0JiUEExa2VuUWc?oc=5",
-      "summary": "",
-      "published": "2026-09-16T07:00:00.000Z",
-      "source": "Yahoo!ニュース",
-      "sourceId": "gnews-ja-aimusic",
-      "via": "Googleニュース",
-      "category": "jp",
-      "lang": "ja",
-      "coverage": 26,
-      "score": 21
     }
   ]
 }
