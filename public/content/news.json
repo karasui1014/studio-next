@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-10-17T16:01:14.115Z",
+  "generatedAt": "2026-10-17T22:49:23.450Z",
   "count": 400,
-  "newCount": 22,
+  "newCount": 23,
   "translatedCount": 0,
   "ranking": [
     "2bb555fb48f279d5",
@@ -360,7 +360,7 @@
       "category": "jp",
       "lang": "ja",
       "coverage": 1,
-      "score": 24
+      "score": 19
     },
     {
       "id": "f7f5e1166f91b568",
@@ -373,10 +373,10 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 4,
+      "coverage": 5,
       "titleJa": "UMGとSony Demand DistroKidがSunoからアップロードしたAI曲の数を教えてくれる：「Staggering Scale」",
       "summaryJa": "音楽大手は、AI曲の「洪水」を可能にしたと非難する新しい法的ファイリングで、巨大なDIYディストリビューターへの圧力を強めています。",
-      "score": 45
+      "score": 40
     },
     {
       "id": "16ae07f859d42b15",
@@ -885,7 +885,7 @@
       "via": null,
       "category": "jp",
       "lang": "ja",
-      "coverage": 12,
+      "coverage": 13,
       "score": 34
     },
     {
@@ -899,7 +899,7 @@
       "via": null,
       "category": "jp",
       "lang": "ja",
-      "coverage": 23,
+      "coverage": 25,
       "score": 52
     },
     {
@@ -931,7 +931,7 @@
       "lang": "en",
       "coverage": 1,
       "titleJa": "YouTube MusicとDeezerが新しいAI音楽コントロールを追加",
-      "score": 7
+      "score": 3
     },
     {
       "id": "bb666f18d8d4adf6",
@@ -945,7 +945,7 @@
       "category": "jp",
       "lang": "ja",
       "coverage": 1,
-      "score": 10
+      "score": 6
     },
     {
       "id": "8fb4ee1f8909d71c",
@@ -959,7 +959,7 @@
       "category": "jp",
       "lang": "ja",
       "coverage": 1,
-      "score": 10
+      "score": 6
     },
     {
       "id": "eecda7402f15a3a7",
@@ -973,7 +973,7 @@
       "category": "jp",
       "lang": "ja",
       "coverage": 1,
-      "score": 10
+      "score": 6
     },
     {
       "id": "7fffa2c124702b4d",
@@ -989,7 +989,7 @@
       "coverage": 1,
       "titleJa": "YouTube Musicは、AIが生成した音楽がストリーミングプラットフォームを氾濫させるにつれて、新しいレーベルを立ち上げます",
       "summaryJa": "ラベルはプレイヤーページに表示され、完全にAIによって生成された曲、または作曲やボーカルに関与するAIなどの部分的な曲が含まれます。",
-      "score": 7
+      "score": 3
     },
     {
       "id": "681dee8175a91068",
@@ -1005,7 +1005,7 @@
       "coverage": 1,
       "titleJa": "YouTube、AIが生成した曲に新しいレーベルを付ける",
       "summaryJa": "YouTubeは、AIを使用して「変更または完全に生成された」トラックに「AIで作られた」ラベルを追加している。これは、AIラベルをビデオに適用する既存のプロセスと同様のアプローチである。これは、音楽を作る際のAIツールのすべての使用に当てはまるとは思えませんが、YouTubeによると、",
-      "score": 7
+      "score": 3
     },
     {
       "id": "de8f5b28084233ad",
@@ -1021,7 +1021,7 @@
       "coverage": 1,
       "titleJa": "YouTube Musicは、パートナーの開示と独自の検出ツールを使用して、AI生成の曲のラベル付けを開始します",
       "summaryJa": "「私たちのリスナーは、AIが生成したトラックを聴くときに透明性を求めていると言っています」とYouTubeは述べています",
-      "score": 7
+      "score": 3
     },
     {
       "id": "5bf4c1bd454b7e7e",
@@ -1037,7 +1037,7 @@
       "coverage": 1,
       "titleJa": "マーシャ・ブラックバーン上院議員が、ケンドリック・ラマーがスーパーボウルで「Not Like Us」を演奏した彼女の「Cringe」AIビデオを非難",
       "summaryJa": "共和党はテネシー州知事に立候補しています。",
-      "score": 7
+      "score": 3
     },
     {
       "id": "5c0e3a497a2743ca",
@@ -1069,6 +1069,20 @@
       "coverage": 1,
       "titleJa": "YouTube MusicがAI音楽の新しいレーベルを追加",
       "score": 3
+    },
+    {
+      "id": "4952d0afeecaf0c8",
+      "title": "Deezer、AI生成音楽を除外するフィルターを計画",
+      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOSTlLRGJPUGxzekhrQ0V6QmN6VFI1SS1MdUNIQzhJbXhJMjNKaEdENzlKdk1wZTFocEYzSHJqX1JKTTRaeTJNQ2pnZ2c3MklwUUZ2WENaY2QtUVJZSnFMMW0taHNfUWgzdWx5NGtTR25sLUQ4ZVdGd3ByZ2NQalNnTWZGSElCcmViWGZWRERpOA?oc=5",
+      "summary": "",
+      "published": "2026-10-14T13:10:00.000Z",
+      "source": "Mezha.net",
+      "sourceId": "gnews-ja-aimusic",
+      "via": "Googleニュース",
+      "category": "jp",
+      "lang": "ja",
+      "coverage": 1,
+      "score": 6
     },
     {
       "id": "187652290df5b241",
@@ -1322,20 +1336,6 @@
       "score": 6
     },
     {
-      "id": "4952d0afeecaf0c8",
-      "title": "Deezer、AI生成音楽を除外するフィルターを計画",
-      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOSTlLRGJPUGxzekhrQ0V6QmN6VFI1SS1MdUNIQzhJbXhJMjNKaEdENzlKdk1wZTFocEYzSHJqX1JKTTRaeTJNQ2pnZ2c3MklwUUZ2WENaY2QtUVJZSnFMMW0taHNfUWgzdWx5NGtTR25sLUQ4ZVdGd3ByZ2NQalNnTWZGSElCcmViWGZWRERpOA?oc=5",
-      "summary": "",
-      "published": "2026-10-13T07:00:00.000Z",
-      "source": "Mezha.net",
-      "sourceId": "gnews-ja-aimusic",
-      "via": "Googleニュース",
-      "category": "jp",
-      "lang": "ja",
-      "coverage": 1,
-      "score": 6
-    },
-    {
       "id": "a23fd36425842ed9",
       "title": "AI×音楽×映像の新たな祭典「AI MUSIC VIDEO WAVE 2026」開催決定！元エイベックス取締役や現役アーティストらが審査員に",
       "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9ZdXRQWkRkQ0t5ZW0xbUZJTTRvdlJxV0ZNWl9yTzkwZW8xaEVQYjhUXy1yTDh3cnExMHFEV2ZVLVZnaFJaaWctRXBLazVjRGRWTkR5X3BEM1VLOHhiN3Eybm5oenNPWlUtMVE?oc=5",
@@ -1360,7 +1360,7 @@
       "via": "Googleニュース",
       "category": "global",
       "lang": "en",
-      "coverage": 20,
+      "coverage": 21,
       "titleJa": "ノースカロライナ州の男性、800万$のAI音楽詐欺計画で有罪判決",
       "score": 27
     },
@@ -1410,6 +1410,20 @@
       "titleJa": "AppleはAIポッドキャストスタートアップHuxeから従業員を雇用し、技術をライセンス供与",
       "summaryJa": "私たちは、他の会社から大規模に人材を募集する新しい方法について読むことに慣れていますが、「逆の買収契約」は私たちにとって新しいものでした。あなたは、ある会社（通常は大企業）がスタッフとスキルの全体を吸収するために別の会社を完全に購入する買収契約を知っているでしょう。しかし、その逆は、明らかに、スタートアップの創業者を雇用し、...",
       "score": 3
+    },
+    {
+      "id": "d31466b381c038ee",
+      "title": "【Suno AI】KAGARemix/あなたは弱くなんかない",
+      "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5fTEl3Z01iSUdiaVdqTmpTTEJ6NC00MVRONWVPZWxHdzQ1eHh4amFkQkZvTEJxQjNNR05TZnhHR3JoeDM1bzFCeFJQR05kNWhmcHNtdlNOUG5BVWtD?oc=5",
+      "summary": "",
+      "published": "2026-10-12T11:44:48.000Z",
+      "source": "YouTube",
+      "sourceId": "gnews-ja-suno",
+      "via": "Googleニュース",
+      "category": "jp",
+      "lang": "ja",
+      "coverage": 1,
+      "score": 15
     },
     {
       "id": "5192bbe31e98ed9a",
@@ -1714,6 +1728,20 @@
       "score": 6
     },
     {
+      "id": "913b32e10e0caa29",
+      "title": "自作AI楽曲をボットで連続再生して著作権使用料をだまし取っていた男性、再生回数が多すぎてバレる",
+      "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE1YOXk0WG9SRlNDcGo4TkR5RnJHd2ZKV084YVZCUnd1VHRtTEdYWU1oNUJ6R0hCcmE2WlVrWkRPNkRfcFBOZVJQMVFGTkRicGNSZXR2SjNrcU9IUnIybVZscUo2NGJtTGRiTkhCMU5pSQ?oc=5",
+      "summary": "",
+      "published": "2026-10-09T07:00:00.000Z",
+      "source": "INTERNET Watch",
+      "sourceId": "gnews-ja-aimusic",
+      "via": "Googleニュース",
+      "category": "jp",
+      "lang": "ja",
+      "coverage": 11,
+      "score": 28
+    },
+    {
       "id": "e1bcd2dd1a79a5e8",
       "title": "“AI時代の”情報セキュリティ EXPO【秋】」10月21日開幕 AI生成楽曲判別や画面撮影検知を展示",
       "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFBnQkhySTZvQzVDUlJocWZIdngyc0RPa3N5dUlqT1lvSlRHS2dDUVRZd29rZGY4SE1TcS0wX2dHN1gwdnNfNTNINUFBSHFUM0xaYlpvcTlXRk44Qmp3YjhIZFcwS1o?oc=5",
@@ -1768,22 +1796,8 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 25,
+      "coverage": 26,
       "score": 21
-    },
-    {
-      "id": "913b32e10e0caa29",
-      "title": "自作AI楽曲をボットで連続再生して著作権使用料をだまし取っていた男性、再生回数が多すぎてバレる",
-      "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE1YOXk0WG9SRlNDcGo4TkR5RnJHd2ZKV084YVZCUnd1VHRtTEdYWU1oNUJ6R0hCcmE2WlVrWkRPNkRfcFBOZVJQMVFGTkRicGNSZXR2SjNrcU9IUnIybVZscUo2NGJtTGRiTkhCMU5pSQ?oc=5",
-      "summary": "",
-      "published": "2026-10-09T01:34:50.000Z",
-      "source": "INTERNET Watch",
-      "sourceId": "gnews-ja-aimusic",
-      "via": "Googleニュース",
-      "category": "jp",
-      "lang": "ja",
-      "coverage": 11,
-      "score": 28
     },
     {
       "id": "b60ee7d9db88d741",
@@ -1812,7 +1826,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 17,
+      "coverage": 18,
       "titleJa": "イーロン・マスク氏によると、Grok Botは、AnthropicのClaudeとMidjourneyと並んで、SunoのAI音楽モデルを使用するという。",
       "summaryJa": "Sunoは現在、公式の公開APIを提供していません。MBWは7月に、同社が1社の立ち上げを検討していると報告した。",
       "score": 38
@@ -1864,21 +1878,6 @@
       "score": 5
     },
     {
-      "id": "263bd62a7e5ff63a",
-      "title": "AI Music Streaming Fraud: Musician Gets 18 Months for $8M Scheme",
-      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPSkl5bnRlMG10OFdtX0Q4Wi1YZTFFcnhEVE1fVWZITUVnQVZuQUpreE9XV2JRRllGVWw2bDNiQTN1cXRQZ0tjemdmazgyWkkyaVJYa3lvRC1pMGRYNWw1Qk5YTU5DaWVRd1FXdURIa1piZTdpbzRHYWtTVHRCWWYwQ3VFYXQ?oc=5",
-      "summary": "",
-      "published": "2026-10-08T11:48:29.000Z",
-      "source": "TechRepublic",
-      "sourceId": "gnews-en-aimusic",
-      "via": "Googleニュース",
-      "category": "global",
-      "lang": "en",
-      "coverage": 1,
-      "titleJa": "AI音楽ストリーミング詐欺：ミュージシャンが$ 800万スキームで18か月を獲得",
-      "score": -6
-    },
-    {
       "id": "b95b6fd82de46f32",
       "title": "Blue Sky（Suno AI ver）",
       "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5Vdms5OWxKVDVKVHJKM0owUW5KbTdkTTk1emhHS2NaQVVRNlFKX2FvQlBrR1RacVp1X1c0ZjRvNkMzSFhsRDZtQXlJblNXMHlaQldTOGZBQnZqUktp?oc=5",
@@ -1917,7 +1916,7 @@
       "via": null,
       "category": "jp",
       "lang": "ja",
-      "coverage": 38,
+      "coverage": 39,
       "score": 28
     },
     {
@@ -1975,6 +1974,21 @@
       "lang": "ja",
       "coverage": 1,
       "score": -3
+    },
+    {
+      "id": "263bd62a7e5ff63a",
+      "title": "AI Music Streaming Fraud: Musician Gets 18 Months for $8M Scheme",
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPSkl5bnRlMG10OFdtX0Q4Wi1YZTFFcnhEVE1fVWZITUVnQVZuQUpreE9XV2JRRllGVWw2bDNiQTN1cXRQZ0tjemdmazgyWkkyaVJYa3lvRC1pMGRYNWw1Qk5YTU5DaWVRd1FXdURIa1piZTdpbzRHYWtTVHRCWWYwQ3VFYXQ?oc=5",
+      "summary": "",
+      "published": "2026-10-08T07:00:00.000Z",
+      "source": "TechRepublic",
+      "sourceId": "gnews-en-aimusic",
+      "via": "Googleニュース",
+      "category": "global",
+      "lang": "en",
+      "coverage": 1,
+      "titleJa": "AI音楽ストリーミング詐欺：ミュージシャンが$ 800万スキームで18か月を獲得",
+      "score": -6
     },
     {
       "id": "795f623330f5db86",
@@ -2060,7 +2074,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 42,
+      "coverage": 43,
       "score": 41
     },
     {
@@ -2449,7 +2463,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 16,
+      "coverage": 17,
       "titleJa": "AI音楽ストリーミング詐欺師、800万$のロイヤリティ詐欺で懲役1.5年の判決",
       "summaryJa": "マイケル・スミス氏は今年初め、ストリーミング詐欺をめぐる初の刑事事件で、ボットを使用して偽の曲を何十億回もストリーミングしたことを認めた。",
       "score": 25
@@ -2784,7 +2798,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 38,
+      "coverage": 39,
       "titleJa": "米国の控訴裁判所は、AIトレーニングをめぐる「フェアユース」の防御を棄却した。レーベルとスノとの戦いにはどういう意味があるのでしょうか？",
       "summaryJa": "米国控訴裁判所は、9月29日にトムソン・ロイターとAI法務調査会社ROSS Intelligenceに対して判決を下しました",
       "score": 27
@@ -2815,7 +2829,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 47,
+      "coverage": 48,
       "score": 41
     },
     {
@@ -2974,6 +2988,20 @@
       "score": 17
     },
     {
+      "id": "649d5282afb433e0",
+      "title": "Suno Speech、音楽を超えてElevenLabsの領域へ",
+      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNNm01RkNiUFBxZ2ZiYkZIelM0a0hCWFNYWEloY1ppTDVHUkhPS0I5NWw5YkhFQXloYllJdDRrWVFDekFXN1FHMXpESVFNVFZBWlMyaFFwMHB0LVhSTW16eFVuckZrQldYeDdMYVhVa3Vlb1VKUzZmRXF1c3pJOFZLUkZaekpvRGcxWEJVYTQtNmVxZ2JjU1dMdVBtcThwUQ?oc=5",
+      "summary": "",
+      "published": "2026-10-03T07:00:00.000Z",
+      "source": "remio",
+      "sourceId": "gnews-ja-suno",
+      "via": "Googleニュース",
+      "category": "jp",
+      "lang": "ja",
+      "coverage": 1,
+      "score": 6
+    },
+    {
       "id": "cc77053729d27c92",
       "title": "NMPA Inks Deals With Udio & KLAY, Marking First Industry-Wide Licensing Pacts With Major AI Music Firms",
       "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE1leHJtMzNxMTkzLXJkd3haWjFXa2hzazlucXQxSndUdFpWZTFJRUtRY1ZHdW5xMTdHbmhyckdXZ3U2Nmt0Rjl6U0hCT3ZjbTVuT2xjYlM5WFBfUlJNQ1hTazRLMHM5ZWdNbVBGU0ZnUVpVQQ?oc=5",
@@ -3030,7 +3058,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 27,
+      "coverage": 28,
       "titleJa": "Sunoは200万人の加入者と3億$の収益を「はるかに超えている」とMikey Shulmanは言う。彼はAI音楽にはまだ「確固たるルール」がないことは「良い」と主張する",
       "summaryJa": "シュルマン氏はまた、WMGとBMGが彼らの取引から何を得て、誰がAIのルールを設定すべきかを説明しました。",
       "score": 27
@@ -3342,20 +3370,6 @@
       "score": 6
     },
     {
-      "id": "76c81327515f4b43",
-      "title": "dull gray sky #suno #オリジナル曲",
-      "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9LRzNyd2NOdHpOSWFXb2VSZTAxblM5V1BsbmlHRGdhdUpZY2h0Sy1TQ0s3WWZrNVotdVNMeGczQWI2cUcwc0ZDcnIzdDRWV1FnTF82T1E4Rm9md1VX?oc=5",
-      "summary": "",
-      "published": "2026-10-01T02:40:55.000Z",
-      "source": "YouTube",
-      "sourceId": "gnews-ja-suno",
-      "via": "Googleニュース",
-      "category": "jp",
-      "lang": "ja",
-      "coverage": 1,
-      "score": 6
-    },
-    {
       "id": "fa245a82f5e943df",
       "title": "Watch Suno CEO: AI Could Reinvent How We Experience Music",
       "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQdHpkeUFuajE5LWhMSzNMZ1lpSTVab3FwSnU4VjZlTGw1blhxcVhWSjR2U0swUDdZX0NQbjY4Wm9OZTBYUEZfNGpxcHczb0F6aUNBTENTV2kwLVpyZlM0cm9WMW5CczZtNlRPaHZXTk81Mmc3M19YTnFoLTZjXzFwWW9QM3k2cHpNSllPSHM5WFJVUmRLWWItbFlkcFQtbjJSa0pNYy1BdEc?oc=5",
@@ -3565,6 +3579,20 @@
       "lang": "ja",
       "coverage": 1,
       "score": -3
+    },
+    {
+      "id": "76c81327515f4b43",
+      "title": "dull gray sky #suno #オリジナル曲",
+      "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9LRzNyd2NOdHpOSWFXb2VSZTAxblM5V1BsbmlHRGdhdUpZY2h0Sy1TQ0s3WWZrNVotdVNMeGczQWI2cUcwc0ZDcnIzdDRWV1FnTF82T1E4Rm9md1VX?oc=5",
+      "summary": "",
+      "published": "2026-09-30T07:00:00.000Z",
+      "source": "YouTube",
+      "sourceId": "gnews-ja-suno",
+      "via": "Googleニュース",
+      "category": "jp",
+      "lang": "ja",
+      "coverage": 1,
+      "score": 6
     },
     {
       "id": "54399caf4181ecb4",
@@ -4111,7 +4139,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 88,
+      "coverage": 89,
       "titleJa": "ソニーとUMGがSunoを再び訴える",
       "summaryJa": "ソニーとユニバーサルミュージックグループは、Sunoに対してさらに別の訴訟を起こしました。レーベルは、新しいv 6モデルがまだ著作権を侵害していると主張している。なぜなら、それは以前のモデルからのユーザー出力で訓練されているからだ。以前のモデル自体は、YouTubeや他のソースからリッピングされた無許可の音楽で訓練されていたからだ。ソニーとUMGは、署名しなかった注目すべきホールドアウトである",
       "score": 27
@@ -4773,7 +4801,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 91,
+      "coverage": 92,
       "titleJa": "Sunoは、最新のソニーとユニバーサルの訴訟を爆発させるため、V 6モデルがユーザーからの「クリエイション」について訓練されたことを確認します",
       "summaryJa": "同社は、ユニバーサルミュージックグループとソニーミュージックエンタテインメントが提起した2回目の著作権訴訟に対応する声明で、その説明を記載した。",
       "score": 34
@@ -5160,7 +5188,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 22,
+      "coverage": 23,
       "score": 21
     },
     {
@@ -5522,7 +5550,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 107,
+      "coverage": 108,
       "titleJa": "ユニバーサルとソニーは、プラットフォームのv 6モデルが「同じ毒された木の果実」であると主張して、2度目のSunoを訴えた",
       "summaryJa": "米国の著作権法では、意図的な侵害に対する損害賠償は、作品ごとに最大$ 150,000に設定されています。その上限では、60,202の録音は理論的には最大90億$をわずかに上回ります。",
       "score": 34
@@ -6154,34 +6182,6 @@
       "lang": "ja",
       "coverage": 21,
       "score": 21
-    },
-    {
-      "id": "31e1cbf731ca3dce",
-      "title": "「今の気分に合う音楽」をAIに相談、「Rakuten Music」に新機能",
-      "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9YYTFwYjVWeVd2Y1kxVlFPUlc0RmIyLVFKZGluclN4dWlEdGhyN2RLb0ZqRFRFX05oWkV6elZPUlVNY3R6dWFLUHA1YkYzZ1hXd3RHTi1RZHM0d3YyNWUwdXlKTnpPMm8?oc=5",
-      "summary": "",
-      "published": "2026-09-16T07:00:00.000Z",
-      "source": "ケータイ Watch",
-      "sourceId": "gnews-ja-aimusic",
-      "via": "Googleニュース",
-      "category": "jp",
-      "lang": "ja",
-      "coverage": 9,
-      "score": 32
-    },
-    {
-      "id": "6ae4f99dc6b96cf5",
-      "title": "「Rakuten Music」、エージェント型AIツール「Rakuten AI for Music」をスマートフォンアプリに搭載",
-      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9ySnh2SU9TUTlEWWNiV3FEZFdKQWRyd0w4MjluSU51TTRDYVJva19GZml6LTctZWdudUNsWk1pTmVqSUhlVWNGOU5jVWQ0NVBQTWlCdjFITERqSzNvc0RHdVNnS0tiLTlOM2c?oc=5",
-      "summary": "",
-      "published": "2026-09-16T07:00:00.000Z",
-      "source": "PR TIMES",
-      "sourceId": "gnews-ja-aimusic",
-      "via": "Googleニュース",
-      "category": "jp",
-      "lang": "ja",
-      "coverage": 1,
-      "score": -3
     }
   ]
 }
