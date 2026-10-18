@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-10-18T07:27:50.897Z",
+  "generatedAt": "2026-10-18T12:50:09.199Z",
   "count": 400,
-  "newCount": 25,
-  "translatedCount": 2,
+  "newCount": 23,
+  "translatedCount": 1,
   "ranking": [
     "2bb555fb48f279d5",
-    "f7f5e1166f91b568",
+    "a248dbd8ecb4cb58",
     "6c87f8c31b223ec0",
     "90593913e9e9390f",
     "8ccf4e3ce5821341"
@@ -17,7 +17,7 @@
       "category": "jp",
       "ok": true,
       "fetched": 40,
-      "matched": 38,
+      "matched": 39,
       "error": null
     },
     {
@@ -302,8 +302,8 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 2,
-      "score": 39
+      "coverage": 3,
+      "score": 47
     },
     {
       "id": "1ce16fdfd2dd50d2",
@@ -373,7 +373,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 6,
+      "coverage": 7,
       "titleJa": "UMGとSony Demand DistroKidがSunoからアップロードしたAI曲の数を教えてくれる：「Staggering Scale」",
       "summaryJa": "音楽大手は、AI曲の「洪水」を可能にしたと非難する新しい法的ファイリングで、巨大なDIYディストリビューターへの圧力を強めています。",
       "score": 40
@@ -627,7 +627,7 @@
       "coverage": 1,
       "titleJa": "独自のシステムを使用してAI生成トラックにラベルを付けるYouTube Music",
       "summaryJa": "YouTube Musicは、AIが生成した音楽をどのようにラベル付けするかを明らかにする最新の大手ストリーミングサービスです。昨日（ 10月14日）、「主にジェネレーティブAIを使用して作成された」曲のレーベルが公開されました。この投稿はMusic Allyからのものです。",
-      "score": 7
+      "score": 3
     },
     {
       "id": "e82f9ba7362c2d9b",
@@ -643,7 +643,7 @@
       "coverage": 1,
       "titleJa": "Suno製のトラック「The Adult I Dreamed Of」が韓国で大ヒット",
       "summaryJa": "先月、ストリーミングサービスのメロンのトップ100チャートの下位に「心の森」と呼ばれるAI生成の曲が登場した後、韓国で議論が勃発したことについて書いた。この投稿はMusic Allyからのものです。",
-      "score": 16
+      "score": 12
     },
     {
       "id": "d18362727cb41799",
@@ -659,7 +659,7 @@
       "coverage": 1,
       "titleJa": "Gaslab、GenAIミュージックアプリのプレシードファンディングを100万$調達",
       "summaryJa": "今年のAI音楽の励みになるトレンドの1つは、立ち上げからすぐに、倫理的なトレーニングポリシーへの取り組みについて話すスタートアップが増えていることです。この投稿はMusic Allyからのものです。",
-      "score": 10
+      "score": 6
     },
     {
       "id": "054b6ea4bc0917b4",
@@ -675,7 +675,7 @@
       "coverage": 1,
       "titleJa": "AIの専門家が、AIを「スーパーインテリジェンス」と呼ぶべきではない理由を説明",
       "summaryJa": "現在のホワイトハウスの住民は、「人工知能」という言葉を止めず、「スーパーインテリジェンス」という好みの用語を使い始める人は「敵」であることを非常に明確にしています。コヴェントリーのロックバンドではありません。この投稿はMusic Allyからのものです。",
-      "score": 7
+      "score": 3
     },
     {
       "id": "62a3583672b90fff",
@@ -689,7 +689,7 @@
       "category": "jp",
       "lang": "ja",
       "coverage": 1,
-      "score": 10
+      "score": 6
     },
     {
       "id": "5fe657749b1b000e",
@@ -704,7 +704,7 @@
       "lang": "en",
       "coverage": 1,
       "titleJa": "Deezer AI音楽検出器： 2026年の最高の発明",
-      "score": 7
+      "score": 3
     },
     {
       "id": "7d54fa78e445cf92",
@@ -718,7 +718,7 @@
       "category": "jp",
       "lang": "ja",
       "coverage": 1,
-      "score": 10
+      "score": 6
     },
     {
       "id": "7ed64b170efdc3c3",
@@ -732,7 +732,7 @@
       "category": "jp",
       "lang": "ja",
       "coverage": 1,
-      "score": 23
+      "score": 19
     },
     {
       "id": "2e32d593352924f4",
@@ -746,7 +746,7 @@
       "category": "jp",
       "lang": "ja",
       "coverage": 1,
-      "score": 10
+      "score": 6
     },
     {
       "id": "3cec784c7cd1aadc",
@@ -871,7 +871,7 @@
       "via": null,
       "category": "jp",
       "lang": "ja",
-      "coverage": 14,
+      "coverage": 15,
       "score": 30
     },
     {
@@ -885,7 +885,7 @@
       "via": null,
       "category": "jp",
       "lang": "ja",
-      "coverage": 27,
+      "coverage": 29,
       "score": 48
     },
     {
@@ -1360,7 +1360,7 @@
       "via": "Googleニュース",
       "category": "global",
       "lang": "en",
-      "coverage": 22,
+      "coverage": 23,
       "titleJa": "ノースカロライナ州の男性、800万$のAI音楽詐欺計画で有罪判決",
       "score": 27
     },
@@ -1509,7 +1509,7 @@
       "category": "jp",
       "lang": "ja",
       "coverage": 1,
-      "score": 20
+      "score": 11
     },
     {
       "id": "54935ed284a18522",
@@ -1811,7 +1811,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 27,
+      "coverage": 28,
       "score": 21
     },
     {
@@ -1841,7 +1841,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 19,
+      "coverage": 20,
       "titleJa": "イーロン・マスク氏によると、Grok Botは、AnthropicのClaudeとMidjourneyと並んで、SunoのAI音楽モデルを使用するという。",
       "summaryJa": "Sunoは現在、公式の公開APIを提供していません。MBWは7月に、同社が1社の立ち上げを検討していると報告した。",
       "score": 38
@@ -1931,7 +1931,7 @@
       "via": null,
       "category": "jp",
       "lang": "ja",
-      "coverage": 40,
+      "coverage": 41,
       "score": 28
     },
     {
@@ -2075,7 +2075,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 5,
+      "coverage": 6,
       "score": 32
     },
     {
@@ -2089,7 +2089,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 44,
+      "coverage": 45,
       "score": 41
     },
     {
@@ -2295,20 +2295,6 @@
       "score": -6
     },
     {
-      "id": "45d1cc352c8044b1",
-      "title": "夜明けは必ずやってくる（オリジナル曲）【千堂綾乃 ブルースロック】 #SUNO AI #AI作詞 #AI作曲 #AI画像 #shorts",
-      "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1xbW1heE1DUkdpOEJwUFJUXzJTYTNzSzBSTF9RTEVOMk5seVc2UUxLNjVwVzdDWXE2Znkxa3ZRemhFOE9PLVlCTmxYdjk1UmNTNzkxYnRfTWp0eVM2?oc=5",
-      "summary": "",
-      "published": "2026-10-07T10:27:15.000Z",
-      "source": "YouTube",
-      "sourceId": "gnews-ja-suno",
-      "via": "Googleニュース",
-      "category": "jp",
-      "lang": "ja",
-      "coverage": 1,
-      "score": 6
-    },
-    {
       "id": "f5c0c288cc71fa36",
       "title": "故郷恋しや（オリジナル曲）【千堂綾乃 ブルースロック】 #SUNO AI #AI作詞 #AI作曲 #AI画像 #shorts",
       "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9kU0l3QjZPTmRQM1ZEUG43MGF3RkQ2eF95SnpSWjQ3QzUzay00Z0N4MHVUSWpkRUFtTm5MRlI3ZDl5dHBoS1JLdVFXdFFXZnlRMlJLMm9YTWhRRUNQ?oc=5",
@@ -2367,6 +2353,20 @@
       "titleJa": "マイケル・スミス、$ 800万のAI曲とボットストリーミング詐欺の背後にいる男、懲役18ヶ月の判決",
       "summaryJa": "米国地方裁判所のジョン・G・ケルトル判事は、マイケル・スミスに対し、両当事者が合意した損失額である8,091,843.64 $を没収するよう命じた。",
       "score": -6
+    },
+    {
+      "id": "45d1cc352c8044b1",
+      "title": "夜明けは必ずやってくる（オリジナル曲）【千堂綾乃 ブルースロック】 #SUNO AI #AI作詞 #AI作曲 #AI画像 #shorts",
+      "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE1xbW1heE1DUkdpOEJwUFJUXzJTYTNzSzBSTF9RTEVOMk5seVc2UUxLNjVwVzdDWXE2Znkxa3ZRemhFOE9PLVlCTmxYdjk1UmNTNzkxYnRfTWp0eVM2?oc=5",
+      "summary": "",
+      "published": "2026-10-07T07:00:00.000Z",
+      "source": "YouTube",
+      "sourceId": "gnews-ja-suno",
+      "via": "Googleニュース",
+      "category": "jp",
+      "lang": "ja",
+      "coverage": 1,
+      "score": 6
     },
     {
       "id": "7691a71f399fbac5",
@@ -2493,7 +2493,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 18,
+      "coverage": 19,
       "titleJa": "AI音楽ストリーミング詐欺師、800万$のロイヤリティ詐欺で懲役1.5年の判決",
       "summaryJa": "マイケル・スミス氏は今年初め、ストリーミング詐欺をめぐる初の刑事事件で、ボットを使用して偽の曲を何十億回もストリーミングしたことを認めた。",
       "score": 25
@@ -2828,7 +2828,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 40,
+      "coverage": 41,
       "titleJa": "米国の控訴裁判所は、AIトレーニングをめぐる「フェアユース」の防御を棄却した。レーベルとスノとの戦いにはどういう意味があるのでしょうか？",
       "summaryJa": "米国控訴裁判所は、9月29日にトムソン・ロイターとAI法務調査会社ROSS Intelligenceに対して判決を下しました",
       "score": 27
@@ -2859,7 +2859,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 49,
+      "coverage": 50,
       "score": 41
     },
     {
@@ -3088,7 +3088,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 29,
+      "coverage": 30,
       "titleJa": "Sunoは200万人の加入者と3億$の収益を「はるかに超えている」とMikey Shulmanは言う。彼はAI音楽にはまだ「確固たるルール」がないことは「良い」と主張する",
       "summaryJa": "シュルマン氏はまた、WMGとBMGが彼らの取引から何を得て、誰がAIのルールを設定すべきかを説明しました。",
       "score": 27
@@ -3239,6 +3239,21 @@
       "lang": "en",
       "coverage": 1,
       "titleJa": "ロシアの最新のプロパガンダ？ A.I.生成されたウォー・ソング。",
+      "score": -6
+    },
+    {
+      "id": "60d415ebb0f39deb",
+      "title": "Should AI Music Get a Separate Chart? Kelly Clarkson Makes the Case for Separating the Robots from the Humans",
+      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNdDRQOUwxcmVfU25QVjdTUU15R3Y3MUNqQktPaFozS1U4TWNjU1VoaGF0c0xLa0V5Y1J6V2laY1hBY0czUVo3N3lrVnRMTGpWV0ZvLV9CVm5iYmlSTjR5VkY5VlY1d1VOUE1HTmIxamdfUlpjV1dVS3ZtQk5nYnd6Tg?oc=5",
+      "summary": "",
+      "published": "2026-10-02T07:00:00.000Z",
+      "source": "Digital Music News",
+      "sourceId": "gnews-en-aimusic",
+      "via": "Googleニュース",
+      "category": "global",
+      "lang": "en",
+      "coverage": 1,
+      "titleJa": "AI音楽は別のチャートを取得する必要がありますか？ケリー・クラークソン、ロボットを人間から切り離すことを主張",
       "score": -6
     },
     {
@@ -3897,20 +3912,6 @@
       "score": 5
     },
     {
-      "id": "378dfda016b33ec6",
-      "title": "AI作曲:お前誰やねん！SUICA RE:BORN",
-      "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5LZlpuTWZLcnVjMVU2aDhIX2c0ZzJxUWxIVWZnZS1yRXlrMGQzVXl4N3JwdVM1SlB3dDV5eU9nLTBncEpWYW9mQVdTWl9IS3pSYmt1YXdIdGpMMWtu?oc=5",
-      "summary": "",
-      "published": "2026-09-28T10:46:13.000Z",
-      "source": "YouTube",
-      "sourceId": "gnews-ja-suno",
-      "via": "Googleニュース",
-      "category": "jp",
-      "lang": "ja",
-      "coverage": 1,
-      "score": -3
-    },
-    {
       "id": "ea86a067fb50ada2",
       "title": "Musixmatch: ‘Lyrics are becoming the LLM of the music industry’",
       "url": "https://www.musicbusinessworldwide.com/musixmatch-lyrics-are-becoming-the-llm-of-the-music-industry/",
@@ -3925,6 +3926,20 @@
       "titleJa": "Musixmatch ：「歌詞が音楽業界のLLMになりつつある」",
       "summaryJa": "Max CiociolaはMusixmatchを世界最大の歌詞会社に変えました。今、TPGの支援を受け、Sentinelと呼ばれる著作権検出ツールのためにSunoと契約を結んだことで、はるかに大きなものになる道を歩んでいます...",
       "score": 10
+    },
+    {
+      "id": "378dfda016b33ec6",
+      "title": "AI作曲:お前誰やねん！SUICA RE:BORN",
+      "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5LZlpuTWZLcnVjMVU2aDhIX2c0ZzJxUWxIVWZnZS1yRXlrMGQzVXl4N3JwdVM1SlB3dDV5eU9nLTBncEpWYW9mQVdTWl9IS3pSYmt1YXdIdGpMMWtu?oc=5",
+      "summary": "",
+      "published": "2026-09-28T07:00:00.000Z",
+      "source": "YouTube",
+      "sourceId": "gnews-ja-suno",
+      "via": "Googleニュース",
+      "category": "jp",
+      "lang": "ja",
+      "coverage": 1,
+      "score": -3
     },
     {
       "id": "03d9974952ed1701",
@@ -4169,7 +4184,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 90,
+      "coverage": 91,
       "titleJa": "ソニーとUMGがSunoを再び訴える",
       "summaryJa": "ソニーとユニバーサルミュージックグループは、Sunoに対してさらに別の訴訟を起こしました。レーベルは、新しいv 6モデルがまだ著作権を侵害していると主張している。なぜなら、それは以前のモデルからのユーザー出力で訓練されているからだ。以前のモデル自体は、YouTubeや他のソースからリッピングされた無許可の音楽で訓練されていたからだ。ソニーとUMGは、署名しなかった注目すべきホールドアウトである",
       "score": 27
@@ -4831,7 +4846,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 93,
+      "coverage": 94,
       "titleJa": "Sunoは、最新のソニーとユニバーサルの訴訟を爆発させるため、V 6モデルがユーザーからの「クリエイション」について訓練されたことを確認します",
       "summaryJa": "同社は、ユニバーサルミュージックグループとソニーミュージックエンタテインメントが提起した2回目の著作権訴訟に対応する声明で、その説明を記載した。",
       "score": 34
@@ -5218,7 +5233,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 24,
+      "coverage": 25,
       "score": 21
     },
     {
@@ -6170,20 +6185,6 @@
       "titleJa": "ブライアン・メイ氏は、AIに対する考えを変えた理由について次のように述べています。「私たちは抵抗しなければなりません。非常に、非常に真剣に、そして非常に迅速に制御する必要があります」",
       "summaryJa": "そしてそれが、彼がクイーンのアバターショーのアイデアに冷静になった理由です",
       "score": -6
-    },
-    {
-      "id": "2fc012a2a05fdb0b",
-      "title": "Rokid、ディスプレイ非搭載で約38.5gのAIグラス。カメラ、スピーカー搭載",
-      "url": "https://av.watch.impress.co.jp/docs/news/2141470.html",
-      "summary": "スマートグラスを展開するRokidは、ディスプレイ非搭載で約38.5gと軽量なAIグラス「Rokid Ai Glasses Style」を発売した。カメラやスピーカーを内蔵し、価格は64,990円。",
-      "published": "2026-09-16T08:30:00.000Z",
-      "source": "AV Watch",
-      "sourceId": "av-watch",
-      "via": null,
-      "category": "jp",
-      "lang": "ja",
-      "coverage": 1,
-      "score": -10
     }
   ]
 }
