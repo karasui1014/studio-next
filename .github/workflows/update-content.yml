@@ -12,6 +12,7 @@ on:
 
 permissions:
   contents: write
+  actions: write   # 更新後に「公開」ワークフローを呼ぶため
 
 concurrency:
   group: update-content
@@ -44,6 +45,7 @@ jobs:
         continue-on-error: true
 
       - name: 変更があればコミットする
+        id: commit
         run: |
           if [ -z "$(git status --porcelain public/content)" ]; then
             echo "新しい記事はありませんでした。"
@@ -54,6 +56,19 @@ jobs:
           git add public/content
           git commit -m "ニュース自動更新 $(TZ=Asia/Tokyo date '+%Y-%m-%d %H:%M JST')"
           git push
+          echo "pushed=true" >> "$GITHUB_OUTPUT"
+
+      # ニュースや記事は public/content にあり、ビルドしてはじめてサイトに載る。
+      # ところがこのワークフロー（GITHUB_TOKEN）の push では「公開」は起動しない
+      # （GitHub の仕様）。そのため 2026-10 には、記事を取り込めていたのに
+      # サイトは9/9のまま、という状態になっていた（2026-10-19 発見）。
+      # 新しい中身を保存したときだけ、ここから「公開」を呼ぶ。
+      - name: サイトに公開する
+        if: steps.commit.outputs.pushed == 'true'
+        run: gh workflow run deploy.yml --ref main
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
 
       # ニュースのコミットを終えてから落とす。ここで初めてワークフローが赤くなり、
       # GitHub から通知が届く（＝止まったことに気づける）。
