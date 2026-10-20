@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-19T18:53:28.490Z",
+  "generatedAt": "2026-10-20T00:04:10.624Z",
   "count": 400,
   "newCount": 21,
   "translatedCount": 0,
@@ -79,7 +79,7 @@
       "name": "CDM",
       "category": "global",
       "ok": true,
-      "fetched": 10,
+      "fetched": 0,
       "matched": 0,
       "error": null
     },
@@ -296,7 +296,7 @@
       "title": "UMG, Sony Sue DistroKid to Reveal Scale of Suno and AI Music",
       "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNcXpobGxGVkxEMmNFdWlaQWo3UWliSHZqTlB5a00tMy1wSXJpQ2hMeWVxR1FqWmhEcHJqMEpydVRtcFppSUdKb1RzZ0xSUlExODdySWVMOW0tejIxSE1vbGUtS0lZQUVWc014dm1rTXp5M2ttQnFNTXpRWWJKazBrTTduYmo1TjNKV2J5Nw?oc=5",
       "summary": "",
-      "published": "2026-10-19T13:11:00.000Z",
+      "published": "2026-10-19T18:20:49.000Z",
       "source": "Hypebot",
       "sourceId": "gnews-en-aimusic",
       "via": "Googleニュース",
@@ -363,10 +363,10 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 3,
+      "coverage": 4,
       "titleJa": "ソニーとユニバーサルは、裁判所に対し、Sunoの投資家であるLightspeedに「トレーニングデータの法的リスク」についての証言を強制するよう要請する",
       "summaryJa": "ラベルは、先週火曜日（ 10月13日）にボストン連邦裁判所に提出された訴訟で、召喚状を取り消すというLightspeedの動議に反対しました。",
-      "score": 29
+      "score": 37
     },
     {
       "id": "eab0ce411f140b12",
@@ -423,7 +423,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 9,
+      "coverage": 10,
       "score": 50
     },
     {
@@ -467,7 +467,7 @@
       "lang": "en",
       "coverage": 1,
       "titleJa": "ユニバーサルとソニーはDistroKidにAI音楽アップロードの規模を明らかにすることを強制しようとしています",
-      "score": 7
+      "score": 3
     },
     {
       "id": "63ee05934b3fafd5",
@@ -481,7 +481,7 @@
       "category": "jp",
       "lang": "ja",
       "coverage": 1,
-      "score": 19
+      "score": 15
     },
     {
       "id": "f7f5e1166f91b568",
@@ -494,7 +494,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 13,
+      "coverage": 14,
       "titleJa": "UMGとSony Demand DistroKidがSunoからアップロードしたAI曲の数を教えてくれる：「Staggering Scale」",
       "summaryJa": "音楽大手は、AI曲の「洪水」を可能にしたと非難する新しい法的ファイリングで、巨大なDIYディストリビューターへの圧力を強めています。",
       "score": 36
@@ -992,7 +992,7 @@
       "via": null,
       "category": "jp",
       "lang": "ja",
-      "coverage": 21,
+      "coverage": 22,
       "score": 30
     },
     {
@@ -1006,7 +1006,7 @@
       "via": null,
       "category": "jp",
       "lang": "ja",
-      "coverage": 41,
+      "coverage": 43,
       "score": 48
     },
     {
@@ -1268,7 +1268,7 @@
       "title": "ちょびっとラビット耳よりラピッドニュース #080：AIを使えば誰でも作曲家になれる！？Sunoで実際に曲を作ってみた",
       "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5NTE5NMDJoWTFOQXBVd29jYUpBS3Z6UlBIQmY2MTdXZUVRX0FQWkh6N0dVMGE5OGJSeGk1SzUxWnNXQ3VMTG5jQ0J2RG8xaHAxSWNrbjUycERGUQ?oc=5",
       "summary": "",
-      "published": "2026-10-14T03:22:30.000Z",
+      "published": "2026-10-14T03:23:38.000Z",
       "source": "ウイングアーク１ｓｔ",
       "sourceId": "gnews-ja-suno",
       "via": "Googleニュース",
@@ -1495,7 +1495,7 @@
       "via": "Googleニュース",
       "category": "global",
       "lang": "en",
-      "coverage": 29,
+      "coverage": 30,
       "titleJa": "ノースカロライナ州の男性、800万$のAI音楽詐欺計画で有罪判決",
       "score": 27
     },
@@ -1513,7 +1513,7 @@
       "coverage": 1,
       "titleJa": "AIを使用してヤマハCS -80シンセサイザーにパッチを適用",
       "summaryJa": "ここでは、AIを使用してYamaha CS -80シンセサイザーのパッチを作成する方法を説明します。…",
-      "score": 3
+      "score": -6
     },
     {
       "id": "2fdc22b96b67e75c",
@@ -1946,7 +1946,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 34,
+      "coverage": 35,
       "score": 21
     },
     {
@@ -1976,7 +1976,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 26,
+      "coverage": 27,
       "titleJa": "イーロン・マスク氏によると、Grok Botは、AnthropicのClaudeとMidjourneyと並んで、SunoのAI音楽モデルを使用するという。",
       "summaryJa": "Sunoは現在、公式の公開APIを提供していません。MBWは7月に、同社が1社の立ち上げを検討していると報告した。",
       "score": 38
@@ -2415,20 +2415,6 @@
       "score": -6
     },
     {
-      "id": "f5c0c288cc71fa36",
-      "title": "故郷恋しや（オリジナル曲）【千堂綾乃 ブルースロック】 #SUNO AI #AI作詞 #AI作曲 #AI画像 #shorts",
-      "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9kU0l3QjZPTmRQM1ZEUG43MGF3RkQ2eF95SnpSWjQ3QzUzay00Z0N4MHVUSWpkRUFtTm5MRlI3ZDl5dHBoS1JLdVFXdFFXZnlRMlJLMm9YTWhRRUNQ?oc=5",
-      "summary": "",
-      "published": "2026-10-07T10:03:27.000Z",
-      "source": "YouTube",
-      "sourceId": "gnews-ja-suno",
-      "via": "Googleニュース",
-      "category": "jp",
-      "lang": "ja",
-      "coverage": 1,
-      "score": 6
-    },
-    {
       "id": "21d9865d74b79d0d",
       "title": "JBL、AIギターアンプ／スピーカー「BandBox」で憧れのアーティストと擬似セッション。音楽を“使う”新体験",
       "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTFAtT3BDdFBsanl2UEdNV3RkdnI4X1RZWmtyTXh3V2RSaXpzOWk4dTRBMklJd0hjUnhNVW9yQnMyWm82UnVkbEs1U1U1V1FVTjRNaklzd1VSS1FvNm9ZMXp4U2taMlNkQQ?oc=5",
@@ -2473,6 +2459,20 @@
       "titleJa": "マイケル・スミス、$ 800万のAI曲とボットストリーミング詐欺の背後にいる男、懲役18ヶ月の判決",
       "summaryJa": "米国地方裁判所のジョン・G・ケルトル判事は、マイケル・スミスに対し、両当事者が合意した損失額である8,091,843.64 $を没収するよう命じた。",
       "score": -6
+    },
+    {
+      "id": "f5c0c288cc71fa36",
+      "title": "故郷恋しや（オリジナル曲）【千堂綾乃 ブルースロック】 #SUNO AI #AI作詞 #AI作曲 #AI画像 #shorts",
+      "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9kU0l3QjZPTmRQM1ZEUG43MGF3RkQ2eF95SnpSWjQ3QzUzay00Z0N4MHVUSWpkRUFtTm5MRlI3ZDl5dHBoS1JLdVFXdFFXZnlRMlJLMm9YTWhRRUNQ?oc=5",
+      "summary": "",
+      "published": "2026-10-07T07:00:00.000Z",
+      "source": "YouTube",
+      "sourceId": "gnews-ja-suno",
+      "via": "Googleニュース",
+      "category": "jp",
+      "lang": "ja",
+      "coverage": 1,
+      "score": 6
     },
     {
       "id": "672c91a72616da7f",
@@ -2628,7 +2628,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 25,
+      "coverage": 26,
       "titleJa": "AI音楽ストリーミング詐欺師、800万$のロイヤリティ詐欺で懲役1.5年の判決",
       "summaryJa": "マイケル・スミス氏は今年初め、ストリーミング詐欺をめぐる初の刑事事件で、ボットを使用して偽の曲を何十億回もストリーミングしたことを認めた。",
       "score": 25
@@ -2963,7 +2963,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 47,
+      "coverage": 48,
       "titleJa": "米国の控訴裁判所は、AIトレーニングをめぐる「フェアユース」の防御を棄却した。レーベルとスノとの戦いにはどういう意味があるのでしょうか？",
       "summaryJa": "米国控訴裁判所は、9月29日にトムソン・ロイターとAI法務調査会社ROSS Intelligenceに対して判決を下しました",
       "score": 27
@@ -2994,7 +2994,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 56,
+      "coverage": 57,
       "score": 41
     },
     {
@@ -3223,7 +3223,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 36,
+      "coverage": 37,
       "titleJa": "Sunoは200万人の加入者と3億$の収益を「はるかに超えている」とMikey Shulmanは言う。彼はAI音楽にはまだ「確固たるルール」がないことは「良い」と主張する",
       "summaryJa": "シュルマン氏はまた、WMGとBMGが彼らの取引から何を得て、誰がAIのルールを設定すべきかを説明しました。",
       "score": 27
@@ -3713,7 +3713,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 10,
+      "coverage": 11,
       "titleJa": "AI音楽検出ツールを運用するオーディオAI企業Modulateが2500万$を調達",
       "summaryJa": "ボストンに本社を置くスタートアップは、これまでに6,000万$を調達しています",
       "score": 10
@@ -4333,7 +4333,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 97,
+      "coverage": 98,
       "titleJa": "ソニーとUMGがSunoを再び訴える",
       "summaryJa": "ソニーとユニバーサルミュージックグループは、Sunoに対してさらに別の訴訟を起こしました。レーベルは、新しいv 6モデルがまだ著作権を侵害していると主張している。なぜなら、それは以前のモデルからのユーザー出力で訓練されているからだ。以前のモデル自体は、YouTubeや他のソースからリッピングされた無許可の音楽で訓練されていたからだ。ソニーとUMGは、署名しなかった注目すべきホールドアウトである",
       "score": 27
@@ -5009,7 +5009,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 100,
+      "coverage": 101,
       "titleJa": "Sunoは、最新のソニーとユニバーサルの訴訟を爆発させるため、V 6モデルがユーザーからの「クリエイション」について訓練されたことを確認します",
       "summaryJa": "同社は、ユニバーサルミュージックグループとソニーミュージックエンタテインメントが提起した2回目の著作権訴訟に対応する声明で、その説明を記載した。",
       "score": 34
@@ -5396,7 +5396,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 27,
+      "coverage": 28,
       "score": 21
     },
     {
