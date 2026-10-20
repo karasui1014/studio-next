@@ -1,14 +1,14 @@
 {
-  "generatedAt": "2026-10-20T00:04:10.624Z",
+  "generatedAt": "2026-10-20T07:57:45.551Z",
   "count": 400,
-  "newCount": 21,
-  "translatedCount": 0,
+  "newCount": 27,
+  "translatedCount": 1,
   "ranking": [
     "a248dbd8ecb4cb58",
     "2bb555fb48f279d5",
+    "a8c0d76fdb81343c",
     "c521d6a26371bcfb",
-    "6c87f8c31b223ec0",
-    "53c95da2ed8fb111"
+    "6c87f8c31b223ec0"
   ],
   "sources": [
     {
@@ -79,7 +79,7 @@
       "name": "CDM",
       "category": "global",
       "ok": true,
-      "fetched": 0,
+      "fetched": 10,
       "matched": 0,
       "error": null
     },
@@ -197,7 +197,7 @@
       "category": "jp",
       "ok": true,
       "fetched": 30,
-      "matched": 1,
+      "matched": 2,
       "error": null
     },
     {
@@ -233,7 +233,7 @@
       "category": "jp",
       "ok": true,
       "fetched": 20,
-      "matched": 1,
+      "matched": 0,
       "error": null
     },
     {
@@ -260,7 +260,7 @@
       "category": "jp",
       "ok": true,
       "fetched": 20,
-      "matched": 0,
+      "matched": 1,
       "error": null
     }
   ],
@@ -291,6 +291,48 @@
     }
   ],
   "items": [
+    {
+      "id": "a8c0d76fdb81343c",
+      "title": "AIではなく音楽理論に基づきハーモニーを生成？ Malsah Labs「HarmonyKeen」リリース",
+      "url": "https://www.snrec.jp/entry/2026/10/20/110000",
+      "summary": "Malsah Labsが、入力したメロディに合わせてハーモニーパートを生成するソフトウェア「HarmonyKeen」をリリースした。macOSおよびWindowsに対応し、価格は59ドル。スタンドアローンアプリとして動作するほか、DAW上でVST3／AUプラグインとしても使用できる。サブスクリプションではなく買い切り型での提供となり、カード登録不要で利用できる7日間の無料試用版も用意されている。この試用期間はインストール時ではなく「最初に生成を実行したタイミング」からカウントされる仕組みだ。",
+      "published": "2026-10-20T02:00:00.000Z",
+      "source": "サンレコ",
+      "sourceId": "snrec",
+      "via": null,
+      "category": "jp",
+      "lang": "ja",
+      "coverage": 1,
+      "score": 44
+    },
+    {
+      "id": "8cdf68ea6400806a",
+      "title": "AIの時代だからこそアナログで 3人組ユニット「_Noid」で音楽シーンに挑戦！",
+      "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9JaTNqVm9ycHF6eXZGQnhQbWVqTGZLRHFtZERueF95RE5kQ1JVTXY4UnNuTEFOMncxSDZpa2M0NERGMmJCaGxXQWxZcm96LUp2VGhiMmN5WDRxbzh3dDZjVEpJUGR6cG56?oc=5",
+      "summary": "",
+      "published": "2026-10-20T01:11:06.000Z",
+      "source": "早稲田大学",
+      "sourceId": "gnews-ja-aimusic",
+      "via": "Googleニュース",
+      "category": "jp",
+      "lang": "ja",
+      "coverage": 1,
+      "score": 15
+    },
+    {
+      "id": "7353ef853ba6ba5c",
+      "title": "映画好きの彼女と、映画の話を。対話型AIエージェント「A Cinematic Girl」",
+      "url": "https://av.watch.impress.co.jp/docs/news/2149469.html",
+      "summary": "テアトルシネマグループが展開する“映画愛”をコンセプトにしたキャラクタープロジェクト「A Cinematic Girl」が、生成AIを活用した対話型AIエージェントとして新たに登場。映画が好きなキャラクターと会話し、その日の気分や好みに合わせたおすすめ映画を相談できるほか、10月26日から開催される第39回東京国際映画祭の上映作品についても質問したり、おすすめを教えてもらえる。",
+      "published": "2026-10-20T00:41:52.000Z",
+      "source": "AV Watch",
+      "sourceId": "av-watch",
+      "via": null,
+      "category": "jp",
+      "lang": "ja",
+      "coverage": 1,
+      "score": 26
+    },
     {
       "id": "af7117c8c74fcba7",
       "title": "UMG, Sony Sue DistroKid to Reveal Scale of Suno and AI Music",
@@ -363,7 +405,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 4,
+      "coverage": 5,
       "titleJa": "ソニーとユニバーサルは、裁判所に対し、Sunoの投資家であるLightspeedに「トレーニングデータの法的リスク」についての証言を強制するよう要請する",
       "summaryJa": "ラベルは、先週火曜日（ 10月13日）にボストン連邦裁判所に提出された訴訟で、召喚状を取り消すというLightspeedの動議に反対しました。",
       "score": 37
@@ -410,7 +452,21 @@
       "category": "jp",
       "lang": "ja",
       "coverage": 1,
-      "score": 22
+      "score": 17
+    },
+    {
+      "id": "d2783fa0012fe2f2",
+      "title": "わかって下さい（因幡晃）【千堂綾乃が歌う哀愁歌謡】 #SUNO AI #AI音楽 #AI画像 #shorts",
+      "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9LeEJ2ZVpnS3NSdEIwS2tNQTBDZDE2MGZmLVNFSEF2ZU04WmFsblRpNjV4d3NMZ3pYWGVSUlRzbXd3ajFVX3J4ZGdmV2kxY0hjZHRad3AwcTNRSXNS?oc=5",
+      "summary": "",
+      "published": "2026-10-18T07:23:56.000Z",
+      "source": "YouTube",
+      "sourceId": "gnews-ja-suno",
+      "via": "Googleニュース",
+      "category": "jp",
+      "lang": "ja",
+      "coverage": 1,
+      "score": 19
     },
     {
       "id": "a248dbd8ecb4cb58",
@@ -423,8 +479,22 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 10,
+      "coverage": 11,
       "score": 50
+    },
+    {
+      "id": "96a4f9451506885c",
+      "title": "韓国は著作権追跡を通じて「合法的なAI音楽」ソリューションを目指している。",
+      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPYVFBeW1YcTByT2pGUGRrdGtUbjZkTW0xVUxWWjJxbVkxLXlxR0Vra1Q5dUJFcDR0YUVDUU9Ta05weC04VjNhVVpSUTF5VFRzOEFDN0tHcEpEaUhqZEhZNE5HUVY1UjhZd09fWTY0MFlyT3ZwUGZKd3RZc0hRdTh1bGRNdnA3b1JNQ2RmYzhoN3FlVUVuRWo1ek9BSjNjck1JWEdqZU1HVDVERUk3?oc=5",
+      "summary": "",
+      "published": "2026-10-17T07:31:11.000Z",
+      "source": "Vietnam.vn",
+      "sourceId": "gnews-ja-aimusic",
+      "via": "Googleニュース",
+      "category": "jp",
+      "lang": "ja",
+      "coverage": 1,
+      "score": 13
     },
     {
       "id": "1ce16fdfd2dd50d2",
@@ -438,7 +508,7 @@
       "category": "jp",
       "lang": "ja",
       "coverage": 1,
-      "score": 10
+      "score": 6
     },
     {
       "id": "e3ef5648c3343148",
@@ -452,7 +522,7 @@
       "category": "jp",
       "lang": "ja",
       "coverage": 1,
-      "score": 10
+      "score": 6
     },
     {
       "id": "e5f4e04877e2fadd",
@@ -484,6 +554,21 @@
       "score": 15
     },
     {
+      "id": "f4e6f93a71e87074",
+      "title": "Universal Music and Sony Want to Know How Many AI-Generated Songs DistroKid Releases",
+      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQUGRSVVFOa2RWUXNMRGQwTjlkbVFHS3kxNTd5bjF1RTBWejVPRnZOVzU2MHdrR0xtdlhUT0tnZTVfN3JSV1JNTFg0aWswV3FTMnBsUmRXQnFGamVUU0M5TXZCSF83emZwWXpTcWlWekJ4cXRWVGo0STlITUhnTjBRWlZNdlZOWmhUeHpYMjJKMVZ4X0NNazdqYkdnbVltVTd3cG9ESGd5UVJMNFN3N1V5Xw?oc=5",
+      "summary": "",
+      "published": "2026-10-16T18:16:07.000Z",
+      "source": "The Hollywood Reporter",
+      "sourceId": "gnews-en-aimusic",
+      "via": "Googleニュース",
+      "category": "global",
+      "lang": "en",
+      "coverage": 1,
+      "titleJa": "ユニバーサルミュージックとソニーは、AIが生成した曲の数を知りたいDistroKidリリース",
+      "score": 14
+    },
+    {
       "id": "f7f5e1166f91b568",
       "title": "UMG & Sony Demand DistroKid Tell How Many AI Songs It Uploads From Suno: ‘Staggering Scale’",
       "url": "https://www.billboard.com/pro/umg-sony-demand-distrokid-admit-suno-song-uploads/",
@@ -494,7 +579,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 14,
+      "coverage": 15,
       "titleJa": "UMGとSony Demand DistroKidがSunoからアップロードしたAI曲の数を教えてくれる：「Staggering Scale」",
       "summaryJa": "音楽大手は、AI曲の「洪水」を可能にしたと非難する新しい法的ファイリングで、巨大なDIYディストリビューターへの圧力を強めています。",
       "score": 36
@@ -992,7 +1077,7 @@
       "via": null,
       "category": "jp",
       "lang": "ja",
-      "coverage": 22,
+      "coverage": 23,
       "score": 30
     },
     {
@@ -1006,7 +1091,7 @@
       "via": null,
       "category": "jp",
       "lang": "ja",
-      "coverage": 43,
+      "coverage": 45,
       "score": 48
     },
     {
@@ -1468,7 +1553,7 @@
       "category": "jp",
       "lang": "ja",
       "coverage": 1,
-      "score": 6
+      "score": -3
     },
     {
       "id": "a23fd36425842ed9",
@@ -1482,7 +1567,7 @@
       "category": "jp",
       "lang": "ja",
       "coverage": 1,
-      "score": 6
+      "score": -3
     },
     {
       "id": "53c95da2ed8fb111",
@@ -1495,9 +1580,9 @@
       "via": "Googleニュース",
       "category": "global",
       "lang": "en",
-      "coverage": 30,
+      "coverage": 31,
       "titleJa": "ノースカロライナ州の男性、800万$のAI音楽詐欺計画で有罪判決",
-      "score": 27
+      "score": 18
     },
     {
       "id": "2c53df3cda7fc5c3",
@@ -1946,7 +2031,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 35,
+      "coverage": 36,
       "score": 21
     },
     {
@@ -1976,7 +2061,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 27,
+      "coverage": 28,
       "titleJa": "イーロン・マスク氏によると、Grok Botは、AnthropicのClaudeとMidjourneyと並んで、SunoのAI音楽モデルを使用するという。",
       "summaryJa": "Sunoは現在、公式の公開APIを提供していません。MBWは7月に、同社が1社の立ち上げを検討していると報告した。",
       "score": 38
@@ -2224,7 +2309,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 49,
+      "coverage": 50,
       "score": 41
     },
     {
@@ -2628,7 +2713,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 26,
+      "coverage": 27,
       "titleJa": "AI音楽ストリーミング詐欺師、800万$のロイヤリティ詐欺で懲役1.5年の判決",
       "summaryJa": "マイケル・スミス氏は今年初め、ストリーミング詐欺をめぐる初の刑事事件で、ボットを使用して偽の曲を何十億回もストリーミングしたことを認めた。",
       "score": 25
@@ -2963,7 +3048,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 48,
+      "coverage": 49,
       "titleJa": "米国の控訴裁判所は、AIトレーニングをめぐる「フェアユース」の防御を棄却した。レーベルとスノとの戦いにはどういう意味があるのでしょうか？",
       "summaryJa": "米国控訴裁判所は、9月29日にトムソン・ロイターとAI法務調査会社ROSS Intelligenceに対して判決を下しました",
       "score": 27
@@ -2994,7 +3079,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 57,
+      "coverage": 58,
       "score": 41
     },
     {
@@ -3223,7 +3308,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 37,
+      "coverage": 38,
       "titleJa": "Sunoは200万人の加入者と3億$の収益を「はるかに超えている」とMikey Shulmanは言う。彼はAI音楽にはまだ「確固たるルール」がないことは「良い」と主張する",
       "summaryJa": "シュルマン氏はまた、WMGとBMGが彼らの取引から何を得て、誰がAIのルールを設定すべきかを説明しました。",
       "score": 27
@@ -4333,7 +4418,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 98,
+      "coverage": 99,
       "titleJa": "ソニーとUMGがSunoを再び訴える",
       "summaryJa": "ソニーとユニバーサルミュージックグループは、Sunoに対してさらに別の訴訟を起こしました。レーベルは、新しいv 6モデルがまだ著作権を侵害していると主張している。なぜなら、それは以前のモデルからのユーザー出力で訓練されているからだ。以前のモデル自体は、YouTubeや他のソースからリッピングされた無許可の音楽で訓練されていたからだ。ソニーとUMGは、署名しなかった注目すべきホールドアウトである",
       "score": 27
@@ -5009,7 +5094,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 101,
+      "coverage": 102,
       "titleJa": "Sunoは、最新のソニーとユニバーサルの訴訟を爆発させるため、V 6モデルがユーザーからの「クリエイション」について訓練されたことを確認します",
       "summaryJa": "同社は、ユニバーサルミュージックグループとソニーミュージックエンタテインメントが提起した2回目の著作権訴訟に対応する声明で、その説明を記載した。",
       "score": 34
@@ -5396,7 +5481,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 28,
+      "coverage": 29,
       "score": 21
     },
     {
@@ -6100,94 +6185,6 @@
       "titleJa": "Lunacy Audio Novaは、独自のAI搭載の音楽プラグインを構築して販売する場所です",
       "summaryJa": "3 D空間でボールを動かしてコントロールするCubeのような素晴らしいVSTプラグインを提供するLunacyは、クリエイターがAIを使用してカスタムミュージックツールを構築し、他の人に販売できるプラットフォームであるNovaを立ち上げました。最初は、Lunacyによって構築された一握りの機器が利用可能になります",
       "score": 0
-    },
-    {
-      "id": "8a627515f8463812",
-      "title": "SubmitHub bans AI-generated music from its promotion services",
-      "url": "https://musically.com/2026/09/17/submithub-bans-ai-generated-music-from-its-promotion-services/",
-      "summary": "Earlier this year, music-promo platform SubmitHub revealed research suggesting that 23.2% of the tracks being submitted were fully AI-generated. The post is from Music Ally .",
-      "published": "2026-09-17T12:30:00.000Z",
-      "source": "Music Ally",
-      "sourceId": "musically",
-      "via": null,
-      "category": "global",
-      "lang": "en",
-      "coverage": 1,
-      "titleJa": "SubmitHubは、AIが生成した音楽をプロモーションサービスから禁止しています",
-      "summaryJa": "今年初め、音楽プロモーションプラットフォームのSubmitHubは、提出されたトラックの23.2 ％が完全にAI生成されたものであることを示唆する調査を明らかにしました。この投稿はMusic Allyからのものです。",
-      "score": -6
-    },
-    {
-      "id": "dee9ee1060504998",
-      "title": "ボーカル・トラックを“AIボイス・モデル”に置き換える、IK Multimedia ReSingの新作拡張パックが発売…… R＆Bやラップ、EDMなど、幅広いジャンルをカバー",
-      "url": "https://icon.jp/archives/27944",
-      "summary": "IK MultimediaがReSing用の新しい拡張パック、「ReSing Voices Vol 2 Producer’s Pack」をリリース。幅広いジャンルに対応する英語圏のシンガーをフィーチャーした新",
-      "published": "2026-09-17T11:00:00.000Z",
-      "source": "ICON",
-      "sourceId": "icon-jp",
-      "via": null,
-      "category": "jp",
-      "lang": "ja",
-      "coverage": 1,
-      "score": 8
-    },
-    {
-      "id": "ac6cc3b46c93cd54",
-      "title": "AI音楽プロジェクト「Seoul Mood」が示す、K-POPクリエイターによるアルゴリズムと芸術性の融合",
-      "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE1hZGFBcVhiZzZMWlFSd19venhQTzh1Z1JnLS15eElCWVZycFRIWFhDQU9tRTF6c1ZETkw0eEhyT24wekpWM1FBUmpNT3h6TUZ2XzExVnpvUGM0cUpYM3ZtbkF6d2NkOWhhY2dMZnZYcVROd3RZ?oc=5",
-      "summary": "",
-      "published": "2026-09-17T10:35:00.000Z",
-      "source": "BigGo ファイナンス",
-      "sourceId": "gnews-ja-aimusic",
-      "via": "Googleニュース",
-      "category": "jp",
-      "lang": "ja",
-      "coverage": 1,
-      "score": -3
-    },
-    {
-      "id": "2bcc1664dd222ea6",
-      "title": "DP12でDolby Atmosミックス？ AIステム分離機能も搭載！ 〜MOTU Digital Performer 12リリース",
-      "url": "https://www.snrec.jp/entry/2026/09/17/190000",
-      "summary": "MOTUのDAWソフトウェア「Digital Performer 12」が、2026年9月16日に発売。新規ライセンス購入は税込87,780円、対象DAWユーザー向けクロスグレードが税込69,850円で、学生・教員向けアカデミック版、旧版からのアップデートも用意されている。Mac／Windows対応のDAWソフトウェアのメジャーアップデート版で、Dolby Atmosによるイマーシブミックスの制作から納品、AIによるステム分離、楽曲構成をセクション単位で組み替えるアレンジメントストリップを新たに搭載しているのが特徴。国内販売は株式会社ハイ・リゾリューション。",
-      "published": "2026-09-17T10:07:20.000Z",
-      "source": "サンレコ",
-      "sourceId": "snrec",
-      "via": null,
-      "category": "jp",
-      "lang": "ja",
-      "coverage": 1,
-      "score": 8
-    },
-    {
-      "id": "aca3c7e686965638",
-      "title": "Suno hit with another proposed class action over data breach that leaked information of 55M users",
-      "url": "https://www.musicbusinessworldwide.com/suno-hit-with-another-proposed-class-action-over-data-breach-that-leaked-information-of-55m-users/",
-      "summary": "The named plaintiff is Michael Beckham, whom the filing describes as an adult domiciled in Huron, South Dakota.",
-      "published": "2026-09-17T09:39:15.000Z",
-      "source": "Music Business Worldwide",
-      "sourceId": "mbw",
-      "via": null,
-      "category": "global",
-      "lang": "en",
-      "coverage": 1,
-      "titleJa": "Sunoは、5500万人のユーザーの情報を漏洩したデータ侵害をめぐる別の集団訴訟を提案しました",
-      "summaryJa": "名指しの原告はマイケル・ベッカムであり、提出書類にはサウスダコタ州ヒューロンに住む成人と記載されています。",
-      "score": 3
-    },
-    {
-      "id": "1579c76d4f1d17c4",
-      "title": "AI音楽プロジェクト「Seoul Mood」が映し出す“K-POP×AIの可能性と未来”",
-      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBEeVhiV0kzVjlpOFBKMUlTbDRIaHVnUWRpdng1OUFLaVpDQlVkWThKb0o0RkkzTkw0QWFHVzM0X2FEZHJPZXRHSDhHM0NTNVlhSW9iLTNMcl9zQQ?oc=5",
-      "summary": "",
-      "published": "2026-09-17T09:30:00.000Z",
-      "source": "ニューズウィーク日本版",
-      "sourceId": "gnews-ja-aimusic",
-      "via": "Googleニュース",
-      "category": "jp",
-      "lang": "ja",
-      "coverage": 17,
-      "score": 21
     }
   ]
 }
