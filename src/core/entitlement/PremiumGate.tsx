@@ -1,7 +1,9 @@
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { Lock } from 'lucide-react'
+import { Lock, Sparkles } from 'lucide-react'
 
 import { useRole } from './role'
+import { isTrialActive, startTrial, type TrialKey } from './trial'
 
 /**
  * 制作ツールを Premium 以上に制限するための入口。
@@ -20,14 +22,40 @@ import { useRole } from './role'
 export function PremiumGate({
   title,
   description,
+  trial,
   children,
 }: {
   title: string
   description?: string
+  /** 指定すると、無料プランでも1日1回、その日いっぱい試せる（→ trial.ts） */
+  trial?: TrialKey
   children: React.ReactNode
 }) {
   const { paid } = useRole()
+  // 画面を移動しても React はこの部品を使い回すので、「体験中か」は毎回そのツールで確かめる。
+  // （最初の値だけ state に持つと、前のツールの「体験中」が次のツールに持ち越されてしまう）
+  // started は保存できない環境向けの予備で、このページで始めたツールのキーを覚えておく。
+  const [started, setStarted] = useState<TrialKey | null>(null)
+  const trialOn = !!trial && (started === trial || isTrialActive(trial))
   if (paid) return <>{children}</>
+
+  if (trial && trialOn) {
+    return (
+      <>
+        <div className="mb-4 flex flex-wrap items-center gap-x-3 gap-y-1 rounded-xl border border-premium/30 bg-premium/[0.07] px-4 py-2.5 text-[12.5px]">
+          <span className="flex items-center gap-1.5 font-bold text-premium">
+            <Sparkles className="h-3.5 w-3.5" />
+            無料体験中
+          </span>
+          <span className="text-muted-foreground">今日いっぱい使えます。明日また試せます。</span>
+          <Link to="/plans" className="ml-auto font-semibold text-premium underline underline-offset-2">
+            毎日使うなら Studio Premium
+          </Link>
+        </div>
+        {children}
+      </>
+    )
+  }
 
   return (
     <div className="mx-auto max-w-lg py-10 text-center">
@@ -39,6 +67,23 @@ export function PremiumGate({
       <p className="mt-2 text-[13.5px] leading-relaxed text-muted-foreground">
         {description ?? 'この機能は Studio Premium 以上でお使いいただけます。'}
       </p>
+
+      {trial && (
+        <div className="mt-6 rounded-xl border border-premium/30 bg-premium/[0.06] p-4">
+          <p className="text-[13.5px] font-bold">まずは無料で試してみませんか</p>
+          <p className="mt-1 text-[12px] leading-relaxed text-muted-foreground">
+            1日1回、その日いっぱい使えます。登録もキーもいりません。
+          </p>
+          <button
+            type="button"
+            onClick={() => { startTrial(trial); setStarted(trial) }}
+            className="mt-3 inline-flex h-11 items-center justify-center gap-1.5 rounded-lg bg-premium px-6 text-[14px] font-bold text-white"
+          >
+            <Sparkles className="h-4 w-4" />
+            今日の無料体験で使ってみる
+          </button>
+        </div>
+      )}
 
       <div className="mt-6 rounded-xl border border-border bg-card p-4 text-left">
         <p className="text-[12.5px] font-bold">ご利用の流れ</p>

@@ -63,23 +63,23 @@ export default function App() {
           <Route path="tools" element={<ToolsPage />} />
           <Route
             path="tools/lyrics-review"
-            element={<PremiumGate title="歌詞レビュー"><LyricsReviewPage /></PremiumGate>}
+            element={<PremiumGate title="歌詞レビュー" trial="lyrics-review"><LyricsReviewPage /></PremiumGate>}
           />
           <Route
             path="tools/mv-idea"
-            element={<PremiumGate title="MVアイデア"><MvIdeaPage /></PremiumGate>}
+            element={<PremiumGate title="MVアイデア" trial="mv-idea"><MvIdeaPage /></PremiumGate>}
           />
           <Route
             path="tools/ai-producer"
-            element={<PremiumGate title="AIプロデューサー"><AiProducerPage /></PremiumGate>}
+            element={<PremiumGate title="AIプロデューサー" trial="ai-producer"><AiProducerPage /></PremiumGate>}
           />
           <Route
             path="prompts"
-            element={<PremiumGate title="プロンプト工房"><PromptDexPage /></PremiumGate>}
+            element={<PremiumGate title="プロンプト工房" trial="prompt-dex"><PromptDexPage /></PremiumGate>}
           />
           <Route
             path="storyboard"
-            element={<PremiumGate title="ストーリーボード"><MvIdeaPage /></PremiumGate>}
+            element={<PremiumGate title="ストーリーボード" trial="mv-idea"><MvIdeaPage /></PremiumGate>}
           />
           {/*
             AI秘書。話す内容の元になるのが曲データ（Premium以上）なので、

@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { Construction, Lock, SquareArrowOutUpRight } from 'lucide-react'
+import { Construction, Lock, Sparkles, SquareArrowOutUpRight } from 'lucide-react'
 
 import { recordActivity } from '@/core/storage/activity'
 import {
@@ -268,9 +268,9 @@ export function ToolsPage() {
 
       <div className="mt-5 grid gap-2.5 sm:grid-cols-2">
         {TOOLS.map((t) => {
-          if (role === 'free') {
-            return <LockedCard key={t.id} emoji={t.emoji} name={t.name} requires="premium" />
-          }
+          // 無料プランでも、制作ツールは1日1回その日いっぱい試せる（2026-10-20〜）。
+          // 以前はここでロックカードを出しており、ツールの中を一度も見られなかった。
+          const free = role === 'free'
 
           const body = (
             <>
@@ -280,6 +280,12 @@ export function ToolsPage() {
               <span className="min-w-0 flex-1">
                 <span className="flex items-center gap-2">
                   <span className="text-[14px] font-bold">{t.name}</span>
+                  {free && t.to && (
+                    <span className="inline-flex items-center gap-1 rounded bg-premium/12 px-1.5 py-px text-[10px] font-bold text-premium">
+                      <Sparkles className="h-3 w-3" />
+                      1日1回 無料で試せます
+                    </span>
+                  )}
                   {t.phase && (
                     <span className="inline-flex items-center gap-1 rounded bg-muted px-1.5 py-px text-[10px] font-bold text-muted-foreground">
                       <Construction className="h-3 w-3" />
