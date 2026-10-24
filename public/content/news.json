@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-10-24T12:58:23.876Z",
+  "generatedAt": "2026-10-24T16:19:40.812Z",
   "count": 400,
-  "newCount": 31,
-  "translatedCount": 0,
+  "newCount": 34,
+  "translatedCount": 3,
   "ranking": [
     "a8c0d76fdb81343c",
     "641f07a42cd35bbf",
-    "a248dbd8ecb4cb58",
+    "cab3c3adc33be919",
     "9db5748411712405",
     "e1ccd222bccc5cce"
   ],
@@ -17,7 +17,7 @@
       "category": "jp",
       "ok": true,
       "fetched": 40,
-      "matched": 36,
+      "matched": 37,
       "error": null
     },
     {
@@ -134,7 +134,7 @@
       "category": "global",
       "ok": true,
       "fetched": 10,
-      "matched": 0,
+      "matched": 1,
       "error": null
     },
     {
@@ -292,6 +292,37 @@
   ],
   "items": [
     {
+      "id": "f43c6dcb5cc39999",
+      "title": "Suno and Anthropic Face Nearly $340 Million in Copyright Claims Over Songs by Madonna, Johnny Cash",
+      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNd2paX0g0Y1J6RkhDcDNfaVMzQnI3aTJXdHY2eWpCekpXbnlYT296bWF0Um5leklEZTh1UzdBeWg1WElOVkZMamVtVkhmbTNCQlAwcUxLX2l1WmxuaGtiWDZieEhwZzc2aFVhOGpGZEQ4SThxWXFWRGdGOGZoVUM1dWMwVktQQjZXa0daSkJB?oc=5",
+      "summary": "",
+      "published": "2026-10-24T15:56:55.000Z",
+      "source": "Law Commentary",
+      "sourceId": "gnews-en-aimusic",
+      "via": "Googleニュース",
+      "category": "global",
+      "lang": "en",
+      "coverage": 1,
+      "titleJa": "マドンナ、ジョニー・キャッシュの曲に対する3億4000万$近い著作権侵害に直面するSunoとAnthropic",
+      "score": 28
+    },
+    {
+      "id": "60bf6ab4885fc0ba",
+      "title": "Anthropic Sued For Stealing Elvis Presley Music to Train AI: ‘Deeply Protective of These Iconic Songs’",
+      "url": "https://www.billboard.com/pro/elvis-presley-estate-sues-suno-anthropic/",
+      "summary": "The owners of The King's IP are cracking down on the tech giant, adding one of music's most legendary figures to the massive legal battle over AI music.",
+      "published": "2026-10-24T14:34:54.000Z",
+      "source": "Billboard",
+      "sourceId": "billboard",
+      "via": null,
+      "category": "global",
+      "lang": "en",
+      "coverage": 1,
+      "titleJa": "エルヴィス・プレスリーの音楽を盗んでAIを訓練するために訴えられたAnthropic ：「これらの象徴的な歌を深く保護する」",
+      "summaryJa": "The King's IPの所有者は、このテクノロジー大手を取り締まり、AI音楽をめぐる大規模な法的争いに音楽界で最も伝説的な人物の1人を加えている。",
+      "score": 12
+    },
+    {
       "id": "e6a4c1a9adbb43cb",
       "title": "「スマホによるPC画面の撮影を検知・遮断 AI生成楽曲の判別技術も、Japan IT Weekで展示",
       "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE1uNlhPYWI1OXZiMW92bWJpNmZqcUJuWDc2M3lvSnBEaTNhV0FXcGg1M0QzQ2lqU3dZTHlqem85NjVldGk1RmVJMFFUSzNaNk96NUQ5bzkyVmdpeEtUc0p2bXN6NFlDV2dJUzBUX1duck1DZDJubHBWTzFSR0U1THc?oc=5",
@@ -316,7 +347,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 5,
+      "coverage": 7,
       "score": 39
     },
     {
@@ -333,7 +364,7 @@
       "coverage": 1,
       "titleJa": "Spotifyの巨額の利益からSunoのためのもう1つの法的戦いまで... MBWのウィークリーラウンドアップです",
       "summaryJa": "ここ数日の最大の見出し...",
-      "score": 21
+      "score": 16
     },
     {
       "id": "b0735545bf096c3e",
@@ -478,7 +509,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 8,
+      "coverage": 10,
       "score": 34
     },
     {
@@ -527,6 +558,20 @@
       "score": 7
     },
     {
+      "id": "eb172ed28f5ced96",
+      "title": "Reservoir Files Copyright, DMCA Suits Against Suno and Anthropic",
+      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOV1NqM3RpMDdMb3FpSVAxU1M0RjVBMVZFdDRNYW82V19USC1xVXNkQkYxZWdFTGFrY25PM0N2TEJQZ1hCcEY5OERuTUxJQXBvX0JOeDlINXlzSndRX2ZzVFllNUlDbW41TGhXbl83RHNuUnA0Z2EtWTlweXUyUzFvQXlfY1A1MVRqMFM4?oc=5",
+      "summary": "",
+      "published": "2026-10-22T20:21:50.000Z",
+      "source": "Digital Music News",
+      "sourceId": "gnews-en-aimusic",
+      "via": "Googleニュース",
+      "category": "global",
+      "lang": "en",
+      "coverage": 1,
+      "score": 23
+    },
+    {
       "id": "234c0358cf8c93d2",
       "title": "Spotify’s current AI bet is about being the music service that agents choose",
       "url": "https://techcrunch.com/2026/10/22/spotifys-current-ai-bet-is-about-being-the-music-service-that-agents-choose/",
@@ -553,7 +598,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 8,
+      "coverage": 9,
       "titleJa": "Sunoは、UMGとソニーの「洗濯」訴訟に応じて、AIのトレーニングに使用されたすべての録音を削除していないことを認めている",
       "summaryJa": "44ページの回答は、火曜日（ 10月20日）にマサチューセッツ州地方裁判所に提出され、MBWによって審査されました。",
       "score": 40
@@ -633,7 +678,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 9,
+      "coverage": 10,
       "titleJa": "リザーバは、ジョニ・ミッチェル、ジョニー・キャッシュ、マドンナなどの曲を著作権侵害したとして、スノーとアントロピックを訴える",
       "summaryJa": "Reservoirはまた、同じ日にAnthropicに対して別の訴訟を提起しました。",
       "score": 47
@@ -649,7 +694,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 10,
+      "coverage": 11,
       "score": 40,
       "titleJa": "Reservoir、AI音楽を巡る最新訴訟でSunoとAnthropicを訴える：「アーティストの代わりを意図した」",
       "summaryJa": "インディーパブリッシャーは、AIラボがマドンナとジョニー・キャッシュの曲を盗んで、新しいモデルを吐き出すようにモデルを訓練したと述べている。"
@@ -757,7 +802,7 @@
       "category": "jp",
       "lang": "ja",
       "coverage": 5,
-      "score": 34
+      "score": 30
     },
     {
       "id": "c5de799d412f42c0",
@@ -773,7 +818,7 @@
       "coverage": 1,
       "titleJa": "「スパマーが戦術を変えるにつれて、私たちはシステムを更新し続けます」： Spotifyは7500万のスパムAIトラックを削除します",
       "summaryJa": "プラットフォームは、1年前にいくつかのスロップ対策を発表しました",
-      "score": 7
+      "score": 3
     },
     {
       "id": "eed7b1e420033eae",
@@ -874,7 +919,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 14,
+      "coverage": 15,
       "score": 30
     },
     {
@@ -888,7 +933,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 11,
+      "coverage": 12,
       "score": 30
     },
     {
@@ -945,7 +990,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 22,
+      "coverage": 25,
       "score": 37
     },
     {
@@ -1007,7 +1052,7 @@
       "via": "Googleニュース",
       "category": "global",
       "lang": "en",
-      "coverage": 16,
+      "coverage": 17,
       "titleJa": "Creve Coeurの男性が依存症回復の一環としてAI音楽に目を向ける",
       "score": 27
     },
@@ -1168,6 +1213,21 @@
       "score": 3
     },
     {
+      "id": "d0ecc90e701863b6",
+      "title": "Best AI Music Generators 2026: Ranked, Tested & Compared",
+      "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE1yaW1BVlR5QVh0SFVDYi12bkh3RWRKbGt3azg4NURoNWlwYmNLc1J3MkVmQmdEVkZ5Y0YtcWI5UkstN2hJenh3VFZmdnY1WGo0b19CazZqaXk?oc=5",
+      "summary": "",
+      "published": "2026-10-20T07:00:00.000Z",
+      "source": "Fello AI",
+      "sourceId": "gnews-en-aimusic",
+      "via": "Googleニュース",
+      "category": "global",
+      "lang": "en",
+      "coverage": 1,
+      "titleJa": "ベストAIミュージックジェネレーター2026 ：ランキング、テスト、比較",
+      "score": 9
+    },
+    {
       "id": "a8c0d76fdb81343c",
       "title": "AIではなく音楽理論に基づきハーモニーを生成？ Malsah Labs「HarmonyKeen」リリース",
       "url": "https://www.snrec.jp/entry/2026/10/20/110000",
@@ -1324,7 +1384,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 22,
+      "coverage": 23,
       "titleJa": "ソニーとユニバーサルは、裁判所に対し、Sunoの投資家であるLightspeedに「トレーニングデータの法的リスク」についての証言を強制するよう要請する",
       "summaryJa": "ラベルは、先週火曜日（ 10月13日）にボストン連邦裁判所に提出された訴訟で、召喚状を取り消すというLightspeedの動議に反対しました。",
       "score": 28
@@ -1482,8 +1542,8 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 28,
-      "score": 46
+      "coverage": 29,
+      "score": 37
     },
     {
       "id": "d27015992e262f82",
@@ -1538,7 +1598,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 16,
+      "coverage": 17,
       "score": 21
     },
     {
@@ -1609,7 +1669,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 32,
+      "coverage": 33,
       "titleJa": "UMGとSony Demand DistroKidがSunoからアップロードしたAI曲の数を教えてくれる：「Staggering Scale」",
       "summaryJa": "音楽大手は、AI曲の「洪水」を可能にしたと非難する新しい法的ファイリングで、巨大なDIYディストリビューターへの圧力を強めています。",
       "score": 27
@@ -1823,7 +1883,7 @@
       "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5Lamdfd3hPdVNyRjVSdHp6cXJkRUxwbFZDUm5nelB2NUt5T0xVeTJEVW9Cem51aFViZ3Z4NU5xaW00ZFBnVWpsRXNucmduV2dsX3o3VXR0bmoxQkdWXzE2T9IBZkFVX3lxTFA2WHg2c2VlOWhLRXp2Ul9pVlpSMmdISEQzTVN0bXhrZG1UMlBoMGFZLWZZRlhyUmF6VnhydnhQb0hfbEJJRnFUd0RkcWpycjgyb3VBS1NPM1I5RzJtcHZvRTVMVEE0UQ?oc=5",
       "summary": "",
       "published": "2026-10-15T22:00:46.000Z",
-      "source": "Real Sound｜リアルサウンド",
+      "source": "リアルサウンド",
       "sourceId": "gnews-ja-aimusic",
       "via": "Googleニュース",
       "category": "jp",
@@ -2740,7 +2800,7 @@
       "via": "Googleニュース",
       "category": "global",
       "lang": "en",
-      "coverage": 46,
+      "coverage": 47,
       "titleJa": "ノースカロライナ州の男性、800万$のAI音楽詐欺計画で有罪判決",
       "score": 18
     },
@@ -3264,7 +3324,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 45,
+      "coverage": 46,
       "titleJa": "イーロン・マスク氏によると、Grok Botは、AnthropicのClaudeとMidjourneyと並んで、SunoのAI音楽モデルを使用するという。",
       "summaryJa": "Sunoは現在、公式の公開APIを提供していません。MBWは7月に、同社が1社の立ち上げを検討していると報告した。",
       "score": 38
@@ -3512,7 +3572,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 67,
+      "coverage": 68,
       "score": 41
     },
     {
@@ -3916,7 +3976,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 44,
+      "coverage": 45,
       "titleJa": "AI音楽ストリーミング詐欺師、800万$のロイヤリティ詐欺で懲役1.5年の判決",
       "summaryJa": "マイケル・スミス氏は今年初め、ストリーミング詐欺をめぐる初の刑事事件で、ボットを使用して偽の曲を何十億回もストリーミングしたことを認めた。",
       "score": 25
@@ -4338,7 +4398,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 75,
+      "coverage": 76,
       "score": 41
     },
     {
@@ -4566,7 +4626,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 55,
+      "coverage": 56,
       "titleJa": "Sunoは200万人の加入者と3億$の収益を「はるかに超えている」とMikey Shulmanは言う。彼はAI音楽にはまだ「確固たるルール」がないことは「良い」と主張する",
       "summaryJa": "シュルマン氏はまた、WMGとBMGが彼らの取引から何を得て、誰がAIのルールを設定すべきかを説明しました。",
       "score": 27
@@ -4760,7 +4820,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 12,
+      "coverage": 13,
       "titleJa": "ElevenLabsの評価額は2倍の220億$ – AI音楽のライバルであるSunoの4倍",
       "summaryJa": "ElevenLabsは、220億$の評価で3億$の従業員入札オファーを完了しました。",
       "score": 19
@@ -5749,7 +5809,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 116,
+      "coverage": 117,
       "titleJa": "ソニーとUMGがSunoを再び訴える",
       "summaryJa": "ソニーとユニバーサルミュージックグループは、Sunoに対してさらに別の訴訟を起こしました。レーベルは、新しいv 6モデルがまだ著作権を侵害していると主張している。なぜなら、それは以前のモデルからのユーザー出力で訓練されているからだ。以前のモデル自体は、YouTubeや他のソースからリッピングされた無許可の音楽で訓練されていたからだ。ソニーとUMGは、署名しなかった注目すべきホールドアウトである",
       "score": 27
@@ -6136,64 +6196,6 @@
       "lang": "ja",
       "coverage": 1,
       "score": -3
-    },
-    {
-      "id": "1b7c75daeda3eb78",
-      "title": "Googleが音声合成AI「Gemini 3.8 Flash TTS」と「Gemini 3.8 Flash-Lite TTS」をリリース",
-      "url": "https://gigazine.net/news/20260924-gemini-3-8-flash-tts/",
-      "summary": "Googleが音声合成・テキスト読み上げモデルの「Gemini 3.8 Flash TTS」と「Gemini 3.8 Flash-Lite TTS」をリリースしました。日本語を含む100以上の言語・方言に対応し、2000種以上の音声でテキストを読み上げさせることができます。 続きを読む...",
-      "published": "2026-09-24T03:12:00.000Z",
-      "source": "GIGAZINE",
-      "sourceId": "gigazine",
-      "via": null,
-      "category": "jp",
-      "lang": "ja",
-      "coverage": 1,
-      "score": 18
-    },
-    {
-      "id": "91f1b3ea6bee056b",
-      "title": "AI音楽「転んでも間違えても / Milia」",
-      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE00cGZDci1BbkJ4TUhaaXlyQlRDRWVKVks0dHVKc0VqelQzYW4xRDhZSnVaeENDNXdTTTk4c0JoZ0xWeGpaRV9UU0lTNHhrdFlHTUJkaGlR?oc=5",
-      "summary": "",
-      "published": "2026-09-23T22:16:37.000Z",
-      "source": "x.com",
-      "sourceId": "gnews-ja-aimusic",
-      "via": "Googleニュース",
-      "category": "jp",
-      "lang": "ja",
-      "coverage": 1,
-      "score": -3
-    },
-    {
-      "id": "fbc497ab299e9a09",
-      "title": "YOSHIKIさんに聞く「音楽生成AIは脅威ですか？」「Xから見たZ世代は？」【WBS】",
-      "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFBFTXlKWHlaV1FHenJVS0dmU1A1NGtSVFVCc1NWUFVVS3ZrMUhJS0JvR3M5bWlDLXV1enVOcm9jRHdnaTg2ZDB3Zm9GLVlzN1RacUx3Rw?oc=5",
-      "summary": "",
-      "published": "2026-09-23T20:29:35.000Z",
-      "source": "テレ東BIZ",
-      "sourceId": "gnews-ja-suno",
-      "via": "Googleニュース",
-      "category": "jp",
-      "lang": "ja",
-      "coverage": 1,
-      "score": -3
-    },
-    {
-      "id": "b32f8f2422466b43",
-      "title": "YouTube Music gets more conversational with new AI features",
-      "url": "https://techcrunch.com/2026/09/23/youtube-music-gets-more-conversational-with-new-ai-features/",
-      "summary": "Built directly into the YouTube Music app, Ask Music lets users describe what they want to hear in everyday language rather than searching for individual songs or artists.",
-      "published": "2026-09-23T15:19:30.000Z",
-      "source": "TechCrunch",
-      "sourceId": "techcrunch",
-      "via": null,
-      "category": "global",
-      "lang": "en",
-      "coverage": 1,
-      "titleJa": "新しいAI機能により、YouTube Musicはより会話的になります",
-      "summaryJa": "YouTube Musicアプリに直接組み込まれているAsk Musicを使用すると、個々の曲やアーティストを検索するのではなく、日常の言語で聞きたいことを説明できます。",
-      "score": -6
     }
   ]
 }
