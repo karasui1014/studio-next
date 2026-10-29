@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-10-29T15:41:13.319Z",
+  "generatedAt": "2026-10-29T18:42:41.403Z",
   "count": 400,
-  "newCount": 46,
-  "translatedCount": 3,
+  "newCount": 38,
+  "translatedCount": 1,
   "ranking": [
     "02c705a4dd594ace",
+    "5be9782192dd4285",
     "8fec367d2e5e5b17",
     "87a337b022e2f174",
-    "5be9782192dd4285",
     "1720ac8b54d4e9f2"
   ],
   "sources": [
@@ -17,7 +17,7 @@
       "category": "jp",
       "ok": true,
       "fetched": 40,
-      "matched": 38,
+      "matched": 37,
       "error": null
     },
     {
@@ -125,7 +125,7 @@
       "category": "global",
       "ok": true,
       "fetched": 30,
-      "matched": 1,
+      "matched": 0,
       "error": null
     },
     {
@@ -390,8 +390,8 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 2,
-      "score": 30
+      "coverage": 3,
+      "score": 38
     },
     {
       "id": "5be9782192dd4285",
@@ -404,8 +404,8 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 3,
-      "score": 38
+      "coverage": 4,
+      "score": 46
     },
     {
       "id": "59c4dc8da1a565ba",
@@ -523,7 +523,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 6,
+      "coverage": 7,
       "score": 64
     },
     {
@@ -551,7 +551,7 @@
       "via": null,
       "category": "jp",
       "lang": "ja",
-      "coverage": 18,
+      "coverage": 19,
       "score": 43
     },
     {
@@ -868,10 +868,10 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 10,
+      "coverage": 11,
       "titleJa": "ユニバーサルとソニーは、削除された投稿で元Menlo Venturesの幹部を解任することを承認しました：「私は個人的にSunoを聴くことのほとんどを変えました」",
       "summaryJa": "3月、MBWはSunoのCEO Mikey Shulmanへの公開書簡で、Gong氏の投稿の潜在的な法的意義を指摘した。",
-      "score": 40
+      "score": 36
     },
     {
       "id": "b810539caa2ab82e",
@@ -886,7 +886,7 @@
       "lang": "en",
       "coverage": 1,
       "titleJa": "クレイジーAI「音楽」訴訟",
-      "score": 7
+      "score": 3
     },
     {
       "id": "f69fb710dd454eea",
@@ -902,7 +902,7 @@
       "coverage": 1,
       "titleJa": "AI音楽への新たな打撃？エルビス・プレスリーのカタログの所有者による4100万$の訴訟でヒット",
       "summaryJa": "著作権者によると、クロードは許可なくエルヴィスの音楽の訓練を受け、彼の曲のほぼコピーを制作することができたという。",
-      "score": 7
+      "score": 3
     },
     {
       "id": "175fd9c0afd0be07",
@@ -1007,7 +1007,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 9,
+      "coverage": 10,
       "score": 30
     },
     {
@@ -1138,7 +1138,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 13,
+      "coverage": 14,
       "score": 30
     },
     {
@@ -1166,7 +1166,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 16,
+      "coverage": 18,
       "score": 30
     },
     {
@@ -1194,7 +1194,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 45,
+      "coverage": 47,
       "score": 30
     },
     {
@@ -1280,7 +1280,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 14,
+      "coverage": 15,
       "titleJa": "貯水池は著作権侵害訴訟でSunoとAnthropicを襲う",
       "summaryJa": "Reservoir Mediaは、法廷でAI企業を狙っている最新の音楽著作権所有者です。今週の同じ日にスノとアントロピックの両方を訴え、二重の攻撃でなくなりました。この投稿はMusic Allyからのものです。",
       "score": 43
@@ -1342,8 +1342,8 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 2,
-      "score": 14
+      "coverage": 3,
+      "score": 22
     },
     {
       "id": "a92a8da87f209485",
@@ -1426,7 +1426,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 29,
+      "coverage": 30,
       "score": 30
     },
     {
@@ -1544,7 +1544,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 28,
+      "coverage": 29,
       "titleJa": "Sunoは、UMGとソニーの「洗濯」訴訟に応じて、AIのトレーニングに使用されたすべての録音を削除していないことを認めている",
       "summaryJa": "44ページの回答は、火曜日（ 10月20日）にマサチューセッツ州地方裁判所に提出され、MBWによって審査されました。",
       "score": 27
@@ -1624,7 +1624,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 29,
+      "coverage": 30,
       "titleJa": "リザーバは、ジョニ・ミッチェル、ジョニー・キャッシュ、マドンナなどの曲を著作権侵害したとして、スノーとアントロピックを訴える",
       "summaryJa": "Reservoirはまた、同じ日にAnthropicに対して別の訴訟を提起しました。",
       "score": 34
@@ -1640,7 +1640,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 30,
+      "coverage": 31,
       "score": 27,
       "titleJa": "Reservoir、AI音楽を巡る最新訴訟でSunoとAnthropicを訴える：「アーティストの代わりを意図した」",
       "summaryJa": "インディーパブリッシャーは、AIラボがマドンナとジョニー・キャッシュの曲を盗んで、新しいモデルを吐き出すようにモデルを訓練したと述べている。"
@@ -1775,7 +1775,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 6,
+      "coverage": 7,
       "score": 21
     },
     {
@@ -1893,7 +1893,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 34,
+      "coverage": 35,
       "score": 21
     },
     {
@@ -1925,6 +1925,20 @@
       "score": -3
     },
     {
+      "id": "2530c5e53b08a3f4",
+      "title": "画像・写真 | JASRAC、上半期の使用料徴収額が過去最高756億円 生成AI楽曲の判別技術の検証にも着手 2枚目",
+      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBaR2ZrS3NtdkxUeWRhZEtlUXl6S0pNdk9xTUdycW5GWDlzV3hiRTd1UmZEWWIzUW1VeWQ4R3dPNklWcXhRdnRKSTU2eGh3cmM0MFhqQjA2T0g1QQ?oc=5",
+      "summary": "",
+      "published": "2026-10-21T07:00:00.000Z",
+      "source": "オリコンニュース",
+      "sourceId": "gnews-ja-aimusic",
+      "via": "Googleニュース",
+      "category": "jp",
+      "lang": "ja",
+      "coverage": 1,
+      "score": -3
+    },
+    {
       "id": "3280f5d45e84d6da",
       "title": "JASRAC、上半期の使用料徴収額が過去最高756億円 生成AI楽曲の判別技術の検証にも着手（オリコン）",
       "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9ZbDVVX05PWU41UkNhMXFLcUMxNUN2RE41c25RRVBKZUx6WU5mVEVMZ2xQYnk2VkFXRU40RW9BYjJVY2liWmx3TnYwSk1XVms4WjFOVWoxNEV6QkFvTDRxdnIwRlBjVTBleF9mVlNEQzhyV3RnMU40ZUZKampzT28?oc=5",
@@ -1935,22 +1949,8 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 22,
+      "coverage": 23,
       "score": 21
-    },
-    {
-      "id": "2530c5e53b08a3f4",
-      "title": "画像・写真 | JASRAC、上半期の使用料徴収額が過去最高756億円 生成AI楽曲の判別技術の検証にも着手 2枚目",
-      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBaR2ZrS3NtdkxUeWRhZEtlUXl6S0pNdk9xTUdycW5GWDlzV3hiRTd1UmZEWWIzUW1VeWQ4R3dPNklWcXhRdnRKSTU2eGh3cmM0MFhqQjA2T0g1QQ?oc=5",
-      "summary": "",
-      "published": "2026-10-21T06:05:00.000Z",
-      "source": "オリコンニュース",
-      "sourceId": "gnews-ja-aimusic",
-      "via": "Googleニュース",
-      "category": "jp",
-      "lang": "ja",
-      "coverage": 1,
-      "score": -3
     },
     {
       "id": "bfd87e1841db2250",
@@ -2020,7 +2020,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 54,
+      "coverage": 55,
       "score": 28
     },
     {
@@ -2398,7 +2398,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 42,
+      "coverage": 43,
       "titleJa": "ソニーとユニバーサルは、裁判所に対し、Sunoの投資家であるLightspeedに「トレーニングデータの法的リスク」についての証言を強制するよう要請する",
       "summaryJa": "ラベルは、先週火曜日（ 10月13日）にボストン連邦裁判所に提出された訴訟で、召喚状を取り消すというLightspeedの動議に反対しました。",
       "score": 19
@@ -2712,7 +2712,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 50,
+      "coverage": 51,
       "titleJa": "UMGとSony Demand DistroKidがSunoからアップロードしたAI曲の数を教えてくれる：「Staggering Scale」",
       "summaryJa": "音楽大手は、AI曲の「洪水」を可能にしたと非難する新しい法的ファイリングで、巨大なDIYディストリビューターへの圧力を強めています。",
       "score": 27
@@ -4260,7 +4260,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 5,
+      "coverage": 6,
       "titleJa": "ソニーミュージックの26万件のディープフェイク・テイクダウンから、Sunoのライブミュージックの拡張まで… MBWのウィークリー・ラウンドアップ",
       "summaryJa": "ここ数日の最大の見出し...",
       "score": 27
@@ -4480,7 +4480,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 65,
+      "coverage": 66,
       "titleJa": "イーロン・マスク氏によると、Grok Botは、AnthropicのClaudeとMidjourneyと並んで、SunoのAI音楽モデルを使用するという。",
       "summaryJa": "Sunoは現在、公式の公開APIを提供していません。MBWは7月に、同社が1社の立ち上げを検討していると報告した。",
       "score": 38
@@ -4728,7 +4728,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 87,
+      "coverage": 88,
       "score": 41
     },
     {
@@ -4744,6 +4744,21 @@
       "lang": "ja",
       "coverage": 1,
       "score": 6
+    },
+    {
+      "id": "2a61f7e28a96d5e7",
+      "title": "AI music firm Suno appoints former Live Nation exec Chua for ‘pivotal’ live strategy",
+      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQLVVteWk2VHNxVVVkNFdzUVdXQmFaUDlkWVpodjk4bmtPYmd2MTZRXzRUYWdzeWYxMnI3YmZTSHg1M21yVG1nV25KLWN6M0lsUjFqSFdiX1B3WFlfUUYyNjhtR0NiWTZWT3NQbU1EZkwyMnVaWWF1SnpuTUVIdDJGZXliZHU2azJwMXhnNmlVVXRMTDFpMXBqM050VVdpUDJuWFA5MkVZLUk2SWcxUEhVZ2JjZTk3c1A5a0E?oc=5",
+      "summary": "",
+      "published": "2026-10-08T07:00:00.000Z",
+      "source": "IQ Magazine",
+      "sourceId": "gnews-en-aimusic",
+      "via": "Googleニュース",
+      "category": "global",
+      "lang": "en",
+      "coverage": 1,
+      "titleJa": "AI音楽会社Suno、Live Nationの元エグゼクティブChuaを「極めて重要な」ライブ戦略に任命",
+      "score": 3
     },
     {
       "id": "f8ce8c073b73c384",
@@ -4865,7 +4880,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 18,
+      "coverage": 19,
       "titleJa": "新しいCFO、3件のライセンス契約、7億7,500万ドル以上の資金調達により、54億ドル相当のSunoがIPOを阻止しているのはなぜですか？",
       "summaryJa": "同社の潜在的な株式市場の野心と、そこに到達する際に直面する障壁を示すシグナル。",
       "score": 19
@@ -5146,7 +5161,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 64,
+      "coverage": 65,
       "titleJa": "AI音楽ストリーミング詐欺師、800万$のロイヤリティ詐欺で懲役1.5年の判決",
       "summaryJa": "マイケル・スミス氏は今年初め、ストリーミング詐欺をめぐる初の刑事事件で、ボットを使用して偽の曲を何十億回もストリーミングしたことを認めた。",
       "score": 25
@@ -5568,7 +5583,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 95,
+      "coverage": 96,
       "score": 41
     },
     {
@@ -5796,7 +5811,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 75,
+      "coverage": 76,
       "titleJa": "Sunoは200万人の加入者と3億$の収益を「はるかに超えている」とMikey Shulmanは言う。彼はAI音楽にはまだ「確固たるルール」がないことは「良い」と主張する",
       "summaryJa": "シュルマン氏はまた、WMGとBMGが彼らの取引から何を得て、誰がAIのルールを設定すべきかを説明しました。",
       "score": 27
@@ -6004,7 +6019,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 32,
+      "coverage": 33,
       "titleJa": "ElevenLabsの評価額は2倍の220億$ – AI音楽のライバルであるSunoの4倍",
       "summaryJa": "ElevenLabsは、220億$の評価で3億$の従業員入札オファーを完了しました。",
       "score": 19
@@ -6165,21 +6180,6 @@
       "lang": "ja",
       "coverage": 1,
       "score": 6
-    },
-    {
-      "id": "fa245a82f5e943df",
-      "title": "Watch Suno CEO: AI Could Reinvent How We Experience Music",
-      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQdHpkeUFuajE5LWhMSzNMZ1lpSTVab3FwSnU4VjZlTGw1blhxcVhWSjR2U0swUDdZX0NQbjY4Wm9OZTBYUEZfNGpxcHczb0F6aUNBTENTV2kwLVpyZlM0cm9WMW5CczZtNlRPaHZXTk81Mmc3M19YTnFoLTZjXzFwWW9QM3k2cHpNSllPSHM5WFJVUmRLWWItbFlkcFQtbjJSa0pNYy1BdEc?oc=5",
-      "summary": "",
-      "published": "2026-10-01T07:00:00.000Z",
-      "source": "Bloomberg.com",
-      "sourceId": "gnews-en-aimusic",
-      "via": "Googleニュース",
-      "category": "global",
-      "lang": "en",
-      "coverage": 1,
-      "titleJa": "Suno CEO ： AIが音楽を体験する方法を改革するかもしれない",
-      "score": 3
     }
   ]
 }
