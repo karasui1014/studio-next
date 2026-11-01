@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-10-31T23:54:35.336Z",
+  "generatedAt": "2026-11-01T09:49:56.940Z",
   "count": 400,
-  "newCount": 48,
+  "newCount": 7,
   "translatedCount": 0,
   "ranking": [
     "02c705a4dd594ace",
@@ -15,28 +15,28 @@
       "id": "gnews-ja-aimusic",
       "name": "Googleニュース（AI音楽）",
       "category": "jp",
-      "ok": true,
-      "fetched": 40,
-      "matched": 37,
-      "error": null
+      "ok": false,
+      "fetched": 0,
+      "matched": 0,
+      "error": "HTTP 503"
     },
     {
       "id": "gnews-ja-suno",
       "name": "Googleニュース（Suno/生成AI作曲）",
       "category": "jp",
-      "ok": true,
-      "fetched": 39,
-      "matched": 39,
-      "error": null
+      "ok": false,
+      "fetched": 0,
+      "matched": 0,
+      "error": "HTTP 503"
     },
     {
       "id": "gnews-en-aimusic",
       "name": "Google News (AI music)",
       "category": "global",
-      "ok": true,
-      "fetched": 40,
-      "matched": 40,
-      "error": null
+      "ok": false,
+      "fetched": 0,
+      "matched": 0,
+      "error": "HTTP 503"
     },
     {
       "id": "google-deepmind",
@@ -224,7 +224,7 @@
       "category": "jp",
       "ok": true,
       "fetched": 30,
-      "matched": 0,
+      "matched": 1,
       "error": null
     },
     {
@@ -251,7 +251,7 @@
       "category": "jp",
       "ok": true,
       "fetched": 30,
-      "matched": 0,
+      "matched": 1,
       "error": null
     },
     {
@@ -292,6 +292,34 @@
   ],
   "items": [
     {
+      "id": "a434c0f88563f23e",
+      "title": "無料で完全にWindowsでローカル動作できるElevenLabs代替ツール「VoiceStudio」、音声クローン・音声デザイン・動画吹き替え・音声入力・文字起こし・オーディオブック作成を多言語で可能",
+      "url": "https://gigazine.net/news/20261101-voicestudio/",
+      "summary": "短い録音から人物の声を再現する音声クローン・文章による新しい声の設計・動画の多言語吹き替え・音声の文字起こし・長文を読み上げるオーディオブック制作などAIによる音声処理にはさまざまな機能があります。こうした機能を1つのアプリから利用でき、音声モデルの切り替えやAIエージェントとの連携にも対応するほか、Windows上で音声生成をローカル実行できる無料のオープンソースElevenLabs代替ツールが「VoiceStudio」です。 続きを読む...",
+      "published": "2026-11-01T09:00:00.000Z",
+      "source": "GIGAZINE",
+      "sourceId": "gigazine",
+      "via": null,
+      "category": "jp",
+      "lang": "ja",
+      "coverage": 1,
+      "score": 36
+    },
+    {
+      "id": "9727700b63f7e80d",
+      "title": "【犬の日】愛犬の表情をAIが写真から読み取る「AIカメラ」を中心に、犬のための音楽アプリ「One by One Music」が大型アップデート",
+      "url": "https://ascii.jp/elem/000/004/447/4447590/?rss",
+      "summary": "【犬の日】愛犬の表情をAIが写真から読み取る「AIカメラ」を中心に、犬のための音楽アプリ「One by One Music」が大型アップデート",
+      "published": "2026-11-01T02:10:00.000Z",
+      "source": "ASCII.jp",
+      "sourceId": "ascii",
+      "via": null,
+      "category": "jp",
+      "lang": "ja",
+      "coverage": 1,
+      "score": 26
+    },
+    {
       "id": "13526babe03c825e",
       "title": "Smooth Jazz Fusion Drift 34+8 by hirorinG3s with SUNO AI MUSIC 大 540p",
       "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5Gb3dka3hpdkpSVHhwekduR2xVejNfR2ZEQzMtUmdQNnJ0M3k0VHRnN3N5RDd3WlY5dzBWaC14dGtDREdCS2pyTU13ckhrY0VaMzd0TUVTQzJqdGdz?oc=5",
@@ -317,7 +345,7 @@
       "category": "jp",
       "lang": "ja",
       "coverage": 1,
-      "score": 38
+      "score": 33
     },
     {
       "id": "d1df73639475f406",
@@ -645,7 +673,7 @@
       "category": "jp",
       "lang": "ja",
       "coverage": 1,
-      "score": 19
+      "score": 15
     },
     {
       "id": "51eedb457f95409b",
@@ -659,7 +687,7 @@
       "category": "jp",
       "lang": "ja",
       "coverage": 1,
-      "score": 21
+      "score": 17
     },
     {
       "id": "6e4b87f096aa887e",
@@ -673,7 +701,7 @@
       "category": "jp",
       "lang": "ja",
       "coverage": 1,
-      "score": 26
+      "score": 22
     },
     {
       "id": "4dee00a0fa352b66",
@@ -687,7 +715,7 @@
       "category": "jp",
       "lang": "ja",
       "coverage": 1,
-      "score": 20
+      "score": 16
     },
     {
       "id": "d8a02d9df6ed6a31",
@@ -1391,7 +1419,7 @@
       "category": "jp",
       "lang": "ja",
       "coverage": 1,
-      "score": 26
+      "score": 17
     },
     {
       "id": "f8efed08a039ca2b",
@@ -1405,7 +1433,7 @@
       "category": "jp",
       "lang": "ja",
       "coverage": 1,
-      "score": 6
+      "score": -3
     },
     {
       "id": "7ffcd419da0845d9",
@@ -1419,7 +1447,7 @@
       "category": "jp",
       "lang": "ja",
       "coverage": 1,
-      "score": 6
+      "score": -3
     },
     {
       "id": "82cd05d69199e219",
@@ -6150,34 +6178,6 @@
       "coverage": 1,
       "titleJa": "ミュージシャン対AIマシン。なぜもう曲を書かなくてはならないのか？",
       "score": 0
-    },
-    {
-      "id": "b215cb6076d40b32",
-      "title": "【suno AI】AIが作った曲 - もしも",
-      "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5ZUUZGd1BRVGlrbXJTdHZKNERUUmhnc3UyMXV4cTJHWjZhTF9IZEFScDN0YWYwbDNnRElWVHRkLTFiaGRoUUdicEtzTWU2bmF5OWtFTk9OLTBwbzJ4?oc=5",
-      "summary": "",
-      "published": "2026-10-03T07:00:00.000Z",
-      "source": "YouTube",
-      "sourceId": "gnews-ja-suno",
-      "via": "Googleニュース",
-      "category": "jp",
-      "lang": "ja",
-      "coverage": 1,
-      "score": 6
-    },
-    {
-      "id": "d6ae8d65eaf1ca8f",
-      "title": "Suno、詩を朗読しながらBGMも同時に作曲する新機能「Speech」を公開",
-      "url": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxNbjk2eUF3MGdpaG5lYjlqQzRCSDhRX2Q4YmRPVTlYNTBLTDA1S1RLdGllVTRwc05GbVd0Q19xVEtqUVBwcjRtZzM0b3JPV3BqVXBhNE14NXlrTHVnS1hzVXRyaWwtV0hsZHo1bFROX3NueGdLWEdjV2dKQzE1RmtrRWV0MHl3RVY4Qm5yRmZTMkFYZ1A5RkZIQ0l6aVpPaWtxYUN4NTBXOGkyTzhrUDI1ZG5nTFNDRVI2dHNPdTZvR0VUbFdOaTJRMkZVdjhGc0ttYS1RM2k1OW9NTlpRUjgtOXM5N2E5RTBUNC1xb3NCNW9zUUtSQUlR?oc=5",
-      "summary": "",
-      "published": "2026-10-03T07:00:00.000Z",
-      "source": "Martin Cid Magazine",
-      "sourceId": "gnews-ja-suno",
-      "via": "Googleニュース",
-      "category": "jp",
-      "lang": "ja",
-      "coverage": 1,
-      "score": 17
     }
   ]
 }
