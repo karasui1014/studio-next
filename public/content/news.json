@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-11-03T19:53:18.712Z",
+  "generatedAt": "2026-11-04T00:59:59.187Z",
   "count": 400,
-  "newCount": 46,
-  "translatedCount": 0,
+  "newCount": 6,
+  "translatedCount": 1,
   "ranking": [
     "02c705a4dd594ace",
     "63b2101c6004766f",
@@ -15,28 +15,28 @@
       "id": "gnews-ja-aimusic",
       "name": "Googleニュース（AI音楽）",
       "category": "jp",
-      "ok": true,
-      "fetched": 40,
-      "matched": 38,
-      "error": null
+      "ok": false,
+      "fetched": 0,
+      "matched": 0,
+      "error": "HTTP 503"
     },
     {
       "id": "gnews-ja-suno",
       "name": "Googleニュース（Suno/生成AI作曲）",
       "category": "jp",
-      "ok": true,
-      "fetched": 40,
-      "matched": 40,
-      "error": null
+      "ok": false,
+      "fetched": 0,
+      "matched": 0,
+      "error": "HTTP 503"
     },
     {
       "id": "gnews-en-aimusic",
       "name": "Google News (AI music)",
       "category": "global",
-      "ok": true,
-      "fetched": 40,
-      "matched": 40,
-      "error": null
+      "ok": false,
+      "fetched": 0,
+      "matched": 0,
+      "error": "HTTP 503"
     },
     {
       "id": "google-deepmind",
@@ -98,7 +98,7 @@
       "category": "global",
       "ok": true,
       "fetched": 10,
-      "matched": 3,
+      "matched": 1,
       "error": null
     },
     {
@@ -134,7 +134,7 @@
       "category": "global",
       "ok": true,
       "fetched": 10,
-      "matched": 0,
+      "matched": 1,
       "error": null
     },
     {
@@ -292,6 +292,22 @@
   ],
   "items": [
     {
+      "id": "9abd446fed6e2f61",
+      "title": "Suno Says Jason Isbell Lawsuit Over Artist ‘Identities’ Must Be Dismissed: ‘Nothing Unlawful About That’",
+      "url": "https://www.billboard.com/pro/suno-responds-jason-isbell-ai-music-lawsuit/",
+      "summary": "The AI music company has filed its first major response to the novel lawsuit, which accuses it of violating musicians' likeness rights.",
+      "published": "2026-11-03T22:25:48.000Z",
+      "source": "Billboard",
+      "sourceId": "billboard",
+      "via": null,
+      "category": "global",
+      "lang": "en",
+      "coverage": 1,
+      "titleJa": "スノは、アーティストの「アイデンティティ」をめぐるジェイソン・イズベル訴訟は却下されなければならないと語る：「それについて違法なことは何もない」",
+      "summaryJa": "AI音楽会社は、ミュージシャンの肖像権を侵害していると非難する新しい訴訟に対して、最初の主要な対応を提出しました。",
+      "score": 28
+    },
+    {
       "id": "9261033e92f156aa",
       "title": "Supercharged’ AI Bots Are Disrupting the Ticketing Market. The Industry Is Desperate for a Solution",
       "url": "https://www.billboard.com/pro/uk-ticketing-live-concerts-ai-bots/",
@@ -364,7 +380,7 @@
       "category": "jp",
       "lang": "ja",
       "coverage": 1,
-      "score": 24
+      "score": 19
     },
     {
       "id": "20ad43bc5c58d287",
@@ -378,7 +394,7 @@
       "category": "jp",
       "lang": "ja",
       "coverage": 1,
-      "score": 24
+      "score": 19
     },
     {
       "id": "d27d4cec4523a08a",
@@ -394,7 +410,7 @@
       "coverage": 1,
       "titleJa": "Cardi Bは、AIを使用せずに試験に合格するよう学生に指示します：「答えをChatGPTに尋ねないでください」",
       "summaryJa": "カーディは、週末にジョンズホプキンス大学のホプトバーフェストに出席した学生にメッセージを送りました。",
-      "score": 12
+      "score": 7
     },
     {
       "id": "7c67b270d4dfbab3",
@@ -702,7 +718,7 @@
       "category": "jp",
       "lang": "ja",
       "coverage": 1,
-      "score": 10
+      "score": 6
     },
     {
       "id": "13526babe03c825e",
@@ -1333,7 +1349,7 @@
       "lang": "en",
       "coverage": 1,
       "titleJa": "アンスロピック、スノ、マドンナ、ジョニー・キャッシュ、ジョニ・ミッチェルの曲を不法使用で訴えられる",
-      "score": 12
+      "score": 3
     },
     {
       "id": "c36f71d8483dcd52",
@@ -6158,22 +6174,6 @@
       "coverage": 1,
       "titleJa": "「困難になりつつある」：ソニーは、ディープフェイクAIトラックの数が6ヶ月で2倍になったことを明らかにしました",
       "summaryJa": "社長は、ストリームの最大10 ％が不正である可能性があると推定しています",
-      "score": -6
-    },
-    {
-      "id": "87c271dc7677618d",
-      "title": "Fender revamps its website with AI tool and more artist content",
-      "url": "https://musically.com/2026/10/06/fender-revamps-its-website-with-ai-tool-and-more-artist-content/",
-      "summary": "Fender has been more than just a maker of instruments for some time now. In the last decade we’ve written about its moves in music education, its Fender Studio music-making app and its Fender Next artist-development program for example. The post is from Music Ally .",
-      "published": "2026-10-06T12:30:00.000Z",
-      "source": "Music Ally",
-      "sourceId": "musically",
-      "via": null,
-      "category": "global",
-      "lang": "en",
-      "coverage": 1,
-      "titleJa": "FenderはAIツールとより多くのアーティストコンテンツでウェブサイトを刷新",
-      "summaryJa": "フェンダーは、しばらくの間、単なる楽器メーカーではありませんでした。過去10年間、私たちは音楽教育におけるその動きについて書いてきました。例えば、Fender Studioの音楽制作アプリとFender Nextのアーティスト開発プログラムです。この投稿はMusic Allyからのものです。",
       "score": -6
     }
   ]
