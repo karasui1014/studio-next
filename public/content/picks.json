@@ -1,8 +1,16 @@
 {
-  "generatedAt": "2026-11-04T20:08:17.430Z",
+  "generatedAt": "2026-11-05T01:14:50.672Z",
   "source": "https://www.toptal.com/developers/feed2json/convert?url=https%3A%2F%2Fkarasui.substack.com%2Ffeed",
-  "count": 8,
+  "count": 9,
   "items": [
+    {
+      "id": "1passwordclaude265ai",
+      "title": "【1Password登録後】Claudeと265件を整理！AIで進めたセキュリティ対策",
+      "url": "https://karasui.substack.com/p/1passwordclaude265ai",
+      "excerpt": "こんにちは、カラスイです。 1Passwordを使って、Claudeとセキュリティ対策をしてみました 1Passwordに登録したものの、そのあと何をすればいいのか迷っていませんか？ 私も、パスワード管理アプリの1Password（ワンパスワード）を使い始めたのをきっかけに、これまでのログイン情報を整理することにしました。 ただ、保存していたログイン情報は、なんと265件。 これを一つずつ確認して、必要なものを残し、不要なものを整理して、パスワードを変更する。 考えただけでも大変です。 そこで今回は、AIアシスタントのClaude（クロード）に手伝ってもらいました。 全文を読むのがめんどくさ…",
+      "image": "https://substackcdn.com/image/fetch/$s_!TFWI!,w_424,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F3da52c3a-47de-4d2f-8b22-35c45695b3fd_1536x1024.png",
+      "published": "2026-11-03T04:19:20.000Z"
+    },
     {
       "id": "aidistrokidclaude",
       "title": "AI音楽をDistroKid（配信サービス）にClaudeで自動登録する手順を解説",
