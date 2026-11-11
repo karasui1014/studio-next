@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-11-11T09:55:36.097Z",
+  "generatedAt": "2026-11-11T16:42:54.726Z",
   "count": 400,
-  "newCount": 44,
-  "translatedCount": 1,
+  "newCount": 46,
+  "translatedCount": 2,
   "ranking": [
     "17c7793b3fd5f6aa",
     "e95cff89426c9ca8",
@@ -98,7 +98,7 @@
       "category": "global",
       "ok": true,
       "fetched": 10,
-      "matched": 1,
+      "matched": 0,
       "error": null
     },
     {
@@ -134,7 +134,7 @@
       "category": "global",
       "ok": true,
       "fetched": 10,
-      "matched": 1,
+      "matched": 0,
       "error": null
     },
     {
@@ -292,6 +292,66 @@
   ],
   "items": [
     {
+      "id": "1609479cdac90c3e",
+      "title": "Idol’s Labelcamp and startup MyPart explore AI connections",
+      "url": "https://musically.com/2026/11/11/idols-labelcamp-and-startup-mypart-explore-ai-connections/",
+      "summary": "The list of music-industry tools and services exploring agentic AI and LLM connections continues to grow. Today there is news from Idol’s distribution-management platform Labelcamp, as well as from music-matching startup MyPart. The post is from Music Ally .",
+      "published": "2026-11-11T13:30:00.000Z",
+      "source": "Music Ally",
+      "sourceId": "musically",
+      "via": null,
+      "category": "global",
+      "lang": "en",
+      "coverage": 1,
+      "titleJa": "IdolのLabelcampとスタートアップのMyPartがAIによる連携を模索",
+      "summaryJa": "エージェント型AIとLLMの連携を模索する音楽業界のツールやサービスのリストは、引き続き拡大しています。今日は、Idolのディストリビューション管理プラットフォームLabelcampと、音楽マッチングスタートアップのMyPartからニュースが届いています。この記事はMusic Allyからのものです。",
+      "score": 12
+    },
+    {
+      "id": "088409e86f4cdb44",
+      "title": "AI楽曲の「帰属」、作曲家が示す5つの落とし穴",
+      "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE5EdHdDSkVJTC11blBfQlNmb2hKbWRzaEJBSGJpb3psN1RMMGt4cHVDZEFsX3JUbzJTcjJtZDJQaWpkTXRWQ0xwWElnVmswWEs3UkR5TA?oc=5",
+      "summary": "",
+      "published": "2026-11-11T13:16:16.000Z",
+      "source": "音楽業界総合情報サイト",
+      "sourceId": "gnews-ja-aimusic",
+      "via": "Googleニュース",
+      "category": "jp",
+      "lang": "ja",
+      "coverage": 1,
+      "score": 15
+    },
+    {
+      "id": "569072512c757a67",
+      "title": "デジタル音楽の国際標準化団体DDEX、初のAI企業としてイレブンラボ加盟",
+      "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFBGX29Nc2J5NGtqMjBLTEVPc1RfT1JBMnBXSzd0eWNoLUNKVFpraTR6WnhISDgzRmpKRFNaVlNaektva3Rna2FiYzA0bm9FUXJnUFI5Mg?oc=5",
+      "summary": "",
+      "published": "2026-11-11T13:02:07.000Z",
+      "source": "音楽業界総合情報サイト",
+      "sourceId": "gnews-ja-aimusic",
+      "via": "Googleニュース",
+      "category": "jp",
+      "lang": "ja",
+      "coverage": 1,
+      "score": 15
+    },
+    {
+      "id": "081cba724db91723",
+      "title": "“An affront to any songwriter who has lived and struggled”: Nick Cave on AI song-generating platforms",
+      "url": "https://www.musicradar.com/artists/singers-songwriters/an-affront-to-any-songwriter-who-has-lived-and-struggled-in-this-world-and-earned-the-right-to-create-a-song-nick-cave-on-ai-song-generating-platforms",
+      "summary": "He posits that they are “our final, most soul-destroying humiliation”",
+      "published": "2026-11-11T12:49:47.000Z",
+      "source": "MusicRadar",
+      "sourceId": "musicradar",
+      "via": null,
+      "category": "global",
+      "lang": "en",
+      "coverage": 1,
+      "titleJa": "「生きて苦労してきたすべてのソングライターに対する侮辱」：ニック・ケイヴがAIによる楽曲生成プラットフォームについて語る",
+      "summaryJa": "彼は、それらが「私たちの最後の、最も魂を破壊する屈辱」であると主張しています。",
+      "score": 12
+    },
+    {
       "id": "f872d0bba4b13706",
       "title": "Agents Look Ahead as AI Keeps Advancing: ‘We Have the Privilege of Being in a Human Industry’",
       "url": "https://www.billboard.com/business/touring/live-music-summit-2026-booking-agencies-panel-1236379247/",
@@ -364,6 +424,20 @@
       "score": 24
     },
     {
+      "id": "b9db957ac320109a",
+      "title": "Smooth Jazz & Fusion: DRIFT 32+17 by hirorinG3s with SUNO AI MUSIC",
+      "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5obnBqVHpQMV9QTU5HVllreGczVmtRMUFUUzdjVTJpY05KWkU5WkllWk1RbElIcWVhc280VmM4M1FOWHh0SF9WRXVKQl8zNUxZem9XLWl5aWtCcHdF?oc=5",
+      "summary": "",
+      "published": "2026-11-10T22:44:08.000Z",
+      "source": "YouTube",
+      "sourceId": "gnews-ja-suno",
+      "via": "Googleニュース",
+      "category": "jp",
+      "lang": "ja",
+      "coverage": 1,
+      "score": 24
+    },
+    {
       "id": "2c6b929f51253d64",
       "title": "Elvis AI Voice Lawsuit, Olivia Rodrigo’s ‘Take Me Home,’ BTS Song Case & More Top Music Law News",
       "url": "https://www.billboard.com/pro/elvis-lawsuit-olivia-rodrigo-take-me-home-bts-music-law/",
@@ -393,7 +467,7 @@
       "coverage": 1,
       "titleJa": "SpotifyのAI DJは、新しい声、個性、そしておしゃべりを減らすオプションを手に入れます",
       "summaryJa": "Spotifyプレミアムユーザーは、異なる個性を持つ新しい声でAI DJをカスタマイズしたり、曲間の解説をオフにしたりできるようになりました。",
-      "score": 12
+      "score": 7
     },
     {
       "id": "5a649091a147eb24",
@@ -409,7 +483,7 @@
       "coverage": 1,
       "titleJa": "エルビス・プレスリーの権利者は、そのAIが王の声を模倣していると主張して、スノーを訴えます。Eight Mile Styleは、269曲のEminemの曲について別の訴訟を提起した。",
       "summaryJa": "プレスリーの訴状は、テネシー州のエルビス法が汎用AI音楽ジェネレーターに到達できるかどうかをテストしている。",
-      "score": 28
+      "score": 23
     },
     {
       "id": "27fc7374bd42e2b6",
@@ -425,7 +499,7 @@
       "coverage": 1,
       "titleJa": "AI音楽レーベルは「プラットフォームだけではありえない」とRIAAのボスは語る",
       "summaryJa": "最新版のテックサイトThe Vergeの「Decoder」ポッドキャストの見出しに微笑みました。「ちょっと待ってください。RIAAの人と話すのは楽しかったです」。Peak Napster時代のハイテク界での業界団体の評判について、いまだに不快な思い出を残しています。この投稿はMusic Allyからのものです。",
-      "score": 12
+      "score": 7
     },
     {
       "id": "ce7b45efe0543a0f",
@@ -483,7 +557,7 @@
       "via": "Googleニュース",
       "category": "global",
       "lang": "en",
-      "coverage": 6,
+      "coverage": 7,
       "titleJa": "エルビス・プレスリーの著作権所有者がAIミュージックジェネレーターをライセンス、著作権侵害で訴える",
       "score": 38
     },
@@ -659,7 +733,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 8,
+      "coverage": 9,
       "score": 43
     },
     {
@@ -717,7 +791,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 12,
+      "coverage": 13,
       "titleJa": "エルビスとエミネムの権利所有者がスノを訴えている",
       "summaryJa": "Sunoはさらに別の訴訟に直面しています。エルヴィス・プレスリーの音楽の著作権者のグループとエミネムの最大のレコードのいくつかの出版社は、AI音楽会社がそれらのアーティストを模倣した音楽と歌詞を違法に生成していると主張して訴えている。Presley訴訟の弁護士は、Sunoがテネシー州の",
       "score": 47
@@ -750,7 +824,7 @@
       "lang": "en",
       "coverage": 1,
       "titleJa": "AI音楽は検出が困難な場合がありますが、いくつかの兆候があります",
-      "score": 7
+      "score": 3
     },
     {
       "id": "031c8f4498c15ab9",
@@ -765,7 +839,7 @@
       "lang": "en",
       "coverage": 1,
       "titleJa": "Eminemと連携した出版社がAI音楽トレーニングでSunoを訴える",
-      "score": 16
+      "score": 12
     },
     {
       "id": "a192246c14ab5db4",
@@ -779,7 +853,7 @@
       "category": "jp",
       "lang": "ja",
       "coverage": 1,
-      "score": 26
+      "score": 22
     },
     {
       "id": "19e33e55c3a42859",
@@ -866,7 +940,7 @@
       "via": "Googleニュース",
       "category": "global",
       "lang": "en",
-      "coverage": 10,
+      "coverage": 11,
       "titleJa": "エルビス・プレスリーの音楽所有者がAIミュージックジェネレーターに対して新たな訴訟を起こす",
       "score": 27
     },
@@ -1359,7 +1433,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 25,
+      "coverage": 26,
       "titleJa": "ElevenLabsからSoundCloudにAI音楽を直接投稿できます",
       "summaryJa": "今年初めにMoisesと提携した後、SoundCloudは現在、別のAI音楽プラットフォームであるElevenLabsとの統合を追加しています。これで、ElevenLabsから出力をエクスポートしてダウンロードし、SoundCloudにアップロードする必要がなくなり、直接公開することができます。パートナーシップの一環として、SoundCloud Artist Proのサブスクライバーも3か月間",
       "score": 36
@@ -1653,7 +1727,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 23,
+      "coverage": 24,
       "titleJa": "Sunoは、裁判所にJason Isbellの広報権の集団訴訟を却下するよう依頼します。アーティストの名前は音楽ジャンルの「速記」であると主張しています。",
       "summaryJa": "AI音楽会社は、火曜日（ 11月3日）に動議を提出しました",
       "score": 36
@@ -1672,7 +1746,7 @@
       "coverage": 1,
       "titleJa": "ラッパーが「Vote Red」バッジを着た人形のAI写真を投稿した後、「Chucky」クリエイターがNicki Minajを挑発",
       "summaryJa": "一緒にやろう",
-      "score": 3
+      "score": -6
     },
     {
       "id": "fc56e2dab8b9bdcb",
@@ -1688,7 +1762,7 @@
       "coverage": 1,
       "titleJa": "Shopifyは、売り手がAIチャネルから売り上げを伸ばしていると述べています",
       "summaryJa": "多くのアーティストやレーベルがオンラインストアフロントにShopifyを使用しているため、同社の最新の決算コールは、プラットフォームの将来に関するいくつかの有用な指針を提供しています。この投稿はMusic Allyからのものです。",
-      "score": -5
+      "score": -14
     },
     {
       "id": "e59c138350342288",
@@ -1702,7 +1776,7 @@
       "category": "jp",
       "lang": "ja",
       "coverage": 1,
-      "score": 6
+      "score": -3
     },
     {
       "id": "caa901bed638e51e",
@@ -1716,7 +1790,7 @@
       "category": "jp",
       "lang": "ja",
       "coverage": 1,
-      "score": 15
+      "score": 6
     },
     {
       "id": "7739e82ce5d6eed5",
@@ -1730,7 +1804,7 @@
       "category": "jp",
       "lang": "ja",
       "coverage": 1,
-      "score": 15
+      "score": 6
     },
     {
       "id": "5315168a6310d4fe",
@@ -1744,7 +1818,7 @@
       "category": "jp",
       "lang": "ja",
       "coverage": 1,
-      "score": 13
+      "score": 4
     },
     {
       "id": "d2527181b55b4f5c",
@@ -1814,7 +1888,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 29,
+      "coverage": 30,
       "titleJa": "スノは、アーティストの「アイデンティティ」をめぐるジェイソン・イズベル訴訟は却下されなければならないと語る：「それについて違法なことは何もない」",
       "summaryJa": "AI音楽会社は、ミュージシャンの肖像権を侵害していると非難する新しい訴訟に対して、最初の主要な対応を提出しました。",
       "score": 34
@@ -2024,7 +2098,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 34,
+      "coverage": 35,
       "titleJa": "UMG、ソニー、DistroKidは、Suno事件のAI音楽データをめぐる紛争で「解決に取り組んでいる」と裁判所に語る",
       "summaryJa": "2つのメジャーは、ストリーミングサービスに配信するトラックのうち、AI生成トラックとしてフラグが立てられているトラックの数について、DistroKidにデータを求めている。",
       "score": 27
@@ -2242,7 +2316,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 23,
+      "coverage": 24,
       "score": 21
     },
     {
@@ -2552,7 +2626,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 45,
+      "coverage": 46,
       "score": 30
     },
     {
@@ -2696,7 +2770,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 7,
+      "coverage": 8,
       "score": 28
     },
     {
@@ -2885,7 +2959,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 54,
+      "coverage": 55,
       "score": 51
     },
     {
@@ -2913,7 +2987,7 @@
       "via": null,
       "category": "jp",
       "lang": "ja",
-      "coverage": 87,
+      "coverage": 88,
       "score": 30
     },
     {
@@ -3339,7 +3413,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 40,
+      "coverage": 41,
       "score": 21
     },
     {
@@ -3612,7 +3686,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 113,
+      "coverage": 114,
       "score": 21
     },
     {
@@ -3682,7 +3756,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 37,
+      "coverage": 38,
       "titleJa": "Spotifyの巨額の利益からSunoのためのもう1つの法的戦いまで... MBWのウィークリーラウンドアップです",
       "summaryJa": "ここ数日の最大の見出し...",
       "score": 27
@@ -4018,7 +4092,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 76,
+      "coverage": 77,
       "titleJa": "Sunoは、UMGとソニーの「洗濯」訴訟に応じて、AIのトレーニングに使用されたすべての録音を削除していないことを認めている",
       "summaryJa": "44ページの回答は、火曜日（ 10月20日）にマサチューセッツ州地方裁判所に提出され、MBWによって審査されました。",
       "score": 27
@@ -4098,7 +4172,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 77,
+      "coverage": 78,
       "titleJa": "リザーバは、ジョニ・ミッチェル、ジョニー・キャッシュ、マドンナなどの曲を著作権侵害したとして、スノーとアントロピックを訴える",
       "summaryJa": "Reservoirはまた、同じ日にAnthropicに対して別の訴訟を提起しました。",
       "score": 34
@@ -4114,7 +4188,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 78,
+      "coverage": 79,
       "score": 27,
       "titleJa": "Reservoir、AI音楽を巡る最新訴訟でSunoとAnthropicを訴える：「アーティストの代わりを意図した」",
       "summaryJa": "インディーパブリッシャーは、AIラボがマドンナとジョニー・キャッシュの曲を盗んで、新しいモデルを吐き出すようにモデルを訓練したと述べている。"
@@ -4466,7 +4540,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 145,
+      "coverage": 147,
       "score": 28
     },
     {
@@ -4753,7 +4827,7 @@
       "via": "Googleニュース",
       "category": "global",
       "lang": "en",
-      "coverage": 60,
+      "coverage": 61,
       "titleJa": "Creve Coeurの男性が依存症回復の一環としてAI音楽に目を向ける",
       "score": 18
     },
@@ -4811,7 +4885,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 51,
+      "coverage": 52,
       "score": 21
     },
     {
@@ -4913,7 +4987,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 90,
+      "coverage": 91,
       "titleJa": "ソニーとユニバーサルは、裁判所に対し、Sunoの投資家であるLightspeedに「トレーニングデータの法的リスク」についての証言を強制するよう要請する",
       "summaryJa": "ラベルは、先週火曜日（ 10月13日）にボストン連邦裁判所に提出された訴訟で、召喚状を取り消すというLightspeedの動議に反対しました。",
       "score": 19
@@ -5214,7 +5288,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 87,
+      "coverage": 88,
       "score": 37
     },
     {
@@ -5284,7 +5358,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 98,
+      "coverage": 99,
       "titleJa": "UMGとSony Demand DistroKidがSunoからアップロードしたAI曲の数を教えてくれる：「Staggering Scale」",
       "summaryJa": "音楽大手は、AI曲の「洪水」を可能にしたと非難する新しい法的ファイリングで、巨大なDIYディストリビューターへの圧力を強めています。",
       "score": 27
@@ -5997,7 +6071,7 @@
       "via": null,
       "category": "jp",
       "lang": "ja",
-      "coverage": 167,
+      "coverage": 169,
       "score": 39
     },
     {
@@ -6023,20 +6097,6 @@
       "summary": "",
       "published": "2026-10-14T22:36:00.000Z",
       "source": "Mezha.net",
-      "sourceId": "gnews-ja-aimusic",
-      "via": "Googleニュース",
-      "category": "jp",
-      "lang": "ja",
-      "coverage": 1,
-      "score": 4
-    },
-    {
-      "id": "8848ad341c30c1d6",
-      "title": "YouTube MusicがAI生成楽曲にラベル表示 収益化の対象からは外さず",
-      "url": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxPY0djcndHME5YSDUzT3hGNFZZVURfbVJ6X0NLZWdnN3NwU1JBeHJQWWRZMlZHbWpqbVZ2dU91bFFWM253ZTREX05LR3hkM3Q1WmlwVUdSN1VGZ1FSMF9WSm8tSmMwNWxzaVZtVHZSdUVJOWU0b21rMDdTVGtOOF9kbjZyY08zbG4xV280V3pvejBpZU4wdTZLOWhVR05TdVJyUW1ubjh5SnA2RUFhY0VNS0dSQVRZNEpURW55dVFwSl9KWmEtTmp4TjFnYjFTS0RWM2R5bXRENlNtcHdxOFhyWk9xUQ?oc=5",
-      "summary": "",
-      "published": "2026-10-14T21:13:15.000Z",
-      "source": "Martin Cid Magazine",
       "sourceId": "gnews-ja-aimusic",
       "via": "Googleニュース",
       "category": "jp",
@@ -6116,70 +6176,6 @@
       "coverage": 1,
       "titleJa": "YouTube、AIが生成した曲に新しいレーベルを付ける",
       "summaryJa": "YouTubeは、AIを使用して「変更または完全に生成された」トラックに「AIで作られた」ラベルを追加している。これは、AIラベルをビデオに適用する既存のプロセスと同様のアプローチである。これは、音楽を作る際のAIツールのすべての使用に当てはまるとは思えませんが、YouTubeによると、",
-      "score": -6
-    },
-    {
-      "id": "de8f5b28084233ad",
-      "title": "YouTube Music starts labeling AI-generated songs, using partner disclosures and its own detection tools",
-      "url": "https://www.musicbusinessworldwide.com/youtube-music-starts-labeling-ai-generated-songs-using-partner-disclosures-and-its-own-detection-tools/",
-      "summary": "'Our listeners have told us they want transparency when they're hearing an AI-generated track,' said YouTube",
-      "published": "2026-10-14T16:37:08.000Z",
-      "source": "Music Business Worldwide",
-      "sourceId": "mbw",
-      "via": null,
-      "category": "global",
-      "lang": "en",
-      "coverage": 1,
-      "titleJa": "YouTube Musicは、パートナーの開示と独自の検出ツールを使用して、AI生成の曲のラベル付けを開始します",
-      "summaryJa": "「私たちのリスナーは、AIが生成したトラックを聴くときに透明性を求めていると言っています」とYouTubeは述べています",
-      "score": -6
-    },
-    {
-      "id": "5bf4c1bd454b7e7e",
-      "title": "Sen. Marsha Blackburn Slammed for ‘Cringe’ AI Video of Her as Kendrick Lamar Performing ‘Not Like Us’ at Super Bowl",
-      "url": "https://www.billboard.com/music/rb-hip-hop/marsha-blackburn-kendrick-lamar-not-like-us-ai-video-slammed-1236360552/",
-      "summary": "The Republican is running for governor of Tennessee.",
-      "published": "2026-10-14T16:18:24.000Z",
-      "source": "Billboard",
-      "sourceId": "billboard",
-      "via": null,
-      "category": "global",
-      "lang": "en",
-      "coverage": 1,
-      "titleJa": "マーシャ・ブラックバーン上院議員が、ケンドリック・ラマーがスーパーボウルで「Not Like Us」を演奏した彼女の「Cringe」AIビデオを非難",
-      "summaryJa": "共和党はテネシー州知事に立候補しています。",
-      "score": -6
-    },
-    {
-      "id": "5c0e3a497a2743ca",
-      "title": "Deezer will soon let you filter out AI-generated music",
-      "url": "https://techcrunch.com/2026/10/14/deezer-will-soon-let-you-filter-out-ai-generated-music/",
-      "summary": "Deezer said that the new toggle will be rolled out by the end of the year.",
-      "published": "2026-10-14T15:16:04.000Z",
-      "source": "TechCrunch",
-      "sourceId": "techcrunch",
-      "via": null,
-      "category": "global",
-      "lang": "en",
-      "coverage": 4,
-      "titleJa": "Deezerはまもなく、AIが生成した音楽をフィルタリングできるようになります",
-      "summaryJa": "Deezer氏は、新しいトグルは年末までに展開されると述べた。",
-      "score": 18
-    },
-    {
-      "id": "187652290df5b241",
-      "title": "Today in Music AI news: Raye gets botted; UMG senior AI role; Character•AI bankruptcy; Rocketship launches",
-      "url": "https://musically.com/2026/10/14/today-in-music-ai-news-raye-gets-botted-umg-senior-ai-role-characterai-bankruptcy-rocketship-launches/",
-      "summary": "When Raye announced a show in London’s Royal Albert Hall, you’d expect demand for tickets to be high. But when the show received 1.8 pre-sale million sign-ups – for a 5000 seat show – it became clear to Raye’s team that “scalpers [were] using AI bots to create hundreds of thousands of fake registrations.” Now her team are manually reviewing the sign-ups to make sure that actual fans are on the li…",
-      "published": "2026-10-14T12:30:00.000Z",
-      "source": "Music Ally",
-      "sourceId": "musically",
-      "via": null,
-      "category": "global",
-      "lang": "en",
-      "coverage": 1,
-      "titleJa": "今日の音楽AIニュース： Rayeはボット化されます。UMGシニアAIの役割。キャラクター• AIの倒産。Rocketshipの発売",
-      "summaryJa": "レイがロンドンのロイヤル・アルバート・ホールでショーを発表したとき、チケットの需要が高いと予想されていました。しかし、このショーが5,000席のショーで180万件のプレセール登録を受けたとき、Rayeのチームは「スキャルパーがAIボットを使用して何十万件もの偽の登録を作成していた」ことが明らかになりました。「現在、彼女のチームはサインアップを手動で確認して、実際のファンが参加していることを確認しています…",
       "score": -6
     }
   ]
