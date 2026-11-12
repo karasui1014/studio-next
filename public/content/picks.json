@@ -1,16 +1,8 @@
 {
-  "generatedAt": "2026-11-12T17:11:07.262Z",
+  "generatedAt": "2026-11-12T20:32:00.345Z",
   "source": "https://www.toptal.com/developers/feed2json/convert?url=https%3A%2F%2Fkarasui.substack.com%2Ffeed",
-  "count": 10,
+  "count": 9,
   "items": [
-    {
-      "id": "sunodomoaiclaude-3aimvmv",
-      "title": "Suno×DomoAI×Claude 3つのAIで曲のMVを作る方法｜「上昇気流」のMVができるまで",
-      "url": "https://karasui.substack.com/p/sunodomoaiclaude-3aimvmv",
-      "excerpt": "こんにちは、カラスイです。 ローファイ探偵の「上昇気流」という曲のMVを、 3つのAIを組み合わせて 作りました。 曲は Suno 、映像の素材は DomoAI 、そして素材をMVにまとめたのが Claude です。 この記事では、曲づくりから仕上げまでの流れを、実際に使った頼み方（プロンプト）といっしょに紹介します。 ※2026年11月5日時点の内容です。料金や画面の表示は変わることがあります。 ① MCPで、AIどうしがつながるようになった 最近、SunoとDomoAIのMCPが出て、いろんなAIに直接つなげるようになりました。 MCPは、AIどうしを連携させて使えるようにする仕組みです…",
-      "image": "https://substackcdn.com/image/fetch/$s_!fGsk!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F90635db8-9c8e-44c6-91d1-ac952d7b110b_1440x760.jpeg",
-      "published": "2026-11-06T08:02:50.000Z"
-    },
     {
       "id": "1passwordclaude265ai",
       "title": "【1Password登録後】Claudeと265件を整理！AIで進めたセキュリティ対策",
