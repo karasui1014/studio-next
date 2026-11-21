@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-11-21T10:20:41.538Z",
+  "generatedAt": "2026-11-21T16:28:09.683Z",
   "count": 400,
-  "newCount": 30,
-  "translatedCount": 2,
+  "newCount": 2,
+  "translatedCount": 0,
   "ranking": [
     "ce4d1cc52b81652e",
     "d98b2caca2855b47",
@@ -15,28 +15,28 @@
       "id": "gnews-ja-aimusic",
       "name": "Googleニュース（AI音楽）",
       "category": "jp",
-      "ok": true,
-      "fetched": 40,
-      "matched": 40,
-      "error": null
+      "ok": false,
+      "fetched": 0,
+      "matched": 0,
+      "error": "HTTP 503"
     },
     {
       "id": "gnews-ja-suno",
       "name": "Googleニュース（Suno/生成AI作曲）",
       "category": "jp",
-      "ok": true,
-      "fetched": 40,
-      "matched": 40,
-      "error": null
+      "ok": false,
+      "fetched": 0,
+      "matched": 0,
+      "error": "HTTP 503"
     },
     {
       "id": "gnews-en-aimusic",
       "name": "Google News (AI music)",
       "category": "global",
-      "ok": true,
-      "fetched": 40,
-      "matched": 40,
-      "error": null
+      "ok": false,
+      "fetched": 0,
+      "matched": 0,
+      "error": "HTTP 503"
     },
     {
       "id": "google-deepmind",
@@ -233,7 +233,7 @@
       "category": "jp",
       "ok": true,
       "fetched": 20,
-      "matched": 1,
+      "matched": 0,
       "error": null
     },
     {
@@ -333,7 +333,7 @@
       "coverage": 1,
       "titleJa": "ピーター・ガブリエルがAIに対する自身の立場を明確に表明",
       "summaryJa": "ピーター・ガブリエルが、AIと連携した未来のビジョンを改めて表明",
-      "score": 12
+      "score": 7
     },
     {
       "id": "155a666bdf2bda0e",
@@ -349,7 +349,7 @@
       "coverage": 1,
       "titleJa": "オーストラリアのクリエイティブ業界が、AIトレーニングの「許可」計画に反発",
       "summaryJa": "最近、オーストラリアにおけるAI政策に関する議論について多く書いてきたように思われるかもしれませんが、それにはより大きな背景があります。オーストラリアの音楽業界は、AI企業がオーストラリア政府を説得してAIモデルのトレーニングに関する著作権保護を弱体化させた場合、その影響は世界中の権利保有者に及ぶだろうという見解を明確に示してきました。この記事はMusic Allyからのものです。",
-      "score": 19
+      "score": 14
     },
     {
       "id": "dea344d78294dc8b",
@@ -363,7 +363,7 @@
       "category": "jp",
       "lang": "ja",
       "coverage": 1,
-      "score": 15
+      "score": 10
     },
     {
       "id": "637ff59c71b9809f",
@@ -379,7 +379,7 @@
       "coverage": 1,
       "titleJa": "WMGとSpotifyがAIリミックスとアーティストの同意の必要性について語る",
       "summaryJa": "今週開催されたモルガン・スタンレーの欧州テクノロジー・メディア・テレコム・カンファレンスは有益なものでした。それは、UMGのAI音楽「キルスイッチ」に関する見解を知るためだけではありません。この記事はMusic Allyからのものです。",
-      "score": 12
+      "score": 7
     },
     {
       "id": "692a2b62377edbb8",
@@ -395,7 +395,7 @@
       "coverage": 1,
       "titleJa": "Instagramが、無許可の再投稿やAIによる改変を防ぐコンテンツ保護ツールを導入",
       "summaryJa": "Instagramは、Metaが昨年Facebookで導入した「コンテンツ保護」ツールを展開しています。これは、アカウントのオリジナルのReelsが他のユーザーによって許可なくリポストされた場合に検出します。Instagramはまた、これをAI生成コンテンツにも拡大しています。この投稿はMusic Allyによるものです。",
-      "score": 12
+      "score": 7
     },
     {
       "id": "fb4999fb396dec5b",
@@ -679,7 +679,7 @@
       "coverage": 1,
       "titleJa": "TikTokのベテランが設立した1,100万ドルを調達したAIスタートアップSoniloが、オプトインしたインディー楽曲でモデルをトレーニングするためのライセンス契約をSymphonicと締結",
       "summaryJa": "この契約により、SoniloはSymphonicの独立系アーティストやレーベルの楽曲を使用してAI音楽モデルをトレーニングすることができますが、これは参加することを選択したアーティストやレーベルに限り適用されます。",
-      "score": 7
+      "score": 3
     },
     {
       "id": "a7ff5701ea42d72d",
@@ -695,7 +695,7 @@
       "coverage": 1,
       "titleJa": "Sunoが歌詞ビデオやアルバムアートを作成するための「ビジュアル」ツールを追加",
       "summaryJa": "ある意味、SunoがAI生成動画に参入するのにこれほど時間がかかったのは驚きです。同社の新しい「Visuals」ツールは、プラットフォーム上で制作された楽曲に添えるリリックビデオ、アルバムアート、その他のクリップの作成に使用できます。この記事はMusic Allyからのものです。",
-      "score": 16
+      "score": 12
     },
     {
       "id": "3a2aea461f31f258",
@@ -709,7 +709,7 @@
       "category": "jp",
       "lang": "ja",
       "coverage": 1,
-      "score": 30
+      "score": 26
     },
     {
       "id": "5b48890acdffa6a3",
@@ -725,7 +725,7 @@
       "coverage": 1,
       "titleJa": "Spotifyがアーティストプロフィール保護を拡大する中、SoundCloudがAIスロップ（AIが生成した低品質のコンテンツ）の取り締まりを強化",
       "summaryJa": "音楽業界からストリーミングサービスに対して、AIスロップ、音楽スパム、ストリーミング詐欺に対処するためのさらなる取り組みを求める声が上がっています。本日、SoundCloudとSpotifyが最新の動きを発表しました。この記事はMusic Allyからのものです。",
-      "score": 7
+      "score": 3
     },
     {
       "id": "6f64f2b2684c63fe",
@@ -740,7 +740,7 @@
       "lang": "en",
       "coverage": 1,
       "titleJa": "SunoでAI音楽のAI動画を作成できるようになりました",
-      "score": 16
+      "score": 12
     },
     {
       "id": "51135ab112e1c862",
@@ -754,7 +754,7 @@
       "category": "jp",
       "lang": "ja",
       "coverage": 1,
-      "score": 10
+      "score": 6
     },
     {
       "id": "ddbb9199a1bc96f9",
@@ -769,7 +769,7 @@
       "lang": "en",
       "coverage": 1,
       "titleJa": "Sunoの新しいビジュアル機能は、AI生成音楽とAI生成動画を組み合わせたものです。",
-      "score": 16
+      "score": 12
     },
     {
       "id": "85c569e5463f5151",
@@ -1576,7 +1576,7 @@
       "category": "jp",
       "lang": "ja",
       "coverage": 1,
-      "score": 6
+      "score": -3
     },
     {
       "id": "47dace461cb10d98",
