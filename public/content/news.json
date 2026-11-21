@@ -1,14 +1,14 @@
 {
-  "generatedAt": "2026-11-20T20:50:30.096Z",
+  "generatedAt": "2026-11-21T01:55:46.049Z",
   "count": 400,
-  "newCount": 31,
+  "newCount": 34,
   "translatedCount": 0,
   "ranking": [
     "ce4d1cc52b81652e",
     "44b097d696703752",
-    "5df41cd813b6c265",
     "d98b2caca2855b47",
-    "fe59c610bf522f5f"
+    "fe59c610bf522f5f",
+    "c39cfbd1d0fdeccc"
   ],
   "sources": [
     {
@@ -17,7 +17,7 @@
       "category": "jp",
       "ok": true,
       "fetched": 40,
-      "matched": 39,
+      "matched": 40,
       "error": null
     },
     {
@@ -292,6 +292,34 @@
   ],
   "items": [
     {
+      "id": "d63a8b69a09f95c9",
+      "title": "「生成AI」の進化で賞やコンテストはどうなる?（4）音楽編〜「レコ大」や「MAJ」に聞く〜【調査情報デジタル】",
+      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9GS2w5c0w5bHlLeWhiWV9ZSGpncHIwQ2s4WF94OWRNNzlFcDhjdWpaRVVuX001T20wYU91QXdEYTUxNjZIc1gyMHF4eU9NNDFVTGxsU01yMmpCRy02VzA1THpjQ2VtWEpoVEJ4UzBRTUtwOG5TMjczUHNXME5uTDg?oc=5",
+      "summary": "",
+      "published": "2026-11-21T00:00:32.000Z",
+      "source": "Yahoo!ニュース",
+      "sourceId": "gnews-ja-aimusic",
+      "via": "Googleニュース",
+      "category": "jp",
+      "lang": "ja",
+      "coverage": 1,
+      "score": 15
+    },
+    {
+      "id": "498e4dbdb7d2c8c0",
+      "title": "AI楽曲が韓国で1位に――AIの歌声になぜ人は感動するのか？（塚越健司） - エキスパート",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPb3FwTks2akJ4RTZCam5XNUE1aVZNYmdFTnVlVmZPVlVDT09ocGk1MW81TDF3dUdlZ1p3RU9ES0NydnQ3NS1tWjd0WEk2Z3dyQTlZMmlqSER0M1Q0N3lBSk1FOEQ4OUJEWnBGZFN2ZGJfMHJTcjQ3SFdsYUlPMFJ0T1FzRjZUNVZY?oc=5",
+      "summary": "",
+      "published": "2026-11-20T23:01:15.000Z",
+      "source": "Yahoo!ニュース",
+      "sourceId": "gnews-ja-aimusic",
+      "via": "Googleニュース",
+      "category": "jp",
+      "lang": "ja",
+      "coverage": 1,
+      "score": 15
+    },
+    {
       "id": "8d620241f4f12859",
       "title": "Peter Gabriel makes his stance on AI clear",
       "url": "https://www.musicradar.com/artists/singers-songwriters/if-you-cant-defeat-it-you-have-to-join-it-peter-gabriel-makes-his-stance-on-ai-clear",
@@ -425,7 +453,7 @@
       "coverage": 1,
       "titleJa": "ロバート・グラスパーがケンドリック・ラマーの『To Pimp a Butterfly』の特別な点を解説し、AIに異議を唱える | Billboard Newsインタビュー",
       "summaryJa": "ロバート・グラスパーが、AIが音楽をリアルに感じさせる人間の「ミス」を再現できない理由を解説します。このBillboard Newsのインタビューで、グラスパーはジャズ、ヒップホップ、R&B、ソウルを融合させること、そして優れたミュージシャンと文化を変えるアーティストの違いについて語っています。また、グラスパーはケンドリック・ラマーとの『To Pimp a Butterfly』でのコラボレーションについて振り返り、H.E.R.が",
-      "score": 26
+      "score": 21
     },
     {
       "id": "74f50fd2c1f6c5d5",
@@ -571,7 +599,7 @@
       "via": null,
       "category": "jp",
       "lang": "ja",
-      "coverage": 8,
+      "coverage": 9,
       "score": 54
     },
     {
@@ -585,7 +613,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 6,
+      "coverage": 7,
       "titleJa": "UMGとソニーが、Suno訴訟におけるDistroKidに対する召喚状請求を撤回。ディストリビューターがAI検出文書を提出したため",
       "summaryJa": "レーベルは、AI生成とフラグ付けされたDistroKidの楽曲の数、Sunoに帰属された楽曲の数、およびそれらの楽曲がどれだけの収益を上げたかに関するデータを求めていました。",
       "score": 40
@@ -768,7 +796,7 @@
       "via": null,
       "category": "jp",
       "lang": "ja",
-      "coverage": 20,
+      "coverage": 22,
       "score": 54
     },
     {
@@ -797,7 +825,7 @@
       "category": "jp",
       "lang": "ja",
       "coverage": 1,
-      "score": 30
+      "score": 26
     },
     {
       "id": "5df41cd813b6c265",
@@ -810,8 +838,8 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 13,
-      "score": 47,
+      "coverage": 14,
+      "score": 43,
       "titleJa": "DistroKid、Sunoの著作権訴訟を受けてUMGとソニーにAIアップロードデータを提供。当初は拒否",
       "summaryJa": "この大手DIYディストリビューターは、UMGとSonyがコンプライアンスを強制するために法的措置を講じた後、データ提出を求める召喚状に応じました。"
     },
@@ -827,7 +855,7 @@
       "category": "jp",
       "lang": "ja",
       "coverage": 1,
-      "score": 10
+      "score": 6
     },
     {
       "id": "408562f47050cea6",
@@ -841,7 +869,7 @@
       "category": "global",
       "lang": "en",
       "coverage": 1,
-      "score": 16,
+      "score": 12,
       "titleJa": "Sunoが新製品「Visuals」でAIによる映画制作に参入"
     },
     {
@@ -855,7 +883,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 12,
+      "coverage": 13,
       "score": 47,
       "titleJa": "Sunoが、MiniMaxのモデルをベースにしたAIミュージックビデオツールをリリース。MiniMaxは、ディズニーやその他のハリウッドスタジオから訴えられている中国のAI企業",
       "summaryJa": "「ビジュアル」は、Sunoのプラットフォームで作成された楽曲に添える動画や画像を生成します"
@@ -956,6 +984,20 @@
     {
       "id": "07207ed41d9db846",
       "title": "Suno、AI生成のリリックビデオやアルバムアート向け「ビジュアル機能」を公開",
+      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPbFNJUkhwUk9ubkppZ1RmZlVyZnlMRzFsdTdjT1YzOFhDRzRrN0pzNTFlVjJvWDdFai16cVRYc2ltYnpUeDRiMUIwX0Vjd3dVWHF2N0Nsa0ZlMGc5ODlIdDdpSk5TTFpyS0t4N1lPaW5ncEJPUjRlRnRmWHF5MDlZTEhaVllZRHE4Z1JhTzlPTTltQkxC?oc=5",
+      "summary": "",
+      "published": "2026-11-17T15:43:03.000Z",
+      "source": "Unite.AI",
+      "sourceId": "gnews-ja-suno",
+      "via": "Googleニュース",
+      "category": "jp",
+      "lang": "ja",
+      "coverage": 1,
+      "score": 26
+    },
+    {
+      "id": "235736912f038b79",
+      "title": "Suno、AI生成のリリックビデオやアルバムアートを作成できるビジュアル機能を公開",
       "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPbFNJUkhwUk9ubkppZ1RmZlVyZnlMRzFsdTdjT1YzOFhDRzRrN0pzNTFlVjJvWDdFai16cVRYc2ltYnpUeDRiMUIwX0Vjd3dVWHF2N0Nsa0ZlMGc5ODlIdDdpSk5TTFpyS0t4N1lPaW5ncEJPUjRlRnRmWHF5MDlZTEhaVllZRHE4Z1JhTzlPTTltQkxC?oc=5",
       "summary": "",
       "published": "2026-11-17T15:43:03.000Z",
@@ -1120,7 +1162,7 @@
       "via": null,
       "category": "jp",
       "lang": "ja",
-      "coverage": 16,
+      "coverage": 17,
       "score": 37
     },
     {
@@ -1254,7 +1296,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 16,
+      "coverage": 17,
       "titleJa": "SunoがAbleton LiveにAIステムを組み込むアプリ「Bridge」をリリース",
       "summaryJa": "リリース時点では、Mac上のAbleton Live 12でのみ動作し、Suno Premierのサブスクリプションが必要です。",
       "score": 47
@@ -1387,7 +1429,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 40,
+      "coverage": 42,
       "score": 47
     },
     {
@@ -1547,7 +1589,7 @@
       "category": "jp",
       "lang": "ja",
       "coverage": 1,
-      "score": 15
+      "score": 6
     },
     {
       "id": "ebddddf9b7fc706f",
@@ -2439,7 +2481,7 @@
       "via": "Googleニュース",
       "category": "global",
       "lang": "en",
-      "coverage": 44,
+      "coverage": 45,
       "titleJa": "エルビス・プレスリーの著作権所有者がAIミュージックジェネレーターをライセンス、著作権侵害で訴える",
       "score": 25
     },
@@ -2630,7 +2672,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 48,
+      "coverage": 49,
       "score": 30
     },
     {
@@ -2672,7 +2714,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 50,
+      "coverage": 51,
       "titleJa": "エルビスとエミネムの権利所有者がスノを訴えている",
       "summaryJa": "Sunoはさらに別の訴訟に直面しています。エルヴィス・プレスリーの音楽の著作権者のグループとエミネムの最大のレコードのいくつかの出版社は、AI音楽会社がそれらのアーティストを模倣した音楽と歌詞を違法に生成していると主張して訴えている。Presley訴訟の弁護士は、Sunoがテネシー州の",
       "score": 34
@@ -3386,7 +3428,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 55,
+      "coverage": 56,
       "titleJa": "ElevenLabsからSoundCloudにAI音楽を直接投稿できます",
       "summaryJa": "今年初めにMoisesと提携した後、SoundCloudは現在、別のAI音楽プラットフォームであるElevenLabsとの統合を追加しています。これで、ElevenLabsから出力をエクスポートしてダウンロードし、SoundCloudにアップロードする必要がなくなり、直接公開することができます。パートナーシップの一環として、SoundCloud Artist Proのサブスクライバーも3か月間",
       "score": 27
@@ -3869,7 +3911,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 67,
+      "coverage": 68,
       "titleJa": "スノは、アーティストの「アイデンティティ」をめぐるジェイソン・イズベル訴訟は却下されなければならないと語る：「それについて違法なことは何もない」",
       "summaryJa": "AI音楽会社は、ミュージシャンの肖像権を侵害していると非難する新しい訴訟に対して、最初の主要な対応を提出しました。",
       "score": 34
@@ -4093,7 +4135,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 65,
+      "coverage": 66,
       "titleJa": "UMG、ソニー、DistroKidは、Suno事件のAI音楽データをめぐる紛争で「解決に取り組んでいる」と裁判所に語る",
       "summaryJa": "2つのメジャーは、ストリーミングサービスに配信するトラックのうち、AI生成トラックとしてフラグが立てられているトラックの数について、DistroKidにデータを求めている。",
       "score": 27
@@ -4311,7 +4353,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 58,
+      "coverage": 59,
       "score": 21
     },
     {
@@ -4474,7 +4516,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 68,
+      "coverage": 69,
       "score": 27,
       "titleJa": "Sunoは、Apple MusicがUMGとソニーなしで生き残ることができるかどうかについてAppleに証言させるために戦い、メジャーが反AIの譲歩を勝ち取るために彼らのカタログを「棍棒として」使用していると主張している",
       "summaryJa": "Sunoはまた、Apple Musicの両方のメジャーとのAppleの現在のライセンス交渉とストリーミング詐欺についてAppleの目撃者が証言することを望んでいる。"
@@ -4490,7 +4532,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 46,
+      "coverage": 47,
       "score": 38,
       "titleJa": "Sunoの新しいMCPツールを使用すると、ユーザーはChatGPT、Claude、Gemini内で曲を作ることができます。開発者APIはサインインポータルを取得しますが、ベータ版のままです",
       "summaryJa": "Sunoは、ユーザーがChatGPT、Claude、GeminiなどのAIアシスタントから曲を作成できるツールを発表しました。このツール、Suno MCPはベータ版であり、水曜日（ 10月28日）のSunoのリリースノートで発表されました。これとは別に、MBWはSunoの開発者APIのサインインポータルを発見した。同社によると、このポータルはベータ版のままだという。…続きを読む"
@@ -4579,7 +4621,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 25,
+      "coverage": 26,
       "score": 28
     },
     {
@@ -4649,7 +4691,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 83,
+      "coverage": 84,
       "score": 30
     },
     {
@@ -4996,7 +5038,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 88,
+      "coverage": 89,
       "score": 51
     },
     {
@@ -5010,7 +5052,7 @@
       "via": null,
       "category": "jp",
       "lang": "ja",
-      "coverage": 125,
+      "coverage": 126,
       "score": 30
     },
     {
@@ -5450,7 +5492,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 73,
+      "coverage": 74,
       "score": 21
     },
     {
@@ -6143,58 +6185,10 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 114,
+      "coverage": 115,
       "titleJa": "Sunoは、UMGとソニーの「洗濯」訴訟に応じて、AIのトレーニングに使用されたすべての録音を削除していないことを認めている",
       "summaryJa": "44ページの回答は、火曜日（ 10月20日）にマサチューセッツ州地方裁判所に提出され、MBWによって審査されました。",
       "score": 27
-    },
-    {
-      "id": "53ecdb907acf8789",
-      "title": "Universal Music Group becomes first major music company to license TYGER, which uses AI to adapt songs to gameplay in real time",
-      "url": "https://www.musicbusinessworldwide.com/umg-becomes-first-major-music-company-to-license-tyger-which-uses-ai-to-adapt-songs-to-gameplay-in-real-time/",
-      "summary": "Select recordings and songs from UMG's recorded music and publishing catalogs will become available on TYGER's paid, on-demand subscription service.",
-      "published": "2026-10-22T14:23:14.000Z",
-      "source": "Music Business Worldwide",
-      "sourceId": "mbw",
-      "via": null,
-      "category": "global",
-      "lang": "en",
-      "coverage": 1,
-      "titleJa": "ユニバーサルミュージックグループは、AIを使用して曲をリアルタイムでゲームプレイに適応させるTYGERのライセンスを取得した最初の大手音楽会社になります",
-      "summaryJa": "UMGの録音された音楽と出版カタログから選択した録音と曲は、TYGERの有料のオンデマンドサブスクリプションサービスで利用できるようになります。",
-      "score": -6
-    },
-    {
-      "id": "5d4f499230fe4597",
-      "title": "Universal Music Group & AI Gaming Company TYGER Announce Licensing Deal",
-      "url": "https://www.billboard.com/pro/universal-music-group-tyger-licensing-agreement/",
-      "summary": "The new agreement allows for UMG songs to be streamed in real-time for gamers.",
-      "published": "2026-10-22T13:57:37.000Z",
-      "source": "Billboard",
-      "sourceId": "billboard",
-      "via": null,
-      "category": "global",
-      "lang": "en",
-      "coverage": 1,
-      "titleJa": "ユニバーサルミュージックグループとAIゲーム会社TYGERがライセンス契約を発表",
-      "summaryJa": "新しい契約により、ゲーマーのためにUMGの曲をリアルタイムでストリーミングすることができます。",
-      "score": 5
-    },
-    {
-      "id": "2c7b90bd29928721",
-      "title": "Startups roundup: Moises x SoundCloud, Corite shutdown, FestIndex",
-      "url": "https://musically.com/2026/10/22/startups-roundup-moises-x-soundcloud-corite-shutdown-festindex/",
-      "summary": "AI-music startup Moises has inked its latest partnership, with SoundCloud. It’s a promotional deal that includes a technical integration, with artists on SoundCloud able to export their tracks into Moises for mixing, mastering and stem separation. The post is from Music Ally .",
-      "published": "2026-10-22T12:30:00.000Z",
-      "source": "Music Ally",
-      "sourceId": "musically",
-      "via": null,
-      "category": "global",
-      "lang": "en",
-      "coverage": 1,
-      "titleJa": "スタートアップ総括： Moises x SoundCloud、Coriteシャットダウン、FestIndex",
-      "summaryJa": "AI音楽スタートアップのMoisesは、SoundCloudとの最新のパートナーシップを締結した。これは技術的な統合を含むプロモーション契約であり、SoundCloudのアーティストはミキシング、マスタリング、ステム分離のためにトラックをMoisesにエクスポートすることができます。この投稿はMusic Allyからのものです。",
-      "score": 3
     }
   ]
 }
