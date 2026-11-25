@@ -1,14 +1,14 @@
 {
-  "generatedAt": "2026-11-25T18:53:02.019Z",
+  "generatedAt": "2026-11-25T22:02:21.368Z",
   "count": 400,
-  "newCount": 40,
-  "translatedCount": 9,
+  "newCount": 36,
+  "translatedCount": 1,
   "ranking": [
     "a006273821c4bf5b",
     "d2747667a618b128",
     "942383c947c69e66",
     "03999c6aca691f00",
-    "a9ea2ac71b6f62e3"
+    "7ebd58d621053e02"
   ],
   "sources": [
     {
@@ -260,7 +260,7 @@
       "category": "jp",
       "ok": true,
       "fetched": 20,
-      "matched": 0,
+      "matched": 1,
       "error": null
     }
   ],
@@ -291,6 +291,20 @@
     }
   ],
   "items": [
+    {
+      "id": "bc50a9468692315c",
+      "title": "美しい映像、デザイン、AIによる優れた使いやすさ。全部そろったLG有機ELテレビの魅力に迫る！[Sponsored]",
+      "url": "https://av.watch.impress.co.jp/docs/topic/special/2157188.html",
+      "summary": "今年の有機ELテレビは素晴らしい。「プライマリーRGBタンデム」と呼ばれる2026年の最新型有機ELパネルにより、画質の完成度がさらに高まった。",
+      "published": "2026-11-25T22:00:00.000Z",
+      "source": "AV Watch",
+      "sourceId": "av-watch",
+      "via": null,
+      "category": "jp",
+      "lang": "ja",
+      "coverage": 1,
+      "score": 15
+    },
     {
       "id": "0e9c5cd45da2c255",
       "title": "The Chicks join Jason Isbell’s class action against Suno, as amended complaint adds 16 plaintiffs and targets v6",
@@ -488,7 +502,7 @@
       "via": null,
       "category": "jp",
       "lang": "ja",
-      "coverage": 4,
+      "coverage": 6,
       "score": 57
     },
     {
@@ -517,8 +531,8 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 2,
-      "score": 23
+      "coverage": 3,
+      "score": 31
     },
     {
       "id": "1ddc0c8549247eac",
@@ -531,7 +545,7 @@
       "via": null,
       "category": "jp",
       "lang": "ja",
-      "coverage": 4,
+      "coverage": 5,
       "score": 57
     },
     {
@@ -545,7 +559,7 @@
       "via": null,
       "category": "jp",
       "lang": "ja",
-      "coverage": 5,
+      "coverage": 6,
       "score": 57
     },
     {
@@ -559,7 +573,7 @@
       "via": null,
       "category": "jp",
       "lang": "ja",
-      "coverage": 4,
+      "coverage": 5,
       "score": 46
     },
     {
@@ -588,8 +602,8 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 2,
-      "score": 23
+      "coverage": 3,
+      "score": 26
     },
     {
       "id": "e941ff1a4c9bea12",
@@ -604,7 +618,7 @@
       "lang": "en",
       "coverage": 1,
       "titleJa": "TidalがAI音楽を禁止する初のストリーミングサービスに",
-      "score": 12
+      "score": 7
     },
     {
       "id": "2e367701f06df724",
@@ -618,7 +632,7 @@
       "category": "jp",
       "lang": "ja",
       "coverage": 1,
-      "score": 15
+      "score": 10
     },
     {
       "id": "2948714da26a5f41",
@@ -632,7 +646,7 @@
       "category": "jp",
       "lang": "ja",
       "coverage": 1,
-      "score": 15
+      "score": 10
     },
     {
       "id": "55ad70417ca0c162",
@@ -647,7 +661,22 @@
       "lang": "en",
       "coverage": 1,
       "titleJa": "Tidalが、AI音楽をプラットフォームから禁止する初のストリーミングサービスに",
-      "score": 12
+      "score": 7
+    },
+    {
+      "id": "6ea3d3e74f1df015",
+      "title": "Tidal Becomes First On-Demand Streaming Service to Ban AI Music From Its Platform",
+      "url": "https://news.google.com/rss/articles/CBMickFVX3lxTFBoZVdUM3VFRm90eVpwNjl3UW9ycjVKcGo0QldFaUx6eVFaZTljMDc0bFRJOTFHZnZBOUtlcmZyMEl0VDBSLUJJZzFCMzI5elpPdnJOZUdkbTNSeGtNT09zMmRTejhNS3J5a3doWE9DOEZsZw?oc=5",
+      "summary": "",
+      "published": "2026-11-24T19:28:24.000Z",
+      "source": "Billboard",
+      "sourceId": "gnews-en-aimusic",
+      "via": "Googleニュース",
+      "category": "global",
+      "lang": "en",
+      "coverage": 1,
+      "titleJa": "Tidalが、AI音楽をプラットフォームから禁止する初のオンデマンドストリーミングサービスに",
+      "score": 7
     },
     {
       "id": "c79177785d50b2e7",
@@ -906,7 +935,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 4,
+      "coverage": 5,
       "score": 45
     },
     {
@@ -1189,7 +1218,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 6,
+      "coverage": 8,
       "score": 30
     },
     {
@@ -1560,7 +1589,7 @@
       "via": null,
       "category": "jp",
       "lang": "ja",
-      "coverage": 29,
+      "coverage": 30,
       "score": 50
     },
     {
@@ -1574,10 +1603,10 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 24,
+      "coverage": 25,
       "titleJa": "UMGとソニーが、Suno訴訟におけるDistroKidに対する召喚状請求を撤回。ディストリビューターがAI検出文書を提出したため",
       "summaryJa": "レーベルは、AI生成とフラグ付けされたDistroKidの楽曲の数、Sunoに帰属された楽曲の数、およびそれらの楽曲がどれだけの収益を上げたかに関するデータを求めていました。",
-      "score": 36
+      "score": 27
     },
     {
       "id": "1f74cfe6002d5218",
@@ -1757,7 +1786,7 @@
       "via": null,
       "category": "jp",
       "lang": "ja",
-      "coverage": 56,
+      "coverage": 58,
       "score": 41
     },
     {
@@ -1799,7 +1828,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 29,
+      "coverage": 30,
       "score": 34,
       "titleJa": "DistroKid、Sunoの著作権訴訟を受けてUMGとソニーにAIアップロードデータを提供。当初は拒否",
       "summaryJa": "この大手DIYディストリビューターは、UMGとSonyがコンプライアンスを強制するために法的措置を講じた後、データ提出を求める召喚状に応じました。"
@@ -1829,7 +1858,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 30,
+      "coverage": 31,
       "score": 38,
       "titleJa": "Sunoが、MiniMaxのモデルをベースにしたAIミュージックビデオツールをリリース。MiniMaxは、ディズニーやその他のハリウッドスタジオから訴えられている中国のAI企業",
       "summaryJa": "「ビジュアル」は、Sunoのプラットフォームで作成された楽曲に添える動画や画像を生成します"
@@ -1849,21 +1878,6 @@
       "score": 1,
       "titleJa": "テンセント・ミュージック、AIコンテンツのストリーミングは「ごくわずか」と主張。AIによる著作権侵害に対して法的措置を講じる",
       "summaryJa": "TMEによると、リスニングにおけるAI生成コンテンツのストリーミングの割合は減少しているとのことです。"
-    },
-    {
-      "id": "408562f47050cea6",
-      "title": "Suno Moves Into AI Filmmaking With New Product ‘Visuals’",
-      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPdzN0WjBQaTFxRXRabEcyd0RibEVlMU9jLUt0ck1VZDhERjVNTzJvcW5UemRkNnZ6dE1ra215VkQyQ1B6bkJvenN0NHlzVFdJaVMwelNNNU5rZXN4NFhUcm42VDFRWmtkT2ZrUkdXVlJsYjl3VWJUTmRsMFRiZUNYd24zaFA0Sjk5?oc=5",
-      "summary": "",
-      "published": "2026-11-17T19:18:11.000Z",
-      "source": "Billboard",
-      "sourceId": "gnews-en-aimusic",
-      "via": "Googleニュース",
-      "category": "global",
-      "lang": "en",
-      "coverage": 1,
-      "score": 3,
-      "titleJa": "Sunoが新製品「Visuals」でAIによる映画制作に参入"
     },
     {
       "id": "2627170b333d9f78",
@@ -1908,7 +1922,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 18,
+      "coverage": 19,
       "titleJa": "ユニバーサルとソニーが、Sunoによる2件目の訴訟を凍結する動きに反対。Sunoの最新のAIモデルが少なくとも2028年まで審査を免れる可能性があると警告",
       "summaryJa": "レーベル各社は、6万件を超える録音物の所有権の証明を延期することを申し出ましたが、v6のトレーニング方法に関する証拠開示を今すぐ開始することを望んでいます。",
       "score": 27
@@ -2123,7 +2137,7 @@
       "via": null,
       "category": "jp",
       "lang": "ja",
-      "coverage": 34,
+      "coverage": 35,
       "score": 28
     },
     {
@@ -2140,6 +2154,21 @@
       "coverage": 1,
       "titleJa": "Deezer-Ipsos調査：80%の人がAI音楽のラベル表示を希望",
       "score": -6
+    },
+    {
+      "id": "408562f47050cea6",
+      "title": "Suno Moves Into AI Filmmaking With New Product ‘Visuals’",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPdzN0WjBQaTFxRXRabEcyd0RibEVlMU9jLUt0ck1VZDhERjVNTzJvcW5UemRkNnZ6dE1ra215VkQyQ1B6bkJvenN0NHlzVFdJaVMwelNNNU5rZXN4NFhUcm42VDFRWmtkT2ZrUkdXVlJsYjl3VWJUTmRsMFRiZUNYd24zaFA0Sjk5?oc=5",
+      "summary": "",
+      "published": "2026-11-17T08:00:00.000Z",
+      "source": "Billboard",
+      "sourceId": "gnews-en-aimusic",
+      "via": "Googleニュース",
+      "category": "global",
+      "lang": "en",
+      "coverage": 1,
+      "score": 3,
+      "titleJa": "Sunoが新製品「Visuals」でAIによる映画制作に参入"
     },
     {
       "id": "87d38c2921d9d696",
@@ -2272,7 +2301,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 34,
+      "coverage": 35,
       "titleJa": "SunoがAbleton LiveにAIステムを組み込むアプリ「Bridge」をリリース",
       "summaryJa": "リリース時点では、Mac上のAbleton Live 12でのみ動作し、Suno Premierのサブスクリプションが必要です。",
       "score": 38
@@ -2434,7 +2463,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 77,
+      "coverage": 79,
       "score": 38
     },
     {
@@ -2607,7 +2636,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 15,
+      "coverage": 16,
       "titleJa": "Reservoir、SunoとAnthropicに対する著作権訴訟を合わせて2,500曲以上に拡大",
       "summaryJa": "Reservoirは10月に2つのAI企業を最初に訴えました",
       "score": 34
@@ -3514,7 +3543,7 @@
       "via": "Googleニュース",
       "category": "global",
       "lang": "en",
-      "coverage": 62,
+      "coverage": 63,
       "titleJa": "エルビス・プレスリーの著作権所有者がAIミュージックジェネレーターをライセンス、著作権侵害で訴える",
       "score": 25
     },
@@ -3748,7 +3777,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 68,
+      "coverage": 69,
       "titleJa": "エルビスとエミネムの権利所有者がスノを訴えている",
       "summaryJa": "Sunoはさらに別の訴訟に直面しています。エルヴィス・プレスリーの音楽の著作権者のグループとエミネムの最大のレコードのいくつかの出版社は、AI音楽会社がそれらのアーティストを模倣した音楽と歌詞を違法に生成していると主張して訴えている。Presley訴訟の弁護士は、Sunoがテネシー州の",
       "score": 34
@@ -3942,7 +3971,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 19,
+      "coverage": 20,
       "titleJa": "エルヴィス・プレスリーの権利所有者、AIボイスクローニングをめぐるスー・スノ：「エルヴィスのアイデンティティが盗まれた」",
       "summaryJa": "この歌手の伝説的な声は、ユーザーがノックオフボーカルを作成できるようにするためにAI企業に法的責任を負わせることを目的とした最先端の訴訟の中心にあります。",
       "score": 34
@@ -4725,7 +4754,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 35,
+      "coverage": 36,
       "titleJa": "Sunoは、裁判所にJason Isbellの広報権の集団訴訟を却下するよう依頼します。アーティストの名前は音楽ジャンルの「速記」であると主張しています。",
       "summaryJa": "AI音楽会社は、火曜日（ 11月3日）に動議を提出しました",
       "score": 27
@@ -4930,7 +4959,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 84,
+      "coverage": 85,
       "titleJa": "スノは、アーティストの「アイデンティティ」をめぐるジェイソン・イズベル訴訟は却下されなければならないと語る：「それについて違法なことは何もない」",
       "summaryJa": "AI音楽会社は、ミュージシャンの肖像権を侵害していると非難する新しい訴訟に対して、最初の主要な対応を提出しました。",
       "score": 34
@@ -5140,7 +5169,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 83,
+      "coverage": 84,
       "titleJa": "UMG、ソニー、DistroKidは、Suno事件のAI音楽データをめぐる紛争で「解決に取り組んでいる」と裁判所に語る",
       "summaryJa": "2つのメジャーは、ストリーミングサービスに配信するトラックのうち、AI生成トラックとしてフラグが立てられているトラックの数について、DistroKidにデータを求めている。",
       "score": 27
@@ -5549,7 +5578,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 86,
+      "coverage": 87,
       "score": 27,
       "titleJa": "Sunoは、Apple MusicがUMGとソニーなしで生き残ることができるかどうかについてAppleに証言させるために戦い、メジャーが反AIの譲歩を勝ち取るために彼らのカタログを「棍棒として」使用していると主張している",
       "summaryJa": "Sunoはまた、Apple Musicの両方のメジャーとのAppleの現在のライセンス交渉とストリーミング詐欺についてAppleの目撃者が証言することを望んでいる。"
@@ -5565,7 +5594,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 64,
+      "coverage": 65,
       "score": 38,
       "titleJa": "Sunoの新しいMCPツールを使用すると、ユーザーはChatGPT、Claude、Gemini内で曲を作ることができます。開発者APIはサインインポータルを取得しますが、ベータ版のままです",
       "summaryJa": "Sunoは、ユーザーがChatGPT、Claude、GeminiなどのAIアシスタントから曲を作成できるツールを発表しました。このツール、Suno MCPはベータ版であり、水曜日（ 10月28日）のSunoのリリースノートで発表されました。これとは別に、MBWはSunoの開発者APIのサインインポータルを発見した。同社によると、このポータルはベータ版のままだという。…続きを読む"
@@ -5724,7 +5753,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 101,
+      "coverage": 102,
       "score": 30
     },
     {
@@ -6114,7 +6143,7 @@
       "via": null,
       "category": "jp",
       "lang": "ja",
-      "coverage": 143,
+      "coverage": 144,
       "score": 30
     },
     {
@@ -6179,38 +6208,6 @@
       "titleJa": "法的要約：ドレイクボット、ニール・ヤング対米国大統領、スノー",
       "summaryJa": "2025年11月、ラッパーのRBXはSpotifyを訴え、サービス上のドレイクの音楽の「何十億もの詐欺ストリーム」に「目をつぶった」と非難した。あの事件はどうなったんだ？捨てられたばかりです。この投稿はMusic Allyからのものです。",
       "score": 9
-    },
-    {
-      "id": "6e77fd579f3eece1",
-      "title": "Primary Wave inks Mary J. Blige deal for songs and recordings",
-      "url": "https://musically.com/2026/10/27/primary-wave-inks-mary-j-blige-deal-for-songs-and-recordings/",
-      "summary": "Primary Wave’s thirst for partnerships and catalogue deals shows no sign of being slaked. Its latest announcement is with Mary J. Blige, and (thankfully for her) it has nothing to do with Suno. The post is from Music Ally .",
-      "published": "2026-10-27T13:30:00.000Z",
-      "source": "Music Ally",
-      "sourceId": "musically",
-      "via": null,
-      "category": "global",
-      "lang": "en",
-      "coverage": 1,
-      "titleJa": "Primary WaveがMary J. Bligeと曲と録音の契約を結ぶ",
-      "summaryJa": "プライマリーウェーブのパートナーシップとカタログセールへの渇望は、失望の兆しを見せていません。最新の発表はメアリー・J・ブライジとのもので、（彼女のおかげで）スノーとは何の関係もありません。この投稿はMusic Allyからのものです。",
-      "score": 3
-    },
-    {
-      "id": "99b284f178e4c867",
-      "title": "Edged Out Records built ‘the first costume shop for AI agents’",
-      "url": "https://musically.com/2026/10/27/edged-out-records-built-the-first-costume-shop-for-ai-agents/",
-      "summary": "Meta’s efforts to make its Muse AI agent cuddly and friendly for non-tech folk is a plushy-style mascot called Jolly. Now independent label Edged Out Records has launched an inventive marketing campaign riffing off the character. The post is from Music Ally .",
-      "published": "2026-10-27T13:30:00.000Z",
-      "source": "Music Ally",
-      "sourceId": "musically",
-      "via": null,
-      "category": "global",
-      "lang": "en",
-      "coverage": 1,
-      "titleJa": "Edged Out Recordsが「AIエージェントのための最初のコスチュームショップ」を建設",
-      "summaryJa": "MUSE AIエージェントをテクノロジー以外の人々にも親しみやすく友好的なものにしようとするMetaの取り組みは、Jollyと呼ばれるぬいぐるみスタイルのマスコットです。現在、独立レーベルのEdged Out Recordsは、キャラクターをリフティングした独創的なマーケティングキャンペーンを開始しました。この投稿はMusic Allyからのものです。",
-      "score": -6
     }
   ]
 }
