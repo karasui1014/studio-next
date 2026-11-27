@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-11-27T18:31:32.277Z",
+  "generatedAt": "2026-11-27T21:43:48.989Z",
   "count": 400,
-  "newCount": 25,
-  "translatedCount": 1,
+  "newCount": 35,
+  "translatedCount": 0,
   "ranking": [
     "a006273821c4bf5b",
     "15c3e775946ea485",
@@ -33,10 +33,10 @@
       "id": "gnews-en-aimusic",
       "name": "Google News (AI music)",
       "category": "global",
-      "ok": false,
-      "fetched": 0,
-      "matched": 0,
-      "error": "HTTP 429"
+      "ok": true,
+      "fetched": 40,
+      "matched": 40,
+      "error": null
     },
     {
       "id": "google-deepmind",
@@ -361,7 +361,7 @@
       "category": "jp",
       "lang": "ja",
       "coverage": 1,
-      "score": 38
+      "score": 33
     },
     {
       "id": "2f0e43168978d564",
@@ -494,7 +494,7 @@
       "via": null,
       "category": "jp",
       "lang": "ja",
-      "coverage": 7,
+      "coverage": 8,
       "score": 43
     },
     {
@@ -578,7 +578,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 5,
+      "coverage": 6,
       "titleJa": "The Chicksが、Sunoに対するジェイソン・イズベルの集団訴訟に参加。修正された訴状には16人の原告が追加され、v6を対象としている。",
       "summaryJa": "イズベルは8月31日に、デビッド・ロウリー、ガイ・フォーサイス、エドゥアルド・カレーとともに最初の訴訟を起こしました。",
       "score": 40
@@ -764,7 +764,7 @@
       "via": null,
       "category": "jp",
       "lang": "ja",
-      "coverage": 20,
+      "coverage": 22,
       "score": 52
     },
     {
@@ -793,7 +793,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 10,
+      "coverage": 11,
       "score": 34
     },
     {
@@ -807,7 +807,7 @@
       "via": null,
       "category": "jp",
       "lang": "ja",
-      "coverage": 11,
+      "coverage": 12,
       "score": 52
     },
     {
@@ -821,7 +821,7 @@
       "via": null,
       "category": "jp",
       "lang": "ja",
-      "coverage": 15,
+      "coverage": 17,
       "score": 52
     },
     {
@@ -878,8 +878,8 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 10,
-      "score": 34
+      "coverage": 11,
+      "score": 30
     },
     {
       "id": "e941ff1a4c9bea12",
@@ -894,7 +894,7 @@
       "lang": "en",
       "coverage": 1,
       "titleJa": "TidalがAI音楽を禁止する初のストリーミングサービスに",
-      "score": 7
+      "score": 3
     },
     {
       "id": "2e367701f06df724",
@@ -908,7 +908,7 @@
       "category": "jp",
       "lang": "ja",
       "coverage": 1,
-      "score": 10
+      "score": 6
     },
     {
       "id": "2948714da26a5f41",
@@ -922,7 +922,7 @@
       "category": "jp",
       "lang": "ja",
       "coverage": 1,
-      "score": 10
+      "score": 6
     },
     {
       "id": "55ad70417ca0c162",
@@ -937,7 +937,7 @@
       "lang": "en",
       "coverage": 1,
       "titleJa": "Tidalが、AI音楽をプラットフォームから禁止する初のストリーミングサービスに",
-      "score": 7
+      "score": 3
     },
     {
       "id": "6ea3d3e74f1df015",
@@ -952,7 +952,7 @@
       "lang": "en",
       "coverage": 1,
       "titleJa": "Tidalが、AI音楽をプラットフォームから禁止する初のオンデマンドストリーミングサービスに",
-      "score": 7
+      "score": 3
     },
     {
       "id": "c79177785d50b2e7",
@@ -1226,7 +1226,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 12,
+      "coverage": 13,
       "score": 41
     },
     {
@@ -1331,7 +1331,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 5,
+      "coverage": 6,
       "titleJa": "SunoのAIビデオへの参入、DistroKidの文書、v6をめぐる争いについて知っておくべき5つのこと",
       "summaryJa": "Sunoは今週ビデオ分野に進出し、DistroKidはAI検出に関する文書を提出し、UMGとソニーは2回目の訴訟を継続するために闘っています。",
       "score": 36
@@ -1523,7 +1523,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 12,
+      "coverage": 14,
       "score": 30
     },
     {
@@ -1829,7 +1829,7 @@
       "title": "Spotify Is Deleting AI Music, Except the Kind It Can Sell",
       "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQQzdLYUNpM0U5Rm1IVUVodW9IMFAwWUxWS0xyNFBJMkJJLWFub0pZQVowSE0taldpWlFWcG9Lc3RHRllEcm1jUWdjeE9Hc0FkSGFqMUxaTlVuemNiSnZ1d2FadHlOTi1QUmtxS0lwWGU5UkpYQTRaSnFYQnJ2N2JMbDJkVTdac0JmUDE4?oc=5",
       "summary": "",
-      "published": "2026-11-19T05:05:53.000Z",
+      "published": "2026-11-19T08:00:00.000Z",
       "source": "WIRED Middle East",
       "sourceId": "gnews-en-aimusic",
       "via": "Googleニュース",
@@ -1879,7 +1879,7 @@
       "via": null,
       "category": "jp",
       "lang": "ja",
-      "coverage": 39,
+      "coverage": 41,
       "score": 41
     },
     {
@@ -1893,7 +1893,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 31,
+      "coverage": 32,
       "titleJa": "UMGとソニーが、Suno訴訟におけるDistroKidに対する召喚状請求を撤回。ディストリビューターがAI検出文書を提出したため",
       "summaryJa": "レーベルは、AI生成とフラグ付けされたDistroKidの楽曲の数、Sunoに帰属された楽曲の数、およびそれらの楽曲がどれだけの収益を上げたかに関するデータを求めていました。",
       "score": 27
@@ -2090,7 +2090,7 @@
       "via": null,
       "category": "jp",
       "lang": "ja",
-      "coverage": 72,
+      "coverage": 74,
       "score": 41
     },
     {
@@ -2411,7 +2411,7 @@
       "via": null,
       "category": "jp",
       "lang": "ja",
-      "coverage": 42,
+      "coverage": 43,
       "score": 28
     },
     {
@@ -2605,7 +2605,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 41,
+      "coverage": 42,
       "titleJa": "SunoがAbleton LiveにAIステムを組み込むアプリ「Bridge」をリリース",
       "summaryJa": "リリース時点では、Mac上のAbleton Live 12でのみ動作し、Suno Premierのサブスクリプションが必要です。",
       "score": 38
@@ -2767,7 +2767,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 98,
+      "coverage": 101,
       "score": 38
     },
     {
@@ -2781,7 +2781,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 4,
+      "coverage": 5,
       "score": 21
     },
     {
@@ -3030,8 +3030,8 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 2,
-      "score": 5
+      "coverage": 3,
+      "score": 13
     },
     {
       "id": "ae193ae9db10608f",
@@ -3072,7 +3072,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 5,
+      "coverage": 7,
       "score": 21
     },
     {
@@ -3847,7 +3847,7 @@
       "via": "Googleニュース",
       "category": "global",
       "lang": "en",
-      "coverage": 69,
+      "coverage": 70,
       "titleJa": "エルビス・プレスリーの著作権所有者がAIミュージックジェネレーターをライセンス、著作権侵害で訴える",
       "score": 25
     },
@@ -4039,7 +4039,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 60,
+      "coverage": 61,
       "score": 30
     },
     {
@@ -4096,7 +4096,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 75,
+      "coverage": 76,
       "titleJa": "エルビスとエミネムの権利所有者がスノを訴えている",
       "summaryJa": "Sunoはさらに別の訴訟に直面しています。エルヴィス・プレスリーの音楽の著作権者のグループとエミネムの最大のレコードのいくつかの出版社は、AI音楽会社がそれらのアーティストを模倣した音楽と歌詞を違法に生成していると主張して訴えている。Presley訴訟の弁護士は、Sunoがテネシー州の",
       "score": 34
@@ -5278,7 +5278,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 91,
+      "coverage": 92,
       "titleJa": "スノは、アーティストの「アイデンティティ」をめぐるジェイソン・イズベル訴訟は却下されなければならないと語る：「それについて違法なことは何もない」",
       "summaryJa": "AI音楽会社は、ミュージシャンの肖像権を侵害していると非難する新しい訴訟に対して、最初の主要な対応を提出しました。",
       "score": 34
@@ -5488,7 +5488,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 90,
+      "coverage": 91,
       "titleJa": "UMG、ソニー、DistroKidは、Suno事件のAI音楽データをめぐる紛争で「解決に取り組んでいる」と裁判所に語る",
       "summaryJa": "2つのメジャーは、ストリーミングサービスに配信するトラックのうち、AI生成トラックとしてフラグが立てられているトラックの数について、DistroKidにデータを求めている。",
       "score": 27
@@ -5897,7 +5897,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 93,
+      "coverage": 94,
       "score": 27,
       "titleJa": "Sunoは、Apple MusicがUMGとソニーなしで生き残ることができるかどうかについてAppleに証言させるために戦い、メジャーが反AIの譲歩を勝ち取るために彼らのカタログを「棍棒として」使用していると主張している",
       "summaryJa": "Sunoはまた、Apple Musicの両方のメジャーとのAppleの現在のライセンス交渉とストリーミング詐欺についてAppleの目撃者が証言することを望んでいる。"
@@ -6072,7 +6072,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 109,
+      "coverage": 110,
       "score": 30
     },
     {
