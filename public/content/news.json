@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-11-28T10:58:48.126Z",
+  "generatedAt": "2026-11-28T17:14:13.552Z",
   "count": 400,
-  "newCount": 33,
-  "translatedCount": 1,
+  "newCount": 2,
+  "translatedCount": 0,
   "ranking": [
     "a006273821c4bf5b",
     "15c3e775946ea485",
@@ -15,28 +15,28 @@
       "id": "gnews-ja-aimusic",
       "name": "Googleニュース（AI音楽）",
       "category": "jp",
-      "ok": true,
-      "fetched": 40,
-      "matched": 37,
-      "error": null
+      "ok": false,
+      "fetched": 0,
+      "matched": 0,
+      "error": "HTTP 503"
     },
     {
       "id": "gnews-ja-suno",
       "name": "Googleニュース（Suno/生成AI作曲）",
       "category": "jp",
-      "ok": true,
-      "fetched": 40,
-      "matched": 40,
-      "error": null
+      "ok": false,
+      "fetched": 0,
+      "matched": 0,
+      "error": "HTTP 503"
     },
     {
       "id": "gnews-en-aimusic",
       "name": "Google News (AI music)",
       "category": "global",
-      "ok": true,
-      "fetched": 40,
-      "matched": 40,
-      "error": null
+      "ok": false,
+      "fetched": 0,
+      "matched": 0,
+      "error": "HTTP 503"
     },
     {
       "id": "google-deepmind",
@@ -98,7 +98,7 @@
       "category": "global",
       "ok": true,
       "fetched": 10,
-      "matched": 3,
+      "matched": 4,
       "error": null
     },
     {
@@ -116,7 +116,7 @@
       "category": "global",
       "ok": true,
       "fetched": 40,
-      "matched": 3,
+      "matched": 4,
       "error": null
     },
     {
@@ -292,6 +292,20 @@
   ],
   "items": [
     {
+      "id": "4d6adc38e0609ae8",
+      "title": "The Chicks, Willie Colón and Carl Craig among the artists that have joined Suno class action",
+      "url": "https://www.musicradar.com/music-industry/jason-isbells-suno-class-action-gathers-pace-as-16-more-artists-sign-up-to-suit",
+      "summary": "Willie Colón, The Chicks and Carl Craig among the artists that have joined legal fight",
+      "published": "2026-11-28T15:40:51.000Z",
+      "source": "MusicRadar",
+      "sourceId": "musicradar",
+      "via": null,
+      "category": "global",
+      "lang": "en",
+      "coverage": 1,
+      "score": 21
+    },
+    {
       "id": "b3fe74d2686e982b",
       "title": "The Chicks say an AI song generator is illegally using their likeness",
       "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPWGJkVjhIcS1PT3dsMmY1NU5RbmF2QkVzZ18yMFV5alJvbEMyN0IxQ0NPYXZ1SC1Gb19PUi1lOGFuaW85U2NRRDN3eVV4TDhRRXRqc2M5SW9qNEpESHZ5Y21aM0V0YkFHWHQwRTJ1aW56UTVuY3JJbUNmYXZNREs4YnZOWTR5eDhaSnFz?oc=5",
@@ -322,6 +336,20 @@
       "score": 12
     },
     {
+      "id": "ee0806eda3d97821",
+      "title": "Warner Music’s $1B YouTube windfall, Tidal banning AI music… it’s MBW’s Weekly Round-Up",
+      "url": "https://www.musicbusinessworldwide.com/from-warner-musics-billion-dollar-youtube-windfall-to-coachellas-walmart-lawsuit-its-mbws-weekly-round-up/",
+      "summary": "The biggest headlines from the past few days...",
+      "published": "2026-11-27T13:07:56.000Z",
+      "source": "Music Business Worldwide",
+      "sourceId": "mbw",
+      "via": null,
+      "category": "global",
+      "lang": "en",
+      "coverage": 1,
+      "score": 7
+    },
+    {
       "id": "2a663b38a3496191",
       "title": "“Why do they want me? I'm just a human being”: Guitarist George Lynch on his “very strange” AI session",
       "url": "https://www.musicradar.com/artists/guitarists/guitarist-george-lynch-on-his-very-strange-session-for-an-ai-track-i-was-like-why-do-they-want-me-i-mean-im-just-a-human-being-machines-do-it-way-better",
@@ -335,7 +363,7 @@
       "coverage": 1,
       "titleJa": "「なぜ彼らは私を欲しがるのでしょうか？「私はただの人間にすぎません」：ギタリストのジョージ・リンチが語る「とても奇妙な」AIセッション",
       "summaryJa": "「大変でした」と元ドッケンのメンバーは語ります。",
-      "score": 12
+      "score": 7
     },
     {
       "id": "86aab92a1f1f0e91",
@@ -349,7 +377,7 @@
       "category": "jp",
       "lang": "ja",
       "coverage": 1,
-      "score": 15
+      "score": 10
     },
     {
       "id": "831fc05cf3b1a1a4",
@@ -363,7 +391,7 @@
       "category": "jp",
       "lang": "ja",
       "coverage": 1,
-      "score": 15
+      "score": 10
     },
     {
       "id": "c4f5d1d41847f715",
@@ -655,7 +683,7 @@
       "coverage": 1,
       "titleJa": "Musixmatchがアーティスト向けProプラットフォームを強化してローンチ。ファンエンゲージメント分析や歌詞グッズの販売を追加し、「まもなくオプションのAIライセンス提供を開始」",
       "summaryJa": "Musixmatchが、Musixmatch Pro for Artistsプラットフォームの新バージョンをリリースしました。",
-      "score": 7
+      "score": 3
     },
     {
       "id": "a43d110543e7bd43",
@@ -670,7 +698,7 @@
       "lang": "en",
       "coverage": 1,
       "titleJa": "ザ・チックスとウィリー・コロンが、Sunoに対するAI音楽訴訟に参加：「アイデンティティの不正流用」",
-      "score": 16
+      "score": 12
     },
     {
       "id": "2ab0b0e298a8cca0",
@@ -685,7 +713,7 @@
       "lang": "en",
       "coverage": 1,
       "titleJa": "AI音楽は禁止されています",
-      "score": 7
+      "score": 3
     },
     {
       "id": "287ca5c6d0352596",
@@ -701,7 +729,7 @@
       "coverage": 1,
       "titleJa": "このような友人たちと：SunoとMiniMaxがタッグを組む",
       "summaryJa": "以下のMBWの論説は、ARIAM（アーツ＆メディアにおける責任あるイノベーションのためのアライアンス）のエグゼクティブディレクター兼CEOであるVictoria Furniss氏によるものです。",
-      "score": 16
+      "score": 12
     },
     {
       "id": "ec6fe0e743e237d1",
@@ -717,7 +745,7 @@
       "coverage": 1,
       "titleJa": "FieldSynthが、iPhone、iPad、デスクトップにジェネレーティブ・パーティクル・シンセシスをもたらす",
       "summaryJa": "FieldSynthは、パーティクルとカーソルの動きを進化するメロディーとリズムに変えるジェネレーティブシンセサイザーです。FMシンセシスとサブトラクティブシンセシス、モジュレーション、エフェクト、MIDIを組み合わせ、デスクトップ版、iOS版、ブラウザ版があります。…続きを読む FieldSynthがiPhone、iPad、デスクトップにジェネレーティブ・パーティクル・シンセシスをもたらす",
-      "score": 7
+      "score": 3
     },
     {
       "id": "66c5dd7faaf0ebc7",
@@ -733,7 +761,7 @@
       "coverage": 1,
       "titleJa": "マーケティング業界のベテラン、ゲイリー・ヴァイナーチャック氏がAI「パーソナルアバター」を立ち上げ",
       "summaryJa": "マーケティングをより良く行うことについて、人間があなたに向かって怒鳴るよりも良いことは何でしょうか？人間をモデルにしたAIアバターが、マーケティングをより良く行うようにとあなたに怒鳴りつけることです！それが、起業家でありインターネットの著名人であるゲイリー・ヴァイナーチャック氏が望んでいることです。この記事はMusic Allyからのものです。",
-      "score": 7
+      "score": 3
     },
     {
       "id": "fba2c8599736fb02",
@@ -749,7 +777,7 @@
       "coverage": 1,
       "titleJa": "AI革命が電子楽器に迫っています",
       "summaryJa": "AIアシストによるモッディングの新たな時代が到来しました。ハードウェア楽器メーカーにとって、これは大きなチャンスであり、さらに大きな課題でもあります。詳細を知るために、ElektronとAkaiに話を聞きました。",
-      "score": 7
+      "score": 3
     },
     {
       "id": "3fba7f9698e73a99",
@@ -763,7 +791,7 @@
       "category": "jp",
       "lang": "ja",
       "coverage": 1,
-      "score": 10
+      "score": 6
     },
     {
       "id": "76a767662f6c46d7",
@@ -779,7 +807,7 @@
       "coverage": 1,
       "titleJa": "オーストラリアにおけるAIと著作権に関する議論が、新たな報告書を受けて加熱",
       "summaryJa": "オーストラリアでは、同国政府がAIと著作権のバランスをどのように取るかを巡って緊張が高まり続けています。今週、オーストラリア議会の人工知能に関する合同特別委員会が、いくつかの勧告を含む報告書を公表しました。この記事はMusic Allyからのものです。",
-      "score": 14
+      "score": 10
     },
     {
       "id": "663abcd5475a71b0",
@@ -6174,34 +6202,6 @@
       "lang": "ja",
       "coverage": 1,
       "score": 6
-    },
-    {
-      "id": "3cd0a74d405bd1a2",
-      "title": "Sunoが使われた曲を見分けるツール「Blush」を作った（CloseBox） 4枚目の写真・画像",
-      "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE9lXzMwSTZGYzhhXzBUUklZNHBBSlJKQmdpT1A2M3JmWkk4OS1BUlVVcVBwQ0ltcXdUMjJpeXJ2cWRBVTVwT0hZQkNua2RYaVU3bnBHSC1McGtha0x0MlZSMnY1WjFSYXdyTVFlblpvMXZwbUhu?oc=5",
-      "summary": "",
-      "published": "2026-10-30T06:06:03.000Z",
-      "source": "テクノエッジ TechnoEdge",
-      "sourceId": "gnews-ja-suno",
-      "via": "Googleニュース",
-      "category": "jp",
-      "lang": "ja",
-      "coverage": 1,
-      "score": 6
-    },
-    {
-      "id": "57fbf7d0b445c068",
-      "title": "IK Multimedia、機材の設定の違いによる音色変化をAIで予測する新技術、『TONEX Parametric Tone Model』を発表…… モデリングの柔軟性とAIキャプチャーのリアリズムを融合",
-      "url": "https://icon.jp/archives/28079",
-      "summary": "IK Multimediaが革新的なテクノロジー、『TONEX Parametric Tone Model』を発表。来月（2026年11月）、このテクノロジーを使って作成されたTONEX用のParametric Tone",
-      "published": "2026-10-30T06:00:00.000Z",
-      "source": "ICON",
-      "sourceId": "icon-jp",
-      "via": null,
-      "category": "jp",
-      "lang": "ja",
-      "coverage": 1,
-      "score": 14
     }
   ]
 }
