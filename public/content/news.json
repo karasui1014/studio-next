@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-11-28T03:01:48.344Z",
+  "generatedAt": "2026-11-28T10:58:48.126Z",
   "count": 400,
-  "newCount": 31,
+  "newCount": 33,
   "translatedCount": 1,
   "ranking": [
     "a006273821c4bf5b",
@@ -188,7 +188,7 @@
       "category": "jp",
       "ok": true,
       "fetched": 40,
-      "matched": 3,
+      "matched": 2,
       "error": null
     },
     {
@@ -292,6 +292,21 @@
   ],
   "items": [
     {
+      "id": "b3fe74d2686e982b",
+      "title": "The Chicks say an AI song generator is illegally using their likeness",
+      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPWGJkVjhIcS1PT3dsMmY1NU5RbmF2QkVzZ18yMFV5alJvbEMyN0IxQ0NPYXZ1SC1Gb19PUi1lOGFuaW85U2NRRDN3eVV4TDhRRXRqc2M5SW9qNEpESHZ5Y21aM0V0YkFHWHQwRTJ1aW56UTVuY3JJbUNmYXZNREs4YnZOWTR5eDhaSnFz?oc=5",
+      "summary": "",
+      "published": "2026-11-28T01:38:10.000Z",
+      "source": "Chron",
+      "sourceId": "gnews-en-aimusic",
+      "via": "Googleニュース",
+      "category": "global",
+      "lang": "en",
+      "coverage": 1,
+      "titleJa": "The Chicksが、AIソングジェネレーターが彼女たちの肖像を違法に使用していると主張",
+      "score": 12
+    },
+    {
       "id": "0809cc1ed7d8ed23",
       "title": "Tidal Bans AI Music, Moves to Delete 29 Million Slop Songs",
       "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE5iX2RneFE3V1BhNVBOQUQ3X0tXdEZJRDFhMTJOU3hGMXVFQlpTLWNEN0RLRzc2TmYyS29Zek9HckU5OTNScVZucWpVdGc4Skp2dVcycWYtdm85UFdNbnMwZWgyNzQxZw?oc=5",
@@ -323,6 +338,20 @@
       "score": 12
     },
     {
+      "id": "86aab92a1f1f0e91",
+      "title": "TIDAL、完全AI生成音楽を全面禁止 | ニュース | IT×エンタメの最前線を届ける",
+      "url": "https://news.google.com/rss/articles/CBMiR0FVX3lxTFAyNnd1MFhYcTlsVWpxRFJjbVVpelhRLTYzNTZYTl9TdUlnbmU0d1dYVWgzZGVUc0s0NXZSMV8xOS1hQVhzNTRv?oc=5",
+      "summary": "",
+      "published": "2026-11-27T11:19:08.000Z",
+      "source": "MEDIAMIXI",
+      "sourceId": "gnews-ja-aimusic",
+      "via": "Googleニュース",
+      "category": "jp",
+      "lang": "ja",
+      "coverage": 1,
+      "score": 15
+    },
+    {
       "id": "831fc05cf3b1a1a4",
       "title": "TIDAL、完全AI生成音楽を全面禁止",
       "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE5hLUJOaWM3Z3J0NHV0TGg0bjZQeEZOQndRdl90MjlhTldSTk5SVmhTaklmOGp5Zi1SYkNFZ1p2d0RWY2FobkxXT2VBMjlyVEtmWTdFNQ?oc=5",
@@ -348,7 +377,7 @@
       "category": "jp",
       "lang": "ja",
       "coverage": 1,
-      "score": 29
+      "score": 24
     },
     {
       "id": "55dff5059de7a8c0",
@@ -362,7 +391,21 @@
       "category": "jp",
       "lang": "ja",
       "coverage": 1,
-      "score": 15
+      "score": 10
+    },
+    {
+      "id": "fb7b42c0812ce3ce",
+      "title": "75枚のスライドとSuno音源を連携！Claude Opus5.5でカラオケ字幕付きMVを作成する手順",
+      "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE9mcWMxYldKQTFvNlpPTG1KVTRnc2NfajkzZlNDVS1YU2Uwb3FhZWlxdS0wUUtYMmVONnBUc0NmY3NLMklBZF9KMVE3SlpRWHh6aVdxNDRXZXlLd19xckE?oc=5",
+      "summary": "",
+      "published": "2026-11-26T21:30:01.000Z",
+      "source": "ライブドアニュース",
+      "sourceId": "gnews-ja-suno",
+      "via": "Googleニュース",
+      "category": "jp",
+      "lang": "ja",
+      "coverage": 1,
+      "score": 19
     },
     {
       "id": "7b27e949a8169e8f",
@@ -375,8 +418,8 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 1,
-      "score": 33
+      "coverage": 2,
+      "score": 41
     },
     {
       "id": "2f0e43168978d564",
@@ -509,7 +552,7 @@
       "via": null,
       "category": "jp",
       "lang": "ja",
-      "coverage": 9,
+      "coverage": 10,
       "score": 43
     },
     {
@@ -593,7 +636,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 7,
+      "coverage": 8,
       "titleJa": "The Chicksが、Sunoに対するジェイソン・イズベルの集団訴訟に参加。修正された訴状には16人の原告が追加され、v6を対象としている。",
       "summaryJa": "イズベルは8月31日に、デビッド・ロウリー、ガイ・フォーサイス、エドゥアルド・カレーとともに最初の訴訟を起こしました。",
       "score": 40
@@ -750,7 +793,7 @@
       "category": "jp",
       "lang": "ja",
       "coverage": 1,
-      "score": 17
+      "score": 13
     },
     {
       "id": "cf383ea0142d382c",
@@ -766,7 +809,7 @@
       "coverage": 1,
       "titleJa": "Tidalが「完全に」AI生成の楽曲をすべて禁止 - 対象は2,700万曲で、さらに増え続けています",
       "summaryJa": "この動きは、SpotifyやApple Musicよりも一歩進んでいます。",
-      "score": 7
+      "score": 3
     },
     {
       "id": "a006273821c4bf5b",
@@ -779,8 +822,8 @@
       "via": null,
       "category": "jp",
       "lang": "ja",
-      "coverage": 24,
-      "score": 52
+      "coverage": 26,
+      "score": 48
     },
     {
       "id": "4e386fa591cd75d9",
@@ -795,7 +838,7 @@
       "lang": "en",
       "coverage": 1,
       "titleJa": "TidalがAI音楽を禁止する初の主要ストリーミングサービスに",
-      "score": 7
+      "score": 3
     },
     {
       "id": "7ebd58d621053e02",
@@ -808,8 +851,8 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 12,
-      "score": 34
+      "coverage": 13,
+      "score": 30
     },
     {
       "id": "1ddc0c8549247eac",
@@ -822,7 +865,7 @@
       "via": null,
       "category": "jp",
       "lang": "ja",
-      "coverage": 13,
+      "coverage": 14,
       "score": 48
     },
     {
@@ -836,7 +879,7 @@
       "via": null,
       "category": "jp",
       "lang": "ja",
-      "coverage": 18,
+      "coverage": 19,
       "score": 48
     },
     {
@@ -850,7 +893,7 @@
       "via": null,
       "category": "jp",
       "lang": "ja",
-      "coverage": 11,
+      "coverage": 12,
       "score": 37
     },
     {
@@ -893,7 +936,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 12,
+      "coverage": 13,
       "score": 30
     },
     {
@@ -1241,7 +1284,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 14,
+      "coverage": 15,
       "score": 41
     },
     {
@@ -1894,7 +1937,7 @@
       "via": null,
       "category": "jp",
       "lang": "ja",
-      "coverage": 42,
+      "coverage": 44,
       "score": 41
     },
     {
@@ -1908,7 +1951,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 33,
+      "coverage": 34,
       "titleJa": "UMGとソニーが、Suno訴訟におけるDistroKidに対する召喚状請求を撤回。ディストリビューターがAI検出文書を提出したため",
       "summaryJa": "レーベルは、AI生成とフラグ付けされたDistroKidの楽曲の数、Sunoに帰属された楽曲の数、およびそれらの楽曲がどれだけの収益を上げたかに関するデータを求めていました。",
       "score": 27
@@ -2014,7 +2057,7 @@
       "summary": "",
       "published": "2026-11-18T10:44:28.000Z",
       "source": "財務省",
-      "sourceId": "gnews-ja-suno",
+      "sourceId": "gnews-ja-aimusic",
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
@@ -2105,7 +2148,7 @@
       "via": null,
       "category": "jp",
       "lang": "ja",
-      "coverage": 76,
+      "coverage": 78,
       "score": 41
     },
     {
@@ -2426,7 +2469,7 @@
       "via": null,
       "category": "jp",
       "lang": "ja",
-      "coverage": 44,
+      "coverage": 45,
       "score": 28
     },
     {
@@ -2505,6 +2548,20 @@
       "titleJa": "各音楽聴取プラットフォームのAI音楽への対応（更新中）"
     },
     {
+      "id": "4adf1a8005a6363a",
+      "title": "Suno、Ableton Live 12向け新アプリ「Suno Bridge」ベータ版を発表|プレイリスト＆カルチャーメディア",
+      "url": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE1kYnpGeVp4ZFNZcDlCZUpNX0xhQzdLaVBTemZVZ25rbVo2eS1IQjVqUTJFc1V0ZG5tQ0I4cmpxQkx6Wll3UF9wUjNDMA?oc=5",
+      "summary": "",
+      "published": "2026-11-17T08:00:00.000Z",
+      "source": "DIGLE MAGAZINE",
+      "sourceId": "gnews-ja-suno",
+      "via": "Googleニュース",
+      "category": "jp",
+      "lang": "ja",
+      "coverage": 1,
+      "score": 17
+    },
+    {
       "id": "7b5da3adfd0aeaca",
       "title": "韓国のAI楽曲が初の音楽チャート1位に！ILLIT、RESCENEらの新曲を抑え首位に（Kstyle）",
       "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5PY3VCdGV0Y0sySllrYkU2ZUJiTHg3V1hTLVB0OHhScHc3a3VyRUVTZlhCVEkxbEpjUUQ1Wm5zT0trUEZfempWWU5Ed1pLZHVheVdjMENhQ01jc0FKQTdaSC02MXJyWTJDa1BBb0E4R3JxWDRmMmdKSW9yamVaa1E?oc=5",
@@ -2564,20 +2621,6 @@
       "score": -6
     },
     {
-      "id": "4adf1a8005a6363a",
-      "title": "Suno、Ableton Live 12向け新アプリ「Suno Bridge」ベータ版を発表|プレイリスト＆カルチャーメディア",
-      "url": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE1kYnpGeVp4ZFNZcDlCZUpNX0xhQzdLaVBTemZVZ25rbVo2eS1IQjVqUTJFc1V0ZG5tQ0I4cmpxQkx6Wll3UF9wUjNDMA?oc=5",
-      "summary": "",
-      "published": "2026-11-16T23:44:46.000Z",
-      "source": "DIGLE MAGAZINE",
-      "sourceId": "gnews-ja-suno",
-      "via": "Googleニュース",
-      "category": "jp",
-      "lang": "ja",
-      "coverage": 1,
-      "score": 17
-    },
-    {
       "id": "b5b8d555e0a14eb4",
       "title": "IDOL’s Labelcamp launches AI Connector, letting distributors and labels run supply chain operations through Claude and ChatGPT",
       "url": "https://www.musicbusinessworldwide.com/idols-labelcamp-launches-ai-connector-letting-distributors-and-labels-run-supply-chain-operations-through-claude-and-chatgpt/",
@@ -2620,7 +2663,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 43,
+      "coverage": 44,
       "titleJa": "SunoがAbleton LiveにAIステムを組み込むアプリ「Bridge」をリリース",
       "summaryJa": "リリース時点では、Mac上のAbleton Live 12でのみ動作し、Suno Premierのサブスクリプションが必要です。",
       "score": 38
@@ -2707,7 +2750,7 @@
       "summary": "",
       "published": "2026-11-16T08:00:00.000Z",
       "source": "조선일보",
-      "sourceId": "gnews-ja-suno",
+      "sourceId": "gnews-ja-aimusic",
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
@@ -2782,7 +2825,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 104,
+      "coverage": 107,
       "score": 38
     },
     {
@@ -2790,7 +2833,7 @@
       "title": "AI作曲の進化と人間だからこそ出せる味付け (2026年11月15日掲載)",
       "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE03eEl4dWNnQ3dGRjZrd1lwaEtpVHQzMlN2alZXVi12U2oxLXRzdDFvTnhNMVJ5aGFfRVFyLW02Q29iVWRLYUl5S0oyYjFwLTlnUWZicHBCSEFhMGM5Unc?oc=5",
       "summary": "",
-      "published": "2026-11-15T10:21:32.000Z",
+      "published": "2026-11-15T08:00:00.000Z",
       "source": "ライブドアニュース",
       "sourceId": "gnews-ja-suno",
       "via": "Googleニュース",
@@ -2955,7 +2998,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 19,
+      "coverage": 20,
       "titleJa": "Reservoir、SunoとAnthropicに対する著作権訴訟を合わせて2,500曲以上に拡大",
       "summaryJa": "Reservoirは10月に2つのAI企業を最初に訴えました",
       "score": 34
@@ -3087,7 +3130,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 7,
+      "coverage": 8,
       "score": 21
     },
     {
@@ -3862,7 +3905,7 @@
       "via": "Googleニュース",
       "category": "global",
       "lang": "en",
-      "coverage": 71,
+      "coverage": 72,
       "titleJa": "エルビス・プレスリーの著作権所有者がAIミュージックジェネレーターをライセンス、著作権侵害で訴える",
       "score": 25
     },
@@ -4054,7 +4097,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 62,
+      "coverage": 63,
       "score": 30
     },
     {
@@ -4111,7 +4154,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 77,
+      "coverage": 78,
       "titleJa": "エルビスとエミネムの権利所有者がスノを訴えている",
       "summaryJa": "Sunoはさらに別の訴訟に直面しています。エルヴィス・プレスリーの音楽の著作権者のグループとエミネムの最大のレコードのいくつかの出版社は、AI音楽会社がそれらのアーティストを模倣した音楽と歌詞を違法に生成していると主張して訴えている。Presley訴訟の弁護士は、Sunoがテネシー州の",
       "score": 34
@@ -5307,7 +5350,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 93,
+      "coverage": 94,
       "titleJa": "スノは、アーティストの「アイデンティティ」をめぐるジェイソン・イズベル訴訟は却下されなければならないと語る：「それについて違法なことは何もない」",
       "summaryJa": "AI音楽会社は、ミュージシャンの肖像権を侵害していると非難する新しい訴訟に対して、最初の主要な対応を提出しました。",
       "score": 34
@@ -5926,7 +5969,7 @@
       "via": null,
       "category": "global",
       "lang": "en",
-      "coverage": 95,
+      "coverage": 96,
       "score": 27,
       "titleJa": "Sunoは、Apple MusicがUMGとソニーなしで生き残ることができるかどうかについてAppleに証言させるために戦い、メジャーが反AIの譲歩を勝ち取るために彼らのカタログを「棍棒として」使用していると主張している",
       "summaryJa": "Sunoはまた、Apple Musicの両方のメジャーとのAppleの現在のライセンス交渉とストリーミング詐欺についてAppleの目撃者が証言することを望んでいる。"
@@ -6031,7 +6074,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 46,
+      "coverage": 47,
       "score": 28
     },
     {
@@ -6101,7 +6144,7 @@
       "via": "Googleニュース",
       "category": "jp",
       "lang": "ja",
-      "coverage": 111,
+      "coverage": 112,
       "score": 30
     },
     {
@@ -6159,52 +6202,6 @@
       "lang": "ja",
       "coverage": 1,
       "score": 14
-    },
-    {
-      "id": "70de1a9629f52872",
-      "title": "【AI音楽】GRAY PULSE｜FRAGMENT / IDLE / REDLINE【3曲メドレー】",
-      "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9wQWxGbjkyMGdoano4clYwcXpzbDFfX3FocnFSaEMxN1NPTUV5UzhMSFhMcEFjVkVIYlZFVXBDWEdnYlBHbDFMbThIYmZJWUxtQUYtaWIydnI5Q2RG?oc=5",
-      "summary": "",
-      "published": "2026-10-30T02:02:56.000Z",
-      "source": "YouTube",
-      "sourceId": "gnews-ja-suno",
-      "via": "Googleニュース",
-      "category": "jp",
-      "lang": "ja",
-      "coverage": 1,
-      "score": -3
-    },
-    {
-      "id": "d8ad94afceb4a579",
-      "title": "Suno launches MCP server to ‘create music right from the chat’",
-      "url": "https://musically.com/2026/10/29/suno-launches-mcp-server-to-create-music-right-from-the-chat/",
-      "summary": "Music-industry professionals have been rushing to connect various Model Context Protocol (MCP) servers to their AI chatbots of choice. However, there may be more reluctance in some quarters to add the latest launch: it’s from Suno. The post is from Music Ally .",
-      "published": "2026-10-29T13:30:00.000Z",
-      "source": "Music Ally",
-      "sourceId": "musically",
-      "via": null,
-      "category": "global",
-      "lang": "en",
-      "coverage": 1,
-      "titleJa": "SunoがMCPサーバーを起動して「チャットから直接音楽を作成」",
-      "summaryJa": "音楽業界の専門家は、さまざまなモデルコンテキストプロトコル（ MCP ）サーバーを選択したAIチャットボットに接続するために急いでいます。ただし、一部の四半期では、最新のローンチを追加することに消極的な場合があります。Sunoからのものです。この投稿はMusic Allyからのものです。",
-      "score": 14
-    },
-    {
-      "id": "93da28d6f8ba995b",
-      "title": "SkillBox has launched an “AI-powered ‘event creation’ engine",
-      "url": "https://musically.com/2026/10/29/skillbox-has-launched-an-ai-powered-event-creation-engine/",
-      "summary": "Indian live entertainment company SkillBox has launched Zenith Studio, an “AI-powered ‘event creation’ engine” that enables organisers to generate listings, descriptions, ticketing information and artwork using a single-line prompt or […] The post is from Music Ally .",
-      "published": "2026-10-29T10:25:15.000Z",
-      "source": "Music Ally",
-      "sourceId": "musically",
-      "via": null,
-      "category": "global",
-      "lang": "en",
-      "coverage": 1,
-      "titleJa": "SkillBoxは「AI搭載の「イベント作成」エンジンをリリースしました",
-      "summaryJa": "インドのライブエンターテインメント会社SkillBoxは、主催者が1行のプロンプトを使用してリスティング、説明、チケット情報、アートワークを生成できる「AI搭載の「イベント作成」エンジン」であるZenith Studioを立ち上げました。[…]この投稿はMusic Allyからのものです。",
-      "score": 5
     }
   ]
 }
